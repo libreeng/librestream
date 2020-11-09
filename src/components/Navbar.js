@@ -1,3 +1,6 @@
+// TB: Leaving this file in place for reference.
+// It does not currently get imported, but we will need something similar to handle the allWordpressPage query.
+
 import React from 'react'
 import { Link, StaticQuery, graphql } from 'gatsby'
 import github from '../img/github-icon.svg'

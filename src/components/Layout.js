@@ -1,15 +1,41 @@
 import React from 'react'
-import Helmet from 'react-helmet'
+import PropTypes from 'prop-types'
+import { useStaticQuery, graphql } from 'gatsby'
+import HEAD from "./Head"
+import Header from './Header'
+import Footer from './Footer'
+import '../styles/main.scss'
 
-import Navbar from './Navbar'
-import './all.sass'
 
-const TemplateWrapper = ({ children }) => (
-  <div>
-    <Helmet title="Home | Gatsby + WordPress" />
-    <Navbar />
-    <div>{children}</div>
-  </div>
-)
+function Layout({ children }) {
+  const data = useStaticQuery(graphql`
+    query HeaderQuery {
+      site {
+        siteMetadata {
+          title
+        }
+      }
+    }
+  `)
 
-export default TemplateWrapper
+  return (
+    <>
+      <HEAD />
+      {/* {props.location.pathname === '/' ? '' : ''} */}
+      <Header siteTitle={data.site.siteMetadata.title} />
+
+      <main id="pageContent">
+        {children}
+      </main>
+
+      <Footer siteTitle={data.site.siteMetadata.title} />
+    </>
+  )
+}
+
+Layout.propTypes = {
+  children: PropTypes.node.isRequired,
+  // location: PropTypes.object.isRequired,
+}
+
+export default Layout

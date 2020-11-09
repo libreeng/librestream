@@ -10,7 +10,7 @@ export default class IndexPage extends React.Component {
       <section className="section">
         <div className="container">
           <div className="content">
-            <h1 className="has-text-weight-bold is-size-2">{title}</h1>
+            <h1 className="has-text-weight-bold is-size-2">BLAH: {title}</h1>
           </div>
           {posts.map(({ node: post }) => (
             <div

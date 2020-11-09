@@ -1,9 +1,10 @@
 {
-  "name": "gatsby-starter-wordpress",
-  "description": "Gatsby v2 starter for WordPress",
+  "name": "librestream",
+  "description": "Gatsby project that consumes WP as a headless CMS. https://librestream.com",
   "version": "0.1.0",
-  "author": "GatsbyCentral.com",
+  "author": "Ocupop",
   "dependencies": {
+    "bootstrap": "^4.5.3",
     "bulma": "^0.7.5",
     "gatsby": "^2.18.1",
     "gatsby-awesome-pagination": "^0.3.3",
