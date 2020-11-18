@@ -1,6 +1,5 @@
 @import "./settings";
 @import "~bootstrap/scss/bootstrap";
-
 // Common
 @import "./common/mixins";
 @import "./common/utilities";
@@ -14,7 +13,8 @@
 @import "./templates/category";
 @import "./templates/page";
 @import "./templates/post";
-@import "./templates/tag";
+@import "./templates/tag";  
 
 // Vendor Overrides
 @import "./vendor/bootstrap";
+@import "./vendor/flickity";

@@ -5,18 +5,17 @@ import Layout from '../components/Layout'
 import PostList from '../components/PostList'
 
 const Category = props => {
-  const { data, pageContext } = props
-  const { edges: posts, totalCount } = data.allWordpressPost
-  const { title: siteTitle } = data.site.siteMetadata
-  const { name: category } = pageContext
-  const title = `${totalCount} post${
-    totalCount === 1 ? '' : 's'
-  } in the “${category}” category`
+  const { posts, count, name : categoryName } = props.data.wpcontent.category
+  const { title: siteTitle } = props.data.wpcontent.generalSettings
+
+  const fulltitle = `${count} post${
+    count === 1 ? '' : 's'
+  } in the “${categoryName}” category`
 
   return (
     <Layout>
-      <Helmet title={`${category} | ${siteTitle}`} />
-      <PostList posts={posts} title={title} />
+      <Helmet title={`${categoryName} | ${siteTitle}`} />
+      <PostList posts={posts} title={fulltitle} />
     </Layout>
   )
 }
@@ -24,20 +23,25 @@ const Category = props => {
 export default Category
 
 export const pageQuery = graphql`
-  query CategoryPage($slug: String!) {
-    site {
-      siteMetadata {
+  query CategoryPage($id: ID!) {
+  
+    wpcontent {
+      generalSettings {
         title
       }
-    }
-    allWordpressPost(
-      filter: { categories: { elemMatch: { slug: { eq: $slug } } } }
-    ) {
-      totalCount
-      edges {
-        node {
-          ...PostListFields
-        }
+      category(id: $id, idType: ID) {
+        id
+        name
+        description
+        count
+        slug 
+        posts(first: 999) {
+          edges {
+            node {
+              ...PostListFields
+            }
+          }
+        }         
       }
     }
   }

@@ -10,8 +10,8 @@ import '../styles/main.scss'
 function Layout({ children }) {
   const data = useStaticQuery(graphql`
     query HeaderQuery {
-      site {
-        siteMetadata {
+      wpcontent {        
+        generalSettings {
           title
         }
       }
@@ -22,13 +22,13 @@ function Layout({ children }) {
     <>
       <HEAD />
       {/* {props.location.pathname === '/' ? '' : ''} */}
-      <Header siteTitle={data.site.siteMetadata.title} />
+      <Header siteTitle={data.wpcontent.generalSettings.title} />
 
       <main id="pageContent">
         {children}
       </main>
 
-      <Footer siteTitle={data.site.siteMetadata.title} />
+      <Footer siteTitle={data.wpcontent.generalSettings.title} />
     </>
   )
 }

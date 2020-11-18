@@ -5,18 +5,17 @@ import Layout from '../components/Layout'
 import PostList from '../components/PostList'
 
 const Tag = props => {
-  const { data, pageContext } = props
-  const { edges: posts, totalCount } = data.allWordpressPost
-  const { title: siteTitle } = data.site.siteMetadata
-  const { name: tag } = pageContext
-  const title = `${totalCount} post${
-    totalCount === 1 ? '' : 's'
-  } with the tag ${tag}`
+  const { posts, count, name : tagName } = props.data.wpcontent.tag
+  const { title: siteTitle } = props.data.wpcontent.generalSettings
+
+  const fulltitle = `${count} post${
+    count === 1 ? '' : 's'
+  } with the tag “${tagName}”`
 
   return (
     <Layout>
-      <Helmet title={`${tag} | ${siteTitle}`} />
-      <PostList posts={posts} title={title} />
+      <Helmet title={`${tagName} | ${siteTitle}`} />
+      <PostList posts={posts} title={fulltitle} />
     </Layout>
   )
 }
@@ -24,19 +23,27 @@ const Tag = props => {
 export default Tag
 
 export const pageQuery = graphql`
-  query TagPage($slug: String!) {
-    site {
-      siteMetadata {
+  query TagPage($id: ID!) {
+
+    wpcontent{
+      generalSettings{
         title
       }
-    }
-    allWordpressPost(filter: { tags: { elemMatch: { slug: { eq: $slug } } } }) {
-      totalCount
-      edges {
-        node {
-          ...PostListFields
-        }
+      tag(id: $id, idType: ID) {
+        id
+        name
+        description
+        count
+        slug 
+        posts(first: 999) {
+          edges {
+            node {
+              ...PostListFields
+            }
+          }
+        }         
       }
     }
+    
   }
 `

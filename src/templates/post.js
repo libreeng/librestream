@@ -3,6 +3,11 @@ import PropTypes from 'prop-types'
 import Helmet from 'react-helmet'
 import { graphql, Link } from 'gatsby'
 import Layout from '../components/Layout'
+import moment from 'moment'
+import Img from 'gatsby-image'
+import contentParser from 'gatsby-wpgraphql-inline-images';
+
+
 
 export const BlogPostTemplate = ({
   content,
@@ -11,7 +16,28 @@ export const BlogPostTemplate = ({
   title,
   date,
   author,
+  image,
 }) => {
+
+  const pluginOptions = {
+    wordPressUrl: `https://librestream.wpengine.com/`,
+    uploadsUrl: `https://librestream.wpengine.com/media/`,
+  };
+
+
+
+
+  const getFeaturedImage = (image) => {
+    if (image && image.imageFile) {
+      return <Img 
+              className="featured-image mb-3"
+              alt={image.altText}
+              fluid={image.imageFile.childImageSharp.fluid}
+            /> 
+    } else if(image && image.sourceUrl && image.sourceUrl.altText) {
+      <img src={image.sourceUrl} alt={image.altText} className='w-100 mb-4'/>;
+    }
+  }
   return (
     <section className="section">
       <div className="container content">
@@ -20,33 +46,37 @@ export const BlogPostTemplate = ({
             <h1 className="title is-size-2 has-text-weight-bold is-bold-light">
               {title}
             </h1>
-            <div dangerouslySetInnerHTML={{ __html: content }} />
-            <div style={{ marginTop: `4rem` }}>
+
+            { getFeaturedImage(image) }   
+
+            <div className="post-content">{contentParser({ content }, pluginOptions)}</div>
+           
+            <div className="mt-5">
               <p>
-                {date} - posted by{' '}
-                <Link to={`/author/${author.slug}`}>{author.name}</Link>
+              { moment(date).format("MMMM Do, YYYY")} - posted by{' '}
+                {author.node.name}
               </p>
-              {categories && categories.length ? (
+              {categories && categories.edges.length ? (
                 <div>
                   <h4>Categories</h4>
                   <ul className="taglist">
-                    {categories.map(category => (
-                      <li key={`${category.slug}cat`}>
-                        <Link to={`/categories/${category.slug}/`}>
-                          {category.name}
+                    {categories.edges.map(category => (
+                      <li key={`${category.node.slug}cat`}>
+                        <Link to={category.node.uri}>
+                          {category.node.name}
                         </Link>
                       </li>
                     ))}
                   </ul>
                 </div>
               ) : null}
-              {tags && tags.length ? (
+              {tags && tags.edges.length ? (
                 <div>
                   <h4>Tags</h4>
                   <ul className="taglist">
-                    {tags.map(tag => (
-                      <li key={`${tag.slug}tag`}>
-                        <Link to={`/tags/${tag.slug}/`}>{tag.name}</Link>
+                    {tags.edges.map(tag => (
+                      <li key={`${tag.node.slug}tag`}>
+                        <Link to={tag.node.uri}>{tag.node.name}</Link>
                       </li>
                     ))}
                   </ul>
@@ -66,8 +96,7 @@ BlogPostTemplate.propTypes = {
 }
 
 const BlogPost = ({ data }) => {
-  const { wordpressPost: post } = data
-
+  const { post } = data.wpcontent
   return (
     <Layout>
       <Helmet title={`${post.title} | Blog`} />
@@ -78,6 +107,7 @@ const BlogPost = ({ data }) => {
         title={post.title}
         date={post.date}
         author={post.author}
+        image={post.acfPostTypeNews.mainImage}
       />
     </Layout>
   )
@@ -92,32 +122,62 @@ BlogPost.propTypes = {
 export default BlogPost
 
 export const pageQuery = graphql`
-  fragment PostFields on wordpress__POST {
-    id
-    slug
-    content
-    date(formatString: "MMMM DD, YYYY")
-    title
-  }
-  query BlogPostByID($id: String!) {
-    wordpressPost(id: { eq: $id }) {
-      id
-      title
-      slug
-      content
-      date(formatString: "MMMM DD, YYYY")
-      categories {
-        name
+  # fragment PostFields on wordpress__POST {
+  #   id
+  #   slug
+  #   content
+  #   date(formatString: "MMMM DD, YYYY")
+  #   title
+  # }
+  query BlogPostByID($id: ID!) {
+    wpcontent {
+      post(id: $id, idType: ID) {
+        id
+        title
         slug
-      }
-      tags {
-        name
-        slug
-      }
-      author {
-        name
-        slug
+        uri
+        content
+        date
+        acfPostTypeNews {
+          mainImage {
+            altText
+            sourceUrl(size: LARGE)
+            #imageFile {
+            #  childImageSharp {
+            #    fluid(maxWidth: 1600, quality: 60) {
+            #      ...GatsbyImageSharpFluid
+            #    }
+            #  }
+            #}
+          }
+        }
+        categories {
+          edges {
+            node {
+              name
+              slug
+              uri
+            }
+          }
+        }
+        tags {
+          edges {
+            node {
+              name
+              slug
+              uri
+            }
+          }          
+        }
+        author {
+          node {
+            name
+            slug
+            uri
+          }
+        }
       }
     }
   }
+ 
 `

@@ -3,8 +3,14 @@ import React from 'react'
 
 const Footer = () => {
   return (
-    <div id="pageFooter">
-      Footer
+    <div id="pageFooter" className="bg-info py-5">
+      <div className="container">
+        <div className="row">
+          <div className="col">
+            Footer
+          </div>
+        </div>
+      </div>
     </div>
   )
 }

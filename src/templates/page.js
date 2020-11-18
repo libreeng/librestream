@@ -2,26 +2,52 @@ import React from 'react'
 import PropTypes from 'prop-types'
 import { graphql } from 'gatsby'
 import Layout from '../components/Layout'
+const Flickity = typeof window !== "undefined" ? require("react-flickity-component") : () => null
+require('flickity-imagesloaded');
 
 export const PageTemplate = ({ title, content }) => {
+  console.log("Running page template")
   return (
-    <section className="section section--gradient">
+    <section>
+
       <div className="container">
-        <div className="columns">
-          <div className="column is-10 is-offset-1">
-            <div className="section">
-              <h2 className="title is-size-3 has-text-weight-bold is-bold-light">
-                {title}
-              </h2>
-              <div
-                className="content"
-                dangerouslySetInnerHTML={{ __html: content }}
-              />
-            </div>
+        <div className="row">
+          <div className="col-12">
+            <h2 className="title is-size-3 has-text-weight-bold is-bold-light">
+              {title}
+            </h2>
+            <div
+              className="content"
+              dangerouslySetInnerHTML={{ __html: content }}
+            />
           </div>
         </div>
       </div>
+
+      <div className="container mt-5 mb-3 border-top border-primary pt-3">
+        <h3>Carousel Example</h3>
+      </div>
+
+      {Flickity && (
+                <Flickity   
+                  options={{ // https://flickity.metafizzy.co/options.html
+                    //initialIndex: 1,
+                    lazyLoad: true,
+                    wrapAround: true,
+                    imagesLoaded: true
+                  }} 
+                  >
+                  <div className="col-4"><img src="https://placeimg.com/640/480/animals" className="w-100"/> </div>
+                  <div className="col-4"><img src="https://placeimg.com/640/580/nature" className="w-100"/> </div>
+                  <div className="col-4"><img src="https://placeimg.com/640/480/architecture" className="w-100"/> </div>
+                  <div className="col-4"><img src="https://placeimg.com/640/480/people" className="w-100"/> </div>
+                  <div className="col-4"><img src="https://placeimg.com/640/480/tech" className="w-100"/> </div>
+                </Flickity>
+            )}
     </section>
+
+
+
   )
 }
 
@@ -31,11 +57,11 @@ PageTemplate.propTypes = {
 }
 
 const Page = ({ data }) => {
-  const { wordpressPage: page } = data
-
+  const { wpcontent  } = data
+  console.log("PAEG",wpcontent)
   return (
     <Layout>
-      <PageTemplate title={page.title} content={page.content} />
+      <PageTemplate title={wpcontent.page.title} content={wpcontent.page.content} />
     </Layout>
   )
 }
@@ -47,10 +73,12 @@ Page.propTypes = {
 export default Page
 
 export const pageQuery = graphql`
-  query PageById($id: String!) {
-    wordpressPage(id: { eq: $id }) {
-      title
-      content
+  query PageById($id: ID!) {
+    wpcontent{
+      page(id: $id) {
+        title
+        content
+      }
     }
   }
 `

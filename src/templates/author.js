@@ -5,23 +5,21 @@ import Layout from '../components/Layout'
 import PostList from '../components/PostList'
 
 const Author = props => {
-  const { data } = props
-  const { authored_wordpress__POST, name } = data.wordpressWpUsers
-  const totalCount =
-    (authored_wordpress__POST && authored_wordpress__POST.length) || 0
-  const { title: siteTitle } = data.site.siteMetadata
-  const title = `${totalCount} post${totalCount === 1 ? '' : 's'} by ${name}`
+  const { posts, name } = props.data.wpcontent.user
+  const { title: siteTitle } = props.data.wpcontent.generalSettings
+  const totalCount = posts.edges.length
+  const fulltitle = `${totalCount} post${totalCount === 1 ? '' : 's'} by ${name}`
+  
+  //const { authored_wordpress__POST, name } = data.wordpressWpUsers
+  //const totalCount =
+  //  (authored_wordpress__POST && authored_wordpress__POST.length) || 0
 
-  // The `authored_wordpress__POST` returns a simple array instead of an array
-  // of edges / nodes. We therefore need to convert the array here.
-  const posts = authored_wordpress__POST.map(post => ({
-    node: post,
-  }))
+
 
   return (
     <Layout>
       <Helmet title={`${name} | ${siteTitle}`} />
-      <PostList posts={posts} title={title} />
+      <PostList posts={posts} title={fulltitle} />
     </Layout>
   )
 }
@@ -29,16 +27,23 @@ const Author = props => {
 export default Author
 
 export const pageQuery = graphql`
-  query AuthorPage($id: String!) {
-    site {
-      siteMetadata {
+  query AuthorPage($id: ID!) {
+    wpcontent{
+      generalSettings{
         title
       }
-    }
-    wordpressWpUsers(id: { eq: $id }) {
-      name
-      authored_wordpress__POST {
-        ...PostListFields
+      user(id: $id, idType: ID) {
+        id
+        name
+        description
+        slug 
+        posts(first: 999) {
+          edges {
+            node {
+              ...PostListFields
+            }
+          }
+        }         
       }
     }
   }

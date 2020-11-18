@@ -1,15 +1,15 @@
 import { useStaticQuery, graphql } from "gatsby"
 
 const useSiteMetadata = () => {
-  const { site } = useStaticQuery(
+  const { wpcontent } = useStaticQuery(
     graphql`
       query SiteMetaData {
-        site {
-          siteMetadata {
+        wpcontent {
+          generalSettings {
             title
             description
-            lang
-            author
+            language
+            # author
             # siteUrl
             # headline
             # description
@@ -23,7 +23,7 @@ const useSiteMetadata = () => {
       }
     `
   )
-  return site.siteMetadata
+  return wpcontent.generalSettings
 }
 
 export default useSiteMetadata

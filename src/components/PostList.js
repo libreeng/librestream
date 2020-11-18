@@ -1,47 +1,75 @@
 import React from 'react'
 import PropTypes from 'prop-types'
 import { Link, graphql } from 'gatsby'
+import moment from 'moment'
+import Img from "gatsby-image"
 
 export default class IndexPage extends React.Component {
   render() {
     const { posts, title } = this.props
+    console.log("POSTS",posts)
+
+    const getFeaturedImage = (post) => {
+      if (post.acfPostTypeNews && post.acfPostTypeNews.mainImage && post.acfPostTypeNews.mainImage.imageFile) {
+        return <Img 
+                  className="featured-image mb-3"
+                  style={{height:0,paddingBottom:'66%'}}
+                  alt={post.acfPostTypeNews.mainImage.altText}
+                  fluid={post.acfPostTypeNews.mainImage.imageFile.childImageSharp.fluid}
+                />
+      } else if(post.acfPostTypeNews && post.acfPostTypeNews.mainImage) {
+        return <div className="featured-image mb-3 bg" alt={post.acfPostTypeNews.mainImage.altText} style={{height:0,paddingBottom:'66%',backgroundImage:`url(${post.acfPostTypeNews.mainImage.sourceUrl})`,backgroundSize:'cover',backgroundPosition:'center center'}}></div> ;
+      }
+    }
+    
 
     return (
       <section className="section">
         <div className="container">
           <div className="content">
-            <h1 className="has-text-weight-bold is-size-2">BLAH: {title}</h1>
+            <h1 className="has-text-weight-bold is-size-2">{title}</h1>
           </div>
-          {posts.map(({ node: post }) => (
-            <div
-              className="content"
-              style={{ border: '1px solid #eaecee', padding: '2em 4em' }}
+
+          <div className="row">
+          {posts.edges.map(({ node: post }) => (
+            <article
+              className="d-flex col-12 col-md-6 col-lg-4 pb-4"
               key={post.id}
             >
-              <p>
-                <Link className="has-text-primary" to={post.slug}>
-                  {post.title}
-                </Link>
-                <span> &bull; </span>
-                <small>
-                  {post.date} - posted by{' '}
-                  <Link to={`/author/${post.author.slug}`}>
-                    {post.author.name}
+              <div className="border border-primary p-4 d-flex flex-column">
+                
+                <header className="mb-4">
+                  <div className="post-image">
+                    { getFeaturedImage(post) }
+                  </div>
+                  <Link className="has-text-primary mb-3" to={post.uri}>
+                    {post.title}
                   </Link>
-                </small>
-              </p>
-              <div>
-                <div
-                  dangerouslySetInnerHTML={{
-                    __html: post.excerpt.replace(/<p class="link-more.*/, ''),
-                  }}
-                />
-                <Link className="button is-small" to={post.slug}>
-                  Keep Reading →
-                </Link>
+                  <span> &bull; </span>
+                  <small className="meta">
+                    { moment(post.date).format("MMMM Do, YYYY")} - 
+                    
+                    {post.author && 
+                      <>posted by <i>{post.author.node.name}</i></>
+                    }
+                  </small>
+                </header>
+                <main className="mb-4 flex-fill">
+                  <div
+                    dangerouslySetInnerHTML={{
+                      __html: post.excerpt.replace(/<p class="link-more.*/, ''),
+                    }}
+                  />
+                </main>
+                <footer className="post-button">
+                  <Link className="btn btn-secondary btn-small stretched-link" to={post.uri}>
+                    Keep Reading
+                  </Link>
+                </footer>
               </div>
-            </div>
+            </article>
           ))}
+          </div>
         </div>
       </section>
     )
@@ -54,18 +82,35 @@ IndexPage.propTypes = {
 }
 
 export const pageQuery = graphql`
-  fragment PostListFields on wordpress__POST {
+  fragment PostListFields on WPGraphQL_Post {
     id
     title
     excerpt
-    author {
-      name
-      slug
-      avatar_urls {
-        wordpress_48
+    date
+    slug
+    uri
+    acfPostTypeNews {
+      mainImage {
+        altText
+        sourceUrl(size: LARGE)
+        #imageFile {
+        #  childImageSharp {
+        #    fluid(maxWidth: 1600, quality: 60) {
+        #      ...GatsbyImageSharpFluid
+        #    }
+        #  }
+        #}
       }
     }
-    date(formatString: "MMMM DD, YYYY")
-    slug
+    author {
+      node {
+        name
+        slug
+        uri
+        avatar {
+          url
+        }
+      }
+    }
   }
 `
