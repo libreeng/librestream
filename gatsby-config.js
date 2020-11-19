@@ -16,7 +16,7 @@ module.exports = {
         // Field name under which it will be available. Used in your Gatsby query. This is also an arbitrary name.
         fieldName: "wpcontent",
         // GraphQL endpoint, relative to your WordPress home URL.
-        url: "https://librestream.wpengine.com/graphql",
+        url: "https://librestreamcms.kinsta.cloud/graphql",
 
         // HTTP headers
         // https://github.com/wp-graphql/wp-graphql-jwt-authentication
@@ -31,8 +31,8 @@ module.exports = {
     {
       resolve: 'gatsby-wpgraphql-inline-images', // https://www.gatsbyjs.com/plugins/gatsby-wpgraphql-inline-images/
       options: {
-        wordPressUrl: 'https://librestream.wpengine.com',
-        uploadsUrl: 'https://librestream.wpengine.com/media/',
+        wordPressUrl: 'https://librestreamcms.kinsta.cloud',
+        uploadsUrl: 'https://librestreamcms.kinsta.cloud/media',
         processPostTypes: ['Page', 'Post', 'product'],
         graphqlTypeName: 'WPGraphQL',
         /*
@@ -42,7 +42,7 @@ module.exports = {
         */
       },
     },
-    
+
     'gatsby-plugin-sharp',
     'gatsby-transformer-sharp',
     {

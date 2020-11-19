@@ -2,8 +2,6 @@ import React from 'react'
 import PropTypes from 'prop-types'
 import { graphql } from 'gatsby'
 import Layout from '../components/Layout'
-const Flickity = typeof window !== "undefined" ? require("react-flickity-component") : () => null
-require('flickity-imagesloaded');
 
 export const PageTemplate = ({ title, content }) => {
   console.log("Running page template")
@@ -24,26 +22,7 @@ export const PageTemplate = ({ title, content }) => {
         </div>
       </div>
 
-      <div className="container mt-5 mb-3 border-top border-primary pt-3">
-        <h3>Carousel Example</h3>
-      </div>
-
-      {Flickity && (
-                <Flickity   
-                  options={{ // https://flickity.metafizzy.co/options.html
-                    //initialIndex: 1,
-                    lazyLoad: true,
-                    wrapAround: true,
-                    imagesLoaded: true
-                  }} 
-                  >
-                  <div className="col-4"><img src="https://placeimg.com/640/480/animals" className="w-100"/> </div>
-                  <div className="col-4"><img src="https://placeimg.com/640/580/nature" className="w-100"/> </div>
-                  <div className="col-4"><img src="https://placeimg.com/640/480/architecture" className="w-100"/> </div>
-                  <div className="col-4"><img src="https://placeimg.com/640/480/people" className="w-100"/> </div>
-                  <div className="col-4"><img src="https://placeimg.com/640/480/tech" className="w-100"/> </div>
-                </Flickity>
-            )}
+      
     </section>
 
 
