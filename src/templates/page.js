@@ -3,8 +3,20 @@ import PropTypes from 'prop-types'
 import { graphql } from 'gatsby'
 import Layout from '../components/Layout'
 
+import CarouselExample from '../sections/carousel_example'
+import ModalExample from '../sections/modal_example'
+import ParallaxExample from '../sections/parallax_example'
+
+
+
+let flkty = null;
+
 export const PageTemplate = ({ title, content }) => {
-  console.log("Running page template")
+  
+
+
+  
+
   return (
     <section>
 
@@ -22,7 +34,24 @@ export const PageTemplate = ({ title, content }) => {
         </div>
       </div>
 
-      
+       
+      <div className="container mt-5 mb-3 border-top border-primary pt-3">
+        <h3>Carousel Example</h3>            
+        <CarouselExample />
+      </div>
+       
+       <div className="container mt-5 mb-3 border-top border-primary pt-3">
+         <h3>Modal Example</h3>            
+         <ModalExample />
+       </div>
+       
+       <div className="container mt-5 mb-3 border-top border-primary pt-3">
+         <h3>Parallax-js Example</h3>            
+         <ParallaxExample />
+       </div>
+       
+
+
     </section>
 
 
@@ -37,7 +66,6 @@ PageTemplate.propTypes = {
 
 const Page = ({ data }) => {
   const { wpcontent  } = data
-  console.log("PAEG",wpcontent)
   return (
     <Layout>
       <PageTemplate title={wpcontent.page.title} content={wpcontent.page.content} />
@@ -61,3 +89,4 @@ export const pageQuery = graphql`
     }
   }
 `
+
