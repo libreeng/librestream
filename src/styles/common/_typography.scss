@@ -1,4 +1,30 @@
+@import url("//hello.myfonts.net/count/39becb");
+@font-face {
+  font-family: 'din';
+  font-weight: 300;
+  src: url("../includes/fonts/39BECB_0_0.eot");
+  src: url("../includes/fonts/39BECB_0_0.eot?#iefix") format("embedded-opentype"), url("../includes/fonts/39BECB_0_0.woff2") format("woff2"), url("../includes/fonts/39BECB_0_0.woff") format("woff"), url("../includes/fonts/39BECB_0_0.ttf") format("truetype"); } 
+@font-face {
+  font-family: 'din'; 
+  font-weight: 500;
+  src: url("../includes/fonts/39BECB_1_0.eot");
+  src: url("../includes/fonts/39BECB_1_0.eot?#iefix") format("embedded-opentype"), url("../includes/fonts/39BECB_1_0.woff2") format("woff2"), url("../includes/fonts/39BECB_1_0.woff") format("woff"), url("../includes/fonts/39BECB_1_0.ttf") format("truetype"); }
+
+@font-face {
+  font-family: 'tradegothic';
+  font-weight: 400;
+  src: url("../includes/fonts/39BECB_2_0.eot");
+  src: url("../includes/fonts/39BECB_2_0.eot?#iefix") format("embedded-opentype"), url("../includes/fonts/39BECB_2_0.woff2") format("woff2"), url("../includes/fonts/39BECB_2_0.woff") format("woff"), url("../includes/fonts/39BECB_2_0.ttf") format("truetype"); }
+
+@font-face {
+  font-family: 'tradegothic';
+  font-weight: 700;
+  src: url("../includes/fonts/39BECB_3_0.eot");
+  src: url("../includes/fonts/39BECB_3_0.eot?#iefix") format("embedded-opentype"), url("../includes/fonts/39BECB_3_0.woff2") format("woff2"), url("../includes/fonts/39BECB_3_0.woff") format("woff"), url("../includes/fonts/39BECB_3_0.ttf") format("truetype"); }
+
+
 body {
+  font-family: "trade", "Helvetica Neue", Helvetica, Arial, sans-serif;
   font-size: 16px;
   line-height: 1.25rem;
   letter-spacing: 0;
@@ -6,6 +32,13 @@ body {
   -moz-osx-font-smoothing: grayscale;
 }
 
+h1,
+h2,
+h3,
+h4,
+h5{
+  font-family: "din", verdana, sans-serif;
+}
 h1,
 h2,
 h3,
