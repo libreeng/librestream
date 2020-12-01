@@ -1,4 +1,5 @@
 const _ = require('lodash')
+const fs = require('fs')
 const path = require('path')
 
 const excludeHiddenPosts = (edges,filterOnStatusOrCount) => {  
@@ -17,6 +18,7 @@ const excludeHiddenPosts = (edges,filterOnStatusOrCount) => {
 // , where: {dateQuery: {after: {month: 10, year: 2020, day: 1}}}
 module.exports = async ({ actions, graphql }, postName, pagePrefix = null, createArchivePage = false, postsPerPage = 21, filterOnStatusOrCount='') => {
   if(pagePrefix == null) pagePrefix = postName
+  const includeAcfTemplate = (postName == 'pages') ? 'acfTemplate {pageTemplate}' : '';
   const GET_POSTS  = `
   query myQuery($first:Int, $after:String){
     wpcontent {
@@ -25,7 +27,8 @@ module.exports = async ({ actions, graphql }, postName, pagePrefix = null, creat
           node {
             uri
             id    
-            ${filterOnStatusOrCount}        
+            ${filterOnStatusOrCount} 
+            ${includeAcfTemplate}        
           }
         }
         pageInfo {
@@ -36,6 +39,26 @@ module.exports = async ({ actions, graphql }, postName, pagePrefix = null, creat
     }
   }
   `
+  
+  
+  const getPostTemplate = (postName,template = null) => {
+    let postTemplate = path.resolve(`./src/templates/${postName}.js`)
+    if(template && template.pageTemplate ){
+      try {
+        if (fs.existsSync(`./src/templates/pageTemplates/${template.pageTemplate}.js`)) {
+          postTemplate = path.resolve(`./src/templates/pageTemplates/${template.pageTemplate}.js`)
+          console.info("CUSTOM PAGE TEMPLATE: ",postTemplate)
+        } else {
+          console.warn(`Template File ./src/templates/pageTemplates/${template.pageTemplate}.js DOES NOT EXISTS`)
+        }
+      } catch(err) {
+        console.error(`ERROR LOOKING FOR TEMPLATE ./src/templates/pageTemplates/${template.pageTemplate}.js `)
+      }   
+    }
+    return postTemplate;
+  }
+
+
   const { createPage } = actions
   const allPosts = []
   const blogPages = []
@@ -62,7 +85,7 @@ module.exports = async ({ actions, graphql }, postName, pagePrefix = null, creat
         }
       }
 
-      console.log(">>>>> edges.length ",edges.length)
+      //console.log(">>>>> edges.length ",edges.length)
       edges.map(post => {
         allPosts.push(post)
       })
@@ -72,22 +95,22 @@ module.exports = async ({ actions, graphql }, postName, pagePrefix = null, creat
           ? excludeHiddenPosts(allPosts,filterOnStatusOrCount)
           : allPosts
 
-      console.log(">>>>> publishedPosts.length ",allPosts.length, variables)
+      //console.log(">>>>> publishedPosts.length ",allPosts.length, variables)
       if (hasNextPage) {
         pageNumber++
         return fetchPosts({ first: variables.first, after: endCursor })
       }
-      console.log("NO MORE PAGES")
+      //console.log("NO MORE PAGES")
       return publishedPosts
     })
 
   await fetchPosts({ first: postsPerPage, after: null }).then(allPosts => {
     
-    const postTemplate = path.resolve(`./src/templates/${postName}.js`)
      
     if(allPosts){
       allPosts.map(post => {
-        console.log(`create page for ${postName}: ${post.node.uri}`)
+        const postTemplate = getPostTemplate(postName,post.node.acfTemplate);
+        //console.log("TEMPLATE: " + postTemplate);
         createPage({
           path: post.node.uri,
           component: postTemplate,
@@ -95,14 +118,17 @@ module.exports = async ({ actions, graphql }, postName, pagePrefix = null, creat
         })
       })
     } else {
-      console.log(`There are no ${postName} to build!`);
+      //console.log(`There are no ${postName} to build!`);
     }
 
     if(blogPages){
       blogPages.map(blogPage => {
-        console.log(`Pagination for ${postName}: ${blogPage.context.pageNumber}`)
+        //console.log(`Pagination for ${postName}: ${blogPage.context.pageNumber}`)
         createPage(blogPage)
       })
     }
   })
+
+
+  
 }
