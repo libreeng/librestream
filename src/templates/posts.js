@@ -3,7 +3,7 @@ import PropTypes from 'prop-types'
 import Helmet from 'react-helmet'
 import { graphql, Link } from 'gatsby'
 import Layout from '../components/Layout'
-import moment from 'moment'
+import { format } from 'date-fns'
 import Img from 'gatsby-image'
 import contentParser from 'gatsby-wpgraphql-inline-images';
 
@@ -53,7 +53,7 @@ export const BlogPostTemplate = ({
            
             <div className="mt-5">
               <p>
-              { moment(date).format("MMMM Do, YYYY")} - posted by{' '}
+              { format(new Date(post.date),"MMMM do, yyyy") } - posted by{' '}
                 {author.node.name}
               </p>
               {categories && categories.edges.length ? (

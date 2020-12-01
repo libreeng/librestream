@@ -5,6 +5,7 @@
   "author": "Ocupop",
   "dependencies": {
     "bootstrap": "^4.5.3",
+    "date-fns": "^2.16.1",
     "gatsby": "^2.18.1",
     "gatsby-image": "^2.5.0",
     "gatsby-plugin-lodash": "^3.1.7",

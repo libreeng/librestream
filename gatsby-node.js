@@ -6,14 +6,14 @@ const { createFilePath, createRemoteFileNode } = require('gatsby-source-filesyst
 const pageCreator = require(`./gatsby/pageCreator`)
 exports.createPages = async ({ actions, graphql }) => {
   await pageCreator({ actions, graphql }, 'pages', '', false, 21, 'status')
-  /*
-  await pageCreator({ actions, graphql }, 'posts', 'news', true)
-  await pageCreator({ actions, graphql }, 'products', 'products', true)
-  await pageCreator({ actions, graphql }, 'caseStudies', 'use-cases', true)
+  
+  //await pageCreator({ actions, graphql }, 'posts', 'news', true)
+  //await pageCreator({ actions, graphql }, 'products', 'products', true)
+  //await pageCreator({ actions, graphql }, 'caseStudies', 'use-cases', true)
   await pageCreator({ actions, graphql }, 'solutions', 'solutions', true)  
-  await pageCreator({ actions, graphql }, 'categories', 'category', false, null, 'count')
-  await pageCreator({ actions, graphql }, 'tags', 'tag', false, 100, 'count')
-  */
+  //await pageCreator({ actions, graphql }, 'categories', 'category', false, null, 'count')
+  //await pageCreator({ actions, graphql }, 'tags', 'tag', false, 100, 'count')
+ 
   //await pageCreator({ actions, graphql }, 'users', 'author', false, 100)
 }
 
