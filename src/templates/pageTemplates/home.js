@@ -1,10 +1,6 @@
 import React from 'react'
 import Layout from '../../components/Layout'
 
-import CarouselExample from '../../sections/carousel_example'
-import ModalExample from '../../sections/modal_example'
-import ParallaxExample from '../../sections/parallax_example'
-
 const templateHome = ({ data }) => {
   //const { title,content } = data.wpcontent.page
   const { title,description,linkType,linkText,internal,videoMp4,videoEmbed,videoDescription,slider } = data.wpcontent.page.acfTemplateHome
@@ -34,20 +30,6 @@ const templateHome = ({ data }) => {
         
  
         
-        <div className="container mt-5 mb-3 border-top border-primary pt-3">
-          <h3>Carousel Example</h3>            
-          <CarouselExample />
-        </div>
-        
-        <div className="container mt-5 mb-3 border-top border-primary pt-3">
-          <h3>Modal Example</h3>            
-          <ModalExample />
-        </div>
-        
-        <div className="container mt-5 mb-3 border-top border-primary pt-3">
-          <h3>Parallax-js Example</h3>            
-          <ParallaxExample />
-        </div>
         
 
 
