@@ -110,6 +110,7 @@ module.exports = async ({ actions, graphql }, postName, pagePrefix = null, creat
     if(allPosts){
       allPosts.map(post => {
         const postTemplate = getPostTemplate(postName,post.node.acfTemplate);
+        console.log("Create Page -> " + post.node.uri);
         //console.log("TEMPLATE: " + postTemplate);
         createPage({
           path: post.node.uri,

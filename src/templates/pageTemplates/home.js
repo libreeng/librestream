@@ -32,6 +32,8 @@ const templateHome = ({ data }) => {
         </div>
 
         
+ 
+        
         <div className="container mt-5 mb-3 border-top border-primary pt-3">
           <h3>Carousel Example</h3>            
           <CarouselExample />
@@ -105,18 +107,7 @@ export const pageQuery = graphql`
           }
           videoEmbed
           videoDescription
-          slider {
-            slideImage {
-              srcSet
-              imageFile {
-                childImageSharp {
-                  fixed {
-                    src
-                  }
-                }
-              }
-            }
-          }
+          
         }
       }
     }
