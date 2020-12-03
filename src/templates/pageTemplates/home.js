@@ -41,11 +41,10 @@ const templateHome = ({ data }) => {
             <div className="row">
               <div className="col-6">
             
-                <div className="content mb-4" >
-                  <h2 className="title is-size-3 has-text-weight-bold is-bold-light text-white" style={{fontSize:'5vw'}}>Empowering the Workforce <span style={{color:'#49EBEA'}}>through Industrial AR, AI and IoT.</span></h2>
-                  <p className="text-white"  style={{fontSize:'2vw',lineHeight:'1.3'}}>Empowering the Workforce through Industrial AR, AI and IoT.</p>
+                  <h2 className="title is-size-3 has-text-weight-bold is-bold-light text-white" >Empowering the Workforce <span style={{color:'#49EBEA'}}>through Industrial AR, AI and IoT.</span></h2>
+                  <p className="subtitle text-white">Empowering the Workforce through Industrial AR, AI and IoT.</p>
                   <button type="button" class="btn btn-lg btn-primary">Call To Action »</button>
-                </div>
+                
 
               </div>
             </div>
@@ -53,8 +52,11 @@ const templateHome = ({ data }) => {
 
          
         </div>
-        
-        <img className="vectorshape position-absolute" src={vectorshape} alt="Vector Shape" data-depth="0.7"/>
+
+        <div className="container vectorshape--container"  data-depth="0.7">
+          <img className="vectorshape position-absolute" src={vectorshape} alt="Vector Shape"/>
+        </div>
+
       </div>
 
 

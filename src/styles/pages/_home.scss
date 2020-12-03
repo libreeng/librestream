@@ -26,12 +26,44 @@
     right:0;
     z-index:1;
     align-items: center;
+    font-size: 2vw;
+
+    .title{
+     font-size:2em;
+    }
+    .subtitle{
+      font-size:1.3em;
+      line-height:1.3
+    }
+  }
+  .vectorshape--container{
+    left:0 !important;
+    right:0 !important;
   }
   .vectorshape{
-    left: 75% !important;
+    left: 81% !important;
     right: inherit !important;
     top: 1% !important;
     width: 80%;
     height: auto
+  }
+  
+  @include media-breakpoint-up(sm) {
+    .content{ }
+  }
+  @include media-breakpoint-up(md) {
+    .content{ }
+  }
+  @include media-breakpoint-up(lg) {
+    .content{ }
+  }
+  @include media-breakpoint-up(xl) {
+    height:676px;
+    .content{
+        font-size:2rem;
+    }
+    .worker{
+        width:384px;
+    }
   }
 }
