@@ -60,7 +60,13 @@ module.exports = {
         whitelistPatternsChildren: () => [/modal*/, /accordion*/, /card*/, /navbar*/]
       },
     }, // must be after other CSS plugins
-
+    {
+      resolve: `gatsby-source-filesystem`,
+      options: {
+        name: `images`,
+        path: `${__dirname}/src/img/`,
+      },
+    },
     'gatsby-plugin-netlify', // make sure to keep it last in the array
   ],
 }

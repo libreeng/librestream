@@ -8,8 +8,8 @@ import ParallaxExample from '../../sections/parallax_example'
 const SandboxPage = () => (
   <Layout>
     <div className="container mt-5">
-      <div class="row">
-        <div class="col-12">
+      <div className="row">
+        <div className="col-12">
           <h1>Paul's Sandbox</h1>
           <p>You just hit a route that doesn&#39;t exist... the sadness.</p>
         </div>

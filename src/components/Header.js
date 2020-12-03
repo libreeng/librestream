@@ -5,7 +5,7 @@ import { Link } from 'gatsby'
 
 const Header = () => {
   return (
-    <header id="pageHeader" className="bg-primary py-5">
+    <header id="pageHeader" className="bg-primary py-2">
       <div className="container">
         <div className="row">
           <div className="col-12 col-md-6">

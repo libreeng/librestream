@@ -1,0 +1,37 @@
+.hero--home{
+  overflow:hidden;
+  position:relative;
+  .bkg{
+    z-index:-1;
+    .gatsby-image-wrapper{        
+      width: 110% !important;
+      margin-left: -5%;
+      margin-top: -5%;  
+    }
+    img{             
+    }
+  }
+  .worker{
+    bottom: -10%;
+    width: 32vw;
+    height: auto;
+    z-index:0;
+    left: 60% !important;
+    top: inherit !important;
+  }
+  .content{
+    top:0;
+    bottom:0;
+    left:0;
+    right:0;
+    z-index:1;
+    align-items: center;
+  }
+  .vectorshape{
+    left: 75% !important;
+    right: inherit !important;
+    top: 1% !important;
+    width: 80%;
+    height: auto
+  }
+}
