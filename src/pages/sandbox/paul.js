@@ -1,11 +1,47 @@
-import React from 'react'
+import React, { useState, useEffect } from 'react';
 import Layout from '../../components/Layout'
+import axios from 'axios';
 
 import CarouselExample from '../../sections/carousel_example'
 import ModalExample from '../../sections/modal_example'
 import ParallaxExample from '../../sections/parallax_example'
 
-const SandboxPage = () => (
+
+const GET_DATA_QUERY  = `
+  query postQuery {
+    page(id: "about", idType: URI) {
+      title
+      uri
+      status
+      slug
+      acfTemplateAboutTimeline {
+        aboutTitle
+        about
+      }
+    } 
+  }
+`
+
+const SandboxPage = () => {
+
+  
+  //const [data, setData] = useState({ hits: [] });
+ 
+  useEffect(() => {
+    console.log("USE EFFECT")
+    const fetchData  = async() => {
+      
+      const queryResult = await axios.post (
+          process.env.CMS_URL, {        
+          query: GET_DATA_QUERY
+        }
+      )
+      console.log("result",queryResult)
+    }
+    fetchData();
+  }, []); // Or [] if effect doesn't need props or state
+
+  return (
   <Layout>
     <div className="container mt-5">
       <div className="row">
@@ -33,6 +69,7 @@ const SandboxPage = () => (
     </div>
 
   </Layout>
-)
+  )
+}
 
 export default SandboxPage
