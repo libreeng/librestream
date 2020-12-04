@@ -7,6 +7,10 @@
 @import "./common/typography";
 @import "./common/layout";
 
+@import "./global/header";
+@import "./global/hero";
+@import "./nav/primarynav";
+
 // Templates
 @import "./templates/author";
 @import "./templates/blog";

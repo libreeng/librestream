@@ -3,6 +3,7 @@ import Helmet from 'react-helmet'
 import { graphql } from 'gatsby'
 import Layout from '../components/Layout'
 import PostList from '../components/PostList'
+import HeroDefault from '../components/HeroDefault'
 
 const Author = props => {
   const { posts, name } = props.data.wpcontent.user
@@ -19,6 +20,7 @@ const Author = props => {
   return (
     <Layout>
       <Helmet title={`${name} | ${siteTitle}`} />
+      <HeroDefault title={name} />
       <PostList posts={posts} title={fulltitle} />
     </Layout>
   )

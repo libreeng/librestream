@@ -6,6 +6,7 @@ import Layout from '../components/Layout'
 import moment from 'moment'
 import Img from 'gatsby-image'
 import contentParser from 'gatsby-wpgraphql-inline-images';
+import HeroDefault from '../components/HeroDefault'
 
 
 
@@ -99,7 +100,11 @@ const BlogPost = ({ data }) => {
   const { post } = data.wpcontent
   return (
     <Layout>
+
       <Helmet title={`${post.title} | Blog`} />
+      
+      <HeroDefault title={post.title}/>
+
       <BlogPostTemplate
         content={post.content}
         categories={post.categories}

@@ -23,7 +23,7 @@ const GET_DATA_QUERY  = `
 `
 
 const SandboxPage = () => {
-
+ 
   
   //const [data, setData] = useState({ hits: [] });
  

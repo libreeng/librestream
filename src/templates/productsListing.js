@@ -4,6 +4,7 @@ import { graphql } from 'gatsby'
 import Layout from '../components/Layout'
 import ProductsList from '../components/productsList'
 import Pagination from '../components/Pagination'
+import HeroDefault from '../components/HeroDefault'
 
 
 
@@ -17,6 +18,7 @@ const ProductsPage = ({data,pageContext}) => {
 
   return (
     <Layout>
+      <HeroDefault title='Products'/>
       <Pagination pageContext={pageContext} pathPrefix="/products" />
       <ProductsList posts={posts} title={fulltitle} />
       <Pagination pageContext={pageContext} pathPrefix="/products" />

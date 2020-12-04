@@ -4,6 +4,7 @@ import { graphql } from 'gatsby'
 import Layout from '../components/Layout'
 import PostList from '../components/PostList'
 import Pagination from '../components/Pagination'
+import HeroDefault from '../components/HeroDefault'
 
 
 
@@ -17,6 +18,7 @@ const IndexPage = ({data,pageContext}) => {
 
   return (
     <Layout>
+      <HeroDefault title='Latest Posts'/>
       <Pagination pageContext={pageContext} pathPrefix="/news" />
       <PostList posts={posts} title={fulltitle} />
       <Pagination pageContext={pageContext} pathPrefix="/news" />

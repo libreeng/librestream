@@ -1,25 +1,15 @@
-.hero--home{
+
+
+.hero--default{
+
   @include bottom-shape-cutout();
+
+  padding-top:$topnav-height;
   overflow:hidden;
   position:relative;
-  .bkg{
-    z-index:-1;
-    .gatsby-image-wrapper{        
-      width: 110% !important;
-      margin-left: -5%;
-      margin-top: -5%;  
-    }
-    img{             
-    }
-  }
-  .worker{
-    bottom: -10%;
-    width: 32vw;
-    height: auto;
-    z-index:0;
-    left: 60% !important;
-    top: inherit !important;
-  }
+  background: transparent linear-gradient(80deg, #00A3DF 0%, #49EBEA 100%) 0% 0% no-repeat padding-box;
+
+  /*.container{ margin-top: 100px; }*/
   .content{
     top:0;
     bottom:0;
@@ -29,16 +19,11 @@
     align-items: center;
     font-size: 2vw;
 
+
     .title{
-     font-size:2em;
-     line-height:0.9;   
-     font-weight:300;
-    }
-    .subtitle{
-      font-size:0.66em;
-      font-weight:200;
-      line-height:1.2;
-      margin-top:0.7em;
+      font-size:2em;
+      line-height:0.9;   
+      font-weight:300;
     }
   }
   .vectorshape--container{
@@ -82,7 +67,7 @@
     .content{ }
   }
   @include media-breakpoint-up(xl) {
-    height:676px;
+    //height:250px;
     .content{
         font-size:2.375rem;
     }

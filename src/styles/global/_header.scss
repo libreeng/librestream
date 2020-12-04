@@ -1,0 +1,75 @@
+.header {
+  
+  height:$topnav-height;
+  //width: 100%;
+  //min-height: 3em;
+  position:absolute;
+  z-index:100;
+  width:100%;
+  background-color: transparent;
+  .col-logo{
+    position:unset;
+  }
+    .logo{
+      position:relative;
+      
+      .triangle{
+        position:absolute;
+        left:141px;
+        top:0;
+        pointer-events:none;
+        &:before{
+          content:'';
+          position:absolute;
+          z-index: -1;
+          transform:translateX(-93.2%) translateY(-10%);
+          top:0;
+          width:128px;
+          height:128px;
+          border:64px solid #072f4a;
+          border-right-color:transparent;
+          border-bottom-color:transparent;
+          zoom:6;
+        }
+      }
+    }
+    > .container{
+      position:relative;
+
+    
+  }
+  .nav-pointer{
+    position: absolute;
+    z-index: -1;
+    width:100%;
+    height:100%;
+    bottom: 0;
+    overflow: hidden;
+
+    svg{
+      width: 6000px;
+      transform: translateX(-50%);
+      position: absolute;
+      bottom: 0;
+      transition:margin 0.2s ease-out;
+      #background{
+        polygon{          
+          transition:all 0.5s linear;
+          fill:transparent;
+        }
+      }
+    }
+  }
+
+
+  &.sticky{
+    position:fixed; 
+    .nav-pointer{
+      svg{
+        #background polygon{fill:$primary;opacity:0.8;}        
+        #outline polyline{stroke:none !important; }
+      }
+    }
+  }
+
+}

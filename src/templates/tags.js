@@ -3,6 +3,7 @@ import Helmet from 'react-helmet'
 import { graphql } from 'gatsby'
 import Layout from '../components/Layout'
 import PostList from '../components/PostList'
+import HeroDefault from '../components/HeroDefault'
 
 const Tag = props => {
   const { posts, count, name : tagName } = props.data.wpcontent.tag
@@ -15,6 +16,7 @@ const Tag = props => {
   return (
     <Layout>
       <Helmet title={`${tagName} | ${siteTitle}`} />
+      <HeroDefault title={tagName} />
       <PostList posts={posts} title={fulltitle} />
     </Layout>
   )

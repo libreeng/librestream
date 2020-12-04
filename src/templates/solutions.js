@@ -2,6 +2,7 @@ import React from 'react'
 import PropTypes from 'prop-types'
 import { graphql } from 'gatsby'
 import Layout from '../components/Layout'
+import HeroDefault from '../components/HeroDefault'
 
 export const SolutionTemplate = ({ title, content }) => {
   return (
@@ -35,6 +36,7 @@ const Solution = ({ data }) => {
 
   return (
     <Layout>
+      <HeroDefault title={wpcontent.solution.title}/>
       <SolutionTemplate title={wpcontent.solution.title} content={wpcontent.solution.content} />
     </Layout>
   )

@@ -1,9 +1,9 @@
 import React, { useState, useEffect } from 'react';
 import Layout from '../components/Layout'
 import axios from 'axios';
-
 import PropTypes from 'prop-types'
 import { graphql } from 'gatsby'
+import HeroDefault from '../components/HeroDefault'
 
 export const ProductTemplate = ({ data }) => {
   return (
@@ -51,9 +51,10 @@ const Product = ({ data }) => {
     }
     fetchData();
   }, []); 
-
+  
   return (
     <Layout>
+      <HeroDefault title={pageData.product.acfPostTypeProduct.heroTitle}/>
       <ProductTemplate data={pageData.product}  />
     </Layout>
   )

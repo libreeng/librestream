@@ -2,6 +2,7 @@ import React from 'react'
 import PropTypes from 'prop-types'
 import { graphql } from 'gatsby'
 import Layout from '../components/Layout'
+import HeroDefault from '../components/HeroDefault'
 
 const Page = ({ data }) => {
   const { title,content } = data.wpcontent.page
@@ -9,7 +10,7 @@ const Page = ({ data }) => {
   console.log("COLUMNS",columns)
   return (
     <Layout>
-      { heroBackground && 
+      { heroBackground ?
         <div className="jumbotron" style={{backgroundImage: `url(${heroBackground.sourceUrl})`,backgroundSize: `cover`,backgroundPosition:'center center'}}>
           <div className="container py-5">
               <h1>{heroTitle}</h1>
@@ -19,15 +20,14 @@ const Page = ({ data }) => {
                 />
           </div>
         </div>
+      :
+        <HeroDefault title={title}/>
       }
 
       <section>
         <div className="container">
           <div className="row">
-            <div className="col-12">
-              <h2 className="title is-size-3 has-text-weight-bold is-bold-light">
-                {title}
-              </h2>
+            <div className="col-12">              
               <div
                 className="content"
                 dangerouslySetInnerHTML={{ __html: content }}

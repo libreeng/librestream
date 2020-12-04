@@ -2,6 +2,7 @@ import React from 'react'
 import PropTypes from 'prop-types'
 import { graphql } from 'gatsby'
 import Layout from '../components/Layout'
+import HeroDefault from '../components/HeroDefault'
 
 export const UseCaseTemplate = ({ title, content }) => {
   return (
@@ -35,6 +36,7 @@ const UseCase = ({ data }) => {
 
   return (
     <Layout>
+      <HeroDefault title={wpcontent.caseStudy.title}/>
       <UseCaseTemplate title={wpcontent.caseStudy.title} content={wpcontent.caseStudy.content} />
     </Layout>
   )

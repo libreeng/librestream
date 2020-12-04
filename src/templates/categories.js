@@ -3,6 +3,7 @@ import Helmet from 'react-helmet'
 import { graphql } from 'gatsby'
 import Layout from '../components/Layout'
 import PostList from '../components/PostList'
+import HeroDefault from '../components/HeroDefault'
 
 const Category = props => {
   const { posts, count, name : categoryName } = props.data.wpcontent.category
@@ -14,6 +15,7 @@ const Category = props => {
 
   return (
     <Layout>
+      <HeroDefault title={categoryName} />
       <Helmet title={`${categoryName} | ${siteTitle}`} />
       <PostList posts={posts} title={fulltitle} />
     </Layout>
