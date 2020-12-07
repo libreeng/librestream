@@ -20,7 +20,7 @@ const HeroHome = ({ data }) => {
   }, [])
 
   return (
-    <div className="hero--home" ref={heroParallax}>
+    <div className="hero hero--home" ref={heroParallax}>
 
         <div className="bkg" data-depth="0.2">
           <Img className="w-100" fluid={data.homeHeroBkg.childImageSharp.fluid} alt="Background" />
@@ -47,6 +47,9 @@ const HeroHome = ({ data }) => {
         <div className="container vectorshape--container"  data-depth="0.7">
           <img className="vectorshape position-absolute" src={vectorshape} alt="Vector Shape"/>
         </div>
+
+        
+        <div class="corner-triangle container"></div>
 
       </div>
   )

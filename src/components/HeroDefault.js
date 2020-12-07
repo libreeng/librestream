@@ -6,7 +6,7 @@ const HeroDefault = ({ title }) => {
   
 
   return (
-    <div className="hero--default">
+    <div className="hero hero--default">
 
       <div className="content d-flex" data-depth="0.1">
         <div className="container">
@@ -16,9 +16,12 @@ const HeroDefault = ({ title }) => {
 
       <div className="container vectorshape--container"  data-depth="0.7">
         <img className="vectorshape position-absolute" src={vectorshape} alt="Vector Shape"/>
-      </div>
+      </div>    
+
+      <div class="corner-triangle container"></div>
 
     </div>
+    
   )
 }
 

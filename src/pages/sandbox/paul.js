@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import Layout from '../../components/Layout'
 import axios from 'axios';
+import HeroDefault from '../../components/HeroDefault'
 
 import CarouselExample from '../../sections/carousel_example'
 import ModalExample from '../../sections/modal_example'
@@ -43,6 +44,7 @@ const SandboxPage = () => {
 
   return (
   <Layout>
+    <HeroDefault title="Paul's Sandbox" />
     <div className="container mt-5">
       <div className="row">
         <div className="col-12">

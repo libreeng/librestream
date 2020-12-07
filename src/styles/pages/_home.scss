@@ -1,7 +1,4 @@
 .hero--home{
-  @include bottom-shape-cutout();
-  overflow:hidden;
-  position:relative;
   .bkg{
     z-index:-1;
     .gatsby-image-wrapper{        
