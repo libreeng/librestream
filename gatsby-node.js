@@ -1,30 +1,19 @@
 const _ = require('lodash')
 const path = require('path')
-const { createFilePath } = require('gatsby-source-filesystem')
-const { paginate } = require('gatsby-awesome-pagination')
-const { createRemoteFileNode } = require("gatsby-source-filesystem")
+const { createFilePath, createRemoteFileNode } = require('gatsby-source-filesystem')
 
 
-
-
-const createPages = require(`./gatsby/createPages`)
-//const createPosts = require(`./gatsby/createPosts`)
-//const createCategories = require(`./gatsby/createCategories`)
-//const createSolutions = require(`./gatsby/createSolutions`)
-//const createProducts = require(`./gatsby/createProducts`)
-//const createCasestudies = require(`./gatsby/createCasestudies`)  
-//const createTags = require(`./gatsby/createTags`)
-//const createUsers = require(`./gatsby/createUsers`)
-
+const pageCreator = require(`./gatsby/pageCreator`)
 exports.createPages = async ({ actions, graphql }) => {
-  await createPages({ actions, graphql })
-  //await createPosts({ actions, graphql })
-  //await createCategories({ actions, graphql })
-  //await createSolutions({ actions, graphql })
-  //await createProducts({ actions, graphql })
-  //await createCasestudies({ actions, graphql })
-  //await createTags({ actions, graphql })
-  //await createUsers({ actions, graphql })
+  await pageCreator({ actions, graphql }, 'pages', '', false, 21, 'status')  
+  await pageCreator({ actions, graphql }, 'posts', 'news', true)
+  await pageCreator({ actions, graphql }, 'products', 'products', true)
+  await pageCreator({ actions, graphql }, 'caseStudies', 'use-cases', true)
+  await pageCreator({ actions, graphql }, 'solutions', 'solutions', true)  
+  await pageCreator({ actions, graphql }, 'categories', 'category', false, null, 'count')
+  await pageCreator({ actions, graphql }, 'tags', 'tag', false, 100, 'count')
+ 
+  //await pageCreator({ actions, graphql }, 'users', 'author', false, 100)
 }
 
 

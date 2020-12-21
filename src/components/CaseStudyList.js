@@ -1,7 +1,7 @@
 import React from 'react'
 import PropTypes from 'prop-types'
 import { Link, graphql } from 'gatsby'
-import moment from 'moment'
+import { format } from 'date-fns'
 import Img from "gatsby-image"
 
 export default class IndexPage extends React.Component {
@@ -47,8 +47,7 @@ export default class IndexPage extends React.Component {
                   </Link>
                   <span> &bull; </span>
                   <small className="meta">
-                    { moment(post.date).format("MMMM Do, YYYY")}                  
-                
+                    { format(new Date(post.date),"MMMM do, yyyy") }
                   </small>
                 </header>
                 <main className="mb-4 flex-fill">

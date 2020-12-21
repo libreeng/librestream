@@ -60,7 +60,21 @@ module.exports = {
         whitelistPatternsChildren: () => [/modal*/, /accordion*/, /card*/, /navbar*/]
       },
     }, // must be after other CSS plugins
-
+    {
+      resolve: `gatsby-source-filesystem`,
+      options: {
+        name: `images`,
+        path: `${__dirname}/src/img/`,
+      },
+    },
+    {
+      resolve: "gatsby-plugin-web-font-loader",
+      options: {
+        typekit: {
+          id: process.env.TYPEKIT_ID
+        },
+      },
+    },
     'gatsby-plugin-netlify', // make sure to keep it last in the array
   ],
 }

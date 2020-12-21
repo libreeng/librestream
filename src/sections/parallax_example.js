@@ -9,7 +9,7 @@ export const ParallaxExample = () => {
   useEffect(() => {
     const parallaxInstance = new Parallax(sceneEl.current, {
       relativeInput: false,
-      clipRelativeInput: true;
+      clipRelativeInput: true,
       hoverOnly: false
     })
 

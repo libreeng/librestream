@@ -1,4 +1,31 @@
+
+@font-face {
+  font-family: 'DIN Next LT Pro';
+  font-weight: 400;
+  src: url("../includes/fonts/13ba9c94a7f164d315c9044db6d513ef.eot");
+  src: url("../includes/fonts/13ba9c94a7f164d315c9044db6d513ef.eot?#iefix") format("embedded-opentype"), url("../includes/fonts/13ba9c94a7f164d315c9044db6d513ef.woff2") format("woff2"), url("../includes/fonts/13ba9c94a7f164d315c9044db6d513ef.woff") format("woff"), url("../includes/fonts/13ba9c94a7f164d315c9044db6d513ef.ttf") format("truetype"); 
+} 
+@font-face {
+  font-family: 'DIN Next LT Pro';
+  font-weight: 300;
+  src: url("../includes/fonts/DINNextLTPro-LightCondensed.eot");
+  src: url("../includes/fonts/DINNextLTPro-LightCondensed.eot?#iefix") format("embedded-opentype"), url("../includes/fonts/DINNextLTPro-LightCondensed.woff2") format("woff2"), url("../includes/fonts/DINNextLTPro-LightCondensed.woff") format("woff"), url("../includes/fonts/DINNextLTPro-LightCondensed.ttf") format("truetype"); 
+} 
+@font-face {
+  font-family: 'DIN Next LT Pro';
+  font-weight: 200;
+  src: url("../includes/fonts/DINNextLTPro-UltraLightCond.eot");
+  src: url("../includes/fonts/DINNextLTPro-UltraLightCond.eot?#iefix") format("embedded-opentype"), url("../includes/fonts/DINNextLTPro-UltraLightCond.woff2") format("woff2"), url("../includes/fonts/DINNextLTPro-UltraLightCond.woff") format("woff"), url("../includes/fonts/DINNextLTPro-UltraLightCond.ttf") format("truetype"); 
+} 
+
+
+  
 body {
+  //font-family: "trade", "Helvetica Neue", Helvetica, Arial, sans-serif;
+  font-family: 'DIN Next LT Pro', sans-serif;
+  font-weight: 400;
+  font-style: normal;
+
   font-size: 16px;
   line-height: 1.25rem;
   letter-spacing: 0;
@@ -6,6 +33,14 @@ body {
   -moz-osx-font-smoothing: grayscale;
 }
 
+h1,
+h2,
+h3,
+h4,
+h5{
+  font-family: 'DIN Next LT Pro', sans-serif;
+  font-weight: 300;
+}
 h1,
 h2,
 h3,
