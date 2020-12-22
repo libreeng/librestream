@@ -3,6 +3,7 @@
 import React, { useEffect, useRef } from 'react';
 import { Link, useStaticQuery, graphql } from 'gatsby'
 import {Navbar, Nav, NavDropdown } from 'react-bootstrap'
+import Img from "gatsby-image"
 import logo from '../img/logo.svg'
 
 
@@ -50,6 +51,9 @@ const Primarynav = ({ children, onHighlightChange }) => {
   const data = useStaticQuery(graphql`
     query NavQuery {
       wpcontent {
+        generalSettings {
+          title
+        }
         menuItems(where: {location: PRIMARY_MENU, parentDatabaseId: 0}, first: 999) {
           edges {
             node {
@@ -69,28 +73,43 @@ const Primarynav = ({ children, onHighlightChange }) => {
           }
         }
       }
+      logo: file(relativePath: {eq: "logo.png"}) {
+        publicURL
+        absolutePath
+        childImageSharp {
+          fixed {
+           srcWebp
+          }
+        }
+      }
     }
   `)
 
   const linkClass = "font-weight-light text-uppercase"
   return (
     <Navbar collapseOnSelect expand="lg" variant="light">
+      <Link to="/" className='navbar-brand text-white font-weight-bold'>
+        <img src={data.logo.publicURL} className="img-fluid" alt={data.wpcontent.generalSettings.title} />
+      </Link>
       <Navbar.Toggle aria-controls="responsive-navbar-nav" className=" ml-auto text-white" />
       <Navbar.Collapse id="responsive-navbar-nav">
         <Nav className="ml-auto" activeKey={activeKey}>
 
         {data.wpcontent.menuItems.edges.map(edge =>             
-          <span key={edge.node.id}>
+          <>
             { edge.node.childItems.edges.length > 0 ?
-              <NavDropdown className={`collasible-nav-dropdown ${linkClass}`} ref={isHighlightedNav(edge.node.path)} onMouseEnter={handleNavMouseEnter} onMouseLeave={handleNavMouseLeave} title={edge.node.label} >                
+              <NavDropdown className={`${linkClass}`} ref={isHighlightedNav(edge.node.path)} onMouseEnter={handleNavMouseEnter} onMouseLeave={handleNavMouseLeave} title={edge.node.label} key={edge.node.id}>                
                 {edge.node.childItems.edges.map(child => 
                   <NavDropdown.Item key={child.node.id} href={child.node.path}>{child.node.label}</NavDropdown.Item>
                 )}                
               </NavDropdown>
             : 
-              <Nav.Link className={linkClass} ref={isHighlightedNav(edge.node.path)} onMouseEnter={handleNavMouseEnter} onMouseLeave={handleNavMouseLeave} href={edge.node.path}>{edge.node.label}</Nav.Link>            
+              <Nav.Item key={edge.node.id}>
+                <Nav.Link className={linkClass} ref={isHighlightedNav(edge.node.path)} onMouseEnter={handleNavMouseEnter} onMouseLeave={handleNavMouseLeave} href={edge.node.path}>{edge.node.label}</Nav.Link>  
+              </Nav.Item>
+                        
             }
-          </span>
+          </>
         )}
         </Nav>          
       </Navbar.Collapse>

@@ -4,11 +4,6 @@ import { Link, useStaticQuery, graphql } from 'gatsby'
 import Img from "gatsby-image"
 // import PropTypes from 'prop-types'
 
-
-
-
-
-
 const Header = () => {
 
   const data = useStaticQuery(graphql`
@@ -63,24 +58,8 @@ const Header = () => {
     <Fragment>
       <div ref={scrollPositionRef}></div>
       <header id="pageHeader" className={`header sticky-wrapper ${isSticky ? 'sticky' : ''}`} >
-        
-        <div className="container py-2">
-          <div className="row">
-            <div className="col-logo col-12 col-md-6 d-flex align-items-center">
-
-            
-            
-            <h1 className="logo m-0">
-              <Link to="/" className='text-white font-weight-bold'>
-                <img className="" style={{width:'200px'}} src={data.logo.publicURL} alt={data.wpcontent.generalSettings.title} />
-              </Link>
-            </h1>
-              
-            </div>
-            <div className="col-12 col-md-6">           
-            <Primarynav onHighlightChange={handleArrowMove} />
-            </div>
-          </div>
+        <div className="container">
+          <Primarynav onHighlightChange={handleArrowMove} />
         </div>
         <div className="nav-pointer">
           <svg version="1.1"  x="0px" y="0px" viewBox="0 0 6000 241" style={{marginLeft:arrowPos}}>

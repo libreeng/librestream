@@ -18,7 +18,7 @@ const HeroDefault = ({ title }) => {
         <img className="vectorshape position-absolute" src={vectorshape} alt="Vector Shape"/>
       </div>    
 
-      <div class="corner-triangle container"></div>
+      <div className="corner-triangle container"></div>
 
     </div>
     

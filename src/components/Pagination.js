@@ -25,7 +25,7 @@ const Pagination = ({ pageContext, pathPrefix }) => {
   return (
     <nav className="pagination my-3" role="navigation">
       <div className="container">
-        <div clclassNameass="row">
+        <div className="row">
           
           <div className="col-6 navbar-item text-left">
             {previousLink && (

@@ -1,30 +1,35 @@
 .header {
-  height:$topnav-height;
-  //width: 100%;
-  //min-height: 3em;
   position:absolute;
-  z-index:100;
-  width:100%;
+  z-index: 100;
+  width: 100%;
   background-color: transparent;
-  .col-logo{
-    position:unset;
+  
+  .navbar-brand {
+    width: 200px;
+    margin-left: -8px;
+  }
+  .col-logo {
+    position: unset;
   }
   .logo{
-    position:relative;
+    position: relative;
   }
-  > .container{
-    position:relative;
+  > .container {
+    position: relative;
   }
 
-    
- 
   .nav-pointer{
     position: absolute;
-    z-index: -1;
+    z-index: 0;
     width:100%;
     height:100%;
     bottom: 0;
     overflow: hidden;
+    pointer-events: none;
+    display: none;
+    @include media-breakpoint-up(lg) {
+      display: block;
+    }
 
     svg{
       width: 6000px;
@@ -41,17 +46,70 @@
     }
   }
 
+  // .dropdown {
+  //   position: static;
+  // }
 
-  &.sticky{
-    position:fixed; 
-    .nav-pointer{
-      svg{
-        #background polygon{fill:$primary;opacity:0.8;}        
-        #outline polyline{stroke:none !important; }
-      }
+  .dropdown-menu {
+    width: 100%;
+    background-color: $dark;
+    color: $dark;
+    border-radius: 0;
+    opacity: 0.95;
+    top: 44px;
+    &::before {
+      content: '';
+      position: absolute;
+      width: 150vw;
+      display: block;
+      background-color: $dark;
+      top: 0;
+      right: -50vw;
+      height: 100%;
+      z-index: -1;
     }
   }
 
+  .dropdown-item {
+    color: $white;
+    padding: 0.25rem;
+    white-space: normal;
+    &:hover,
+    &:active,
+    &:focus {
+      background: transparent;
+    }
+  }
+
+  &.sticky{
+    position: fixed;
+    background: transparent linear-gradient(80deg, $primary 0%, $dark 100%) 0% 0% no-repeat padding-box;
+    @include transition(0.4s);
+    // &::before {
+    //   content: '';
+    //   background-color: #014168;
+    //   position: absolute;
+    //   left: 0;
+    //   top: 0;
+    //   height: 100%;
+    //   border-top: 52px solid transparent;
+    //   width: 22.1%;
+    //   border-right: 52px solid $primary;
+    // }
+    .nav-pointer {
+      z-index: -1;
+      
+      svg {
+        #background polygon{ 
+          fill: $primary;
+          opacity:0.8;
+        }        
+        #outline polyline{
+          stroke:none !important;
+        }
+      }
+    }
+  }
 }
 
 
