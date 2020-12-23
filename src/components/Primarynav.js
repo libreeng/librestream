@@ -5,6 +5,7 @@ import { Link, useStaticQuery, graphql } from 'gatsby'
 import {Navbar, Nav, NavDropdown } from 'react-bootstrap'
 import Img from "gatsby-image"
 import logo from '../img/logo.svg'
+import logo2 from '../img/logo-bg.png'
 
 
 
@@ -85,17 +86,61 @@ const Primarynav = ({ children, onHighlightChange }) => {
     }
   `)
 
-  const linkClass = "font-weight-light text-uppercase"
+
   return (
     <Navbar collapseOnSelect expand="lg" variant="light">
-      <Link to="/" className='navbar-brand text-white font-weight-bold'>
+      <Link to="/" className='navbar-brand'>
         <img src={data.logo.publicURL} className="img-fluid" alt={data.wpcontent.generalSettings.title} />
       </Link>
-      <Navbar.Toggle aria-controls="responsive-navbar-nav" className=" ml-auto text-white" />
-      <Navbar.Collapse id="responsive-navbar-nav">
-        <Nav className="ml-auto" activeKey={activeKey}>
-
-        {data.wpcontent.menuItems.edges.map(edge =>             
+      <Navbar.Toggle aria-controls="mainnav" className="ml-auto text-white" />
+      <Navbar.Collapse id="mainnav">
+        <Nav id="usernav" className="nav flex-row justify-content-center justify-content-lg-end">
+          <li className="nav-item">
+            <a href="#" className="nav-link">Search</a>
+          </li>
+          <li className="nav-item">
+            <a href="#" className="nav-link">Login</a>
+          </li>
+          <li className="nav-item">
+            <a href="#" className="nav-link">Contact</a>
+          </li>
+          <NavDropdown title="Language">                
+            <NavDropdown.Item href="#">EN</NavDropdown.Item>
+            <NavDropdown.Item href="#">FR</NavDropdown.Item>
+            <NavDropdown.Item href="#">DE</NavDropdown.Item>
+            <NavDropdown.Item href="#">ZH</NavDropdown.Item>
+            <NavDropdown.Item href="#">JA</NavDropdown.Item>
+          </NavDropdown>
+        </Nav>
+        <Nav id="primarynav" className="ml-auto" activeKey={activeKey}>
+          <NavDropdown className="megamenu" onMouseEnter={handleNavMouseEnter} onMouseLeave={handleNavMouseLeave} title="Platform">                
+            <NavDropdown.Item href="#">Our Platform</NavDropdown.Item>
+            <NavDropdown.Item href="#">Customer Success</NavDropdown.Item>             
+            <NavDropdown.Item href="#">Ecosystem Partners</NavDropdown.Item>
+          </NavDropdown>
+          <NavDropdown className="megamenu" onMouseEnter={handleNavMouseEnter} onMouseLeave={handleNavMouseLeave} title="Use Cases">                
+            <NavDropdown.Item href="#">Use Cases</NavDropdown.Item>
+            <NavDropdown.Item href="#">Industry Applications</NavDropdown.Item>             
+          </NavDropdown>
+          <NavDropdown className="megamenu" onMouseEnter={handleNavMouseEnter} onMouseLeave={handleNavMouseLeave} title="Resources">                
+            <NavDropdown.Item href="#">Blog</NavDropdown.Item>
+            <NavDropdown.Item href="#">Guides &amp; Whitepapers</NavDropdown.Item>             
+            <NavDropdown.Item href="#">Videos</NavDropdown.Item>
+            <NavDropdown.Item href="#">Webinars</NavDropdown.Item>
+            <NavDropdown.Item href="#">ROI Calculator</NavDropdown.Item>
+            <NavDropdown.Item href="#">FAQs</NavDropdown.Item>
+            <NavDropdown.Item href="#">Support &amp; Training</NavDropdown.Item>
+          </NavDropdown>
+          <Nav.Item>
+            <Nav.Link onMouseEnter={handleNavMouseEnter} onMouseLeave={handleNavMouseLeave} href="#">News</Nav.Link>  
+          </Nav.Item>
+          <Nav.Item>
+            <Nav.Link onMouseEnter={handleNavMouseEnter} onMouseLeave={handleNavMouseLeave} href="#">About</Nav.Link>  
+          </Nav.Item>
+          <Nav.Item className="text-center">
+            <a href="#" className="btn btn-primary" onMouseEnter={handleNavMouseEnter} onMouseLeave={handleNavMouseLeave} href="#">Request Demo</a>  
+          </Nav.Item>
+        {/* {data.wpcontent.menuItems.edges.map(edge =>             
           <>
             { edge.node.childItems.edges.length > 0 ?
               <NavDropdown className={`${linkClass}`} ref={isHighlightedNav(edge.node.path)} onMouseEnter={handleNavMouseEnter} onMouseLeave={handleNavMouseLeave} title={edge.node.label} key={edge.node.id}>                
@@ -110,10 +155,11 @@ const Primarynav = ({ children, onHighlightChange }) => {
                         
             }
           </>
-        )}
-        </Nav>          
+        )} */}
+        </Nav>
+
+                  
       </Navbar.Collapse>
-      
     </Navbar>
   )
 }

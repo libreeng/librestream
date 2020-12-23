@@ -76,21 +76,17 @@
   }
 }
 
-
-
-
-
-
-
-
 .corner-triangle{
-  padding-left: 142px;
+  padding-left: 157px;
   pointer-events:none;
   position:absolute;
   z-index:0;
   top:0;
   left:0;
   right:0;
+  @include media-breakpoint-up(xl) {
+    padding-left: 176px;
+  }
   &:before{
     content:'';
     position:absolute;

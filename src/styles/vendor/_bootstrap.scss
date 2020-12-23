@@ -1,4 +1,9 @@
 // TODO: Enter all Bootstrap overrides here...
 .btn {
-  background: linear-gradient(90deg, $blue 0%, $cyan 100%); 
+  border-radius: 25px;
+  color: $dark;
+  &.btn-primary {
+    background: linear-gradient(90deg, $blue 0%, $cyan 100%);
+    color: $white;
+  }
 }

@@ -1,0 +1,33 @@
+#pageFooter {
+  color: $dark;
+  h3 {
+    text-transform: uppercase;
+  }
+  .nav-link {
+    color: $dark;
+    padding-left: 0;
+    padding-right: 0;
+  }
+  svg {
+    path {
+      fill: $dark !important;
+    }
+  }
+}
+
+.socialnav {
+  display: flex;
+  a {
+    background-color: $white;
+    border-radius: 50%;
+    display: flex;
+    width: 46px;
+    height: 46px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    svg {
+      width: 18px;
+    }
+  }
+}
