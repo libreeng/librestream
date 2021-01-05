@@ -1,10 +1,18 @@
 #pageHeader {
-  position:absolute;
+  position: fixed;
   z-index: 100;
   width: 100%;
   background-color: rgba($dark, 0.95);
   background-position: left top;
-  
+  &::before {
+    content: '';
+    display: block;
+    width: 249px;
+    position: absolute;
+    z-index: 1;
+    border-top: 78px solid $dark;
+    border-right: 81px solid transparent;
+  }
   @include media-breakpoint-up(lg) {
     background-color: transparent;
   }
@@ -28,11 +36,14 @@
   .navbar {
     @include media-breakpoint-up(lg) {
       padding-top: 35px;
+      padding-left: 100px;
+      padding-right: 100px;
     }
   }
 
   .navbar-brand {
     width: 200px;
+    
   }
 
   .nav-pointer {
@@ -193,7 +204,7 @@
   @include media-breakpoint-up(lg) {
     position: absolute;
     top: 0;
-    right: 15px;
+    right: 100px;
   }
 }
 

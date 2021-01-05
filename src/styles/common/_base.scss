@@ -1,5 +1,25 @@
 body {
   color: $body-color;
+  &::before {
+    content: '';
+    display: block;
+    width: 500px;
+    height: 500px;
+    background-color: #014168;
+    position: absolute;
+    top: -284px;
+    left: -326px;
+    -webkit-transform: rotate(-43deg);
+    transform: rotate(-44deg);
+    z-index: 1;
+    opacity: 1;
+    @include transition(0.2s);
+  }
+  &.has-scrolled {
+    &::before {
+      opacity: 0;
+    }
+  }
 }
 
 section {

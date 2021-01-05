@@ -47,10 +47,6 @@ const HeroHome = ({ data }) => {
         <div className="container vectorshape--container"  data-depth="0.7">
           <img className="vectorshape position-absolute" src={vectorshape} alt="Vector Shape"/>
         </div>
-
-        
-        <div class="corner-triangle container"></div>
-
       </div>
   )
 }
