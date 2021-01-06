@@ -7,35 +7,38 @@
   &::before {
     content: '';
     display: block;
-    width: 249px;
+    width: 138px;
     position: absolute;
-    z-index: 1;
-    border-top: 78px solid $dark;
-    border-right: 81px solid transparent;
+    z-index: 0;
+    border-top: 56px solid $dark;
+    border-right: 57px solid transparent;
+    @include media-breakpoint-up(lg) {
+      border-top: 78px solid $dark;
+      border-right: 81px solid transparent;
+      width: 164px;
+    }
+    @include media-breakpoint-up(xl) {
+      width: 248px;
+    }
   }
   @include media-breakpoint-up(lg) {
     background-color: transparent;
   }
   @include media-breakpoint-down(md) {
+    background: transparent linear-gradient(80deg, $primary 0%, $dark 100%) 0% 0% no-repeat padding-box;
     .container {
       max-width: 100%;
     }
   }
-  // &::before {
-  //   content: '';
-  //   display: block;
-  //   background-image: url('/img/triangle.png');
-  //   height: 79px;
-  //   width: 24.6%;
-  //   position: absolute;
-  //   left: 0;
-  //   top: 0;
-  //   background-position: right top;
-  //   background-size: cover;
-  // }
   .navbar {
+    @include media-breakpoint-down(md) {
+      padding-left: 0;
+      padding-right: 0;
+    }
     @include media-breakpoint-up(lg) {
       padding-top: 35px;
+    }
+    @include media-breakpoint-up(xl) {
       padding-left: 100px;
       padding-right: 100px;
     }
@@ -43,7 +46,9 @@
 
   .navbar-brand {
     width: 200px;
-    
+    @include media-breakpoint-down(md) {
+      margin-left: 15px;
+    }
   }
 
   .nav-pointer {
@@ -59,7 +64,7 @@
       display: block;
     }
 
-    svg{
+    svg {
       width: 6000px;
       transform: translateX(-50%);
       position: absolute;
@@ -76,7 +81,22 @@
 
   .dropdown {
     &.megamenu {
+      &.show {
+        .dropdown-toggle {
+          &::after {
+            transform: translateY(-50%) rotate(0deg);
+          }
+        }
+      }
       .dropdown-toggle {
+        position: relative;
+        &::after {
+          @include transition(0.3s);
+          position: absolute;
+          top: 50%;
+          right: 30px;
+          transform: translateY(-50%) rotate(-90deg);
+        }
         @include media-breakpoint-up(lg) {
           &::after {
             display: none;
@@ -89,9 +109,10 @@
         border: 0;
         color: $dark;
         border-radius: 0;
+        padding-top: 0;
+        padding-bottom: 0;
         @include media-breakpoint-up(lg) {
           top: 44px;
-          background-color: rgba($dark, 0.95);
           padding-top: 1rem;
           padding-bottom: 1rem;
           &::before {
@@ -99,7 +120,7 @@
             position: absolute;
             width: 150vw;
             display: block;
-            background-color: $dark;
+            background-color: rgba($dark, 0.94);
             top: 0;
             right: -50vw;
             height: 100%;
@@ -124,6 +145,19 @@
           white-space: normal;
           font-size: 1.2rem;
           color: $primary;
+          @include media-breakpoint-down(md) {
+            padding-left: 15px;
+            padding-right: 15px;
+            padding: 10px 15px;
+            color: $primary;
+            border-top: 1px solid $primary;
+            background: $blue-mid;
+            &:hover,
+            &:active {
+              background: $primary;
+              color: $white;
+            }
+          }
           @include media-breakpoint-up(lg) {
             padding: 0.25rem;
           }
@@ -132,24 +166,6 @@
           &:focus {
             background: transparent;
           }
-        }
-      }
-    }
-  }
-
-  &.sticky{
-    position: fixed;
-    background: transparent linear-gradient(80deg, $primary 0%, $dark 100%) 0% 0% no-repeat padding-box;
-    @include transition(0.4s);
-    .nav-pointer {
-      z-index: -1;
-      svg {
-        #background polygon{ 
-          fill: $primary;
-          opacity: 0.8;
-        }        
-        #outline polyline{
-          stroke: none !important;
         }
       }
     }
@@ -176,6 +192,10 @@
       text-transform: uppercase;
       font-size: 1.2rem;
       color: $cyan;
+      @include media-breakpoint-down(md) {
+        padding-left: 15px;
+        padding-right: 15px;
+      }
     }
     .btn-primary {
       padding-top: 5px;
@@ -189,6 +209,99 @@
   }
 }
 
+#mainnav {
+  &::before {
+    opacity: 0;
+    content: '';
+    display: block;
+    @include transition(0.3s);
+  }
+  &.show {
+    &::before {
+      opacity: 1;
+      content: '';
+      display: block;
+      width: 100%;
+      height: 100%;
+      z-index: -1;
+      background-color: rgba($dark, 0.7);
+      position: absolute;
+      top: 0;
+      left: 0;
+    }
+  }
+}
+
+// .nav-link {
+//   color: $white;
+//   font-size: 1.3em;
+//   &.active{ 
+//     color:$black;
+//   }
+// }
+.navbar-toggler {
+  position: relative;
+  padding: 0;
+  z-index: 1000;
+  border: 0;
+  &:focus {
+    outline: none;
+  }
+  @include media-breakpoint-down(md) {
+    margin-right: 15px;
+  }
+  &.collapsed {
+    .navbar-toggler-icon {
+      .icon-bar {
+        &:nth-of-type(1) {
+          top: 12px;
+          transform: rotate(0);
+        }
+        &:nth-of-type(2) {
+          top: 19px;
+          transform: rotate(0);
+        }
+        &:nth-of-type(3) {
+          top: 26px;
+          opacity: 1;
+        }
+      }
+    }
+  }
+
+  .navbar-toggler-icon {
+    position: relative;
+    height: 40px;
+    width: 40px;
+    padding: 10px;
+    background-color: transparent;
+    background-image: none;
+    border: none;
+    overflow: hidden;
+    .icon-bar {
+      width: 32px;
+      height: 2px;
+      background-color: $white;
+      position: absolute;
+      left: 10px;
+      z-index: 1000;
+      @include transition(0.5s);
+      &:nth-of-type(1) {
+        top: 20px;
+        transform: rotate(45deg);
+      }
+      &:nth-of-type(2) {
+        top: 20px;
+        transform: rotate(-45deg);
+      }
+      &:nth-of-type(3) {
+        top: 22px;
+        opacity: 0;
+      }
+    }
+  }
+}
+
 #usernav {
   .nav-item {
     padding-right: 5px;
@@ -198,12 +311,16 @@
       padding-left: 5px;
       padding-right: 5px;
       font-size: 1rem;
+      color: $white;
     }
   }
   
   @include media-breakpoint-up(lg) {
     position: absolute;
     top: 0;
+    right: 15px;
+  }
+  @include media-breakpoint-up(xl) {
     right: 100px;
   }
 }

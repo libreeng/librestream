@@ -24,6 +24,8 @@ const Header = () => {
       }      
     }
   `)
+ 
+  
 
  console.log("data.logo.childImageSharp.fixed.srcWebp",data.logo.childImageSharp.fixed.srcWebp)
   const [isSticky, setSticky] = useState(false);
@@ -57,7 +59,7 @@ const Header = () => {
   return (
     <Fragment>
       <div ref={scrollPositionRef}></div>
-      <header id="pageHeader" className={`header sticky-wrapper ${isSticky ? 'sticky' : ''}`} >
+      <header id="pageHeader" className={`header sticky-wrapper ${isSticky ? 'sticky' : ''} `} >
         <Primarynav onHighlightChange={handleArrowMove} />
         <div className="nav-pointer">
           <svg version="1.1"  x="0px" y="0px" viewBox="0 0 6000 241" style={{marginLeft:arrowPos}}>

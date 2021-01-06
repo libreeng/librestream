@@ -1,6 +1,6 @@
 // TB: Leaving this file in place for reference.
 // It does not currently get imported, but we will need something similar to handle the allWordpressPage query.
-import React, { useEffect, useRef } from 'react';
+import React, { useEffect, useRef, useState } from 'react';
 import { Link, useStaticQuery, graphql } from 'gatsby'
 import {Navbar, Nav, NavDropdown } from 'react-bootstrap'
 import Img from "gatsby-image"
@@ -13,9 +13,7 @@ import logo2 from '../img/logo-bg.png'
 
 const Primarynav = ({ children, onHighlightChange }) => {
 
-
   const highlightedNavRef = useRef(null);
-
   // TODO: the "ActiveKey" variable on Nav needs work to incorporate sub-pages
   
   const activeKey = null; //window.location.pathname ! Window is not defined when doing a build.
@@ -92,8 +90,14 @@ const Primarynav = ({ children, onHighlightChange }) => {
       <Link to="/" className='navbar-brand'>
         <img src={data.logo.publicURL} className="img-fluid" alt={data.wpcontent.generalSettings.title} />
       </Link>
-      <Navbar.Toggle aria-controls="mainnav" className="ml-auto text-white" />
-      <Navbar.Collapse id="mainnav">
+      <Navbar.Toggle aria-controls="mainnav" className="ml-auto text-white">
+        <div className="navbar-toggler-icon">
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+        </div>
+      </Navbar.Toggle>
+      <Navbar.Collapse id="mainnav" >
         <Nav id="usernav" className="nav flex-row justify-content-center justify-content-lg-end">
           <li className="nav-item">
             <a href="#" className="nav-link">Search</a>
@@ -104,13 +108,13 @@ const Primarynav = ({ children, onHighlightChange }) => {
           <li className="nav-item">
             <a href="#" className="nav-link">Contact</a>
           </li>
-          <NavDropdown title="Language">                
+          {/* <NavDropdown title="Language">                
             <NavDropdown.Item href="#">EN</NavDropdown.Item>
             <NavDropdown.Item href="#">FR</NavDropdown.Item>
             <NavDropdown.Item href="#">DE</NavDropdown.Item>
             <NavDropdown.Item href="#">ZH</NavDropdown.Item>
             <NavDropdown.Item href="#">JA</NavDropdown.Item>
-          </NavDropdown>
+          </NavDropdown> */}
         </Nav>
         <Nav id="primarynav" className="ml-auto" activeKey={activeKey}>
           <NavDropdown className="megamenu" onMouseEnter={handleNavMouseEnter} onMouseLeave={handleNavMouseLeave} title="Platform">                

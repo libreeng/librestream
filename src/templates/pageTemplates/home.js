@@ -10,35 +10,24 @@ const templateHome = ({ data }) => {
 
   return (
     <Layout>
-
       <HeroHome data={data} />
-      
-      <section>
-
+      <section class="bg-white">
         <div className="container">
           <div className="row">
             <div className="col-12">
               <h2 className="title is-size-3 has-text-weight-bold is-bold-light">
                 {title}
               </h2>
-              
               <div
                 className="content mb-4"
                 dangerouslySetInnerHTML={{ __html: description }}
               />
-              
               <a href={internal.uri} className="btn btn-large btn-primary">{linkText}</a>
             </div>
           </div>
         </div>
-
-
-
       </section>
     </Layout>
-
-
-
   )
 }
 
@@ -50,7 +39,6 @@ templateDefault.propTypes = {
 */
 
 export default templateHome
-
 
 export const pageQuery = graphql`
   query HomeById($id: ID!) {

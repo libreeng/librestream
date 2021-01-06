@@ -7,6 +7,10 @@ html,body, #___gatsby, #gatsby-focus-wrapper{
 }
 #pageContent {
   overflow: hidden;
+  padding-top: 56px;
+  @include media-breakpoint-up(lg) {
+    padding-top: 78px;
+  }
 }
 #pageFooter {
 }

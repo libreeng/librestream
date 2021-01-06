@@ -67,22 +67,22 @@ const Footer = () => {
       <footer id="pageFooter" className="bg-light pt-3">
         <div className="container">
           <div className="row py-5">
-            <div className="col">
+            <div className="col-12 col-md-4 col-lg">
               <h3>Sales &amp; Customer Support</h3>
               {/* <h3>{options.title}</h3> */}
             </div>
-            <div className="col">
+            <div className="col-12 col-md-4 col-lg">
               <h5>{options.footerPhoneTitle}</h5>
               <p>{options.footerPhone}</p>
             </div>  
-            <div className="col">
+            <div className="col-12 col-md-4 col-lg">
               <h5>{options.footerTollFreePhoneTitle}</h5>
               {options.footerTollFreePhone}
             </div>
-            <div className="col">
-              <a href={"mailto:" + options.footerEmail} class="btn btn-white btn-block">{options.footerEmailTitle}</a>
+            <div className="col-12 col-md-6 col-lg my-4 my-md-0">
+              <a href={"mailto:" + options.footerEmail} className="btn btn-white btn-block">{options.footerEmailTitle}</a>
             </div>
-            <div className="col">
+            <div className="col-12 col-md-6 col-lg">
               <div className="socialnav">
                 {
                   options.socialLinks.map(({ site,url,svgCode },index) => (
@@ -93,10 +93,10 @@ const Footer = () => {
             </div>
           </div>
         </div>
-        <hr class="border-white"/>
+        <hr className="border-white"/>
         <div className="container">
-          <div class="row py-5">
-            <div className="col-12 col-md-4 col-lg-2">
+          <div className="row py-5">
+            <div className="col-12 col-md-4 col-lg-2 mb-3 mb-md-0">
               <h3>Platform</h3>
               <ul className="nav flex-column">
                 <li className="nav-item">
@@ -128,7 +128,7 @@ const Footer = () => {
                 </li>
               </ul>
             </div>
-            <div className="col-12 col-md-4 col-lg-2">
+            <div className="col-12 col-md-4 col-lg-2 mb-3 mb-md-0">
               <h3>Use Cases</h3>
               <ul className="nav flex-column">
                 <li className="nav-item">
@@ -139,7 +139,7 @@ const Footer = () => {
                 </li>
               </ul>
             </div>
-            <div className="col-12 col-md-4 col-lg-2">
+            <div className="col-12 col-md-4 col-lg-2 mb-3 mb-md-0">
               <h3>Resources</h3>
               <ul className="nav flex-column">
                 <li className="nav-item">
@@ -165,7 +165,7 @@ const Footer = () => {
                 </li>
               </ul>
             </div>
-            <div className="col-12 col-md-4 col-lg-2">
+            <div className="col-12 col-md-4 col-lg-2 mb-3 mb-md-0">
               <h3>News</h3>
               <ul className="nav flex-column">
                 <li className="nav-item">
@@ -182,7 +182,7 @@ const Footer = () => {
                 </li>
               </ul>
             </div>
-            <div className="col-12 col-md-4 col-lg-2">
+            <div className="col-12 col-md-4 col-lg-2 mb-3 mb-md-0">
               <h3>About</h3>
               <ul className="nav flex-column">
                 <li className="nav-item">
@@ -202,7 +202,7 @@ const Footer = () => {
                 </li>
               </ul>
             </div>
-            <div className="col-12 col-md-4 col-lg-2">
+            <div className="col-12 col-md-4 col-lg-2 mb-3 mb-md-0">
               <h3>Contact</h3>
               <ul className="nav flex-column">
                 <li className="nav-item">
@@ -219,7 +219,7 @@ const Footer = () => {
           </div>
           
         </div>
-        <hr class="border-white"/>
+        <hr className="border-white"/>
         <div className="container">
           <div className="row">
             <div className="col-12">
