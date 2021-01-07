@@ -14,12 +14,9 @@ const HeroDefault = ({ title }) => {
         </div>
       </div>
 
-      <div className="container vectorshape--container"  data-depth="0.7">
+      {/* <div className="container vectorshape--container"  data-depth="0.7">
         <img className="vectorshape position-absolute" src={vectorshape} alt="Vector Shape"/>
-      </div>    
-
-      <div className="corner-triangle container"></div>
-
+      </div> */}
     </div>
     
   )

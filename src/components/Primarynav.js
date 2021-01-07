@@ -147,14 +147,14 @@ const Primarynav = ({ children, onHighlightChange }) => {
         {/* {data.wpcontent.menuItems.edges.map(edge =>             
           <>
             { edge.node.childItems.edges.length > 0 ?
-              <NavDropdown className={`${linkClass}`} ref={isHighlightedNav(edge.node.path)} onMouseEnter={handleNavMouseEnter} onMouseLeave={handleNavMouseLeave} title={edge.node.label} key={edge.node.id}>                
+              <NavDropdown ref={isHighlightedNav(edge.node.path)} onMouseEnter={handleNavMouseEnter} onMouseLeave={handleNavMouseLeave} title={edge.node.label} key={edge.node.id}>                
                 {edge.node.childItems.edges.map(child => 
                   <NavDropdown.Item key={child.node.id} href={child.node.path}>{child.node.label}</NavDropdown.Item>
                 )}                
               </NavDropdown>
             : 
               <Nav.Item key={edge.node.id}>
-                <Nav.Link className={linkClass} ref={isHighlightedNav(edge.node.path)} onMouseEnter={handleNavMouseEnter} onMouseLeave={handleNavMouseLeave} href={edge.node.path}>{edge.node.label}</Nav.Link>  
+                <Nav.Link ref={isHighlightedNav(edge.node.path)} onMouseEnter={handleNavMouseEnter} onMouseLeave={handleNavMouseLeave} href={edge.node.path}>{edge.node.label}</Nav.Link>  
               </Nav.Item>
                         
             }
