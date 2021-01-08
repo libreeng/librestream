@@ -293,10 +293,10 @@ $h5-font-size: $font-size-base * 1.25 !default;
 $h6-font-size: $font-size-base !default;
 
 $headings-margin-bottom: $spacer / 2 !default;
-$headings-font-family: null !default;
+$headings-font-family: inherit;
 $headings-font-weight: 500 !default;
 $headings-line-height: 1.2 !default;
-$headings-color: null !default;
+$headings-color: inherit;
 
 $display1-size: 6rem !default;
 $display2-size: 5.5rem !default;

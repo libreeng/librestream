@@ -15,7 +15,7 @@ const templateHome = ({ data }) => {
         <div className="container">
           <div className="row">
             <div className="col-12">
-              <h2 className="title is-size-3 has-text-weight-bold is-bold-light">
+              <h2>
                 {title}
               </h2>
               <div

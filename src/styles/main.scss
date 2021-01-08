@@ -2,6 +2,7 @@
 @import "~bootstrap/scss/bootstrap";
 // Common
 @import "./common/mixins";
+@import "./common/animations";
 @import "./common/utilities";
 @import "./common/base";
 @import "./common/typography";
@@ -10,6 +11,7 @@
 @import "./global/header";
 @import "./global/footer";
 @import "./global/hero";
+@import "./global/themes";
 @import "./nav/primarynav";
 
 // Templates
@@ -26,6 +28,7 @@
 
 //components
 @import "./components/card";
+@import "./components/ticker";
 
 @import "./pages/home";  
 

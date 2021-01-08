@@ -147,7 +147,7 @@ const Primarynav = ({ children, onHighlightChange }) => {
         {/* {data.wpcontent.menuItems.edges.map(edge =>             
           <>
             { edge.node.childItems.edges.length > 0 ?
-              <NavDropdown ref={isHighlightedNav(edge.node.path)} onMouseEnter={handleNavMouseEnter} onMouseLeave={handleNavMouseLeave} title={edge.node.label} key={edge.node.id}>                
+              <NavDropdown ref={isHighlightedNav(edge.node.path)} onMouseEnter={handleNavMouseEnter} onMouseLeave={handleNavMouseLeave} title={edge.node.label} key={edge.node.id} className="megamenu">                
                 {edge.node.childItems.edges.map(child => 
                   <NavDropdown.Item key={child.node.id} href={child.node.path}>{child.node.label}</NavDropdown.Item>
                 )}                
@@ -160,9 +160,7 @@ const Primarynav = ({ children, onHighlightChange }) => {
             }
           </>
         )} */}
-        </Nav>
-
-                  
+        </Nav>    
       </Navbar.Collapse>
     </Navbar>
   )

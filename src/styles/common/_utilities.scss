@@ -181,3 +181,21 @@
     @include animation(fadeIn, 1.3s);
   }
 }
+
+.scrolling-wrapper {
+  overflow-x: auto;
+  -webkit-overflow-scrolling: touch;
+  &::-webkit-scrollbar {
+    display: none;
+  }
+}
+
+.grayscale {
+  filter: grayscale(100%);
+  @include transition(0.4s);
+  &:hover {
+    filter: none;
+    background-color: rgba($red, 0.8);
+  }
+}
+

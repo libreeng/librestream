@@ -1,12 +1,13 @@
-.hero--home{
-  .bkg{
+.hero-home {
+  @include media-breakpoint-up(lg) {
+    height: 515px;
+  }
+  .bkg {
     z-index:-1;
     .gatsby-image-wrapper{        
       width: 110% !important;
       margin-left: -5%;
       margin-top: -5%;  
-    }
-    img{             
     }
   }
   .worker{
@@ -16,43 +17,46 @@
     z-index:0;
     left: 60% !important;
     top: inherit !important;
+    @include media-breakpoint-up(xl) {
+      width: 384px;
+    }
   }
-  .content{
-    top:0;
-    bottom:0;
-    left:0;
-    right:0;
-    z-index:1;
+  .content {
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    z-index: 1;
     align-items: center;
-    font-size: 2vw;
-
-    .title{
-     font-size:2em;
-     line-height:0.9;   
-     font-weight:300;
+    @include media-breakpoint-up(xl) {
+      font-size: 2.375rem;
     }
-    .subtitle{
-      font-size:0.66em;
-      font-weight:200;
-      line-height:1.2;
-      margin-top:0.7em;
+    .title {
+     font-size: 3.5rem;
+     line-height: 0.9;   
+     font-weight: 300;
+    }
+    .subtitle {
+      font-size: 0.66rem;
+      font-weight: 200;
+      line-height: 1.2;
+      margin-top: 0.7em;
     }
   }
-  .vectorshape--container{
-    left:0 !important;
-    right:0 !important;
+  .vectorshape-container{
+    left: 0 !important;
+    right: 0 !important;
     
   }
-  .vectorshape{
+  .vectorshape {
     left: 81% !important;
     right: inherit !important;
     top: 1% !important;
     width: 80%;
     height: auto;
-
     //-webkit-animation: wave 60s 11s infinite linear;
-    -moz-animation: wave 60s 0.1s infinite linear;
-    animation: wave 60s 0.1s infinite linear;
+    -moz-animation: wave 200s 0.1s infinite linear;
+    animation: wave 200s 0.1s infinite linear;
   }
 
   @keyframes wave {
@@ -64,27 +68,6 @@
       -webkit-transform: rotateZ(360deg);
       -moz-transform: rotateZ(360deg);
       transform: rotateZ(360deg)
-    }
-  }
-      
-
-
-  @include media-breakpoint-up(sm) {
-    .content{ }
-  }
-  @include media-breakpoint-up(md) {
-    .content{ }
-  }
-  @include media-breakpoint-up(lg) {
-    .content{ }
-  }
-  @include media-breakpoint-up(xl) {
-    height:676px;
-    .content{
-        font-size:2.375rem;
-    }
-    .worker{
-        width:384px;
     }
   }
 }

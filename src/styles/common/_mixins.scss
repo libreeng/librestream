@@ -2,11 +2,13 @@
   transition: $property $duration $effect;
 }
 
-@mixin animation($effect: fadeIn, $duration: 0.5s, $delay: 0s) {
+@mixin animation($effect: fadeIn, $duration: 0.5s, $delay: 0s, $timing: linear, $count: 1) {
   animation-name: $effect;
   animation-duration: $duration;
   animation-fill-mode: both;
   animation-delay: ($delay);
+  animation-timing-function: $timing;
+  animation-iteration-count: $count;
 }
 
 @mixin make-responsive-cards($columns: $grid-columns, $gutter: $grid-gutter-width, $breakpoints: $grid-breakpoints) {
