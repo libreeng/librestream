@@ -2,7 +2,7 @@ import React from 'react'
 import PropTypes from 'prop-types'
 import { graphql } from 'gatsby'
 import Layout from '../components/Layout'
-import ProductsList from '../components/productsList'
+import ProductsList from '../components/ProductsList'
 import Pagination from '../components/Pagination'
 import HeroDefault from '../components/HeroDefault'
 
