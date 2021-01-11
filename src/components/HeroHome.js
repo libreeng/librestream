@@ -30,7 +30,7 @@ const HeroHome = ({ data }) => {
       <div className="content d-flex position-absolute" data-depth="0.1">
         <div className="container">
           <div className="row">
-            <div className="col-5 col-xl-5">
+            <div className="col-md-5 col-xl-5">
               <h1 className="text-white" >Empowering the Workforce <div style={{color:'#49EBEA'}}>through Industrial AR, AI and IoT.</div></h1>
               <p className="lead text-white">Onsight captures, correlates and presents information, providing 'just in time' training and enhancing safety for the AI Connected Expert of the future.</p>
               <button type="button" className="btn btn-lg btn-primary">Call To Action »</button>
