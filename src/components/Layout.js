@@ -5,6 +5,7 @@ import HEAD from "./Head"
 import Header from './Header'
 import Footer from './Footer'
 import '../styles/main.scss'
+import '@brainhubeu/react-carousel/lib/style.css';
 
 
 function Layout({ children }) {
@@ -17,7 +18,6 @@ function Layout({ children }) {
       }
     }
   `)
-
   return (
     <>
       <HEAD />

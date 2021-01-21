@@ -1,6 +1,6 @@
 body {
-  color: $white;
-  background: transparent linear-gradient(80deg, $primary 0%, $dark 100%) 0% 0% no-repeat padding-box;
+  // color: $white;
+  
   &::before {
     content: '';
     display: block;

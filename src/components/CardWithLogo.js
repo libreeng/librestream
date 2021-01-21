@@ -17,7 +17,7 @@ const CardWithLogo = ({logo}) => {
             </div>
             <div className="row">
               <div className="col-lg-6 ml-lg-auto">
-                <p class="text-uppercase">
+                <p className="text-uppercase">
                   Saves XX% in Overall Productivity
                 </p>
               </div>
@@ -25,7 +25,7 @@ const CardWithLogo = ({logo}) => {
           </div>
         </div>  
       </div>
-      <div class="card-footer bg-transparent text-primary text-center text-uppercase">
+      <div className="card-footer bg-transparent text-primary text-center text-uppercase">
         <h4>Find out how nov saved up to 70% in total productivity</h4>
       </div>
     </div>

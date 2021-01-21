@@ -31,8 +31,8 @@ const HeroHome = ({ data }) => {
         <div className="container">
           <div className="row">
             <div className="col-md-5 col-xl-5">
-              <h1 className="text-white" >Empowering the Workforce <div style={{color:'#49EBEA'}}>through Industrial AR, AI and IoT.</div></h1>
-              <p className="lead text-white">Onsight captures, correlates and presents information, providing 'just in time' training and enhancing safety for the AI Connected Expert of the future.</p>
+              <h1 className="text-white">Scale Knowledge Across Your Workforce Like Never Before.</h1>
+              <p className="lead text-white">Librestream powers the most innovative and proven AR & AI solutions for leading industrial organizations to improve efficiency, performance and safety, shaping a more resilient workforce for the future ahead.</p>
               <button type="button" className="btn btn-lg btn-primary">Call To Action »</button>
             </div>
           </div>

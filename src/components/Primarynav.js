@@ -92,9 +92,9 @@ const Primarynav = ({ children, onHighlightChange }) => {
       </Link>
       <Navbar.Toggle aria-controls="mainnav" className="ml-auto text-white">
         <div className="navbar-toggler-icon">
-          <span class="icon-bar"></span>
-          <span class="icon-bar"></span>
-          <span class="icon-bar"></span>
+          <span className="icon-bar"></span>
+          <span className="icon-bar"></span>
+          <span className="icon-bar"></span>
         </div>
       </Navbar.Toggle>
       <Navbar.Collapse id="mainnav" >
@@ -117,7 +117,7 @@ const Primarynav = ({ children, onHighlightChange }) => {
           </NavDropdown> */}
         </Nav>
         <Nav id="primarynav" className="ml-auto" activeKey={activeKey}>
-          <NavDropdown className="megamenu" onMouseEnter={handleNavMouseEnter} onMouseLeave={handleNavMouseLeave} title="Platform">                
+          {/* <NavDropdown className="megamenu" onMouseEnter={handleNavMouseEnter} onMouseLeave={handleNavMouseLeave} title="Platform">                
             <NavDropdown.Item href="#">Our Platform</NavDropdown.Item>
             <NavDropdown.Item href="#">Customer Success</NavDropdown.Item>             
             <NavDropdown.Item href="#">Ecosystem Partners</NavDropdown.Item>
@@ -143,8 +143,8 @@ const Primarynav = ({ children, onHighlightChange }) => {
           </Nav.Item>
           <Nav.Item className="text-center">
             <a href="#" className="btn btn-primary" onMouseEnter={handleNavMouseEnter} onMouseLeave={handleNavMouseLeave} href="#">Request Demo</a>  
-          </Nav.Item>
-        {/* {data.wpcontent.menuItems.edges.map(edge =>             
+          </Nav.Item> */}
+        {data.wpcontent.menuItems.edges.map(edge =>             
           <>
             { edge.node.childItems.edges.length > 0 ?
               <NavDropdown ref={isHighlightedNav(edge.node.path)} onMouseEnter={handleNavMouseEnter} onMouseLeave={handleNavMouseLeave} title={edge.node.label} key={edge.node.id} className="megamenu">                
@@ -159,7 +159,7 @@ const Primarynav = ({ children, onHighlightChange }) => {
                         
             }
           </>
-        )} */}
+        )}
         </Nav>    
       </Navbar.Collapse>
     </Navbar>
