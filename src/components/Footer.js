@@ -49,26 +49,26 @@ const Footer = () => {
 
   return (
     <>
-      <div className="bg-info py-3">
+      {/* <div className="bg-info py-3">
        
-                {
-                  /*
-                  options.partners.map(({ url,logo },index) => (
-                    <div className=""  key={`slide-${index}`}>
-                      <a href={url} >
-                        <img src={logo.sourceUrl} className="my-2 d-inline-block" style={{height:'80px',width:'auto'}}/>
-                      </a>
-                    </div>
-                  ))
-                  */
-                }
-      </div>
+        {
+        
+          options.partners.map(({ url,logo },index) => (
+            <div className=""  key={`slide-${index}`}>
+              <a href={url} >
+                <img src={logo.sourceUrl} className="my-2 d-inline-block" style={{height:'80px',width:'auto'}}/>
+              </a>
+            </div>
+          ))
+        
+        }
+      </div> */}
 
       <footer id="pageFooter" className="bg-light pt-3">
         <div className="container">
           <div className="row py-5">
             <div className="col-12 col-md-4 col-lg">
-              <h3>Sales &amp; Customer Support</h3>
+              <h4>Sales &amp; Customer Support</h4>
               {/* <h3>{options.title}</h3> */}
             </div>
             <div className="col-12 col-md-4 col-lg">
@@ -97,7 +97,7 @@ const Footer = () => {
         <div className="container">
           <div className="row py-5">
             <div className="col-12 col-md-4 col-lg-2 mb-3 mb-md-0">
-              <h3>Platform</h3>
+              <h4>Platform</h4>
               <ul className="nav flex-column">
                 <li className="nav-item">
                   <a href="#" className="nav-link">Platform Overview</a>
@@ -129,7 +129,7 @@ const Footer = () => {
               </ul>
             </div>
             <div className="col-12 col-md-4 col-lg-2 mb-3 mb-md-0">
-              <h3>Use Cases</h3>
+              <h4>Use Cases</h4>
               <ul className="nav flex-column">
                 <li className="nav-item">
                   <a href="#" className="nav-link">Use Cases</a>
@@ -140,7 +140,7 @@ const Footer = () => {
               </ul>
             </div>
             <div className="col-12 col-md-4 col-lg-2 mb-3 mb-md-0">
-              <h3>Resources</h3>
+              <h4>Resources</h4>
               <ul className="nav flex-column">
                 <li className="nav-item">
                   <a href="#" className="nav-link">Blog</a>
@@ -166,7 +166,7 @@ const Footer = () => {
               </ul>
             </div>
             <div className="col-12 col-md-4 col-lg-2 mb-3 mb-md-0">
-              <h3>News</h3>
+              <h4>News</h4>
               <ul className="nav flex-column">
                 <li className="nav-item">
                   <a href="#" className="nav-link">Press Releases</a>
@@ -183,7 +183,7 @@ const Footer = () => {
               </ul>
             </div>
             <div className="col-12 col-md-4 col-lg-2 mb-3 mb-md-0">
-              <h3>About</h3>
+              <h4>About</h4>
               <ul className="nav flex-column">
                 <li className="nav-item">
                   <a href="#" className="nav-link">Company Profile</a>
@@ -203,7 +203,7 @@ const Footer = () => {
               </ul>
             </div>
             <div className="col-12 col-md-4 col-lg-2 mb-3 mb-md-0">
-              <h3>Contact</h3>
+              <h4>Contact</h4>
               <ul className="nav flex-column">
                 <li className="nav-item">
                   <a href="#" className="nav-link">Request Demo</a>

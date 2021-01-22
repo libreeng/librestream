@@ -45,7 +45,7 @@ $pink: #e83e8c !default;
 $red: #dc3545 !default;
 $orange: #fd7e14 !default;
 $yellow: #ffc107 !default;
-$green: #28a745 !default;
+$green: #58FF98;
 $teal: #20c997 !default;
 $cyan: #49EBEA;
 
@@ -71,7 +71,7 @@ $colors: map-merge(
 );
 
 $primary: $blue !default;
-$secondary: $gray-600 !default;
+$secondary: $cyan;
 $success: $green !default;
 $info: $cyan !default;
 $warning: $yellow !default;
@@ -175,7 +175,7 @@ $sizes: map-merge(
 // Settings for the `<body>` element.
 
 $body-bg: $white !default;
-$body-color: $gray-900 !default;
+$body-color: $dark;
 
 // Links
 //
@@ -272,7 +272,7 @@ $font-family-monospace: SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mon
 $font-family-base: $font-family-sans-serif !default;
 // stylelint-enable value-keyword-case
 
-$font-size-base: 1rem !default; // Assumes the browser default, typically `16px`
+$font-size-base: 1.3rem; // Assumes the browser default, typically `16px`
 $font-size-lg: $font-size-base * 1.25 !default;
 $font-size-sm: $font-size-base * 0.875 !default;
 
@@ -295,7 +295,7 @@ $h6-font-size: $font-size-base !default;
 $headings-margin-bottom: $spacer / 2 !default;
 $headings-font-family: inherit;
 $headings-font-weight: 500 !default;
-$headings-line-height: 1.2 !default;
+$headings-line-height: 1.1;
 $headings-color: inherit;
 
 $display1-size: 6rem !default;
@@ -320,8 +320,8 @@ $blockquote-small-color: $gray-600 !default;
 $blockquote-small-font-size: $small-font-size !default;
 $blockquote-font-size: $font-size-base * 1.25 !default;
 
-$hr-border-color: rgba($black, 0.1) !default;
-$hr-border-width: $border-width !default;
+$hr-border-color: rgba($dark, 0.5) !default;
+$hr-border-width: 1px;
 
 $mark-padding: 0.2em !default;
 

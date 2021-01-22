@@ -1,9 +1,107 @@
 // TODO: Enter all Bootstrap overrides here...
+
+//buttons
 .btn {
-  border-radius: 25px;
+  border-radius: 30px;
   color: $dark;
+  border: 2px solid $white;
+  box-shadow: 0 0 15px rgba($white, 0.9);
+  text-transform: uppercase;
+  @include media-breakpoint-up(lg) {
+    min-width: 250px;
+  }
   &.btn-primary {
     background: linear-gradient(90deg, $blue 0%, $cyan 100%);
-    color: $white;
+  }
+  &.btn-secondary {
+    background: linear-gradient(90deg, $green 0%, $cyan 100%);
+  }
+}
+
+.lead {
+  line-height: 1.2;
+}
+
+
+//bootstrap carousel
+.carousel {
+  &.overlap-top {
+    margin-top: -100px;
+    margin-bottom: 100px;
+  }
+}
+
+.carousel-control-next,
+.carousel-control-prev {
+  width: auto;
+}
+
+.carousel-control-next-icon,
+.carousel-control-prev-icon {
+  background-image: none;
+  width: 25px;
+  height: 25px;
+  border-radius: 50%;
+  border: 2px solid $white;
+  &::before {
+    content: '';
+    display: block;
+    width: 0;
+    height: 0;
+    border-top: 5px solid transparent;
+    border-bottom: 5px solid transparent;
+    align-items: center;
+    justify-content: center;
+    position: absolute;
+    top: 50%;
+    transform: translateX(-50%) translateY(-50%);
+    left: 50%;
+  }
+}
+
+.carousel-control-next-icon {
+  &::before {
+    border-left: 5px solid $cyan;
+  }
+}
+
+.carousel-control-prev-icon {
+  &::before {
+    border-right: 5px solid $cyan;
+    left: 49%;
+  }
+}
+
+.carousel-control-next {
+  right: -40px;
+}
+
+.carousel-control-prev {
+  left: -40px;
+}
+
+.carousel-indicators {
+  bottom: -50px;
+  li {
+    border: 1px solid transparent;
+    width: 8px;
+    height: 8px;
+    border-radius: 50%;
+    background-color: $cyan;
+    margin-left: 0;
+    margin-right: 15px;
+
+    &.active {
+      background-color: $white;
+    }
+  }
+}
+
+.carousel-indicators-left {
+  .carousel-indicators {
+    
+    justify-content: flex-start;
+    margin-left: 0;
+    right: auto;
   }
 }
