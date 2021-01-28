@@ -3,7 +3,7 @@ import PropTypes from 'prop-types'
 import Layout from '../components/Layout'
 import HeroDetailed from '../components/HeroDetailed'
 import Carousel from 'react-bootstrap/Carousel'
-import CardWithLogo from '../components/CardWithLogo'
+import UseCaseSlider from '../components/UseCaseSlider'
 
 const platform = () => {
   return (
@@ -126,27 +126,7 @@ const platform = () => {
             </div>
           </div>
         </section>
-        <section className="bg-white">
-          <div className="container">
-            <div className="row">
-              <div className="col-12">
-                <h2>Customer Use Cases</h2>
-              </div>
-            </div>
-          </div>
-          <div className="scrolling-wrapper">
-            <div className="row flex-nowrap row-cols-1 row-cols-md-2 row-cols-lg-4">
-              {[...Array(6)].map((x, i) =>
-                <div className="col mb-4">
-                  <CardWithLogo></CardWithLogo>
-                  {/* // <div className="col-12 col-md-6 col-lg-3" key={useCase.useCase.id}>
-                  //   <div>{useCase.useCase.title}</div>
-                  // </div> */}
-                </div>  
-              )}         
-            </div>
-          </div>
-        </section>
+        <UseCaseSlider></UseCaseSlider>
       </>
     </Layout>
     

@@ -43,7 +43,7 @@ $indigo: #6610f2 !default;
 $purple: #6f42c1 !default;
 $pink: #e83e8c !default;
 $red: #dc3545 !default;
-$orange: #fd7e14 !default;
+$orange: #FF5800;
 $yellow: #ffc107 !default;
 $green: #58FF98;
 $teal: #20c997 !default;
@@ -92,6 +92,7 @@ $theme-colors: map-merge(
     "danger": $danger,
     "light": $light,
     "dark": $dark,
+    "orange": $orange
   ),
   $theme-colors
 );
@@ -233,7 +234,7 @@ $grid-row-columns: 6 !default;
 $line-height-lg: 1.5 !default;
 $line-height-sm: 1.5 !default;
 
-$border-width: 0;
+$border-width: 1px;
 $border-color: $gray-300 !default;
 
 $border-radius: 0;

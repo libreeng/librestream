@@ -101,19 +101,35 @@
 }
 
 @mixin bottom-shape-cutout($width:33%, $color: $white, $size:20px) {
-    &:after{
-      content: '';
-      position: absolute;
-      bottom: 0;
-      right: 0;
-      width: $width;
-      height: 3px;
-      margin-right: -$size;
-      border: $size solid transparent;
-      border-bottom-color: $color;
-      border-bottom-width: $size;
-      border-bottom-style: solid;
-    }  
+  &:after{
+    content: '';
+    position: absolute;
+    bottom: 0;
+    right: 0;
+    width: $width;
+    height: 3px;
+    margin-right: -$size;
+    border: $size solid transparent;
+    border-bottom-color: $color;
+    border-bottom-width: $size;
+    border-bottom-style: solid;
+  }  
+}
+
+@mixin top-shape-cutout($width:33%, $color: $white, $size:20px) {
+  &:after{
+    content: '';
+    position: absolute;
+    top: -40px;
+    right: 0;
+    width: $width;
+    height: 3px;
+    margin-right: -$size;
+    border: $size solid transparent;
+    border-bottom-color: $color;
+    border-bottom-width: $size;
+    border-bottom-style: solid;
+  }  
 }
 
 

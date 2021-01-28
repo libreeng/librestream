@@ -3,3 +3,18 @@ hr {
     border-top: 4px solid $white;
   }
 }
+
+
+.folder-border {
+  position: relative;
+  &.folder-top {
+    @include top-shape-cutout();
+    &.border-light {
+      @include top-shape-cutout(33%, $light, 20px)
+    }
+  }
+
+  &.folder-bottom {
+    @include bottom-shape-cutout();
+  }
+}

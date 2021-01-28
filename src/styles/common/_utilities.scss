@@ -169,6 +169,31 @@
   justify-content: center;
 }
 
+.bg-offset-right {
+  position: relative;
+  .container {
+    position: relative;
+    z-index: 100;
+  }
+  &::after {
+    content: '';
+    display: block;
+    width: 25%;
+    height: 100%;
+    background-color: $white;
+    position: absolute;
+    right: 0;
+    top: 0;
+    @include media-breakpoint-up(xl) {
+      width: 33%;
+    }
+  }
+}
+
+.img-offset-top {
+  margin-top: -100px;
+}
+
 // Responsive Cards
 .responsive-cards {
   @include make-responsive-cards();

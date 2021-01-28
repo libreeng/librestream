@@ -63,8 +63,13 @@ const Footer = () => {
         
         }
       </div> */}
+        
+      <footer id="pageFooter" className="bg-light">
+        <hr className="border-white my-0"/>
+        <div className="prefooter py-5">
 
-      <footer id="pageFooter" className="bg-light pt-3">
+        </div>
+        <hr className="border-white my-0"/>  
         <div className="container">
           <div className="row py-5">
             <div className="col-12 col-md-4 col-lg">
