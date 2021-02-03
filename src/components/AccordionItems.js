@@ -5,46 +5,21 @@ import AddLineIcon from 'remixicon-react/AddLineIcon';
 const AccordionItems = ({ className }) => {
   return (
     <Accordion className={className}>
-      <Card>
+      {[...Array(3)].map((x, i) =>
+      <Card key={i}>
         <Card.Header>
-          <Accordion.Toggle as={Button} variant="link" eventKey="0">
+          <Accordion.Toggle as={Button} variant="link" eventKey={i}>
             <div>
               <AddLineIcon size="20"/>Accordion Item Title
             </div>
-            
-            <i class="icon-arrow arrow-down"></i>
+            <i className="icon-arrow arrow-down"></i>
           </Accordion.Toggle>
         </Card.Header>
-        <Accordion.Collapse eventKey="0">
+        <Accordion.Collapse eventKey={i}>
           <Card.Body>Hello! I'm the body</Card.Body>
         </Accordion.Collapse>
       </Card>
-      <Card>
-        <Card.Header>
-          <Accordion.Toggle as={Button} variant="link" eventKey="1">
-            <div>
-              <AddLineIcon size="20"/>Accordion Item Title
-            </div>
-            <i class="icon-arrow arrow-down"></i>
-          </Accordion.Toggle>
-        </Card.Header>
-        <Accordion.Collapse eventKey="1">
-          <Card.Body>Hello! I'm the body</Card.Body>
-        </Accordion.Collapse>
-      </Card>
-      <Card>
-        <Card.Header>
-          <Accordion.Toggle as={Button} variant="link" eventKey="2">
-            <div>
-              <AddLineIcon size="20"/>Accordion Item Title
-            </div>
-            <i class="icon-arrow arrow-down"></i>
-          </Accordion.Toggle>
-        </Card.Header>
-        <Accordion.Collapse eventKey="2">
-          <Card.Body>Hello! I'm the body</Card.Body>
-        </Accordion.Collapse>
-      </Card>
+      )}
     </Accordion>
   )
 }

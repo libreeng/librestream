@@ -5,8 +5,8 @@
     .card-header {
       background-color: transparent;
       border-bottom: 0;
-      
       font-weight: 100;
+      padding: 0;
       .btn {
         padding: 0;
         min-width: auto;
@@ -16,47 +16,74 @@
         font-weight: 300;
         border: 0;
         box-shadow: none;
-        
-        
-        
+        line-height: 1;
+        color: $primary;
         &:hover,
         &:focus {
           text-decoration: none;
         }
         svg {
-          color: $primary;
+          color: $dark;
           margin-right: 20px;
+          border-radius: 50%;
+          border: 1px solid $primary;
+          margin-bottom: 2px;
+        }
+        .icon-arrow {
+          display: none;
         }
       }
     }
+    .card-body {
+      color: $gray-500;
+    }
   }
-  .card-body {
-    color: $white;
-  }
+  
   &.accordion-icons {
     .card {
       .card-header {
         .btn {
           font-size: 2rem;
+          line-height: 2;
           display: flex;
           align-items: center;
           justify-content: space-between;
           border-bottom: 1px solid $white;
           color: $white;
+          svg {
+            color: $primary;
+            border-radius: 0;
+            border: 0;
+            margin-bottom: 2px;
+          }
+          .icon-arrow {
+            display: block;
+          }
         }
       }
     }
+    .card-body {
+      color: $white;
+    }
+    
   }
 }
 
 .accordion-nav {
   .card {
+    &:first-of-type {
+      .card-header {
+        .btn {
+          border-top: 1px solid $dark;
+        }
+      }
+    }
     .card-header {
       padding: 0;
+      margin-bottom: 0;
       .btn {
         padding-top: 10px;
         padding-bottom: 10px;
-        border-top: 1px solid $dark;
         border-bottom: 1px solid $dark;
         line-height: 1;
       }
