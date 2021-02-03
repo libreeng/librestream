@@ -31,7 +31,7 @@ const singleProduct = () => {
               <div className="col-lg-6">
                 <h3>Lorem ipsum dolor sit amet consectetur adipisicing elit. Corrupti soluta repudiandae incidunt. Dolor suscipit atque dolorem fugit porro itaque, perferendis nostrum soluta deleniti fuga omnis incidunt, nobis, dicta voluptate facilis?</h3>
                 <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Temporibus inventore magnam, voluptatem ullam facilis ratione recusandae illo voluptatibus cumque nisi corporis aspernatur officiis. Praesentium culpa minus enim corrupti sapiente quam.</p>
-                <hr className="hr-small border-green"/>
+                <hr className="hr-sm border-green"/>
                 {/* It looks like on the current site this is a link to a blog post */}
               </div>
               <div className="col-lg-5">
@@ -62,7 +62,7 @@ const singleProduct = () => {
               <div className="col-lg-6">
                 <h4>Lorem ipsum dolor sit amet consectetur adipisicing elit. Dolorem, et nemo dolor amet officia itaque explicabo, voluptates labore repudiandae praesentium molestias illum pariatur in inventore voluptatum eum dignissimos, debitis blanditiis!</h4>
                 <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Sed accusamus nostrum architecto temporibus tempore, nobis, quos, aperiam porro distinctio officia doloribus. Repellat necessitatibus libero sit alias ex sed, laborum quod.</p>
-                <hr className="hr-small ml-0"/>
+                <hr className="hr-sm ml-0"/>
               </div>
             </div>
           </div>

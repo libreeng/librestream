@@ -42,3 +42,15 @@ hr {
     border-width: 1px 1px 1px 0;
   }
 }
+
+.border-bracket-bottom {
+  width: 50%;
+  height: 5px;
+  display: block;
+  border-style: solid;
+  border-color: $primary;
+  border-width: 0 1px 1px 1px;
+  margin-left: auto;
+  margin-right: auto;
+  margin-top: 20px;
+}

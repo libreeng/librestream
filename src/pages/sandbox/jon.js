@@ -3,7 +3,7 @@ import Layout from '../../components/Layout'
 import { Link, useStaticQuery, graphql } from 'gatsby'
 import HeroDefault from '../../components/HeroDefault'
 import CardWithLogo from '../../components/CardWithLogo'
-import CarouselWithContent from '../../components/CarouselWithContent'
+import CarouselCards from '../../components/CarouselCards'
 
 
 const SandboxPageJon = () => {
@@ -25,7 +25,7 @@ const SandboxPageJon = () => {
   <Layout>
     <HeroDefault title="Hero Default" />
     <section>
-      <CarouselWithContent></CarouselWithContent>
+      <CarouselCards></CarouselCards>
     </section>
     <section className="bg-white">
       <div className="container mt-5">

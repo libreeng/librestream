@@ -4,6 +4,7 @@ import Layout from '../../components/Layout'
 import HeroHome from '../../components/HeroHome'
 import CardWithLogo from '../../components/CardWithLogo'
 import Card from '../../components/Card'
+import Stat from '../../components/Stat'
 
 const templateHome = ({ data }) => {
   
@@ -28,16 +29,16 @@ const templateHome = ({ data }) => {
       <section className="bg-white">
         <div className="container">
           <div className="row">
-            <div className="col-12">
+            <div className="col-12 col-lg-7 mx-lg-auto">
               <div className="text-center">
-                <h2>
+                <h2 className="mb-4">
                   {title}
                 </h2>
                 <div
-                  className="lead mb-4"
+                  className="lead lead-lg text-gray mb-5"
                   dangerouslySetInnerHTML={{ __html: description }}
                 />
-                <a href={internal.uri} className="btn btn-large btn-primary">{linkText}</a>
+                <a href={internal.uri} className="btn btn-large btn-cyan">{linkText}</a>
               </div>
             </div>
           </div>
@@ -61,16 +62,17 @@ const templateHome = ({ data }) => {
         <div className="container">
           <div className="row">
             {homeStat && homeStat.map((homeStat, index) => (
-              <div className="col-12 col-md-6 col-lg-3" key={index}>
-                <div className="display-1">{homeStat.homeStatValue}</div>
-                <p className="text-uppercase lead border-left border-dark">{homeStat.homeStatLabel}</p>
-              </div>
+              <Stat></Stat>
+              // <div className="col-12 col-md-6 col-lg-3" key={index}>
+              //   <div className="display-1">{homeStat.homeStatValue}</div>
+              //   <p className="text-uppercase lead border-left border-dark">{homeStat.homeStatLabel}</p>
+              // </div>
             ))}
           </div>
         </div>
       </section>
-      <hr class="border-dark"/>
-      <section class="bg-white">
+      <hr className="border-dark"/>
+      <section className="bg-white">
         <div className="container">
           <div className="row">
             {news && news.map((newsItem) => (
