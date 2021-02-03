@@ -3,7 +3,7 @@ import PropTypes from 'prop-types'
 import Layout from '../components/Layout'
 import HeroDetailed from '../components/HeroDetailed'
 import Carousel from 'react-bootstrap/Carousel'
-import UseCaseSlider from '../components/UseCaseSlider'
+import CardSlider from '../components/CardSlider'
 
 const platform = () => {
   return (
@@ -46,7 +46,7 @@ const platform = () => {
             <hr className="hr-styled"/>
             <div className="row">
               <div className="col-12">
-                <h2 class="text-uppercase">Platform Capabilities</h2>
+                <h2 className="text-uppercase">Platform Capabilities</h2>
                 <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Nulla tenetur possimus, at quidem labore minus dolore quisquam maxime fugit, natus est mollitia. Iusto itaque aut debitis consectetur maxime? Accusantium, voluptates.</p>
               </div>
             </div>
@@ -108,7 +108,7 @@ const platform = () => {
                 </Carousel>
               </div>
             </div>
-            <hr class="hr-white"/>
+            <hr className="hr-white"/>
             <div className="row">
               <div className="col-lg-4 border-left border-green">
                 <h3>Onsight is the one tool to guide your Digital Transformation.</h3>
@@ -126,7 +126,7 @@ const platform = () => {
             </div>
           </div>
         </section>
-        <UseCaseSlider></UseCaseSlider>
+        <CardSlider title="Case Studies"></CardSlider>
       </>
     </Layout>
     

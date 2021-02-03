@@ -193,6 +193,12 @@
 .img-offset-top {
   margin-top: -100px;
 }
+.img-offset-bottom {
+  margin-bottom: -100px;
+  &.offset-bottom-lg {
+    margin-bottom: -200px;
+  }
+}
 
 // Responsive Cards
 .responsive-cards {
@@ -240,5 +246,58 @@
     border-width: 1px 1px 0 0;
     border-style: solid;
   }
+}
+
+.hr-small {
+  width: 100px;
+  border-top: 4px solid $cyan;
+}
+
+.icon-arrow {
+  width: 0;
+  height: 0;
+  &.arrow-up,
+  &.arrow-down {
+    border-left: 5px solid transparent;
+    border-right: 5px solid transparent;
+  }
+  &.arrow-up {
+    border-bottom: 5px solid $green;
+  }
+  &.arrow-down {
+    border-top: 5px solid $green;
+  }
+}
+
+.icon-play {
+  border: 1px solid $primary;
+  border-radius: 50%;
+  background-color: transparent;
+  width: 1.5rem;
+  height: 1.5rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  &.icon-play-lg {
+    width: 3rem;
+    height: 3rem;
+  }
+  &::after {
+    content: '';
+    width: 0; 
+    height: 0; 
+    border-top: 5px solid transparent;
+    border-bottom: 5px solid transparent;
+    border-left: 5px solid $dark;
+  }
+}
+
+.icon-circle-bg {
+  width: 2rem;
+  height: 2rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 50%;
 }
 

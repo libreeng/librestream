@@ -5,11 +5,16 @@ const Card = () => {
   return (
     <>
       <div 
-        className="card bg-image aspect-1x1"
-        style={{
-          backgroundImage: `url(https://picsum.photos/500)`
-        }}>
-        This is a card
+        className="card border-0">
+        <div className="bg-image aspect-1x1"
+          style={{
+            backgroundImage: `url(https://picsum.photos/500)`
+          }}
+        >
+        </div>
+        <div className="card-footer bg-transparent text-primary px-0">
+          Title lorem
+        </div>  
       </div>
     </>
   )

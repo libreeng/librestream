@@ -16,6 +16,10 @@
   &.btn-secondary {
     background: linear-gradient(90deg, $green 0%, $cyan 100%);
   }
+  &.btn-border {
+    background-color: transparent;
+    border: 1px solid $dark;
+  }
 }
 
 .lead {

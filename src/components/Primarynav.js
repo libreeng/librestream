@@ -7,10 +7,6 @@ import Img from "gatsby-image"
 import logo from '../img/logo.svg'
 import logo2 from '../img/logo-bg.png'
 
-
-
-
-
 const Primarynav = ({ children, onHighlightChange }) => {
 
   const highlightedNavRef = useRef(null);

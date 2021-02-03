@@ -2,7 +2,7 @@ import React from 'react'
 import PropTypes from 'prop-types'
 import Layout from '../components/Layout'
 import HeroDefault from '../components/HeroDefault'
-import UseCaseSlider from '../components/UseCaseSlider'
+import CardSlider from '../components/CardSlider'
 import FooterCards from '../components/FooterCards'
 
 const contact = () => {
@@ -47,7 +47,7 @@ const contact = () => {
         </div>
       </section>
       <hr className="hr-styled"/>
-      <UseCaseSlider></UseCaseSlider>
+      <CardSlider title="Case Studies"></CardSlider>
       <FooterCards></FooterCards>
     </Layout>
   )

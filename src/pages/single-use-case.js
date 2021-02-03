@@ -1,15 +1,17 @@
 import React from 'react'
 import PropTypes from 'prop-types'
 import Layout from '../components/Layout'
-import HeroCaseStudy from '../components/HeroCaseStudy'
-import UseCaseSlider from '../components/UseCaseSlider'
+import HeroDefault from '../components/HeroDefault'
+import CardSlider from '../components/CardSlider'
+import NextPrevNav from '../components/NextPrevNav'
 import FooterCards from '../components/FooterCards'
 
-const singleCaseStudy = () => {
+
+const singleUseCase = () => {
   return (
     <>
       <Layout>
-        <HeroCaseStudy></HeroCaseStudy>
+        <HeroDefault title="SGS Complete 30,000 Inspections" subtitle="Powered By Librestream." subnav="false" logo="true"></HeroDefault>
         <section>
           <div className="container">
             <div className="row">
@@ -40,7 +42,6 @@ const singleCaseStudy = () => {
                   <h6 className="mb-0 text-white">Solution</h6>
                 </div>
                 <div className="border-left border-dark p-3">
-                  
                   <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Molestias libero unde natus, reprehenderit harum ipsam commodi nesciunt! Distinctio, quos! Consectetur delectus neque reprehenderit error eligendi numquam eius, ab veniam tempore.</p>
                 </div>
               </div>
@@ -55,13 +56,13 @@ const singleCaseStudy = () => {
             </div>
           </div>
         </section>
-        <section class="bg-primary text-white bg-offset-right mt-5">
+        <section className="bg-primary text-white bg-offset-right mt-5">
           <div className="container">
             <div className="row">
               <div className="col-lg-6">
                 <p className="lead">“30,000 inspections have now been conducted by SGS QiiQ, the remote inspections tool which was fully deployed during the year. This digital tool has established a new standard in the industry.”</p>
                 <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Temporibus inventore magnam, voluptatem ullam facilis ratione recusandae illo voluptatibus cumque nisi corporis aspernatur officiis. Praesentium culpa minus enim corrupti sapiente quam.</p>
-                <a href="#" class="btn btn-primary">Full Article?</a>
+                <a href="#" className="btn btn-primary">Full Article?</a>
                 {/* It looks like on the current site this is a link to a blog post */}
               </div>
               <div className="col-lg-5">
@@ -70,18 +71,7 @@ const singleCaseStudy = () => {
             </div>
           </div>
         </section>
-        <section>
-          <div className="container">
-            <div className="row">
-              <div className="col-12">
-                <div className="d-flex justify-content-between align-items-center">
-                  <a href="#">Previous Item</a>
-                  <a href="#">Next Item</a>
-                </div>
-              </div>
-            </div>
-          </div>
-        </section>
+        <NextPrevNav></NextPrevNav>
         <FooterCards></FooterCards>
       </Layout>
      
@@ -89,8 +79,8 @@ const singleCaseStudy = () => {
   )
 }
 
-singleCaseStudy.propTypes = {
+singleUseCase.propTypes = {
 
 }
 
-export default singleCaseStudy
+export default singleUseCase

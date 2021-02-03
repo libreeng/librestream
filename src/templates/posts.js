@@ -9,7 +9,6 @@ import contentParser from 'gatsby-wpgraphql-inline-images';
 import HeroDefault from '../components/HeroDefault'
 
 
-
 export const BlogPostTemplate = ({
   content,
   categories,

@@ -67,7 +67,11 @@ const Footer = () => {
       <footer id="pageFooter" className="bg-light">
         <hr className="border-white my-0"/>
         <div className="prefooter py-5">
-
+          <div className="d-flex align-items-center justify-content-between">
+            {[...Array(10)].map((x, i) =>
+              <img key={i} src="https://via.placeholder.com/75x50" className="img-fluid" alt=""/>
+            )}
+          </div>
         </div>
         <hr className="border-white my-0"/>  
         <div className="container">

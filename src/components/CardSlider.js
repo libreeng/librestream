@@ -1,16 +1,20 @@
 import React from 'react'
 import PropTypes from 'prop-types'
-import CardWithLogo from '../components/CardWithLogo'
+import CardWithLogo from './CardWithLogo'
 
-const UseCaseSlider = () => {
+const CardSlider = ({title}) => {
   return (
     <section className="bg-white">
       <div className="container">
-        <div className="row">
-          <div className="col-12">
-            <h2>Customer Use Cases</h2>
+        {title && (
+          <div className="row mb-5">
+            <div className="col-12">
+              <h2>{title}</h2>
+            </div>
           </div>
-        </div>
+          )
+        }
+        
       </div>
       <div className="scrolling-wrapper">
         <div className="row flex-nowrap row-cols-1 row-cols-md-2 row-cols-lg-4">
@@ -28,8 +32,8 @@ const UseCaseSlider = () => {
   )
 }
 
-UseCaseSlider.propTypes = {
+CardSlider.propTypes = {
 
 }
 
-export default UseCaseSlider
+export default CardSlider

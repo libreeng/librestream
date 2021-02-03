@@ -2,7 +2,7 @@ import React from 'react'
 import PropTypes from 'prop-types'
 import Layout from '../components/Layout'
 import HeroDefault from '../components/HeroDefault'
-import UseCaseSlider from '../components/UseCaseSlider'
+import CardSlider from '../components/CardSlider'
 import FooterCards from '../components/FooterCards'
 
 const about = () => {
@@ -37,7 +37,7 @@ const about = () => {
           <div className="row">
             {[...Array(12)].map((x, i) =>
               <div className="col-12 col-lg-2 mb-4">
-                <img src="https://via.placeholder.com/500" class="img-fluid" alt="award badge image"/>
+                <img src="https://via.placeholder.com/500" className="img-fluid" alt="award badge image"/>
               </div>
             )}
           </div>
@@ -72,13 +72,13 @@ const about = () => {
           <div className="row">
             {[...Array(12)].map((x, i) =>
               <div className="col-12 col-lg-3 mb-4">
-                <img src="https://via.placeholder.com/500" class="img-fluid mb-3" alt="award badge image"/>
+                <img src="https://via.placeholder.com/500" className="img-fluid mb-3" alt="award badge image"/>
                 <h4 className="mb-0">Firstname Lastname</h4>
                 <p className="text-primary">Tile / rolename</p>
               </div>
             )}
           </div>
-          <hr class="hr-styled"/>
+          <hr className="hr-styled"/>
           <div className="row">
             <div className="col-12">
               <h2>Management</h2>
@@ -87,7 +87,7 @@ const about = () => {
           <div className="row">
             {[...Array(12)].map((x, i) =>
               <div className="col-12 col-lg-3 mb-4">
-                <img src="https://via.placeholder.com/500" class="img-fluid mb-3" alt="award badge image"/>
+                <img src="https://via.placeholder.com/500" className="img-fluid mb-3" alt="award badge image"/>
                 <h4 className="mb-0">Firstname Lastname</h4>
                 <p className="text-primary">Tile / rolename</p>
               </div>
@@ -96,7 +96,7 @@ const about = () => {
         </div>
       </section>
       <hr className="hr-styled"/>
-      <UseCaseSlider></UseCaseSlider>
+      <CardSlider title="Case Studies"></CardSlider>
       <FooterCards></FooterCards>
     </Layout>
   )

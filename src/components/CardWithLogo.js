@@ -26,7 +26,7 @@ const CardWithLogo = ({logo}) => {
         </div>  
       </div>
       <div className="card-footer bg-transparent text-primary text-center text-uppercase">
-        <h4>Find out how nov saved up to 70% in total productivity</h4>
+        <h6>Find out how nov saved up to 70% in total productivity</h6>
       </div>
     </div>
   )
