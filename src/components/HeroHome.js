@@ -5,7 +5,8 @@ import vectorshape from '../img/vectorshape.svg'
 const HeroHome = ({ data }) => {
   console.log(data.homeHeroBkg.childImageSharp.fluid)
   return (
-    <div className="hero hero-home"
+    <div 
+      className="hero hero-home"
       style={{
         backgroundImage: `url(https://via.placeholder.com/1900x1000)`
       }}

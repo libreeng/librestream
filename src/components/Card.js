@@ -12,7 +12,7 @@ const Card = () => {
           }}
         >
         </div>
-        <div className="card-footer bg-transparent text-primary px-0">
+        <div className="card-footer bg-transparent text-uppercase px-0">
           Title lorem
         </div>  
       </div>

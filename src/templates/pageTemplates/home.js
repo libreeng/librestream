@@ -2,13 +2,14 @@ import React from 'react'
 import { graphql } from 'gatsby'
 import Layout from '../../components/Layout'
 import HeroHome from '../../components/HeroHome'
+import CarouselBootstrap from '../../components/CarouselBootstrap'
 import CardWithLogo from '../../components/CardWithLogo'
 import Card from '../../components/Card'
 import Stat from '../../components/Stat'
 
 const templateHome = ({ data }) => {
   
-  //const { title,content } = data.wpcontent.page
+  // const { title,content } = data.wpcontent.page
   const { 
     title,
     description,
@@ -49,7 +50,7 @@ const templateHome = ({ data }) => {
           <div className="row flex-nowrap row-cols-1 row-cols-md-2 row-cols-lg-4">
             {useCases && useCases.map(useCase => (
               <div className="col mb-4">
-                <CardWithLogo></CardWithLogo>
+                <CardWithLogo />
                 {/* // <div className="col-12 col-md-6 col-lg-3" key={useCase.useCase.id}>
                 //   <div>{useCase.useCase.title}</div>
                 // </div> */}
@@ -58,11 +59,20 @@ const templateHome = ({ data }) => {
           </div>
         </div>
       </section>
-      <section className="bg-white">
+      <section className="bg-gradient-blue text-white">
+        <div className="container">
+          <div className="row">
+            <div className="col-12">
+              <CarouselBootstrap />
+            </div>
+          </div>
+        </div>
+      </section>
+      <section className="bg-white folder-border folder-top">
         <div className="container">
           <div className="row">
             {homeStat && homeStat.map((homeStat, index) => (
-              <Stat></Stat>
+              <Stat />
               // <div className="col-12 col-md-6 col-lg-3" key={index}>
               //   <div className="display-1">{homeStat.homeStatValue}</div>
               //   <p className="text-uppercase lead border-left border-dark">{homeStat.homeStatLabel}</p>
@@ -71,16 +81,27 @@ const templateHome = ({ data }) => {
           </div>
         </div>
       </section>
-      <hr className="border-dark"/>
+      <hr className="hr-styled" />
       <section className="bg-white">
         <div className="container">
+          <div className="row mb-4">
+            <div className="col-12">
+              <h3>Featured News</h3>
+            </div>
+          </div>
           <div className="row">
             {news && news.map((newsItem) => (
               <div className="col-12 col-md-6 col-lg-3" key={newsItem.newsItem.id}>
-                <Card></Card>
-                <h3 className="mt-3">{newsItem.newsItem.title}</h3>
+                <Card title={newsItem.newsItem.title} />
               </div>
             ))}
+          </div>
+          <div className="row my-5">
+            <div className="col-12">
+              <div className="text-center">
+                <a href="/news" className="btn btn-primary text-white">View All News</a>
+              </div>
+            </div>
           </div>
         </div>
       </section>

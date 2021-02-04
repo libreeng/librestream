@@ -4,6 +4,34 @@ hr {
   }
 }
 
+.hr-styled {
+  position: relative;
+  &::before {
+    content: '';
+    display: block;
+    width: 20px;
+    height: 20px;
+    position: absolute;
+    left: 50%;
+    top: -10px;
+    transform: translateX(-50%) rotate(-225deg);
+    background-color: $white;
+    border-color: rgba($dark, 0.5);
+    border-width: 1px 1px 0 0;
+    border-style: solid;
+  }
+}
+
+.hr-sm {
+  width: 100px;
+  border-top: 4px solid $cyan;
+}
+
+.hr-xs {
+  width: 40px;
+  border-top: 4px solid $cyan;
+}
+
 
 .folder-border {
   position: relative;

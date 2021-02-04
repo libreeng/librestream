@@ -5,9 +5,10 @@ import Carousel from 'react-bootstrap/Carousel'
 const CarouselBootstrap = () => {
   return (
     <Carousel className="carousel-fade carousel-indicators-left carousel-two-column overlap-top" interval={100000}>
-      {[...Array(3)].map((x, i) =>
-        <Carousel.Item>
+      {[...Array(3)].map((x, i) => (
+        <Carousel.Item key={i}>
           <div className="row align-items-center">
+            <div className="carousel-slide-number">0{i}</div>
             <div className="col-lg-6">
               <img
                 className="d-block w-100"
@@ -16,6 +17,7 @@ const CarouselBootstrap = () => {
               />
             </div>
             <div className="col-lg-6">
+              
               <h2>Lorem Slide Title {i}</h2>
               <hr className="hr-xs border-green ml-0"/>
               <p>lorem description Lorem ipsum dolor sit amet consectetur adipisicing elit. Magni quidem odio aliquam, iste laborum ad obcaecati vitae necessitatibus blanditiis maiores voluptate sunt sit suscipit quo quis nam. Obcaecati, adipisci numquam.</p>
@@ -23,6 +25,7 @@ const CarouselBootstrap = () => {
             </div>
           </div>
         </Carousel.Item>
+        )
       )}
     </Carousel>
   )

@@ -4,7 +4,7 @@
 .btn {
   border-radius: 30px;
   color: $dark;
-  border: 2px solid $white;
+  
   
   text-transform: uppercase;
   position: relative;
@@ -37,7 +37,13 @@
     border: 1px solid $dark;
   }
   &.shadow-white {
+    border: 2px solid $white;
     box-shadow: 0 0 15px rgba($white, 0.9);
+  }
+  &.text-white {
+    &::after {
+      border-left: 7px solid $white;
+    }
   }
 }
 
