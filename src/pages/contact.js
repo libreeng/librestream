@@ -8,47 +8,48 @@ import FooterCards from '../components/FooterCards'
 const contact = () => {
   return (
     <Layout>
-      <HeroDefault title="Contact"></HeroDefault>
+      <HeroDefault title="Contact" />
       <section>
         <div className="container">
           <div className="row">
-            <div className="col-lg-8">
+            <div className="col-12 col-lg-8">
               <h2>For general questions and comments or if you would like our team to follow up with you, please fill out the form below with any questions or comments:</h2>
-              <div className="bg-image aspect-5x7">
-                <div className="bg-fill">
-                  Add form
-                </div>
-              </div>
+              <iframe src="https://1.librestream.com/l/859043/2020-04-27/bylx" width="100%" height="1000" frameBorder="0" title="Contact Form" />
               
             </div>
-            <div className="col-lg-4">
+            <div className="col-12 col-lg-4 ml-lg-auto">
               <div className="border-bracket">
-              <p>If you are a customer and have a support request, please fill out the support request form:</p>
+                <p>If you are a customer and have a support request, please fill out the support request form:</p>
               </div>
-              
-              <a href="" className="btn btn-primary">Support Request Form</a>
-              <div className="border-bracket">
+              <div className="text-center p-2">
+                <i className="icon-arrow arrow-down arrow-dark" />
+              </div>
+              <a href="#" className="btn btn-gradient-dark-blue text-white btn-block">Support Request Form</a>
+              <div className="border-bracket mt-5">
                 <h6 className="mt-5">Head Office</h6>
-                <address>
-                  895 Waverley St., Suite 110<br/> Winnipeg, Manitoba<br/>Canada, R3T 5P4
+                <address className="text-primary">
+                  895 Waverley St., Suite 110<br /> Winnipeg, Manitoba<br />Canada, R3T 5P4
                 </address>
               </div>
-              <a href="#" className="btn btn-bordered">View Map</a>
-              <div className="border-bracket">
-                <h6>Phone</h6>
-                <p>1-xxx-xxx-xxxx</p>
-                <h6>North America Toll Free</h6>
-                <p>1-xxx-xxx-xxxx</p>
-                <h6>Fax</h6>
-                <p>1-xxx-xxx-xxxx</p>
+              <div className="text-center p-2">
+                <i className="icon-arrow arrow-down arrow-dark" />
+              </div>
+              <a href="#" className="btn btn-border btn-block border-primary">View Map</a>
+              <div className="border-bracket mt-5">
+                <h6 className="mb-0">Phone</h6>
+                <p className="text-primary">1-xxx-xxx-xxxx</p>
+                <h6 className="mb-0">North America Toll Free</h6>
+                <p className="text-primary">1-xxx-xxx-xxxx</p>
+                <h6 className="mb-0">Fax</h6>
+                <p class="text-primary">1-xxx-xxx-xxxx</p>
               </div>
             </div>
           </div>
         </div>
       </section>
-      <hr className="hr-styled"/>
-      <CardSlider title="Case Studies"></CardSlider>
-      <FooterCards></FooterCards>
+      <hr className="hr-styled" />
+      <CardSlider title="Customer Use Cases" />
+      <FooterCards />
     </Layout>
   )
 }

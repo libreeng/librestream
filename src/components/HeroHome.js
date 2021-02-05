@@ -14,10 +14,10 @@ const HeroHome = ({ data }) => {
       <div className="content">
         <div className="container">
           <div className="row">
-            <div className="col-md-5 col-xl-5">
+            <div className="col-12 col-lg-5">
               <h1 className="text-white">Scale Knowledge Across Your Workforce Like Never Before.</h1>
               <p className="lead text-white">Librestream powers the most innovative and proven AR &amp; AI solutions for leading industrial organizations to improve efficiency, performance and safety, shaping a more resilient workforce for the future ahead.</p>
-              <button type="button" className="btn btn-lg btn-gradient-green-cyan">Call To Action</button>
+              <button type="button" className="btn btn-lg btn-gradient-green-cyan shadow-white">Call To Action</button>
             </div>
           </div>
         </div>

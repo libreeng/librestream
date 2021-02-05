@@ -6,6 +6,7 @@ import {Navbar, Nav, NavDropdown } from 'react-bootstrap'
 import Img from "gatsby-image"
 import logo from '../img/logo.svg'
 import logo2 from '../img/logo-bg.png'
+import SearchLineIcon from 'remixicon-react/SearchLineIcon';
 
 const Primarynav = ({ children, onHighlightChange }) => {
 
@@ -88,15 +89,15 @@ const Primarynav = ({ children, onHighlightChange }) => {
       </Link>
       <Navbar.Toggle aria-controls="mainnav" className="ml-auto text-white">
         <div className="navbar-toggler-icon">
-          <span className="icon-bar"></span>
-          <span className="icon-bar"></span>
-          <span className="icon-bar"></span>
+          <span className="icon-bar" />
+          <span className="icon-bar" />
+          <span className="icon-bar" />
         </div>
       </Navbar.Toggle>
       <Navbar.Collapse id="mainnav" >
         <Nav id="usernav" className="nav flex-row justify-content-center justify-content-lg-end">
           <li className="nav-item">
-            <a href="#" className="nav-link">Search</a>
+            <a href="#" className="nav-link"><SearchLineIcon size="14" /></a>
           </li>
           <li className="nav-item">
             <a href="#" className="nav-link">Login</a>
@@ -140,22 +141,23 @@ const Primarynav = ({ children, onHighlightChange }) => {
           <Nav.Item className="text-center">
             <a href="#" className="btn btn-primary" onMouseEnter={handleNavMouseEnter} onMouseLeave={handleNavMouseLeave} href="#">Request Demo</a>  
           </Nav.Item> */}
-        {data.wpcontent.menuItems.edges.map(edge =>             
-          <>
-            { edge.node.childItems.edges.length > 0 ?
-              <NavDropdown ref={isHighlightedNav(edge.node.path)} onMouseEnter={handleNavMouseEnter} onMouseLeave={handleNavMouseLeave} title={edge.node.label} key={edge.node.id} className="megamenu">                
-                {edge.node.childItems.edges.map(child => 
-                  <NavDropdown.Item key={child.node.id} href={child.node.path}>{child.node.label}</NavDropdown.Item>
-                )}                
-              </NavDropdown>
-            : 
-              <Nav.Item key={edge.node.id}>
-                <Nav.Link ref={isHighlightedNav(edge.node.path)} onMouseEnter={handleNavMouseEnter} onMouseLeave={handleNavMouseLeave} href={edge.node.path}>{edge.node.label}</Nav.Link>  
-              </Nav.Item>
-                        
-            }
-          </>
-        )}
+          {data.wpcontent.menuItems.edges.map(edge => (            
+            <> 
+              { edge.node.childItems.edges.length > 0 ? (
+                <NavDropdown ref={isHighlightedNav(edge.node.path)} onMouseEnter={handleNavMouseEnter} onMouseLeave={handleNavMouseLeave} title={edge.node.label} key={edge.node.id} className="megamenu">                
+                  {edge.node.childItems.edges.map(child => 
+                    <NavDropdown.Item key={child.node.id} href={child.node.path}>{child.node.label}</NavDropdown.Item>
+                  )}                
+                </NavDropdown>
+                )
+              : (
+                <Nav.Item key={edge.node.id}>
+                  <Nav.Link ref={isHighlightedNav(edge.node.path)} onMouseEnter={handleNavMouseEnter} onMouseLeave={handleNavMouseLeave} href={edge.node.path}>{edge.node.label}</Nav.Link>  
+                </Nav.Item>
+                )}
+            </>
+            )
+          )}
         </Nav>    
       </Navbar.Collapse>
     </Navbar>

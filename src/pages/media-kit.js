@@ -8,7 +8,7 @@ import FooterCards from '../components/FooterCards'
 const mediaKit = () => {
   return (
     <Layout>
-      <HeroDefault title="Media Kit"></HeroDefault>
+      <HeroDefault title="Media Kit" />
       <section>
         <div className="container">
           <div className="row">
@@ -17,13 +17,13 @@ const mediaKit = () => {
               <p>Onsight, deployed in over 120 countries, is built for workers to collaborate virtually and access content from the world’s toughest environments and for the most demanding enterprises. Onsight delivers measurable business outcomes including worker safety and productivity, cost savings, reduced emissions, asset uptime gains, and improved customer service delivery. The company has been honored with recognition including ranking as the #1 AR remote assistance solution provider by independent research firm, Verdantix, as an IDC Innovator, and with a Field Service WBR Innovation Award.</p>
             </div>
             <div className="col-lg-3 ml-lg-auto">
-              <img src="https://via.placeholder.com/300x100" className="img-fluid" alt=""/>
+              <img src="https://via.placeholder.com/300x100" className="img-fluid" alt="" />
             </div>
           </div>
         </div>
       </section>
       <div className="container">
-        <hr className="hr-styled"/>
+        <hr className="hr-styled" />
       </div>
       <section>
         <div className="container">
@@ -48,14 +48,14 @@ const mediaKit = () => {
               </div>
             </div>
             <div className="col-lg-4 text-lg-right">
-              <a href="#" className="btn btn-dark text-white">Download Media Kit</a>
+              <a href="#" className="btn btn-gradient-dark-blue text-white">Download Media Kit</a>
             </div>
           </div>
         </div>
       </section>
       <hr className="hr-styled"/>
-      <CardSlider title="Case Studies"></CardSlider>
-      <FooterCards></FooterCards>
+      <CardSlider title="Customer Use Cases" />
+      <FooterCards />
     </Layout>
   )
 }

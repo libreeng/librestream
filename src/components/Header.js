@@ -1,7 +1,7 @@
 import React, { Fragment, useEffect, useRef, useState } from 'react';
-import Primarynav from './Primarynav'
 import { Link, useStaticQuery, graphql } from 'gatsby'
 import Img from "gatsby-image"
+import Primarynav from './Primarynav'
 // import PropTypes from 'prop-types'
 
 const Header = () => {
@@ -57,12 +57,12 @@ const Header = () => {
   }, []);
 
   return (
-    <Fragment>
-      <div ref={scrollPositionRef}></div>
+    <>
+      <div ref={scrollPositionRef} />
       <header id="pageHeader" className={`header sticky-wrapper bg-gradient-blue ${isSticky ? 'sticky' : ''} `} >
         <Primarynav onHighlightChange={handleArrowMove} />
         <div className="nav-pointer">
-          <svg version="1.1"  x="0px" y="0px" viewBox="0 0 6000 241" style={{marginLeft:arrowPos}}>
+          <svg version="1.1" x="0px" y="0px" viewBox="0 0 6000 241" style={{marginLeft:arrowPos}}>
             <g id="background">
               <polygon points="6000.5,240.5 3007,240.5 3000.5,232.5 2993.81,240.5 -0.5,240.5 -0.5,0.5 6000.5,0.5 	"/>
             </g>
@@ -73,7 +73,7 @@ const Header = () => {
         </div>
       </header>
 
-    </Fragment>
+    </>
   )
 }
 

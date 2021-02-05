@@ -8,7 +8,7 @@ import FooterCards from '../components/FooterCards'
 const customerSupport = () => {
   return (
     <Layout>
-      <HeroDefault title="Customer Support"></HeroDefault>
+      <HeroDefault title="Customer Support" />
       <section>
         <div className="container">
           <div className="row justify-content-lg-center">
@@ -16,24 +16,48 @@ const customerSupport = () => {
               <div className="border-bracket text-center">
                 <h2>Access Support &amp; Training Docs</h2>
               </div>
-              <div className="text-center mb-5">
-                <a href="#" className="btn btn-primary">Access</a>
+              <div className="text-center mt-4 mb-5">
+                <a href="#" className="btn btn-primary text-white">Access</a>
               </div>
               <hr className="hr-styled"/>
               <h2 className="text-center mt-3">Submit a case</h2>
-              <div className="bg-image aspect-5x7">
-                <div className="bg-fill">
-                  Add Case form
-                </div>
+              !todo form needs recaptcha scripts for react conversion
+              <div className="salesforce-form mb-5">
+                <form action="https://webto.salesforce.com/servlet/servlet.WebToCase?encoding=UTF-8" method="POST">
+                  <input name="captcha_settings" type="hidden" value="{&quot;keyname&quot;:&quot;v2_Librestream_Keys&quot;,&quot;fallback&quot;:&quot;true&quot;,&quot;orgId&quot;:&quot;00DA0000000J3qY&quot;,&quot;ts&quot;:&quot;&quot;}" />
+                  <input name="orgid" type="hidden" value="00DA0000000J3qY" />
+                  <input name="retURL" type="hidden" value="http://librestream.com/form-confirmations/support-request-confirmation/?previous=http%3A%2F%2Flibrestream.com%2Fonsight-support%2F" />
+                  <label htmlFor="name">Contact Name
+                    <input id="name" maxLength="80" name="name" size="20" type="text" />
+                  </label>
+                  <label htmlFor="company">Company
+                    <input id="company" maxLength="80" name="company" size="20" type="text" />
+                  </label>
+                  <label htmlFor="email">Email
+                    <input id="email" maxLength="80" name="email" size="20" type="text" />
+                  </label>
+                  <label htmlFor="phone">Phone
+                    <input id="phone" maxLength="40" name="phone" size="20" type="text" />
+                  </label>
+                  <label htmlFor="subject">Subject
+                    <input id="subject" maxLength="80" name="subject" size="20" type="text" />
+                  </label>
+                  <label htmlFor="description">Description
+                    <textarea name="description" />
+                  </label>
+                  <input id="external" name="external" type="hidden" value="1" />
+                  <div className="g-recaptcha" data-sitekey="6Le-x94ZAAAAAD_8zexTMsjTc-Cp3wpdjLu9CImP" data-callback="recaptcha_callback" />
+                  <input name="submit" className="btn btn-gradient-dark-blue text-white" type="submit" />
+                </form>
               </div>
-              <hr className="hr-styled"/>
-              <div className="col-12">
-                <h2 className="text-center">Contact Sales</h2>
-              </div>
+              
+              <hr className="hr-styled" />
+              <h2 className="text-center mt-5">Contact Sales</h2>
+         
               <div className="row">
                 <div className="col-lg-8">
                   <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Vero non iure dolor, id ad et autem, sint deleniti molestiae voluptas ipsam! Earum soluta incidunt temporibus cum officiis dolor accusantium omnis.</p>
-                  <a href="#" className="btn btn-primary">Contact Sales Directly</a>
+                  <a href="#" className="btn btn-primary text-white mt-4">Contact Sales Directly</a>
                 </div>
                 <div className="col-lg-4">
                   <div className="border-bracket">
@@ -51,8 +75,8 @@ const customerSupport = () => {
         </div>
       </section>
       <hr className="hr-styled"/>
-      <CardSlider title="Case Studies"></CardSlider>
-      <FooterCards></FooterCards>
+      <CardSlider title="Customer Use Cases" />
+      <FooterCards />
     </Layout>
   )
 }

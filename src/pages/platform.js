@@ -2,10 +2,10 @@ import React from 'react'
 import PropTypes from 'prop-types'
 import Layout from '../components/Layout'
 import HeroDetailed from '../components/HeroDetailed'
-
 import CarouselBootstrap from '../components/CarouselBootstrap'
-import CardSlider from '../components/CardSlider'
 import Stat from '../components/Stat'
+import CardSlider from '../components/CardSlider'
+import FooterCards from '../components/FooterCards'
 
 const platform = () => {
   return (
@@ -55,7 +55,7 @@ const platform = () => {
           <hr className="hr-white" />
           <div className="row">
             <div className="col-lg-4 border-left border-primary">
-              <h3>Onsight is the one tool to guide your Digital Transformation.</h3>
+              <h3>Onsight <span className="text-cyan">is the one tool to guide your Digital Transformation.</span></h3>
             </div>
             <div className="col-lg-4 border-left border-primary">
               <p>Our Onsight augmented reality knowledge platform powers the AI Connected Experts of the future with built-in advanced artificial intelligence, IoT data visualization, and augmented reality capabilities. These innovative features reduce the cognitive load on workers, create effective communication environments and streamline data across operations.</p>
@@ -70,7 +70,8 @@ const platform = () => {
           </div>
         </div>
       </section>
-      <CardSlider title="Case Studies" />
+      <CardSlider title="Customer Use Cases" />
+      <FooterCards />
     </Layout>
     
   )

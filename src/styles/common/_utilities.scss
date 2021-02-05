@@ -235,14 +235,14 @@
   height: 0;
   &.arrow-up,
   &.arrow-down {
-    border-left: 5px solid transparent;
-    border-right: 5px solid transparent;
+    border-left: 10px solid transparent;
+    border-right: 10px solid transparent;
   }
   &.arrow-up {
-    border-bottom: 5px solid $green;
+    border-bottom: 10px solid $dark;
   }
   &.arrow-down {
-    border-top: 5px solid $green;
+    border-top: 10px solid $dark;
   }
 }
 
@@ -283,7 +283,7 @@
     padding-left: 50px;
     &::before {
       content: '';
-      
+
     }
   }
 }

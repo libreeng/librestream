@@ -9,6 +9,13 @@
     z-index:1;
     padding: 50px 0;
   }
+  h1 {
+    font-size: 3rem;
+    @include media-breakpoint-up(lg) {
+      font-size: 4rem;
+    }
+    font-weight: 300;
+  }
 }
 
 .hero-default{
@@ -69,32 +76,4 @@
         width: 384px;
     }
   }
-}
-
-// .corner-triangle{
-//   padding-left: 157px;
-//   pointer-events:none;
-//   position:absolute;
-//   z-index:0;
-//   top:0;
-//   left:0;
-//   right:0;
-//   @include media-breakpoint-up(xl) {
-//     padding-left: 176px;
-//   }
-//   &:before{
-//     content:'';
-//     position:absolute;
-//     border:64px solid #072f4a;
-//     border-right-color:transparent;
-//     border-bottom-color:transparent;
-//     zoom:10;
-//     transform: translateX(-100%);
-//     opacity:1;
-//     transition:opacity 0.2s ease-out;
-//   }
- 
-// }
-body.has-scrolled .corner-triangle:before{
-  // opacity:0;
 }

@@ -1,0 +1,12 @@
+//custom styles for salesforce form
+
+.salesforce-form {
+  form {
+    label,
+    input,
+    textarea {
+      display: block;
+      width: 100%;
+    }
+  }
+}

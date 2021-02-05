@@ -14,8 +14,8 @@
     border-top: 56px solid $dark;
     border-right: 57px solid transparent;
     @include media-breakpoint-up(lg) {
-      border-top: 78px solid $dark;
-      border-right: 81px solid transparent;
+      border-top: 94px solid $dark;
+      border-right: 96px solid transparent;
       width: 164px;
     }
     @include media-breakpoint-up(xl) {
@@ -37,7 +37,8 @@
       padding-right: 0;
     }
     @include media-breakpoint-up(lg) {
-      padding-top: 35px;
+      padding-top: 40px;
+      padding-bottom: 18px;
     }
     @include media-breakpoint-up(xl) {
       padding-left: 100px;
@@ -47,6 +48,7 @@
 
   .navbar-brand {
     width: 200px;
+    padding-top: 0;
     @include media-breakpoint-down(md) {
       margin-left: 15px;
     }
@@ -187,6 +189,17 @@
       @include media-breakpoint-down(md) {
         padding-top: 30px;
         padding-bottom: 30px;
+        margin-left: 20px;
+        margin-right: 20px;
+        text-align: center;
+      }
+      .nav-link {
+        color: $white;
+        background: linear-gradient(90deg, $blue 0%, $cyan 100%);
+        border-radius: 30px;
+        line-height: 1;
+        padding-left: 3rem;
+        padding-right: 3rem;
       }
     }
     .nav-link {

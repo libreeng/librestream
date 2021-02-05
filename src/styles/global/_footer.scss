@@ -7,27 +7,39 @@
     color: $dark;
     padding-left: 0;
     padding-right: 0;
+    font-size: 1rem;
+    padding: 0.3rem 0;
   }
   svg {
     path {
       fill: $dark !important;
     }
   }
-}
-
-.socialnav {
-  display: flex;
-  a {
-    background-color: $white;
-    border-radius: 50%;
-    display: flex;
-    width: 46px;
-    height: 46px;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    svg {
-      width: 18px;
+  .btn {
+    line-height: 1rem;
+    font-size: 1rem;
+  }
+  .socialnav {
+    .icon-circle-bg {
+      background-color: $white;
     }
   }
 }
+
+
+// .socialnav {
+//   display: flex;
+//   a {
+//     background-color: $white;
+//     border-radius: 50%;
+//     display: flex;
+//     width: 30px;
+//     height: 30px;
+//     display: flex;
+//     align-items: center;
+//     justify-content: center;
+//     svg {
+//       width: 14px;
+//     }
+//   }
+// }

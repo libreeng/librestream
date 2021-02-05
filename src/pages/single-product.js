@@ -115,8 +115,8 @@ const singleProduct = () => {
             </div>
           </div>
         </section>
-        <CardSlider title="Case Studies"></CardSlider>
-        <FooterCards></FooterCards>
+        <CardSlider title="Customer Use Cases" />
+        <FooterCards />
       </Layout>       
     </>
   )

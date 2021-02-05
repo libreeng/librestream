@@ -9,22 +9,22 @@ const CardSlider = ({title}) => {
         {title && (
           <div className="row mb-5">
             <div className="col-12">
-              <h2>{title}</h2>
+              <h2 className="text-uppercase">{title}</h2>
             </div>
           </div>
-          )
-        }
+          )}
         
       </div>
       <div className="scrolling-wrapper">
         <div className="row flex-nowrap row-cols-1 row-cols-md-2 row-cols-lg-4">
-          {[...Array(6)].map((x, i) =>
+          {[...Array(6)].map((x, i) => (
             <div className="col mb-4" key={i}>
-              <CardWithLogo></CardWithLogo>
+              <CardWithLogo />
               {/* // <div className="col-12 col-md-6 col-lg-3" key={useCase.useCase.id}>
               //   <div>{useCase.useCase.title}</div>
               // </div> */}
-            </div>  
+            </div>
+          )
           )}         
         </div>
       </div>

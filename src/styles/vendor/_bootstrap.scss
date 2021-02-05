@@ -4,10 +4,9 @@
 .btn {
   border-radius: 30px;
   color: $dark;
-  
-  
   text-transform: uppercase;
   position: relative;
+  line-height: 1.5;
   &::after {
     content: '';
     display: block;
@@ -32,6 +31,9 @@
   &.btn-gradient-green-cyan {
     background: linear-gradient(90deg, $green 0%, $cyan 100%);
   }
+  &.btn-gradient-dark-blue {
+    background: linear-gradient(90deg, $dark 0%, $blue 100%);
+  }
   &.btn-border {
     background-color: transparent;
     border: 1px solid $dark;
@@ -44,6 +46,9 @@
     &::after {
       border-left: 7px solid $white;
     }
+  }
+  &.btn-block {
+    padding: 0.4rem 1rem;
   }
 }
 

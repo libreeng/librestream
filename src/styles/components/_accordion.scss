@@ -22,6 +22,9 @@
         &:focus {
           text-decoration: none;
         }
+        &::after {
+          display: none;
+        }
         svg {
           color: $dark;
           margin-right: 20px;
@@ -58,6 +61,9 @@
           }
           .icon-arrow {
             display: block;
+            &.arrow-down {
+              border-top: 10px solid $green;
+            }
           }
         }
       }
@@ -75,6 +81,7 @@
       .card-header {
         .btn {
           border-top: 1px solid $dark;
+          
         }
       }
     }
@@ -86,6 +93,9 @@
         padding-bottom: 10px;
         border-bottom: 1px solid $dark;
         line-height: 1;
+        font-size: 1.4rem;
+        font-weight: 400;
+        color: $dark;
       }
     }
     .nav {

@@ -72,7 +72,7 @@ const singleUseCase = () => {
           </div>
         </section>
         <NextPrevNav></NextPrevNav>
-        <FooterCards></FooterCards>
+        <FooterCards />
       </Layout>
      
     </>

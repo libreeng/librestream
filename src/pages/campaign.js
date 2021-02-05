@@ -9,14 +9,14 @@ import FooterCards from '../components/FooterCards'
 const campaign = () => {
   return (
     <Layout>
-      <HeroDefault title="Remote Expert Accelerator Program" subtitle="" subnav="" logo=""></HeroDefault>
+      <HeroDefault title="Remote Expert Accelerator Program" subtitle="" subnav="" logo="" />
       <section>
         <div className="container">
           <div className="row align-items-center">
             <div className="col-lg-9">
               <h3>Try the world’s #1 Remote Expert Solution FREE for 30 days.</h3>
             </div>
-            <div className="col-lg-3">
+            <div className="col-lg-3 ml-lg-auto">
               <div className="border-bracket text-center">
                 <img src="https://via.placeholder.com/150" className="img-fluid" alt=""/>
               </div>
@@ -31,7 +31,7 @@ const campaign = () => {
               <div className="bg-image aspect-1x1 img-offset-top img-offset-bottom offset-bottom-lg"></div>
             </div>
             <div className="col-lg-6">
-              <AccordionItems className="accordion-icons"></AccordionItems>
+              <AccordionItems className="accordion-icons" /> 
             </div>
           </div>
         </div>
@@ -58,18 +58,16 @@ const campaign = () => {
           </div>
           <div className="row">
             <div className="col-12">
-              <div className="bg-image aspect-3x1">
-                <div className="bg-fill">
-                  request form
-                </div>
+              <div className="text-center">
+                <iframe src="https://1.librestream.com/l/859043/2020-09-14/8912w" title="Campaign Form" width="100%" height="900" type="text/html" frameBorder="0" />
               </div>
             </div>
           </div>
         </div>
       </section>
-      <hr className="hr-styled"/>  
-      <CardSlider title="Case Studies"></CardSlider>
-      <FooterCards></FooterCards>
+      <hr className="hr-styled" />  
+      <CardSlider title="Customer Use Cases" />
+      <FooterCards />
     </Layout>
   )
 }

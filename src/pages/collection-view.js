@@ -35,8 +35,8 @@ const collectionView = () => {
         </div>
       </section>
       <hr className="hr-styled"/>
-      <CardSlider title="Case Studies"></CardSlider>
-      <FooterCards></FooterCards>
+      <CardSlider title="Customer Use Cases" />
+      <FooterCards />
     </Layout>
   )
 }

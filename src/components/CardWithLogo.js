@@ -4,10 +4,12 @@ import PropTypes from 'prop-types'
 const CardWithLogo = ({logo}) => {
   return (
     <div className="card">
-      <div className="card-img-top bg-image aspect-1x1 grayscale"
+      <div 
+        className="card-img-top bg-image aspect-1x1 grayscale"
         style={{
         backgroundImage: `url(https://picsum.photos/500)`
-        }}>
+        }}
+      >
         <div className="bg-fill">
           <div className="card-logo-overlay text-white">
             <div className="row">

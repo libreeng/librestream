@@ -1,5 +1,6 @@
 import React from 'react'
 import { Link, useStaticQuery, graphql } from 'gatsby'
+import SocialNav from '../components/SocialNav'
  //const Flickity = require("react-flickity-component")
 //require('flickity-imagesloaded');
 
@@ -77,28 +78,37 @@ const Footer = () => {
         <div className="container">
           <div className="row py-5">
             <div className="col-12 col-md-4 col-lg">
-              <h4>Sales &amp; Customer Support</h4>
+              <h6>Sales &amp; Customer Support</h6>
               {/* <h3>{options.title}</h3> */}
             </div>
             <div className="col-12 col-md-4 col-lg">
-              <h5>{options.footerPhoneTitle}</h5>
-              <p>{options.footerPhone}</p>
+              <h6>
+                <small>
+                  {options.footerPhoneTitle}
+                </small>
+              </h6>
+              <p className="font-weight-bold">{options.footerPhone}</p>
             </div>  
             <div className="col-12 col-md-4 col-lg">
-              <h5>{options.footerTollFreePhoneTitle}</h5>
-              {options.footerTollFreePhone}
+              <h6>
+                <small>
+                  {options.footerTollFreePhoneTitle}
+                </small>
+              </h6>
+              <p className="font-weight-bold">{options.footerTollFreePhone}</p>
             </div>
             <div className="col-12 col-md-6 col-lg my-4 my-md-0">
-              <a href={"mailto:" + options.footerEmail} className="btn btn-white btn-block">{options.footerEmailTitle}</a>
+              <a href={`'mailto:' options.footerEmail`} className="btn btn-white btn-block">{options.footerEmailTitle}</a>
             </div>
             <div className="col-12 col-md-6 col-lg">
-              <div className="socialnav">
+              <SocialNav />
+              {/* <div className="socialnav">
                 {
                   options.socialLinks.map(({ site,url,svgCode },index) => (
                     <a href={url} title={site} className="mr-3" key={`social-${index}`} dangerouslySetInnerHTML={{ __html: svgCode }}></a>
                   ))
                 }
-              </div>
+              </div> */}
             </div>
           </div>
         </div>
@@ -106,7 +116,7 @@ const Footer = () => {
         <div className="container">
           <div className="row py-5">
             <div className="col-12 col-md-4 col-lg-2 mb-3 mb-md-0">
-              <h4>Platform</h4>
+              <h6>Platform</h6>
               <ul className="nav flex-column">
                 <li className="nav-item">
                   <a href="#" className="nav-link">Platform Overview</a>
@@ -138,7 +148,7 @@ const Footer = () => {
               </ul>
             </div>
             <div className="col-12 col-md-4 col-lg-2 mb-3 mb-md-0">
-              <h4>Use Cases</h4>
+              <h6>Use Cases</h6>
               <ul className="nav flex-column">
                 <li className="nav-item">
                   <a href="#" className="nav-link">Use Cases</a>
@@ -149,7 +159,7 @@ const Footer = () => {
               </ul>
             </div>
             <div className="col-12 col-md-4 col-lg-2 mb-3 mb-md-0">
-              <h4>Resources</h4>
+              <h6>Resources</h6>
               <ul className="nav flex-column">
                 <li className="nav-item">
                   <a href="#" className="nav-link">Blog</a>
@@ -175,7 +185,7 @@ const Footer = () => {
               </ul>
             </div>
             <div className="col-12 col-md-4 col-lg-2 mb-3 mb-md-0">
-              <h4>News</h4>
+              <h6>News</h6>
               <ul className="nav flex-column">
                 <li className="nav-item">
                   <a href="#" className="nav-link">Press Releases</a>
@@ -192,7 +202,7 @@ const Footer = () => {
               </ul>
             </div>
             <div className="col-12 col-md-4 col-lg-2 mb-3 mb-md-0">
-              <h4>About</h4>
+              <h6>About</h6>
               <ul className="nav flex-column">
                 <li className="nav-item">
                   <a href="#" className="nav-link">Company Profile</a>
@@ -212,7 +222,7 @@ const Footer = () => {
               </ul>
             </div>
             <div className="col-12 col-md-4 col-lg-2 mb-3 mb-md-0">
-              <h4>Contact</h4>
+              <h6>Contact</h6>
               <ul className="nav flex-column">
                 <li className="nav-item">
                   <a href="#" className="nav-link">Request Demo</a>
@@ -232,14 +242,18 @@ const Footer = () => {
         <div className="container">
           <div className="row">
             <div className="col-12">
-              <p>Copyright 2020 All Rights Reserved Librestream Technologies</p>
+              <p className="font-weight-light">
+                <small>
+                  Copyright 2020 All Rights Reserved Librestream Technologies
+                </small>
+              </p>
             </div>
           </div>
         </div>
         <div className="container">
           <div className="row mt-5">
             <div className="col-12">
-            <img src={data.footerbar.publicURL} className="img-fluid" alt="Librestream logo" />
+              <img src={data.footerbar.publicURL} className="img-fluid" alt="Librestream logo" />
             </div>
           </div>
         </div>
