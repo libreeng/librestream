@@ -1,16 +1,10 @@
-#pageHeader {
-}
 #pageContent {
   overflow: hidden;
-  padding-top: 56px;
+  // padding-top: 56px;
   @include media-breakpoint-up(lg) {
-    padding-top: 78px;
+    // padding-top: 78px;
   }
 }
-#pageFooter {
-}
-
-
 
 // Carried over from the legacy site. There are Advanced custom fields that set these column widths.
 @media (min-width: 800px) {

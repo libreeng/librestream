@@ -59,7 +59,7 @@ const Header = () => {
   return (
     <>
       <div ref={scrollPositionRef} />
-      <header id="pageHeader" className={`header sticky-wrapper bg-gradient-blue ${isSticky ? 'sticky' : ''} `} >
+      <header id="pageHeader" className={`header sticky-wrapper ${isSticky ? 'sticky' : ''} `}>
         <Primarynav onHighlightChange={handleArrowMove} />
         <div className="nav-pointer">
           <svg version="1.1" x="0px" y="0px" viewBox="0 0 6000 241" style={{marginLeft:arrowPos}}>

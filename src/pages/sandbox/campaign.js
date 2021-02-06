@@ -1,10 +1,10 @@
 import React from 'react'
 import PropTypes from 'prop-types'
-import Layout from '../components/Layout'
-import AccordionItems from '../components/AccordionItems'
-import HeroDefault from '../components/HeroDefault'
-import CardSlider from '../components/CardSlider'
-import FooterCards from '../components/FooterCards'
+import Layout from '../../components/Layout'
+import AccordionItems from '../../components/AccordionItems'
+import HeroDefault from '../../components/HeroDefault'
+import CardSlider from '../../components/CardSlider'
+import FooterCards from '../../components/FooterCards'
 
 const campaign = () => {
   return (

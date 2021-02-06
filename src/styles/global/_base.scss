@@ -28,7 +28,9 @@ body {
   &.has-scrolled {
     @include media-breakpoint-up(lg) {
       #pageHeader {
-        background: transparent linear-gradient(80deg, $primary 0%, $dark 100%) 0% 0% no-repeat padding-box;
+        &::after {
+          opacity: 1;
+        }
       }
       &::before {
         opacity: 0;

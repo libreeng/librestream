@@ -10,26 +10,26 @@ const HeroDefault = ({ title, subtitle, subnav, logo }) => {
       <div className="container">
         <div className="row align-items-end">
           <div className="col-lg-6">
-            <h1 className="title mt-5 text-white" >{title}</h1>
-            {subtitle && (<h2>{subtitle}</h2>)}
+            <h1 className="title mt-5 text-white">{title}</h1>
+            {subtitle && (<h2 className="text-white">{subtitle}</h2>)}
             {subnav && (
-              <ul className="nav">
-                {[...Array(3)].map((x, i) =>
+              <ul className="nav mt-4">
+                {[...Array(3)].map((x, i) => (
                   <li className="nav-item" key={i}>
                     <a href="#" className="nav-link">Link Title</a>
                   </li>
+                )
                 )}
               </ul>
             )}
           </div>
-          {logo && (
-            <div className="col-lg-6">
-              <div className="text-lg-right">
-                <img src="https://via.placeholder.com/150" alt=""/>
-              </div>
+          <div className="col-lg-6">
+            {logo && (
+            <div className="text-lg-right">
+              <img src="https://via.placeholder.com/150" className="img-fluid" alt="" />
             </div>
-          )}
-          
+            )}
+          </div>
         </div>
       </div>
   

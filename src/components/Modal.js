@@ -3,18 +3,23 @@ import Modal from 'react-bootstrap/Modal'
 import Button from 'react-bootstrap/Button'
 
 
-export const ModalExample = () => {
+export const ModalComponent = ({modalTriggerLabel, title, content, image}) => {
     
   const [showModal, setShow] = useState(false);
   const handleClose = () => setShow(false);
   const handleShow = () => setShow(true);
 
-
   return (
     <>
-      <Button variant="primary" onClick={handleShow}>
-        Launch static backdrop modal
-      </Button>
+      {image ? (
+        <Button variant="unstyled" onClick={handleShow}>
+          <img src={image} className="img-fluid" alt="Play button" />
+        </Button>
+      ): (
+        <Button variant="btn-primary">
+          {modalTriggerLabel}
+        </Button>  
+      )}
 
       <Modal
         show={showModal}
@@ -23,10 +28,10 @@ export const ModalExample = () => {
         size="lg"
       >
         <Modal.Header closeButton>
-          <Modal.Title>Modal title</Modal.Title>
+          <Modal.Title>{title}</Modal.Title>
         </Modal.Header>
         <Modal.Body>
-          Modal body content Lorem ipsum dolor sit amet consectetur, adipisicing elit. Incidunt repudiandae, eum laborum laboriosam animi dignissimos praesentium autem quisquam nihil expedita amet est odio totam nulla in ipsa iusto quod id.
+          {content}
         </Modal.Body>
         <Modal.Footer>
           <Button variant="gradient-green-cyan" onClick={handleClose}>
@@ -39,4 +44,4 @@ export const ModalExample = () => {
   
 }
 
-export default ModalExample
+export default ModalComponent

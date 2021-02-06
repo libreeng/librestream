@@ -7,6 +7,8 @@
   text-transform: uppercase;
   position: relative;
   line-height: 1.5;
+  width: 250px;
+  max-width: 100%;
   &::after {
     content: '';
     display: block;
@@ -22,7 +24,7 @@
   }
   &.btn-lg {
     @include media-breakpoint-up(lg) {
-      min-width: 275px;
+      width: 300px;
     }
   }
   &.btn-gradient-blue-cyan {
@@ -30,6 +32,9 @@
   }
   &.btn-gradient-green-cyan {
     background: linear-gradient(90deg, $green 0%, $cyan 100%);
+  }
+  &.btn-gradient-cyan-green {
+    background: linear-gradient(90deg, $cyan 0%, $green 100%);
   }
   &.btn-gradient-dark-blue {
     background: linear-gradient(90deg, $dark 0%, $blue 100%);
@@ -49,6 +54,21 @@
   }
   &.btn-block {
     padding: 0.4rem 1rem;
+  }
+  &.btn-unstyled {
+    border: 0;
+    background: transparent;
+    padding: 0;
+    outline: 0;
+    &:hover, 
+    &:focus {
+      outline: 0;
+      box-shadow: none;
+      border-radius: 0;
+    }
+    &::after {
+      display: none;
+    }
   }
 }
 
@@ -141,4 +161,28 @@
     margin-left: 0;
     right: auto;
   }
+}
+
+//modals 
+.modal-dialog {
+  .close {
+    font-weight: 100;
+    line-height: 1;
+    color: $white;
+    text-shadow: 0;
+    opacity: 1;
+    font-size: 2.5rem;
+  }
+}
+
+.modal-backdrop {
+  background-color: $dark;
+  &.show {
+    opacity: 0.7;
+  }
+}
+
+.modal-content {
+  background-color: $dark;
+  color: $white;
 }

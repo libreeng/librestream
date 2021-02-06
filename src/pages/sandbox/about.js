@@ -1,14 +1,14 @@
 import React from 'react'
 import PropTypes from 'prop-types'
-import Layout from '../components/Layout'
-import HeroDefault from '../components/HeroDefault'
-import CardSlider from '../components/CardSlider'
-import FooterCards from '../components/FooterCards'
+import Layout from '../../components/Layout'
+import HeroDefault from '../../components/HeroDefault'
+import CardSlider from '../../components/CardSlider'
+import FooterCards from '../../components/FooterCards'
 
 const about = () => {
   return (
     <Layout>
-      <HeroDefault title="Company Profile"></HeroDefault>
+      <HeroDefault title="Company Profile" />
       <section>
         <div className="container">
           <div className="row">
@@ -35,10 +35,11 @@ const about = () => {
             </div>
           </div>
           <div className="row">
-            {[...Array(12)].map((x, i) =>
+            {[...Array(12)].map((x, i) => (
               <div className="col-12 col-lg-2 mb-4">
-                <img src="https://via.placeholder.com/500" className="img-fluid" alt="award badge image"/>
+                <img src="https://via.placeholder.com/500" className="img-fluid" alt="award badge" />
               </div>
+            )
             )}
           </div>
         </div>
@@ -70,12 +71,14 @@ const about = () => {
             </div>
           </div>
           <div className="row">
-            {[...Array(12)].map((x, i) =>
+            {[...Array(12)].map((x, i) => (
               <div className="col-12 col-lg-3 mb-4">
-                <img src="https://via.placeholder.com/500" className="img-fluid mb-3" alt="award badge image"/>
+                <img src="https://via.placeholder.com/500" className="img-fluid mb-3" alt="award badge"/>
                 <h4 className="mb-0">Firstname Lastname</h4>
                 <p className="text-primary">Tile / rolename</p>
               </div>
+            )
+              
             )}
           </div>
           <hr className="hr-styled"/>
@@ -85,12 +88,13 @@ const about = () => {
             </div>
           </div>
           <div className="row">
-            {[...Array(12)].map((x, i) =>
+            {[...Array(12)].map((x, i) => (
               <div className="col-12 col-lg-3 mb-4">
-                <img src="https://via.placeholder.com/500" className="img-fluid mb-3" alt="award badge image"/>
+                <img src="https://via.placeholder.com/500" className="img-fluid mb-3" alt="award badge"/>
                 <h4 className="mb-0">Firstname Lastname</h4>
                 <p className="text-primary">Tile / rolename</p>
               </div>
+            )
             )}
           </div>
         </div>

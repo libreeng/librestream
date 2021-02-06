@@ -10,7 +10,7 @@
     display: block;
     width: 138px;
     position: absolute;
-    z-index: 0;
+    z-index: 99;
     border-top: 56px solid $dark;
     border-right: 57px solid transparent;
     @include media-breakpoint-up(lg) {
@@ -22,6 +22,19 @@
       width: 248px;
     }
   }
+  &::after {
+    content: '';
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    background: transparent linear-gradient(80deg, $primary 0%, $dark 100%) 0% 0% no-repeat padding-box;
+    z-index: 50;
+    opacity: 0;
+    box-shadow: 1px 2px 5px rgba($black, 0.2);
+    @include transition(0.4s);
+  }
   @include media-breakpoint-up(lg) {
     background-color: transparent;
   }
@@ -32,6 +45,7 @@
     }
   }
   .navbar {
+    z-index: 100;
     @include media-breakpoint-down(md) {
       padding-left: 0;
       padding-right: 0;
@@ -56,9 +70,9 @@
 
   .nav-pointer {
     position: absolute;
-    z-index: 0;
-    width:100%;
-    height:100%;
+    z-index: 100;
+    width: 100%;
+    height: 100%;
     bottom: 0;
     overflow: hidden;
     pointer-events: none;
@@ -124,6 +138,7 @@
             width: 150vw;
             display: block;
             background-color: rgba($dark, 0.94);
+            margin-top: 10px;
             top: 0;
             right: -50vw;
             height: 100%;
@@ -186,6 +201,7 @@
     &:last-of-type {
       padding-right: 0;
       border-bottom: 0;
+      
       @include media-breakpoint-down(md) {
         padding-top: 30px;
         padding-bottom: 30px;
@@ -200,12 +216,26 @@
         line-height: 1;
         padding-left: 3rem;
         padding-right: 3rem;
+        &::before {
+          display: none;
+        }
       }
     }
     .nav-link {
       text-transform: uppercase;
       font-size: 1.2rem;
       color: $cyan;
+      position: relative;
+      &::before {
+        content: '';
+        display: block;
+        width: 1px;
+        height: 20px;
+        background-color: $white;
+        position: absolute;  
+        top: 6px;
+        left: 0;
+      }
       @include media-breakpoint-down(md) {
         padding-left: 15px;
         padding-right: 15px;
@@ -246,13 +276,6 @@
   }
 }
 
-// .nav-link {
-//   color: $white;
-//   font-size: 1.3em;
-//   &.active{ 
-//     color:$black;
-//   }
-// }
 .navbar-toggler {
   position: relative;
   padding: 0;
@@ -320,12 +343,34 @@
   .nav-item {
     padding-right: 5px;
     padding-left: 5px;
-
+    &:nth-of-type(2) {
+      .nav-link {
+        &::before,
+        &::after {
+          content: '';
+          display: block;
+          width: 1px;
+          height: 15px;
+          background-color: $white;
+          position: absolute;  
+          top: 10px;
+          
+        }
+        &::before {
+          left: -5px;
+        }
+        &::after {
+          right: -5px;
+        }
+      }
+    }
     .nav-link {
       padding-left: 5px;
       padding-right: 5px;
       font-size: 1rem;
       color: $white;
+      position: relative;
+      
     }
   }
   

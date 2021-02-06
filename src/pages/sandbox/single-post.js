@@ -1,14 +1,13 @@
 import React from 'react'
 import PropTypes from 'prop-types'
-import Layout from '../components/Layout'
-import AccordionItems from '../components/AccordionItems'
-import HeroDefault from '../components/HeroDefault'
-import Card from '../components/Card'
-import NewsletterSignup from '../components/NewsletterSignup'
-import SocialShare from '../components/SocialShare'
-import CardSlider from '../components/CardSlider'
-import FooterCards from '../components/FooterCards'
-import Footer from '../components/Footer'
+import Layout from '../../components/Layout'
+import HeroDefault from '../../components/HeroDefault'
+import Card from '../../components/Card'
+import NewsletterSignup from '../../components/NewsletterSignup'
+import SocialShare from '../../components/SocialShare'
+import CardSlider from '../../components/CardSlider'
+import FooterCards from '../../components/FooterCards'
+
 const singlePost = () => {
   return (
     <Layout>

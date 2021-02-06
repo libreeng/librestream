@@ -1,9 +1,9 @@
 import React from 'react'
 import PropTypes from 'prop-types'
-import Layout from '../components/Layout'
-import HeroDefault from '../components/HeroDefault'
-import CardSlider from '../components/CardSlider'
-import FooterCards from '../components/FooterCards'
+import Layout from '../../components/Layout'
+import HeroDefault from '../../components/HeroDefault'
+import CardSlider from '../../components/CardSlider'
+import FooterCards from '../../components/FooterCards'
 
 const contact = () => {
   return (
@@ -41,7 +41,7 @@ const contact = () => {
                 <h6 className="mb-0">North America Toll Free</h6>
                 <p className="text-primary">1-xxx-xxx-xxxx</p>
                 <h6 className="mb-0">Fax</h6>
-                <p class="text-primary">1-xxx-xxx-xxxx</p>
+                <p className="text-primary">1-xxx-xxx-xxxx</p>
               </div>
             </div>
           </div>

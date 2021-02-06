@@ -32,7 +32,7 @@ const templateHome = ({ data }) => {
           <div className="row">
             <div className="col-12 col-lg-7 mx-lg-auto">
               <div className="text-center">
-                <h2 className="mb-4">
+                <h2 className="mb-4 font-weight-light">
                   {title}
                 </h2>
                 <div

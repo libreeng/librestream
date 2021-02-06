@@ -1,16 +1,16 @@
 import React from 'react'
 import PropTypes from 'prop-types'
-import Layout from '../components/Layout'
-import HeroDetailed from '../components/HeroDetailed'
-import CarouselBootstrap from '../components/CarouselBootstrap'
-import Stat from '../components/Stat'
-import CardSlider from '../components/CardSlider'
-import FooterCards from '../components/FooterCards'
+import Layout from '../../components/Layout'
+import HeroDetailed from '../../components/HeroDetailed'
+import CarouselBootstrap from '../../components/CarouselBootstrap'
+import Stat from '../../components/Stat'
+import CardSlider from '../../components/CardSlider'
+import FooterCards from '../../components/FooterCards'
 
 const platform = () => {
   return (
     <Layout>
-      <HeroDetailed title="Platform" />
+      <HeroDetailed title="Onsight — The Augmented Reality Knowledge Platform Transforming Your Workforce" subtitle="Named #1 Augmented Reality / Remote Expert Solution for Enterprise." image="https://via.placeholder.com/350" />
       <section>
         <div className="container">
           <div className="row">
