@@ -1,4 +1,5 @@
 module.exports = {
+  flags: {},
   siteMetadata: {
     title: `Librestream Website`,
     description: `Enter in default site meta description...`,
@@ -56,7 +57,7 @@ module.exports = {
         printAll: true,
         printRejected: true,
         // whitelist: () => ['html', 'body', 'collapse', 'collapsing'], // ERRORED: "gatsby-plugin-purgecss" threw an error while running the onCreateWebpackConfig lifecycle: userOptions.whitelist is not iterable
-        whitelistPatterns: ()         => [/modal*/, /accordion*/, /card*/, /navbar*/],
+        whitelistPatterns: () => [/modal*/, /accordion*/, /card*/, /navbar*/],
         whitelistPatternsChildren: () => [/modal*/, /accordion*/, /card*/, /navbar*/]
       },
     }, // must be after other CSS plugins

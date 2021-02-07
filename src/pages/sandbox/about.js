@@ -1,13 +1,12 @@
 import React from 'react'
-import PropTypes from 'prop-types'
-import Layout from '../../components/Layout'
+// import PropTypes from 'prop-types'
 import HeroDefault from '../../components/HeroDefault'
 import CardSlider from '../../components/CardSlider'
 import FooterCards from '../../components/FooterCards'
 
 const about = () => {
   return (
-    <Layout>
+    <>
       <HeroDefault title="Company Profile" />
       <section>
         <div className="container">
@@ -19,13 +18,13 @@ const about = () => {
               <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Molestiae atque consequuntur, maxime natus laudantium hic facilis similique debitis molestias earum neque qui, possimus accusamus inventore laborum aperiam! Minus, ipsa suscipit?</p>
             </div>
             <div className="col-lg-4">
-              <img src="https://via.placeholder.com/768" className="img-fluid" alt=""/>
+              <img src="https://via.placeholder.com/768" className="img-fluid" alt="" />
             </div>
           </div>
         </div>
       </section>
       <div className="container">
-        <hr className="hr-styled"/>
+        <hr className="hr-styled" />
       </div>
       <section>
         <div className="container">
@@ -60,7 +59,7 @@ const about = () => {
         <div className="bg-fill">
           <h1>Timeline video</h1>
         </div>
-        
+
         {/* <iframe src="" frameborder="0">timeline video</iframe> */}
       </div>
       <section>
@@ -73,15 +72,15 @@ const about = () => {
           <div className="row">
             {[...Array(12)].map((x, i) => (
               <div className="col-12 col-lg-3 mb-4">
-                <img src="https://via.placeholder.com/500" className="img-fluid mb-3" alt="award badge"/>
+                <img src="https://via.placeholder.com/500" className="img-fluid mb-3" alt="award badge" />
                 <h4 className="mb-0">Firstname Lastname</h4>
                 <p className="text-primary">Tile / rolename</p>
               </div>
             )
-              
+
             )}
           </div>
-          <hr className="hr-styled"/>
+          <hr className="hr-styled" />
           <div className="row">
             <div className="col-12">
               <h2>Management</h2>
@@ -90,7 +89,7 @@ const about = () => {
           <div className="row">
             {[...Array(12)].map((x, i) => (
               <div className="col-12 col-lg-3 mb-4">
-                <img src="https://via.placeholder.com/500" className="img-fluid mb-3" alt="award badge"/>
+                <img src="https://via.placeholder.com/500" className="img-fluid mb-3" alt="award badge" />
                 <h4 className="mb-0">Firstname Lastname</h4>
                 <p className="text-primary">Tile / rolename</p>
               </div>
@@ -99,10 +98,10 @@ const about = () => {
           </div>
         </div>
       </section>
-      <hr className="hr-styled"/>
+      <hr className="hr-styled" />
       <CardSlider title="Customer Use Cases" />
       <FooterCards />
-    </Layout>
+    </>
   )
 }
 

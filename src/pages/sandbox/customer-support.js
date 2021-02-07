@@ -1,13 +1,12 @@
 import React from 'react'
-import PropTypes from 'prop-types'
-import Layout from '../../components/Layout'
+// import PropTypes from 'prop-types'
 import HeroDefault from '../../components/HeroDefault'
 import CardSlider from '../../components/CardSlider'
 import FooterCards from '../../components/FooterCards'
 
 const customerSupport = () => {
   return (
-    <Layout>
+    <>
       <HeroDefault title="Customer Support" />
       <section>
         <div className="container">
@@ -19,7 +18,7 @@ const customerSupport = () => {
               <div className="text-center mt-4 mb-5">
                 <a href="#" className="btn btn-primary text-white">Access</a>
               </div>
-              <hr className="hr-styled"/>
+              <hr className="hr-styled" />
               <h2 className="text-center mt-3">Submit a case</h2>
               !todo form needs recaptcha scripts for react conversion
               <div className="salesforce-form mb-5">
@@ -50,10 +49,10 @@ const customerSupport = () => {
                   <input name="submit" className="btn btn-gradient-dark-blue text-white" type="submit" />
                 </form>
               </div>
-              
+
               <hr className="hr-styled" />
               <h2 className="text-center mt-5">Contact Sales</h2>
-         
+
               <div className="row">
                 <div className="col-lg-8">
                   <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Vero non iure dolor, id ad et autem, sint deleniti molestiae voluptas ipsam! Earum soluta incidunt temporibus cum officiis dolor accusantium omnis.</p>
@@ -74,10 +73,10 @@ const customerSupport = () => {
           </div>
         </div>
       </section>
-      <hr className="hr-styled"/>
+      <hr className="hr-styled" />
       <CardSlider title="Customer Use Cases" />
       <FooterCards />
-    </Layout>
+    </>
   )
 }
 

@@ -1,6 +1,5 @@
 import React from 'react'
-import PropTypes from 'prop-types'
-import Layout from '../../components/Layout'
+// import PropTypes from 'prop-types'
 import AccordionItems from '../../components/AccordionItems'
 import HeroDefault from '../../components/HeroDefault'
 import CardSlider from '../../components/CardSlider'
@@ -8,7 +7,7 @@ import FooterCards from '../../components/FooterCards'
 
 const campaign = () => {
   return (
-    <Layout>
+    <>
       <HeroDefault title="Remote Expert Accelerator Program" subtitle="" subnav="" logo="" />
       <section>
         <div className="container">
@@ -18,7 +17,7 @@ const campaign = () => {
             </div>
             <div className="col-lg-3 ml-lg-auto">
               <div className="border-bracket text-center">
-                <img src="https://via.placeholder.com/150" className="img-fluid" alt=""/>
+                <img src="https://via.placeholder.com/150" className="img-fluid" alt="" />
               </div>
             </div>
           </div>
@@ -31,7 +30,7 @@ const campaign = () => {
               <div className="bg-image aspect-1x1 img-offset-top img-offset-bottom offset-bottom-lg"></div>
             </div>
             <div className="col-lg-6">
-              <AccordionItems className="accordion-icons" /> 
+              <AccordionItems className="accordion-icons" />
             </div>
           </div>
         </div>
@@ -46,7 +45,7 @@ const campaign = () => {
         </div>
       </section>
       <div className="container">
-        <hr className="hr-styled"/>
+        <hr className="hr-styled" />
       </div>
       <section>
         <div className="container">
@@ -65,10 +64,10 @@ const campaign = () => {
           </div>
         </div>
       </section>
-      <hr className="hr-styled" />  
+      <hr className="hr-styled" />
       <CardSlider title="Customer Use Cases" />
       <FooterCards />
-    </Layout>
+    </>
   )
 }
 

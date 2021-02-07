@@ -1,6 +1,5 @@
 import React from 'react'
-import PropTypes from 'prop-types'
-import Layout from '../../components/Layout'
+// import PropTypes from 'prop-types'
 import HeroDefault from '../../components/HeroDefault'
 import CardSlider from '../../components/CardSlider'
 import FooterCards from '../../components/FooterCards'
@@ -8,7 +7,7 @@ import FooterCards from '../../components/FooterCards'
 const customerSuccess = () => {
   return (
     <>
-      <Layout>
+      <>
         <HeroDefault title="Customer Success" />
         <section>
           <div className="container">
@@ -24,7 +23,7 @@ const customerSuccess = () => {
           </div>
         </section>
         <div className="container">
-          <hr className="hr-styled"/>
+          <hr className="hr-styled" />
         </div>
         <section>
           <div className="container">
@@ -78,12 +77,12 @@ const customerSuccess = () => {
               <div className="col-lg-6">
                 <div className="row">
                   {[...Array(3)].map((x, i) => (
-                      <div className="col-12 col-lg-4 mb-3">
-                        <img src="https://via.placeholder.com/500" className="img-fluid" alt="award badge" />
-                        <h6 className="text-center mt-3">AI Computer Vision</h6>
-                        <div className="border-bracket-bottom" />
-                      </div>
-                    )
+                    <div className="col-12 col-lg-4 mb-3">
+                      <img src="https://via.placeholder.com/500" className="img-fluid" alt="award badge" />
+                      <h6 className="text-center mt-3">AI Computer Vision</h6>
+                      <div className="border-bracket-bottom" />
+                    </div>
+                  )
                   )}
                 </div>
               </div>
@@ -112,7 +111,7 @@ const customerSuccess = () => {
         </section>
         <CardSlider title="Customer Use Cases" />
         <FooterCards />
-      </Layout> 
+      </>
     </>
   )
 }

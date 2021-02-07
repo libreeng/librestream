@@ -1,6 +1,5 @@
 import React from 'react'
-import PropTypes from 'prop-types'
-import Layout from '../../components/Layout'
+// import PropTypes from 'prop-types'
 import HeroDetailed from '../../components/HeroDetailed'
 import CarouselBootstrap from '../../components/CarouselBootstrap'
 import Stat from '../../components/Stat'
@@ -9,14 +8,14 @@ import FooterCards from '../../components/FooterCards'
 
 const platform = () => {
   return (
-    <Layout>
+    <>
       <HeroDetailed title="Onsight — The Augmented Reality Knowledge Platform Transforming Your Workforce" subtitle="Named #1 Augmented Reality / Remote Expert Solution for Enterprise." image="https://via.placeholder.com/350" />
       <section>
         <div className="container">
           <div className="row">
             {[...Array(3)].map((x, i) => (
               <Stat key={i} />
-              )
+            )
             )}
           </div>
         </div>
@@ -72,8 +71,8 @@ const platform = () => {
       </section>
       <CardSlider title="Customer Use Cases" />
       <FooterCards />
-    </Layout>
-    
+    </>
+
   )
 }
 

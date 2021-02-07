@@ -1,33 +1,29 @@
 import React from 'react'
 import PropTypes from 'prop-types'
 import { graphql } from 'gatsby'
-import Layout from '../components/Layout'
 import HeroDefault from '../components/HeroDefault'
 
 const Page = ({ data }) => {
-  const { title,content } = data.wpcontent.page
-  const { heroTitle, heroDescription, heroBackground, columns  } = data.wpcontent.page.acfTemplateDefault
-  console.log("COLUMNS",columns)
+  const { title, content } = data.wpcontent.page
+  const { heroTitle, heroDescription, heroBackground, columns } = data.wpcontent.page.acfTemplateDefault
+  console.log("COLUMNS", columns)
   return (
-    <Layout>
-      { heroBackground ?
-        <div className="jumbotron" style={{backgroundImage: `url(${heroBackground.sourceUrl})`,backgroundSize: `cover`,backgroundPosition:'center center'}}>
+    <>
+      { heroBackground ? (
+        <div className="jumbotron" style={{ backgroundImage: `url(${heroBackground.sourceUrl})`, backgroundSize: `cover`, backgroundPosition: 'center center' }}>
           <div className="container py-5">
-              <h1>{heroTitle}</h1>
-              <div
-                  className="content"
-                  dangerouslySetInnerHTML={{ __html: heroDescription }}
-                />
+            <h1>{heroTitle}</h1>
+            <div className="content" dangerouslySetInnerHTML={{ __html: heroDescription }} />
           </div>
         </div>
-      :
-        <HeroDefault title={title}/>
-      }
+      ) : (
+          <HeroDefault title={title} />
+        )}
 
       <section>
         <div className="container">
           <div className="row">
-            <div className="col-12">              
+            <div className="col-12">
               <div
                 className="content"
                 dangerouslySetInnerHTML={{ __html: content }}
@@ -38,32 +34,32 @@ const Page = ({ data }) => {
       </section>
 
 
-      {columns.map((flexContent,id) => (
+      {columns.map((flexContent, id) => (
         <div key={id}>
-       
-        
-        { flexContent.fieldGroupName == 'page_Acftemplatedefault_Columns_Columns' &&
-          <div className='container'> 
-          <div className='row'>
-          { flexContent.columns.map((col,id) => (
-            <div
-              className={ col.columnWidth }
-              dangerouslySetInnerHTML={{ __html: col.content }}
-              key={id}
-            />
-          ))}
-          </div>
-          </div>
-        }
-      </div>
+
+
+          { flexContent.fieldGroupName === 'page_Acftemplatedefault_Columns_Columns' && (
+            <div className='container'>
+              <div className='row'>
+                {flexContent.columns.map((col, id) => (
+                  <div
+                    className={col.columnWidth}
+                    dangerouslySetInnerHTML={{ __html: col.content }}
+                    key={id}
+                  />
+                ))}
+              </div>
+            </div>
+          )}
+        </div>
       ))}
 
-    </Layout>
+    </>
   )
 }
 
 Page.propTypes = {
-  data: PropTypes.object.isRequired,
+  data: PropTypes.instanceOf(Object).isRequired,
 }
 
 export default Page
@@ -73,7 +69,7 @@ export const pageQuery = graphql`
     wpcontent{
       page(id: $id) {
         title
-        content    
+        content
         acfTemplateDefault {
           heroTitle
           heroDescription
@@ -88,7 +84,7 @@ export const pageQuery = graphql`
                 content
                 columnWidth
               }
-            }            
+            }
           }
         }
       }

@@ -1,13 +1,12 @@
 import React from 'react'
-import PropTypes from 'prop-types'
-import Layout from '../../components/Layout'
+// import PropTypes from 'prop-types'
 import HeroDefault from '../../components/HeroDefault'
 import CardSlider from '../../components/CardSlider'
 import FooterCards from '../../components/FooterCards'
 
 const itSecurity = () => {
   return (
-    <Layout>
+    <>
       <HeroDefault title="IT &amp; Security" />
       <section>
         <div className="container">
@@ -45,10 +44,10 @@ const itSecurity = () => {
           </div>
         </div>
       </section>
-      <hr className="hr-styled"/>
+      <hr className="hr-styled" />
       <CardSlider title="Customer Use Cases" />
       <FooterCards />
-    </Layout>
+    </>
   )
 }
 

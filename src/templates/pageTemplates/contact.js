@@ -1,13 +1,12 @@
 import React from 'react'
-import PropTypes from 'prop-types'
-import Layout from '../../components/Layout'
+// import PropTypes from 'prop-types'
 import HeroDefault from '../../components/HeroDefault'
 import CardSlider from '../../components/CardSlider'
 import FooterCards from '../../components/FooterCards'
 
 const contact = () => {
   return (
-    <Layout>
+    <>
       <HeroDefault title="Contact" />
       <section>
         <div className="container">
@@ -15,7 +14,7 @@ const contact = () => {
             <div className="col-12 col-lg-8">
               <h2>For general questions and comments or if you would like our team to follow up with you, please fill out the form below with any questions or comments:</h2>
               <iframe src="https://1.librestream.com/l/859043/2020-04-27/bylx" width="100%" height="1000" frameBorder="0" title="Contact Form" />
-              
+
             </div>
             <div className="col-12 col-lg-4 ml-lg-auto">
               <div className="border-bracket">
@@ -50,7 +49,7 @@ const contact = () => {
       <hr className="hr-styled" />
       <CardSlider title="Customer Use Cases" />
       <FooterCards />
-    </Layout>
+    </>
   )
 }
 

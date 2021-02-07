@@ -1,13 +1,12 @@
 import React from 'react'
-import PropTypes from 'prop-types'
-import Layout from '../../components/Layout'
+// import PropTypes from 'prop-types'
 import HeroDefault from '../../components/HeroDefault'
 import CardSlider from '../../components/CardSlider'
 import FooterCards from '../../components/FooterCards'
 
 const careers = () => {
   return (
-    <Layout>
+    <>
       <HeroDefault title="Career Opportunities" />
       <section>
         <div className="container">
@@ -27,22 +26,22 @@ const careers = () => {
           <div className="row">
             {[...Array(6)].map((x, i) => (
               <div className="col-12 col-lg-6 mb-4">
-                <hr className="hr-styled"/>
+                <hr className="hr-styled" />
                 <h4 className="mt-4">Career Name</h4>
                 <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Sed explicabo hic in! Distinctio libero pariatur inventore voluptates mollitia ipsam molestias debitis. Accusantium quos culpa nisi provident ad, veritatis reprehenderit officia?</p>
                 <a href="#" className="btn btn-border border-primary mt-3">Continue Reading</a>
-                
+
               </div>
-              )
-            )}  
+            )
+            )}
           </div>
         </div>
       </section>
-      
+
       <hr className="hr-styled" />
       <CardSlider title="Customer Use Cases" />
       <FooterCards />
-    </Layout>
+    </>
   )
 }
 

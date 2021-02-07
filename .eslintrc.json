@@ -7,7 +7,8 @@
     "react/require-default-props": "off",
     "react/prop-types": "off",
     "react/no-danger": "off",
-    "react/jsx-one-expression-per-line": "off"
+    "react/jsx-one-expression-per-line": "off",
+    "import/prefer-default-export": "off"
   },
   "settings": {
     "import/core-modules": []

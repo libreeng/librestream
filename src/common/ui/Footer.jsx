@@ -1,80 +1,23 @@
 import React from 'react'
-import { Link, useStaticQuery, graphql } from 'gatsby'
-import SocialNav from '../components/SocialNav'
- //const Flickity = require("react-flickity-component")
-//require('flickity-imagesloaded');
+// import PropTypes from 'prop-types'
+import { useSiteFooter } from '../hooks/useSiteFooter'
+import SocialMenu from './menus/SocialMenu'
 
 const Footer = () => {
-
-  const data = useStaticQuery(graphql`
-    query FooterQuery {
-      wpcontent {
-        options {
-          acfSiteOptions {
-            title
-            footerPhoneTitle
-            footerPhone
-            footerTollFreePhoneTitle
-            footerTollFreePhone
-            footerEmailTitle
-            footerEmail
-            phoneTitle
-            footerMailingListTitle
-            socialLinks {
-              site
-              svgCode
-              url
-            }
-            partners {
-              url
-              logo {
-                sourceUrl
-                altText
-              }
-            }
-          }
-        }
-      }
-      footerbar: file(relativePath: {eq: "footer-bar.svg"}) {
-        publicURL
-        absolutePath
-        childImageSharp {
-          fixed {
-           srcWebp
-          }
-        }
-      }
-    }
-  `)
-  const options = data.wpcontent.options.acfSiteOptions;
+  const {options, footerbar} = useSiteFooter()
 
   return (
     <>
-      {/* <div className="bg-info py-3">
-       
-        {
-        
-          options.partners.map(({ url,logo },index) => (
-            <div className=""  key={`slide-${index}`}>
-              <a href={url} >
-                <img src={logo.sourceUrl} className="my-2 d-inline-block" style={{height:'80px',width:'auto'}}/>
-              </a>
-            </div>
-          ))
-        
-        }
-      </div> */}
-        
       <footer id="pageFooter" className="bg-light">
-        <hr className="border-white my-0"/>
+        <hr className="border-white my-0" />
         <div className="prefooter py-5">
           <div className="d-flex align-items-center justify-content-between">
             {[...Array(10)].map((x, i) =>
-              <img key={i} src="https://via.placeholder.com/75x50" className="img-fluid" alt=""/>
+              <img key={i} src="https://via.placeholder.com/75x50" className="img-fluid" alt="" />
             )}
           </div>
         </div>
-        <hr className="border-white my-0"/>  
+        <hr className="border-white my-0" />
         <div className="container">
           <div className="row py-5">
             <div className="col-12 col-md-4 col-lg">
@@ -88,7 +31,7 @@ const Footer = () => {
                 </small>
               </h6>
               <p className="font-weight-bold">{options.footerPhone}</p>
-            </div>  
+            </div>
             <div className="col-12 col-md-4 col-lg">
               <h6>
                 <small>
@@ -101,18 +44,11 @@ const Footer = () => {
               <a href={`'mailto:' options.footerEmail`} className="btn btn-white btn-block">{options.footerEmailTitle}</a>
             </div>
             <div className="col-12 col-md-6 col-lg">
-              <SocialNav />
-              {/* <div className="socialnav">
-                {
-                  options.socialLinks.map(({ site,url,svgCode },index) => (
-                    <a href={url} title={site} className="mr-3" key={`social-${index}`} dangerouslySetInnerHTML={{ __html: svgCode }}></a>
-                  ))
-                }
-              </div> */}
+              <SocialMenu />
             </div>
           </div>
         </div>
-        <hr className="border-white"/>
+        <hr className="border-white" />
         <div className="container">
           <div className="row py-5">
             <div className="col-12 col-md-4 col-lg-2 mb-3 mb-md-0">
@@ -236,9 +172,9 @@ const Footer = () => {
               </ul>
             </div>
           </div>
-          
+
         </div>
-        <hr className="border-white"/>
+        <hr className="border-white" />
         <div className="container">
           <div className="row">
             <div className="col-12">
@@ -253,7 +189,7 @@ const Footer = () => {
         <div className="container">
           <div className="row mt-5">
             <div className="col-12">
-              <img src={data.footerbar.publicURL} className="img-fluid" alt="Librestream logo" />
+              <img src={footerbar.publicURL} className="img-fluid" alt="Librestream logo" />
             </div>
           </div>
         </div>

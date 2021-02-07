@@ -1,7 +1,7 @@
 import React from 'react'
 import PropTypes from 'prop-types'
 import Helmet from 'react-helmet'
-import useSiteMetadata from '../hooks/useSiteMetadata'
+import { useSiteMetadata } from '../hooks/useSiteMetadata'
 
 const HEAD = ({ pageDescription, pageTitle, pageAuthor }) => {
   const { title, description, author, lang } = useSiteMetadata()

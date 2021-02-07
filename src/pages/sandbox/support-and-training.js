@@ -1,6 +1,5 @@
 import React from 'react'
-import PropTypes from 'prop-types'
-import Layout from '../../components/Layout'
+// import PropTypes from 'prop-types'
 import HeroDefault from '../../components/HeroDefault'
 import AccordionItems from '../../components/AccordionItems'
 import AccordionNav from '../../components/AccordionNav'
@@ -10,7 +9,7 @@ import FooterCards from '../../components/FooterCards'
 
 const supportAndTraining = () => {
   return (
-    <Layout>
+    <>
       <HeroDefault title="Support & Training" />
       <section>
         <div className="container">
@@ -31,7 +30,7 @@ const supportAndTraining = () => {
                     <AccordionItems />
                   </div>
                   <div className="col-lg-3 ml-lg-auto">
-                    <img src="https://via.placeholder.com/500" className="img-fluid" alt=""/>
+                    <img src="https://via.placeholder.com/500" className="img-fluid" alt="" />
                   </div>
                 </div>
               )
@@ -40,10 +39,10 @@ const supportAndTraining = () => {
           </div>
         </div>
       </section>
-      <hr className="hr-styled" />  
+      <hr className="hr-styled" />
       <CardSlider title="Customer Use Cases" />
       <FooterCards />
-    </Layout>
+    </>
   )
 }
 

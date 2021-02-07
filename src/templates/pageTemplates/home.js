@@ -1,6 +1,5 @@
 import React from 'react'
 import { graphql } from 'gatsby'
-import Layout from '../../components/Layout'
 import HeroHome from '../../components/HeroHome'
 import CarouselBootstrap from '../../components/CarouselBootstrap'
 import CardWithLogo from '../../components/CardWithLogo'
@@ -8,9 +7,9 @@ import Card from '../../components/Card'
 import Stat from '../../components/Stat'
 
 const templateHome = ({ data }) => {
-  
+
   // const { title,content } = data.wpcontent.page
-  const { 
+  const {
     title,
     description,
     linkType,
@@ -23,9 +22,9 @@ const templateHome = ({ data }) => {
     homeStat,
     useCases,
     news } = data.wpcontent.page.acfTemplateHome
-    console.log(useCases)
+  console.log(useCases)
   return (
-    <Layout>
+    <>
       <HeroHome data={data} />
       <section className="bg-white">
         <div className="container">
@@ -48,14 +47,14 @@ const templateHome = ({ data }) => {
       <section className="bg-white">
         <div className="scrolling-wrapper">
           <div className="row flex-nowrap row-cols-1 row-cols-md-2 row-cols-lg-4">
-            {useCases && useCases.map(useCase => (
-              <div className="col mb-4">
+            {useCases && useCases.map((obj, index) => (
+              <div key={`${obj.useCase.id}_${index}`} className="col mb-4">
                 <CardWithLogo />
                 {/* // <div className="col-12 col-md-6 col-lg-3" key={useCase.useCase.id}>
                 //   <div>{useCase.useCase.title}</div>
                 // </div> */}
-              </div>  
-            ))}         
+              </div>
+            ))}
           </div>
         </div>
       </section>
@@ -71,8 +70,8 @@ const templateHome = ({ data }) => {
       <section className="bg-white folder-border folder-top">
         <div className="container">
           <div className="row">
-            {homeStat && homeStat.map((homeStat, index) => (
-              <Stat />
+            {homeStat && homeStat.map((stat, index) => (
+              <Stat key={index} />
               // <div className="col-12 col-md-6 col-lg-3" key={index}>
               //   <div className="display-1">{homeStat.homeStatValue}</div>
               //   <p className="text-uppercase lead border-left border-dark">{homeStat.homeStatLabel}</p>
@@ -105,7 +104,7 @@ const templateHome = ({ data }) => {
           </div>
         </div>
       </section>
-    </Layout>
+    </>
   )
 }
 
@@ -128,7 +127,7 @@ export const pageQuery = graphql`
         }
       }
     }
-   
+
     homeHeroWorker: file(name: { eq: "home_hero_worker" }) {
       publicURL
       childImageSharp {
@@ -141,7 +140,7 @@ export const pageQuery = graphql`
     wpcontent{
       page(id: $id) {
         title
-        content    
+        content
         acfTemplateHome {
           title
           description
@@ -219,7 +218,7 @@ export const pageQuery = graphql`
           }
           videoEmbed
           videoDescription
-          
+
         }
       }
     }

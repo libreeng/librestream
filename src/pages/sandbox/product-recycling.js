@@ -1,13 +1,12 @@
 import React from 'react'
-import PropTypes from 'prop-types'
-import Layout from '../../components/Layout'
+// import PropTypes from 'prop-types'
 import HeroDefault from '../../components/HeroDefault'
 import CardSlider from '../../components/CardSlider'
 import FooterCards from '../../components/FooterCards'
 
 const productRecycling = () => {
   return (
-    <Layout>
+    <>
       <HeroDefault title="Product Recycling" />
       <section>
         <div className="container">
@@ -36,16 +35,16 @@ const productRecycling = () => {
                   895 Waverley St., Suite 110<br />Winnipeg, Manitoba<br />Canada, R3T 5P4
                 </address>
               </div>
-              
+
             </div>
           </div>
         </div>
       </section>
-   
+
       <hr className="hr-styled" />
       <CardSlider title="Customer Use Cases" />
       <FooterCards />
-    </Layout>
+    </>
   )
 }
 

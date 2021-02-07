@@ -1,5 +1,4 @@
 import React, { useState, useEffect } from 'react';
-import Layout from '../../components/Layout'
 import { Link, useStaticQuery, graphql } from 'gatsby'
 import HeroDefault from '../../components/HeroDefault'
 import CardWithLogo from '../../components/CardWithLogo'
@@ -17,71 +16,71 @@ const SandboxPageJon = () => {
            srcWebp
           }
         }
-      }      
+      }
     }
   `)
   console.log(data.logo.childImageSharp.fixed.srcWebp)
   return (
-  <Layout>
-    <HeroDefault title="Hero Default" />
-    <section>
-      <CarouselCards></CarouselCards>
-    </section>
-    <section className="bg-white">
-      <div className="container mt-5">
-        <div className="row">
-          <div className="col-12">
-            <h1>jon's Sandbox</h1>
+    <>
+      <HeroDefault title="Hero Default" />
+      <section>
+        <CarouselCards></CarouselCards>
+      </section>
+      <section className="bg-white">
+        <div className="container mt-5">
+          <div className="row">
+            <div className="col-12">
+              <h1>jon's Sandbox</h1>
+            </div>
           </div>
         </div>
-      </div>
-    </section>
-    <section className="bg-white">
-      <div className="container">
-        <div className="row">
-          <div className="col-12">
-            <h2>Scroll x example</h2>
+      </section>
+      <section className="bg-white">
+        <div className="container">
+          <div className="row">
+            <div className="col-12">
+              <h2>Scroll x example</h2>
+            </div>
           </div>
         </div>
-      </div>
-    </section>
-    
-    <section className="bg-white">
-      <div className="scrolling-wrapper">
-        <div className="row flex-nowrap row-cols-1 row-cols-md-2 row-cols-lg-3">
-          <div className="col mb-4">
-            <CardWithLogo logo={data.logo.childImageSharp.fixed.srcWebp}></CardWithLogo>
-          </div>
-          <div className="col mb-4">
-            <CardWithLogo logo={data.logo.childImageSharp.fixed.srcWebp}></CardWithLogo>
-          </div>
-          <div className="col mb-4">
-            <CardWithLogo logo={data.logo.childImageSharp.fixed.srcWebp}></CardWithLogo>
-          </div>
-          <div className="col mb-4">
-            <CardWithLogo logo={data.logo.childImageSharp.fixed.srcWebp}></CardWithLogo>
-          </div>
-          <div className="col mb-4">
-            <CardWithLogo logo={data.logo.childImageSharp.fixed.srcWebp}></CardWithLogo>
-          </div>
-          <div className="col mb-4">
-            <CardWithLogo logo={data.logo.childImageSharp.fixed.srcWebp}></CardWithLogo>
-          </div>
-        </div>
-      </div>
-    </section>
+      </section>
 
-    <section className="bg-white">
-      <div className="container">
-        <div className="row">
-          <div className="col-12">
-            <h2>AutoScroll x example</h2>
+      <section className="bg-white">
+        <div className="scrolling-wrapper">
+          <div className="row flex-nowrap row-cols-1 row-cols-md-2 row-cols-lg-3">
+            <div className="col mb-4">
+              <CardWithLogo logo={data.logo.childImageSharp.fixed.srcWebp}></CardWithLogo>
+            </div>
+            <div className="col mb-4">
+              <CardWithLogo logo={data.logo.childImageSharp.fixed.srcWebp}></CardWithLogo>
+            </div>
+            <div className="col mb-4">
+              <CardWithLogo logo={data.logo.childImageSharp.fixed.srcWebp}></CardWithLogo>
+            </div>
+            <div className="col mb-4">
+              <CardWithLogo logo={data.logo.childImageSharp.fixed.srcWebp}></CardWithLogo>
+            </div>
+            <div className="col mb-4">
+              <CardWithLogo logo={data.logo.childImageSharp.fixed.srcWebp}></CardWithLogo>
+            </div>
+            <div className="col mb-4">
+              <CardWithLogo logo={data.logo.childImageSharp.fixed.srcWebp}></CardWithLogo>
+            </div>
           </div>
         </div>
-      </div>
-    </section>
-    
-    <section className="bg-white">
+      </section>
+
+      <section className="bg-white">
+        <div className="container">
+          <div className="row">
+            <div className="col-12">
+              <h2>AutoScroll x example</h2>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section className="bg-white">
 
         <div className="ticker ticker-6">
           <div className="ticker-item">
@@ -102,7 +101,7 @@ const SandboxPageJon = () => {
           <div className="ticker-item">
             <CardWithLogo logo={data.logo.childImageSharp.fixed.srcWebp}></CardWithLogo>
           </div>
-          
+
           <div className="ticker-item">
             <CardWithLogo logo={data.logo.childImageSharp.fixed.srcWebp}></CardWithLogo>
           </div>
@@ -123,8 +122,8 @@ const SandboxPageJon = () => {
           </div>
         </div>
 
-    </section>
-  </Layout>
+      </section>
+    </>
   )
 }
 

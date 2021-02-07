@@ -1,7 +1,6 @@
 import React from 'react'
 import PropTypes from 'prop-types'
 import { graphql } from 'gatsby'
-import Layout from '../components/Layout'
 import HeroDefault from '../components/HeroDefault'
 
 export const UseCaseTemplate = ({ title, content }) => {
@@ -32,18 +31,18 @@ UseCaseTemplate.propTypes = {
 }
 
 const UseCase = ({ data }) => {
-  const { wpcontent  } = data
+  const { wpcontent } = data
 
   return (
-    <Layout>
-      <HeroDefault title={wpcontent.caseStudy.title}/>
+    <>
+      <HeroDefault title={wpcontent.caseStudy.title} />
       <UseCaseTemplate title={wpcontent.caseStudy.title} content={wpcontent.caseStudy.content} />
-    </Layout>
+    </>
   )
 }
 
 UseCase.propTypes = {
-  data: PropTypes.object.isRequired,
+  data: PropTypes.instanceOf(Object).isRequired,
 }
 
 export default UseCase

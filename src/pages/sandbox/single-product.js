@@ -1,6 +1,5 @@
 import React from 'react'
-import PropTypes from 'prop-types'
-import Layout from '../../components/Layout'
+// import PropTypes from 'prop-types'
 import HeroDefault from '../../components/HeroDefault'
 import CardSlider from '../../components/CardSlider'
 import FooterCards from '../../components/FooterCards'
@@ -8,7 +7,7 @@ import FooterCards from '../../components/FooterCards'
 const singleProduct = () => {
   return (
     <>
-      <Layout>
+      <>
         <HeroDefault title="Remote Expert" subtitle="" subnav="true" />
         <section>
           <div className="container">
@@ -20,7 +19,7 @@ const singleProduct = () => {
                 <div className="text-center mt-4">
                   <a href="#" className="btn btn-gradient-cyan-green">Register for 30-day trial</a>
                 </div>
-                
+
               </div>
             </div>
           </div>
@@ -35,7 +34,7 @@ const singleProduct = () => {
                 {/* It looks like on the current site this is a link to a blog post */}
               </div>
               <div className="col-lg-5">
-                <img src="https://via.placeholder.com/768" className="img-fluid img-offset-top" alt=""/>
+                <img src="https://via.placeholder.com/768" className="img-fluid img-offset-top" alt="" />
               </div>
             </div>
           </div>
@@ -56,17 +55,17 @@ const singleProduct = () => {
           <div className="container">
             <div className="row align-items-center">
               <div className="col-lg-6">
-                <div 
+                <div
                   className="bg-image aspect-1x1"
                   style={{
                     backgroundImage: `url(https://picsum.photos/768)`
-                  }} 
+                  }}
                 />
               </div>
               <div className="col-lg-6">
                 <h4>Lorem ipsum dolor sit amet consectetur adipisicing elit. Dolorem, et nemo dolor amet officia itaque explicabo, voluptates labore repudiandae praesentium molestias illum pariatur in inventore voluptatum eum dignissimos, debitis blanditiis!</h4>
                 <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Sed accusamus nostrum architecto temporibus tempore, nobis, quos, aperiam porro distinctio officia doloribus. Repellat necessitatibus libero sit alias ex sed, laborum quod.</p>
-                <hr className="hr-sm ml-0"/>
+                <hr className="hr-sm ml-0" />
               </div>
             </div>
           </div>
@@ -122,7 +121,7 @@ const singleProduct = () => {
         </section>
         <CardSlider title="Customer Use Cases" />
         <FooterCards />
-      </Layout>       
+      </>
     </>
   )
 }

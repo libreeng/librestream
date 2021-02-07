@@ -1,6 +1,5 @@
 import React from 'react'
-import PropTypes from 'prop-types'
-import Layout from '../../components/Layout'
+// import PropTypes from 'prop-types'
 import HeroDefault from '../../components/HeroDefault'
 import Card from '../../components/Card'
 import NewsletterSignup from '../../components/NewsletterSignup'
@@ -10,7 +9,7 @@ import FooterCards from '../../components/FooterCards'
 
 const singlePost = () => {
   return (
-    <Layout>
+    <>
       <HeroDefault title="News" subtitle="" subnav="" logo="" />
       <section>
         <div className="container">
@@ -19,7 +18,7 @@ const singlePost = () => {
               <h1>Post Title</h1>
               <hr />
               <p className="text-light">Posted Dec. 8, 2020</p>
-              <img src="https://via.placeholder.com/1000x768" className="img-fluid mb-4" alt=""/>
+              <img src="https://via.placeholder.com/1000x768" className="img-fluid mb-4" alt="" />
               <h4>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Vero quis recusandae, officiis ad provident dolores soluta ea ut, suscipit maiores tenetur facere. Voluptate ad, praesentium cum exercitationem in quo est!</h4>
               <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Odio nemo, distinctio dolorem id, assumenda dolore deserunt illum laudantium tempora aperiam quam iure doloribus illo quaerat quae fugit dolor cum quidem.</p>
               <a href="#" className="btn btn-secondary">Button Text</a>
@@ -43,7 +42,7 @@ const singlePost = () => {
       <hr className="hr-styled" />
       <CardSlider title="Customer Use Cases" />
       <FooterCards />
-    </Layout>
+    </>
   )
 }
 

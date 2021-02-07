@@ -1,5 +1,4 @@
 import React, { useState, useEffect } from 'react';
-import Layout from '../components/Layout'
 import axios from 'axios';
 import PropTypes from 'prop-types'
 import { graphql } from 'gatsby'
@@ -16,7 +15,7 @@ export const ProductTemplate = ({ data }) => {
                 Product: {data.acfPostTypeProduct.heroTitle}
               </h2>
               <div
-                className="content"                
+                className="content"
                 dangerouslySetInnerHTML={{ __html: data.acfPostTypeProduct.heroDescription }}
               />
             </div>
@@ -35,28 +34,28 @@ ProductTemplate.propTypes = {
 
 
 const Product = ({ data }) => {
-  const [pageData, setData] = useState(data.wpcontent); 
+  const [pageData, setData] = useState(data.wpcontent);
   useEffect(() => {
     console.log("TRIGGERING USE EFFECT")
-    const fetchData  = async() => {      
-      const queryResult = await axios.post (
-          process.env.CMS_URL, {        
-          query: GET_DATA_QUERY
-        }
+    const fetchData = async () => {
+      const queryResult = await axios.post(
+        process.env.CMS_URL, {
+        query: GET_DATA_QUERY
+      }
       )
-      if(queryResult.data.data.product){
+      if (queryResult.data.data.product) {
         console.log("Setting Live Data")
         setData(queryResult.data.data);
       }
     }
     fetchData();
-  }, []); 
-  
+  }, []);
+
   return (
-    <Layout>
-      <HeroDefault title={pageData.product.acfPostTypeProduct.heroTitle}/>
-      <ProductTemplate data={pageData.product}  />
-    </Layout>
+    <>
+      <HeroDefault title={pageData.product.acfPostTypeProduct.heroTitle} />
+      <ProductTemplate data={pageData.product} />
+    </>
   )
 }
 
@@ -86,7 +85,7 @@ export const productQuery = graphql`
 
 // TODO: how do I dynamically populate that ID?
 // TODO: How do I load this fragment into the "productQuery" constant above?
-const GET_DATA_QUERY  = `
+const GET_DATA_QUERY = `
   query postQuery {
     product(id: "cG9zdDo1MTc0") {
       title

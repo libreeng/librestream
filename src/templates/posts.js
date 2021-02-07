@@ -2,7 +2,6 @@ import React from 'react'
 import PropTypes from 'prop-types'
 import Helmet from 'react-helmet'
 import { graphql, Link } from 'gatsby'
-import Layout from '../components/Layout'
 import moment from 'moment'
 import Img from 'gatsby-image'
 import contentParser from 'gatsby-wpgraphql-inline-images';
@@ -29,13 +28,13 @@ export const BlogPostTemplate = ({
 
   const getFeaturedImage = (image) => {
     if (image && image.imageFile) {
-      return <Img 
-              className="featured-image mb-3"
-              alt={image.altText}
-              fluid={image.imageFile.childImageSharp.fluid}
-            /> 
-    } else if(image && image.sourceUrl && image.sourceUrl.altText) {
-      <img src={image.sourceUrl} alt={image.altText} className='w-100 mb-4'/>;
+      return <Img
+        className="featured-image mb-3"
+        alt={image.altText}
+        fluid={image.imageFile.childImageSharp.fluid}
+      />
+    } else if (image && image.sourceUrl && image.sourceUrl.altText) {
+      <img src={image.sourceUrl} alt={image.altText} className='w-100 mb-4' />;
     }
   }
   return (
@@ -47,13 +46,13 @@ export const BlogPostTemplate = ({
               {title}
             </h1>
 
-            { getFeaturedImage(image) }   
+            {getFeaturedImage(image)}
 
             <div className="post-content">{contentParser({ content }, pluginOptions)}</div>
-           
+
             <div className="mt-5">
               <p>
-              { moment(date).format("MMMM Do, YYYY")} - posted by{' '}
+                {moment(date).format("MMMM Do, YYYY")} - posted by{' '}
                 {author.node.name}
               </p>
               {categories && categories.edges.length ? (
@@ -98,11 +97,11 @@ BlogPostTemplate.propTypes = {
 const BlogPost = ({ data }) => {
   const { post } = data.wpcontent
   return (
-    <Layout>
+    <>
 
       <Helmet title={`${post.title} | Blog`} />
-      
-      <HeroDefault title={post.title}/>
+
+      <HeroDefault title={post.title} />
 
       <BlogPostTemplate
         content={post.content}
@@ -113,7 +112,7 @@ const BlogPost = ({ data }) => {
         author={post.author}
         image={post.acfPostTypeNews.mainImage}
       />
-    </Layout>
+    </>
   )
 }
 
@@ -171,7 +170,7 @@ export const pageQuery = graphql`
               slug
               uri
             }
-          }          
+          }
         }
         author {
           node {
@@ -183,5 +182,5 @@ export const pageQuery = graphql`
       }
     }
   }
- 
+
 `

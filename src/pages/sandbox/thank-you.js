@@ -1,13 +1,12 @@
 import React from 'react'
-import PropTypes from 'prop-types'
-import Layout from '../../components/Layout'
+// import PropTypes from 'prop-types'
 import HeroDefault from '../../components/HeroDefault'
 import CardSlider from '../../components/CardSlider'
 import FooterCards from '../../components/FooterCards'
 
 const thankYou = () => {
   return (
-    <Layout>
+    <>
       <HeroDefault title="Thank You!" />
       <section>
         <div className="container">
@@ -36,7 +35,7 @@ const thankYou = () => {
                 <li>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ea, dolore?</li>
                 <li>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ea, dolore?</li>
               </div>
-              
+
             </div>
           </div>
         </div>
@@ -44,7 +43,7 @@ const thankYou = () => {
       <hr className="hr-styled" />
       <CardSlider title="Customer Use Cases" />
       <FooterCards />
-    </Layout>
+    </>
   )
 }
 

@@ -1,13 +1,12 @@
 import React from 'react'
-import PropTypes from 'prop-types'
-import Layout from '../../components/Layout'
+// import PropTypes from 'prop-types'
 import HeroDefault from '../../components/HeroDefault'
 import CardSlider from '../../components/CardSlider'
 import FooterCards from '../../components/FooterCards'
 
 const deviceSupportandIntegration = () => {
   return (
-    <Layout>
+    <>
       <HeroDefault title="Device Support &amp; Integration" />
       <section>
         <div className="container">
@@ -17,7 +16,7 @@ const deviceSupportandIntegration = () => {
               <p>We have an extensive customer success program in place to take you all the way from Training your first Onsight user to a fully scaled and deployed solution within your organization.</p>
             </div>
             <div className="col-lg-3 ml-lg-auto">
-              <img src="https://via.placeholder.com/768x375" className="img-fluid" alt=""/>
+              <img src="https://via.placeholder.com/768x375" className="img-fluid" alt="" />
             </div>
           </div>
         </div>
@@ -34,13 +33,13 @@ const deviceSupportandIntegration = () => {
               <a href="#" className="btn btn-gradient-dark-blue btn-lg text-white mt-4">More about hardware partners</a>
             </div>
             <div className="col-lg-4">
-              <img src="https://via.placeholder.com/768" className="img-fluid" alt=""/>
+              <img src="https://via.placeholder.com/768" className="img-fluid" alt="" />
             </div>
           </div>
         </div>
       </section>
       <div className="container">
-        <hr className="hr-styled"/>
+        <hr className="hr-styled" />
       </div>
       <section>
         <div className="container">
@@ -60,7 +59,7 @@ const deviceSupportandIntegration = () => {
       <hr className="hr-styled" />
       <CardSlider title="Customer Use Cases" />
       <FooterCards />
-    </Layout>
+    </>
   )
 }
 
