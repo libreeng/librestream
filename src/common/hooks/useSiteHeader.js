@@ -22,12 +22,6 @@ export const useSiteHeader = () => {
       }
       logo: file(relativePath: {eq: "logo.png"}) {
         publicURL
-        absolutePath
-        childImageSharp {
-          fixed {
-           srcWebp
-          }
-        }
       }
     }
   `)

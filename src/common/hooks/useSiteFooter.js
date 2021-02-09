@@ -3,7 +3,8 @@ import { useStaticQuery, graphql } from 'gatsby'
 export const useSiteFooter = () => {
   const data = useStaticQuery(graphql`
     query SiteFooterQuery {
-      wpcontent {
+      wp(id: {eq: "/graphql--rootfields"}) {
+        id
         options {
           acfSiteOptions {
             title
@@ -23,26 +24,23 @@ export const useSiteFooter = () => {
             partners {
               url
               logo {
-                sourceUrl
+                id
                 altText
+                localFile {
+                  publicURL
+                }
               }
             }
           }
         }
       }
-      footerbar: file(relativePath: {eq: "footer-bar.svg"}) {
+      logo: file(relativePath: {eq: "logo.png"}) {
         publicURL
-        absolutePath
-        childImageSharp {
-          fixed {
-           srcWebp
-          }
-        }
       }
     }
   `)
-  const options = data.wpcontent.options.acfSiteOptions
+  const options = data.wp.options.acfSiteOptions
 
-  return { options, footerbar: data.footerbar }
+  return { options, logo: data.logo }
 
 }

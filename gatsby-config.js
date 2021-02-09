@@ -21,9 +21,18 @@ module.exports = {
       resolve: `gatsby-source-wordpress`,
       options: {
         // the only required plugin option for WordPress is the GraphQL url.
-        url:
-          process.env.WPGRAPHQL_URL ||
-          `https://librestreamcms.kinsta.cloud/graphql`,
+        url: process.env.WPGRAPHQL_URL || `https://librestreamcms.kinsta.cloud/graphql`,
+        useACF: true,
+        type: {
+          Post: {
+            limit:
+              process.env.NODE_ENV === `development`
+                ? // Lets just pull 50 posts in development to make it easy on ourselves.
+                50
+                : // And all posts in production
+                null,
+          },
+        },
       },
     },
 
@@ -64,21 +73,21 @@ module.exports = {
 
     'gatsby-plugin-sharp',
     'gatsby-transformer-sharp',
-    {
-      // Removes unused css rules
-      resolve: 'gatsby-plugin-purgecss',
-      options: {
-        // Activates purging in gatsby develop
-        develop: true,
-        // Purge only the main css file
-        purgeOnly: ['/main.scss'],
-        printAll: true,
-        printRejected: true,
-        // whitelist: () => ['html', 'body', 'collapse', 'collapsing'], // ERRORED: "gatsby-plugin-purgecss" threw an error while running the onCreateWebpackConfig lifecycle: userOptions.whitelist is not iterable
-        whitelistPatterns: () => [/modal*/, /accordion*/, /card*/, /navbar*/],
-        whitelistPatternsChildren: () => [/modal*/, /accordion*/, /card*/, /navbar*/]
-      },
-    }, // must be after other CSS plugins
+    // {
+    //   // Removes unused css rules
+    //   resolve: 'gatsby-plugin-purgecss',
+    //   options: {
+    //     // Activates purging in gatsby develop
+    //     develop: true,
+    //     // Purge only the main css file
+    //     purgeOnly: ['/main.scss'],
+    //     printAll: true,
+    //     printRejected: true,
+    //     // whitelist: () => ['html', 'body', 'collapse', 'collapsing'], // ERRORED: "gatsby-plugin-purgecss" threw an error while running the onCreateWebpackConfig lifecycle: userOptions.whitelist is not iterable
+    //     whitelistPatterns: () => [/modal*/, /accordion*/, /card*/, /navbar*/],
+    //     whitelistPatternsChildren: () => [/modal*/, /accordion*/, /card*/, /navbar*/]
+    //   },
+    // }, // must be after other CSS plugins
     {
       resolve: `gatsby-source-filesystem`,
       options: {
