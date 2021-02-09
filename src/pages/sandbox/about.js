@@ -1,13 +1,10 @@
 import React from 'react'
 // import PropTypes from 'prop-types'
-import HeroDefault from '../../components/HeroDefault'
-import CardSlider from '../../components/CardSlider'
-import FooterCards from '../../components/FooterCards'
+
 
 const about = () => {
   return (
     <>
-      <HeroDefault title="Company Profile" />
       <section>
         <div className="container">
           <div className="row">
@@ -99,8 +96,6 @@ const about = () => {
         </div>
       </section>
       <hr className="hr-styled" />
-      <CardSlider title="Customer Use Cases" />
-      <FooterCards />
     </>
   )
 }

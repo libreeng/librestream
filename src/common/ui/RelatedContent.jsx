@@ -9,10 +9,11 @@ const RelatedContent = ({ items }) => {
           {items && items.map(item => {
             // TODO: Add Gatsby background image component
             return (
-              <div className="col-12 col-lg-4 mb-4" key={item.id}>
+              <div className="col-12 col-lg-4" key={item.id}>
                 <div
                   className="bg-image aspect-1x1"
-                  style={{ backgroundImage: `url(https://picsum.photos/500)`}}
+                  style={{
+                    backgroundImage: `url(https://via.placeholder.com/500.png/09f/fff)`}}
                 >
                   <div className="bg-fill align-items-end justify-content-end p-4">
                     <div className="icon-play icon-play-lg bg-gradient-green border-0" />

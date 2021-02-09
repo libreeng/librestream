@@ -2,14 +2,11 @@ import React from 'react'
 // import PropTypes from 'prop-types'
 import HeroDefault from '../../components/HeroDefault'
 import Card from '../../components/Card'
-import CardSlider from '../../components/CardSlider'
-import FooterCards from '../../components/FooterCards'
 
 const collectionView = () => {
   return (
     <>
       <HeroDefault title="Collection Name" />
-      <CardSlider title="Just Released" />
       <div className="container">
         <hr className="hr-styled" />
       </div>
@@ -35,8 +32,6 @@ const collectionView = () => {
         </div>
       </section>
       <hr className="hr-styled" />
-      <CardSlider title="Customer Use Cases" />
-      <FooterCards />
     </>
   )
 }

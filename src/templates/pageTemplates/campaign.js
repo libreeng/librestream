@@ -2,8 +2,6 @@ import React from 'react'
 // import PropTypes from 'prop-types'
 import AccordionItems from '../../components/AccordionItems'
 import HeroDefault from '../../components/HeroDefault'
-import CardSlider from '../../components/CardSlider'
-import FooterCards from '../../components/FooterCards'
 
 const campaign = () => {
   return (
@@ -65,8 +63,6 @@ const campaign = () => {
         </div>
       </section>
       <hr className="hr-styled" />
-      <CardSlider title="Customer Use Cases" />
-      <FooterCards />
     </>
   )
 }

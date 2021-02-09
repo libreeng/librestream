@@ -1,8 +1,6 @@
 import React from 'react'
 // import PropTypes from 'prop-types'
 import HeroDefault from '../../components/HeroDefault'
-import CardSlider from '../../components/CardSlider'
-import FooterCards from '../../components/FooterCards'
 
 const customerSuccess = () => {
   return (
@@ -109,8 +107,6 @@ const customerSuccess = () => {
             </div>
           </div>
         </section>
-        <CardSlider title="Customer Use Cases" />
-        <FooterCards />
       </>
     </>
   )

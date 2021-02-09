@@ -3,8 +3,6 @@ import React from 'react'
 import HeroDetailed from '../../components/HeroDetailed'
 import CarouselBootstrap from '../../components/CarouselBootstrap'
 import Stat from '../../components/Stat'
-import CardSlider from '../../components/CardSlider'
-import FooterCards from '../../components/FooterCards'
 
 const platform = () => {
   return (
@@ -69,8 +67,6 @@ const platform = () => {
           </div>
         </div>
       </section>
-      <CardSlider title="Customer Use Cases" />
-      <FooterCards />
     </>
 
   )

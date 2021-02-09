@@ -1,8 +1,6 @@
 import React from 'react'
 // import PropTypes from 'prop-types'
 import HeroDefault from '../../components/HeroDefault'
-import CardSlider from '../../components/CardSlider'
-import FooterCards from '../../components/FooterCards'
 
 const deviceSupportandIntegration = () => {
   return (
@@ -57,8 +55,6 @@ const deviceSupportandIntegration = () => {
         </div>
       </section>
       <hr className="hr-styled" />
-      <CardSlider title="Customer Use Cases" />
-      <FooterCards />
     </>
   )
 }

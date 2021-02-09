@@ -1,14 +1,19 @@
 import React from 'react'
 // import PropTypes from 'prop-types'
-import HeroDefault from '../../components/HeroDefault'
-import NextPrevNav from '../../components/NextPrevNav'
+import HeroDefault from '../components/HeroDefault'
+import NextPrevNav from '../components/NextPrevNav'
 
 
+const CaseStudy = ({ data: { previous, next, post } }) => {
 
-const singleUseCase = () => {
   return (
     <>
-      <HeroDefault title="SGS Complete 30,000 Inspections" subtitle="Powered By Librestream." subnav="false" logo="true" />
+      <HeroDefault
+        title="SGS Complete 30,000 Inspections"
+        subtitle="Powered By Librestream."
+        subnav="false"
+        logo="true"
+      />
       <section>
         <div className="container">
           <div className="row">
@@ -73,8 +78,8 @@ const singleUseCase = () => {
   )
 }
 
-singleUseCase.propTypes = {
+CaseStudy.propTypes = {
 
 }
 
-export default singleUseCase
+export default CaseStudy

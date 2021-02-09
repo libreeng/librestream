@@ -2,27 +2,27 @@ import React from 'react'
 import { graphql } from 'gatsby'
 import HeroHome from '../../components/HeroHome'
 import CarouselBootstrap from '../../components/CarouselBootstrap'
-import CardWithLogo from '../../components/CardWithLogo'
 import Card from '../../components/Card'
 import Stat from '../../components/Stat'
+import CustomerUseCases from '../../components/CustomerUseCases'
 
 const templateHome = ({ data }) => {
 
   // const { title,content } = data.wpcontent.page
-  const {
-    title,
-    description,
-    linkType,
-    linkText,
-    internal,
-    videoMp4,
-    videoEmbed,
-    videoDescription,
-    slider,
-    homeStat,
-    useCases,
-    news } = data.wpcontent.page.acfTemplateHome
-  console.log(useCases)
+  // const {
+  //   title,
+  //   description,
+  //   linkType,
+  //   linkText,
+  //   internal,
+  //   videoMp4,
+  //   videoEmbed,
+  //   videoDescription,
+  //   slider,
+  //   homeStat,
+  //   useCases,
+  //   news } = data.wpcontent.page.acfTemplateHome
+
   return (
     <>
       <HeroHome data={data} />
@@ -44,20 +44,9 @@ const templateHome = ({ data }) => {
           </div>
         </div>
       </section>
-      <section className="bg-white">
-        <div className="scrolling-wrapper">
-          <div className="row flex-nowrap row-cols-1 row-cols-md-2 row-cols-lg-4">
-            {useCases && useCases.map((obj, index) => (
-              <div key={`${obj.useCase.id}_${index}`} className="col mb-4">
-                <CardWithLogo />
-                {/* // <div className="col-12 col-md-6 col-lg-3" key={useCase.useCase.id}>
-                //   <div>{useCase.useCase.title}</div>
-                // </div> */}
-              </div>
-            ))}
-          </div>
-        </div>
-      </section>
+
+      <CustomerUseCases />
+
       <section className="bg-gradient-blue text-white">
         <div className="container">
           <div className="row">
@@ -117,110 +106,110 @@ templateDefault.propTypes = {
 
 export default templateHome
 
-export const pageQuery = graphql`
-  query HomeById($id: ID!) {
-    homeHeroBkg: file(name: {eq: "home_hero_bkg"}) {
-      publicURL
-      childImageSharp {
-        fluid {
-          ...GatsbyImageSharpFluid
-        }
-      }
-    }
+// export const pageQuery = graphql`
+//   query HomeById($id: ID!) {
+//     homeHeroBkg: file(name: {eq: "home_hero_bkg"}) {
+//       publicURL
+//       childImageSharp {
+//         fluid {
+//           ...GatsbyImageSharpFluid
+//         }
+//       }
+//     }
 
-    homeHeroWorker: file(name: { eq: "home_hero_worker" }) {
-      publicURL
-      childImageSharp {
-        fluid {
-          ...GatsbyImageSharpFluid
-        }
-      }
-    }
+//     homeHeroWorker: file(name: { eq: "home_hero_worker" }) {
+//       publicURL
+//       childImageSharp {
+//         fluid {
+//           ...GatsbyImageSharpFluid
+//         }
+//       }
+//     }
 
-    wpcontent{
-      page(id: $id) {
-        title
-        content
-        acfTemplateHome {
-          title
-          description
-          homeStat {
-            homeStatLabel
-            homeStatValue
-          }
-          linkType
-          linkText
-          internal {
-            ... on WPGraphQL_Product {
-              id
-              title(format: RAW)
-              uri
-            }
-            ... on WPGraphQL_Solution {
-              id
-              title(format: RAW)
-              uri
-            }
-            ... on WPGraphQL_Post {
-              id
-              title(format: RAW)
-              uri
-            }
-            ... on WPGraphQL_Page {
-              id
-              uri
-              title(format: RAW)
-            }
-          }
-          useCases {
-            useCase {
-              ... on WPGraphQL_CaseStudy {
-                id
-                title(format: RENDERED)
-                slug
-                link
-                acfPostTypeUseCase {
-                  statsQuotes {
-                    statText
-                    quote
-                    statNumber
-                  }
-                }
-              }
-            }
-          }
-          news {
-            newsItem {
-              ... on WPGraphQL_Post {
-                id
-                title(format: RENDERED)
-                featuredImage {
-                  node {
-                    imageFile {
-                      childImageSharp {
-                        fluid {
-                          src
-                        }
-                      }
-                    }
-                  }
-                }
-                acfPostTypeNews {
-                  mainImage {
-                    mediaItemUrl
-                  }
-                }
-              }
-            }
-          }
-          videoMp4 {
-            sourceUrl(size: LARGE)
-          }
-          videoEmbed
-          videoDescription
+//     wpcontent{
+//       page(id: $id) {
+//         title
+//         content
+//         acfTemplateHome {
+//           title
+//           description
+//           homeStat {
+//             homeStatLabel
+//             homeStatValue
+//           }
+//           linkType
+//           linkText
+//           internal {
+//             ... on WPGraphQL_Product {
+//               id
+//               title(format: RAW)
+//               uri
+//             }
+//             ... on WPGraphQL_Solution {
+//               id
+//               title(format: RAW)
+//               uri
+//             }
+//             ... on WPGraphQL_Post {
+//               id
+//               title(format: RAW)
+//               uri
+//             }
+//             ... on WPGraphQL_Page {
+//               id
+//               uri
+//               title(format: RAW)
+//             }
+//           }
+//           useCases {
+//             useCase {
+//               ... on WPGraphQL_CaseStudy {
+//                 id
+//                 title(format: RENDERED)
+//                 slug
+//                 link
+//                 acfPostTypeUseCase {
+//                   statsQuotes {
+//                     statText
+//                     quote
+//                     statNumber
+//                   }
+//                 }
+//               }
+//             }
+//           }
+//           news {
+//             newsItem {
+//               ... on WPGraphQL_Post {
+//                 id
+//                 title(format: RENDERED)
+//                 featuredImage {
+//                   node {
+//                     imageFile {
+//                       childImageSharp {
+//                         fluid {
+//                           src
+//                         }
+//                       }
+//                     }
+//                   }
+//                 }
+//                 acfPostTypeNews {
+//                   mainImage {
+//                     mediaItemUrl
+//                   }
+//                 }
+//               }
+//             }
+//           }
+//           videoMp4 {
+//             sourceUrl(size: LARGE)
+//           }
+//           videoEmbed
+//           videoDescription
 
-        }
-      }
-    }
-  }
-`
+//         }
+//       }
+//     }
+//   }
+// `

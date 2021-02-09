@@ -4,8 +4,6 @@ import HeroDefault from '../../components/HeroDefault'
 import Card from '../../components/Card'
 import NewsletterSignup from '../../components/NewsletterSignup'
 import SocialShare from '../../components/SocialShare'
-import CardSlider from '../../components/CardSlider'
-import FooterCards from '../../components/FooterCards'
 
 const singlePost = () => {
   return (
@@ -40,8 +38,6 @@ const singlePost = () => {
         </div>
       </section>
       <hr className="hr-styled" />
-      <CardSlider title="Customer Use Cases" />
-      <FooterCards />
     </>
   )
 }

@@ -3,8 +3,6 @@ import React from 'react'
 import HeroDefault from '../../components/HeroDefault'
 import AccordionItems from '../../components/AccordionItems'
 import AccordionNav from '../../components/AccordionNav'
-import CardSlider from '../../components/CardSlider'
-import FooterCards from '../../components/FooterCards'
 
 
 const supportAndTraining = () => {
@@ -40,8 +38,6 @@ const supportAndTraining = () => {
         </div>
       </section>
       <hr className="hr-styled" />
-      <CardSlider title="Customer Use Cases" />
-      <FooterCards />
     </>
   )
 }
