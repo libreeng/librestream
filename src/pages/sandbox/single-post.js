@@ -1,6 +1,5 @@
 import React from 'react'
 // import PropTypes from 'prop-types'
-import HeroDefault from '../../components/HeroDefault'
 import Card from '../../components/Card'
 import NewsletterSignup from '../../components/NewsletterSignup'
 import SocialShare from '../../components/SocialShare'
@@ -8,7 +7,6 @@ import SocialShare from '../../components/SocialShare'
 const singlePost = () => {
   return (
     <>
-      <HeroDefault title="News" subtitle="" subnav="" logo="" />
       <section>
         <div className="container">
           <div className="row">

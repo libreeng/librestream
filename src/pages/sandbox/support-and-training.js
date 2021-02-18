@@ -1,6 +1,5 @@
 import React from 'react'
 // import PropTypes from 'prop-types'
-import HeroDefault from '../../components/HeroDefault'
 import AccordionItems from '../../components/AccordionItems'
 import AccordionNav from '../../components/AccordionNav'
 
@@ -8,7 +7,6 @@ import AccordionNav from '../../components/AccordionNav'
 const supportAndTraining = () => {
   return (
     <>
-      <HeroDefault title="Support & Training" />
       <section>
         <div className="container">
           <div className="row">

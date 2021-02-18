@@ -1,9 +1,9 @@
 import React from 'react'
 // import PropTypes from 'prop-types'
 
-const Card = ({ logo }) => {
+const Card = ({ logo, className }) => {
   return (
-    <div className="card">
+    <div className={`card ${className}`}>
       <div
         className="card-img-top bg-image aspect-1x1 grayscale"
         style={{

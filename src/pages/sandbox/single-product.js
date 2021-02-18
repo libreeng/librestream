@@ -1,12 +1,10 @@
 import React from 'react'
 // import PropTypes from 'prop-types'
-import HeroDefault from '../../components/HeroDefault'
 
 const singleProduct = () => {
   return (
     <>
       <>
-        <HeroDefault title="Remote Expert" subtitle="" subnav="true" />
         <section>
           <div className="container">
             <div className="row">

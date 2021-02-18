@@ -1,11 +1,9 @@
 import React from 'react'
 // import PropTypes from 'prop-types'
-import HeroDefault from '../../components/HeroDefault'
 
 const itSecurity = () => {
   return (
     <>
-      <HeroDefault title="IT &amp; Security" />
       <section>
         <div className="container">
           <div className="row">

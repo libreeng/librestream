@@ -4,19 +4,14 @@ export const useSiteHeader = () => {
 
   const data = useStaticQuery(graphql`
     query SiteHeaderQuery {
-      wpcontent {
-        menuItems(where: {location: PRIMARY_MENU, parentDatabaseId: 0}) {
+      wpMenu(slug: {eq: "primary-menu"}) {
+        id
+        menuItems {
           nodes {
+            parentId
+            id
             label
             path
-            id
-            childItems {
-              nodes {
-                label
-                path
-                id
-              }
-            }
           }
         }
       }
@@ -27,8 +22,8 @@ export const useSiteHeader = () => {
   `)
 
   // console.log("data.logo.childImageSharp.fixed.srcWebp", data.logo.childImageSharp.fixed.srcWebp)
-  const { menuItems } = data.wpcontent
+  const { nodes } = data.wpMenu.menuItems
 
-  return { menuItems, logo: data.logo }
+  return { menuItems: nodes, logo: data.logo }
 }
 

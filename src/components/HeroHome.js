@@ -1,13 +1,11 @@
-import React, {useEffect, useRef } from 'react'
-import Img from "gatsby-image"
-import vectorshape from '../img/vectorshape.svg'
+import React from 'react'
 import playButton from '../img/play-button.svg'
-import Modal, { ModalComponent } from '../components/Modal'
+import Modal from './Modal'
 
 const HeroHome = ({ data }) => {
   console.log(data.homeHeroBkg.childImageSharp.fluid)
   return (
-    <div 
+    <div
       className="hero hero-home"
       style={{
         backgroundImage: `url(https://via.placeholder.com/1900x1000)`
@@ -24,11 +22,11 @@ const HeroHome = ({ data }) => {
             <div className="text-center">
               <Modal image={playButton} title="Sample Modal" content="Sample description content lorem" />
             </div>
-            
+
           </div>
         </div>
       </div>
-  
+
       {/* <div className="container vectorshape-container"  data-depth="0.7">
         <img className="vectorshape position-absolute" src={vectorshape} alt="Vector Shape"/>
       </div> */}

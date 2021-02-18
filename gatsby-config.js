@@ -22,7 +22,7 @@ module.exports = {
       options: {
         // the only required plugin option for WordPress is the GraphQL url.
         url: process.env.WPGRAPHQL_URL || `https://librestreamcms.kinsta.cloud/graphql`,
-        useACF: true,
+        // useACF: true,
         type: {
           Post: {
             limit:

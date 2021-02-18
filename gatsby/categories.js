@@ -1,35 +1,33 @@
 import React from 'react'
 import Helmet from 'react-helmet'
 import { graphql } from 'gatsby'
-import PostList from '../components/PostList'
-import HeroDefault from '../components/HeroDefault'
+import PostList from '../src/components/PostList'
 
-const Tag = props => {
-  const { posts, count, name: tagName } = props.data.wpcontent.tag
+const Category = props => {
+  const { posts, count, name: categoryName } = props.data.wpcontent.category
   const { title: siteTitle } = props.data.wpcontent.generalSettings
 
   const fulltitle = `${count} post${count === 1 ? '' : 's'
-    } with the tag “${tagName}”`
+    } in the “${categoryName}” category`
 
   return (
     <>
-      <Helmet title={`${tagName} | ${siteTitle}`} />
-      <HeroDefault title={tagName} />
+      <Helmet title={`${categoryName} | ${siteTitle}`} />
       <PostList posts={posts} title={fulltitle} />
     </>
   )
 }
 
-export default Tag
+export default Category
 
 export const pageQuery = graphql`
-  query TagPage($id: ID!) {
+  query CategoryPage($id: ID!) {
 
-    wpcontent{
-      generalSettings{
+    wpcontent {
+      generalSettings {
         title
       }
-      tag(id: $id, idType: ID) {
+      category(id: $id, idType: ID) {
         id
         name
         description
@@ -44,6 +42,5 @@ export const pageQuery = graphql`
         }
       }
     }
-
   }
 `

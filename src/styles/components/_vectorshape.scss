@@ -1,0 +1,27 @@
+@keyframes wave {
+  0% {
+    -webkit-transform: rotateZ(0deg);
+    -moz-transform: rotateZ(0deg) translate3d(0, 10%, 0) rotateZ(0deg);
+    transform: rotateZ(0deg) translate3d(0, 10%, 0) rotateZ(0deg);
+  }
+  100% {
+    -webkit-transform: rotateZ(360deg);
+    -moz-transform: rotateZ(360deg);
+    transform: rotateZ(360deg);
+  }
+}
+
+.vectorshape-container {
+  left: 0 !important;
+  right: 0 !important;
+}
+.vectorshape {
+  left: 64% !important;
+  right: inherit !important;
+  top: 1% !important;
+  width: 38%;
+  height: auto;
+  //-webkit-animation: wave 60s 11s infinite linear;
+  -moz-animation: wave 200s 0.1s infinite linear;
+  animation: wave 200s 0.1s infinite linear;
+}

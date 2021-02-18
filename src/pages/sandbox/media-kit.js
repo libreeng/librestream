@@ -1,11 +1,9 @@
 import React from 'react'
 // import PropTypes from 'prop-types'
-import HeroDefault from '../../components/HeroDefault'
 
 const mediaKit = () => {
   return (
     <>
-      <HeroDefault title="Media Kit" />
       <section>
         <div className="container">
           <div className="row">

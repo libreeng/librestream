@@ -1,12 +1,10 @@
 import React from 'react'
 // import PropTypes from 'prop-types'
-import HeroDefault from '../../components/HeroDefault'
 
 const customerSuccess = () => {
   return (
     <>
       <>
-        <HeroDefault title="Customer Success" />
         <section>
           <div className="container">
             <div className="row">

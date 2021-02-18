@@ -11,6 +11,7 @@ const PrimaryMenu = () => {
   const { menuItems, logo } = useSiteHeader()
   const { title } = useSiteMetadata()
   const [arrowPos, setArrowPos] = useState(-10)
+  const menu = menuItems.filter(node => !node.parentId)
 
   const handleArrowMove = (leftPosition) => {
     setArrowPos(leftPosition)
@@ -29,8 +30,8 @@ const PrimaryMenu = () => {
     }
   }, [])
 
-  const isHighlightedNav = (path) => {
-    if (activeKey === path) return highlightedNavRef
+  function isHighlightedNav(path) {
+    return activeKey === path ? highlightedNavRef : null
   }
 
   const handleNavMouseEnter = (e) => {
@@ -73,30 +74,28 @@ const PrimaryMenu = () => {
             </li>
           </Nav>
           <Nav id="primarynav" className="ml-auto" activeKey={activeKey}>
-            {menuItems && menuItems.nodes.map(item => {
-              if (item.childItems.nodes.length > 0) {
-                return (
-                  <NavDropdown
-                    key={item.id}
-                    ref={isHighlightedNav(item.path)}
-                    onMouseEnter={handleNavMouseEnter}
-                    onMouseLeave={handleNavMouseLeave}
-                    title={item.label}
-                    className="megamenu"
-                  >
-                    {item.childItems.nodes.map(child =>
-                      <NavDropdown.Item key={child.id} href={child.path}>{child.label}</NavDropdown.Item>
-                    )}
-                  </NavDropdown>
-                )
-              }
-              return (
+            {menu && menu.map(item => {
+              const submenu = menuItems.filter(node => node.parentId === item.id)
+
+              return submenu.length > 0 ? (
+                <NavDropdown
+                  key={item.id}
+                  ref={isHighlightedNav(item.path)}
+                  onMouseEnter={handleNavMouseEnter}
+                  onMouseLeave={handleNavMouseLeave}
+                  title={item.label}
+                  className="megamenu"
+                >
+                  {submenu.map(child =>
+                    <NavDropdown.Item key={child.id} href={child.path}>{child.label}</NavDropdown.Item>
+                  )}
+                </NavDropdown>
+              ) : (
                 <Nav.Item key={item.id}>
                   <Nav.Link ref={isHighlightedNav(item.path)} onMouseEnter={handleNavMouseEnter} onMouseLeave={handleNavMouseLeave} href={item.path}>{item.label}</Nav.Link>
                 </Nav.Item>
               )
-            }
-            )}
+            })}
           </Nav>
         </Navbar.Collapse>
       </Navbar>

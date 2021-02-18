@@ -1,4 +1,4 @@
-
+// TODO: Remove after refactor
 .hero {
   background-repeat: no-repeat;
   background-size: cover;
@@ -32,7 +32,7 @@
       }
     }
   }
-  .vectorshape-container{
+  .vectorshape-container {
     left: 0 !important;
     right: 0 !important;
   }
@@ -49,18 +49,19 @@
   @keyframes wave {
     0% {
       -webkit-transform: rotateZ(0deg);
-      -moz-transform: rotateZ(0deg) translate3d(0,10%,0) rotateZ(0deg);
-      transform: rotateZ(0deg) translate3d(0,10%,0) rotateZ(0deg); }
+      -moz-transform: rotateZ(0deg) translate3d(0, 10%, 0) rotateZ(0deg);
+      transform: rotateZ(0deg) translate3d(0, 10%, 0) rotateZ(0deg);
+    }
     100% {
       -webkit-transform: rotateZ(360deg);
       -moz-transform: rotateZ(360deg);
-      transform: rotateZ(360deg)
+      transform: rotateZ(360deg);
     }
   }
 
   @include media-breakpoint-up(xl) {
     .worker {
-        width: 384px;
+      width: 384px;
     }
   }
 }
@@ -70,23 +71,22 @@
     padding-top: 150px;
     padding-bottom: 100px;
   }
-  
+
   h1 {
-  font-size: 3.5rem;
-  font-weight: 300;
-  margin-bottom: 30px;
+    font-size: 3.5rem;
+    font-weight: 300;
+    margin-bottom: 30px;
   }
-  
+
   .lead {
     font-weight: 500;
     line-height: 1.2;
     margin-bottom: 35px;
   }
 
-  .vectorshape-container{
+  .vectorshape-container {
     left: 0 !important;
     right: 0 !important;
-    
   }
   .vectorshape {
     left: 81% !important;
@@ -102,12 +102,13 @@
   @keyframes wave {
     0% {
       -webkit-transform: rotateZ(0deg);
-      -moz-transform: rotateZ(0deg) translate3d(0,10%,0) rotateZ(0deg);
-      transform: rotateZ(0deg) translate3d(0,10%,0) rotateZ(0deg); }
+      -moz-transform: rotateZ(0deg) translate3d(0, 10%, 0) rotateZ(0deg);
+      transform: rotateZ(0deg) translate3d(0, 10%, 0) rotateZ(0deg);
+    }
     100% {
       -webkit-transform: rotateZ(360deg);
       -moz-transform: rotateZ(360deg);
-      transform: rotateZ(360deg)
+      transform: rotateZ(360deg);
     }
   }
 }

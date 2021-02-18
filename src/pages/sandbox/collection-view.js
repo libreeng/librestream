@@ -1,12 +1,10 @@
 import React from 'react'
 // import PropTypes from 'prop-types'
-import HeroDefault from '../../components/HeroDefault'
 import Card from '../../components/Card'
 
 const collectionView = () => {
   return (
     <>
-      <HeroDefault title="Collection Name" />
       <div className="container">
         <hr className="hr-styled" />
       </div>

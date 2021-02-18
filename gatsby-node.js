@@ -15,20 +15,18 @@ const chunk = require(`lodash/chunk`)
  */
 const createStandalonePages = async ({ pages, gatsbyUtilities }) =>
   Promise.all(
-    pages.forEach(({ page }) => {
+    pages.map(page => {
       if (!page) return
-
-      console.log("Page:", page)
 
       // createPage is an action passed to createPages
       // See https://www.gatsbyjs.com/docs/actions#createPage for more info
-      gatsbyUtilities.actions.createPage({
+      return gatsbyUtilities.actions.createPage({
         // Use the WordPress uri as the Gatsby page path
         // This is a good idea so that internal links and menus work 👍
         path: page.uri,
 
         // use the page template as the page component
-        component: path.resolve(`./src/templates/page.js`),
+        component: path.resolve(`./src/templates/standalone/${page.template.templateName.replace(/\s+/g, '')}.js`),
 
         // `context` is available in the template as a prop and
         // as a variable in GraphQL.
@@ -59,7 +57,7 @@ const createIndividualBlogPostPages = async ({ posts, gatsbyUtilities }) =>
         path: post.uri,
 
         // use the blog post template as the page component
-        component: path.resolve(`./src/templates/blog-post.js`),
+        component: path.resolve(`./src/templates/${post.nodeType}.js`),
 
         // `context` is available in the template as a prop and
         // as a variable in GraphQL.
@@ -153,13 +151,27 @@ async function getPosts({ graphql, reporter }) {
       # Query all WordPress blog posts sorted by date
       allWpPost(sort: { fields: [date], order: DESC }) {
         edges {
-          # note: this is a GraphQL alias. It renames "node" to "post" for this query
-          # We're doing this because this "node" is a post! It makes our code more readable further down the line.
           post: node {
             id
             uri
+            nodeType
           }
-
+          next {
+            id
+          }
+          previous {
+            id
+          }
+        }
+      }
+      # Query all WordPress blog posts sorted by date
+      allWpCaseStudy(sort: { fields: [date], order: DESC }) {
+        edges {
+          post: node {
+            id
+            uri
+            nodeType
+          }
           next {
             id
           }
@@ -179,7 +191,13 @@ async function getPosts({ graphql, reporter }) {
     return
   }
 
-  const posts = graphqlResult.data.allWpPost.edges
+  const news = graphqlResult.data.allWpPost.edges
+  const casestudies = graphqlResult.data.allWpCaseStudy.edges
+
+  const posts = [
+    ...news,
+    ...casestudies
+  ]
 
   return posts
 }
@@ -207,11 +225,12 @@ async function getPages({ graphql, reporter }) {
     )
     return
   }
-  console.log(graphqlResult.data.allWpPage.nodes)
+  // console.log(graphqlResult.data.allWpPage.nodes)
   const pages = graphqlResult.data.allWpPage.nodes
 
   return pages
 }
+
 
 
 /**
@@ -222,74 +241,81 @@ async function getPages({ graphql, reporter }) {
  */
 exports.createPages = async gatsbyUtilities => {
   // Query our posts from the GraphQL server
-  // const posts = await getPosts(gatsbyUtilities)
-  // const pages = await getPages(gatsbyUtilities)
+  const posts = await getPosts(gatsbyUtilities)
+  const pages = await getPages(gatsbyUtilities)
 
 
-  // // If there are posts, create pages for them
-  // await createIndividualBlogPostPages({ posts, gatsbyUtilities })
-  // await createStandalonePages({ pages, gatsbyUtilities })
+  // Create pages for each post and standalone page
+  await createIndividualBlogPostPages({ posts, gatsbyUtilities })
+  await createStandalonePages({ pages, gatsbyUtilities })
 
-  // // And a paginated archive
+  // Paginated archives
   // await createBlogPostArchive({ posts, gatsbyUtilities })
 }
 
 
 
-exports.onCreateNode = ({ node, actions, getNode }) => {
-  const { createNodeField } = actions
+// exports.onCreateNode = ({ node, actions, getNode }) => {
+//   const { createNodeField } = actions
 
-  if (node.internal.type === `MarkdownRemark`) {
-    const value = createFilePath({ node, getNode })
-    createNodeField({
-      name: `slug`,
-      node,
-      value,
-    })
-  }
-}
+//   if (node.internal.type === `MarkdownRemark`) {
+//     const value = createFilePath({ node, getNode })
+//     createNodeField({
+//       name: `slug`,
+//       node,
+//       value,
+//     })
+//   }
+// }
 
 
-exports.createResolvers = async (
-  {
-    actions,
-    cache,
-    createNodeId,
-    createResolvers,
-    store,
-    reporter,
-  },
-) => {
-  const { createNode, touchNode } = actions
+// exports.createResolvers = async (
+//   {
+//     actions,
+//     cache,
+//     createNodeId,
+//     createResolvers,
+//     store,
+//     reporter,
+//   },
+// ) => {
+//   const { createNode, touchNode } = actions
+//   // const postType = {
+//   //   type: "String",
+//   //   resolve(source, args, context, info) {
+//   //     return source.firstName + " " + source.name
+//   //   },
+//   // }
 
-  await createResolvers({
-    WPGraphQL_MediaItem: {
-      imageFile: {
-        type: "File",
-        async resolve(source) {
-          let sourceUrl = source.sourceUrl
 
-          if (source.mediaItemUrl !== undefined) {
-            sourceUrl = source.mediaItemUrl
-          }
-          console.log(" > Generating Image: " + sourceUrl)
+//   // await createResolvers({
+//   //   WPGraphQL_MediaItem: {
+//   //     imageFile: {
+//   //       type: "File",
+//   //       async resolve(source) {
+//   //         let sourceUrl = source.sourceUrl
 
-          return await createRemoteFileNode({
-            url: encodeURI(sourceUrl),
-            store,
-            cache,
-            createNode,
-            createNodeId,
-            reporter,
-            /*
-            auth: {
-              htaccess_user: process.env.BASIC_AUTH_USER,
-              htaccess_pass: process.env.BASIC_AUTH_PASS,
-            },
-            */
-          })
-        },
-      },
-    },
-  })
-}
+//   //         if (source.mediaItemUrl !== undefined) {
+//   //           sourceUrl = source.mediaItemUrl
+//   //         }
+//   //         console.log(" > Generating Image: " + sourceUrl)
+
+//   //         return await createRemoteFileNode({
+//   //           url: encodeURI(sourceUrl),
+//   //           store,
+//   //           cache,
+//   //           createNode,
+//   //           createNodeId,
+//   //           reporter,
+//   //           /*
+//   //           auth: {
+//   //             htaccess_user: process.env.BASIC_AUTH_USER,
+//   //             htaccess_pass: process.env.BASIC_AUTH_PASS,
+//   //           },
+//   //           */
+//   //         })
+//   //       },
+//   //     },
+//   //   },
+//   // })
+// }

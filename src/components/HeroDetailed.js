@@ -1,9 +1,8 @@
-import React, {useEffect, useRef } from 'react'
-import Img from "gatsby-image"
-import vectorshape from '../img/vectorshape.svg'
- 
+import React from 'react'
+import VectorShape from '../common/ui/VectorShape'
 
-const HeroDetailed = ({ data, image }) => {
+
+const HeroDetailed = ({ image }) => {
 
   return (
     <section className="hero bg-gradient-blue">
@@ -24,9 +23,7 @@ const HeroDetailed = ({ data, image }) => {
           </div>
         </div>
       </div>
-      <div className="container vectorshape-container" data-depth="0.7">
-        <img className="vectorshape position-absolute" src={vectorshape} alt="Vector Shape" />
-      </div>
+      <VectorShape />
     </section>
   )
 }

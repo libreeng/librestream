@@ -1,14 +1,11 @@
 import React from 'react'
+import NextPrevMenu from '../../common/ui/menus/NextPrevMenu'
 // import PropTypes from 'prop-types'
-import HeroDefault from '../../components/HeroDefault'
-import NextPrevNav from '../../components/NextPrevNav'
-
 
 
 const singleUseCase = () => {
   return (
     <>
-      <HeroDefault title="SGS Complete 30,000 Inspections" subtitle="Powered By Librestream." subnav="false" logo="true" />
       <section>
         <div className="container">
           <div className="row">
@@ -67,7 +64,7 @@ const singleUseCase = () => {
           </div>
         </div>
       </section>
-      <NextPrevNav />
+      <NextPrevMenu />
 
     </>
   )

@@ -1,13 +1,13 @@
 import React from 'react'
 import { graphql } from 'gatsby'
-import HeroHome from '../../components/HeroHome'
-import CarouselBootstrap from '../../components/CarouselBootstrap'
-import Card from '../../components/Card'
-import Stat from '../../components/Stat'
-import CustomerUseCases from '../../components/CustomerUseCases'
+import HeroHome from '../src/components/HeroHome'
+import CarouselBootstrap from '../src/components/CarouselBootstrap'
+import Card from '../src/components/Card'
+import Stat from '../src/components/Stat'
+import CustomerUseCases from '../src/components/CustomerUseCases'
 
 const templateHome = ({ data }) => {
-
+  const title = "HELLO"
   // const { title,content } = data.wpcontent.page
   // const {
   //   title,
@@ -25,7 +25,7 @@ const templateHome = ({ data }) => {
 
   return (
     <>
-      <HeroHome data={data} />
+      {/* <HeroHome data={data} /> */}
       <section className="bg-white">
         <div className="container">
           <div className="row">
@@ -34,11 +34,11 @@ const templateHome = ({ data }) => {
                 <h2 className="mb-4 font-weight-light">
                   {title}
                 </h2>
-                <div
+                {/* <div
                   className="lead lead-lg text-gray mb-5"
                   dangerouslySetInnerHTML={{ __html: description }}
-                />
-                <a href={internal.uri} className="btn btn-large btn-cyan">{linkText}</a>
+                /> */}
+                {/* <a href={internal.uri} className="btn btn-large btn-cyan">{linkText}</a> */}
               </div>
             </div>
           </div>
@@ -59,13 +59,13 @@ const templateHome = ({ data }) => {
       <section className="bg-white folder-border folder-top">
         <div className="container">
           <div className="row">
-            {homeStat && homeStat.map((stat, index) => (
+            {/* {homeStat && homeStat.map((stat, index) => (
               <Stat key={index} />
               // <div className="col-12 col-md-6 col-lg-3" key={index}>
               //   <div className="display-1">{homeStat.homeStatValue}</div>
               //   <p className="text-uppercase lead border-left border-dark">{homeStat.homeStatLabel}</p>
               // </div>
-            ))}
+            ))} */}
           </div>
         </div>
       </section>
@@ -78,11 +78,11 @@ const templateHome = ({ data }) => {
             </div>
           </div>
           <div className="row">
-            {news && news.map((newsItem) => (
+            {/* {news && news.map((newsItem) => (
               <div className="col-12 col-md-6 col-lg-3" key={newsItem.newsItem.id}>
                 <Card title={newsItem.newsItem.title} />
               </div>
-            ))}
+            ))} */}
           </div>
           <div className="row my-5">
             <div className="col-12">
@@ -103,6 +103,15 @@ templateDefault.propTypes = {
   content: PropTypes.string,
 }
 */
+
+export const pageQuery = graphql`
+  query HomeTemplateQuery($id: String!) {
+    # selecting the current page by id
+    page: wpPage(id: { eq: $id }) {
+      ...PageDetails
+    }
+  }
+`
 
 export default templateHome
 

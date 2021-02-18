@@ -1,11 +1,9 @@
 import React from 'react'
 // import PropTypes from 'prop-types'
-import HeroDefault from '../../components/HeroDefault'
 
 const customerSupport = () => {
   return (
     <>
-      <HeroDefault title="Customer Support" />
       <section>
         <div className="container">
           <div className="row justify-content-lg-center">

@@ -1,11 +1,9 @@
 import React from 'react'
 // import PropTypes from 'prop-types'
-import HeroDefault from '../../components/HeroDefault'
 
 const deviceSupportandIntegration = () => {
   return (
     <>
-      <HeroDefault title="Device Support &amp; Integration" />
       <section>
         <div className="container">
           <div className="row">

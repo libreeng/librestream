@@ -1,11 +1,9 @@
 import React from 'react'
 // import PropTypes from 'prop-types'
-import HeroDefault from '../../components/HeroDefault'
 
 const productRecycling = () => {
   return (
     <>
-      <HeroDefault title="Product Recycling" />
       <section>
         <div className="container">
           <div className="row">

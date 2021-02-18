@@ -1,8 +1,8 @@
 import React from 'react'
 // import PropTypes from 'prop-types'
 import { graphql } from 'gatsby'
-import CaseStudyList from '../components/CaseStudyList'
-import Pagination from '../components/Pagination'
+import CaseStudyList from '../src/components/CaseStudyList'
+import Pagination from '../src/components/Pagination'
 import HeroDefault from '../components/HeroDefault'
 
 
