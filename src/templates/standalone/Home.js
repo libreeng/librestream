@@ -2,7 +2,9 @@ import React from "react"
 import { graphql } from "gatsby"
 // import Image from "gatsby-image"
 import parse from "html-react-parser"
+import Hero from '../../common/ui/Hero'
 import CaseStudies from '../../components/CaseStudies'
+import CarouselBootstrap from '../../components/CarouselBootstrap'
 
 const HomeTemplate = ({ data: { page } }) => {
   // const featuredImage = {
@@ -13,14 +15,7 @@ const HomeTemplate = ({ data: { page } }) => {
   return (
 
     <>
-      {/* if we have a featured image for this post let's display it */}
-      {/* {featuredImage?.fluid && (
-          <Image
-            fluid={featuredImage.fluid}
-            alt={featuredImage.alt}
-            style={{ marginBottom: 50 }}
-          />
-      )} */}
+      <Hero />
 
       <section className="bg-white">
         <div className="container">
@@ -31,7 +26,7 @@ const HomeTemplate = ({ data: { page } }) => {
                   {parse(page.title)}
                 </h2>
                 <div className="lead lead-lg text-gray mb-5">
-                  {parse(page.description)}
+                  {/* {parse(page.description)} */}
                 </div>
               </div>
             </div>

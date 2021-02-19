@@ -7,9 +7,6 @@ const chunk = require(`lodash/chunk`)
 // const { dd } = require(`dumper.js`)
 
 
-
-
-
 /**
  * This function creates all the individual standalone pages in this site
  */
@@ -230,8 +227,6 @@ async function getPages({ graphql, reporter }) {
 
   return pages
 }
-
-
 
 /**
  * exports.createPages is a built-in Gatsby Node API.
