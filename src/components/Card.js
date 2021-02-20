@@ -1,20 +1,26 @@
 import React from 'react'
 import PropTypes from 'prop-types'
+import BackgroundImage from 'gatsby-background-image'
 
-const Card = () => {
+const Card = ({ title, image, url }) => {
   return (
     <>
-      <div className="card border-0">
-        <div className="bg-image aspect-1x1"
+      <a href={url} className="card border-0">
+        {/* <div 
+          className="bg-image aspect-1x1"
           style={{
-            backgroundImage: `url(https://picsum.photos/500)`
+            backgroundImage: `url(${image})`
           }}
-        >
-        </div>
+        /> */}
+        <BackgroundImage
+          Tag="div"
+          className="bg-image aspect-1x1"
+          fluid={image}
+        />
         <div className="card-footer bg-transparent text-uppercase px-0">
-          Title lorem
+          {title && title}
         </div>
-      </div>
+      </a>
     </>
   )
 }

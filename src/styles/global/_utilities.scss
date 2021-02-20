@@ -26,7 +26,6 @@
   background-size: cover;
   background-position: center center;
   background-color: $black;
-  // background-image: url(https://via.placeholder.com/700x500/f2783c/f2783c?text=placeholder);
   overflow: hidden;
   &.aspect-1x1 {
     padding-top: 100%;
@@ -112,6 +111,9 @@
     background-position: top center;
     background-size: cover;
     background-repeat: no-repeat;
+  }
+  &.bg-contain {
+    background-size: contain !important;
   }
 }
 

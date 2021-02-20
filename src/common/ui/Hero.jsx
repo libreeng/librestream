@@ -1,5 +1,6 @@
 import React from 'react'
 import PropTypes from 'prop-types'
+import Image from "gatsby-image"
 
 const Hero = ({
   heroTitle,
@@ -40,7 +41,12 @@ const Hero = ({
           <div className="col-lg-6">
             {heroFeaturedImage && (
               <div className="text-lg-right">
-                <img src={heroFeaturedImage} className="img-fluid" alt="" />
+                {heroFeaturedImage && (
+                  <Image
+                    fluid={heroFeaturedImage}
+                    alt={heroFeaturedImage.alt}
+                  />
+                )}
               </div>
             )}
           </div>

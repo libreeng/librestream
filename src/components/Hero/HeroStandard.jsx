@@ -3,7 +3,7 @@ import PropTypes from 'prop-types'
 import Image from "gatsby-image"
 import parse from "html-react-parser"
 
-const HeroStandard = ({ title, subtitle, description, subnav, backgroundImage }) => {
+const HeroStandard = ({ title, subtitle, description, subnav, backgroundImage, featuredImage }) => {
 
   // const featuredImage = {
   //   fluid: post.featuredImage?.node?.localFile?.childImageSharp?.fluid,
@@ -13,7 +13,8 @@ const HeroStandard = ({ title, subtitle, description, subnav, backgroundImage })
   return (
     <div
       className="hero hero-default"
-      style={{ backgroundImage: `url(${backgroundImage})`}}
+      // need a way to check if this backgroundImage exists before setting
+      // style={{ backgroundImage: `url(${backgroundImage})`}} 
     >
       <div className="container">
         <div className="row align-items-end">
@@ -32,7 +33,7 @@ const HeroStandard = ({ title, subtitle, description, subnav, backgroundImage })
             )}
           </div>
           <div className="col-lg-6">
-            {logo && (
+            {featuredImage && (
               <div className="text-lg-right">
                 {featuredImage?.fluid && (
                   <Image

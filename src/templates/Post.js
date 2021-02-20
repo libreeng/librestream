@@ -2,40 +2,73 @@ import React from "react"
 import { Link, graphql } from "gatsby"
 import Image from "gatsby-image"
 import parse from "html-react-parser"
+import HeroStandard from "../components/Hero/HeroStandard"
+import RelatedPosts from "../components/RelatedPosts"
+import NewsletterSignup from "../components/NewsletterSignup"
+import SocialShare from "../components/SocialShare"
 
 const PostTemplate = ({ data: { previous, next, post } }) => {
   const featuredImage = {
     fluid: post.featuredImage?.node?.localFile?.childImageSharp?.fluid,
-    alt: post.featuredImage?.node?.alt || ``,
+    alt: post.featuredImage?.node?.alt || ``
   }
+
+  const postCategory = {
+    categoryName: post.categories.nodes[0].name,
+    categorySlug: post.categories.nodes[0].slug
+  }
+
+  const mainImage = {
+    fluid: post.acfPostTypeNews?.mainImage?.localFile?.childImageSharp?.fluid,
+    alt: post.acfPostTypeNews?.mainImage?.altText
+  }
+
+  console.log(post)
 
   return (
     <>
-      <Hero title="News" />
-      <header>
-        <h1>{parse(post.title)}</h1>
-        <p>{post.date}</p>
-
-        {/* if we have a featured image for this post let's display it */}
-        {featuredImage?.fluid && (
-          <Image
-            fluid={featuredImage.fluid}
-            alt={featuredImage.alt}
-            style={{ marginBottom: 50 }}
-          />
-        )}
-      </header>
-
-      {!!post.content && (
-        <section itemProp="articleBody">{parse(post.content)}</section>
-      )}
-
+      <HeroStandard title={postCategory.categoryName} />
+      <section>
+        <div className="container">
+          <div className="row">
+            <div className="col-lg-8">
+              <header>
+                <h1>{parse(post.title)}</h1>
+                <hr />
+                <p className="text-light">{post.date}</p>
+              </header>
+              {mainImage?.fluid && (
+                <Image
+                  fluid={mainImage.fluid}
+                  alt={mainImage.alt}
+                  style={{ marginBottom: 50 }}
+                />
+              )}
+              {!!post.content && (
+                <div itemProp="articleBody">{parse(post.content)}</div>
+              )}
+            </div>
+            <div className="col-lg-3 ml-lg-auto">
+              <a href="#" className="d-flex align-items-center">Next <i className="icon-play ml-2"></i></a>
+              <hr />
+              <h6>Related Posts</h6>
+              <RelatedPosts/>
+              <div className="border-bracket">
+                <p>Want more news? Sign up here for the latest industry news and events.</p>
+              </div>
+              <NewsletterSignup />
+              <SocialShare />
+            </div>
+          </div>
+        </div>
+      </section>
+      <hr className="hr-styled" />
 
     </>
   )
 }
 
-export const pageQuery = graphql`
+export const postQuery = graphql`
   query PostById(
     # these variables are passed in via createPage.pageContext in gatsby-node.js
     $id: String!
@@ -44,26 +77,9 @@ export const pageQuery = graphql`
   ) {
     # selecting the current post by id
     post: wpPost(id: { eq: $id }) {
-      id
-      excerpt
-      content
-      title
-      date(formatString: "MMMM DD, YYYY")
-
-      featuredImage {
-        node {
-          altText
-          localFile {
-            childImageSharp {
-              fluid(maxWidth: 1000, quality: 100) {
-                ...GatsbyImageSharpFluid_tracedSVG
-              }
-            }
-          }
-        }
-      }
+      ...PostDetails
     }
-
+    # previous and next be able to be migrated to PostFields fragment not sure?
     # this gets us the previous post by id (if it exists)
     previous: wpPost(id: { eq: $previousPostId }) {
       uri
@@ -74,7 +90,7 @@ export const pageQuery = graphql`
     next: wpPost(id: { eq: $nextPostId }) {
       uri
       title
-    }
+    } 
   }
 `
 

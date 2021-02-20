@@ -3,25 +3,36 @@ import React from 'react'
 import { graphql } from "gatsby"
 import Hero from '../common/ui/Hero'
 import NextPrevMenu from '../common/ui/menus/NextPrevMenu'
-
+import parse from "html-react-parser"
 
 const CaseStudy = ({ data: { previous, next, post } }) => {
-  console.log("POST:", post)
+  console.log("Case Study:", post)
+
+  const heroData = {
+    title: post.acfPostTypeUseCase?.heroTitle,
+    subtitle: post.acfPostTypeUseCase?.heroSubtitle,
+    background: post.acfPostTypeUseCase?.localFile?.childImageSharp?.fluid,
+    featuredImage: post.acfPostTypeUseCase.whiteLogo.localFile?.childImageSharp?.fluid
+  }
+
+  const columns = post.acfPostTypeUseCase.columns
 
   return (
     <>
       <Hero
-        title="SGS Complete 30,000 Inspections"
-        subtitle="Powered By Librestream."
+        heroTitle={heroData.title}
+        heroSubtitle={heroData.subtitle}
         subnav="false"
         logo="true"
+        heroBackgroundImage={heroData.background}
+        featuredImage={heroData.featuredImage}
       />
       <section>
         <div className="container">
           <div className="row">
             <div className="col-12">
               <h2>Customer Use Case</h2>
-              <h2 className="lead text-primary">Title Lorem ipsum dolor sit amet consectetur adipisicing elit. Laboriosam, aperiam?</h2>
+              <h2 className="lead text-primary">{ post.title }</h2>
             </div>
           </div>
         </div>
@@ -32,7 +43,17 @@ const CaseStudy = ({ data: { previous, next, post } }) => {
       <section>
         <div className="container">
           <div className="row">
-            <div className="col-lg-4">
+            {columns && columns.map(column => 
+              <div className="col-lg-4">
+                <div className="bg-orange p-2">
+                  <h6 className="mb-0 text-white">{column.columnTitle}</h6>
+                </div>
+                <div className="border-left border-dark p-3">
+                  {parse(column.columnContent)}
+                </div>
+              </div>  
+            )}
+            {/* <div className="col-lg-4">
               <div className="bg-orange p-2">
                 <h6 className="mb-0 text-white">Situation</h6>
               </div>
@@ -55,7 +76,7 @@ const CaseStudy = ({ data: { previous, next, post } }) => {
               <div className="border-left border-dark p-3">
                 <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Molestias libero unde natus, reprehenderit harum ipsam commodi nesciunt! Distinctio, quos! Consectetur delectus neque reprehenderit error eligendi numquam eius, ab veniam tempore.</p>
               </div>
-            </div>
+            </div> */}
           </div>
         </div>
       </section>
@@ -92,16 +113,39 @@ export const pageQuery = graphql`
     $nextPostId: String
   ) {
     # selecting the current post by id
-    post: wpPost(id: { eq: $id }) {
+    post: wpCaseStudy(id: { eq: $id }) {
       id
-      excerpt
-      content
       title
-      date(formatString: "MMMM DD, YYYY")
-
-      featuredImage {
-        node {
+      uri
+      slug
+      acfPostTypeUseCase {
+        articleContent
+        articleLink
+        articleLinkText
+        articleTitle
+        heroBackground {
+          localFile {
+            childImageSharp {
+              fluid(maxWidth: 1000, quality: 100) {
+                ...GatsbyImageSharpFluid_tracedSVG
+              }
+            }
+          }
+          title
           altText
+        }
+        productIntro
+        productTitle1
+        productTitle2
+        columns {
+          columnContent
+          columnTitle
+          demoFormIframe
+          showRequestDemoButton
+        }
+        heroTitle
+        heroSubtitle
+        whiteLogo {
           localFile {
             childImageSharp {
               fluid(maxWidth: 1000, quality: 100) {
@@ -111,16 +155,17 @@ export const pageQuery = graphql`
           }
         }
       }
+      content
     }
 
     # this gets us the previous post by id (if it exists)
-    previous: wpPost(id: { eq: $previousPostId }) {
+    previous: wpCaseStudy(id: { eq: $previousPostId }) {
       uri
       title
     }
 
     # this gets us the next post by id (if it exists)
-    next: wpPost(id: { eq: $nextPostId }) {
+    next: wpCaseStudy(id: { eq: $nextPostId }) {
       uri
       title
     }

@@ -31,7 +31,7 @@ const CaseStudies = ({heading = 'Customer Use Cases'}) => {
     }
   `)
 
-  console.log(data)
+  console.log('Case Studies', data)
 
 
   return (
