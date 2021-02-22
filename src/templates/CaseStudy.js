@@ -4,18 +4,29 @@ import { graphql } from "gatsby"
 import Hero from '../common/ui/Hero'
 import NextPrevMenu from '../common/ui/menus/NextPrevMenu'
 import parse from "html-react-parser"
+import BackgroundImage from 'gatsby-background-image'
 
 const CaseStudy = ({ data: { previous, next, post } }) => {
   console.log("Case Study:", post)
 
-  const heroData = {
-    title: post.acfPostTypeUseCase?.heroTitle,
-    subtitle: post.acfPostTypeUseCase?.heroSubtitle,
-    background: post.acfPostTypeUseCase?.localFile?.childImageSharp?.fluid,
-    featuredImage: post.acfPostTypeUseCase.whiteLogo.localFile?.childImageSharp?.fluid
+  const caseFields = post.acfPostTypeUseCase
+
+  const article = {
+    title: caseFields.articleTitle,
+    content: caseFields.articleContent,
+    link: caseFields.articleLink,
+    linkText: caseFields.articleLinkText,
+    image: caseFields.articleImage?.localFile.childImageSharp.fluid
   }
 
-  const columns = post.acfPostTypeUseCase.columns
+  const heroData = {
+    title: caseFields?.heroTitle,
+    subtitle: caseFields?.heroSubtitle,
+    background: caseFields?.localFile?.childImageSharp?.fluid,
+    featuredImage: caseFields.whiteLogo.localFile?.childImageSharp?.fluid
+  }
+
+  const columns = caseFields.columns
 
   return (
     <>
@@ -53,48 +64,34 @@ const CaseStudy = ({ data: { previous, next, post } }) => {
                 </div>
               </div>  
             )}
-            {/* <div className="col-lg-4">
-              <div className="bg-orange p-2">
-                <h6 className="mb-0 text-white">Situation</h6>
-              </div>
-              <div className="border-left border-dark p-3">
-                <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Molestias libero unde natus, reprehenderit harum ipsam commodi nesciunt! Distinctio, quos! Consectetur delectus neque reprehenderit error eligendi numquam eius, ab veniam tempore.</p>
-              </div>
-            </div>
-            <div className="col-lg-4">
-              <div className="bg-orange p-2">
-                <h6 className="mb-0 text-white">Solution</h6>
-              </div>
-              <div className="border-left border-dark p-3">
-                <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Molestias libero unde natus, reprehenderit harum ipsam commodi nesciunt! Distinctio, quos! Consectetur delectus neque reprehenderit error eligendi numquam eius, ab veniam tempore.</p>
-              </div>
-            </div>
-            <div className="col-lg-4">
-              <div className="bg-orange p-2">
-                <h6 className="mb-0 text-white">Results</h6>
-              </div>
-              <div className="border-left border-dark p-3">
-                <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Molestias libero unde natus, reprehenderit harum ipsam commodi nesciunt! Distinctio, quos! Consectetur delectus neque reprehenderit error eligendi numquam eius, ab veniam tempore.</p>
-              </div>
-            </div> */}
           </div>
         </div>
       </section>
-      <section className="bg-primary text-white bg-offset-right mt-5">
-        <div className="container">
-          <div className="row">
-            <div className="col-lg-6">
-              <p className="lead">“30,000 inspections have now been conducted by SGS QiiQ, the remote inspections tool which was fully deployed during the year. This digital tool has established a new standard in the industry.”</p>
-              <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Temporibus inventore magnam, voluptatem ullam facilis ratione recusandae illo voluptatibus cumque nisi corporis aspernatur officiis. Praesentium culpa minus enim corrupti sapiente quam.</p>
-              <a href="#blah" className="btn btn-border border-white text-white">Full Article?</a>
-              {/* It looks like on the current site this is a link to a blog post */}
-            </div>
-            <div className="col-lg-5">
-              <img src="https://via.placeholder.com/768" className="img-fluid img-offset-top" alt="" />
+      {article.title && (
+        <section className="bg-primary text-white bg-offset-right mt-5">
+          <div className="container">
+            <div className="row">
+              <div className="col-lg-6">
+                <p className="lead">{article.title && article.title}</p>
+                {article.content && parse(article.content)}
+                {article.link && (
+                  <a href={article.link} className="btn btn-border border-white text-white">{article.linkText ? article.linkText : 'Full Article'}</a>
+                )}
+              </div>
+              {article.image && (
+                <div className="col-lg-5">
+                  <BackgroundImage
+                    Tag="div"
+                    className="bg-image aspect-1x1 img-offset-top"
+                    fluid={article.image}
+                  />
+                </div>
+              )}
             </div>
           </div>
-        </div>
-      </section>
+        </section>
+      )}
+      
       <NextPrevMenu previous={previous} next={next} />
 
     </>
@@ -123,6 +120,15 @@ export const pageQuery = graphql`
         articleLink
         articleLinkText
         articleTitle
+        articleImage {
+          localFile {
+            childImageSharp {
+              fluid(maxWidth: 1000, quality: 100) {
+                ...GatsbyImageSharpFluid_tracedSVG
+              }
+            }
+          }
+        }
         heroBackground {
           localFile {
             childImageSharp {

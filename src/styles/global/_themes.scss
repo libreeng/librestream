@@ -1,3 +1,10 @@
 .bg-white {
   color: $dark;
 }
+
+.bg-blue,
+.bg-primary {
+  a {
+    color: $white;
+  }
+}

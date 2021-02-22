@@ -9,18 +9,13 @@ import SocialShare from "../components/SocialShare"
 
 const PostTemplate = ({ data: { previous, next, post } }) => {
   const featuredImage = {
-    fluid: post.featuredImage?.node?.localFile?.childImageSharp?.fluid,
-    alt: post.featuredImage?.node?.alt || ``
+    fluid: post.acfPostTypeNews?.mainImage?.localFile?.childImageSharp?.fluid,
+    alt: post.acfPostTypeNews?.mainImage?.altText || ``
   }
 
   const postCategory = {
     categoryName: post.categories.nodes[0].name,
     categorySlug: post.categories.nodes[0].slug
-  }
-
-  const mainImage = {
-    fluid: post.acfPostTypeNews?.mainImage?.localFile?.childImageSharp?.fluid,
-    alt: post.acfPostTypeNews?.mainImage?.altText
   }
 
   console.log(post)
@@ -37,10 +32,10 @@ const PostTemplate = ({ data: { previous, next, post } }) => {
                 <hr />
                 <p className="text-light">{post.date}</p>
               </header>
-              {mainImage?.fluid && (
+              {featuredImage?.fluid && (
                 <Image
-                  fluid={mainImage.fluid}
-                  alt={mainImage.alt}
+                  fluid={featuredImage.fluid}
+                  alt={featuredImage.alt}
                   style={{ marginBottom: 50 }}
                 />
               )}
