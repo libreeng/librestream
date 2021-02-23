@@ -1,15 +1,22 @@
 import React from 'react'
 import PropTypes from 'prop-types'
+import parse from "html-react-parser"
 
-const Stat = () => {
+const Stat = ({ number, descriptor, title }) => {
   return (
     <div className="col">
       <div className="stat">
         <div className="stat-number">
-          120
-          <span className="stat-descriptor">%</span>
+          {number && number }
+          {descriptor && (
+            <span className="stat-descriptor">{descriptor}</span>
+          )}
+          
         </div>
-        <h6 className="stat-description text-uppercase">lorem stat description </h6>
+        {title && (
+          <h6 className="stat-description text-uppercase">{title && parse(title)}</h6>
+        )}
+        
       </div>
     </div>
   )

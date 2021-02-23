@@ -30,7 +30,7 @@ const Hero = ({
                 <ul className="nav mt-4">
                   {heroSubnav.map(item => (
                     <li className="nav-item" key={item.subnavItemLink.url}>
-                      <a href={item.subnavItemLink.url} className="nav-link">{item.subnavItemLink.subnavItemLabel}</a>
+                      <a href={item.subnavItemLink.url} className="nav-link">{item.subnavItemLink.title}</a>
                     </li>
                   )
                   )}

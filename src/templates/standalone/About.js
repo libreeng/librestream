@@ -1,7 +1,9 @@
 import React from "react"
 import { graphql } from "gatsby"
 import Image from "gatsby-image"
+import BackgroundImage from 'gatsby-background-image'
 import parse from "html-react-parser"
+import Hero from "../../common/ui/Hero"
 
 const AboutTemplate = ({ data: { page } }) => {
   const featuredImage = {
@@ -9,27 +11,133 @@ const AboutTemplate = ({ data: { page } }) => {
     alt: page.featuredImage?.node?.alt || ``,
   }
 
+  const acf = page.acfTemplateAbout
+  console.log(page.acfTemplateAbout)
+  const heroData = {
+    heroTitle: acf?.heroTitle,
+    heroSubtitle: acf?.heroSubtitle,
+    herobackgroundImage: acf?.localFile?.childImageSharp?.fluid,
+    heroSubnav: acf.subnav
+  }
+
   return (
     <>
+      <Hero
+        heroTitle={heroData.heroTitle}
+        heroSubtitle={heroData.heroSubtitle}
+        subnav="false"
+        logo="true"
+        heroBackgroundImage={heroData.heroBackgroundImage}
+        heroFeaturedImage={heroData.heroFeaturedImage}
+        heroSubnav={heroData.heroSubnav}
+      />
+      <section>
+        <div className="container">
+          <div className="row">
+            <div className="col-lg-8">
+              <h1>{acf.storyTitle && acf.storyTitle}</h1>
+              {acf.storyDescription && parse(acf.storyDescription) }
+            </div>
+            <div className="col-lg-4">
+              {acf?.storyImage.localFile?.childImageSharp?.fluid && (
+                <Image
+                  fluid={acf?.storyImage.localFile?.childImageSharp?.fluid}
+                  alt={acf?.storyImage.altText}
+                />
+              )}
+            </div>
+          </div>
+        </div>
+      </section>
+      <div className="container">
+        <hr className="hr-styled" />
+      </div>
+      <section id="awards">
+        <div className="container">
+          <div className="row">
+            <div className="col-12">
+              <h2>Awards</h2>
+            </div>
+          </div>
+          <div className="row row-cols-1 row-cols-md-2 align-items-center justify-content-between">
+            {acf.awards && acf.awards.map(award =>
+              <div className="col-12 col-lg-2 mb-4">
+                <Image
+                  fluid={award.image.localFile.childImageSharp.fluid && award.image.localFile.childImageSharp.fluid}
+                  alt={award.image.altText && award.image.altText}
+                />
+              </div>
+            )}
+          </div>
+        </div>
+      </section>
+      <div className="container">
+        <hr className="hr-styled" />
+      </div>
+      <section>
+        <div className="container">
+          <div className="row">
+            <div className="col-12">
+              <h2>Our Timeline</h2>
+            </div>
+          </div>
+        </div>
+      </section>
+      <div className="responsive-iframe aspect-2x1">
+        <div className="bg-fill">
+          <h1>Timeline video</h1>
+        </div>
 
-      <header>
-        <h1 itemProp="headline">{parse(page.title)}</h1>
+        {/* <iframe src="" frameborder="0">timeline video</iframe> */}
+      </div>
+      <section>
+        <div className="container">
+          <div className="row">
+            <div className="col-12">
+              <h2>Board of Directors</h2>
+            </div>
+          </div>
+          <div className="row">
+            {acf.board && acf.board.map(boardmember =>
+              <div className="col-12 col-lg-3 mb-4">
+                {boardmember.image && (
+                  <BackgroundImage
+                  Tag="div"
+                  className="bg-image aspect-1x1"
+                  fluid={boardmember.image.localFile.childImageSharp.fluid}
+                  />
+                )}
+                <h4 className="mb-0">{boardmember.name && boardmember.name}</h4>
+                <p className="text-primary">{boardmember.title && boardmember.title}</p>
+              </div>
+            )}
+          </div>
+          <hr className="hr-styled" />
+          <div className="row">
+            <div className="col-12">
+              <h2>Management</h2>
+            </div>
+          </div>
+          <div className="row">
+            {acf.board && acf.board.map(boardmember =>
+              <div className="col-12 col-lg-3 mb-4">
+                {boardmember.image && (
+                  <BackgroundImage
+                  Tag="div"
+                  className="bg-image aspect-1x1"
+                  fluid={boardmember.image.localFile.childImageSharp.fluid}
+                  />
+                )}
+                <h4 className="mb-0">{boardmember.name && boardmember.name}</h4>
+                <p className="text-primary">{boardmember.title && boardmember.title}</p>
+              </div>
+            )}
+          </div>
+        </div>
+      </section>
+      <hr className="hr-styled" />
 
-        <p>{page.date}</p>
-
-        {/* if we have a featured image for this post let's display it */}
-        {featuredImage?.fluid && (
-          <Image
-            fluid={featuredImage.fluid}
-            alt={featuredImage.alt}
-            style={{ marginBottom: 50 }}
-          />
-        )}
-      </header>
-
-      {!!page.content && (
-        <section itemProp="articleBody">{parse(page.content)}</section>
-      )}
+        
 
     </>
   )
@@ -40,6 +148,74 @@ export const pageQuery = graphql`
     # selecting the current page by id
     page: wpPage(id: { eq: $id }) {
       ...PageDetails
+      acfTemplateAbout {
+        awards {
+          image {
+            altText
+            localFile {
+              childImageSharp {
+                fluid(maxWidth: 1000, quality: 100) {
+                  ...GatsbyImageSharpFluid_tracedSVG
+                }
+              }
+            }
+          }
+        }
+        board {
+          bio
+          designations
+          image {
+            altText
+            localFile {
+              childImageSharp {
+                fluid(maxWidth: 1000, quality: 100) {
+                  ...GatsbyImageSharpFluid_tracedSVG
+                }
+              }
+            }
+          }
+          name
+          title
+        }
+        storyDescription
+        storyImage {
+          altText
+          localFile {
+            childImageSharp {
+              fluid(maxWidth: 1000, quality: 100) {
+                ...GatsbyImageSharpFluid_tracedSVG
+              }
+            }
+          }
+        }
+        storyTitle
+        subnav {
+          subnavItemLink {
+            target
+            title
+            url
+          }
+        }
+        timelineTitle
+        timelineVideo
+        heroTitle
+        management {
+          bio
+          designations
+          image {
+            localFile {
+              childImageSharp {
+                fluid(maxWidth: 1000, quality: 100) {
+                  ...GatsbyImageSharpFluid_tracedSVG
+                }
+              }
+            }
+            altText
+          }
+          name
+          title
+        }
+      }
     }
   }
 `

@@ -8,34 +8,37 @@ import BackgroundImage from 'gatsby-background-image'
 
 const CaseStudy = ({ data: { previous, next, post } }) => {
   console.log("Case Study:", post)
-  const caseFields = post.acfPostTypeUseCase
+  console.log("next", next)
+  console.log("previous", previous)
+  const acf = post.acfPostTypeUseCase
+
 
   const article = {
-    title: caseFields.articleTitle,
-    content: caseFields.articleContent,
-    link: caseFields.articleLink,
-    linkText: caseFields.articleLinkText,
-    image: caseFields.articleImage?.localFile.childImageSharp.fluid
+    title: acf.articleTitle,
+    content: acf.articleContent,
+    link: acf.articleLink,
+    linkText: acf.articleLinkText,
+    image: acf.articleImage?.localFile.childImageSharp.fluid
   }
 
   const heroData = {
-    title: caseFields?.heroTitle,
-    subtitle: caseFields?.heroSubtitle,
-    background: caseFields?.localFile?.childImageSharp?.fluid,
-    featuredImage: caseFields.whiteLogo.localFile?.childImageSharp?.fluid
+    heroTitle: acf?.heroTitle,
+    heroSubtitle: acf?.heroSubtitle,
+    herobackgroundImage: acf?.localFile?.childImageSharp?.fluid,
+    heroFeaturedImage: acf.whiteLogo.localFile?.childImageSharp?.fluid
   }
 
-  const columns = caseFields.columns
+  const columns = acf.columns
 
   return (
     <>
       <Hero
-        heroTitle={heroData.title}
-        heroSubtitle={heroData.subtitle}
+        heroTitle={heroData.heroTitle}
+        heroSubtitle={heroData.heroSubtitle}
         subnav="false"
         logo="true"
-        heroBackgroundImage={heroData.background}
-        heroFeaturedImage={heroData.featuredImage}
+        heroBackgroundImage={heroData.heroBackgroundImage}
+        heroFeaturedImage={heroData.heroFeaturedImage}
       />
       <section>
         <div className="container">
@@ -164,13 +167,13 @@ export const pageQuery = graphql`
     }
 
     # this gets us the previous post by id (if it exists)
-    previous: wpCaseStudy(id: { eq: $previousPostId }) {
+    previous: wpPost(id: { eq: $previousPostId }) {
       uri
       title
     }
 
     # this gets us the next post by id (if it exists)
-    next: wpCaseStudy(id: { eq: $nextPostId }) {
+    next: wpPost(id: { eq: $nextPostId }) {
       uri
       title
     }
