@@ -8,6 +8,8 @@ import NewsletterSignup from "../components/NewsletterSignup"
 import SocialShare from "../components/SocialShare"
 
 const PostTemplate = ({ data: { previous, next, post } }) => {
+  console.log("next", next)
+  console.log("previous", previous)
   const featuredImage = {
     fluid: post.acfPostTypeNews?.mainImage?.localFile?.childImageSharp?.fluid,
     alt: post.acfPostTypeNews?.mainImage?.altText || ``

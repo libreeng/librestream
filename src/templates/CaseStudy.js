@@ -8,7 +8,6 @@ import BackgroundImage from 'gatsby-background-image'
 
 const CaseStudy = ({ data: { previous, next, post } }) => {
   console.log("Case Study:", post)
-
   const caseFields = post.acfPostTypeUseCase
 
   const article = {
@@ -36,7 +35,7 @@ const CaseStudy = ({ data: { previous, next, post } }) => {
         subnav="false"
         logo="true"
         heroBackgroundImage={heroData.background}
-        featuredImage={heroData.featuredImage}
+        heroFeaturedImage={heroData.featuredImage}
       />
       <section>
         <div className="container">
