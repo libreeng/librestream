@@ -6,6 +6,7 @@ import Hero from "../../common/ui/Hero"
 import Stat from "../../components/Stat"
 import CarouselBootstrap from "../../components/CarouselBootstrap"
 
+
 const PlatformTemplate = ({ data: { page } }) => {
   const featuredImage = {
     fluid: page.featuredImage?.node?.localFile?.childImageSharp?.fluid,
@@ -82,23 +83,29 @@ const PlatformTemplate = ({ data: { page } }) => {
         <div className="container">
           <div className="row">
             <div className="col-12">
-              <CarouselBootstrap />
+              <CarouselBootstrap slides={acf.carouselSlide}/>
             </div>
           </div>
           <hr className="hr-white" />
           <div className="row">
             <div className="col-lg-4 border-left border-primary">
-              <h3>Onsight <span className="text-cyan">is the one tool to guide your Digital Transformation.</span></h3>
+            
+                <h3>{acf.carouselFooterTitle && acf.carouselFooterTitle}</h3>
+              
             </div>
             <div className="col-lg-4 border-left border-primary">
-              <p>Our Onsight augmented reality knowledge platform powers the AI Connected Experts of the future with built-in advanced artificial intelligence, IoT data visualization, and augmented reality capabilities. These innovative features reduce the cognitive load on workers, create effective communication environments and streamline data across operations.</p>
+              {acf.carouselFooterDescription && (
+                parse(acf.carouselFooterDescription)
+              )}
             </div>
             <div className="col-lg-4 border-left border-primary">
-              <ul className="checklist">
-                <li>lorem Item</li>
-                <li>lorem Item</li>
-                <li>lorem Item</li>
-              </ul>
+              {acf.carouselFooterChecklist.checklistItem && (
+                <ul className="checklist">
+                  {acf.carouselFooterChecklist.checklistItem.map( item =>
+                    <li>{item.checklistItem}</li>
+                  )}
+                </ul>
+              )}
             </div>
           </div>
         </div>

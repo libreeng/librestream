@@ -28,7 +28,7 @@ module.exports = {
             limit:
               process.env.NODE_ENV === `development`
                 ? // Lets just pull 50 posts in development to make it easy on ourselves.
-                50
+                500
                 : // And all posts in production
                 null,
           },
@@ -36,25 +36,25 @@ module.exports = {
       },
     },
 
-    {
-      resolve: "gatsby-source-graphql",
-      options: {
-        // Remote schema query type. This is an arbitrary name.
-        typeName: "WPGraphQL",
-        // Field name under which it will be available. Used in your Gatsby query. This is also an arbitrary name.
-        fieldName: "wpcontent",
-        // GraphQL endpoint, relative to your WordPress home URL.
-        url: "https://librestreamcms.kinsta.cloud/graphql",
+    // {
+    //   resolve: "gatsby-source-graphql",
+    //   options: {
+    //     // Remote schema query type. This is an arbitrary name.
+    //     typeName: "WPGraphQL",
+    //     // Field name under which it will be available. Used in your Gatsby query. This is also an arbitrary name.
+    //     fieldName: "wpcontent",
+    //     // GraphQL endpoint, relative to your WordPress home URL.
+    //     url: "https://librestreamcms.kinsta.cloud/graphql",
 
-        // HTTP headers
-        // https://github.com/wp-graphql/wp-graphql-jwt-authentication
-        /*
-        headers: {
-          Authorization: `Bearer ${process.env.AUTHORIZATION_TOKEN}`,
-        },
-        */
-      },
-    },
+    //     // HTTP headers
+    //     // https://github.com/wp-graphql/wp-graphql-jwt-authentication
+    //     /*
+    //     headers: {
+    //       Authorization: `Bearer ${process.env.AUTHORIZATION_TOKEN}`,
+    //     },
+    //     */
+    //   },
+    // },
 
     {
       resolve: 'gatsby-wpgraphql-inline-images', // https://www.gatsbyjs.com/plugins/gatsby-wpgraphql-inline-images/

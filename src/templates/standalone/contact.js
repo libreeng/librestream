@@ -1,44 +1,61 @@
 import React from 'react'
-// import PropTypes from 'prop-types'
-import HeroDefault from '../../components/HeroDefault'
+import PropTypes from 'prop-types'
+import parse from "html-react-parser"
+import Hero from '../../common/ui/Hero'
 
-const contact = () => {
+const ContactTemplate = ({ data: { page } }) => {
+  const acf = page.acfTemplateContact
   return (
     <>
-      <HeroDefault title="Contact" />
+      <Hero heroTitle={page.title} />
       <section>
         <div className="container">
           <div className="row">
             <div className="col-12 col-lg-8">
-              <h2>For general questions and comments or if you would like our team to follow up with you, please fill out the form below with any questions or comments:</h2>
-              <iframe src="https://1.librestream.com/l/859043/2020-04-27/bylx" width="100%" height="1000" frameBorder="0" title="Contact Form" />
-
+              {acf.intro && parse(acf.intro)}
+              {acf.contactForm && (
+                <iframe src={acf.contactForm} width="100%" height="750" frameBorder="0" title="Contact Form" />
+              )}
             </div>
             <div className="col-12 col-lg-4 ml-lg-auto">
               <div className="border-bracket">
-                <p>If you are a customer and have a support request, please fill out the support request form:</p>
+                {acf.supportRequestDescription && (
+                  <p>{acf.supportRequestDescription}</p>
+                )}
+                
               </div>
               <div className="text-center p-2">
                 <i className="icon-arrow arrow-down arrow-dark" />
               </div>
-              <a href="#" className="btn btn-gradient-dark-blue text-white btn-block">Support Request Form</a>
+              {acf.supportRequestLink && (
+                <a href={acf.supportRequestLink} className="btn btn-gradient-dark-blue text-white btn-block">{acf.supportRequestLink.title}</a>
+              )}
+              
               <div className="border-bracket mt-5">
-                <h6 className="mt-5">Head Office</h6>
-                <address className="text-primary">
-                  895 Waverley St., Suite 110<br /> Winnipeg, Manitoba<br />Canada, R3T 5P4
-                </address>
+                {acf.addressTitle && (
+                  <h6 className="mt-5">{acf.addressTitle}</h6>
+                )}
+                {acf.address && (
+                  <address className="text-primary">
+                    {parse(acf.address)}
+                  </address>
+                )}
+                
               </div>
               <div className="text-center p-2">
                 <i className="icon-arrow arrow-down arrow-dark" />
               </div>
-              <a href="#" className="btn btn-border btn-block border-primary">View Map</a>
+              {acf.mapLink && (
+                <a href={acf.mapLink.url} target={acf.mapLink.target} className="btn btn-border btn-block border-primary">{acf.mapLink.title}</a>
+              )}
+
               <div className="border-bracket mt-5">
-                <h6 className="mb-0">Phone</h6>
-                <p className="text-primary">1-xxx-xxx-xxxx</p>
-                <h6 className="mb-0">North America Toll Free</h6>
-                <p className="text-primary">1-xxx-xxx-xxxx</p>
-                <h6 className="mb-0">Fax</h6>
-                <p className="text-primary">1-xxx-xxx-xxxx</p>
+                {acf.phoneNumbers && acf.phoneNumbers.map( phone => (
+                  <>
+                    <h6 className="mb-0">{phone.phoneNumberLabel && phone.phoneNumberLabel}</h6>
+                    <p className="text-primary">{phone.phoneNumber && phone.phoneNumber}</p>
+                  </>
+                ))}
               </div>
             </div>
           </div>
@@ -49,9 +66,39 @@ const contact = () => {
   )
 }
 
-contact.propTypes = {
+ContactTemplate.propTypes = {
 
 }
 
-export default contact
+export const pageQuery = graphql`
+  query contactTemplateQuery($id: String!) {
+    # selecting the current page by id
+    page: wpPage(id: { eq: $id }) {
+      ...PageDetails
+      acfTemplateContact {
+        address
+        addressTitle
+        contactForm
+        intro
+        phoneNumbers {
+          phoneNumber
+          phoneNumberLabel
+        }
+        supportRequestDescription
+        supportRequestLink {
+          title
+          target
+          url
+        }
+        mapLink {
+          target
+          title
+          url
+        }
+      }
+    }
+  }
+`
+
+export default ContactTemplate
 

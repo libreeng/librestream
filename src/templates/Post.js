@@ -15,6 +15,7 @@ const PostTemplate = ({ data: { previous, next, post } }) => {
     alt: post.acfPostTypeNews?.mainImage?.altText || ``
   }
 
+  // Currently related posts are not dynamically checking against postCategory
   const postCategory = {
     categoryName: post.categories.nodes[0].name,
     categorySlug: post.categories.nodes[0].slug

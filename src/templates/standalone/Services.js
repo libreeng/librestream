@@ -3,6 +3,8 @@ import { graphql } from "gatsby"
 import Image from "gatsby-image"
 import parse from "html-react-parser"
 
+
+// The services page is going to be customer-success
 const ServicesTemplate = ({ data: { page } }) => {
   const featuredImage = {
     fluid: page.featuredImage?.node?.localFile?.childImageSharp?.fluid,

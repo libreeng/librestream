@@ -7,7 +7,7 @@
   text-transform: uppercase;
   position: relative;
   line-height: 1.5;
-  width: 250px;
+  min-width: 250px;
   max-width: 100%;
   &::after {
     content: '';
@@ -24,7 +24,7 @@
   }
   &.btn-lg {
     @include media-breakpoint-up(lg) {
-      width: 300px;
+      min-width: 300px;
     }
   }
   &.btn-gradient-blue-cyan {

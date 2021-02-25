@@ -3,7 +3,6 @@ import playButton from '../img/play-button.svg'
 import Modal from './Modal'
 
 const HeroHome = ({ data }) => {
-  console.log(data.homeHeroBkg.childImageSharp.fluid)
   return (
     <div
       className="hero hero-home"
