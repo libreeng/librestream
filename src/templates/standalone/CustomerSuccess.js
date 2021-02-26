@@ -63,7 +63,7 @@ const CustomerSuccessTemplate = ({ data: { page } }) => {
           <div className="container">
             <div className="row">
               <div className="col-lg-6">
-                {acf.deploymentDescription && parse(acf.trainingDescription)}
+                {acf.deploymentDescription && parse(acf.deploymentDescription)}
               </div>
               <div className="col-lg-6">
                 <div className="row align-items-center">

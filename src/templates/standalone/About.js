@@ -39,9 +39,9 @@ const AboutTemplate = ({ data: { page } }) => {
               {acf.storyDescription && parse(acf.storyDescription) }
             </div>
             <div className="col-lg-4">
-              {acf?.storyImage.localFile?.childImageSharp?.fluid && (
+              {acf.storyImage && (
                 <Image
-                  fluid={acf?.storyImage.localFile?.childImageSharp?.fluid}
+                  fluid={acf?.storyImage?.localFile?.childImageSharp?.fluid}
                   alt={acf?.storyImage.altText}
                 />
               )}

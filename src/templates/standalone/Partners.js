@@ -45,11 +45,14 @@ const PartnersTemplate = ({ data: { page } }) => {
                     <div className="card border border-primary">
                       <div className="bg-image aspect-1x1">
                         <div className="bg-fill bg-transparent p-3"> 
-                          {/* not able to return these as fluid, not sure why */}
-                          <Image
-                            fluid={company.acfPostTypePartner?.partnerLogo?.localFile?.childImageSharp?.fluid}
-                            alt={company.acfPostTypePartner?.partnerLogo?.altText}
-                          />
+                          <div className="w-100">
+                          {company.acfPostTypePartner.partnerLogo && (
+                            <Image
+                              fluid={company.acfPostTypePartner?.partnerLogo?.localFile?.childImageSharp?.fluid}
+                              alt={company.acfPostTypePartner?.partnerLogo?.altText}
+                            />
+                          )}
+                          </div>
                           {/* <img src={company.acfPostTypePartner.partnerLogo.localFile.url} class="img-fluid" alt=""/> */}
                         </div>
                       </div>

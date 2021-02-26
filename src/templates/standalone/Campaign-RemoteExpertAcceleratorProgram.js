@@ -1,12 +1,16 @@
-import React from 'react'
-// import PropTypes from 'prop-types'
-import AccordionItems from '../../components/AccordionItems'
-import HeroDefault from '../../components/HeroDefault'
+import React from "react"
+import { graphql } from "gatsby"
+import Image from "gatsby-image"
+import parse from "html-react-parser"
+import Hero from "../../common/ui/Hero"
+import AccordionItems from "../../components/AccordionItems"
 
-const campaign = () => {
+const CampaignRemoteExpertAcceleratorProgramTemplate = ({ data: { page } }) => {
+  
+  
   return (
     <>
-      <HeroDefault title="Remote Expert Accelerator Program" subtitle="" subnav="" logo="" />
+      <Hero heroTitle={page.title} />
       <section>
         <div className="container">
           <div className="row align-items-center">
@@ -25,7 +29,7 @@ const campaign = () => {
         <div className="container">
           <div className="row">
             <div className="col-lg-6">
-              <div className="bg-image aspect-1x1 img-offset-top img-offset-bottom offset-bottom-lg"></div>
+              <div className="bg-image aspect-1x1 img-offset-top img-offset-bottom offset-bottom-lg bg-dark" />
             </div>
             <div className="col-lg-6">
               <AccordionItems className="accordion-icons" />
@@ -63,12 +67,29 @@ const campaign = () => {
         </div>
       </section>
       <hr className="hr-styled" />
+      {!!page.content && (
+        <section itemProp="articleBody">
+          <div className="container">
+            <div className="row">
+              <div className="col-12">
+                {parse(page.content)}
+              </div>
+            </div>
+          </div>
+        </section>
+      )}
+
     </>
   )
 }
 
-campaign.propTypes = {
+export const pageQuery = graphql`
+  query CampaignRemoteExpertAcceleratorProgramTemplateQuery($id: String!) {
+    # selecting the current page by id
+    page: wpPage(id: { eq: $id }) {
+      ...PageDetails
+    }
+  }
+`
 
-}
-
-export default campaign
+export default CampaignRemoteExpertAcceleratorProgramTemplate
