@@ -113,6 +113,7 @@ export const pageQuery = graphql`
           }
           content
           image {
+            altText
             localFile {
               childImageSharp {
                 fluid(maxWidth: 1000, quality: 100) {
@@ -120,7 +121,6 @@ export const pageQuery = graphql`
                 }
               }
             }
-            altText
           }
           title
         }

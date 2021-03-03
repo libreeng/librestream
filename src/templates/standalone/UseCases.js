@@ -72,9 +72,6 @@ export const pageQuery = graphql`
               title
               altText
             }
-            productIntro
-            productTitle1
-            productTitle2
             columns {
               columnContent
               columnTitle

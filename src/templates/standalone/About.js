@@ -16,8 +16,8 @@ const AboutTemplate = ({ data: { page } }) => {
   const heroData = {
     heroTitle: acf?.heroTitle,
     heroSubtitle: acf?.heroSubtitle,
-    herobackgroundImage: acf?.localFile?.childImageSharp?.fluid,
-    heroSubnav: acf.subnav
+    heroBackground: acf?.heroBackground?.localFile?.childImageSharp?.fluid,
+    heroSubnav: acf?.subnav
   }
 
   return (
@@ -78,17 +78,20 @@ const AboutTemplate = ({ data: { page } }) => {
         <div className="container">
           <div className="row">
             <div className="col-12">
-              <h2>Our Timeline</h2>
+              {acf.timelineTitle && (
+                <h2>{acf.timelineTitle}</h2>
+              )}
             </div>
           </div>
         </div>
       </section>
-      <div className="responsive-iframe aspect-2x1">
+      <div className="responsive-iframe aspect-16x9">
         <div className="bg-fill bg-dark">
           <h1 class="text-white">Timeline video</h1>
         </div>
-
-        {/* <iframe src="" frameborder="0">timeline video</iframe> */}
+        {acf.timelineVideo && (
+          <iframe src={acf.timelineVideo} frameborder="0" title="Timeline Video" />
+        )}
       </div>
       <section id="board-of-directors">
         <div className="container">
@@ -136,9 +139,6 @@ const AboutTemplate = ({ data: { page } }) => {
         </div>
       </section>
       <hr className="hr-styled" />
-
-        
-
     </>
   )
 }
@@ -155,7 +155,7 @@ export const pageQuery = graphql`
             localFile {
               childImageSharp {
                 fluid(maxWidth: 1000, quality: 100) {
-                  ...GatsbyImageSharpFluid_tracedSVG
+                  ...GatsbyImageSharpFluid
                 }
               }
             }
@@ -169,7 +169,7 @@ export const pageQuery = graphql`
             localFile {
               childImageSharp {
                 fluid(maxWidth: 1000, quality: 100) {
-                  ...GatsbyImageSharpFluid_tracedSVG
+                  ...GatsbyImageSharpFluid
                 }
               }
             }
@@ -183,7 +183,7 @@ export const pageQuery = graphql`
           localFile {
             childImageSharp {
               fluid(maxWidth: 1000, quality: 100) {
-                ...GatsbyImageSharpFluid_tracedSVG
+                ...GatsbyImageSharpFluid
               }
             }
           }
@@ -206,7 +206,7 @@ export const pageQuery = graphql`
             localFile {
               childImageSharp {
                 fluid(maxWidth: 1000, quality: 100) {
-                  ...GatsbyImageSharpFluid_tracedSVG
+                  ...GatsbyImageSharpFluid
                 }
               }
             }

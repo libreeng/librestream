@@ -8,17 +8,15 @@ import CarouselBootstrap from "../../components/CarouselBootstrap"
 
 
 const PlatformTemplate = ({ data: { page } }) => {
-  const featuredImage = {
-    fluid: page.featuredImage?.node?.localFile?.childImageSharp?.fluid,
-    alt: page.featuredImage?.node?.alt || ``,
-  }
+
   const acf = page.acfTemplatePlatform
-  console.log(acf)
+
   const heroData = {
     heroTitle: acf?.heroTitle,
     heroSubtitle: acf?.heroSubtitle,
-    herobackgroundImage: acf?.localFile?.childImageSharp?.fluid,
-    heroDescription: acf?.heroDescription
+    herobackground: acf?.localFile?.childImageSharp?.fluid,
+    heroDescription: acf?.heroDescription,
+    heroCta: acf?.heroCta
   }
 
   return (
@@ -31,6 +29,7 @@ const PlatformTemplate = ({ data: { page } }) => {
         heroBackgroundImage={heroData.heroBackgroundImage}
         heroFeaturedImage={heroData.heroFeaturedImage}
         heroDescription={heroData.heroDescription}
+        heroCta={heroData.heroCta}
       />
       <section>
         <div className="container">
@@ -89,9 +88,9 @@ const PlatformTemplate = ({ data: { page } }) => {
           <hr className="hr-white" />
           <div className="row">
             <div className="col-lg-4 border-left border-primary">
-            
-                <h3>{acf.carouselFooterTitle && acf.carouselFooterTitle}</h3>
-              
+              {acf.carouselFooterTitle && (
+                <h3>{acf.carouselFooterTitle}</h3>
+              )}
             </div>
             <div className="col-lg-4 border-left border-primary">
               {acf.carouselFooterDescription && (
@@ -112,9 +111,16 @@ const PlatformTemplate = ({ data: { page } }) => {
       </section>
 
       {!!page.content && (
-        <section itemProp="articleBody">{parse(page.content)}</section>
+        <section itemProp="articleBody">
+          <div className="container">
+            <div className="row">
+              <div className="col-12">
+                {parse(page.content)}
+              </div>
+            </div>
+          </div>
+        </section>
       )}
-
     </>
   )
 }

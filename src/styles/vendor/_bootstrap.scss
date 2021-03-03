@@ -27,6 +27,13 @@
       min-width: 300px;
     }
   }
+  &.btn-xl {
+    @include media-breakpoint-up(lg) {
+      min-width: 500px;
+      padding-top: 15px;
+      padding-bottom: 15px;
+    }
+  }
   &.btn-gradient-blue-cyan {
     background: linear-gradient(90deg, $blue 0%, $cyan 100%);
   }

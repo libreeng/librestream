@@ -3,7 +3,7 @@ import { graphql } from "gatsby"
 import parse from "html-react-parser"
 import Hero from "../../common/ui/Hero"
 
-
+// Not sure if this template is necessary as we also have video custom post type
 const CampaignVideoTemplate = ({ data: { page } }) => {
   
   return (

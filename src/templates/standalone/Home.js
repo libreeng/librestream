@@ -17,7 +17,7 @@ const HomeTemplate = ({ data: { page } }) => {
         heroTitle={acf.heroTitle}
         heroDescription={acf.heroDescription}
         heroBackground={acf.heroBackground.localFile.publicURL}
-        heroLink={acf.heroLink}
+        heroCta={acf.heroLink}
       />
       <section className="bg-white">
         <div className="container">
@@ -52,9 +52,7 @@ const HomeTemplate = ({ data: { page } }) => {
           </div>
         </div>
       </section>
-
       
-
       <section className="bg-white folder-border folder-top">
         <div className="container">
           <div className="row">

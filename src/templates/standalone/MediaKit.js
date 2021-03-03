@@ -5,10 +5,6 @@ import parse from "html-react-parser"
 import Hero from "../../common/ui/Hero"
 
 const MediaKitTemplate = ({ data: { page } }) => {
-  const featuredImage = {
-    fluid: page.featuredImage?.node?.localFile?.childImageSharp?.fluid,
-    alt: page.featuredImage?.node?.alt || ``,
-  }
 
   const acf = page.acfTemplateMediaKit
 
@@ -92,13 +88,8 @@ export const pageQuery = graphql`
         introImage {
           localFile {
             childImageSharp {
-              fluid {
-                base64
-                tracedSVG
-                srcWebp
-                srcSetWebp
-                originalImg
-                originalName
+              fluid(maxWidth: 1000, quality: 100) {
+                ...GatsbyImageSharpFluid
               }
             }
           }

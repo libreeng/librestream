@@ -14,8 +14,8 @@ const PlatformFeatureTemplate = ({ data: { page, subnav } }) => {
       <Hero 
         heroTitle={acf.heroTitle}
         heroFeaturedImage={acf?.heroFeaturedImage?.localFile?.childImageSharp.fluid}
-        heroBackgroundImage={acf?.heroBackground?.sourceUrl}
-        // heroSubnav={subnavItems} not sure how to make this more globally accessible, the field name is not the same using a menu vs the custom in page subnav
+        heroBackground={acf?.heroBackground?.sourceUrl}
+        // heroSubnav={subnavItems} not sure how to make this more globally accessible, the field name is not the same using a global menu vs the custom in page subnav
       />
       <section>
         <div className="container">
@@ -28,7 +28,7 @@ const PlatformFeatureTemplate = ({ data: { page, subnav } }) => {
               )}
               {acf.introButton && (
                 <div className="text-center mt-4">
-                  <a href={acf.introButton.url} className="btn btn-gradient-cyan-green">{acf.introButton.title}</a>
+                  <a href={acf.introButton.url} className="btn btn-gradient-cyan-green btn-xl mt-5">{acf.introButton.title}</a>
                 </div>
               )}
             </div>
@@ -85,8 +85,7 @@ const PlatformFeatureTemplate = ({ data: { page, subnav } }) => {
               }
             </div>
             <div className="col-lg-6">
-              <h4>Lorem ipsum dolor sit amet consectetur adipisicing elit. Dolorem, et nemo dolor amet officia itaque explicabo, voluptates labore repudiandae praesentium molestias illum pariatur in inventore voluptatum eum dignissimos, debitis blanditiis!</h4>
-              <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Sed accusamus nostrum architecto temporibus tempore, nobis, quos, aperiam porro distinctio officia doloribus. Repellat necessitatibus libero sit alias ex sed, laborum quod.</p>
+              {acf.feature2Description && parse(acf.feature2Description)}
               <hr className="hr-sm ml-0" />
             </div>
           </div>
@@ -105,6 +104,7 @@ const PlatformFeatureTemplate = ({ data: { page, subnav } }) => {
             </div>
             <div className="col-lg-8">
               <div className="row">
+                {/* looks like they might have changed the design on this last minute so the content model might have to be adjusted */}
                 {acf.technicalDetails && acf.technicalDetails.map( detail => (
                   <div className="col-lg-6 mb-4">
                     <div className="px-2 border-left border-dark">
@@ -141,7 +141,7 @@ const PlatformFeatureTemplate = ({ data: { page, subnav } }) => {
                       <img src={highlight.highlightIcon.sourceUrl} className="img-fluid" alt={highlight.highlightIcon.altText}/>
                     }
                     {highlight.highlightTitle && (
-                      <>
+                      <>{/* Todo: hover functionality. Hide descriptions by default and show by hover or click event */}
                         <h6 className="text-center mt-3">{highlight.highlightTitle}</h6>
                         {highlight.highlightDescription && (
                           <small className="d-block text-center">

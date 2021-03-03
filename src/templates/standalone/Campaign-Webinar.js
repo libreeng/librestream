@@ -4,7 +4,7 @@ import Image from "gatsby-image"
 import parse from "html-react-parser"
 import Hero from "../../common/ui/Hero"
 
-
+// Might be able to combine this template and Campaign-Whitepaper into a more flexible template
 const CampaignWebinarTemplate = ({ data: { page } }) => {
   
   

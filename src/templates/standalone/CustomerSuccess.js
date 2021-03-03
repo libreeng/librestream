@@ -21,11 +21,13 @@ const CustomerSuccessTemplate = ({ data: { page } }) => {
               <div className="col-lg-8">
                 {acf.intro && parse(acf.intro)}
               </div>
-              <div className="col-lg-4">  
-                <Image
-                  fluid={acf?.introImage?.localFile?.childImageSharp?.fluid}
-                  alt={acf?.introImage?.altText}
-                />
+              <div className="col-lg-4">
+                {acf.introImage && (
+                  <Image
+                    fluid={acf?.introImage?.localFile?.childImageSharp?.fluid}
+                    alt={acf?.introImage?.altText}
+                  />
+                )}
               </div>
             </div>
           </div>
@@ -102,11 +104,17 @@ const CustomerSuccessTemplate = ({ data: { page } }) => {
             </ul>
           </div>
         </section>
-
       {!!page.content && (
-        <section itemProp="articleBody">{parse(page.content)}</section>
+        <section itemProp="articleBody">
+          <div className="container">
+            <div className="row">
+              <div className="col-12">
+                {parse(page.content)}
+              </div>
+            </div>
+          </div>
+        </section>
       )}
-
     </>
   )
 }

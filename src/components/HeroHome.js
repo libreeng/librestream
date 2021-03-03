@@ -1,9 +1,10 @@
 import React from 'react'
 import parse from "html-react-parser"
+// original design called for video modal
 // import playButton from '../img/play-button.svg'
 // import Modal from './Modal'
 
-const HeroHome = ({ heroTitle, heroDescription, heroBackground, heroLink }) => {
+const HeroHome = ({ heroTitle, heroDescription, heroBackground, heroCta }) => {
   return (
     <div
       className="hero hero-home"
@@ -20,8 +21,8 @@ const HeroHome = ({ heroTitle, heroDescription, heroBackground, heroLink }) => {
                 {parse(heroDescription)}
               </div>
             )}
-            {heroLink && (
-              <a href={heroLink.url} type="button" className="btn btn-lg btn-gradient-green-cyan shadow-white mt-5">{heroLink.title}</a>
+            {heroCta && (
+              <a href={heroCta.url} type="button" className="btn btn-lg btn-gradient-green-cyan shadow-white mt-5">{heroCta.title}</a>
             )}
             
           </div>

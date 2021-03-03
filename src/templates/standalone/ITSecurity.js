@@ -5,10 +5,6 @@ import parse from "html-react-parser"
 import Hero from "../../common/ui/Hero"
 
 const ItSecurityTemplate = ({ data: { page } }) => {
-  const featuredImage = {
-    fluid: page.featuredImage?.node?.localFile?.childImageSharp?.fluid,
-    alt: page.featuredImage?.node?.alt || ``,
-  }
 
   const acf = page.acfTemplateItSecurity
   
@@ -22,12 +18,14 @@ const ItSecurityTemplate = ({ data: { page } }) => {
               {acf.intro && parse(acf.intro)}
             </div>
             <div className="col-lg-4">
-              <div className="border-bracket">
-                <Image
-                  fluid={acf?.introImage?.localFile?.childImageSharp?.fluid}
-                  alt={acf?.introImage?.altText}
-                />
-              </div>
+              {acf.introImage && (
+                <div className="border-bracket">
+                  <Image
+                    fluid={acf?.introImage?.localFile?.childImageSharp?.fluid}
+                    alt={acf?.introImage?.altText}
+                  />
+                </div>
+              )}
             </div>
           </div>
         </div>
@@ -61,9 +59,16 @@ const ItSecurityTemplate = ({ data: { page } }) => {
         </div>
       </section>
       {!!page.content && (
-        <section itemProp="articleBody">{parse(page.content)}</section>
+        <section itemProp="articleBody">
+          <div className="container">
+            <div className="row">
+              <div className="col-12">
+                {parse(page.content)}
+              </div>
+            </div>
+          </div>
+        </section>
       )}
-
     </>
   )
 }

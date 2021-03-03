@@ -1,7 +1,12 @@
+form.form {
+  max-width: 100%;
+}
+
 form.form .form-field {
   position: relative;
   margin: 0 0 20px;
 }
+
 
 form.form .form-field input {
   border: 1px solid rgb(0, 163, 223);

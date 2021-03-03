@@ -1,13 +1,14 @@
 import React from "react"
 import { graphql } from "gatsby"
 import Image from "gatsby-image"
+import BackgroundImage from 'gatsby-background-image'
 import parse from "html-react-parser"
 import Hero from "../../common/ui/Hero"
 import AccordionItems from "../../components/AccordionItems"
 
 const CampaignRemoteExpertAcceleratorProgramTemplate = ({ data: { page } }) => {
   
-  
+  const acf = page.acfTemplateRemoteExpertAcceleratorProgram
   return (
     <>
       <Hero heroTitle={page.title} />
@@ -15,12 +16,17 @@ const CampaignRemoteExpertAcceleratorProgramTemplate = ({ data: { page } }) => {
         <div className="container">
           <div className="row align-items-center">
             <div className="col-lg-9">
-              <h3>Try the world’s #1 Remote Expert Solution FREE for 30 days.</h3>
+              {acf.intro && parse(acf.intro)}
             </div>
             <div className="col-lg-3 ml-lg-auto">
-              <div className="border-bracket text-center">
-                <img src="https://via.placeholder.com/150" className="img-fluid" alt="" />
-              </div>
+              {acf.introImage && (
+                <div className="border-bracket text-center">
+                <Image 
+                  fluid={acf?.introImage?.localFile?.childImageSharp?.fluid}
+                  alt={acf?.introImage?.altText}
+                />
+                </div>
+              )}
             </div>
           </div>
         </div>
@@ -29,10 +35,19 @@ const CampaignRemoteExpertAcceleratorProgramTemplate = ({ data: { page } }) => {
         <div className="container">
           <div className="row">
             <div className="col-lg-6">
-              <div className="bg-image aspect-1x1 img-offset-top img-offset-bottom offset-bottom-lg bg-dark" />
+              {acf.accordionFeaturedImage && (
+                <BackgroundImage
+                  Tag="div"
+                  className="bg-image aspect-1x1 img-offset-top img-offset-bottom offset-bottom-lg bg-dark"
+                  fluid={acf.accordionFeaturedImage.localFile.childImageSharp.fluid}
+                />
+              )}
             </div>
             <div className="col-lg-6">
-              <AccordionItems className="accordion-icons" />
+              //todo react-bootstrap accordion not firing correctly
+              {acf.accordionSections && (
+                <AccordionItems items={acf.accordionSections} className="accordion-icons" />
+              )}
             </div>
           </div>
         </div>
@@ -41,7 +56,7 @@ const CampaignRemoteExpertAcceleratorProgramTemplate = ({ data: { page } }) => {
         <div className="container">
           <div className="row">
             <div className="col-lg-5 ml-lg-auto">
-              <p>We are providing FREE access to the world’s leading remote expert software: Onsight</p>
+              {acf.accordionDescription && parse(acf.accordionDescription)}
             </div>
           </div>
         </div>
@@ -53,14 +68,18 @@ const CampaignRemoteExpertAcceleratorProgramTemplate = ({ data: { page } }) => {
         <div className="container">
           <div className="row">
             <div className="col-12">
-              <h2>Register for your free 30-day trial</h2>
-              <p>If you are a current Librestream customer please do not fill out the form, please reach out to your account manager. Please note (*) is a required Field.</p>
+              {acf.formIntro && parse(acf.formIntro)}
+              
             </div>
           </div>
           <div className="row">
             <div className="col-12">
               <div className="text-center">
-                <iframe src="https://1.librestream.com/l/859043/2020-09-14/8912w" title="Campaign Form" width="100%" height="900" type="text/html" frameBorder="0" />
+                {acf.formEmbed && (
+                  <div className="responsive-iframe aspect-16x9">
+                    <iframe src={acf.formEmbed} title="Campaign Form"></iframe>
+                  </div>
+                )}
               </div>
             </div>
           </div>
@@ -88,6 +107,38 @@ export const pageQuery = graphql`
     # selecting the current page by id
     page: wpPage(id: { eq: $id }) {
       ...PageDetails
+      acfTemplateRemoteExpertAcceleratorProgram {
+        accordionSections {
+          sectionContent
+          sectionTitle
+        }
+        accordionFeaturedImage {
+          altText
+          localFile {
+            childImageSharp {
+              fluid(maxWidth: 1000, quality: 100) {
+                ...GatsbyImageSharpFluid
+              }
+            }
+          }
+          altText
+        }
+        formIntro
+        heroTitle
+        intro
+        introImage {
+          altText
+          localFile {
+            childImageSharp {
+              fluid(maxWidth: 1000, quality: 100) {
+                ...GatsbyImageSharpFluid
+              }
+            }
+          }
+        }
+        formEmbed
+        accordionDescription
+      }
     }
   }
 `

@@ -22,10 +22,12 @@ const ProductRecyclingTemplate = ({ data: { page } }) => {
               {acf.intro && parse(acf.intro)}
             </div>
             <div className="col-lg-4">  
-              <Image
+             {acf.introImage && (
+               <Image
                 fluid={acf?.introImage?.localFile?.childImageSharp?.fluid}
                 alt={acf?.introImage?.altText}
               />
+             )}
             </div>
           </div>
         </div>
@@ -40,7 +42,6 @@ const ProductRecyclingTemplate = ({ data: { page } }) => {
               {acf.shippingTitle && (
                 <h3 className="text-uppercase">{acf.shippingTitle}</h3>
               )}
-                
               {acf.shippingDescription && (
                 <p className="text-primary">{acf.shippingDescription}</p>
               )}
@@ -82,13 +83,8 @@ export const pageQuery = graphql`
           altText
           localFile {
             childImageSharp {
-              fluid {
-                base64
-                tracedSVG
-                srcWebp
-                srcSetWebp
-                originalImg
-                originalName
+              fluid(maxWidth: 1000) {
+                ...GatsbyImageSharpFluid
               }
             }
           }
