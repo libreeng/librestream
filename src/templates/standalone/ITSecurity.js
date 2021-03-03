@@ -21,11 +21,13 @@ const ItSecurityTemplate = ({ data: { page } }) => {
             <div className="col-lg-8">
               {acf.intro && parse(acf.intro)}
             </div>
-            <div className="col-lg-4">  
-              <Image
-                fluid={acf?.introImage?.localFile?.childImageSharp?.fluid}
-                alt={acf?.introImage?.altText}
-              />
+            <div className="col-lg-4">
+              <div className="border-bracket">
+                <Image
+                  fluid={acf?.introImage?.localFile?.childImageSharp?.fluid}
+                  alt={acf?.introImage?.altText}
+                />
+              </div>
             </div>
           </div>
         </div>
@@ -33,7 +35,7 @@ const ItSecurityTemplate = ({ data: { page } }) => {
       <div className="container">
         <hr className="hr-styled" />
       </div>
-      <section>
+      <section className="bg-wave">
         <div className="container">
           <div className="row">
             <div className="col-lg-8">
@@ -45,13 +47,15 @@ const ItSecurityTemplate = ({ data: { page } }) => {
               </div>
             </div>
             <div className="col-lg-4">
-              {acf.certificationImages && acf.certificationImages.map(image => (
-                <Image
-                  fluid={image?.certificationImage?.localFile?.childImageSharp?.fluid}
-                  alt={image?.altText}
-                  className="mb-3"
-                />
-              ))}
+              <div className="p-5">
+                {acf.certificationImages && acf.certificationImages.map(image => (
+                  <Image
+                    fluid={image?.certificationImage?.localFile?.childImageSharp?.fluid}
+                    alt={image?.altText}
+                    className="mb-3"
+                  />
+                ))}
+              </div>
             </div>
           </div>
         </div>

@@ -31,7 +31,7 @@ const AboutTemplate = ({ data: { page } }) => {
         heroFeaturedImage={heroData.heroFeaturedImage}
         heroSubnav={heroData.heroSubnav}
       />
-      <section>
+      <section id="our-story">
         <div className="container">
           <div className="row">
             <div className="col-lg-8">
@@ -74,7 +74,7 @@ const AboutTemplate = ({ data: { page } }) => {
       <div className="container">
         <hr className="hr-styled" />
       </div>
-      <section>
+      <section id="timeline">
         <div className="container">
           <div className="row">
             <div className="col-12">
@@ -84,13 +84,13 @@ const AboutTemplate = ({ data: { page } }) => {
         </div>
       </section>
       <div className="responsive-iframe aspect-2x1">
-        <div className="bg-fill">
-          <h1>Timeline video</h1>
+        <div className="bg-fill bg-dark">
+          <h1 class="text-white">Timeline video</h1>
         </div>
 
         {/* <iframe src="" frameborder="0">timeline video</iframe> */}
       </div>
-      <section>
+      <section id="board-of-directors">
         <div className="container">
           <div className="row">
             <div className="col-12">
@@ -113,7 +113,7 @@ const AboutTemplate = ({ data: { page } }) => {
             )}
           </div>
           <hr className="hr-styled" />
-          <div className="row">
+          <div id="management" className="row">
             <div className="col-12">
               <h2>Management</h2>
             </div>

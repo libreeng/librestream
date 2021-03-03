@@ -209,7 +209,9 @@ export const pageQuery = graphql`
         }
         heroBackground {
           altText
-          sourceUrl
+          localFile {
+            publicURL
+          }
         }
         heroFeaturedImage {
           altText

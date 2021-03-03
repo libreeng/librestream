@@ -177,6 +177,36 @@ async function getPosts({ graphql, reporter }) {
           }
         }
       }
+      allWpGuideWhitepaper(sort: { fields: [date], order: DESC }) {
+        edges {
+          post: node {
+            id
+            uri
+            nodeType
+          }
+          next {
+            id
+          }
+          previous {
+            id
+          }
+        }
+      }
+      allWpVideo(sort: { fields: [date], order: DESC }) {
+        edges {
+          post: node {
+            id
+            uri
+            nodeType
+          }
+          next {
+            id
+          }
+          previous {
+            id
+          }
+        }
+      }
     }
   `)
 
@@ -190,10 +220,14 @@ async function getPosts({ graphql, reporter }) {
 
   const news = graphqlResult.data.allWpPost.edges
   const casestudies = graphqlResult.data.allWpCaseStudy.edges
+  const guidesWhitepapers = graphqlResult.data.allWpGuideWhitepaper.edges
+  const videos = graphqlResult.data.allWpVideo.edges
 
   const posts = [
     ...news,
-    ...casestudies
+    ...casestudies,
+    ...guidesWhitepapers,
+    ...videos
   ]
 
   return posts

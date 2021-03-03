@@ -152,11 +152,7 @@ export const pageQuery = graphql`
         }
         heroBackground {
           localFile {
-            childImageSharp {
-              fluid(maxWidth: 1000, quality: 100) {
-                ...GatsbyImageSharpFluid
-              }
-            }
+            publicURL
           }
         }
         heroDescription

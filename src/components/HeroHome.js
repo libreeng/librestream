@@ -1,28 +1,36 @@
 import React from 'react'
-import playButton from '../img/play-button.svg'
-import Modal from './Modal'
+import parse from "html-react-parser"
+// import playButton from '../img/play-button.svg'
+// import Modal from './Modal'
 
-const HeroHome = ({ data }) => {
+const HeroHome = ({ heroTitle, heroDescription, heroBackground, heroLink }) => {
   return (
     <div
       className="hero hero-home"
-      style={{
-        backgroundImage: `url(https://via.placeholder.com/1900x1000)`
-      }}
+      style={heroBackground && { backgroundImage: `url(${heroBackground})`}}
     >
       <div className="container">
         <div className="row align-items-center">
           <div className="col-12 col-lg-5">
-            <h1 className="text-white">Scale Knowledge Across Your Workforce Like Never Before.</h1>
-            <p className="lead text-white">Librestream powers the most innovative and proven AR &amp; AI solutions for leading industrial organizations to improve efficiency, performance and safety, shaping a more resilient workforce for the future ahead.</p>
-            <button type="button" className="btn btn-lg btn-gradient-green-cyan shadow-white">Call To Action</button>
+            {heroTitle && (
+              <h1 className="text-white">Scale Knowledge Across Your Workforce Like Never Before.</h1>
+            )}
+            {heroDescription && (
+              <div className="lead text-white">
+                {parse(heroDescription)}
+              </div>
+            )}
+            {heroLink && (
+              <a href={heroLink.url} type="button" className="btn btn-lg btn-gradient-green-cyan shadow-white mt-5">{heroLink.title}</a>
+            )}
+            
           </div>
-          <div className="col-lg-3 mt-5 mt-lg-0 d-none d-md-block">
+          {/* <div className="col-lg-3 mt-5 mt-lg-0 d-none d-md-block">
             <div className="text-center">
               <Modal image={playButton} title="Sample Modal" content="Sample description content lorem" />
             </div>
 
-          </div>
+          </div> */}
         </div>
       </div>
 

@@ -8,12 +8,13 @@ const Hero = ({
   heroSubnav,
   heroFeaturedImage,
   heroDescription,
-  heroBackgroundImage,
+  heroBackground,
   heroCta
 }) => {
   return (
-    <div className="hero"
-      style={heroBackgroundImage && { backgroundImage: `url(${heroBackgroundImage})`}}
+    <div 
+      className="hero"
+      style={heroBackground && { backgroundImage: `url(${heroBackground})`}}
     >
       <div className="container">
         <div className="row align-items-end">

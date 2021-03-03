@@ -70,6 +70,9 @@
   @include media-breakpoint-up(lg) {
     padding-top: 150px;
     padding-bottom: 100px;
+    height: 100vh;
+    display: flex;
+    align-items: center;
   }
 
   h1 {

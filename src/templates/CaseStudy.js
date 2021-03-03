@@ -24,7 +24,7 @@ const CaseStudy = ({ data: { previous, next, post } }) => {
   const heroData = {
     heroTitle: acf?.heroTitle,
     heroSubtitle: acf?.heroSubtitle,
-    herobackgroundImage: acf?.localFile?.childImageSharp?.fluid,
+    herobackground: acf?.localFile?.publicURL,
     heroFeaturedImage: acf.whiteLogo.localFile?.childImageSharp?.fluid
   }
 
@@ -37,7 +37,7 @@ const CaseStudy = ({ data: { previous, next, post } }) => {
         heroSubtitle={heroData.heroSubtitle}
         subnav="false"
         logo="true"
-        heroBackgroundImage={heroData.heroBackgroundImage}
+        heroBackground={heroData.heroBackground}
         heroFeaturedImage={heroData.heroFeaturedImage}
       />
       <section>
@@ -93,6 +93,17 @@ const CaseStudy = ({ data: { previous, next, post } }) => {
           </div>
         </section>
       )}
+      {!!post.content && (
+        <section itemProp="articleBody">
+          <div className="container">
+            <div className="row">
+              <div className="col-12">
+                {parse(post.content)}
+              </div>
+            </div>
+          </div>
+        </section>
+      )}
       
       <NextPrevMenu previous={previous} next={next} />
 
@@ -126,18 +137,14 @@ export const pageQuery = graphql`
           localFile {
             childImageSharp {
               fluid(maxWidth: 1000, quality: 100) {
-                ...GatsbyImageSharpFluid_tracedSVG
+                ...GatsbyImageSharpFluid
               }
             }
           }
         }
         heroBackground {
           localFile {
-            childImageSharp {
-              fluid(maxWidth: 1000, quality: 100) {
-                ...GatsbyImageSharpFluid_tracedSVG
-              }
-            }
+            publicURL
           }
           title
           altText
@@ -157,7 +164,7 @@ export const pageQuery = graphql`
           localFile {
             childImageSharp {
               fluid(maxWidth: 1000, quality: 100) {
-                ...GatsbyImageSharpFluid_tracedSVG
+                ...GatsbyImageSharpFluid
               }
             }
           }

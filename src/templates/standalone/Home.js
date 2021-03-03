@@ -13,7 +13,12 @@ const HomeTemplate = ({ data: { page } }) => {
   return (
 
     <>
-      <HeroHome />
+      <HeroHome 
+        heroTitle={acf.heroTitle}
+        heroDescription={acf.heroDescription}
+        heroBackground={acf.heroBackground.localFile.publicURL}
+        heroLink={acf.heroLink}
+      />
       <section className="bg-white">
         <div className="container">
           <div className="row">
@@ -123,11 +128,7 @@ export const pageQuery = graphql`
         }
         heroBackground {
           localFile {
-            childImageSharp {
-              fluid {
-                ...GatsbyImageSharpFluid
-              }
-            }
+            publicURL
           }
         }
         heroDescription
