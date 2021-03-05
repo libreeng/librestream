@@ -3,7 +3,7 @@ import { graphql } from "gatsby"
 import Image from "gatsby-image"
 import parse from "html-react-parser"
 
-const SupportTemplate = ({ data: { page } }) => {
+const ReleaseNotesTemplate = ({ data: { page } }) => {
   const featuredImage = {
     fluid: page.featuredImage?.node?.localFile?.childImageSharp?.fluid,
     alt: page.featuredImage?.node?.alt || ``,
@@ -35,7 +35,7 @@ const SupportTemplate = ({ data: { page } }) => {
 }
 
 export const pageQuery = graphql`
-  query SupportTemplateQuery($id: String!) {
+  query ReleaseNotesTemplateQuery($id: String!) {
     # selecting the current page by id
     page: wpPage(id: { eq: $id }) {
       ...PageDetails
@@ -43,4 +43,4 @@ export const pageQuery = graphql`
   }
 `
 
-export default SupportTemplate
+export default ReleaseNotesTemplate
