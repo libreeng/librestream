@@ -1,6 +1,7 @@
 import React from 'react'
-import PropTypes from 'prop-types'
-import parse from "html-react-parser"
+// import PropTypes from 'prop-types'
+import { graphql } from 'gatsby'
+// import parse from "html-react-parser"
 import Hero from '../../common/ui/Hero'
 
 const CareersTemplate = ({ data: { page } }) => {

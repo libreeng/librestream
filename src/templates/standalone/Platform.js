@@ -3,7 +3,7 @@ import { graphql } from "gatsby"
 import Image from "gatsby-image"
 import parse from "html-react-parser"
 import Hero from "../../common/ui/Hero"
-import Stat from "../../components/Stat"
+import Stat from "../../common/ui/Stat"
 import CarouselBootstrap from "../../components/CarouselBootstrap"
 
 
@@ -32,19 +32,9 @@ const PlatformTemplate = ({ data: { page } }) => {
         heroCta={heroData.heroCta}
       />
       <section>
-        <div className="container">
-          <div className="row">
-            {acf.stats && acf.stats.map(stat =>
-              <Stat 
-                number={stat.number}
-                descriptor={stat.numberDescriptor}
-                title={stat.title}
-                description={stat.numberCaption}
-              />
-            )}
-          </div>
-        </div>
+        <Stats stats={acf.stats} />
       </section>
+
       <div className="container">
         <hr className="hr-styled" />
       </div>
@@ -65,7 +55,7 @@ const PlatformTemplate = ({ data: { page } }) => {
                 </div>
               </div>
             )}
-            
+
           </div>
           <hr className="hr-styled" />
           <div className="row mt-5">
@@ -82,7 +72,7 @@ const PlatformTemplate = ({ data: { page } }) => {
         <div className="container">
           <div className="row">
             <div className="col-12">
-              <CarouselBootstrap slides={acf.carouselSlide}/>
+              <CarouselBootstrap slides={acf.carouselSlide} />
             </div>
           </div>
           <hr className="hr-white" />
@@ -100,7 +90,7 @@ const PlatformTemplate = ({ data: { page } }) => {
             <div className="col-lg-4 border-left border-primary">
               {acf.carouselFooterChecklist.checklistItem && (
                 <ul className="checklist">
-                  {acf.carouselFooterChecklist.checklistItem.map( item =>
+                  {acf.carouselFooterChecklist.checklistItem.map(item =>
                     <li>{item.checklistItem}</li>
                   )}
                 </ul>

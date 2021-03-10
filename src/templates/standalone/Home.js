@@ -5,7 +5,7 @@ import parse from "html-react-parser"
 import HeroHome from '../../components/HeroHome'
 import CaseStudies from '../../components/CaseStudies'
 import CarouselBootstrap from '../../components/CarouselBootstrap'
-import Stat from "../../components/Stat"
+import Stat from '../../common/ui/Stat'
 
 const HomeTemplate = ({ data: { page } }) => {
   const acf = page.acfTemplateHome
@@ -13,7 +13,7 @@ const HomeTemplate = ({ data: { page } }) => {
   return (
 
     <>
-      <HeroHome 
+      <HeroHome
         heroTitle={acf.heroTitle}
         heroDescription={acf.heroDescription}
         heroBackground={acf.heroBackground.localFile.publicURL}
@@ -52,12 +52,12 @@ const HomeTemplate = ({ data: { page } }) => {
           </div>
         </div>
       </section>
-      
+
       <section className="bg-white folder-border folder-top">
         <div className="container">
           <div className="row">
             {acf.homeStat && acf.homeStat.map(stat => (
-              <Stat  
+              <Stat
                 number={stat.homeStatValue}
                 title={stat.homeStatLabel}
               />
