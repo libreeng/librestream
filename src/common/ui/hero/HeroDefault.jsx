@@ -12,13 +12,13 @@ const Hero = ({
   heroCta
 }) => {
   return (
-    <div 
+    <div
       className="hero"
       style={heroBackground && { backgroundImage: `url(${heroBackground})`}}
     >
       <div className="container">
         <div className="row align-items-end">
-          <div className="col-lg-6">
+          <div className="col-12 col-lg-6">
             {heroTitle && <h1>{heroTitle}</h1>}
             {heroSubtitle && (<h2>{heroSubtitle}</h2>)}
             {heroDescription && (
@@ -41,7 +41,7 @@ const Hero = ({
               </>
             )}
           </div>
-          <div className="col-lg-2 ml-lg-auto"> 
+          <div className="col-lg-2 ml-lg-auto">
             {heroFeaturedImage && (
               <Image
                 fluid={heroFeaturedImage}

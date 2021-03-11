@@ -2,7 +2,7 @@ import React from "react"
 import { graphql } from "gatsby"
 // import Image from "gatsby-image"
 import parse from "html-react-parser"
-import HeroHome from '../../components/HeroHome'
+import Hero from '../../common/ui/hero/HeroHome'
 import CaseStudies from '../../components/CaseStudies'
 import CarouselBootstrap from '../../components/CarouselBootstrap'
 import Stat from '../../common/ui/Stat'
@@ -13,13 +13,14 @@ const HomeTemplate = ({ data: { page } }) => {
   return (
 
     <>
-      <HeroHome
+      <Hero
         heroTitle={acf.heroTitle}
         heroDescription={acf.heroDescription}
         heroBackground={acf.heroBackground.localFile.publicURL}
         heroCta={acf.heroLink}
       />
-      <section className="bg-white">
+
+      <section id="intro" className="bg-white">
         <div className="container">
           <div className="row">
             <div className="col-12 col-lg-7 mx-lg-auto">
@@ -42,22 +43,17 @@ const HomeTemplate = ({ data: { page } }) => {
           </div>
         </div>
       </section>
+
       <CaseStudies />
-      <section className="bg-gradient-blue text-white folder-border folder-bottom">
-        <div className="container">
-          <div className="row">
-            <div className="col-12">
-              <CarouselBootstrap slides={acf.carouselSlide} />
-            </div>
-          </div>
-        </div>
-      </section>
+
+      <CarouselBootstrap slides={acf.carouselSlide} interval={10000} />
 
       <section className="bg-white folder-border folder-top">
         <div className="container">
           <div className="row">
-            {acf.homeStat && acf.homeStat.map(stat => (
+            {acf.homeStat && acf.homeStat.map((stat, i) => (
               <Stat
+                key={`home_stat_${i}`}
                 number={stat.homeStatValue}
                 title={stat.homeStatLabel}
               />

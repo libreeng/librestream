@@ -2,7 +2,7 @@ import React from "react"
 import { graphql } from "gatsby"
 import Image from "gatsby-image"
 import parse from "html-react-parser"
-import Hero from "../../common/ui/Hero"
+import Hero from "../../common/ui/hero/HeroDefault"
 import Card from "../../components/Card"
 
 const UseCasesTemplate = ({ data: { page, cases } }) => {
@@ -13,7 +13,7 @@ const UseCasesTemplate = ({ data: { page, cases } }) => {
       <section>
         <div className="container">
           <div className="row mt-5">
-            {cases && cases.edges.map( useCase => (
+            {cases && cases.edges.map(useCase => (
               <div className="col-12 col-lg-3 mb-4">
                 <Card
                   // need to add featured image field for use cases
@@ -26,7 +26,7 @@ const UseCasesTemplate = ({ data: { page, cases } }) => {
           </div>
         </div>
       </section>
-      
+
       {!!page.content && (
         <section itemProp="articleBody">{parse(page.content)}</section>
       )}

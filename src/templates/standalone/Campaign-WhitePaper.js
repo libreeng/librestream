@@ -1,12 +1,12 @@
 import React from "react"
 import { graphql } from "gatsby"
 import parse from "html-react-parser"
-import Hero from "../../common/ui/Hero"
+import Hero from "../../common/ui/hero/HeroDefault"
 
 
 // this template may be able to be combined with Campaign-Webinar into a more flexible single 2 column form template
 const CampaignWhitePaperTemplate = ({ data: { page } }) => {
-  
+
   const acf = page.acfTemplateCampaignWhitePaper
   return (
     <>
@@ -38,7 +38,7 @@ const CampaignWhitePaperTemplate = ({ data: { page } }) => {
                 <div className="responsive-iframe aspect-16x9">
                   <iframe src={acf.formEmbed} title={page.title} />
                 </div>
-                
+
               )}
 
             </div>

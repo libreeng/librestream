@@ -3,11 +3,11 @@ import { graphql } from "gatsby"
 import Image from "gatsby-image"
 import BackgroundImage from 'gatsby-background-image'
 import parse from "html-react-parser"
-import Hero from "../../common/ui/Hero"
+import Hero from "../../common/ui/hero/HeroDefault"
 import AccordionItems from "../../components/AccordionItems"
 
 const CampaignRemoteExpertAcceleratorProgramTemplate = ({ data: { page } }) => {
-  
+
   const acf = page.acfTemplateRemoteExpertAcceleratorProgram
   return (
     <>
@@ -21,10 +21,10 @@ const CampaignRemoteExpertAcceleratorProgramTemplate = ({ data: { page } }) => {
             <div className="col-lg-3 ml-lg-auto">
               {acf.introImage && (
                 <div className="border-bracket text-center">
-                <Image 
-                  fluid={acf?.introImage?.localFile?.childImageSharp?.fluid}
-                  alt={acf?.introImage?.altText}
-                />
+                  <Image
+                    fluid={acf?.introImage?.localFile?.childImageSharp?.fluid}
+                    alt={acf?.introImage?.altText}
+                  />
                 </div>
               )}
             </div>
@@ -69,7 +69,7 @@ const CampaignRemoteExpertAcceleratorProgramTemplate = ({ data: { page } }) => {
           <div className="row">
             <div className="col-12">
               {acf.formIntro && parse(acf.formIntro)}
-              
+
             </div>
           </div>
           <div className="row">

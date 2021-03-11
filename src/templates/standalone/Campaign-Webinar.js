@@ -2,12 +2,12 @@ import React from "react"
 import { graphql } from "gatsby"
 import Image from "gatsby-image"
 import parse from "html-react-parser"
-import Hero from "../../common/ui/Hero"
+import Hero from "../../common/ui/hero/HeroDefault"
 
 // Might be able to combine this template and Campaign-Whitepaper into a more flexible template
 const CampaignWebinarTemplate = ({ data: { page } }) => {
-  
-  
+
+
   return (
     <>
       <Hero heroTitle={page.title} />

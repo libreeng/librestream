@@ -1,7 +1,7 @@
 import React from 'react'
 // import PropTypes from 'prop-types'
 import { graphql } from "gatsby"
-import Hero from '../common/ui/Hero'
+import Hero from "../common/ui/hero/HeroDefault"
 import NextPrevMenu from '../common/ui/menus/NextPrevMenu'
 import parse from "html-react-parser"
 import BackgroundImage from 'gatsby-background-image'
@@ -45,7 +45,7 @@ const CaseStudy = ({ data: { previous, next, post } }) => {
           <div className="row">
             <div className="col-12">
               <h2>Customer Use Case</h2>
-              <h2 className="lead text-primary">{ post.title }</h2>
+              <h2 className="lead text-primary">{post.title}</h2>
             </div>
           </div>
         </div>
@@ -56,7 +56,7 @@ const CaseStudy = ({ data: { previous, next, post } }) => {
       <section>
         <div className="container">
           <div className="row">
-            {columns && columns.map(column => 
+            {columns && columns.map(column =>
               <div className="col-lg-4">
                 <div className="bg-orange p-2">
                   <h6 className="mb-0 text-white">{column.columnTitle}</h6>
@@ -64,7 +64,7 @@ const CaseStudy = ({ data: { previous, next, post } }) => {
                 <div className="border-left border-dark p-3">
                   {parse(column.columnContent)}
                 </div>
-              </div>  
+              </div>
             )}
           </div>
         </div>
@@ -104,7 +104,7 @@ const CaseStudy = ({ data: { previous, next, post } }) => {
           </div>
         </section>
       )}
-      
+
       <NextPrevMenu previous={previous} next={next} />
 
     </>

@@ -2,7 +2,7 @@ import React from "react"
 import { graphql } from "gatsby"
 import Image from "gatsby-image"
 import parse from "html-react-parser"
-import Hero from "../../common/ui/Hero"
+import Hero from "../../common/ui/hero/HeroDefault"
 const DefaultTemplate = ({ data: { page } }) => {
   const acf = page.acfTemplateDefault
   console.log(acf.columns)
@@ -14,8 +14,8 @@ const DefaultTemplate = ({ data: { page } }) => {
         <div className="container">
           <div className="row">
             {acf.columns && (
-              acf.columns.map( columns => 
-                columns.columns.map( column => (
+              acf.columns.map(columns =>
+                columns.columns.map(column => (
                   <div className={column.columnWidth}>
                     {column.content && parse(column.content)}
 
@@ -26,7 +26,7 @@ const DefaultTemplate = ({ data: { page } }) => {
                     )}
                   </div>
                 ))
-            ))}
+              ))}
           </div>
         </div>
       </section>

@@ -2,10 +2,10 @@ import React from "react"
 import { graphql } from "gatsby"
 import Image from "gatsby-image"
 import parse from "html-react-parser"
-import Hero from "../../common/ui/Hero"
+import Hero from "../../common/ui/hero/HeroDefault"
 
 const ThankYouTemplate = ({ data: { page } }) => {
-  
+
   return (
     <>
       <Hero heroTitle={page.title} />

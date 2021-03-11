@@ -4,18 +4,18 @@ import { graphql } from "gatsby"
 import Image from "gatsby-image"
 import BackgroundImage from 'gatsby-background-image'
 import parse from "html-react-parser"
-import Hero from "../../common/ui/Hero"
+import Hero from "../../common/ui/hero/HeroDefault"
 
 const PlatformFeatureTemplate = ({ data: { page, subnav } }) => {
   const acf = page.acfTemplatePlaformFeature
   const subnavItems = subnav.menuItems.nodes
   return (
     <>
-      <Hero 
+      <Hero
         heroTitle={acf.heroTitle}
         heroFeaturedImage={acf?.heroFeaturedImage?.localFile?.childImageSharp.fluid}
         heroBackground={acf?.heroBackground?.sourceUrl}
-        // heroSubnav={subnavItems} not sure how to make this more globally accessible, the field name is not the same using a global menu vs the custom in page subnav
+      // heroSubnav={subnavItems} not sure how to make this more globally accessible, the field name is not the same using a global menu vs the custom in page subnav
       />
       <section>
         <div className="container">
@@ -45,7 +45,7 @@ const PlatformFeatureTemplate = ({ data: { page, subnav } }) => {
               <hr className="hr-xs ml-0 border-green" />
             </div>
             <div className="col-lg-6">
-              {acf.feature1Image && 
+              {acf.feature1Image &&
                 <BackgroundImage
                   Tag="div"
                   className="bg-image aspect-1x1 img-offset-top"
@@ -59,12 +59,12 @@ const PlatformFeatureTemplate = ({ data: { page, subnav } }) => {
       <section>
         <div className="container">
           <div className="row">
-            {acf.featureDownloads && acf.featureDownloads.map( download => (
+            {acf.featureDownloads && acf.featureDownloads.map(download => (
               <div className="col-lg-4" key={download.id}>
                 <a href={download?.featureDownload?.localFile.url} className="btn btn-border btn-block mb-3">{download?.downloadLabel}</a>
               </div>
             ))}
-            {acf.featureLinks && acf.featureLinks.map( link => (
+            {acf.featureLinks && acf.featureLinks.map(link => (
               <div className="col-lg-4" key={link.id}>
                 <a href={link?.featureLink?.url} className="btn btn-border btn-block mb-3">{link?.featureLink?.title}</a>
               </div>
@@ -76,7 +76,7 @@ const PlatformFeatureTemplate = ({ data: { page, subnav } }) => {
         <div className="container">
           <div className="row align-items-center">
             <div className="col-lg-6">
-              {acf.feature2Image && 
+              {acf.feature2Image &&
                 <BackgroundImage
                   Tag="div"
                   className="bg-image aspect-1x1"
@@ -98,14 +98,14 @@ const PlatformFeatureTemplate = ({ data: { page, subnav } }) => {
         <div className="container">
           <div className="row">
             <div className="col-lg-4">
-              {acf.technicalDetailsDescription && 
+              {acf.technicalDetailsDescription &&
                 parse(acf.technicalDetailsDescription)
               }
             </div>
             <div className="col-lg-8">
               <div className="row">
                 {/* looks like they might have changed the design on this last minute so the content model might have to be adjusted */}
-                {acf.technicalDetails && acf.technicalDetails.map( detail => (
+                {acf.technicalDetails && acf.technicalDetails.map(detail => (
                   <div className="col-lg-6 mb-4">
                     <div className="px-2 border-left border-dark">
                       {detail.technicalTitle && (
@@ -135,10 +135,10 @@ const PlatformFeatureTemplate = ({ data: { page, subnav } }) => {
           <div className="row">
             <div className="col-lg-6">
               <div className="row">
-                {acf.highlights && acf.highlights.map( highlight => (
+                {acf.highlights && acf.highlights.map(highlight => (
                   <div className="col-lg-4">
                     {highlight.highlightIcon &&
-                      <img src={highlight.highlightIcon.sourceUrl} className="img-fluid" alt={highlight.highlightIcon.altText}/>
+                      <img src={highlight.highlightIcon.sourceUrl} className="img-fluid" alt={highlight.highlightIcon.altText} />
                     }
                     {highlight.highlightTitle && (
                       <>{/* Todo: hover functionality. Hide descriptions by default and show by hover or click event */}
@@ -264,7 +264,7 @@ export const pageQuery = graphql`
         }
         featureDownloads {
           downloadLabel
-          featureDownload {  
+          featureDownload {
             id
             altText
             localFile {

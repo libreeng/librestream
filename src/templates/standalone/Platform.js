@@ -2,7 +2,7 @@ import React from "react"
 import { graphql } from "gatsby"
 import Image from "gatsby-image"
 import parse from "html-react-parser"
-import Hero from "../../common/ui/Hero"
+import Hero from "../../common/ui/hero/HeroDefault"
 import Stat from "../../common/ui/Stat"
 import CarouselBootstrap from "../../components/CarouselBootstrap"
 
@@ -32,7 +32,19 @@ const PlatformTemplate = ({ data: { page } }) => {
         heroCta={heroData.heroCta}
       />
       <section>
-        <Stats stats={acf.stats} />
+        <div className="container">
+          <div className="row">
+            {acf.stats && acf.stats.map(stat =>
+              <Stat
+                number={stat.number}
+                descriptor={stat.numberDescriptor}
+                title={stat.title}
+                description={stat.numberCaption}
+              />
+            )}
+          </div>
+        </div>
+
       </section>
 
       <div className="container">
@@ -68,37 +80,15 @@ const PlatformTemplate = ({ data: { page } }) => {
           </div>
         </div>
       </section>
-      <section className="bg-gradient-blue text-white folder-border folder-bottom">
-        <div className="container">
-          <div className="row">
-            <div className="col-12">
-              <CarouselBootstrap slides={acf.carouselSlide} />
-            </div>
-          </div>
-          <hr className="hr-white" />
-          <div className="row">
-            <div className="col-lg-4 border-left border-primary">
-              {acf.carouselFooterTitle && (
-                <h3>{acf.carouselFooterTitle}</h3>
-              )}
-            </div>
-            <div className="col-lg-4 border-left border-primary">
-              {acf.carouselFooterDescription && (
-                parse(acf.carouselFooterDescription)
-              )}
-            </div>
-            <div className="col-lg-4 border-left border-primary">
-              {acf.carouselFooterChecklist.checklistItem && (
-                <ul className="checklist">
-                  {acf.carouselFooterChecklist.checklistItem.map(item =>
-                    <li>{item.checklistItem}</li>
-                  )}
-                </ul>
-              )}
-            </div>
-          </div>
-        </div>
-      </section>
+
+      <CarouselBootstrap
+        slides={acf.carouselSlide}
+        footer={{
+          title: acf.carouselFooterTitle,
+          description: parse(acf.carouselFooterDescription),
+          checklist: acf.carouselFooterChecklist
+        }} />
+
 
       {!!page.content && (
         <section itemProp="articleBody">

@@ -2,7 +2,7 @@ import React from "react"
 import { graphql } from "gatsby"
 import Image from "gatsby-image"
 import parse from "html-react-parser"
-import Hero from "../../common/ui/Hero"
+import Hero from "../../common/ui/hero/HeroDefault"
 
 const ProductRecyclingTemplate = ({ data: { page } }) => {
   const featuredImage = {
@@ -21,13 +21,13 @@ const ProductRecyclingTemplate = ({ data: { page } }) => {
             <div className="col-lg-8">
               {acf.intro && parse(acf.intro)}
             </div>
-            <div className="col-lg-4">  
-             {acf.introImage && (
-               <Image
-                fluid={acf?.introImage?.localFile?.childImageSharp?.fluid}
-                alt={acf?.introImage?.altText}
-              />
-             )}
+            <div className="col-lg-4">
+              {acf.introImage && (
+                <Image
+                  fluid={acf?.introImage?.localFile?.childImageSharp?.fluid}
+                  alt={acf?.introImage?.altText}
+                />
+              )}
             </div>
           </div>
         </div>
@@ -48,7 +48,7 @@ const ProductRecyclingTemplate = ({ data: { page } }) => {
               {acf.shippingAddress && (
                 <div className="border-bracket d-inline-block text-uppercase">
                   <address>
-                    {parse(acf.shippingAddress)}    
+                    {parse(acf.shippingAddress)}
                   </address>
                 </div>
               )}
@@ -60,7 +60,7 @@ const ProductRecyclingTemplate = ({ data: { page } }) => {
         <section itemProp="articleBody">
           <div className="container">
             <div className="row">
-              <div className="col-12">  
+              <div className="col-12">
                 {parse(page.content)}
               </div>
             </div>

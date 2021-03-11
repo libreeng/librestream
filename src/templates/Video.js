@@ -1,20 +1,18 @@
 import React from "react"
 import { Link, graphql } from "gatsby"
 import parse from "html-react-parser"
-import Hero from '../common/ui/Hero'
+import Hero from "../common/ui/hero/HeroDefault"
 
 
 const VideoTemplate = ({ data: { previous, next, post } }) => {
- 
+
   const acf = post.acfPostTypeVideo
   console.log('acf', acf)
   console.log(post)
 
   return (
     <>
-      <Hero 
-        heroTitle={post.title}
-      />
+      <Hero heroTitle={post.title} />
       <section>
         <div className="container">
           <div className="row">
@@ -86,7 +84,7 @@ export const videoQuery = graphql`
     next: wpPost(id: { eq: $nextPostId }) {
       uri
       title
-    } 
+    }
   }
 `
 

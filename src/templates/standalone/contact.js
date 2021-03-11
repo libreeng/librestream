@@ -1,7 +1,8 @@
 import React from 'react'
 import PropTypes from 'prop-types'
+import { graphql } from 'gatsby'
 import parse from "html-react-parser"
-import Hero from '../../common/ui/Hero'
+import Hero from "../../common/ui/hero/HeroDefault"
 
 const ContactTemplate = ({ data: { page } }) => {
   const acf = page.acfTemplateContact
@@ -22,7 +23,7 @@ const ContactTemplate = ({ data: { page } }) => {
                 {acf.supportRequestDescription && (
                   <p>{acf.supportRequestDescription}</p>
                 )}
-                
+
               </div>
               <div className="text-center p-2">
                 <i className="icon-arrow arrow-down arrow-dark" />
@@ -30,7 +31,7 @@ const ContactTemplate = ({ data: { page } }) => {
               {acf.supportRequestLink && (
                 <a href={acf.supportRequestLink} className="btn btn-gradient-dark-blue text-white btn-block">{acf.supportRequestLink.title}</a>
               )}
-              
+
               <div className="border-bracket mt-5">
                 {acf.addressTitle && (
                   <h6 className="mt-5">{acf.addressTitle}</h6>
@@ -40,7 +41,7 @@ const ContactTemplate = ({ data: { page } }) => {
                     {parse(acf.address)}
                   </address>
                 )}
-                
+
               </div>
               <div className="text-center p-2">
                 <i className="icon-arrow arrow-down arrow-dark" />
@@ -50,7 +51,7 @@ const ContactTemplate = ({ data: { page } }) => {
               )}
 
               <div className="border-bracket mt-5">
-                {acf.phoneNumbers && acf.phoneNumbers.map( phone => (
+                {acf.phoneNumbers && acf.phoneNumbers.map(phone => (
                   <>
                     <h6 className="mb-0">{phone.phoneNumberLabel && phone.phoneNumberLabel}</h6>
                     <p className="text-primary">{phone.phoneNumber && phone.phoneNumber}</p>

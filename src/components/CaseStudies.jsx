@@ -47,7 +47,6 @@ const CaseStudies = ({heading = 'Customer Use Cases'}) => {
         plugins={[
           'infinite',
           'centered',
-          'infinite',
           {
             resolve: slidesToShowPlugin,
             options: {
@@ -77,7 +76,7 @@ const CaseStudies = ({heading = 'Customer Use Cases'}) => {
               {
                 resolve: slidesToShowPlugin,
                 options: {
-                  numberOfSlides: 2
+                  numberOfSlides: 3
                 }
               },
             ]

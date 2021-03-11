@@ -2,12 +2,12 @@ import React from "react"
 import { graphql } from "gatsby"
 import Image from "gatsby-image"
 import parse from "html-react-parser"
-import Hero from "../../common/ui/Hero"
+import Hero from "../../common/ui/hero/HeroDefault"
 
 const ItSecurityTemplate = ({ data: { page } }) => {
 
   const acf = page.acfTemplateItSecurity
-  
+
   return (
     <>
       <Hero heroTitle={page.title} />
@@ -39,7 +39,7 @@ const ItSecurityTemplate = ({ data: { page } }) => {
             <div className="col-lg-8">
               {acf.details && parse(acf.details)}
               <div className="mt-5">
-                {acf.downloads && acf.downloads.map( download => (
+                {acf.downloads && acf.downloads.map(download => (
                   <p><a href={download.download} target="_blank" className="btn btn-gradient-dark-blue text-white">{download.downloadLabel}</a></p>
                 ))}
               </div>

@@ -2,7 +2,7 @@ import React from "react"
 import { graphql } from "gatsby"
 import Image from "gatsby-image"
 import parse from "html-react-parser"
-import Hero from "../../common/ui/Hero"
+import Hero from "../../common/ui/hero/HeroDefault"
 
 const MediaKitTemplate = ({ data: { page } }) => {
 
@@ -17,7 +17,7 @@ const MediaKitTemplate = ({ data: { page } }) => {
             <div className="col-lg-8">
               {acf.intro && parse(acf.intro)}
             </div>
-            <div className="col-lg-4">  
+            <div className="col-lg-4">
               <Image
                 fluid={acf?.introImage?.localFile?.childImageSharp?.fluid}
                 alt={acf?.introImage?.altText}
@@ -37,28 +37,28 @@ const MediaKitTemplate = ({ data: { page } }) => {
             </div>
           </div>
           <div className="row mt-4">
-            {acf.mediaContacts && acf.mediaContacts.map( contact => (
+            {acf.mediaContacts && acf.mediaContacts.map(contact => (
               <div className="col-lg-4 mb-4">
                 <div className="border-bracket">
-                  { contact.contactName && (
+                  {contact.contactName && (
                     <h6 className="mb-0">{contact.contactName}</h6>
                   )}
-                  { contact.contactRole && (
+                  {contact.contactRole && (
                     <p className="text-primary">{contact.contactRole}</p>
                   )}
-                  { contact.contactEmail && (
+                  {contact.contactEmail && (
                     <a href={contact.contactEmial} className="text-dark">{contact.contactEmail}</a>
                   )}
-                  
+
                 </div>
               </div>
             ))}
-            {acf.mediaKitDownload && acf.mediaKitDownload.map( download => (
+            {acf.mediaKitDownload && acf.mediaKitDownload.map(download => (
               <div className="col-lg-4 mb-4 text-center">
                 <a href={download?.mediaKitDownloadFile?.mediaItemUrl} className="btn btn-gradient-dark-blue text-white">{download.mediaKitDownloadLabel}</a>
               </div>
             ))}
-            
+
           </div>
         </div>
       </section>
@@ -66,7 +66,7 @@ const MediaKitTemplate = ({ data: { page } }) => {
         <section itemProp="articleBody">
           <div className="container">
             <div className="row">
-              <div className="col-12">  
+              <div className="col-12">
                 {parse(page.content)}
               </div>
             </div>

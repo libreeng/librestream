@@ -5,7 +5,7 @@ export const useSiteFooter = () => {
     query SiteFooterQuery {
       wp(id: {eq: "/graphql--rootfields"}) {
         id
-        options {
+        globalOptions {
           acfSiteOptions {
             title
             footerPhoneTitle
@@ -39,7 +39,7 @@ export const useSiteFooter = () => {
       }
     }
   `)
-  const options = data.wp.options.acfSiteOptions
+  const options = data.wp.globalOptions.acfSiteOptions
 
   return { options, logo: data.logo }
 

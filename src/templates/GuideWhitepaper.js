@@ -1,20 +1,20 @@
 import React from "react"
 import { Link, graphql } from "gatsby"
 import parse from "html-react-parser"
-import Hero from '../common/ui/Hero'
+import Hero from "../common/ui/hero/HeroDefault"
 
 
 const GuideWhitepaperTemplate = ({ data: { previous, next, post } }) => {
- 
+
   const acf = post.acfPostTypeGuide
   console.log('acf', acf)
   console.log(post)
 
   return (
     <>
-      <Hero 
+      <Hero
         heroTitle={acf.heroTitle ? acf.heroTitle : post.title}
-        heroBackground={acf.heroBackground ? acf.heroBackground.localFile.publicURL : null} 
+        heroBackground={acf.heroBackground ? acf.heroBackground.localFile.publicURL : null}
       />
       <section>
         <div className="container">
@@ -89,7 +89,7 @@ export const postQuery = graphql`
     next: wpPost(id: { eq: $nextPostId }) {
       uri
       title
-    } 
+    }
   }
 `
 

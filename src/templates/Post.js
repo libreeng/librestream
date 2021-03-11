@@ -2,7 +2,7 @@ import React from "react"
 import { Link, graphql } from "gatsby"
 import Image from "gatsby-image"
 import parse from "html-react-parser"
-import HeroStandard from "../components/Hero/HeroStandard"
+import Hero from '../common/ui/hero/HeroDefault'
 import RelatedPosts from "../components/RelatedPosts"
 import NewsletterSignup from "../components/NewsletterSignup"
 import SocialShare from "../components/SocialShare"
@@ -25,7 +25,7 @@ const PostTemplate = ({ data: { previous, next, post } }) => {
 
   return (
     <>
-      <HeroStandard title={postCategory.categoryName} />
+      <Hero title={postCategory.categoryName} />
       <section>
         <div className="container">
           <div className="row">
@@ -50,7 +50,7 @@ const PostTemplate = ({ data: { previous, next, post } }) => {
               <a href="#" className="d-flex align-items-center">Next <i className="icon-play ml-2"></i></a>
               <hr />
               <h6>Related Posts</h6>
-              <RelatedPosts/>
+              <RelatedPosts />
               <div className="border-bracket">
                 <p>Want more news? Sign up here for the latest industry news and events.</p>
               </div>
@@ -88,7 +88,7 @@ export const postQuery = graphql`
     next: wpPost(id: { eq: $nextPostId }) {
       uri
       title
-    } 
+    }
   }
 `
 

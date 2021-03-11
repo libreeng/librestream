@@ -3,7 +3,7 @@ import { graphql } from "gatsby"
 import Image from "gatsby-image"
 import BackgroundImage from 'gatsby-background-image'
 import parse from "html-react-parser"
-import Hero from "../../common/ui/Hero"
+import Hero from "../../common/ui/hero/HeroDefault"
 
 const AboutTemplate = ({ data: { page } }) => {
   const featuredImage = {
@@ -36,7 +36,7 @@ const AboutTemplate = ({ data: { page } }) => {
           <div className="row">
             <div className="col-lg-8">
               <h1>{acf.storyTitle && acf.storyTitle}</h1>
-              {acf.storyDescription && parse(acf.storyDescription) }
+              {acf.storyDescription && parse(acf.storyDescription)}
             </div>
             <div className="col-lg-4">
               {acf.storyImage && (
@@ -105,9 +105,9 @@ const AboutTemplate = ({ data: { page } }) => {
               <div className="col-12 col-lg-3 mb-4">
                 {boardmember.image && (
                   <BackgroundImage
-                  Tag="div"
-                  className="bg-image aspect-1x1"
-                  fluid={boardmember.image.localFile.childImageSharp.fluid}
+                    Tag="div"
+                    className="bg-image aspect-1x1"
+                    fluid={boardmember.image.localFile.childImageSharp.fluid}
                   />
                 )}
                 <h4 className="mb-0">{boardmember.name && boardmember.name}</h4>
@@ -126,9 +126,9 @@ const AboutTemplate = ({ data: { page } }) => {
               <div className="col-12 col-lg-3 mb-4">
                 {boardmember.image && (
                   <BackgroundImage
-                  Tag="div"
-                  className="bg-image aspect-1x1"
-                  fluid={boardmember.image.localFile.childImageSharp.fluid}
+                    Tag="div"
+                    className="bg-image aspect-1x1"
+                    fluid={boardmember.image.localFile.childImageSharp.fluid}
                   />
                 )}
                 <h4 className="mb-0">{boardmember.name && boardmember.name}</h4>
