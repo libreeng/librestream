@@ -26,3 +26,54 @@
     }
   }
 }
+
+.slick-arrow {
+  background-image: none;
+  border-radius: 50%;
+  background-color: $gray-900;
+  @include transition();
+  &::before {
+    content: "";
+    display: block;
+    width: 0;
+    height: 0;
+    border-top: 4px solid transparent;
+    border-bottom: 4px solid transparent;
+    align-items: center;
+    justify-content: center;
+    position: absolute;
+    top: 50%;
+    transform: translateX(-50%) translateY(-50%);
+    left: 50%;
+  }
+  &:hover,
+  &:focus {
+    background-color: $primary;
+    &::before {
+      opacity: 0.75;
+    }
+  }
+  &.slick-disabled {
+    opacity: 0;
+    visibility: none;
+    cursor: none;
+    pointer-events: none;
+  }
+}
+
+.slick-prev,
+.slick-next {
+  display: flex;
+  align-items: center;
+  top: 30%;
+}
+.slick-prev {
+  &::before {
+    border-right: 5px solid $white;
+  }
+}
+.slick-next {
+  &::before {
+    border-left: 5px solid $white;
+  }
+}

@@ -6,6 +6,7 @@ import Hero from '../../common/ui/hero/HeroHome'
 import CaseStudies from '../../components/CaseStudies'
 import CarouselOffset from '../../common/ui/carousel/CarouselOffset'
 import Stat from '../../common/ui/Stat'
+import FeaturedNews from '../../components/FeaturedNews'
 
 const HomeTemplate = ({ data: { page } }) => {
   const acf = page.acfTemplateHome
@@ -36,7 +37,7 @@ const HomeTemplate = ({ data: { page } }) => {
                   </div>
                 )}
                 {acf.introLink && (
-                  <a href={acf.introLink.url} className="btn btn-outline-primary mt-5">{acf.introLink.title}</a>
+                  <a href={acf.introLink.url} className="btn btn-outline-secondary text-dark mt-5">{acf.introLink.title}</a>
                 )}
               </div>
             </div>
@@ -65,29 +66,7 @@ const HomeTemplate = ({ data: { page } }) => {
 
       <hr className="hr-styled" />
 
-      <section className="bg-white">
-        <div className="container">
-          <div className="row mb-4">
-            <div className="col-12">
-              <h3>Featured News</h3>
-            </div>
-          </div>
-          <div className="row">
-            {/* {news && news.map((newsItem) => (
-              <div className="col-12 col-md-6 col-lg-3" key={newsItem.newsItem.id}>
-                <Card title={newsItem.newsItem.title} />
-              </div>
-            ))} */}
-          </div>
-          <div className="row my-5">
-            <div className="col-12">
-              <div className="text-center">
-                <a href="/news" className="btn btn-outline-primary text-dark">View All News</a>
-              </div>
-            </div>
-          </div>
-        </div>
-      </section>
+      <FeaturedNews heading='Featured News' />
 
       {/* {!!page.content && (
         <section itemProp="articleBody">{parse(page.content)}</section>
@@ -104,6 +83,7 @@ export const pageQuery = graphql`
       ...PageDetails
       acfTemplateHome {
         carouselSlide {
+          carouselSlideTitle
           carouselSlideDescription
           carouselSlideLink {
             title
@@ -119,33 +99,33 @@ export const pageQuery = graphql`
               }
             }
           }
-          carouselSlideTitle
         }
+        heroTitle
+        heroDescription
         heroBackground {
           localFile {
             publicURL
           }
         }
-        heroDescription
         heroLink {
           target
           title
           url
         }
-        heroTitle
         heroVideoEmbed
         heroVideoLabel
         homeStat {
           homeStatLabel
           homeStatValue
         }
+        introTitle
         introDescription
         introLink {
           target
           title
           url
         }
-        introTitle
+
       }
     }
   }

@@ -2,7 +2,7 @@ import React from 'react'
 import PropTypes from 'prop-types'
 import { Link } from "gatsby"
 
-const Card = ({ post, className }) => {
+const UseCaseCard = ({ post, className }) => {
   const { title, uri, acfPostTypeUseCase: {caption, description, featuredImage, logoImage}} = post
 
   return (
@@ -40,9 +40,9 @@ const Card = ({ post, className }) => {
   )
 }
 
-Card.propTypes = {
+UseCaseCard.propTypes = {
   post: PropTypes.instanceOf(Object),
   className: PropTypes.string
 }
 
-export default Card
+export default UseCaseCard

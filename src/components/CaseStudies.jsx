@@ -3,7 +3,7 @@ import React from 'react'
 import PropTypes from 'prop-types'
 import { useStaticQuery, graphql } from "gatsby"
 import Slider from "react-slick"
-import Card from '../common/ui/Card'
+import UseCaseCard from '../common/ui/cards/UseCaseCard'
 
 const CaseStudies = ({heading = 'Customer Use Cases'}) => {
   const {allWpCaseStudy: { edges: caseStudies }} = useStaticQuery(graphql`
@@ -75,8 +75,15 @@ const CaseStudies = ({heading = 'Customer Use Cases'}) => {
 
   return (
     <section className="bg-white">
+      <div className="container">
+        <div className="row">
+          <div className="col-12">
+            <h2>{heading}</h2>
+          </div>
+        </div>
+      </div>
       <Slider {...settings}>
-        {caseStudies && caseStudies.map(({ post }) => <Card key={post.id} post={post} className="p-2" />)}
+        {caseStudies && caseStudies.map(({ post }) => <UseCaseCard key={post.id} post={post} className="p-2" />)}
       </Slider>
     </section>
   )

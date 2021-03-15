@@ -1,8 +1,6 @@
 body {
-  // color: $white;
-  
   &::before {
-    content: '';
+    content: "";
     display: block;
     width: 500px;
     height: 500px;
@@ -46,8 +44,8 @@ section {
   }
 }
 
-.post-content .gatsby-image-wrapper{
-  max-width:100%;
+.post-content .gatsby-image-wrapper {
+  max-width: 100%;
 }
 
 ul {
@@ -60,5 +58,12 @@ ul {
 address {
   p {
     margin-bottom: 0;
+  }
+}
+
+a {
+  &:hover,
+  &:focus {
+    text-decoration: none;
   }
 }
