@@ -4,7 +4,7 @@ import Image from "gatsby-image"
 import parse from "html-react-parser"
 import Hero from "../../common/ui/hero/HeroDefault"
 import Stat from "../../common/ui/Stat"
-import CarouselBootstrap from "../../components/CarouselBootstrap"
+import CarouselOffset from '../../common/ui/carousel/CarouselOffset'
 
 
 const PlatformTemplate = ({ data: { page } }) => {
@@ -83,7 +83,7 @@ const PlatformTemplate = ({ data: { page } }) => {
         </div>
       </section>
 
-      <CarouselBootstrap
+      <CarouselOffset
         slides={acf.carouselSlide}
         footer={{
           title: acf.carouselFooterTitle,

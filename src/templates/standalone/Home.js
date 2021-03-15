@@ -4,7 +4,7 @@ import { graphql } from "gatsby"
 import parse from "html-react-parser"
 import Hero from '../../common/ui/hero/HeroHome'
 import CaseStudies from '../../components/CaseStudies'
-import CarouselBootstrap from '../../components/CarouselBootstrap'
+import CarouselOffset from '../../common/ui/carousel/CarouselOffset'
 import Stat from '../../common/ui/Stat'
 
 const HomeTemplate = ({ data: { page } }) => {
@@ -46,10 +46,10 @@ const HomeTemplate = ({ data: { page } }) => {
 
       <CaseStudies heading={' '} />
 
-      {/* <CarouselBootstrap slides={acf.carouselSlide} interval={10000} /> */}
+      <CarouselOffset slides={acf.carouselSlide} interval={10000} />
 
       {/* TODO: Refactor Stats component to include all html markup */}
-      {/* <section className="bg-white folder-border folder-top">
+      <section className="bg-white folder-border folder-top">
         <div className="container">
           <div className="row">
             {acf.homeStat && acf.homeStat.map((stat, i) => (
@@ -61,11 +61,11 @@ const HomeTemplate = ({ data: { page } }) => {
             ))}
           </div>
         </div>
-      </section> */}
+      </section>
 
-      {/* <hr className="hr-styled" /> */}
+      <hr className="hr-styled" />
 
-      {/* <section className="bg-white">
+      <section className="bg-white">
         <div className="container">
           <div className="row mb-4">
             <div className="col-12">
@@ -73,21 +73,21 @@ const HomeTemplate = ({ data: { page } }) => {
             </div>
           </div>
           <div className="row">
-            {news && news.map((newsItem) => (
+            {/* {news && news.map((newsItem) => (
               <div className="col-12 col-md-6 col-lg-3" key={newsItem.newsItem.id}>
                 <Card title={newsItem.newsItem.title} />
               </div>
-            ))}
+            ))} */}
           </div>
           <div className="row my-5">
             <div className="col-12">
               <div className="text-center">
-                <a href="/news" className="btn btn-primary text-white">View All News</a>
+                <a href="/news" className="btn btn-outline-primary text-dark">View All News</a>
               </div>
             </div>
           </div>
         </div>
-      </section> */}
+      </section>
 
       {/* {!!page.content && (
         <section itemProp="articleBody">{parse(page.content)}</section>

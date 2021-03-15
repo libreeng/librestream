@@ -100,17 +100,85 @@
   }
 }
 
-//bootstrap carousel
-.carousel {
-  &.overlap-top {
-    margin-top: -100px;
-    margin-bottom: 100px;
+// Carousels
+.carousel-offset {
+  position: relative;
+  margin-top: 6rem;
+  background-color: $primary;
+  color: $white;
+  background-image: linear-gradient(122deg, $primary 0%, $dark 100%);
+  @include bottom-shape-cutout();
+  .carousel-inner {
+    overflow: visible;
+  }
+  .bg-image {
+    position: relative;
+    padding-top: 75%;
+    top: -15vw;
+    margin-bottom: -8vw;
+    @include media-breakpoint-up(lg) {
+      top: -100px;
+      margin-bottom: -100px;
+    }
+  }
+  // Indicator Position
+  .carousel-indicators {
+    position: absolute;
+    top: calc(60vw);
+    bottom: auto;
+    justify-content: flex-start;
+    margin-right: 0;
+    right: 0;
+    left: auto;
+    @include media-breakpoint-up(sm) {
+      top: 300px;
+    }
+    @include media-breakpoint-up(md) {
+      top: 400px;
+    }
+    @include media-breakpoint-up(lg) {
+      top: auto;
+      left: 0;
+      right: auto;
+      bottom: 0;
+      margin-left: 0;
+    }
+  }
+}
+
+// Indicator Styles
+.carousel-indicators {
+  li {
+    position: relative;
+    border: 1px solid transparent;
+    width: 8px;
+    height: 8px;
+    border-radius: 50%;
+    background-color: $cyan;
+    margin-left: 0;
+    margin-right: 15px;
+    box-shadow: 3px 3px 20px (rgba($black, 0.3));
+    &.active {
+      background-color: $white;
+      &::after {
+        content: "";
+        display: block;
+        position: absolute;
+        height: 14px;
+        width: 14px;
+        top: -3px;
+        left: -3px;
+        border: 1px solid $white;
+        border-radius: 100%;
+      }
+    }
   }
 }
 
 .carousel-control-next,
 .carousel-control-prev {
   width: auto;
+  opacity: 0.8;
 }
 
 .carousel-control-next-icon,
@@ -150,35 +218,24 @@
 }
 
 .carousel-control-next {
-  right: -40px;
-}
-
-.carousel-control-prev {
-  left: -40px;
-}
-
-.carousel-indicators {
-  bottom: -50px;
-  li {
-    border: 1px solid transparent;
-    width: 8px;
-    height: 8px;
-    border-radius: 50%;
-    background-color: $cyan;
-    margin-left: 0;
-    margin-right: 15px;
-
-    &.active {
-      background-color: $white;
-    }
+  right: -120px;
+  @include media-breakpoint-down(xl) {
+    right: -80px;
+  }
+  @include media-breakpoint-down(md) {
+    right: -40px;
+    height: 45vw;
   }
 }
 
-.carousel-indicators-left {
-  .carousel-indicators {
-    justify-content: flex-start;
-    margin-left: 0;
-    right: auto;
+.carousel-control-prev {
+  left: -120px;
+  @include media-breakpoint-down(xl) {
+    left: -80px;
+  }
+  @include media-breakpoint-down(md) {
+    left: -40px;
+    height: 45vw;
   }
 }
 
