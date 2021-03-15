@@ -15,7 +15,6 @@ const CarouselOffset = ({ slides, footer, interval = 10000 }) => {
                 return (
                   <Carousel.Item key={i}>
                     <div className="row">
-                      {/* <div className="carousel-slide-number">0{i}</div> */}
                       <div className="col-12 col-lg-5 col-xl-6">
                         {slide.carouselSlideFeaturedImage && (
                           <BackgroundImage
