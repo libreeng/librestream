@@ -21,6 +21,24 @@ export const useSiteFooter = () => {
               svgCode
               url
             }
+            ctas {
+              label
+              image {
+                altText
+                srcSet
+                sourceUrl
+                localFile {
+                  childImageSharp {
+                    fluid(maxWidth: 500, quality: 100) {
+                      ...GatsbyImageSharpFluid
+                    }
+                  }
+                }
+              }
+              link {
+                url
+              }
+            }
             partners {
               url
               logo {

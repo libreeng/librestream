@@ -15,9 +15,8 @@ const Layout = ({ children }) => {
       <Header siteTitle={meta.title} />
       <main id="pageContent">
         {children}
-        {/* <CaseStudies /> */}
       </main>
-      {/* <Footer siteTitle={meta.title} /> */}
+      <Footer siteTitle={meta.title} />
     </>
   )
 }

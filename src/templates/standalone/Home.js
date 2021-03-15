@@ -68,10 +68,6 @@ const HomeTemplate = ({ data: { page } }) => {
 
       <FeaturedNews heading='Featured News' />
 
-      {/* {!!page.content && (
-        <section itemProp="articleBody">{parse(page.content)}</section>
-      )} */}
-
     </>
   )
 }

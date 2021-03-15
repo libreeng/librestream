@@ -1,7 +1,6 @@
 import React from 'react'
-// import PropTypes from 'prop-types'
 import { useSiteFooter } from '../hooks/useSiteFooter'
-import RelatedContent from './RelatedContent'
+import FeaturedCTAs from './FeaturedCTAs'
 import LogoTicker from './LogoTicker'
 import FooterMenu from './menus/FooterMenu'
 import SocialMenu from './menus/SocialMenu'
@@ -9,15 +8,19 @@ import SocialMenu from './menus/SocialMenu'
 
 const Footer = () => {
   const {options, logo} = useSiteFooter()
-  const {partners} = options
+  const {partners, ctas} = options
 
   return (
-    <>
-      <RelatedContent />
+    <div className="pt-3 overflow-hidden">
+      <FeaturedCTAs featured={ctas} />
       <footer id="pageFooter" className="bg-light">
+
         <hr className="border-white my-0" />
+
         <LogoTicker items={partners} />
+
         <hr className="border-white my-0" />
+
         <div className="container">
           <div className="row py-5">
             <div className="col-12 col-md-4 col-lg">
@@ -47,18 +50,20 @@ const Footer = () => {
             </div>
           </div>
         </div>
+
         <hr className="border-white" />
 
         <FooterMenu />
 
         <hr className="border-white" />
+
         <div className="container">
           <div className="row">
             <div className="col-12">
               <p className="font-weight-light">
                 <small>
                   © {new Date().getFullYear()} All Rights Reserved Librestream Technologies
-                </small>
+              </small>
               </p>
             </div>
           </div>
@@ -75,12 +80,9 @@ const Footer = () => {
           </div>
         </div>
       </footer>
-    </>
+    </div>
   )
 }
 
-Footer.propTypes = {
-
-}
 
 export default Footer
