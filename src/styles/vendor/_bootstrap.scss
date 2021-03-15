@@ -1,80 +1,94 @@
-// TODO: Enter all Bootstrap overrides here...
-
-//buttons
+// Buttons
 .btn {
-  border-radius: 30px;
-  color: $dark;
-  text-transform: uppercase;
   position: relative;
-  line-height: 1.5;
-  min-width: 250px;
-  max-width: 100%;
+  text-transform: uppercase;
+  padding: 0.5rem 4rem 0.3rem;
+  border-radius: 3rem;
+  @include transition();
   &::after {
-    content: '';
+    content: "";
     display: block;
     position: absolute;
     width: 0;
     height: 0;
     top: 50%;
-    right: 15px;
+    right: 1.5rem;
     transform: translateY(-50%);
     border-bottom: 7px solid transparent;
     border-top: 7px solid transparent;
     border-left: 7px solid $dark;
+    @include transition();
   }
-  &.btn-lg {
-    @include media-breakpoint-up(lg) {
-      min-width: 300px;
+  &.text-dark {
+    &::after {
+      border-left: 7px solid $dark;
     }
-  }
-  &.btn-xl {
-    @include media-breakpoint-up(lg) {
-      min-width: 500px;
-      padding-top: 15px;
-      padding-bottom: 15px;
-    }
-  }
-  &.btn-gradient-blue-cyan {
-    background: linear-gradient(90deg, $blue 0%, $cyan 100%);
-  }
-  &.btn-gradient-green-cyan {
-    background: linear-gradient(90deg, $green 0%, $cyan 100%);
-  }
-  &.btn-gradient-cyan-green {
-    background: linear-gradient(90deg, $cyan 0%, $green 100%);
-  }
-  &.btn-gradient-dark-blue {
-    background: linear-gradient(90deg, $dark 0%, $blue 100%);
-  }
-  &.btn-border {
-    background-color: transparent;
-    border: 1px solid $dark;
-  }
-  &.shadow-white {
-    border: 2px solid $white;
-    box-shadow: 0 0 15px rgba($white, 0.9);
   }
   &.text-white {
     &::after {
       border-left: 7px solid $white;
     }
   }
-  &.btn-block {
-    padding: 0.4rem 1rem;
-  }
-  &.btn-unstyled {
-    border: 0;
-    background: transparent;
-    padding: 0;
-    outline: 0;
-    &:hover, 
-    &:focus {
-      outline: 0;
-      box-shadow: none;
-      border-radius: 0;
+  &.btn-lg {
+    padding: 1rem 3rem 0.75rem;
+    @include media-breakpoint-up(lg) {
+      min-width: 300px;
     }
+  }
+  //   &.btn-xl {
+  //     @include media-breakpoint-up(lg) {
+  //       min-width: 500px;
+  //       padding-top: 15px;
+  //       padding-bottom: 15px;
+  //     }
+  //   }
+  //   &.btn-gradient-blue-cyan {
+  //     background: linear-gradient(90deg, $blue 0%, $cyan 100%);
+  //   }
+  //   &.btn-gradient-green-cyan {
+  //     background: linear-gradient(90deg, $green 0%, $cyan 100%);
+  //   }
+  //   &.btn-gradient-cyan-green {
+  //     background: linear-gradient(90deg, $cyan 0%, $green 100%);
+  //   }
+  //   &.btn-gradient-dark-blue {
+  //     background: linear-gradient(90deg, $dark 0%, $blue 100%);
+  //   }
+  //   &.btn-border {
+  //     background-color: transparent;
+  //     border: 1px solid $dark;
+  //   }
+  //   &.shadow-white {
+  //     border: 2px solid $white;
+  //     box-shadow: 0 0 15px rgba($white, 0.9);
+  //   }
+  //   &.btn-block {
+  //     padding: 0.4rem 1rem;
+  //   }
+  //   &.btn-unstyled {
+  //     border: 0;
+  //     background: transparent;
+  //     padding: 0;
+  //     outline: 0;
+  //     &:hover,
+  //     &:focus {
+  //       outline: 0;
+  //       box-shadow: none;
+  //       border-radius: 0;
+  //     }
+  //     &::after {
+  //       display: none;
+  //     }
+  //   }
+}
+
+.btn-secondary {
+  &:hover {
+    background-image: linear-gradient(90deg, $green 0%, transparent 100%);
+    border: 1px solid $white;
+    box-shadow: 0 0 15px rgba($white, 0.9);
     &::after {
-      display: none;
+      border-left-color: $dark;
     }
   }
 }
@@ -85,7 +99,6 @@
     font-size: 2.5rem;
   }
 }
-
 
 //bootstrap carousel
 .carousel {
@@ -108,7 +121,7 @@
   border-radius: 50%;
   border: 2px solid $white;
   &::before {
-    content: '';
+    content: "";
     display: block;
     width: 0;
     height: 0;
@@ -163,14 +176,13 @@
 
 .carousel-indicators-left {
   .carousel-indicators {
-    
     justify-content: flex-start;
     margin-left: 0;
     right: auto;
   }
 }
 
-//modals 
+//modals
 .modal-dialog {
   .close {
     font-weight: 100;

@@ -1,20 +1,4 @@
-// Responsive containers
-.container-4x3 {
-  height: 0;
-  padding-top: 60%;
-  width: 100%;
-  position: relative;
-  iframe {
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-  }
-}
-
-
-// Background utlities
+// Container Utilities
 .bg-image,
 .bg-video,
 .bg-iframe,
@@ -43,7 +27,6 @@
       width: 100%;
     }
   }
-
   &.aspect-2x1 {
     padding-top: 50%;
   }
@@ -60,15 +43,8 @@
     padding-top: 56.25%;
   }
 
-  // TODO: Confirm or refactor these modifier classes
-  &.aspect-multilayer,
-  &.aspect-hero {
-    padding-top: 43%;
-  }
   &.aspect-auto {
     height: auto;
-    padding-top: 28vw;
-    padding-bottom: 28vw;
   }
 
   iframe {
@@ -112,8 +88,13 @@
     background-size: cover;
     background-repeat: no-repeat;
   }
-  &.bg-contain {
-    background-size: contain !important;
+
+  img.img-cover {
+    position: absolute;
+    top: 0;
+    left: 0;
+    max-width: 100%;
+    object-fit: cover;
   }
 }
 
@@ -122,23 +103,12 @@
   text-transform: underline !important;
 }
 
-.text-mega {
-  font-size: 2.5rem;
-  font-weight: 600;
-  line-height: 1.25;
-  @include media-breakpoint-down(md) {
-    font-size: 1.75rem;
-  }
+// Aspect Ratio Utilities
+.bg-contain {
+  background-size: contain !important;
 }
-
-// Layout Utilities
-.overflow-hidden {
-  overflow: hidden !important;
-}
-
-// Background Utilities
-
-.bg-fill {
+.bg-fill,
+.bg-content {
   position: absolute;
   top: 0;
   left: 0;
@@ -148,7 +118,6 @@
   align-items: center;
   justify-content: center;
 }
-
 
 .bg-full {
   min-height: 100vh;
@@ -178,7 +147,7 @@
     z-index: 100;
   }
   &::after {
-    content: '';
+    content: "";
     display: block;
     width: 25%;
     height: 100%;
@@ -200,11 +169,6 @@
   &.offset-bottom-lg {
     margin-bottom: -200px;
   }
-}
-
-// Responsive Cards
-.responsive-cards {
-  @include make-responsive-cards();
 }
 
 //can use a utitlity like this to animate when lazyloading
@@ -265,9 +229,9 @@
     transform: rotate(180deg);
   }
   &::after {
-    content: '';
-    width: 0; 
-    height: 0; 
+    content: "";
+    width: 0;
+    height: 0;
     border-top: 5px solid transparent;
     border-bottom: 5px solid transparent;
     border-left: 5px solid $dark;
@@ -300,22 +264,21 @@
       position: absolute;
       left: 0;
       top: -3px;
-      content: '';
+      content: "";
       width: 60px;
       height: 60px;
       display: block;
       background-position: center center;
       background-repeat: no-repeat;
       background-size: contain;
-      background-image: url('../img/icon-checkmark.svg');
+      background-image: url("../img/icon-checkmark.svg");
     }
   }
   &.checklist-dark {
     li {
       &::before {
-        background-image: url('../img/icon-checkmark-dark.svg');
+        background-image: url("../img/icon-checkmark-dark.svg");
       }
     }
   }
 }
-

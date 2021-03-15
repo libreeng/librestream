@@ -11,14 +11,26 @@ import Carousel, {
 import Card from '../common/ui/Card'
 
 const CaseStudies = ({heading = 'Customer Use Cases'}) => {
-  const data = useStaticQuery(graphql`
+  const {allWpCaseStudy: { edges: caseStudies }} = useStaticQuery(graphql`
     query FeaturedCaseStudies {
       allWpCaseStudy(sort: { fields: [date], order: DESC }) {
         edges {
           post: node {
             id
+            title
             uri
-            nodeType
+            acfPostTypeUseCase {
+              caption
+              description
+              logoImage {
+                srcSet
+                sourceUrl
+              }
+              featuredImage {
+                srcSet
+                sourceUrl
+              }
+            }
           }
           next {
             id
@@ -30,8 +42,6 @@ const CaseStudies = ({heading = 'Customer Use Cases'}) => {
       }
     }
   `)
-
-  console.log('Case Studies', data)
 
 
   return (
@@ -83,7 +93,7 @@ const CaseStudies = ({heading = 'Customer Use Cases'}) => {
           }
         }}
       >
-        {[...Array(20)].map((x, i) => <Card key={i} className="p-2" />)}
+        {caseStudies && caseStudies.map(({post}) => <Card key={post.id} post={post} className="p-2" />)}
 
       </Carousel>
       <Dots />

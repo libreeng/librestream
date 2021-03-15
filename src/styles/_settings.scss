@@ -17,8 +17,6 @@ $gray-800: #343a40 !default;
 $gray-900: #212529 !default;
 $black: #000 !default;
 
-
-
 $grays: () !default;
 // stylelint-disable-next-line scss/dollar-variable-default
 $grays: map-merge(
@@ -36,18 +34,18 @@ $grays: map-merge(
   $grays
 );
 
-$blue: #00A3DF;
-$blue-mid: #00A3DF26;
+$blue: #00a3df;
+$blue-mid: #00a3df26;
 $blue-dark: #014168;
 $indigo: #6610f2 !default;
 $purple: #6f42c1 !default;
 $pink: #e83e8c !default;
 $red: #dc3545 !default;
-$orange: #FF5800;
+$orange: #ff5800;
 $yellow: #ffc107 !default;
-$green: #58FF98;
+$green: #58ff98;
 $teal: #20c997 !default;
-$cyan: #49EBEA;
+$cyan: #49ebea;
 
 $colors: () !default;
 // stylelint-disable-next-line scss/dollar-variable-default
@@ -95,7 +93,7 @@ $theme-colors: map-merge(
     "orange": $orange,
     "green": $green,
     "cyan": $cyan,
-    "gray": $gray-600
+    "gray": $gray-600,
   ),
   $theme-colors
 );
@@ -127,7 +125,7 @@ $enable-hover-media-query: false !default; // Deprecated, no longer affects any 
 $enable-grid-classes: true !default;
 $enable-pointer-cursor-for-buttons: true !default;
 $enable-print-styles: true !default;
-$enable-responsive-font-sizes: false !default;
+$enable-responsive-font-sizes: true;
 $enable-validation-icons: true !default;
 $enable-deprecation-messages: true !default;
 
@@ -289,16 +287,16 @@ $font-weight-bolder: bolder !default;
 $font-weight-base: $font-weight-normal !default;
 $line-height-base: 1.4;
 
-$h1-font-size: $font-size-base * 2.5 !default;
-$h2-font-size: $font-size-base * 1.8 !default;
-$h3-font-size: $font-size-base * 1.75 !default;
-$h4-font-size: $font-size-base * 1.5 !default;
+$h1-font-size: $font-size-base * 3.45;
+$h2-font-size: $font-size-base * 2.75;
+$h3-font-size: $font-size-base * 2;
+$h4-font-size: $font-size-base * 1.85;
 $h5-font-size: $font-size-base * 1.25 !default;
 $h6-font-size: $font-size-base !default;
 
 $headings-margin-bottom: $spacer / 2 !default;
 $headings-font-family: inherit;
-$headings-font-weight: 500 !default;
+$headings-font-weight: 300;
 $headings-line-height: 1.1;
 $headings-color: inherit;
 
@@ -1102,7 +1100,6 @@ $positions: static, relative, absolute, fixed, sticky !default;
 
 $print-page-size: a3 !default;
 $print-body-min-width: map-get($grid-breakpoints, "lg") !default;
-
 
 // $topnav-height: 72px;
 // $topnav-height-mobile: 72px;

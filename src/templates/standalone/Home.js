@@ -14,7 +14,7 @@ const HomeTemplate = ({ data: { page } }) => {
 
     <>
       <Hero
-        heroTitle={acf.heroTitle}
+        heroTitle={parse(acf.heroTitle)}
         heroDescription={acf.heroDescription}
         heroBackground={acf.heroBackground.localFile.publicURL}
         heroCta={acf.heroLink}
@@ -23,20 +23,20 @@ const HomeTemplate = ({ data: { page } }) => {
       <section id="intro" className="bg-white">
         <div className="container">
           <div className="row">
-            <div className="col-12 col-lg-7 mx-lg-auto">
+            <div className="col-12 col-lg-10 mx-lg-auto">
               <div className="text-center">
                 {acf.introTitle && (
-                  <h2 className="mb-4 font-weight-light">
+                  <h1>
                     {acf.introTitle}
-                  </h2>
+                  </h1>
                 )}
                 {acf.introDescription && (
-                  <div className="lead lead-lg text-gray mb-5">
+                  <div className="display-4 text-gray my-4">
                     {parse(acf.introDescription)}
                   </div>
                 )}
                 {acf.introLink && (
-                  <a href={acf.introLink.url} className="btn btn-large btn-cyan">{acf.introLink.title}</a>
+                  <a href={acf.introLink.url} className="btn btn-outline-primary mt-5">{acf.introLink.title}</a>
                 )}
               </div>
             </div>
@@ -44,11 +44,12 @@ const HomeTemplate = ({ data: { page } }) => {
         </div>
       </section>
 
-      <CaseStudies />
+      <CaseStudies heading={' '} />
 
-      <CarouselBootstrap slides={acf.carouselSlide} interval={10000} />
+      {/* <CarouselBootstrap slides={acf.carouselSlide} interval={10000} /> */}
 
-      <section className="bg-white folder-border folder-top">
+      {/* TODO: Refactor Stats component to include all html markup */}
+      {/* <section className="bg-white folder-border folder-top">
         <div className="container">
           <div className="row">
             {acf.homeStat && acf.homeStat.map((stat, i) => (
@@ -60,11 +61,11 @@ const HomeTemplate = ({ data: { page } }) => {
             ))}
           </div>
         </div>
-      </section>
+      </section> */}
 
-      <hr className="hr-styled" />
+      {/* <hr className="hr-styled" /> */}
 
-      <section className="bg-white">
+      {/* <section className="bg-white">
         <div className="container">
           <div className="row mb-4">
             <div className="col-12">
@@ -72,11 +73,11 @@ const HomeTemplate = ({ data: { page } }) => {
             </div>
           </div>
           <div className="row">
-            {/* {news && news.map((newsItem) => (
+            {news && news.map((newsItem) => (
               <div className="col-12 col-md-6 col-lg-3" key={newsItem.newsItem.id}>
                 <Card title={newsItem.newsItem.title} />
               </div>
-            ))} */}
+            ))}
           </div>
           <div className="row my-5">
             <div className="col-12">
@@ -86,7 +87,7 @@ const HomeTemplate = ({ data: { page } }) => {
             </div>
           </div>
         </div>
-      </section>
+      </section> */}
 
       {/* {!!page.content && (
         <section itemProp="articleBody">{parse(page.content)}</section>

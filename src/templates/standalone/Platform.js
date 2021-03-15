@@ -31,6 +31,8 @@ const PlatformTemplate = ({ data: { page } }) => {
         heroDescription={heroData.heroDescription}
         heroCta={heroData.heroCta}
       />
+
+      {/* TODO: Refactor Stats component to include all html markup */}
       <section>
         <div className="container">
           <div className="row">

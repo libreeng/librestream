@@ -11,36 +11,6 @@
   animation-iteration-count: $count;
 }
 
-@mixin make-responsive-cards($columns: $grid-columns, $gutter: $grid-gutter-width, $breakpoints: $grid-breakpoints) {
-  // Common properties for all breakpoints
-  display: flex;
-  flex-flow: row wrap;
-  margin-right: -$gutter / 2;
-  margin-left: -$gutter / 2;
-
-  // @extend %card-wrapper;
-  @each $breakpoint in map-keys($breakpoints) {
-    $infix: breakpoint-infix($breakpoint, $breakpoints);
-    .card {
-      flex: 0 0 calc(100% - #{$grid-gutter-width});
-      margin-left: $gutter / 2;
-      margin-right: $gutter / 2;
-    }
-
-    @include media-breakpoint-up($breakpoint, $breakpoints) {
-      @for $i from 1 through $columns {
-        &.cards#{$infix}-#{$i} {
-          .card {
-            flex: 0 0 calc(#{100 / $i}% - #{$grid-gutter-width});
-            margin-left: $gutter / 2;
-            margin-right: $gutter / 2;
-          }
-        }
-      }
-    }
-  }
-}
-
 @mixin gradient-variant($parent, $color) {
   #{$parent} {
     position: relative;
@@ -100,9 +70,9 @@
   }
 }
 
-@mixin bottom-shape-cutout($width:33%, $color: $white, $size:20px) {
-  &:after{
-    content: '';
+@mixin bottom-shape-cutout($width: 33%, $color: $white, $size: 20px) {
+  &:after {
+    content: "";
     position: absolute;
     bottom: 0;
     right: 0;
@@ -113,12 +83,12 @@
     border-bottom-color: $color;
     border-bottom-width: $size;
     border-bottom-style: solid;
-  }  
+  }
 }
 
-@mixin top-shape-cutout($width:33%, $color: $white, $size:20px) {
-  &:after{
-    content: '';
+@mixin top-shape-cutout($width: 33%, $color: $white, $size: 20px) {
+  &:after {
+    content: "";
     position: absolute;
     top: -40px;
     right: 0;
@@ -129,7 +99,5 @@
     border-bottom-color: $color;
     border-bottom-width: $size;
     border-bottom-style: solid;
-  }  
+  }
 }
-
-

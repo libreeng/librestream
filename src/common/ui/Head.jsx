@@ -3,7 +3,7 @@ import PropTypes from 'prop-types'
 import Helmet from 'react-helmet'
 import { useSiteMetadata } from '../hooks/useSiteMetadata'
 
-const HEAD = ({ pageDescription, pageTitle, pageAuthor }) => {
+const HEAD = ({ pageDescription, pageTitle, pageAuthor, className }) => {
   const { title, description, author, lang } = useSiteMetadata()
 
   const metaTitle = pageTitle || title
@@ -13,7 +13,7 @@ const HEAD = ({ pageDescription, pageTitle, pageAuthor }) => {
   return (
     <Helmet titleTemplate={`%s | ${metaTitle}`} defaultTitle={title}>
       <html lang={lang} />
-      <body />
+      <body className={className} />
       <meta name="description" content={metaDescription} />
       <meta name="author" content={metaAuthor} />
       {/* TODO - Add default metaData and logic for page overrides */}
