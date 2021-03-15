@@ -12,9 +12,7 @@ const Hero = ({
   heroCta
 }) => {
   return (
-    <div
-      className="bg-primary bg-image aspect-hero"
-    >
+    <div className="hero">
       <img src={heroBackground} alt={heroTitle} className="img-cover" />
       <div className="bg-content">
         <div className="container">

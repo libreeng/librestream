@@ -1,13 +1,8 @@
+/* eslint-disable react/jsx-props-no-spreading */
 import React from 'react'
 import PropTypes from 'prop-types'
 import { useStaticQuery, graphql } from "gatsby"
-import Carousel, {
-  Dots,
-  slidesToShowPlugin,
-  // slidesToScrollPlugin,
-  // arrowsPlugin,
-  autoplayPlugin
-} from '@brainhubeu/react-carousel'
+import Slider from "react-slick"
 import Card from '../common/ui/Card'
 
 const CaseStudies = ({heading = 'Customer Use Cases'}) => {
@@ -43,60 +38,46 @@ const CaseStudies = ({heading = 'Customer Use Cases'}) => {
     }
   `)
 
+  const settings = {
+    dots: true,
+    infinite: true,
+    speed: 500,
+    centerMode: true,
+    autoplay: true,
+    autoplaySpeed: 3000,
+    slidesToShow: 4,
+    slidesToScroll: 4,
+    initialSlide: 0,
+    responsive: [
+      {
+        breakpoint: 1024,
+        settings: {
+          slidesToShow: 3,
+          slidesToScroll: 3
+        }
+      },
+      {
+        breakpoint: 768,
+        settings: {
+          slidesToShow: 2,
+          slidesToScroll: 2
+        }
+      },
+      {
+        breakpoint: 480,
+        settings: {
+          slidesToShow: 1,
+          slidesToScroll: 1
+        }
+      }
+    ]
+  }
 
   return (
     <section className="bg-white">
-      <div className="container">
-        <div className="row mb-5">
-          <div className="col-12">
-            <h2 className="text-uppercase">{heading}</h2>
-          </div>
-        </div>
-      </div>
-      <Carousel
-        plugins={[
-          'infinite',
-          'centered',
-          {
-            resolve: slidesToShowPlugin,
-            options: {
-              numberOfSlides: 4,
-            }
-          },
-          {
-            resolve: autoplayPlugin,
-            options: {
-              interval: 4000,
-            }
-          },
-        ]}
-        breakpoints={{
-          640: {
-            plugins: [
-              {
-                resolve: slidesToShowPlugin,
-                options: {
-                  numberOfSlides: 1
-                }
-              },
-            ]
-          },
-          900: {
-            plugins: [
-              {
-                resolve: slidesToShowPlugin,
-                options: {
-                  numberOfSlides: 3
-                }
-              },
-            ]
-          }
-        }}
-      >
-        {caseStudies && caseStudies.map(({post}) => <Card key={post.id} post={post} className="p-2" />)}
-
-      </Carousel>
-      <Dots />
+      <Slider {...settings}>
+        {caseStudies && caseStudies.map(({ post }) => <Card key={post.id} post={post} className="p-2" />)}
+      </Slider>
     </section>
   )
 }

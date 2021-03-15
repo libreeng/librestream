@@ -1,5 +1,5 @@
 import React from 'react'
-// import PropTypes from 'prop-types'
+import PropTypes from 'prop-types'
 import { graphql } from "gatsby"
 import Hero from "../common/ui/hero/HeroDefault"
 import NextPrevMenu from '../common/ui/menus/NextPrevMenu'
@@ -7,12 +7,7 @@ import parse from "html-react-parser"
 import BackgroundImage from 'gatsby-background-image'
 
 const CaseStudy = ({ data: { previous, next, post } }) => {
-  console.log("Case Study:", post)
-  console.log("next", next)
-  console.log("previous", previous)
   const acf = post.acfPostTypeUseCase
-
-
   const article = {
     title: acf.articleTitle,
     content: acf.articleContent,
@@ -112,7 +107,9 @@ const CaseStudy = ({ data: { previous, next, post } }) => {
 }
 
 CaseStudy.propTypes = {
-
+  post: PropTypes.instanceOf(Object),
+  next: PropTypes.string,
+  previous: PropTypes.string,
 }
 
 export const pageQuery = graphql`

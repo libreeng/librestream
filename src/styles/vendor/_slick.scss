@@ -1,0 +1,28 @@
+.slick-dots {
+  margin-top: 2rem;
+  li {
+    border: 1px solid transparent;
+    @include transition();
+    &:hover {
+      border-radius: 2rem;
+      border: 1px solid rgba($gray-900, 0.1);
+    }
+    button {
+      height: 16px;
+      width: 16px;
+      @include transition();
+      &:before {
+        opacity: 0.9;
+        color: $primary;
+        font-size: 0.5rem;
+        @include transition();
+      }
+      &:hover,
+      &:focus {
+        &:before {
+          color: $gray-900;
+        }
+      }
+    }
+  }
+}

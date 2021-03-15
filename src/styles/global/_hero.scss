@@ -9,18 +9,19 @@
   background-color: $primary;
   overflow: hidden;
   @include bottom-shape-cutout();
+  &.hero-home {
+    padding-top: calc(43vw + 100px);
+  }
   .bg-content {
     align-items: flex-end;
     padding-bottom: 3rem;
-  }
-  &.hero-home {
-    padding-top: calc(43vw + 100px);
   }
 
   img.img-cover {
     position: absolute;
     top: 0;
     left: 0;
+    width: 100%;
     max-width: 100%;
     object-fit: cover;
   }

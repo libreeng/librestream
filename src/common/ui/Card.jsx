@@ -10,9 +10,7 @@ const Card = ({ post, className }) => {
       <div className={`card ${className}`}>
         <div
           className="card-img-top bg-image aspect-1x1 grayscale"
-          style={{
-            backgroundImage: `url(${featuredImage && featuredImage.sourceUrl || 'https://via.placeholder.com/400/000/000'})`
-          }}
+          style={{ backgroundImage: `url(${featuredImage && featuredImage.sourceUrl || 'https://via.placeholder.com/400/000/000'})`}}
         >
           <div className="bg-fill">
             <div className="card-logo-overlay text-white">
@@ -24,7 +22,7 @@ const Card = ({ post, className }) => {
                 </div>
               </div>
               <div className="row">
-                <div className="col-lg-6 ml-lg-auto">
+                <div className="col-lg-8 ml-lg-auto">
                   <p className="text-uppercase lead">
                     {caption}
                   </p>
