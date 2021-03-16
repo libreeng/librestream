@@ -3,35 +3,20 @@ import { graphql } from "gatsby"
 import Image from "gatsby-image"
 import parse from "html-react-parser"
 import Hero from "../../common/ui/Hero"
+import Intro from "../../common/ui/Intro"
 
 const CustomerSuccessTemplate = ({ data: { page } }) => {
-  const featuredImage = {
-    fluid: page.featuredImage?.node?.localFile?.childImageSharp?.fluid,
-    alt: page.featuredImage?.node?.alt || ``,
-  }
 
   const acf = page.acfTemplateCustomerSuccess
+  const hero = {
+    heroHeading: page.title
+  }
+  const intro = page.acfIntro
 
   return (
     <>
-      <Hero heroTitle={page.title} />
-      <section>
-        <div className="container">
-          <div className="row">
-            <div className="col-lg-8">
-              {acf.intro && parse(acf.intro)}
-            </div>
-            <div className="col-lg-4">
-              {acf.introImage && (
-                <Image
-                  fluid={acf?.introImage?.localFile?.childImageSharp?.fluid}
-                  alt={acf?.introImage?.altText}
-                />
-              )}
-            </div>
-          </div>
-        </div>
-      </section>
+      <Hero hero={hero} />
+      <Intro intro={intro} bracket={true}/>
       <div className="container">
         <hr className="hr-styled" />
       </div>
@@ -44,7 +29,7 @@ const CustomerSuccessTemplate = ({ data: { page } }) => {
             <div className="col-lg-6">
               <div className="row align-items-center">
                 {acf.trainingImages && acf.trainingImages.map(image => (
-                  <div className="col-12 col-lg-4 mb-3">
+                  <div className="col-12 col-lg-4 mb-3" key={image.id}>
                     <Image
                       fluid={image?.trainingImage?.localFile?.childImageSharp?.fluid}
                       alt={image?.trainingImage?.altText}
@@ -70,7 +55,7 @@ const CustomerSuccessTemplate = ({ data: { page } }) => {
             <div className="col-lg-6">
               <div className="row align-items-center">
                 {acf.deploymentImages && acf.deploymentImages.map(image => (
-                  <div className="col-12 col-lg-4 mb-3">
+                  <div className="col-12 col-lg-4 mb-3" key={image.id}>
                     <Image
                       fluid={image?.deploymentImage?.localFile?.childImageSharp?.fluid}
                       alt={image?.deploymentImage?.altText}
@@ -124,6 +109,7 @@ export const pageQuery = graphql`
     # selecting the current page by id
     page: wpPage(id: { eq: $id }) {
       ...PageDetails
+      ...PageIntro
       acfTemplateCustomerSuccess {
         customerSuccessHighlights {
           customerSuccessHighlight
@@ -131,6 +117,7 @@ export const pageQuery = graphql`
         deploymentDescription
         deploymentImages {
           deploymentImage {
+            id
             altText
             localFile {
               childImageSharp {
@@ -141,20 +128,10 @@ export const pageQuery = graphql`
             }
           }
         }
-        intro
-        introImage {
-          altText
-          localFile {
-            childImageSharp {
-              fluid(maxWidth: 500) {
-                ...GatsbyImageSharpFluid
-              }
-            }
-          }
-        }
         trainingDescription
         trainingImages {
           trainingImage {
+            id
             altText
             localFile {
               childImageSharp {

@@ -3,29 +3,19 @@ import { graphql } from "gatsby"
 import Image from "gatsby-image"
 import parse from "html-react-parser"
 import Hero from "../../common/ui/Hero"
+import Intro from "../../common/ui/Intro"
 
 const MediaKitTemplate = ({ data: { page } }) => {
 
   const acf = page.acfTemplateMediaKit
-
+  const hero = {
+    heroHeading: page.title
+  }
+  const intro = page.acfIntro
   return (
     <>
-      <Hero heroTitle={page.title} />
-      <section>
-        <div className="container">
-          <div className="row">
-            <div className="col-lg-8">
-              {acf.intro && parse(acf.intro)}
-            </div>
-            <div className="col-lg-4">
-              <Image
-                fluid={acf?.introImage?.localFile?.childImageSharp?.fluid}
-                alt={acf?.introImage?.altText}
-              />
-            </div>
-          </div>
-        </div>
-      </section>
+      <Hero hero={hero} />
+      <Intro intro={intro} />
       <div className="container">
         <hr className="hr-styled" />
       </div>
@@ -83,17 +73,8 @@ export const pageQuery = graphql`
     # selecting the current page by id
     page: wpPage(id: { eq: $id }) {
       ...PageDetails
+      ...PageIntro
       acfTemplateMediaKit {
-        intro
-        introImage {
-          localFile {
-            childImageSharp {
-              fluid(maxWidth: 1000, quality: 100) {
-                ...GatsbyImageSharpFluid
-              }
-            }
-          }
-        }
         mediaContacts {
           contactEmail
           contactName

@@ -5,17 +5,14 @@ import parse from "html-react-parser"
 import Hero from "../../common/ui/Hero"
 
 const PartnersTemplate = ({ data: { page } }) => {
-  const featuredImage = {
-    fluid: page.featuredImage?.node?.localFile?.childImageSharp?.fluid,
-    alt: page.featuredImage?.node?.alt || ``,
-  }
 
   const acf = page.acfTemplatePartners
-
-  console.log(acf)
+  const hero = {
+    heroHeading: page.title
+  }
   return (
     <>
-      <Hero heroTitle="Partners" />
+      <Hero hero={hero} />
       {acf.partners && acf.partners.map(
         partnerSection =>
           <>
@@ -32,14 +29,15 @@ const PartnersTemplate = ({ data: { page } }) => {
                   </div>
                   <div className="col-lg-4">
                     {partnerSection.image && (
-                      <Image
-                        fluid={partnerSection.image.localFile.childImageSharp.fluid}
-                        alt={company.acfPostTypePartner.partnerLogo.altText}
-                      />
+                      <div className="border-bracket py-3 ml-lg-auto w-75">
+                        <div 
+                          style={{ backgroundImage: `url(${ partnerSection?.image?.localFile?.publicURL })`}}
+                          className="bg-image aspect-3x1 bg-contain" />
+                      </div>
                     )}
                   </div>
                 </div>
-                <div class="row row-cols-1 row-cols-md-4 mt-5">
+                <div className="row row-cols-1 row-cols-md-4 mt-5">
                   {partnerSection.companies && partnerSection.companies.map(company =>
                     <div className="col" key={company.id}>
                       <div className="card border border-primary">
@@ -47,39 +45,36 @@ const PartnersTemplate = ({ data: { page } }) => {
                           <div className="bg-fill bg-transparent p-3">
                             <div className="w-100">
                               {company.acfPostTypePartner.partnerLogo && (
-                                <Image
-                                  fluid={company.acfPostTypePartner?.partnerLogo?.localFile?.childImageSharp?.fluid}
-                                  alt={company.acfPostTypePartner?.partnerLogo?.altText}
-                                />
+                                <img src={company?.acfPostTypePartner?.partnerLogo?.localFile?.publicURL} className="img-fluid" alt={company?.acfPostTypePartner?.partnerLogo?.altText} />
                               )}
                             </div>
-                            {/* <img src={company.acfPostTypePartner.partnerLogo.localFile.url} class="img-fluid" alt=""/> */}
                           </div>
                         </div>
-
                       </div>
                       <div className="card-footer bg-transparent px-0">
                         <h6 className="text-primary mb-0">{company.title}</h6>
                         {/* {company.acfPostTypePartner.partnerDescription} */}
-                        <a href="#modal" class="h6 text-uppercase">Read More</a>
+                        <a href="#modal" className="h6 text-uppercase">Read More</a>
                       </div>
                     </div>
                   )}
                 </div>
               </div>
             </section>
-            {/* <div className="container">
-            <hr className="hr-styled" />
-          </div> */}
           </>
       )}
 
-      <hr className="hr-styled" />
-
       {!!page.content && (
-        <section itemProp="articleBody">{parse(page.content)}</section>
+        <section itemProp="articleBody">
+          <div className="container">
+            <div className="row">
+              <div className="col-12">
+                {parse(page.content)}
+              </div>
+            </div>
+          </div>
+        </section>
       )}
-
     </>
   )
 }
@@ -106,6 +101,7 @@ export const pageQuery = graphql`
                         ...GatsbyImageSharpFluid
                       }
                     }
+                    publicURL
                   }
                 }
               }
@@ -120,6 +116,7 @@ export const pageQuery = graphql`
                   ...GatsbyImageSharpFluid
                 }
               }
+              publicURL
             }
           }
           title

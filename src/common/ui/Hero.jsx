@@ -32,7 +32,7 @@ const Hero = ({ hero, nav, className }) => {
                 {heroCta && <a href={heroCta.url} type="button" className="btn btn-lg btn-secondary text-dark my-5" target={heroCta.target}>{heroCta.title}</a>}
               </div>
               {nav && (
-                <ul className="nav mt-4">
+                <ul className="nav mt-4 pb-3">
                   {nav.map(item => (
                     <li key={item.url} className="nav-item">
                       <Link to={item.url} className="nav-link">{item.label || item.title}</Link>

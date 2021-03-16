@@ -4,35 +4,21 @@ import Image from "gatsby-image"
 import BackgroundImage from 'gatsby-background-image'
 import parse from "html-react-parser"
 import Hero from "../../common/ui/Hero"
+import Intro from "../../common/ui/Intro"
 
 const AboutTemplate = ({ data: { page } }) => {
   const acf = page.acfTemplateAbout
-  const hero = {
-    heroHeading: acf.heroTitle
-  }
-  const nav = acf.subnav.map(item => item.subnavItemLink)
+  const hero = page.acfHero
+  const nav = page.acfSubnav.subnav.map(item => item.subnavItemLink)
+  const intro = page.acfIntro
 
   return (
     <>
       <Hero hero={hero} nav={nav} />
-      <section id="our-story">
-        <div className="container">
-          <div className="row">
-            <div className="col-lg-8">
-              <h1>{acf.storyTitle && acf.storyTitle}</h1>
-              {acf.storyDescription && parse(acf.storyDescription)}
-            </div>
-            <div className="col-lg-4">
-              {acf.storyImage && (
-                <Image
-                  fluid={acf?.storyImage?.localFile?.childImageSharp?.fluid}
-                  alt={acf?.storyImage.altText}
-                />
-              )}
-            </div>
-          </div>
-        </div>
-      </section>
+      <div id="our-story">
+        <Intro intro={intro} />
+      </div>
+      
       <div className="container">
         <hr className="hr-styled" />
       </div>
@@ -137,15 +123,10 @@ export const pageQuery = graphql`
     # selecting the current page by id
     page: wpPage(id: { eq: $id }) {
       ...PageDetails
+      ...PageHero
+      ...Subnav
+      ...PageIntro
       acfTemplateAbout {
-        heroTitle
-        subnav {
-          subnavItemLink {
-            target
-            title
-            url
-          }
-        }
         awards {
           image {
             id
@@ -175,21 +156,8 @@ export const pageQuery = graphql`
             }
           }
         }
-        storyDescription
-        storyImage {
-          altText
-          localFile {
-            childImageSharp {
-              fluid(maxWidth: 1000, quality: 100) {
-                ...GatsbyImageSharpFluid
-              }
-            }
-          }
-        }
-        storyTitle
         timelineTitle
         timelineVideo
-
         management {
           bio
           designations

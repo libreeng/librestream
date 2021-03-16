@@ -3,33 +3,19 @@ import { graphql } from "gatsby"
 import Image from "gatsby-image"
 import parse from "html-react-parser"
 import Hero from "../../common/ui/Hero"
+import Intro from "../../common/ui/Intro"
 
 const ItSecurityTemplate = ({ data: { page } }) => {
 
   const acf = page.acfTemplateItSecurity
-
+  const hero = {
+    heroHeading: page.title
+  }
+  const intro = page.acfIntro
   return (
     <>
-      <Hero heroTitle={page.title} />
-      <section>
-        <div className="container">
-          <div className="row">
-            <div className="col-lg-8">
-              {acf.intro && parse(acf.intro)}
-            </div>
-            <div className="col-lg-4">
-              {acf.introImage && (
-                <div className="border-bracket">
-                  <Image
-                    fluid={acf?.introImage?.localFile?.childImageSharp?.fluid}
-                    alt={acf?.introImage?.altText}
-                  />
-                </div>
-              )}
-            </div>
-          </div>
-        </div>
-      </section>
+      <Hero hero={hero} />
+      <Intro intro={intro} bracket={true}/>
       <div className="container">
         <hr className="hr-styled" />
       </div>
@@ -45,7 +31,7 @@ const ItSecurityTemplate = ({ data: { page } }) => {
               </div>
             </div>
             <div className="col-lg-4">
-              <div className="p-5">
+              <div className="px-5 w-75">
                 {acf.certificationImages && acf.certificationImages.map(image => (
                   <Image
                     fluid={image?.certificationImage?.localFile?.childImageSharp?.fluid}
@@ -78,18 +64,9 @@ export const pageQuery = graphql`
     # selecting the current page by id
     page: wpPage(id: { eq: $id }) {
       ...PageDetails
+      ...PageIntro
       acfTemplateItSecurity {
         details
-        intro
-        introImage {
-          localFile {
-            childImageSharp {
-              fluid(maxWidth: 900) {
-                ...GatsbyImageSharpFluid
-              }
-            }
-          }
-        }
         certificationImages {
           certificationImage {
             localFile {
