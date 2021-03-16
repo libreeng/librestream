@@ -45,7 +45,7 @@ const ItSecurityTemplate = ({ data: { page } }) => {
         </div>
       </section>
       {!!page.content && (
-        <section itemProp="articleBody">
+        <section>
           <div className="container">
             <div className="row">
               <div className="col-12">
