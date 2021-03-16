@@ -6,31 +6,15 @@ import parse from "html-react-parser"
 import Hero from "../../common/ui/Hero"
 
 const AboutTemplate = ({ data: { page } }) => {
-  const featuredImage = {
-    fluid: page.featuredImage?.node?.localFile?.childImageSharp?.fluid,
-    alt: page.featuredImage?.node?.alt || ``,
-  }
-
   const acf = page.acfTemplateAbout
-  console.log(page.acfTemplateAbout)
-  const heroData = {
-    heroTitle: acf?.heroTitle,
-    heroSubtitle: acf?.heroSubtitle,
-    heroBackground: acf?.heroBackground?.localFile?.childImageSharp?.fluid,
-    heroSubnav: acf?.subnav
+  const hero = {
+    heroHeading: acf.heroTitle
   }
+  const nav = acf.subnav.map(item => item.subnavItemLink)
 
   return (
     <>
-      <Hero
-        heroTitle={heroData.heroTitle}
-        heroSubtitle={heroData.heroSubtitle}
-        subnav="false"
-        logo="true"
-        heroBackgroundImage={heroData.heroBackgroundImage}
-        heroFeaturedImage={heroData.heroFeaturedImage}
-        heroSubnav={heroData.heroSubnav}
-      />
+      <Hero hero={hero} nav={nav} />
       <section id="our-story">
         <div className="container">
           <div className="row">
@@ -60,13 +44,16 @@ const AboutTemplate = ({ data: { page } }) => {
             </div>
           </div>
           <div className="row row-cols-1 row-cols-md-2 align-items-center justify-content-between">
-            {acf.awards && acf.awards.map(award =>
-              <div className="col-12 col-lg-2 mb-4">
-                <Image
-                  fluid={award.image.localFile.childImageSharp.fluid && award.image.localFile.childImageSharp.fluid}
-                  alt={award.image.altText && award.image.altText}
-                />
-              </div>
+            {acf.awards && acf.awards.map(award => {
+              return (
+                <div key={award.image.id} className="col-12 col-lg-2 mb-4">
+                  <Image
+                    fluid={award.image.localFile.childImageSharp.fluid && award.image.localFile.childImageSharp.fluid}
+                    alt={award.image.altText && award.image.altText}
+                  />
+                </div>
+              )
+            }
             )}
           </div>
         </div>
@@ -87,7 +74,7 @@ const AboutTemplate = ({ data: { page } }) => {
       </section>
       <div className="responsive-iframe aspect-16x9">
         <div className="bg-fill bg-dark">
-          <h1 class="text-white">Timeline video</h1>
+          <h1 className="text-white">Timeline video</h1>
         </div>
         {acf.timelineVideo && (
           <iframe src={acf.timelineVideo} frameborder="0" title="Timeline Video" />
@@ -101,19 +88,21 @@ const AboutTemplate = ({ data: { page } }) => {
             </div>
           </div>
           <div className="row">
-            {acf.board && acf.board.map(boardmember =>
-              <div className="col-12 col-lg-3 mb-4">
-                {boardmember.image && (
-                  <BackgroundImage
-                    Tag="div"
-                    className="bg-image aspect-1x1"
-                    fluid={boardmember.image.localFile.childImageSharp.fluid}
-                  />
-                )}
-                <h4 className="mb-0">{boardmember.name && boardmember.name}</h4>
-                <p className="text-primary">{boardmember.title && boardmember.title}</p>
-              </div>
-            )}
+            {acf.board && acf.board.map((boardmember, i) => {
+              return (
+                <div key={`board_${i}`} className="col-12 col-lg-3 mb-4">
+                  {boardmember.image && (
+                    <BackgroundImage
+                      Tag="div"
+                      className="bg-image aspect-1x1"
+                      fluid={boardmember.image.localFile.childImageSharp.fluid}
+                    />
+                  )}
+                  <h4 className="mb-0">{boardmember.name && boardmember.name}</h4>
+                  <p className="text-primary">{boardmember.title && boardmember.title}</p>
+                </div>
+              )
+            })}
           </div>
           <hr className="hr-styled" />
           <div id="management" className="row">
@@ -122,8 +111,8 @@ const AboutTemplate = ({ data: { page } }) => {
             </div>
           </div>
           <div className="row">
-            {acf.board && acf.board.map(boardmember =>
-              <div className="col-12 col-lg-3 mb-4">
+            {acf.board && acf.board.map((boardmember, i) =>
+              <div key={`board_${i}`} className="col-12 col-lg-3 mb-4">
                 {boardmember.image && (
                   <BackgroundImage
                     Tag="div"
@@ -149,8 +138,17 @@ export const pageQuery = graphql`
     page: wpPage(id: { eq: $id }) {
       ...PageDetails
       acfTemplateAbout {
+        heroTitle
+        subnav {
+          subnavItemLink {
+            target
+            title
+            url
+          }
+        }
         awards {
           image {
+            id
             altText
             localFile {
               childImageSharp {
@@ -162,6 +160,8 @@ export const pageQuery = graphql`
           }
         }
         board {
+          name
+          title
           bio
           designations
           image {
@@ -174,8 +174,6 @@ export const pageQuery = graphql`
               }
             }
           }
-          name
-          title
         }
         storyDescription
         storyImage {
@@ -189,16 +187,9 @@ export const pageQuery = graphql`
           }
         }
         storyTitle
-        subnav {
-          subnavItemLink {
-            target
-            title
-            url
-          }
-        }
         timelineTitle
         timelineVideo
-        heroTitle
+
         management {
           bio
           designations
