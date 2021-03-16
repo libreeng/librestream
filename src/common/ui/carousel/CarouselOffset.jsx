@@ -3,7 +3,7 @@ import PropTypes from 'prop-types'
 import Carousel from 'react-bootstrap/Carousel'
 import BackgroundImage from 'gatsby-background-image'
 
-const CarouselOffset = ({ slides, footer, interval = 10000 }) => {
+const CarouselOffset = ({ slides, interval = 10000 }) => {
   return (
     <section className="carousel-offset">
       <div className="container">
@@ -41,28 +41,6 @@ const CarouselOffset = ({ slides, footer, interval = 10000 }) => {
             </Carousel>
           </div>
         </div>
-        {footer && (
-          <>
-            <hr className="hr-white" />
-            <div className="row">
-              <div className="col-lg-4 border-left border-primary">
-                {footer.title && <h3>{footer.title}</h3>}
-              </div>
-              <div className="col-lg-4 border-left border-primary">
-                {footer.description && footer.description}
-              </div>
-              <div className="col-lg-4 border-left border-primary">
-                {footer.checklist && (
-                  <ul className="checklist">
-                    {footer.checklist.checklistItem.map((item, i) =>
-                      <li key={`checklist_${i}`}>{item.checklistItem}</li>
-                    )}
-                  </ul>
-                )}
-              </div>
-            </div>
-          </>
-        )}
       </div>
     </section>
   )

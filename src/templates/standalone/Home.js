@@ -2,7 +2,7 @@ import React from "react"
 import { graphql } from "gatsby"
 // import Image from "gatsby-image"
 import parse from "html-react-parser"
-import Hero from '../../common/ui/hero/HeroHome'
+import HeroLarge from '../../common/ui/hero/HeroLarge'
 import CaseStudies from '../../components/CaseStudies'
 import CarouselOffset from '../../common/ui/carousel/CarouselOffset'
 import Stats from '../../components/Stats'
@@ -10,15 +10,12 @@ import FeaturedNews from '../../components/FeaturedNews'
 
 const HomeTemplate = ({ data: { page } }) => {
   const acf = page.acfTemplateHome
-  return (
+  const hero = page.acfHero
+  const stats = page.acfStats.statistics
 
+  return (
     <>
-      <Hero
-        heroTitle={parse(acf.heroTitle)}
-        heroDescription={acf.heroDescription}
-        heroBackground={acf.heroBackground.localFile.publicURL}
-        heroCta={acf.heroLink}
-      />
+      <HeroLarge hero={hero} />
 
       <section id="intro" className="bg-white">
         <div className="container">
@@ -48,7 +45,7 @@ const HomeTemplate = ({ data: { page } }) => {
 
       <CarouselOffset slides={acf.carouselSlide} interval={10000} />
 
-      <Stats stats={acf.stats} />
+      <Stats stats={stats} />
 
       <hr className="hr-styled" />
 
@@ -63,12 +60,9 @@ export const pageQuery = graphql`
     # selecting the current page by id
     page: wpPage(id: { eq: $id }) {
       ...PageDetails
+      ...PageHero
+      ...PageStats
       acfTemplateHome {
-        stats {
-          number
-          caption
-          descriptor
-        }
         carouselSlide {
           carouselSlideTitle
           carouselSlideDescription
@@ -87,20 +81,6 @@ export const pageQuery = graphql`
             }
           }
         }
-        heroTitle
-        heroDescription
-        heroBackground {
-          localFile {
-            publicURL
-          }
-        }
-        heroLink {
-          target
-          title
-          url
-        }
-        heroVideoEmbed
-        heroVideoLabel
         introTitle
         introDescription
         introLink {

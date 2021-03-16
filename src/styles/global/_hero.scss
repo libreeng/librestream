@@ -1,20 +1,22 @@
 .hero {
   position: relative;
   display: block;
-  height: 0;
-  padding-top: calc(10vw + 100px);
+  height: auto;
+  padding: 160px 0 0;
+  // padding-top: calc(10vw + 80px);
   background-repeat: no-repeat;
   background-size: cover;
   background-position: center center;
   background-color: $primary;
+  background-image: linear-gradient(290deg, $dark 0%, $blue 100%);
   overflow: hidden;
   @include bottom-shape-cutout();
-  &.hero-home {
-    padding-top: calc(43vw + 100px);
+  &.hero-lg {
+    // padding-top: calc(43vw + 100px);
   }
   .bg-content {
+    position: relative;
     align-items: flex-end;
-    padding-bottom: 3rem;
   }
 
   img.img-cover {

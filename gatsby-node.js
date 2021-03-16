@@ -192,7 +192,7 @@ async function getPosts({ graphql, reporter }) {
           }
         }
       }
-      allWpVideo(sort: { fields: [date], order: DESC }) {
+      allWpWebinar(sort: { fields: [date], order: DESC }) {
         edges {
           post: node {
             id
@@ -221,13 +221,13 @@ async function getPosts({ graphql, reporter }) {
   const news = graphqlResult.data.allWpPost.edges
   const casestudies = graphqlResult.data.allWpCaseStudy.edges
   const guidesWhitepapers = graphqlResult.data.allWpGuideWhitepaper.edges
-  const videos = graphqlResult.data.allWpVideo.edges
+  const webinars = graphqlResult.data.allWpWebinar.edges
 
   const posts = [
     ...news,
     ...casestudies,
     ...guidesWhitepapers,
-    ...videos
+    ...webinars
   ]
 
   return posts

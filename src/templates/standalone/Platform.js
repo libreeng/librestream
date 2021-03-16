@@ -1,93 +1,52 @@
 import React from "react"
 import { graphql } from "gatsby"
-import Image from "gatsby-image"
 import parse from "html-react-parser"
-import Hero from "../../common/ui/hero/HeroDefault"
-import CarouselOffset from '../../common/ui/carousel/CarouselOffset'
+import CaseStudies from '../../components/CaseStudies'
+import HeroLarge from "../../common/ui/hero/HeroLarge"
+import PlatformFeatures from '../../components/PlatformFeatures'
 import Stats from '../../components/Stats'
 
 
 const PlatformTemplate = ({ data: { page } }) => {
-
-  const acf = page.acfTemplatePlatform
-
-  const heroData = {
-    heroTitle: acf?.heroTitle,
-    heroSubtitle: acf?.heroSubtitle,
-    herobackground: acf?.localFile?.childImageSharp?.fluid,
-    heroDescription: acf?.heroDescription,
-    heroCta: acf?.heroCta
-  }
+  const template = page.acfTemplatePlatform
+  const hero = page.acfHero
+  const stats = page.acfStats.statistics
+  const featuresContent = page.acfPlatformFeatures
 
   return (
     <>
-      <Hero
-        heroTitle={heroData.heroTitle}
-        heroSubtitle={heroData.heroSubtitle}
-        subnav="false"
-        logo="false"
-        heroBackgroundImage={heroData.heroBackgroundImage}
-        heroFeaturedImage={heroData.heroFeaturedImage}
-        heroDescription={heroData.heroDescription}
-        heroCta={heroData.heroCta}
-      />
+      <HeroLarge hero={hero} />
 
-      <Stats stats={acf.stats} />
+      <Stats stats={stats} />
 
       <div className="container">
         <hr className="hr-styled" />
       </div>
+
       <section>
         <div className="container">
           <div className="row mb-4">
-            {acf.platformDescription && (
+            {template.platformDescription && (
               <div className="col-lg-6">
                 <div className="text-primary h3">
-                  {parse(acf.platformDescription)}
+                  {parse(template.platformDescription)}
                 </div>
               </div>
             )}
-            {acf.platformVideo && (
+            {template.platformVideo && (
               <div className="col-lg-6">
                 <div className="responsive-iframe aspect-16x9">
-                  <iframe src={acf.platformVideo} frameBorder="0" />
+                  <iframe src={template.platformVideo} frameBorder="0" title='blah' />
                 </div>
               </div>
             )}
-
-          </div>
-          <hr className="hr-styled" />
-          <div className="row mt-5">
-            <div className="col-12">
-              {acf.platformCapabilitiesTitle && (
-                <h2 className="text-uppercase">{acf.platformCapabilitiesTitle}</h2>
-              )}
-              {acf.platformCapabilities && parse(acf.platformCapabilities)}
-            </div>
           </div>
         </div>
       </section>
 
-      <CarouselOffset
-        slides={acf.carouselSlide}
-        footer={{
-          title: acf.carouselFooterTitle,
-          description: parse(acf.carouselFooterDescription),
-          checklist: acf.carouselFooterChecklist
-        }} />
+      <PlatformFeatures content={featuresContent} />
 
-
-      {!!page.content && (
-        <section itemProp="articleBody">
-          <div className="container">
-            <div className="row">
-              <div className="col-12">
-                {parse(page.content)}
-              </div>
-            </div>
-          </div>
-        </section>
-      )}
+      <CaseStudies heading={'Customer Use Cases'} />
     </>
   )
 }
@@ -97,55 +56,10 @@ export const pageQuery = graphql`
     # selecting the current page by id
     page: wpPage(id: { eq: $id }) {
       ...PageDetails
+      ...PageHero
+      ...PageStats
+      ...PlatformFeatures
       acfTemplatePlatform {
-        stats {
-          number
-          caption
-          descriptor
-        }
-        carouselFooterChecklist {
-          checklistItem {
-            checklistItem
-          }
-        }
-        carouselFooterDescription
-        carouselFooterTitle
-        carouselSlide {
-          carouselSlideDescription
-          carouselSlideFeaturedImage {
-            localFile {
-              childImageSharp {
-                fluid(maxWidth: 1000, quality: 100) {
-                  ...GatsbyImageSharpFluid
-                }
-              }
-            }
-          }
-          carouselSlideLink {
-            target
-            title
-            url
-          }
-          carouselSlideTitle
-        }
-        heroBackground {
-          localFile {
-            publicURL
-          }
-        }
-        heroDescription
-        heroFeaturedImage {
-          localFile {
-            childImageSharp {
-              fluid(maxWidth: 1000, quality: 100) {
-                ...GatsbyImageSharpFluid
-              }
-            }
-          }
-        }
-        heroTitle
-        platformCapabilities
-        platformCapabilitiesTitle
         platformDescription
         platformVideo
       }

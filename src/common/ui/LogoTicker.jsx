@@ -22,8 +22,8 @@ const LogoTicker = ({ items }) => {
   return (
     <Slider {...settings}>
       {items && items.map((item, index) => (
-        <div className="px-3 pt-4">
-          <img key={`${item.id}_${index}`} src={item.logo.localFile.publicURL} className="img-fluid mx-5" alt={item.logo.altText} />
+        <div key={`${item.id}_${index}`} className="px-3 pt-4">
+          <img src={item.logo.localFile.publicURL} className="img-fluid mx-5" alt={item.logo.altText} />
         </div>
       ))}
     </Slider>
