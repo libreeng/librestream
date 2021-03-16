@@ -1,42 +1,34 @@
 import React from "react"
 import { graphql } from "gatsby"
-import Image from "gatsby-image"
 import parse from "html-react-parser"
+import Hero from "../../common/ui/Hero"
 
-const SearchTemplate = ({ data: { page } }) => {
-  const featuredImage = {
-    fluid: page.featuredImage?.node?.localFile?.childImageSharp?.fluid,
-    alt: page.featuredImage?.node?.alt || ``,
+const NewsSearchTemplate = ({ data: { page } }) => {
+  const hero = {
+    heroHeading: page.title
   }
 
   return (
     <>
+      <Hero hero={hero} />
+      <div className="container">
+        <div className="row">
+          <div className="col-12">
+            <p className="float-right mr-5">{page.date}</p>
 
-      <header>
-        <h1 itemProp="headline">{parse(page.title)}</h1>
-
-        <p>{page.date}</p>
-
-        {/* if we have a featured image for this post let's display it */}
-        {featuredImage?.fluid && (
-          <Image
-            fluid={featuredImage.fluid}
-            alt={featuredImage.alt}
-            style={{ marginBottom: 50 }}
-          />
-        )}
-      </header>
-
-      {!!page.content && (
-        <section itemProp="articleBody">{parse(page.content)}</section>
-      )}
+            {!!page.content && (
+              <article className="py-5">{parse(page.content)}</article>
+            )}
+          </div>
+        </div>
+      </div>
 
     </>
   )
 }
 
 export const pageQuery = graphql`
-  query SearchTemplateQuery($id: String!) {
+  query NewsSearchTemplateQuery($id: String!) {
     # selecting the current page by id
     page: wpPage(id: { eq: $id }) {
       ...PageDetails
@@ -44,4 +36,4 @@ export const pageQuery = graphql`
   }
 `
 
-export default SearchTemplate
+export default NewsSearchTemplate

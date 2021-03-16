@@ -34,8 +34,8 @@ const Hero = ({ hero, nav, className }) => {
               {nav && (
                 <ul className="nav mt-4">
                   {nav.map(item => (
-                    <li className="nav-item" key={item.id}>
-                      <Link to={item.url} className="nav-link">{item.label}</Link>
+                    <li key={item.url} className="nav-item">
+                      <Link to={item.url} className="nav-link">{item.label || item.title}</Link>
                     </li>
                   )
                   )}

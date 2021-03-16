@@ -6,9 +6,12 @@ import Hero from "../../common/ui/Hero"
 
 const ContactTemplate = ({ data: { page } }) => {
   const acf = page.acfTemplateContact
+  const hero = {
+    heroHeading: page.title
+  }
   return (
     <>
-      <Hero heroTitle={page.title} />
+      <Hero hero={hero} />
       <section>
         <div className="container">
           <div className="row">
