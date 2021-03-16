@@ -5,14 +5,14 @@ import Image from "gatsby-image"
 // import BackgroundImage from 'gatsby-background-image'
 
 const HeroLarge = ({ hero }) => {
-  const { heading, description, link } = hero
-  const backgroundImage = hero.backgroundImage ? hero.backgroundImage.localFile.childImageSharp.fluid : false
-  const featuredImage = hero.featuredImage ? hero.featuredImage.localFile.childImageSharp.fluid : false
+  const { heroHeading, heroDescription, heroCta, heroFeaturedImage, heroBackgroundImage } = hero
+  const backgroundImage = heroBackgroundImage ? heroBackgroundImage.localFile.childImageSharp.fluid : false
+  const featuredImage = heroFeaturedImage ? heroFeaturedImage.localFile.childImageSharp.fluid : false
 
   return (
     <div className="hero hero-lg">
       {backgroundImage && (
-        <img src={hero.backgroundImage.sourceUrl} alt={hero.backgroundImage.alt} className="img-cover" />
+        <img src={heroBackgroundImage.sourceUrl} alt={heroBackgroundImage.alt} className="img-cover" />
         // <BackgroundImage
         //   Tag="div"
         //   className="bg-image"
@@ -26,9 +26,9 @@ const HeroLarge = ({ hero }) => {
           <div className="row">
             <div className="col-12 col-lg-9 col-xl-8 col-xxl-7">
               <div className="text-white">
-                {heading && <h1 className="display-2">{parse(heading)}</h1>}
-                {description && <div className="lead">{parse(description)}</div>}
-                {link && <a href={link.url} type="button" className="btn btn-lg btn-secondary text-dark my-5" target={link.target}>{link.title}</a>}
+                {heroHeading && <h1 className="display-2">{parse(heroHeading)}</h1>}
+                {heroDescription && <div className="lead">{parse(heroDescription)}</div>}
+                {heroCta && <a href={heroCta.url} type="button" className="btn btn-lg btn-secondary text-dark my-5" target={heroCta.target}>{heroCta.title}</a>}
               </div>
             </div>
             <div className="col-12 col-lg-3 col-xl-4 col-xxl-5">
@@ -36,7 +36,7 @@ const HeroLarge = ({ hero }) => {
                 {featuredImage && (
                   <Image
                     fluid={featuredImage}
-                    alt={hero.featuredImage.alt}
+                    alt={heroFeaturedImage.alt}
                   />
                 )}
               </div>

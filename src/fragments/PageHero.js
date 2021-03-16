@@ -3,14 +3,14 @@ import { graphql } from "gatsby"
 export const PageHero = graphql`
   fragment PageHero on WpPage {
     acfHero {
-      heading
-      description
-      link {
+      heroHeading
+      heroDescription
+      heroCta {
         target
         title
         url
       }
-      featuredImage {
+      heroFeaturedImage {
         altText
         srcSet
         sourceUrl
@@ -22,7 +22,7 @@ export const PageHero = graphql`
           }
         }
       }
-      backgroundImage {
+      heroBackgroundImage {
         altText
         srcSet
         sourceUrl
