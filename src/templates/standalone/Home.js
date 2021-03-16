@@ -5,12 +5,11 @@ import parse from "html-react-parser"
 import Hero from '../../common/ui/hero/HeroHome'
 import CaseStudies from '../../components/CaseStudies'
 import CarouselOffset from '../../common/ui/carousel/CarouselOffset'
-import Stat from '../../common/ui/Stat'
+import Stats from '../../components/Stats'
 import FeaturedNews from '../../components/FeaturedNews'
 
 const HomeTemplate = ({ data: { page } }) => {
   const acf = page.acfTemplateHome
-
   return (
 
     <>
@@ -49,20 +48,7 @@ const HomeTemplate = ({ data: { page } }) => {
 
       <CarouselOffset slides={acf.carouselSlide} interval={10000} />
 
-      {/* TODO: Refactor Stats component to include all html markup */}
-      <section className="bg-white folder-border folder-top">
-        <div className="container">
-          <div className="row">
-            {acf.homeStat && acf.homeStat.map((stat, i) => (
-              <Stat
-                key={`home_stat_${i}`}
-                number={stat.homeStatValue}
-                title={stat.homeStatLabel}
-              />
-            ))}
-          </div>
-        </div>
-      </section>
+      <Stats stats={acf.stats} />
 
       <hr className="hr-styled" />
 
@@ -78,6 +64,11 @@ export const pageQuery = graphql`
     page: wpPage(id: { eq: $id }) {
       ...PageDetails
       acfTemplateHome {
+        stats {
+          number
+          caption
+          descriptor
+        }
         carouselSlide {
           carouselSlideTitle
           carouselSlideDescription
@@ -110,10 +101,6 @@ export const pageQuery = graphql`
         }
         heroVideoEmbed
         heroVideoLabel
-        homeStat {
-          homeStatLabel
-          homeStatValue
-        }
         introTitle
         introDescription
         introLink {

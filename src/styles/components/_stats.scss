@@ -4,7 +4,7 @@
       .stat {
         border-right: 1px solid $blue;
         &::after {
-          content: ''; 
+          content: "";
           position: absolute;
           right: -5px;
           bottom: 0;
@@ -28,7 +28,8 @@
     line-height: 1;
     font-weight: 300;
     text-align: center;
-    margin-bottom: 50px;
+    margin: 0;
+    padding-top: 2rem;
     display: flex;
     align-items: flex-start;
     justify-content: center;
@@ -38,13 +39,18 @@
       display: block;
     }
   }
+  .stat-caption {
+    display: flex;
+    align-items: center;
+    height: 50px;
+  }
   &::before {
-    content: ''; 
+    content: "";
     position: absolute;
     left: 0;
     bottom: 0;
     width: 4px;
-    height: 40px;
+    height: 50px;
     display: block;
     background-color: $blue;
   }

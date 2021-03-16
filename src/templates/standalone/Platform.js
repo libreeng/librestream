@@ -3,8 +3,8 @@ import { graphql } from "gatsby"
 import Image from "gatsby-image"
 import parse from "html-react-parser"
 import Hero from "../../common/ui/hero/HeroDefault"
-import Stat from "../../common/ui/Stat"
 import CarouselOffset from '../../common/ui/carousel/CarouselOffset'
+import Stats from '../../components/Stats'
 
 
 const PlatformTemplate = ({ data: { page } }) => {
@@ -32,22 +32,7 @@ const PlatformTemplate = ({ data: { page } }) => {
         heroCta={heroData.heroCta}
       />
 
-      {/* TODO: Refactor Stats component to include all html markup */}
-      <section>
-        <div className="container">
-          <div className="row">
-            {acf.stats && acf.stats.map(stat =>
-              <Stat
-                number={stat.number}
-                descriptor={stat.numberDescriptor}
-                title={stat.title}
-                description={stat.numberCaption}
-              />
-            )}
-          </div>
-        </div>
-
-      </section>
+      <Stats stats={acf.stats} />
 
       <div className="container">
         <hr className="hr-styled" />
@@ -113,6 +98,11 @@ export const pageQuery = graphql`
     page: wpPage(id: { eq: $id }) {
       ...PageDetails
       acfTemplatePlatform {
+        stats {
+          number
+          caption
+          descriptor
+        }
         carouselFooterChecklist {
           checklistItem {
             checklistItem
@@ -158,12 +148,6 @@ export const pageQuery = graphql`
         platformCapabilitiesTitle
         platformDescription
         platformVideo
-        stats {
-          number
-          numberCaption
-          numberDescriptor
-          title
-        }
       }
     }
   }
