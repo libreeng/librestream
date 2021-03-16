@@ -3,7 +3,7 @@ import { graphql } from "gatsby"
 import Image from "gatsby-image"
 import BackgroundImage from 'gatsby-background-image'
 import parse from "html-react-parser"
-import Hero from "../../common/ui/hero/HeroDefault"
+import Hero from "../../common/ui/Hero"
 import AccordionItems from "../../components/AccordionItems"
 
 const CampaignRemoteExpertAcceleratorProgramTemplate = ({ data: { page } }) => {

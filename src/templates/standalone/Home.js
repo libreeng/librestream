@@ -2,7 +2,7 @@ import React from "react"
 import { graphql } from "gatsby"
 // import Image from "gatsby-image"
 import parse from "html-react-parser"
-import HeroLarge from '../../common/ui/hero/HeroLarge'
+import Hero from '../../common/ui/Hero'
 import CaseStudies from '../../components/CaseStudies'
 import CarouselOffset from '../../common/ui/carousel/CarouselOffset'
 import Stats from '../../components/Stats'
@@ -15,7 +15,7 @@ const HomeTemplate = ({ data: { page } }) => {
 
   return (
     <>
-      <HeroLarge hero={hero} />
+      <Hero hero={hero} />
 
       <section id="intro" className="bg-white">
         <div className="container">

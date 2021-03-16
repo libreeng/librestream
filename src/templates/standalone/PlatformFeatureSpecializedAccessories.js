@@ -4,7 +4,7 @@ import { graphql } from "gatsby"
 import Image from "gatsby-image"
 import BackgroundImage from 'gatsby-background-image'
 import parse from "html-react-parser"
-import Hero from "../../common/ui/hero/HeroDefault"
+import Hero from "../../common/ui/Hero"
 
 const PlatformFeatureSpecializedAccessories = ({ data: { page, subnav } }) => {
   const acf = page.acfTemplatePlaformFeature

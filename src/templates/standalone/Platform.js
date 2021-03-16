@@ -2,7 +2,7 @@ import React from "react"
 import { graphql } from "gatsby"
 import parse from "html-react-parser"
 import CaseStudies from '../../components/CaseStudies'
-import HeroLarge from "../../common/ui/hero/HeroLarge"
+import Hero from "../../common/ui/Hero"
 import PlatformFeatures from '../../components/PlatformFeatures'
 import Stats from '../../components/Stats'
 
@@ -15,7 +15,7 @@ const PlatformTemplate = ({ data: { page } }) => {
 
   return (
     <>
-      <HeroLarge hero={hero} />
+      <Hero hero={hero} />
 
       <Stats stats={stats} />
 

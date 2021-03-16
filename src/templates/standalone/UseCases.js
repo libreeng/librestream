@@ -2,7 +2,7 @@ import React from "react"
 import { graphql } from "gatsby"
 import Image from "gatsby-image"
 import parse from "html-react-parser"
-import Hero from "../../common/ui/hero/HeroDefault"
+import Hero from "../../common/ui/Hero"
 import Card from "../../components/Card"
 
 const UseCasesTemplate = ({ data: { page, cases } }) => {

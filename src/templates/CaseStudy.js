@@ -1,7 +1,7 @@
 import React from 'react'
 import PropTypes from 'prop-types'
 import { graphql } from "gatsby"
-import Hero from "../common/ui/hero/HeroDefault"
+import Hero from "../common/ui/Hero"
 import NextPrevMenu from '../common/ui/menus/NextPrevMenu'
 import parse from "html-react-parser"
 import BackgroundImage from 'gatsby-background-image'

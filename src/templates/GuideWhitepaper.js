@@ -1,7 +1,7 @@
 import React from "react"
 import { Link, graphql } from "gatsby"
 import parse from "html-react-parser"
-import Hero from "../common/ui/hero/HeroDefault"
+import Hero from "../common/ui/Hero"
 
 
 const GuideWhitepaperTemplate = ({ data: { previous, next, post } }) => {

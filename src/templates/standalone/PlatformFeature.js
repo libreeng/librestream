@@ -4,18 +4,19 @@ import { graphql } from "gatsby"
 import Image from "gatsby-image"
 import BackgroundImage from 'gatsby-background-image'
 import parse from "html-react-parser"
-import Hero from "../../common/ui/hero/HeroDefault"
+import Hero from "../../common/ui/Hero"
 
 const PlatformFeatureTemplate = ({ data: { page, subnav } }) => {
   const acf = page.acfTemplatePlaformFeature
-  const subnavItems = subnav.menuItems.nodes
+  const hero = page.acfHero
+  const nav = subnav.menuItems.nodes
+  console.log(nav)
   return (
     <>
       <Hero
-        heroTitle={acf.heroTitle}
-        heroFeaturedImage={acf?.heroFeaturedImage?.localFile?.childImageSharp.fluid}
-        heroBackground={acf?.heroBackground?.sourceUrl}
-      // heroSubnav={subnavItems} not sure how to make this more globally accessible, the field name is not the same using a global menu vs the custom in page subnav
+        className=""
+        hero={hero}
+        nav={nav}
       />
       <section>
         <div className="container">
@@ -179,6 +180,7 @@ export const pageQuery = graphql`
     # selecting the current page by id
     page: wpPage(id: { eq: $id }) {
       ...PageDetails
+      ...PageHero
       acfTemplatePlaformFeature {
         feature1Description
         feature1Image {
@@ -207,23 +209,8 @@ export const pageQuery = graphql`
             }
           }
         }
-        heroBackground {
-          altText
-          localFile {
-            publicURL
-          }
-        }
-        heroFeaturedImage {
-          altText
-          localFile {
-            childImageSharp {
-              fluid(maxWidth: 1000) {
-                ...GatsbyImageSharpFluid
-              }
-            }
-          }
-        }
-        heroTitle
+
+
         highlights {
           highlightTitle
           highlightDescription
@@ -278,10 +265,8 @@ export const pageQuery = graphql`
       id
       menuItems {
         nodes {
-          parentId
           id
           label
-          path
           url
         }
       }
