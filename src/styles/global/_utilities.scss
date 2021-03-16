@@ -149,12 +149,15 @@
   &::after {
     content: "";
     display: block;
-    width: 25%;
+    width: 0;
     height: 100%;
     background-color: $white;
     position: absolute;
     right: 0;
     top: 0;
+    @include media-breakpoint-up(lg) {
+      width: 25%;
+    }
     @include media-breakpoint-up(xl) {
       width: 33%;
     }
@@ -162,7 +165,12 @@
 }
 
 .img-offset-top {
-  margin-top: -100px;
+  margin-top: 2rem;
+  margin-bottom: -5rem;
+  @include media-breakpoint-up(lg) {
+    margin-top: -100px;
+    margin-bottom: 0;
+  }
 }
 .img-offset-bottom {
   margin-bottom: -100px;

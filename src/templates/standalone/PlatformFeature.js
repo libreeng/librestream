@@ -1,5 +1,5 @@
 import React from 'react'
-import PropTypes from 'prop-types'
+// import PropTypes from 'prop-types'
 import { graphql } from "gatsby"
 import Image from "gatsby-image"
 import BackgroundImage from 'gatsby-background-image'
@@ -7,10 +7,10 @@ import parse from "html-react-parser"
 import Hero from "../../common/ui/Hero"
 
 const PlatformFeatureTemplate = ({ data: { page, subnav } }) => {
-  const acf = page.acfTemplatePlaformFeature
+  const template = page.acfTemplatePlaformFeature
   const hero = page.acfHero
   const nav = subnav.menuItems.nodes
-  console.log(nav)
+
   return (
     <>
       <Hero
@@ -18,56 +18,59 @@ const PlatformFeatureTemplate = ({ data: { page, subnav } }) => {
         hero={hero}
         nav={nav}
       />
+
       <section>
         <div className="container">
           <div className="row">
             <div className="col-12">
-              {acf.intro && (
-                <div className="border-bracket text-center">
-                  {parse(acf.intro)}
+              {template.ctaMessage && (
+                <div className="border-bracket text-center p-3">
+                  <h4><strong>{template.ctaMessage}</strong></h4>
                 </div>
               )}
-              {acf.introButton && (
-                <div className="text-center mt-4">
-                  <a href={acf.introButton.url} className="btn btn-gradient-cyan-green btn-xl mt-5">{acf.introButton.title}</a>
+              {template.ctaButton && (
+                <div className="text-center mt-2">
+                  <a href={template.ctaButton.url} className="btn btn-secondary my-5" target={template.ctaButton.target}>{template.ctaButton.title}</a>
                 </div>
               )}
             </div>
           </div>
         </div>
       </section>
-      <section className="bg-dark text-white bg-offset-right mt-5">
+
+      <section className="bg-dark text-white bg-offset-right my-5">
         <div className="container">
           <div className="row">
             <div className="col-lg-6">
-              {acf.feature1Description && (
-                parse(acf.feature1Description)
+              {template.feature1Description && (
+                parse(template.feature1Description)
               )}
               <hr className="hr-xs ml-0 border-green" />
             </div>
             <div className="col-lg-6">
-              {acf.feature1Image &&
+              {template.feature1Image &&
                 <BackgroundImage
                   Tag="div"
                   className="bg-image aspect-1x1 img-offset-top"
-                  fluid={acf.feature1Image?.localFile?.childImageSharp?.fluid}
+                  fluid={template.feature1Image?.localFile?.childImageSharp?.fluid}
                 />
               }
             </div>
           </div>
         </div>
       </section>
+
       <section>
         <div className="container">
           <div className="row">
-            {acf.featureDownloads && acf.featureDownloads.map(download => (
-              <div className="col-lg-4" key={download.id}>
-                <a href={download?.featureDownload?.localFile.url} className="btn btn-border btn-block mb-3">{download?.downloadLabel}</a>
+            {template.featureDownloads && template.featureDownloads.map((download, i) => (
+              <div className="col-12 col-xl-4" key={`download_${i}`}>
+                <a href={download?.featureDownload?.localFile.url} className="btn btn-outline-secondary text-dark btn-block mb-3">{download?.downloadLabel}</a>
               </div>
             ))}
-            {acf.featureLinks && acf.featureLinks.map(link => (
-              <div className="col-lg-4" key={link.id}>
-                <a href={link?.featureLink?.url} className="btn btn-border btn-block mb-3">{link?.featureLink?.title}</a>
+            {template.featureLinks && template.featureLinks.map((link, i) => (
+              <div className="col-12 col-xl-4" key={`link_${i}`}>
+                <a href={link?.featureLink?.url} className="btn btn-outline-secondary text-dark btn-block mb-3">{link?.featureLink?.title}</a>
               </div>
             ))}
           </div>
@@ -77,17 +80,19 @@ const PlatformFeatureTemplate = ({ data: { page, subnav } }) => {
         <div className="container">
           <div className="row align-items-center">
             <div className="col-lg-6">
-              {acf.feature2Image &&
+              {template.feature2Image &&
                 <BackgroundImage
                   Tag="div"
                   className="bg-image aspect-1x1"
-                  fluid={acf.feature2Image?.localFile?.childImageSharp?.fluid}
+                  fluid={template.feature2Image?.localFile?.childImageSharp?.fluid}
                 />
               }
             </div>
             <div className="col-lg-6">
-              {acf.feature2Description && parse(acf.feature2Description)}
-              <hr className="hr-sm ml-0" />
+              <div className="p-4">
+                {template.feature2Description && parse(template.feature2Description)}
+                <hr className="hr-sm ml-0" />
+              </div>
             </div>
           </div>
         </div>
@@ -98,26 +103,16 @@ const PlatformFeatureTemplate = ({ data: { page, subnav } }) => {
       <section>
         <div className="container">
           <div className="row">
-            <div className="col-lg-4">
-              {acf.technicalDetailsDescription &&
-                parse(acf.technicalDetailsDescription)
+            <div className="col-lg-5">
+              {template.technicalDetailsHeading &&
+                <h3 className="text-primary">{template.technicalDetailsHeading}</h3>
               }
             </div>
-            <div className="col-lg-8">
-              <div className="row">
-                {/* looks like they might have changed the design on this last minute so the content model might have to be adjusted */}
-                {acf.technicalDetails && acf.technicalDetails.map(detail => (
-                  <div className="col-lg-6 mb-4">
-                    <div className="px-2 border-left border-dark">
-                      {detail.technicalTitle && (
-                        <h6 className="text-uppercase text-primary">{detail.technicalTitle}</h6>
-                      )}
-                      {detail.technicalDescription &&
-                        parse(detail.technicalDescription)
-                      }
-                    </div>
-                  </div>
-                ))}
+            <div className="col-lg-7">
+              <div className="border-left border-dark pl-4">
+                {template.technicalDetailsDescription &&
+                  parse(template.technicalDetailsDescription)
+                }
               </div>
             </div>
           </div>
@@ -136,31 +131,40 @@ const PlatformFeatureTemplate = ({ data: { page, subnav } }) => {
           <div className="row">
             <div className="col-lg-6">
               <div className="row">
-                {acf.highlights && acf.highlights.map(highlight => (
-                  <div className="col-lg-4">
-                    {highlight.highlightIcon &&
-                      <img src={highlight.highlightIcon.sourceUrl} className="img-fluid" alt={highlight.highlightIcon.altText} />
-                    }
-                    {highlight.highlightTitle && (
-                      <>{/* Todo: hover functionality. Hide descriptions by default and show by hover or click event */}
-                        <h6 className="text-center mt-3">{highlight.highlightTitle}</h6>
-                        {highlight.highlightDescription && (
-                          <small className="d-block text-center">
-                            {highlight.highlightDescription}
-                          </small>
-                        )}
-                        <div className="border-bracket-bottom" />
-                      </>
-                    )}
-                  </div>
-                ))}
+                {template.highlights && template.highlights.map(highlight => {
+                  console.log(highlight.highlightIcon)
+                  const iconData = highlight.highlightIcon ? highlight.highlightIcon.localFile.childImageSharp.fluid : false
+
+                  return (
+                    <div className="col-lg-4">
+                      {iconData && (
+                        <Image
+                          fluid={iconData}
+                          alt={highlight.highlightIcon.altText || ''}
+                          className="img-fluid"
+                        />
+                      )}
+                      {highlight.highlightTitle && (
+                        <>
+                          <h6 className="text-center mt-3">{highlight.highlightTitle}</h6>
+                          {highlight.highlightDescription && (
+                            <small className="d-block text-center">
+                              {highlight.highlightDescription}
+                            </small>
+                          )}
+                          <div className="border-bracket-bottom" />
+                        </>
+                      )}
+                    </div>
+                  )
+                })}
               </div>
             </div>
             <div className="col-lg-6">
-              {acf.productHighlightsImage && (
+              {template.productHighlightsImage && (
                 <Image
-                  fluid={acf?.productHighlightsImage?.localFile.childImageSharp.fluid}
-                  alt={acf?.productHighlightsImage?.altText}
+                  fluid={template?.productHighlightsImage?.localFile.childImageSharp.fluid}
+                  alt={template?.productHighlightsImage?.altText}
                 />
               )}
             </div>
@@ -182,18 +186,19 @@ export const pageQuery = graphql`
       ...PageDetails
       ...PageHero
       acfTemplatePlaformFeature {
+        ctaMessage
+        ctaButton {
+          target
+          title
+          url
+        }
         feature1Description
         feature1Image {
           altText
           localFile {
             childImageSharp {
-              fluid {
-                base64
-                tracedSVG
-                srcWebp
-                srcSetWebp
-                originalImg
-                originalName
+              fluid(maxWidth: 1000) {
+                ...GatsbyImageSharpFluid
               }
             }
           }
@@ -209,39 +214,6 @@ export const pageQuery = graphql`
             }
           }
         }
-
-
-        highlights {
-          highlightTitle
-          highlightDescription
-          highlightIcon {
-            altText
-            sourceUrl
-          }
-        }
-        intro
-        introButton {
-          target
-          title
-          url
-        }
-        productHighlightsImage {
-          altText
-          localFile {
-            childImageSharp {
-              fluid(maxWidth: 1000) {
-                ...GatsbyImageSharpFluid
-              }
-            }
-          }
-          altText
-        }
-        productHighlightsTitle
-        technicalDetails {
-          technicalDescription
-          technicalTitle
-        }
-        technicalDetailsDescription
         featureLinks {
           featureLink {
             target
@@ -256,6 +228,33 @@ export const pageQuery = graphql`
             altText
             localFile {
               url
+            }
+          }
+        }
+        technicalDetailsHeading
+        technicalDetailsDescription
+        productHighlightsTitle
+        productHighlightsImage {
+          altText
+          localFile {
+            childImageSharp {
+              fluid(maxWidth: 1000) {
+                ...GatsbyImageSharpFluid
+              }
+            }
+          }
+        }
+        highlights {
+          highlightTitle
+          highlightDescription
+          highlightIcon {
+            altText
+            localFile {
+              childImageSharp {
+                fluid(maxWidth: 300) {
+                  ...GatsbyImageSharpFluid
+                }
+              }
             }
           }
         }
