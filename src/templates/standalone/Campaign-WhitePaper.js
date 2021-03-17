@@ -8,9 +8,10 @@ import Hero from "../../common/ui/Hero"
 const CampaignWhitePaperTemplate = ({ data: { page } }) => {
 
   const acf = page.acfTemplateCampaignWhitePaper
+  const hero = page.acfHero
   return (
     <>
-      <Hero heroTitle={acf.heroTitle} />
+      <Hero hero={hero} />
       <section>
         <div className="container">
           <div className="row align-items-center">
@@ -35,7 +36,7 @@ const CampaignWhitePaperTemplate = ({ data: { page } }) => {
             </div>
             <div className="col-lg-6">
               {acf.formEmbed && (
-                <div className="responsive-iframe aspect-16x9">
+                <div className="responsive-iframe aspect-1x1">
                   <iframe src={acf.formEmbed} title={page.title} />
                 </div>
 
@@ -54,10 +55,10 @@ export const pageQuery = graphql`
     # selecting the current page by id
     page: wpPage(id: { eq: $id }) {
       ...PageDetails
+      ...PageHero
       acfTemplateCampaignWhitePaper {
         formEmbed
         intro
-        heroTitle
       }
     }
   }
