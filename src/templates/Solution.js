@@ -12,7 +12,8 @@ const Solution = ({ data: { previous, next, post } }) => {
 
   const hero = post.acfHero
   const intro = post.acfIntro
-  const featuredImage = intro.intoFeaturedImage ? intro.intoFeaturedImage.localFile.publicURL : false
+  console.log(intro)
+  const featuredImage = intro.introFeaturedImage.localFile.publicURL
   return (
     <>
       <Hero hero={hero} />
@@ -28,7 +29,7 @@ const Solution = ({ data: { previous, next, post } }) => {
         </div>
       </section>
       <Intro intro={intro} />
-      <section className="bg-primary text-white bg-offset-right mt-5">
+      <section className="bg-dark text-white bg-offset-right mt-5">
         <div className="container">
           <div className="row">
             <div className="col-lg-6">
@@ -36,12 +37,13 @@ const Solution = ({ data: { previous, next, post } }) => {
             </div>
             
             <div className="col-lg-5">
-              {/* <div 
-                style={{ backgroundImage: `url(${ featuredImage })`}}
-                className="bg-image aspect-1x1 img-offset-top" 
-              /> */}
+              {featuredImage && (
+                <div 
+                  style={{ backgroundImage: `url(${ intro.introFeaturedImage.localFile.publicURL })`}}
+                  className="bg-image aspect-1x1 img-offset-top" 
+                />
+              )}
             </div>
-           
           </div>
         </div>
       </section>

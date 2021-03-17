@@ -15,9 +15,9 @@ const Intro = ({intro, bracket }) => {
             <div className="col-lg-8">
               {intro.introDescription && parse(intro.introDescription)}
             </div>
-            <div className="col-lg-4">
+            <div className="col-lg-4 text-center">
               {intro.callToAction ? (
-                <a href={intro.callToAction.url} target={intro.callToAction.target} className="btn btn-secondary">{intro.callToAction.title}</a>
+                <a href={intro.callToAction.url} target={intro.callToAction.target} className="btn btn-secondary ms-lg-auto">{intro.callToAction.title}</a>
                 ) : (
                 featuredImage && (
                   <>
