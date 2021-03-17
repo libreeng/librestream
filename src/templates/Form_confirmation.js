@@ -1,81 +1,71 @@
 import React from "react"
-import { Link, graphql } from "gatsby"
+import { graphql } from "gatsby"
 import parse from "html-react-parser"
 import Hero from "../common/ui/Hero"
 
 
-const GuideWhitepaperTemplate = ({ data: { previous, next, post } }) => {
-
-  const acf = post.acfPostTypeGuide
-
+const FormConfirmationTemplate = ({ data: { post } }) => {
+  const acf = post.acfPostTypeFormConfirmation
+  const hero = {
+    heroHeading: post.title
+  }
   return (
     <>
-      <Hero
-        heroTitle={acf.heroTitle ? acf.heroTitle : post.title}
-        heroBackground={acf.heroBackground ? acf.heroBackground.localFile.publicURL : null}
-      />
+      <Hero hero={hero} />
       <section>
         <div className="container">
           <div className="row">
             <div className="col-12">
-              {acf.embed && (
-                <div className="responsive-iframe aspect-4x3">
-                  <iframe src={acf.embed} title={post.title} />
+              {!!post.content && (
+                <div className="py-3">
+                  { parse(post.content)}
                 </div>
               )}
+              {acf.videoEmbed && (
+                <div className="responsive-iframe aspect-4x3">
+                  <iframe src={acf.videoEmbed} title={post.title} />
+                </div>
+              )}
+
               {acf.document && (
                 <p className="mt-5">
+                  <div className="responsive-iframe aspect-4x3 mb-5">
+                    <iframe src={acf.document.localFile.url} title={post.title} />
+                  </div>
                   <a href={acf.document.localFile.url} target="_blank" rel="noreferrer" className="btn btn-primary text-white">Download {post.title}</a>
                 </p>
               )}
+              
             </div>
           </div>
         </div>
       </section>
-      {!!post.content && (
-        <section itemProp="articleBody">
-          <div className="container">
-            <div className="row">
-              <div className="col-12">
-                {parse(post.content)}
-              </div>
-            </div>
-          </div>
-        </section>
-      )}
     </>
   )
 }
 
-export const postQuery = graphql`
-  query GuideWhitepaperById(
+export const webinarQuery = graphql`
+  query FormConfirmationById(
     # these variables are passed in via createPage.pageContext in gatsby-node.js
     $id: String!
     $previousPostId: String
     $nextPostId: String
   ) {
     # selecting the current post by id
-    post: wpGuideWhitepaper(id: { eq: $id }) {
+    post: wpFormConfirmation(id: { eq: $id }) {
       id
       title
       uri
       slug
       content
-      acfPostTypeGuide {
-        fieldGroupName
-        heroBackground {
-          id
-          localFile {
-            publicURL
-          }
-        }
-        heroTitle
-        embed
+      acfPostTypeFormConfirmation {
         document {
+          uri
           localFile {
             url
           }
         }
+        videoEmbed
       }
     }
     # previous and next be able to be migrated to PostFields fragment not sure?
@@ -93,4 +83,4 @@ export const postQuery = graphql`
   }
 `
 
-export default GuideWhitepaperTemplate
+export default FormConfirmationTemplate

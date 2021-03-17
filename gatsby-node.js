@@ -207,6 +207,21 @@ async function getPosts({ graphql, reporter }) {
           }
         }
       }
+      allWpFormConfirmation(sort: { fields: [date], order: DESC }) {
+        edges {
+          post: node {
+            id
+            uri
+            nodeType
+          }
+          next {
+            id
+          }
+          previous {
+            id
+          }
+        }
+      }
     }
   `)
 
@@ -222,12 +237,14 @@ async function getPosts({ graphql, reporter }) {
   const casestudies = graphqlResult.data.allWpCaseStudy.edges
   const guidesWhitepapers = graphqlResult.data.allWpGuideWhitepaper.edges
   const webinars = graphqlResult.data.allWpWebinar.edges
+  const formConfirmations = graphqlResult.data.allWpFormConfirmation.edges
 
   const posts = [
     ...news,
     ...casestudies,
     ...guidesWhitepapers,
-    ...webinars
+    ...webinars,
+    ...formConfirmations
   ]
 
   return posts

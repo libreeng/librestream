@@ -51,7 +51,6 @@ export const webinarQuery = graphql`
       content
       acfWebinar {
         label
-        videoEmbed
         thumbnailImage {
           altText
           srcSet
