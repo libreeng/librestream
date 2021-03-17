@@ -34,7 +34,7 @@ const ItSecurityTemplate = ({ data: { page } }) => {
               <div className="px-5 w-75">
                 {acf.certificationImages && acf.certificationImages.map(image => (
                   <Image
-                    fluid={image?.certificationImage?.localFile?.childImageSharp?.fluid}
+                    fluid={image?.certificationImage?.localFile?.publicURL}
                     alt={image?.altText}
                     className="mb-3"
                   />
@@ -70,11 +70,7 @@ export const pageQuery = graphql`
         certificationImages {
           certificationImage {
             localFile {
-              childImageSharp {
-                fluid(maxWidth: 900) {
-                  ...GatsbyImageSharpFluid
-                }
-              }
+              publicURL
             }
           }
         }

@@ -1,6 +1,6 @@
 import React from "react"
 import { graphql } from "gatsby"
-import Image from "gatsby-image"
+// import Image from "gatsby-image"
 import parse from "html-react-parser"
 import Hero from "../../common/ui/Hero"
 import Intro from "../../common/ui/Intro"
@@ -16,23 +16,6 @@ const ProductRecyclingTemplate = ({ data: { page } }) => {
     <>
       <Hero hero={hero} />
       <Intro intro={intro} />
-      <section>
-        <div className="container">
-          <div className="row">
-            <div className="col-lg-8">
-              {acf.intro && parse(acf.intro)}
-            </div>
-            <div className="col-lg-4">
-              {acf.introImage && (
-                <Image
-                  fluid={acf?.introImage?.localFile?.childImageSharp?.fluid}
-                  alt={acf?.introImage?.altText}
-                />
-              )}
-            </div>
-          </div>
-        </div>
-      </section>
       <div className="container">
         <hr className="hr-styled" />
       </div>

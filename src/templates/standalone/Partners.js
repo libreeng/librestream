@@ -95,12 +95,6 @@ export const pageQuery = graphql`
                 partnerLogo {
                   altText
                   localFile {
-                    url
-                    childImageSharp {
-                      fluid(maxWidth: 1000, quality: 100){
-                        ...GatsbyImageSharpFluid
-                      }
-                    }
                     publicURL
                   }
                 }
@@ -111,11 +105,6 @@ export const pageQuery = graphql`
           image {
             altText
             localFile {
-              childImageSharp {
-                fluid(maxWidth: 1000, quality: 100) {
-                  ...GatsbyImageSharpFluid
-                }
-              }
               publicURL
             }
           }

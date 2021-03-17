@@ -31,7 +31,7 @@ const CustomerSuccessTemplate = ({ data: { page } }) => {
                 {acf.trainingImages && acf.trainingImages.map(image => (
                   <div className="col-12 col-lg-4 mb-3" key={image.id}>
                     <Image
-                      fluid={image?.trainingImage?.localFile?.childImageSharp?.fluid}
+                      fluid={image?.trainingImage?.localFile?.publicURL}
                       alt={image?.trainingImage?.altText}
                     />
                     {/* <h6 className="text-center mt-3">AI Computer Vision</h6> not sure if images will have borders and titles embedded
@@ -57,7 +57,7 @@ const CustomerSuccessTemplate = ({ data: { page } }) => {
                 {acf.deploymentImages && acf.deploymentImages.map(image => (
                   <div className="col-12 col-lg-4 mb-3" key={image.id}>
                     <Image
-                      fluid={image?.deploymentImage?.localFile?.childImageSharp?.fluid}
+                      fluid={image?.deploymentImage?.localFile?.publicURL}
                       alt={image?.deploymentImage?.altText}
                     />
                     {/* <h6 className="text-center mt-3">AI Computer Vision</h6> not sure if images will have borders and titles embedded
@@ -120,11 +120,7 @@ export const pageQuery = graphql`
             id
             altText
             localFile {
-              childImageSharp {
-                fluid {
-                  ...GatsbyImageSharpFluid
-                }
-              }
+              publicURL
             }
           }
         }
@@ -134,11 +130,7 @@ export const pageQuery = graphql`
             id
             altText
             localFile {
-              childImageSharp {
-                fluid(maxWidth: 768) {
-                  ...GatsbyImageSharpFluid
-                }
-              }
+              publicURL
             }
           }
         }

@@ -133,7 +133,7 @@ const PlatformFeatureTemplate = ({ data: { page, subnav } }) => {
               <div className="row">
                 {template.highlights && template.highlights.map(highlight => {
                   console.log(highlight.highlightIcon)
-                  const iconData = highlight.highlightIcon ? highlight.highlightIcon.localFile.childImageSharp.fluid : false
+                  const iconData = highlight.highlightIcon ? highlight.highlightIcon.localFile.publicURL : false
 
                   return (
                     <div className="col-lg-4">
@@ -250,11 +250,7 @@ export const pageQuery = graphql`
           highlightIcon {
             altText
             localFile {
-              childImageSharp {
-                fluid(maxWidth: 300) {
-                  ...GatsbyImageSharpFluid
-                }
-              }
+              publicURL
             }
           }
         }

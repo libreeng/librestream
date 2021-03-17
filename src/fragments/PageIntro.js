@@ -7,11 +7,6 @@ export const PageIntro = graphql`
       introFeaturedImage {
         altText
         localFile {
-          childImageSharp {
-            fluid(maxWidth: 500, quality: 100) {
-              ...GatsbyImageSharpFluid
-            }
-          }
           publicURL
         }
       }
