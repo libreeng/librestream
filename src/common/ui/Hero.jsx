@@ -8,7 +8,7 @@ import Image from "gatsby-image"
 const Hero = ({ hero, nav, className }) => {
   const { heroHeading, heroDescription, heroCta, heroFeaturedImage, heroBackgroundImage } = hero
   const backgroundImage = heroBackgroundImage ? heroBackgroundImage.localFile.childImageSharp.fluid : false
-  const featuredImage = heroFeaturedImage ? heroFeaturedImage.localFile.childImageSharp.fluid : false
+  const featuredImage = heroFeaturedImage ? heroFeaturedImage.localFile.publicURL : false
 
   return (
     <div className={`hero ${className}`}>
@@ -45,10 +45,7 @@ const Hero = ({ hero, nav, className }) => {
             <div className="col-12 col-lg-3 col-xl-4 col-xxl-5">
               <div className="p-5">
                 {featuredImage && (
-                  <Image
-                    fluid={featuredImage}
-                    alt={heroFeaturedImage.alt}
-                  />
+                  <img src={featuredImage} alt={heroFeaturedImage.alt} />
                 )}
               </div>
             </div>
