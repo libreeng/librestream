@@ -7,6 +7,7 @@ const chunk = require(`lodash/chunk`)
 // const { dd } = require(`dumper.js`)
 
 
+
 /**
  * This function creates all the individual standalone pages in this site
  */
@@ -161,7 +162,6 @@ async function getPosts({ graphql, reporter }) {
           }
         }
       }
-      # Query all WordPress blog posts sorted by date
       allWpCaseStudy(sort: { fields: [date], order: DESC }) {
         edges {
           post: node {
@@ -282,69 +282,3 @@ exports.createPages = async gatsbyUtilities => {
   // await createBlogPostArchive({ posts, gatsbyUtilities })
 }
 
-
-
-// exports.onCreateNode = ({ node, actions, getNode }) => {
-//   const { createNodeField } = actions
-
-//   if (node.internal.type === `MarkdownRemark`) {
-//     const value = createFilePath({ node, getNode })
-//     createNodeField({
-//       name: `slug`,
-//       node,
-//       value,
-//     })
-//   }
-// }
-
-
-// exports.createResolvers = async (
-//   {
-//     actions,
-//     cache,
-//     createNodeId,
-//     createResolvers,
-//     store,
-//     reporter,
-//   },
-// ) => {
-//   const { createNode, touchNode } = actions
-//   // const postType = {
-//   //   type: "String",
-//   //   resolve(source, args, context, info) {
-//   //     return source.firstName + " " + source.name
-//   //   },
-//   // }
-
-
-//   // await createResolvers({
-//   //   WPGraphQL_MediaItem: {
-//   //     imageFile: {
-//   //       type: "File",
-//   //       async resolve(source) {
-//   //         let sourceUrl = source.sourceUrl
-
-//   //         if (source.mediaItemUrl !== undefined) {
-//   //           sourceUrl = source.mediaItemUrl
-//   //         }
-//   //         console.log(" > Generating Image: " + sourceUrl)
-
-//   //         return await createRemoteFileNode({
-//   //           url: encodeURI(sourceUrl),
-//   //           store,
-//   //           cache,
-//   //           createNode,
-//   //           createNodeId,
-//   //           reporter,
-//   //           /*
-//   //           auth: {
-//   //             htaccess_user: process.env.BASIC_AUTH_USER,
-//   //             htaccess_pass: process.env.BASIC_AUTH_PASS,
-//   //           },
-//   //           */
-//   //         })
-//   //       },
-//   //     },
-//   //   },
-//   // })
-// }

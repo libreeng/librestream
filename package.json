@@ -4,7 +4,6 @@
   "version": "0.1.0",
   "author": "Ocupop",
   "dependencies": {
-    "@brainhubeu/react-carousel": "^2.0.2",
     "axios": "^0.21.0",
     "bootstrap": "^4.5.3",
     "date-fns": "^2.16.1",

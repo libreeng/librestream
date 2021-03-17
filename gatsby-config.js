@@ -37,39 +37,19 @@ module.exports = {
     },
 
     // {
-    //   resolve: "gatsby-source-graphql",
+    //   resolve: 'gatsby-wpgraphql-inline-images', // https://www.gatsbyjs.com/plugins/gatsby-wpgraphql-inline-images/
     //   options: {
-    //     // Remote schema query type. This is an arbitrary name.
-    //     typeName: "WPGraphQL",
-    //     // Field name under which it will be available. Used in your Gatsby query. This is also an arbitrary name.
-    //     fieldName: "wpcontent",
-    //     // GraphQL endpoint, relative to your WordPress home URL.
-    //     url: "https://librestreamcms.kinsta.cloud/graphql",
-
-    //     // HTTP headers
-    //     // https://github.com/wp-graphql/wp-graphql-jwt-authentication
+    //     wordPressUrl: 'https://librestreamcms.kinsta.cloud',
+    //     uploadsUrl: 'https://librestreamcms.kinsta.cloud/media',
+    //     processPostTypes: ['Page', 'Post', 'product'],
+    //     graphqlTypeName: 'WPGraphQL',
     //     /*
-    //     headers: {
-    //       Authorization: `Bearer ${process.env.AUTHORIZATION_TOKEN}`,
-    //     },
+    //     httpHeaders: {
+    //       Authorization: `Bearer ${process.env.GITHUB_TOKEN}`,
+    //     }
     //     */
     //   },
     // },
-
-    {
-      resolve: 'gatsby-wpgraphql-inline-images', // https://www.gatsbyjs.com/plugins/gatsby-wpgraphql-inline-images/
-      options: {
-        wordPressUrl: 'https://librestreamcms.kinsta.cloud',
-        uploadsUrl: 'https://librestreamcms.kinsta.cloud/media',
-        processPostTypes: ['Page', 'Post', 'product'],
-        graphqlTypeName: 'WPGraphQL',
-        /*
-        httpHeaders: {
-          Authorization: `Bearer ${process.env.GITHUB_TOKEN}`,
-        }
-        */
-      },
-    },
 
     'gatsby-plugin-sharp',
     'gatsby-transformer-sharp',
