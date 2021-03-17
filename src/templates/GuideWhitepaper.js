@@ -7,12 +7,13 @@ import Hero from "../common/ui/Hero"
 const GuideWhitepaperTemplate = ({ data: { previous, next, post } }) => {
 
   const acf = post.acfPostTypeGuide
-
+  const hero = {
+    heroHeading: post.title
+  }
   return (
     <>
       <Hero
-        heroTitle={acf.heroTitle ? acf.heroTitle : post.title}
-        heroBackground={acf.heroBackground ? acf.heroBackground.localFile.publicURL : null}
+        hero={hero}
       />
       <section>
         <div className="container">
@@ -63,13 +64,6 @@ export const postQuery = graphql`
       content
       acfPostTypeGuide {
         fieldGroupName
-        heroBackground {
-          id
-          localFile {
-            publicURL
-          }
-        }
-        heroTitle
         embed
         document {
           localFile {

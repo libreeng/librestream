@@ -6,10 +6,12 @@ import Hero from "../common/ui/Hero"
 
 const WebinarTemplate = ({ data: { post } }) => {
   const acf = post.acfWebinar
-
+  const hero = {
+    heroHeading: post.title
+  }
   return (
     <>
-      <Hero heroTitle={post.title} />
+      <Hero hero={hero} />
       <section>
         <div className="container">
           <div className="row">

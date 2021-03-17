@@ -16,25 +16,13 @@ const CaseStudy = ({ data: { previous, next, post } }) => {
     image: acf.articleImage?.localFile.childImageSharp.fluid
   }
 
-  const heroData = {
-    heroTitle: acf?.heroTitle,
-    heroSubtitle: acf?.heroSubtitle,
-    herobackground: acf?.localFile?.publicURL,
-    heroFeaturedImage: acf.whiteLogo.localFile?.childImageSharp?.fluid
-  }
+  const hero = post.acfHero
 
   const columns = acf.columns
 
   return (
     <>
-      <Hero
-        heroTitle={heroData.heroTitle}
-        heroSubtitle={heroData.heroSubtitle}
-        subnav="false"
-        logo="true"
-        heroBackground={heroData.heroBackground}
-        heroFeaturedImage={heroData.heroFeaturedImage}
-      />
+      <Hero hero={hero} />
       <section>
         <div className="container">
           <div className="row">
@@ -121,6 +109,7 @@ export const pageQuery = graphql`
   ) {
     # selecting the current post by id
     post: wpCaseStudy(id: { eq: $id }) {
+      ...CaseStudyHero
       id
       title
       uri
@@ -139,29 +128,11 @@ export const pageQuery = graphql`
             }
           }
         }
-        heroBackground {
-          localFile {
-            publicURL
-          }
-          title
-          altText
-        }
         columns {
           columnContent
           columnTitle
           demoFormIframe
           showRequestDemoButton
-        }
-        heroTitle
-        heroSubtitle
-        whiteLogo {
-          localFile {
-            childImageSharp {
-              fluid(maxWidth: 1000, quality: 100) {
-                ...GatsbyImageSharpFluid
-              }
-            }
-          }
         }
       }
       content

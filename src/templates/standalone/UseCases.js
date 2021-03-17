@@ -61,33 +61,11 @@ export const pageQuery = graphql`
                 }
               }
             }
-            heroBackground {
-              localFile {
-                childImageSharp {
-                  fluid(maxWidth: 1000, quality: 100) {
-                    ...GatsbyImageSharpFluid
-                  }
-                }
-              }
-              title
-              altText
-            }
             columns {
               columnContent
               columnTitle
               demoFormIframe
               showRequestDemoButton
-            }
-            heroTitle
-            heroSubtitle
-            whiteLogo {
-              localFile {
-                childImageSharp {
-                  fluid(maxWidth: 1000, quality: 100) {
-                    ...GatsbyImageSharpFluid
-                  }
-                }
-              }
             }
           }
         }

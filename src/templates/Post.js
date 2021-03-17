@@ -21,11 +21,15 @@ const PostTemplate = ({ data: { previous, next, post } }) => {
     categorySlug: post.categories.nodes[0].slug
   }
 
+  const hero = {
+    heroHeading: postCategory.categoryName
+  }
+
   console.log(post)
 
   return (
     <>
-      <Hero title={postCategory.categoryName} />
+      <Hero hero={hero} />
       <section>
         <div className="container">
           <div className="row">
