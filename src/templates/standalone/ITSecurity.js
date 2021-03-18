@@ -4,6 +4,7 @@ import Image from "gatsby-image"
 import parse from "html-react-parser"
 import Hero from "../../common/ui/Hero"
 import Intro from "../../common/ui/Intro"
+import CTA from '../../common/ui/CTA'
 
 const ItSecurityTemplate = ({ data: { page } }) => {
 
@@ -12,6 +13,7 @@ const ItSecurityTemplate = ({ data: { page } }) => {
     heroHeading: page.title
   }
   const intro = page.acfIntro
+  const cta = page.acfCta
   return (
     <>
       <Hero hero={hero} />
@@ -55,6 +57,9 @@ const ItSecurityTemplate = ({ data: { page } }) => {
           </div>
         </section>
       )}
+      {cta && (
+        <CTA cta={cta} />
+      )}
     </>
   )
 }
@@ -65,6 +70,7 @@ export const pageQuery = graphql`
     page: wpPage(id: { eq: $id }) {
       ...PageDetails
       ...PageIntro
+      ...PageCta
       acfTemplateItSecurity {
         details
         certificationImages {

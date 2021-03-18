@@ -35,6 +35,7 @@ hr {
 
 .folder-border {
   position: relative;
+  overflow-x: hidden;
   &.folder-top {
     @include top-shape-cutout();
     &.border-light {
