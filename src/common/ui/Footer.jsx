@@ -63,7 +63,7 @@ const Footer = () => {
               <p className="font-weight-light">
                 <small>
                   © {new Date().getFullYear()} All Rights Reserved Librestream Technologies
-              </small>
+                </small>
               </p>
             </div>
           </div>

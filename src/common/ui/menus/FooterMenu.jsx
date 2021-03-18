@@ -4,7 +4,6 @@ import { useSiteFooter } from '../../hooks/useSiteFooter'
 
 const FooterMenu = () => {
   const { menuItems } = useSiteFooter()
-  console.log(menuItems)
   const menu = menuItems.filter(node => !node.parentId)
   return (
     <div className="container">

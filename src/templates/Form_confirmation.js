@@ -9,6 +9,7 @@ const FormConfirmationTemplate = ({ data: { post } }) => {
   const hero = {
     heroHeading: post.title
   }
+  // eslint-disable-next-line no-console
   return (
     <>
       <Hero hero={hero} />
@@ -26,7 +27,6 @@ const FormConfirmationTemplate = ({ data: { post } }) => {
                   <iframe src={acf.videoEmbed} title={post.title} />
                 </div>
               )}
-
               {acf.document && (
                 <p className="mt-5">
                   <div className="responsive-iframe aspect-4x3 mb-5">
@@ -44,7 +44,7 @@ const FormConfirmationTemplate = ({ data: { post } }) => {
   )
 }
 
-export const webinarQuery = graphql`
+export const formConfirmationQuery = graphql`
   query FormConfirmationById(
     # these variables are passed in via createPage.pageContext in gatsby-node.js
     $id: String!
@@ -60,7 +60,6 @@ export const webinarQuery = graphql`
       content
       acfPostTypeFormConfirmation {
         document {
-          uri
           localFile {
             url
           }
