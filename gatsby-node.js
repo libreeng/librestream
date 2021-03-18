@@ -177,22 +177,7 @@ async function getPosts({ graphql, reporter }) {
           }
         }
       }
-      allWpGuideWhitepaper(sort: { fields: [date], order: DESC }) {
-        edges {
-          post: node {
-            id
-            uri
-            nodeType
-          }
-          next {
-            id
-          }
-          previous {
-            id
-          }
-        }
-      }
-      allWpWebinar(sort: { fields: [date], order: DESC }) {
+      allWpResource(sort: { fields: [date], order: DESC }) {
         edges {
           post: node {
             id
@@ -250,16 +235,14 @@ async function getPosts({ graphql, reporter }) {
 
   const news = graphqlResult.data.allWpPost.edges
   const casestudies = graphqlResult.data.allWpCaseStudy.edges
-  const guidesWhitepapers = graphqlResult.data.allWpGuideWhitepaper.edges
-  const webinars = graphqlResult.data.allWpWebinar.edges
+  const resources = graphqlResult.data.allWpResource.edges
   const formConfirmations = graphqlResult.data.allWpFormConfirmation.edges
   const solutions = graphqlResult.data.allWpSolution.edges
 
   const posts = [
     ...news,
     ...casestudies,
-    ...guidesWhitepapers,
-    ...webinars,
+    ...resources,
     ...formConfirmations,
     ...solutions
   ]

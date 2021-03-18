@@ -4,9 +4,9 @@ import parse from "html-react-parser"
 import Hero from "../common/ui/Hero"
 
 
-const GuideWhitepaperTemplate = ({ data: { previous, next, post } }) => {
+const ResourceTemplate = ({ data: { previous, next, post } }) => {
 
-  const acf = post.acfPostTypeGuide
+  const acf = post.acfPostTypeResource
   const hero = {
     heroHeading: post.title
   }
@@ -25,9 +25,16 @@ const GuideWhitepaperTemplate = ({ data: { previous, next, post } }) => {
                 </div>
               )}
               {acf.document && (
-                <p className="mt-5">
+                <div className="mt-5">
+                  <div className="responsive-iframe aspect-4x3">
+                    <iframe src={acf.document.localFile.url} title={post.title} />
+                  </div>
+                </div>
+              )}
+              {acf.document && (
+                <div className="mt-5">
                   <a href={acf.document.localFile.url} target="_blank" rel="noreferrer" className="btn btn-primary text-white">Download {post.title}</a>
-                </p>
+                </div>
               )}
             </div>
           </div>
@@ -49,20 +56,20 @@ const GuideWhitepaperTemplate = ({ data: { previous, next, post } }) => {
 }
 
 export const postQuery = graphql`
-  query GuideWhitepaperById(
+  query ResourceById(
     # these variables are passed in via createPage.pageContext in gatsby-node.js
     $id: String!
     $previousPostId: String
     $nextPostId: String
   ) {
     # selecting the current post by id
-    post: wpGuideWhitepaper(id: { eq: $id }) {
+    post: wpResource(id: { eq: $id }) {
       id
       title
       uri
       slug
       content
-      acfPostTypeGuide {
+      acfPostTypeResource {
         fieldGroupName
         embed
         document {
@@ -87,4 +94,4 @@ export const postQuery = graphql`
   }
 `
 
-export default GuideWhitepaperTemplate
+export default ResourceTemplate
