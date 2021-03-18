@@ -40,6 +40,9 @@ hr {
     &.border-light {
       @include top-shape-cutout(33%, $light, 20px)
     }
+    &.border-primary {
+      @include top-shape-cutout(33%, $primary, 20px)
+    }
   }
 
   &.folder-bottom {

@@ -6,7 +6,7 @@ import BackgroundImage from 'gatsby-background-image'
 const FeaturedCTAs = ({ featured }) => {
 
   return (
-    <section className="bg-light folder-border folder-top border-light">
+    <section className="bg-primary folder-border folder-top border-primary text-white">
       <div className="container">
         <div className="row">
           {featured && featured.map(cta => {
@@ -20,7 +20,7 @@ const FeaturedCTAs = ({ featured }) => {
                     ):(
                       <div className="card-img-top bg-image aspect-1x1 grayscale" style={{ backgroundImage: `url('https://via.placeholder.com/400/000/000')` }} />
                     )}
-                    <div className="card-footer bg-transparent text-dark text-uppercase">
+                    <div className="card-footer bg-transparent text-white text-uppercase">
                       {cta.label}
                     </div>
                   </div>

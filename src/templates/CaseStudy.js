@@ -5,6 +5,7 @@ import Hero from "../common/ui/Hero"
 import NextPrevMenu from '../common/ui/menus/NextPrevMenu'
 import parse from "html-react-parser"
 import BackgroundImage from 'gatsby-background-image'
+import CTA from '../common/ui/CTA'
 
 const CaseStudy = ({ data: { previous, next, post } }) => {
   const acf = post.acfPostTypeUseCase
@@ -18,6 +19,7 @@ const CaseStudy = ({ data: { previous, next, post } }) => {
 
   const hero = post.acfHero
   console.log(hero)
+  const cta = post.acfCta
 
   return (
     <>
@@ -106,9 +108,11 @@ const CaseStudy = ({ data: { previous, next, post } }) => {
           </div>
         </section>
       )}
-
+      
       <NextPrevMenu previous={previous} next={next} />
-
+      {cta && (
+        <CTA cta={cta} />
+      )}
     </>
   )
 }
@@ -129,6 +133,7 @@ export const pageQuery = graphql`
     # selecting the current post by id
     post: wpCaseStudy(id: { eq: $id }) {
       ...CaseStudyHero
+      ...CaseStudyCta
       id
       title
       uri

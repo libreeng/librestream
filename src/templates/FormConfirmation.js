@@ -15,27 +15,36 @@ const FormConfirmationTemplate = ({ data: { post } }) => {
       <Hero hero={hero} />
       <section>
         <div className="container">
-          <div className="row">
-            <div className="col-12">
+          <div className="row justify-content-center">
+            <div className="col-12 col-lg-10">
               {!!post.content && (
-                <div className="py-3">
-                  { parse(post.content)}
+                <div className="text-center mb-5">
+                  <div className="border-bracket">
+                    <div className="py-3">
+                      { parse(post.content)}
+                    </div>
+                  </div>
                 </div>
               )}
               {acf.videoEmbed && (
-                <div className="responsive-iframe aspect-4x3">
-                  <iframe src={acf.videoEmbed} title={post.title} />
-                </div>
+                <>
+                  <hr className="hr-styled my-5" />
+                  <div className="responsive-iframe aspect-4x3">
+                    <iframe src={acf.videoEmbed} title={post.title} />
+                  </div>
+                </>
               )}
               {acf.document && (
-                <p className="mt-5">
-                  <div className="responsive-iframe aspect-4x3 mb-5">
-                    <iframe src={acf.document.localFile.url} title={post.title} />
-                  </div>
-                  <a href={acf.document.localFile.url} target="_blank" rel="noreferrer" className="btn btn-primary text-white">Download {post.title}</a>
-                </p>
+                <>
+                  <hr className="hr-styled" />
+                  <p className="mt-5">
+                    <div className="responsive-iframe aspect-4x3 mb-5">
+                      <iframe src={acf.document.localFile.url} title={post.title} />
+                    </div>
+                    <a href={acf.document.localFile.url} target="_blank" rel="noreferrer" className="btn btn-primary text-white">Download {post.title}</a>
+                  </p>
+                </>
               )}
-              
             </div>
           </div>
         </div>

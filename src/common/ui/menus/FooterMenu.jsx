@@ -7,14 +7,14 @@ const FooterMenu = () => {
   const menu = menuItems.filter(node => !node.parentId)
   return (
     <div className="container">
-      <div className="row py-5">
+      <div className="row py-3">
         {menu && menu.map(item => {
           const submenu = menuItems.filter(node => node.parentId === item.id)
     
           return submenu.length > 0 ? (
             <div className="col-12 col-md-4 col-lg-2 mb-3 mb-md-0" key={item.id}>
               <h6>
-                <a href={item.path} className="text-dark">{item.label}</a>
+                <a href={item.path} className="text-white">{item.label}</a>
               </h6>
               <ul className="nav flex-column">
                 {submenu.map(child => (

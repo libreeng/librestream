@@ -11,18 +11,14 @@ const Footer = () => {
   const {partners, ctas} = options
 
   return (
-    <div className="pt-3 overflow-hidden">
+    <>
       <FeaturedCTAs featured={ctas} />
-      <footer id="pageFooter" className="bg-light">
-
-        <hr className="border-white my-0" />
-
+      <footer id="pageFooter" className="text-white">
+        <hr className="border-white mt-0 mb-4" />
         <LogoTicker items={partners} />
-
-        <hr className="border-white my-0" />
-
+        <hr className="border-white mt-4 mb-4" />
         <div className="container">
-          <div className="row py-5">
+          <div className="row">
             <div className="col-12 col-md-4 col-lg">
               <h6>{options.title}</h6>
             </div>
@@ -32,7 +28,7 @@ const Footer = () => {
                   {options.footerPhoneTitle}
                 </small>
               </h6>
-              <p className="font-weight-bold">{options.footerPhone}</p>
+              <p className="font-weight-bold mb-0">{options.footerPhone}</p>
             </div>
             <div className="col-12 col-md-4 col-lg">
               <h6>
@@ -40,23 +36,19 @@ const Footer = () => {
                   {options.footerTollFreePhoneTitle}
                 </small>
               </h6>
-              <p className="font-weight-bold">{options.footerTollFreePhone}</p>
+              <p className="font-weight-bold mb-0">{options.footerTollFreePhone}</p>
             </div>
             <div className="col-12 col-md-6 col-lg my-4 my-md-0">
-              <a href={`'mailto:' options.footerEmail`} className="btn btn-white btn-block">{options.footerEmailTitle}</a>
+              <a href={`mailto: ${options.footerEmail}`} className="btn btn-white btn-block">{options.footerEmailTitle}</a>
             </div>
             <div className="col-12 col-md-6 col-lg">
               <SocialMenu />
             </div>
           </div>
         </div>
-
         <hr className="border-white" />
-
         <FooterMenu />
-
         <hr className="border-white" />
-
         <div className="container">
           <div className="row">
             <div className="col-12">
@@ -68,19 +60,8 @@ const Footer = () => {
             </div>
           </div>
         </div>
-        <div className="container">
-          <div className="row mt-5">
-            <div className="col-12">
-              <div className="p-3 bg-gradient-blue text-center">
-                <a href="/" className="navbar-brand">
-                  <img src={logo.publicURL} alt="Librestream" />
-                </a>
-              </div>
-            </div>
-          </div>
-        </div>
       </footer>
-    </div>
+    </>
   )
 }
 

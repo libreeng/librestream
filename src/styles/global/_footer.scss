@@ -1,8 +1,14 @@
 #pageFooter {
   color: $dark;
   overflow: hidden;
+  background: transparent linear-gradient(180deg, $primary 0%, $dark 100%) 0% 0% no-repeat padding-box;
   h3 {
     text-transform: uppercase;
+  }
+  h6 {
+    a {
+      color: $white;
+    }
   }
   .nav-link {
     color: $dark;
@@ -10,6 +16,7 @@
     padding-right: 0;
     font-size: 1rem;
     padding: 0.3rem 0;
+    color: $white;
   }
   .navbar-brand {
     display: block;
