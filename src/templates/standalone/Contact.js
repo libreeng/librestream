@@ -21,7 +21,7 @@ const ContactTemplate = ({ data: { page } }) => {
                 <iframe src={acf.contactForm} width="100%" height="750" frameBorder="0" title="Contact Form" />
               )}
             </div>
-            <div className="col-12 col-lg-4 ml-lg-auto">
+            <div className="col-12 col-lg-3 ml-lg-auto">
               <div className="border-bracket">
                 {acf.supportRequestDescription && (
                   <p>{acf.supportRequestDescription}</p>
@@ -32,7 +32,7 @@ const ContactTemplate = ({ data: { page } }) => {
                 <i className="icon-arrow arrow-down arrow-dark" />
               </div>
               {acf.supportRequestLink && (
-                <a href={acf.supportRequestLink} className="btn btn-gradient-dark-blue text-white btn-block">{acf.supportRequestLink.title}</a>
+                <a href={acf.supportRequestLink} className="btn btn-primary btn-block">{acf.supportRequestLink.title}</a>
               )}
 
               <div className="border-bracket mt-5">
@@ -50,7 +50,7 @@ const ContactTemplate = ({ data: { page } }) => {
                 <i className="icon-arrow arrow-down arrow-dark" />
               </div>
               {acf.mapLink && (
-                <a href={acf.mapLink.url} target={acf.mapLink.target} className="btn btn-border btn-block border-primary">{acf.mapLink.title}</a>
+                <a href={acf.mapLink.url} target={acf.mapLink.target} className="btn btn-outline-primary text-dark btn-block">{acf.mapLink.title}</a>
               )}
 
               <div className="border-bracket mt-5">

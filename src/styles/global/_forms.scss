@@ -1,0 +1,14 @@
+input,
+textarea,
+select {
+  margin: 0;
+  font-family: inherit;
+  font-size: inherit;
+  width: 100%;
+  border: 1px solid $primary;
+  padding: 10px;
+}
+input[type="submit"] {
+  @extend .btn;
+  @extend .btn-primary;
+}

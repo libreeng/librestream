@@ -6,11 +6,14 @@ import Hero from "../../common/ui/Hero"
 
 const DefaultTemplate = ({ data: { page } }) => {
   const acf = page.acfTemplateDefault
+  const hero = {
+    heroHeading: acf.heroTitle ? acf.heroTitle : page.title
+  }
   console.log(acf.columns)
   return (
     <>
 
-      <Hero heroTitle={acf.heroTitle ? acf.heroTitle : page.title} />
+      <Hero hero={hero} />
       <section>
         <div className="container">
           <div className="row">
