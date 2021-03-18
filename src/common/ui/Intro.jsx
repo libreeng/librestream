@@ -3,7 +3,7 @@ import PropTypes from 'prop-types'
 import parse from "html-react-parser"
 // import Image from "gatsby-image"
 
-const Intro = ({intro, bracket }) => {
+const Intro = ({intro, bracket, aspect }) => {
   const featuredImage = intro.introFeaturedImage ? intro.introFeaturedImage.localFile.publicURL : false
   const altText = intro.introFeaturedImage ? intro.introFeaturedImage.altText : false
 
@@ -25,7 +25,7 @@ const Intro = ({intro, bracket }) => {
                       <div className="border-bracket py-3 ml-lg-auto w-75">
                         <div 
                           style={{ backgroundImage: `url(${ featuredImage })`}}
-                          className="bg-image aspect-3x1 bg-contain" 
+                          className={aspect ? `bg-image bg-contain ${ aspect }` : 'bg-image aspect-3x1 bg-contain'} 
                         />
                       </div>
                       ):(
