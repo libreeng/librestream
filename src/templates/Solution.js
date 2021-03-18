@@ -73,9 +73,6 @@ export const pageQuery = graphql`
       title
       uri
       slug
-      acfPostTypeSolution {
-        fieldGroupName
-      }
       content
     }
 

@@ -17,8 +17,7 @@ const CaseStudy = ({ data: { previous, next, post } }) => {
   }
 
   const hero = post.acfHero
-
-  const columns = acf.columns
+  console.log(hero)
 
   return (
     <>
@@ -39,16 +38,36 @@ const CaseStudy = ({ data: { previous, next, post } }) => {
       <section>
         <div className="container">
           <div className="row">
-            {columns && columns.map(column =>
+            {acf.solution && (
               <div className="col-lg-4">
                 <div className="bg-orange p-2">
-                  <h6 className="mb-0 text-white">{column.columnTitle}</h6>
+                  <h6 className="mb-0 text-white">Situation</h6>
                 </div>
                 <div className="border-left border-dark p-3">
-                  {parse(column.columnContent)}
+                  {parse(acf.solution)}
                 </div>
               </div>
             )}
+            {acf.situation && (
+              <div className="col-lg-4">
+                <div className="bg-orange p-2">
+                  <h6 className="mb-0 text-white">Solution</h6>
+                </div>
+                <div className="border-left border-dark p-3">
+                  {parse(acf.situation)}
+                </div>
+              </div>
+            )}  
+            {acf.results && (
+              <div className="col-lg-4">
+                <div className="bg-orange p-2">
+                  <h6 className="mb-0 text-white">Results</h6>
+                </div>
+                <div className="border-left border-dark p-3">
+                  {parse(acf.results)}
+                </div>
+              </div>
+            )}  
           </div>
         </div>
       </section>
@@ -128,12 +147,9 @@ export const pageQuery = graphql`
             }
           }
         }
-        columns {
-          columnContent
-          columnTitle
-          demoFormIframe
-          showRequestDemoButton
-        }
+        solution
+        situation
+        results
       }
       content
     }

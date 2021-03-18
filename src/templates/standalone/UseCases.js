@@ -61,12 +61,6 @@ export const pageQuery = graphql`
                 }
               }
             }
-            columns {
-              columnContent
-              columnTitle
-              demoFormIframe
-              showRequestDemoButton
-            }
           }
         }
       }
