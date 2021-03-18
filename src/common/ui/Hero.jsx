@@ -26,8 +26,8 @@ const Hero = ({ hero, nav, className }) => {
         <div className="container">
           <div className="row align-items-center">
             <div className="col-12 col-lg-9 col-xl-8 col-xxl-7">
-              <div className="text-white">
-                {heroHeading && <h1 className="display-2">{parse(heroHeading)}</h1>}
+              <div className="text-white pb-4">
+                {heroHeading && <h1>{parse(heroHeading)}</h1>}
                 {heroDescription && <div className="lead">{parse(heroDescription)}</div>}
                 {heroCta && <a href={heroCta.url} type="button" className="btn btn-lg btn-secondary text-dark my-5" target={heroCta.target}>{heroCta.title}</a>}
               </div>
@@ -43,9 +43,9 @@ const Hero = ({ hero, nav, className }) => {
               )}
             </div>
             <div className="col-12 col-lg-3 col-xl-4 col-xxl-5">
-              <div className="p-5">
+              <div className="p-3 p-xl-5">
                 {featuredImage && (
-                  <img src={featuredImage} alt={heroFeaturedImage.alt} />
+                  <img src={featuredImage} className="img-fluid" alt={heroFeaturedImage.alt} />
                 )}
               </div>
             </div>

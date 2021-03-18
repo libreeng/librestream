@@ -1,4 +1,5 @@
 body {
+ @include media-breakpoint-up(xl) {
   &::before {
     content: "";
     display: block;
@@ -23,6 +24,8 @@ body {
       left: -326px;
     }
   }
+ } 
+  
   &.has-scrolled {
     @include media-breakpoint-up(lg) {
       #pageHeader {

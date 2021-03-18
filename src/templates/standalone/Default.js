@@ -7,12 +7,13 @@ import Hero from "../../common/ui/Hero"
 const DefaultTemplate = ({ data: { page } }) => {
   const acf = page.acfTemplateDefault
   const hero = {
-    heroHeading: acf.heroTitle ? acf.heroTitle : page.title
+    heroHeading: acf.heroTitle ? acf.heroTitle : page.title,
+    heroDescription: acf.heroDescription ? acf.heroDescription : false,
+    backgroundImage: acf.heroBackground ? acf.heroBackground : false
   }
-  console.log(acf.columns)
+
   return (
     <>
-
       <Hero hero={hero} />
       <section>
         <div className="container">
@@ -35,7 +36,7 @@ const DefaultTemplate = ({ data: { page } }) => {
         </div>
       </section>
       {!!page.content && (
-        <section itemProp="articleBody">
+        <section>
           <div className="container">
             <div className="row">
               <div className="col-12">
