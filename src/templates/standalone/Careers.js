@@ -7,12 +7,12 @@ import Intro from '../../common/ui/Intro'
 const CareersTemplate = ({ data: { page } }) => {
   const hero = page.acfHero
   const intro = page.acfIntro
-  const careers = page.acfTemplateCareers.careers
+  const {careers} = page.acfTemplateCareers
 
   return (
     <>
       <Hero hero={hero} />
-      <Intro intro={intro} bracket={true} />
+      <Intro intro={intro} bracket="true" />
       <section>
         <div className="container">
           <div className="row">

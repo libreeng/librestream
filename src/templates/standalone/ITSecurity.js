@@ -15,7 +15,7 @@ const ItSecurityTemplate = ({ data: { page } }) => {
   return (
     <>
       <Hero hero={hero} />
-      <Intro intro={intro} bracket={true}/>
+      <Intro intro={intro} bracket="true" />
       <div className="container">
         <hr className="hr-styled" />
       </div>

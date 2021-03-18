@@ -2,33 +2,29 @@ import React from "react"
 import { graphql } from "gatsby"
 import Image from "gatsby-image"
 import parse from "html-react-parser"
+import Hero from "../../common/ui/Hero"
+import Intro from '../../common/ui/Intro'
 
 const SolutionsTemplate = ({ data: { page } }) => {
-  const featuredImage = {
-    fluid: page.featuredImage?.node?.localFile?.childImageSharp?.fluid,
-    alt: page.featuredImage?.node?.alt || ``,
+  const hero = {
+    heroHeading: page.acfHero.heroHeading ? page.acfHero.heroHeading : page.title
   }
+  const intro = page.acfIntro
 
   return (
     <>
-
-      <header>
-        <h1 itemProp="headline">{parse(page.title)}</h1>
-
-        <p>{page.date}</p>
-
-        {/* if we have a featured image for this post let's display it */}
-        {featuredImage?.fluid && (
-          <Image
-            fluid={featuredImage.fluid}
-            alt={featuredImage.alt}
-            style={{ marginBottom: 50 }}
-          />
-        )}
-      </header>
-
+      <Hero hero={hero} />
+      <Intro intro={intro} />
       {!!page.content && (
-        <section itemProp="articleBody">{parse(page.content)}</section>
+        <section>
+          <div className="container">
+            <div className="row">
+              <div className="col-12">
+                {parse(page.content)}
+              </div>
+            </div>
+          </div>
+        </section>
       )}
 
     </>
@@ -40,6 +36,8 @@ export const pageQuery = graphql`
     # selecting the current page by id
     page: wpPage(id: { eq: $id }) {
       ...PageDetails
+      ...PageHero
+      ...PageIntro
     }
   }
 `
