@@ -36,7 +36,7 @@ const RelatedPosts = () => {
     <div>
       { posts && posts.map(post => (
         <>
-          <Card title={post.node.title} key={post.id} image={post.node.acfPostTypeNews.mainImage.localFile.childImageSharp.fluid} url={post.node.uri} />   
+          <Card title={post.node.title} key={post.id} image={post.node.acfPostTypeNews.mainImage && post.node.acfPostTypeNews.mainImage.localFile.childImageSharp.fluid} url={post.node.uri} />   
         </>
       ))}
     </div>
