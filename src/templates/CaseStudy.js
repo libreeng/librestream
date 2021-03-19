@@ -46,7 +46,7 @@ const CaseStudy = ({ data: { previous, next, post } }) => {
                   <h6 className="mb-0 text-white">Situation</h6>
                 </div>
                 <div className="border-left border-dark p-3">
-                  {parse(acf.solution)}
+                  {parse(acf.situation)}
                 </div>
               </div>
             )}
@@ -56,7 +56,7 @@ const CaseStudy = ({ data: { previous, next, post } }) => {
                   <h6 className="mb-0 text-white">Solution</h6>
                 </div>
                 <div className="border-left border-dark p-3">
-                  {parse(acf.situation)}
+                  {parse(acf.solution)}
                 </div>
               </div>
             )}  
