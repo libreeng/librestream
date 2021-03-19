@@ -1,5 +1,5 @@
 import React from 'react'
-// import PropTypes from 'prop-types'
+import PropTypes from 'prop-types'
 import { useDispatch } from 'react-redux'
 import { Modal, Button } from 'react-bootstrap'
 import { closeModal } from './modalActions'
@@ -12,8 +12,8 @@ const PartnerModal = ({partner}) => {
   return (
     <>
       <Modal show onHide={() => dispatch(closeModal())} size="lg">
-        <div className="bg-gradient-blue triangle-corner"></div>
-        <Modal.Header className="border-0 py-0" closeButton></Modal.Header>
+        <div className="bg-gradient-blue triangle-corner" />
+        <Modal.Header className="border-0 py-0" closeButton />
         <Modal.Body>
           <div className="row align-items-center">
             {partner.partnerLogo && (
@@ -44,8 +44,8 @@ const PartnerModal = ({partner}) => {
   )
 }
 
-// TestModal.propTypes = {
-
-// }
+PartnerModal.propTypes = {
+  partner: PropTypes.instanceOf(Object),
+}
 
 export default PartnerModal

@@ -3,10 +3,12 @@ import React from 'react'
 import { useSelector } from 'react-redux'
 import TestModal from './TestModal'
 import PartnerModal from './PartnerModal'
+import BoardModal from './BoardModal'
 
 const modalLookup = {
   TestModal,
-  PartnerModal
+  PartnerModal,
+  BoardModal
 }
 
 const ModalWrapper = () => {

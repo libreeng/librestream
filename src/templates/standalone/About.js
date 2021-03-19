@@ -3,10 +3,14 @@ import { graphql } from "gatsby"
 import Image from "gatsby-image"
 import BackgroundImage from 'gatsby-background-image'
 import parse from "html-react-parser"
+import { useDispatch } from "react-redux"
 import Hero from "../../common/ui/Hero"
 import Intro from "../../common/ui/Intro"
+import { openModal } from "../../common/modals/modalActions"
+import BoardModal from '../../common/modals/BoardModal'
 
 const AboutTemplate = ({ data: { page } }) => {
+  const dispatch = useDispatch();
   const acf = page.acfTemplateAbout
   const hero = page.acfHero
   const nav = page.acfSubnav.subnav.map(item => item.subnavItemLink)
@@ -63,29 +67,32 @@ const AboutTemplate = ({ data: { page } }) => {
           <h1 className="text-white">Timeline video</h1>
         </div>
         {acf.timelineVideo && (
-          <iframe src={acf.timelineVideo} frameborder="0" title="Timeline Video" />
+          <iframe src={acf.timelineVideo} title="Timeline Video" />
         )}
       </div>
       <section id="board-of-directors">
         <div className="container">
           <div className="row">
             <div className="col-12">
-              <h2>Board of Directors</h2>
+              <h2 className="mb-3">Board of Directors</h2>
             </div>
           </div>
           <div className="row">
             {acf.board && acf.board.map((boardmember, i) => {
               return (
                 <div key={`board_${i}`} className="col-12 col-lg-3 mb-4">
-                  {boardmember.image && (
-                    <BackgroundImage
-                      Tag="div"
-                      className="bg-image aspect-1x1"
-                      fluid={boardmember.image.localFile.childImageSharp.fluid}
-                    />
-                  )}
-                  <h4 className="mb-0">{boardmember.name && boardmember.name}</h4>
-                  <p className="text-primary">{boardmember.title && boardmember.title}</p>
+                  <button onClick={() => dispatch(openModal("BoardModal", {board: boardmember}))} type="button" className="border-0 bg-transparent p-0">
+                    {boardmember.image && (
+                      <BackgroundImage
+                        Tag="div"
+                        className="bg-image aspect-1x1"
+                        fluid={boardmember.image.localFile.childImageSharp.fluid}
+                      />
+                    )}
+                    <h4 className="mb-0 text-dark">{boardmember.name && boardmember.name}</h4>
+                    <p className="text-primary">{boardmember.title && boardmember.title}</p>
+                  </button>
+                  
                 </div>
               )
             })}
@@ -93,23 +100,25 @@ const AboutTemplate = ({ data: { page } }) => {
           <hr className="hr-styled" />
           <div id="management" className="row">
             <div className="col-12">
-              <h2>Management</h2>
+              <h2 className="mb-3">Management</h2>
             </div>
           </div>
           <div className="row">
-            {acf.board && acf.board.map((boardmember, i) =>
-              <div key={`board_${i}`} className="col-12 col-lg-3 mb-4">
-                {boardmember.image && (
-                  <BackgroundImage
-                    Tag="div"
-                    className="bg-image aspect-1x1"
-                    fluid={boardmember.image.localFile.childImageSharp.fluid}
-                  />
-                )}
-                <h4 className="mb-0">{boardmember.name && boardmember.name}</h4>
-                <p className="text-primary">{boardmember.title && boardmember.title}</p>
+            {acf.board && acf.board.map((boardmember, i) => (
+              <div key={`board_management_${i}`} className="col-12 col-lg-3 mb-4">
+                <button onClick={() => dispatch(openModal("BoardModal", {board: boardmember}))} type="button" className="border-0 bg-transparent p-0">
+                  {boardmember.image && (
+                    <BackgroundImage
+                      Tag="div"
+                      className="bg-image aspect-1x1"
+                      fluid={boardmember.image.localFile.childImageSharp.fluid}
+                    />
+                  )}
+                  <h4 className="mb-0 text-dark">{boardmember.name && boardmember.name}</h4>
+                  <p className="text-primary">{boardmember.title && boardmember.title}</p>
+                </button>
               </div>
-            )}
+            ))}
           </div>
         </div>
       </section>
