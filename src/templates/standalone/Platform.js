@@ -1,10 +1,11 @@
 import React from "react"
 import { graphql } from "gatsby"
 import parse from "html-react-parser"
-import CaseStudies from '../../components/CaseStudies'
 import Hero from "../../common/ui/Hero"
 import PlatformFeatures from '../../components/PlatformFeatures'
 import Stats from '../../components/Stats'
+import Carousel from '../../common/ui/carousel/Carousel'
+import { useCaseStudies } from "../../common/hooks/useCaseStudies"
 
 
 const PlatformTemplate = ({ data: { page } }) => {
@@ -12,6 +13,7 @@ const PlatformTemplate = ({ data: { page } }) => {
   const hero = page.acfHero
   const stats = page.acfStats.statistics
   const featuresContent = page.acfPlatformFeatures
+  const { featuredCaseStudies } = useCaseStudies()
 
   return (
     <>
@@ -46,7 +48,32 @@ const PlatformTemplate = ({ data: { page } }) => {
 
       <PlatformFeatures content={featuresContent} />
 
-      <CaseStudies heading={'Customer Use Cases'} />
+      <section>
+        <div className="container">
+          <div className="row mb-4">
+            <div className="col-12">
+              <h3>Customer Use Cases</h3>
+            </div>
+          </div>
+          <div className="row">
+            <div className="col-12">
+              <Carousel
+                posts={featuredCaseStudies}
+                config={{
+                  dots: true
+                }}
+              />
+            </div>
+          </div>
+          <div className="row my-5">
+            <div className="col-12">
+              <div className="text-center">
+                <a href="/news" className="btn btn-outline-secondary text-dark">View All News</a>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
     </>
   )
 }

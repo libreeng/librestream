@@ -3,29 +3,27 @@ import { Link, graphql } from "gatsby"
 import Image from "gatsby-image"
 import parse from "html-react-parser"
 import Hero from '../common/ui/Hero'
-import RelatedPosts from "../components/RelatedPosts"
 import NewsletterSignup from "../components/NewsletterSignup"
 import SocialShare from "../components/SocialShare"
+import PostCard from '../common/ui/cards/PostCard'
 
 const PostTemplate = ({ data: { previous, next, post } }) => {
-  console.log("next", next)
-  console.log("previous", previous)
   const featuredImage = {
     fluid: post.acfPostTypeNews?.mainImage?.localFile?.childImageSharp?.fluid,
     alt: post.acfPostTypeNews?.mainImage?.altText || ``
   }
-
-  // Currently related posts are not dynamically checking against postCategory
   const postCategory = {
     categoryName: post.categories.nodes[0].name,
     categorySlug: post.categories.nodes[0].slug
   }
-
   const hero = {
     heroHeading: postCategory.categoryName
   }
+  // Related Post Logic: Taking the first 3 of every related category
+  const relatedPosts = post.categories.nodes.map(node => {
+    return node.posts.nodes.filter(post => post.acfPostTypeNews.mainImage).slice(0, 3)
+  }).reduce((a, b) => [...a, ...b])
 
-  console.log(post)
 
   return (
     <>
@@ -51,14 +49,27 @@ const PostTemplate = ({ data: { previous, next, post } }) => {
               )}
             </div>
             <div className="col-lg-3 ml-lg-auto">
-              <a href="#" className="d-flex align-items-center">Next <i className="icon-play ml-2"></i></a>
+              <div className="text-right">
+                <Link to={next.uri} className="d-flex align-items-center justify-content-end">Next <i className="icon-play ml-2"></i></Link>
+              </div>
               <hr />
               <h6>Related Posts</h6>
-              <RelatedPosts />
-              <div className="border-bracket">
+              <div className="row">
+                {relatedPosts && relatedPosts.map(relatedPost => {
+                  return (
+                    <div className="col-12 col-sm-4 col-lg-12">
+                      <Link key={relatedPost.id} to={relatedPost.uri}>
+                        <PostCard post={relatedPost} />
+                      </Link>
+                    </div>
+                  )
+                })}
+              </div>
+              <div className="border-bracket mt-5 text-center">
                 <p>Want more news? Sign up here for the latest industry news and events.</p>
               </div>
               <NewsletterSignup />
+
               <SocialShare />
             </div>
           </div>
@@ -80,6 +91,7 @@ export const postQuery = graphql`
     # selecting the current post by id
     post: wpPost(id: { eq: $id }) {
       ...PostDetails
+      ...RelatedPosts
     }
     # previous and next be able to be migrated to PostFields fragment not sure?
     # this gets us the previous post by id (if it exists)
