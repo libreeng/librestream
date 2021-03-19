@@ -39,9 +39,7 @@ const CampaignWhitePaperTemplate = ({ data: { page } }) => {
                 <div className="responsive-iframe aspect-1x1">
                   <iframe src={acf.formEmbed} title={page.title} />
                 </div>
-
               )}
-
             </div>
           </div>
         </div>
