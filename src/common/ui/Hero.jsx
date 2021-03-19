@@ -42,8 +42,8 @@ const Hero = ({ hero, nav, className }) => {
                 </ul>
               )}
             </div>
-            <div className="col-12 col-lg-3 col-xl-4 col-xxl-5">
-              <div className="p-3 p-xl-5">
+            <div className="col-12 col-lg-3 col-xl-4">
+              <div className="px-3 py-4 p-xl-5">
                 {featuredImage && (
                   <img src={featuredImage} className="img-fluid" alt={heroFeaturedImage.alt} />
                 )}

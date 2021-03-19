@@ -3,9 +3,12 @@ import { graphql } from "gatsby"
 import Image from "gatsby-image"
 import parse from "html-react-parser"
 import Hero from "../../common/ui/Hero"
+import { useDispatch } from "react-redux"
+import { openModal } from "../../common/modals/modalActions"
+import PartnerModal from '../../common/modals/PartnerModal'
 
 const PartnersTemplate = ({ data: { page } }) => {
-
+  const dispatch = useDispatch();
   const acf = page.acfTemplatePartners
   const hero = {
     heroHeading: page.title
@@ -38,22 +41,22 @@ const PartnersTemplate = ({ data: { page } }) => {
                   </div>
                 </div>
                 <div className="row row-cols-1 row-cols-md-4 mt-5">
-                  {partnerSection.companies && partnerSection.companies.map(company =>
-                    <div className="col" key={company.id}>
-                      <div className="card border border-primary">
+                  {partnerSection.companies && partnerSection.companies.map(partner =>
+                    <div className="col" key={partner.id}>
+                      <div className="card border border-primary" onClick={() => dispatch(openModal("PartnerModal", {partner: partner.acfPostTypePartner}))}>
                         <div className="bg-image aspect-1x1">
                           <div className="bg-fill bg-transparent p-3">
                             <div className="w-100">
-                              {company.acfPostTypePartner.partnerLogo && (
-                                <img src={company?.acfPostTypePartner?.partnerLogo?.localFile?.publicURL} className="img-fluid" alt={company?.acfPostTypePartner?.partnerLogo?.altText} />
+                              {partner.acfPostTypePartner.partnerLogo && (
+                                <img src={partner?.acfPostTypePartner?.partnerLogo?.localFile?.publicURL} className="img-fluid" alt={partner?.acfPostTypePartner?.partnerLogo?.altText} />
                               )}
                             </div>
                           </div>
                         </div>
                       </div>
                       <div className="card-footer bg-transparent px-0">
-                        <h6 className="text-primary mb-0">{company.title}</h6>
-                        {/* {company.acfPostTypePartner.partnerDescription} */}
+                        <h6 className="text-primary mb-0">{partner.title}</h6>
+                        {/* {partner.acfPostTypePartner.partnerDescription} */}
                         <a href="#modal" className="h6 text-uppercase">Read More</a>
                       </div>
                     </div>
@@ -91,6 +94,34 @@ export const pageQuery = graphql`
               id
               title
               acfPostTypePartner {
+                partnerActions {
+                  actionType
+                  external
+                  modalText
+                  title
+                  videoDescription
+                  videoEmbed
+                  linkDownload {
+                    localFile {
+                      url
+                    }
+                  }
+                  linkPage {
+                    ... on WpPost {
+                      slug
+                    }
+                    ... on WpPage {
+                      slug
+                    }
+                    ... on WpProduct {
+                      slug
+                    }
+                    ... on WpSolution {
+                      uri
+                      slug
+                    }
+                  }
+                }
                 partnerDescription
                 partnerLogo {
                   altText

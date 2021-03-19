@@ -248,7 +248,7 @@
   .close {
     font-weight: 100;
     line-height: 1;
-    color: $white;
+    color: $dark;
     text-shadow: 0;
     opacity: 1;
     font-size: 2.5rem;
@@ -263,8 +263,17 @@
 }
 
 .modal-content {
+  overflow: hidden;
   background-color: $white;
   color: $dark;
+  .triangle-corner {
+    width: 100px;
+    height: 100px;
+    transform: rotate(135deg);
+    position: absolute;
+    top: -50px;
+    left: -50px;
+  }
 }
 
 // tabs

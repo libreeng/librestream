@@ -2,9 +2,11 @@ import React from 'react'
 // import PropTypes from 'prop-types'
 import { useSelector } from 'react-redux'
 import TestModal from './TestModal'
+import PartnerModal from './PartnerModal'
 
 const modalLookup = {
   TestModal,
+  PartnerModal
 }
 
 const ModalWrapper = () => {
