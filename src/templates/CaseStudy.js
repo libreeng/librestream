@@ -155,6 +155,7 @@ export const pageQuery = graphql`
         solution
         situation
         results
+        summaryDescription
       }
       content
     }

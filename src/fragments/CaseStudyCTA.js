@@ -2,7 +2,7 @@ import { graphql } from "gatsby"
 export const CaseStudyCta = graphql`
   fragment CaseStudyCta on WpCaseStudy {
     acfCta {
-      description
+      ctaDescription
       link {
         target
         title

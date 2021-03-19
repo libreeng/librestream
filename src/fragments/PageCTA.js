@@ -2,7 +2,7 @@ import { graphql } from "gatsby"
 export const PageCta = graphql`
   fragment PageCta on WpPage {
     acfCta {
-      description
+      ctaDescription
       link {
         target
         title

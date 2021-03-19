@@ -240,6 +240,10 @@
 }
 
 // modals
+.modal {
+  z-index: 2050;
+}
+
 .modal-dialog {
   .close {
     font-weight: 100;
@@ -259,8 +263,8 @@
 }
 
 .modal-content {
-  background-color: $dark;
-  color: $white;
+  background-color: $white;
+  color: $dark;
 }
 
 // tabs

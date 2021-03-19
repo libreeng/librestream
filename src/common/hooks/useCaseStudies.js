@@ -12,7 +12,7 @@ export const useCaseStudies = () => {
             uri
             acfPostTypeUseCase {
               caption
-              description
+              summaryDescription
               logoImage {
                 srcSet
                 sourceUrl
