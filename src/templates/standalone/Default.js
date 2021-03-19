@@ -20,8 +20,8 @@ const DefaultTemplate = ({ data: { page } }) => {
           <div className="row">
             {acf.columns && (
               acf.columns.map(columns =>
-                columns.columns.map(column => (
-                  <div className={column.columnWidth}>
+                columns.columns.map((column, i) => (
+                  <div className={column.columnWidth} key={`link_${i}`}>
                     <div className={column.columnWidth !== 'col_full' ? 'sticky-top' : ''}>
                       {column.content && parse(column.content)}
                       {column.columnembed && (
