@@ -83,19 +83,27 @@ const PlatformFeatureSpecializedAccessories = ({ data: { page, subnav } }) => {
           <div className="row">
             {accessories && accessories.map(accessory => (
               <div className="col-lg-6 mb-5">
-                <hr className="hr-styled" />
-                <h3 className="mt-5">{accessory.title && accessory.title }</h3>
-                <p>{accessory.description && accessory.description}</p>
-                {accessory.featuredImage && (
-                  <Image 
-                    fluid={accessory.featuredImage.localFile.childImageSharp.fluid}
-                    alt={accessory.featuredImage.altText}
-                    className="mt-4 mb-3"
-                  />
-                )}
-                {accessory.specsDownload && (
-                  <a href={accessory.specsDownload.localFile.url && accessory.specsDownload.localFile.url} className="btn btn-outline-primary text-dark">Download The Specs</a>
-                )}
+                <div className="d-flex flex-column justify-content-between h-100">
+                  <div>
+                    <hr className="hr-styled" />
+                    <h3 className="mt-5">{accessory.title && accessory.title }</h3>
+                    <p>{accessory.description && accessory.description}</p>
+                  </div>
+                  <div>
+                    {accessory.featuredImage && (
+                      <Image 
+                        fluid={accessory.featuredImage.localFile.childImageSharp.fluid}
+                        alt={accessory.featuredImage.altText}
+                        className="mt-4 mb-3"
+                      />
+                    )}
+                    
+                    {accessory.specsDownload && (
+                      <a href={accessory.specsDownload.localFile.url && accessory.specsDownload.localFile.url} className="btn btn-outline-primary text-dark">Download The Specs</a>
+                    )}
+                  </div>
+                  
+                </div>
               </div>
             ))}
           </div>
