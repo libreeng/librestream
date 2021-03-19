@@ -7,10 +7,13 @@ import parse from "html-react-parser"
 import Hero from "../../common/ui/Hero"
 
 const PlatformFeatureSpecializedAccessories = ({ data: { page, subnav } }) => {
-  const acf = page.acfTemplatePlaformFeature
+  const template = page.acfTemplatePlatformFeatureSpecialized
   const hero = page.acfHero
   const nav = subnav.menuItems.nodes
-
+  const accessories = template.accessories
+  const featureLinks = template.links
+  // const featureDownloads = template.featureDownloads
+  // console.log(featureDownloads)
   return (
     <>
       <Hero
@@ -21,11 +24,11 @@ const PlatformFeatureSpecializedAccessories = ({ data: { page, subnav } }) => {
 
       <section>
         <div className="container">
-          <div className="row">
-            <div className="col-12">
-              {template.cta && (
+          <div className="row justify-content-center">
+            <div className="col-12 col-lg-10">
+              {template.ctaMessage && (
                 <div className="border-bracket text-center">
-                  {parse(template.ctaMessage)}
+                  <h3>{parse(template.ctaMessage)}</h3>
                 </div>
               )}
               {template.ctaButton && (
@@ -59,7 +62,45 @@ const PlatformFeatureSpecializedAccessories = ({ data: { page, subnav } }) => {
           </div>
         </div>
       </section>
-
+      <section>
+        <div className="container">
+          <div className="row">
+            {/* {featureDownloads && featureDownloads.map((download, i) => (
+              <div className="col-12 col-xl-4" key={`download_${i}`}>
+                <a href={download.download.localFile.publicURL} className="btn btn-outline-secondary text-dark btn-block mb-3">{download.download.title}TItle</a>
+              </div>
+            ))} */}
+            {featureLinks && featureLinks.map((link, i) => (
+              <div className="col-12 col-xl-4" key={`link_${i}`}>
+                <a href={link.link.url} className="btn btn-outline-secondary text-dark btn-block mb-3">{link.link.title}</a>
+              </div>
+            ))}
+          </div>
+        </div>
+      </section>
+      <section>
+        <div className="container">
+          <div className="row">
+            {accessories && accessories.map(accessory => (
+              <div className="col-lg-6 mb-5">
+                <hr className="hr-styled" />
+                <h3 className="mt-5">{accessory.title && accessory.title }</h3>
+                <p>{accessory.description && accessory.description}</p>
+                {accessory.featuredImage && (
+                  <Image 
+                    fluid={accessory.featuredImage.localFile.childImageSharp.fluid}
+                    alt={accessory.featuredImage.altText}
+                    className="mt-4 mb-3"
+                  />
+                )}
+                {accessory.specsDownload && (
+                  <a href={accessory.specsDownload.localFile.url && accessory.specsDownload.localFile.url} className="btn btn-outline-primary text-dark">Download The Specs</a>
+                )}
+              </div>
+            ))}
+          </div>
+        </div>
+      </section>
     </>
   )
 }
@@ -74,39 +115,57 @@ export const pageQuery = graphql`
     page: wpPage(id: { eq: $id }) {
       ...PageDetails
       ...PageHero
-      acfTemplatePlaformFeature {
-        ctaMessage
-        ctaButton {
-          target
+      acfTemplatePlatformFeatureSpecialized {
+        accessories {
+          description
           title
-          url
+          specsDownload {
+            localFile {
+              publicURL
+            }
+          }
+          featuredImage {
+            altText
+            localFile {
+              childImageSharp {
+                fluid(maxWidth: 1000, quality: 100) {
+                  ...GatsbyImageSharpFluid
+                }
+              }
+            }
+          }
         }
         feature1Description
         feature1Image {
           altText
           localFile {
             childImageSharp {
-              fluid(maxWidth: 1000) {
+              fluid(maxWidth: 1000, quality: 100) {
                 ...GatsbyImageSharpFluid
               }
             }
           }
         }
-        featureLinks {
-          featureLink {
+        ctaButton {
+          target
+          title
+          url
+        }
+        ctaMessage
+        featureDownloads {
+          featureDownload {
+            title
+            localFile {
+              publicURL
+            }
+          }
+        }
+        links {
+          fieldGroupName
+          link {
             target
             title
             url
-          }
-        }
-        featureDownloads {
-          downloadLabel
-          featureDownload {
-            id
-            altText
-            localFile {
-              url
-            }
           }
         }
       }
