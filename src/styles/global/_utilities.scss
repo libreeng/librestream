@@ -117,6 +117,12 @@
   display: flex;
   align-items: center;
   justify-content: center;
+  &.bg-hover-red {
+    background-color: rgba($black, 0.5);
+    &:hover {
+      background-color: rgba($red, 0.75);
+    }
+  }
 }
 
 .bg-full {

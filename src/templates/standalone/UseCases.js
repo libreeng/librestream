@@ -1,24 +1,48 @@
 import React from "react"
 import { graphql, Link } from "gatsby"
 import parse from "html-react-parser"
+import { useCaseStudies } from "../../common/hooks/useCaseStudies"
 import Hero from "../../common/ui/Hero"
-import UseCaseCard from '../../common/ui/cards/UseCaseCard'
 
-const UseCasesTemplate = ({ data: { page, cases } }) => {
-
+const UseCasesTemplate = ({ data: { page } }) => {
+  const { caseStudies } = useCaseStudies()
+  const hero = {
+    heroHeading: 'Use Cases'
+  }
   return (
     <>
-      <Hero heroTitle={page.title} />
+      <Hero hero={hero} />
       <section>
         <div className="container">
           <div className="row mt-5">
-            {cases && cases.edges.map(useCase => (
-              <div className="col-12 col-lg-3 mb-4">
-                <Link to={useCase.uri}>
-                  <UseCaseCard post={useCase} />
-                </Link>
-              </div>
-            ))}
+
+            {caseStudies && caseStudies.map(useCase => {
+              const { title, uri, acfPostTypeUseCase: { description, featuredImage, logoImage } } = useCase.post
+              return (
+                <div className="col-12 col-sm-6 col-lg-4">
+                  <Link to={uri}>
+                    <div className='card p-2'>
+                      <div
+                        className="card-img-top bg-image aspect-1x1 grayscale"
+                        style={{ backgroundImage: `url(${featuredImage && featuredImage.sourceUrl || 'https://via.placeholder.com/400/000/000'})` }}
+                      >
+                        <div className="bg-fill bg-hover-red">
+                          {logoImage && (
+                            <img src={logoImage.sourceUrl} className="img-fluid w-50" alt={title} />
+                          )}
+                        </div>
+                      </div>
+                      <div>
+                        <p>
+                          <span className="text-dark">{title}</span><br />
+                          <span className="text-gray">{description}</span>
+                        </p>
+                      </div>
+                    </div>
+                  </Link>
+                </div>
+              )
+            })}
           </div>
         </div>
       </section>
@@ -36,30 +60,6 @@ export const pageQuery = graphql`
     # selecting the current page by id
     page: wpPage(id: { eq: $id }) {
       ...PageDetails
-    }
-    cases: allWpCaseStudy {
-      edges {
-        node {
-          id
-          title
-          uri
-          acfPostTypeUseCase {
-            articleContent
-            articleLink
-            articleLinkText
-            articleTitle
-            articleImage {
-              localFile {
-                childImageSharp {
-                  fluid(maxWidth: 1000, quality: 100) {
-                    ...GatsbyImageSharpFluid
-                  }
-                }
-              }
-            }
-          }
-        }
-      }
     }
   }
 `
