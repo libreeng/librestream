@@ -17,9 +17,11 @@ const CaseStudy = ({ data: { previous, next, post } }) => {
     image: acf.articleImage?.localFile.childImageSharp.fluid
   }
 
-  const hero = post.acfHero
-  console.log(hero)
   const cta = post.acfCta
+  const heroHeading = 'Customer Use Case'
+  const hero = {
+    heroHeading: heroHeading
+  }
 
   return (
     <>
@@ -28,8 +30,7 @@ const CaseStudy = ({ data: { previous, next, post } }) => {
         <div className="container">
           <div className="row">
             <div className="col-12">
-              <h2>Customer Use Case</h2>
-              <h2 className="lead text-primary">{post.title}</h2>
+              <h2>{post.title}</h2>
             </div>
           </div>
         </div>
