@@ -78,11 +78,12 @@
     right: 0;
     width: $width;
     height: 3px;
-    margin-right: -$size;
+    margin-right: 0;
     border: $size solid transparent;
     border-bottom-color: $color;
     border-bottom-width: $size;
     border-bottom-style: solid;
+    border-right: 0;
   }
 }
 
@@ -94,10 +95,11 @@
     right: 0;
     width: $width;
     height: 3px;
-    margin-right: -$size;
+    margin-right: 0;
     border: $size solid transparent;
     border-bottom-color: $color;
     border-bottom-width: $size;
     border-bottom-style: solid;
+    border-right: 0;
   }
 }

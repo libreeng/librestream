@@ -35,14 +35,17 @@ hr {
 
 .folder-border {
   position: relative;
-  overflow-x: hidden;
+  &::before {
+    content: '';
+    display: block;
+  }
   &.folder-top {
     @include top-shape-cutout();
     &.border-light {
-      @include top-shape-cutout(33%, $light, 20px)
+      @include top-shape-cutout(33%, $light, 20px);
     }
     &.border-primary {
-      @include top-shape-cutout(33%, $primary, 20px)
+      @include top-shape-cutout(33%, $primary, 20px);
     }
   }
 
