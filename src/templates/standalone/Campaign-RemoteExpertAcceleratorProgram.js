@@ -114,7 +114,6 @@ export const pageQuery = graphql`
         }
         formIntro
         formEmbed
-        accordionDescription
       }
     }
   }
