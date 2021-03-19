@@ -286,3 +286,9 @@
     }
   }
 }
+
+.sticky-top {
+  @include media-breakpoint-up(lg) {
+    top: 120px;
+  }
+}

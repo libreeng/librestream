@@ -11,9 +11,9 @@ const PlatformFeatureSpecializedAccessories = ({ data: { page, subnav } }) => {
   const hero = page.acfHero
   const nav = subnav.menuItems.nodes
   const accessories = template.accessories
-  const featureLinks = template.links
-  // const featureDownloads = template.featureDownloads
-  // console.log(featureDownloads)
+  // const {featureLinks} = template.links
+  // const {featureDocuments} = template.documents
+  console.log('docs and links', template.links, template.documents)
   return (
     <>
       <Hero
@@ -65,14 +65,14 @@ const PlatformFeatureSpecializedAccessories = ({ data: { page, subnav } }) => {
       <section>
         <div className="container">
           <div className="row">
-            {/* {featureDownloads && featureDownloads.map((download, i) => (
-              <div className="col-12 col-xl-4" key={`download_${i}`}>
-                <a href={download.download.localFile.publicURL} className="btn btn-outline-secondary text-dark btn-block mb-3">{download.download.title}TItle</a>
-              </div>
-            ))} */}
-            {featureLinks && featureLinks.map((link, i) => (
+            {template.links && template.links.map((link, i) => (
               <div className="col-12 col-xl-4" key={`link_${i}`}>
-                <a href={link.link.url} className="btn btn-outline-secondary text-dark btn-block mb-3">{link.link.title}</a>
+                <a href={link?.link?.url} className="btn btn-outline-secondary text-dark btn-block mb-3">{link?.link?.title}</a>
+              </div>
+            ))}
+            {template.documents && template.documents.map((document, i) => (
+              <div className="col-12 col-xl-4" key={`download_${i}`}>
+                <a href={document?.document?.localFile.url} className="btn btn-outline-secondary text-dark btn-block mb-3">{document?.documentLabel}</a>
               </div>
             ))}
           </div>
@@ -152,16 +152,15 @@ export const pageQuery = graphql`
           url
         }
         ctaMessage
-        featureDownloads {
-          featureDownload {
-            title
+        documents {
+          documentLabel
+          document {
             localFile {
-              publicURL
+              url
             }
           }
         }
         links {
-          fieldGroupName
           link {
             target
             title

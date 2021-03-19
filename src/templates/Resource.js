@@ -51,6 +51,25 @@ const ResourceTemplate = ({ data: { previous, next, post } }) => {
           </div>
         </section>
       )}
+      {acf.leftColumn && (
+        <section>
+          <div className="container">
+            <div className="row">
+              <div className="col-12 col-lg-6">
+                <div className="sticky-top">
+                  {parse(acf.leftColumn)}
+                </div>
+              </div>
+              <div className="col-12 col-lg-6">
+                <div className="sticky-top">
+                  {parse(acf.rightColumn)}
+                </div>
+                
+              </div>
+            </div>
+          </div>
+        </section>
+      )}
     </>
   )
 }
@@ -77,6 +96,8 @@ export const postQuery = graphql`
             url
           }
         }
+        leftColumn
+        rightColumn
       }
     }
     # previous and next be able to be migrated to PostFields fragment not sure?
