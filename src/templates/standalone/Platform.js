@@ -48,7 +48,7 @@ const PlatformTemplate = ({ data: { page } }) => {
 
       <PlatformFeatures content={featuresContent} />
 
-      <section>
+      <section className="overflow-hidden">
         <div className="container">
           <div className="row mb-4">
             <div className="col-12">
@@ -63,13 +63,6 @@ const PlatformTemplate = ({ data: { page } }) => {
                   dots: true
                 }}
               />
-            </div>
-          </div>
-          <div className="row my-5">
-            <div className="col-12">
-              <div className="text-center">
-                <a href="/news" className="btn btn-outline-secondary text-dark">View All News</a>
-              </div>
             </div>
           </div>
         </div>

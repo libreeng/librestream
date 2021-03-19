@@ -2,7 +2,7 @@ import React from 'react'
 import PropTypes from 'prop-types'
 // import BackgroundImage from 'gatsby-background-image'
 
-const PostCard = ({ post }) => {
+const PostCard = ({ post, showBracket }) => {
   const { title, acfPostTypeNews: { mainImage }} = post
 
   return (
@@ -16,9 +16,16 @@ const PostCard = ({ post }) => {
         className="card-img-top bg-image aspect-1x1 grayscale"
         fluid={mainImage.localFile.childImageSharp.fluid || 'https://via.placeholder.com/500/000/000'}
       /> */}
-      <div className="card-footer bg-transparent text-dark text-uppercase">
-        {title}
-      </div>
+      {showBracket ? (
+        <div className="card-footer bg-transparent text-dark text-center text-uppercase">
+          <h6 className="mt-4 text-dark">{title}</h6>
+          <div className="border-bracket-bottom" />
+        </div>
+      ) : (
+        <div className="card-footer bg-transparent text-dark text-uppercase">
+          {title}
+        </div>
+      )}
     </div>
   )
 }
