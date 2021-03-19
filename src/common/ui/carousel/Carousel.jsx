@@ -38,6 +38,7 @@ const Carousel = ({ posts, config }) => {
         }
       }
     ],
+    showBracket: false,
     ...config
   }
 
@@ -50,7 +51,7 @@ const Carousel = ({ posts, config }) => {
             return (
               <Link to={post.uri} key={post.id}>
                 {post.nodeType === 'Post'
-                  ? <PostCard post={post} />
+                  ? <PostCard post={post} showBracket={settings.showBracket} />
                   : <UseCaseCard post={post} />}
               </Link>
             )
