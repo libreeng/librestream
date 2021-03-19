@@ -188,6 +188,13 @@
       }
     }
   }
+
+  &.sticky {
+    .nav-pointer {
+      opacity: 0;
+    }
+    border-bottom: 1px solid $white;
+  }
 }
 
 #primarynav {
