@@ -24,12 +24,12 @@ const DefaultTemplate = ({ data: { page } }) => {
                   <div className={column.columnWidth}>
                     <div className={column.columnWidth !== 'col_full' ? 'sticky-top' : false}>
                       {column.content && parse(column.content)}
+                      {column.columnembed && (
+                        <div className="responsive-iframe aspect-16x9 mt-5">
+                          <iframe src={column.columnembed} title={page.title} alt="pdf" />
+                        </div>
+                      )}
                     </div>
-                    {column.columnembed && (
-                      <div className="responsive-iframe aspect-16x9 mt-5">
-                        <iframe src={column.columnembed} title={page.title} alt="pdf" />
-                      </div>
-                    )}
                   </div>
                 ))
               ))}
