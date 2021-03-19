@@ -22,7 +22,7 @@ const DefaultTemplate = ({ data: { page } }) => {
               acf.columns.map(columns =>
                 columns.columns.map(column => (
                   <div className={column.columnWidth}>
-                    <div className={column.columnWidth !== 'col_full' ? 'sticky-top' : false}>
+                    <div className={column.columnWidth !== 'col_full' ? 'sticky-top' : ''}>
                       {column.content && parse(column.content)}
                       {column.columnembed && (
                         <div className="responsive-iframe aspect-16x9 mt-5">
