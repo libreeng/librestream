@@ -5,7 +5,7 @@ import parse from "html-react-parser"
 import Hero from "../../common/ui/Hero"
 
 const ThankYouTemplate = ({ data: { page } }) => {
-
+  // I believe this template is now form-confirmation, remove once confirmed
   return (
     <>
       <Hero heroTitle={page.title} />

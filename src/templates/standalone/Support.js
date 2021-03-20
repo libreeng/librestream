@@ -2,32 +2,67 @@ import React from "react"
 import { graphql } from "gatsby"
 import Image from "gatsby-image"
 import parse from "html-react-parser"
+import Hero from "../../common/ui/Hero"
+import AccordionNav from "../../components/AccordionNav"
+// import AccordionItems from "../../components/AccordionItems"
+import AddCircleLineIcon from 'remixicon-react/AddCircleLineIcon';
+import IndeterminateCircleFillIcon from 'remixicon-react/IndeterminateCircleFillIcon';
+
 
 const SupportTemplate = ({ data: { page } }) => {
-  const featuredImage = {
-    fluid: page.featuredImage?.node?.localFile?.childImageSharp?.fluid,
-    alt: page.featuredImage?.node?.alt || ``,
+  const hero = {
+    heroHeading: page.title
   }
-
   return (
     <>
-      <header>
-        <h1 itemProp="headline">{parse(page.title)}</h1>
-        
-        <p>{page.date}</p>
-
-        {/* if we have a featured image for this post let's display it */}
-        {featuredImage?.fluid && (
-          <Image
-            fluid={featuredImage.fluid}
-            alt={featuredImage.alt}
-            style={{ marginBottom: 50 }}
-          />
-        )}
-      </header>
-
+      <Hero hero={hero} />
+      <section>
+        <div className="container">
+          <div className="row">
+            <div className="col-12 col-lg-4">
+              <AccordionNav />
+              <div className="border-bracket mt-5 mb-3 text-center">
+                <h6>Onsight Service Status</h6>
+              </div>
+              <a href="#link" className="btn btn-primary btn-block">View Onsight Service</a>
+            </div>
+            <div className="col-12 col-lg-8">
+              <h2>Support Section Title</h2>
+              {[...Array(6)].map((x, i) => (
+                <div className="row border-bottom border-primary py-3 my-3">
+                  <div className="col-lg-6">
+                    <h3>Windows VXX.X.X (XXXX)</h3>
+                    {/* <AccordionItems /> */}
+                    <ul className="list-unstyled">
+                      <li>
+                        <a href="#link">
+                          <AddCircleLineIcon size="24" />
+                          <IndeterminateCircleFillIcon size="24" />
+                          Downloads and Updates
+                        </a>
+                      </li>
+                    </ul>
+                  </div>
+                  <div className="col-lg-3 ml-lg-auto">
+                    <img src="https://via.placeholder.com/500" className="img-fluid" alt="" />
+                  </div>
+                </div>
+              )
+              )}
+            </div>
+          </div>
+        </div>
+      </section>
       {!!page.content && (
-        <section itemProp="articleBody">{parse(page.content)}</section>
+        <section>
+          <div className="container">
+            <div className="row">
+              <div className="col-12">
+                {parse(page.content)}
+              </div>
+            </div>
+          </div>
+        </section>
       )}
 
     </>
@@ -39,6 +74,7 @@ export const pageQuery = graphql`
     # selecting the current page by id
     page: wpPage(id: { eq: $id }) {
       ...PageDetails
+      ...PageHero
     }
   }
 `
