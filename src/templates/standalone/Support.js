@@ -2,11 +2,12 @@ import React from "react"
 import { graphql } from "gatsby"
 import Image from "gatsby-image"
 import parse from "html-react-parser"
+import AddCircleLineIcon from 'remixicon-react/AddCircleLineIcon';
+import IndeterminateCircleFillIcon from 'remixicon-react/IndeterminateCircleFillIcon';
 import Hero from "../../common/ui/Hero"
 import AccordionNav from "../../components/AccordionNav"
 // import AccordionItems from "../../components/AccordionItems"
-import AddCircleLineIcon from 'remixicon-react/AddCircleLineIcon';
-import IndeterminateCircleFillIcon from 'remixicon-react/IndeterminateCircleFillIcon';
+
 
 
 const SupportTemplate = ({ data: { page } }) => {

@@ -5,8 +5,12 @@ import Image from "gatsby-image"
 import BackgroundImage from 'gatsby-background-image'
 import parse from "html-react-parser"
 import Hero from "../../common/ui/Hero"
+import { useDispatch } from "react-redux"
+import { openModal } from "../../common/modals/modalActions"
+import PartnerModal from '../../common/modals/PartnerModal'
 
 const PlatformFeatureTemplate = ({ data: { page, subnav } }) => {
+  const dispatch = useDispatch();
   const template = page.acfTemplatePlaformFeature
   const hero = page.acfHero
   const nav = subnav.menuItems.nodes
@@ -46,6 +50,9 @@ const PlatformFeatureTemplate = ({ data: { page, subnav } }) => {
                 parse(template.feature1Description)
               )}
               <hr className="hr-xs ml-0 border-green" />
+              {template.feature1Link && (
+                <a href={template.feature1Link.url} className="btn btn-secondary mt-3" target={template.feature1Link.target}>{template.feature1Link.title ? template.feature1Link.title : 'Learn More'}</a>
+              )}
             </div>
             <div className="col-lg-6">
               {template.feature1Image &&
@@ -60,22 +67,7 @@ const PlatformFeatureTemplate = ({ data: { page, subnav } }) => {
         </div>
       </section>
 
-      <section>
-        <div className="container">
-          <div className="row">
-            {template.featureDownloads && template.featureDownloads.map((download, i) => (
-              <div className="col-12 col-xl-4" key={`download_${i}`}>
-                <a href={download?.featureDownload?.localFile.url} className="btn btn-outline-secondary text-dark btn-block mb-3">{download?.downloadLabel}</a>
-              </div>
-            ))}
-            {template.featureLinks && template.featureLinks.map((link, i) => (
-              <div className="col-12 col-xl-4" key={`link_${i}`}>
-                <a href={link?.featureLink?.url} className="btn btn-outline-secondary text-dark btn-block mb-3">{link?.featureLink?.title}</a>
-              </div>
-            ))}
-          </div>
-        </div>
-      </section>
+      
       <section>
         <div className="container">
           <div className="row align-items-center">
@@ -92,8 +84,27 @@ const PlatformFeatureTemplate = ({ data: { page, subnav } }) => {
               <div className="p-4">
                 {template.feature2Description && parse(template.feature2Description)}
                 <hr className="hr-sm ml-0" />
+                {template.feature2Link && (
+                  <a href={template.feature2Link.url} className="btn btn-primary mt-3" target={template.feature2Link.target}>{template.feature2Link.title ? template.feature2Link.title : 'Learn More'}</a>
+                )}
               </div>
             </div>
+          </div>
+        </div>
+      </section>
+      <section>
+        <div className="container">
+          <div className="row">
+            {template.featureDownloads && template.featureDownloads.map((download, i) => (
+              <div className="col-12 col-xl-4" key={`download_${i}`}>
+                <a href={download?.featureDownload?.localFile.url} className="btn btn-outline-secondary text-dark btn-block mb-3">{download?.downloadLabel}</a>
+              </div>
+            ))}
+            {template.featureLinks && template.featureLinks.map((link, i) => (
+              <div className="col-12 col-xl-4" key={`link_${i}`}>
+                <a href={link?.featureLink?.url} className="btn btn-outline-secondary text-dark btn-block mb-3">{link?.featureLink?.title}</a>
+              </div>
+            ))}
           </div>
         </div>
       </section>
@@ -132,30 +143,29 @@ const PlatformFeatureTemplate = ({ data: { page, subnav } }) => {
             <div className="col-lg-6">
               <div className="row">
                 {template.highlights && template.highlights.map(highlight => {
-                  console.log(highlight.highlightIcon)
-                  const iconData = highlight.highlightIcon ? highlight.highlightIcon.localFile.publicURL : false
-
+                  const iconData = highlight.highlightIcon ? highlight.highlightIcon.localFile.url : false
                   return (
                     <div className="col-lg-4">
-                      {iconData && (
-                        <Image
-                          fluid={iconData}
-                          alt={highlight.highlightIcon.altText || ''}
-                          className="img-fluid"
-                        />
-                      )}
-                      {highlight.highlightTitle && (
-                        <>
-                          <h6 className="text-center mt-3">{highlight.highlightTitle}</h6>
-                          {highlight.highlightDescription && (
-                            <small className="d-block text-center">
-                              {highlight.highlightDescription}
-                            </small>
+                      <button className="card h-100 justify-content-between border-0 bg-transparent" onClick={() => dispatch(openModal("HighlightModal", {highlight: highlight}))}>
+                
+                        {iconData && (
+                          <div className="w-100">
+                            <div 
+                            style={{ backgroundImage: `url(${ iconData })`}}
+                            className="bg-image aspect-1x1 bg-contain" />
+                          </div>
+                          
+                        )}
+                        <div className="card-body p-0 d-flex">
+                          {highlight.highlightTitle && (
+                            <h6 className="text-center mt-3 mb-0">{highlight.highlightTitle}</h6>
                           )}
+                        </div>
+                        <div className="card-footer bg-transparent border-0 w-100">
                           <div className="border-bracket-bottom" />
-                        </>
-                      )}
-                    </div>
+                        </div>
+                      </button>
+                    </div>  
                   )
                 })}
               </div>
@@ -203,6 +213,11 @@ export const pageQuery = graphql`
             }
           }
         }
+        feature1Link {
+          target
+          title
+          url
+        }
         feature2Description
         feature2Image {
           altText
@@ -213,6 +228,11 @@ export const pageQuery = graphql`
               }
             }
           }
+        }
+        feature2Link {
+          target
+          title
+          url
         }
         featureLinks {
           featureLink {
@@ -250,7 +270,7 @@ export const pageQuery = graphql`
           highlightIcon {
             altText
             localFile {
-              publicURL
+              url
             }
           }
         }

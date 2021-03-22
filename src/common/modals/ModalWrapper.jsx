@@ -4,11 +4,13 @@ import { useSelector } from 'react-redux'
 import TestModal from './TestModal'
 import PartnerModal from './PartnerModal'
 import BoardModal from './BoardModal'
+import HighlightModal from './HighlightModal'
 
 const modalLookup = {
   TestModal,
   PartnerModal,
-  BoardModal
+  BoardModal,
+  HighlightModal
 }
 
 const ModalWrapper = () => {
