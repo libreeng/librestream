@@ -9,9 +9,9 @@ const CTA = ({ cta }) => {
       <div className="container">
         <div className="row">
           <div className="col-12 col-lg-8 mx-lg-auto text-center">
-            {cta.description && (
+            {cta.ctaDescription && (
               <div className="mb-4">
-                { parse(cta.description)}
+                { parse(cta.ctaDescription)}
               </div>
             )}
             {cta.link && (
