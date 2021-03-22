@@ -146,7 +146,7 @@ const PlatformFeatureTemplate = ({ data: { page, subnav } }) => {
                   const iconData = highlight.highlightIcon ? highlight.highlightIcon.localFile.url : false
                   return (
                     <div className="col-lg-4">
-                      <button className="card h-100 justify-content-between border-0 bg-transparent" onClick={() => dispatch(openModal("HighlightModal", {highlight: highlight}))}>
+                      <button className="card h-100 w-100 justify-content-between border-0 bg-transparent" onClick={() => dispatch(openModal("HighlightModal", {highlight: highlight}))}>
                 
                         {iconData && (
                           <div className="w-100">
@@ -156,9 +156,9 @@ const PlatformFeatureTemplate = ({ data: { page, subnav } }) => {
                           </div>
                           
                         )}
-                        <div className="card-body p-0 d-flex">
+                        <div className="card-body p-0 d-flex text-center w-100">
                           {highlight.highlightTitle && (
-                            <h6 className="text-center mt-3 mb-0">{highlight.highlightTitle}</h6>
+                            <h6 className="text-center mt-3 mb-0 w-100">{highlight.highlightTitle}</h6>
                           )}
                         </div>
                         <div className="card-footer bg-transparent border-0 w-100">
