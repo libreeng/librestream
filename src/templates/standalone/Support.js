@@ -28,7 +28,7 @@ const SupportTemplate = ({ data: { page } }) => {
               <a href="#link" className="btn btn-primary btn-block">View Onsight Service</a>
             </div>
             <div className="col-12 col-lg-8">
-              <h2>Support Section Title</h2>
+              <h4 className="text-uppercase"><strong>Support Section Title</strong></h4>
               {[...Array(6)].map((x, i) => (
                 <div className="row border-bottom border-primary py-3 my-3">
                   <div className="col-lg-6">
@@ -36,7 +36,7 @@ const SupportTemplate = ({ data: { page } }) => {
                     {/* <AccordionItems /> */}
                     <ul className="list-unstyled">
                       <li>
-                        <a href="#link">
+                        <a href="#link" className="text-uppercase">
                           <AddCircleLineIcon size="24" />
                           <IndeterminateCircleFillIcon size="24" />
                           Downloads and Updates

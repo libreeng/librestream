@@ -18,7 +18,7 @@ const HomeTemplate = ({ data: { page } }) => {
 
   return (
     <>
-      <Hero hero={hero} />
+      <Hero hero={hero} className="home-hero" />
 
       <section id="intro" className="bg-white">
         <div className="container">
