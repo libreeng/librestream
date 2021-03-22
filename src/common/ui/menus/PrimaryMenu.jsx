@@ -70,7 +70,7 @@ const PrimaryMenu = () => {
               <a href="#" className="nav-link">Login</a>
             </li>
             <li className="nav-item">
-              <a href="#" className="nav-link">Contact</a>
+              <a href="/contact-us" className="nav-link">Contact</a>
             </li>
           </Nav>
           <Nav id="primarynav" className="ml-auto" activeKey={activeKey}>

@@ -16,6 +16,11 @@ export const useSiteFooter = () => {
             footerEmailTitle
             footerEmail
             phoneTitle
+            phoneNumber
+            tollFreeTitle
+            tollFree
+            faxTitle
+            faxNumber
             footerMailingListTitle
             socialLinks {
               site

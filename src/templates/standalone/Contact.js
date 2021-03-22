@@ -2,9 +2,11 @@ import React from 'react'
 // import PropTypes from 'prop-types'
 import { graphql } from 'gatsby'
 import parse from "html-react-parser"
+import { useSiteFooter } from '../../common/hooks/useSiteFooter'
 import Hero from "../../common/ui/Hero"
 
 const ContactTemplate = ({ data: { page } }) => {
+  const {options} = useSiteFooter()
   const acf = page.acfTemplateContact
   const hero = {
     heroHeading: page.title
@@ -32,7 +34,7 @@ const ContactTemplate = ({ data: { page } }) => {
                 <i className="icon-arrow arrow-down arrow-dark" />
               </div>
               {acf.supportRequestLink && (
-                <a href={acf.supportRequestLink} className="btn btn-primary btn-block">{acf.supportRequestLink.title}</a>
+                <a href={acf.supportRequestLink.url} className="btn btn-primary btn-block">{acf.supportRequestLink.title}</a>
               )}
 
               <div className="border-bracket mt-5">
@@ -53,13 +55,14 @@ const ContactTemplate = ({ data: { page } }) => {
                 <a href={acf.mapLink.url} target={acf.mapLink.target} className="btn btn-outline-primary text-dark btn-block">{acf.mapLink.title}</a>
               )}
 
-              <div className="border-bracket mt-5">
-                {acf.phoneNumbers && acf.phoneNumbers.map(phone => (
-                  <>
-                    <h6 className="mb-0">{phone.phoneNumberLabel && phone.phoneNumberLabel}</h6>
-                    <p className="text-primary">{phone.phoneNumber && phone.phoneNumber}</p>
-                  </>
-                ))}
+              <div className="border-bracket mt-5"> 
+                <h6 className="mb-0">{options.phoneTitle}</h6>
+                <p className="text-primary">{options.phoneNumber}</p>
+                <h6 className="mb-0">{options.tollFreeTitle}</h6>
+                <p className="text-primary">{options.tollFree}</p>
+                <h6 className="mb-0">{options.faxTitle}</h6>
+                <p className="text-primary">{options.faxNumber}</p>
+                
               </div>
             </div>
           </div>
