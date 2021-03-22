@@ -32,7 +32,6 @@ const CampaignRemoteExpertAcceleratorProgramTemplate = ({ data: { page } }) => {
               )}
             </div>
             <div className="col-lg-6">
-              {/* todo react-bootstrap accordion not firing correctly */}
               {acf.accordionSections && (
                 <AccordionItems items={acf.accordionSections} className="accordion-icons" />
               )}
