@@ -7,8 +7,8 @@ import SocialMenu from './menus/SocialMenu'
 
 
 const Footer = () => {
-  const {options, logo} = useSiteFooter()
-  const {partners, ctas} = options
+  const { options } = useSiteFooter()
+  const { partners, ctas } = options
 
   return (
     <>

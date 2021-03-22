@@ -22,7 +22,7 @@ const PostCard = ({ post, showBracket }) => {
           <div className="border-bracket-bottom" />
         </div>
       ) : (
-        <div className="card-footer bg-transparent text-dark text-uppercase">
+        <div className="card-footer bg-transparent text-dark text-uppercase px-0">
           {title}
         </div>
       )}
@@ -31,7 +31,8 @@ const PostCard = ({ post, showBracket }) => {
 }
 
 PostCard.propTypes = {
-  post: PropTypes.instanceOf(Object)
+  post: PropTypes.instanceOf(Object),
+  showBracket: PropTypes.bool
 }
 
 export default PostCard

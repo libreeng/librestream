@@ -28,6 +28,15 @@ export const useNews = () => {
         ) {
         nodes {
           ...PostSummary
+          acfPostTypeNews {
+            externalSource {
+              externalLink {
+                target
+                title
+                url
+              }
+            }
+          }
         }
       }
       videos: allWpPost(
