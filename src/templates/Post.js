@@ -35,7 +35,7 @@ const PostTemplate = ({ data: { previous, next, post } }) => {
               <header>
                 <h1>{parse(post.title)}</h1>
                 <hr />
-                <p className="text-light">{post.date}</p>
+                <p className="text-mid">{post.date}</p>
               </header>
               {featuredImage?.fluid && (
                 <Image

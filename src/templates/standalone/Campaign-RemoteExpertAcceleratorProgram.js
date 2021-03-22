@@ -19,7 +19,7 @@ const CampaignRemoteExpertAcceleratorProgramTemplate = ({ data: { page } }) => {
     <>
       <Hero hero={hero} />
       <Intro intro={intro} bracket="true" aspect={aspect} />
-      <section className="bg-gradient-blue">
+      <section className="bg-gradient-blue mb-5">
         <div className="container">
           <div className="row">
             <div className="col-lg-6">
@@ -39,23 +39,15 @@ const CampaignRemoteExpertAcceleratorProgramTemplate = ({ data: { page } }) => {
           </div>
         </div>
       </section>
-      <section>
-        <div className="container">
-          <div className="row">
-            <div className="col-lg-5 ml-lg-auto">
-              {acf.accordionDescription && parse(acf.accordionDescription)}
-            </div>
-          </div>
-        </div>
-      </section>
-      <div className="container">
-        <hr className="hr-styled" />
-      </div>
-      <section>
+
+
+      <section className="mt-5">
         <div className="container">
           <div className="row">
             <div className="col-12">
-              {acf.formIntro && parse(acf.formIntro)}
+              <div className="mt-5">
+                {acf.formIntro && parse(acf.formIntro)}
+              </div>
             </div>
           </div>
           <div className="row">

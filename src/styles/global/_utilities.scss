@@ -177,11 +177,18 @@
     margin-top: -100px;
     margin-bottom: 0;
   }
+  @include media-breakpoint-down(lg) {
+    margin-bottom: 0;
+  }
 }
 .img-offset-bottom {
-  margin-bottom: -100px;
+  @include media-breakpoint-up(xl) {
+    margin-bottom: -100px;
+  }
   &.offset-bottom-lg {
-    margin-bottom: -200px;
+    @include media-breakpoint-up(xl) {
+      margin-bottom: -200px;
+    }
   }
 }
 
