@@ -145,11 +145,11 @@ const PlatformFeatureTemplate = ({ data: { page, subnav } }) => {
                 {template.highlights && template.highlights.map(highlight => {
                   const iconData = highlight.highlightIcon ? highlight.highlightIcon.localFile.url : false
                   return (
-                    <div className="col-lg-4">
+                    <div className="col-6 col-lg-4 mb-3">
                       <button className="card h-100 w-100 justify-content-between border-0 bg-transparent" onClick={() => dispatch(openModal("HighlightModal", {highlight: highlight}))}>
                 
                         {iconData && (
-                          <div className="w-100">
+                          <div className="w-100 p-3 p-lg-4">
                             <div 
                             style={{ backgroundImage: `url(${ iconData })`}}
                             className="bg-image aspect-1x1 bg-contain" />
