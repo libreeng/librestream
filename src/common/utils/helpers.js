@@ -73,3 +73,18 @@ export const decodeURLParams = search => {
     return Object.assign(params, { [key]: decodeURIComponent(val) });
   }, {});
 }
+
+export function gotResizeMessage(event) {
+
+  console.log(`got resize message: ${JSON.stringify(event.data)}`)
+
+  const matches = document.querySelectorAll('iframe') // iterate through all iFrames on page
+  matches.forEach((match) => {
+    if (match.contentWindow === event.source) { // found the iFrame that sent us a message
+      // eslint-disable-next-line no-param-reassign
+      match.height = Number(event.data.height)
+      return 1
+    }
+    return 0
+  })
+}
