@@ -46,6 +46,9 @@
   &.aspect-auto {
     height: auto;
   }
+  &.aspect-letter {
+    padding-top: 125%;
+  }
 
   iframe {
     position: absolute;

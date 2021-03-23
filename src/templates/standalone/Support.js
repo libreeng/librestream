@@ -76,6 +76,19 @@ export const pageQuery = graphql`
     page: wpPage(id: { eq: $id }) {
       ...PageDetails
       ...PageHero
+      acfSupportSections {
+        supportSection {
+          supportSectionTitle
+          documentation {
+            documentationTitle
+            documentationKnowledgebase {
+              ... on WpSupport {
+                id
+              }
+            }
+          }
+        }
+      }
     }
   }
 `

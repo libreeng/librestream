@@ -21,7 +21,7 @@ const FormConfirmationTemplate = ({ data: { post } }) => {
                 <div className="text-center mb-5">
                   <div className="border-bracket">
                     <div className="py-3">
-                      { parse(post.content)}
+                      {parse(post.content)}
                     </div>
                   </div>
                 </div>
@@ -37,12 +37,12 @@ const FormConfirmationTemplate = ({ data: { post } }) => {
               {acf.document && (
                 <>
                   <hr className="hr-styled" />
-                  <p className="mt-5">
-                    <div className="responsive-iframe aspect-4x3 mb-5">
-                      <iframe src={acf.document.localFile.url} title={post.title} />
-                    </div>
-                    <a href={acf.document.localFile.url} target="_blank" rel="noreferrer" className="btn btn-primary text-white">Download {post.title}</a>
-                  </p>
+                  <div className="responsive-iframe aspect-letter my-5">
+                    <iframe src={acf.document.localFile.url} title={post.title} />
+                  </div>
+                  <div className="text-center">
+                    <a href={acf.document.localFile.url} target="_blank" rel="noreferrer" className="btn btn-primary mx-auto text-white">Download</a>
+                  </div>
                 </>
               )}
             </div>
