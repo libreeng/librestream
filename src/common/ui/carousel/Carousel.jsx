@@ -52,7 +52,7 @@ const Carousel = ({ posts, config }) => {
               : post.uri
 
             return (
-              <Link to={url} key={post.id}>
+              <Link to={url} key={post.id} target={post.acfPostTypeNews?.externalSource ? '_blank' : ''}>
                 {post.nodeType === 'Post'
                   ? <PostCard post={post} showBracket={settings.showBracket} />
                   : <UseCaseCard post={post} />}
