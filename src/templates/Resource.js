@@ -1,20 +1,18 @@
 import React from "react"
-import { Link, graphql } from "gatsby"
+import { graphql } from "gatsby"
 import parse from "html-react-parser"
 import Hero from "../common/ui/Hero"
 
 
-const ResourceTemplate = ({ data: { previous, next, post } }) => {
-
+const ResourceTemplate = ({ data: { post } }) => {
   const acf = post.acfPostTypeResource
   const hero = {
     heroHeading: post.title
   }
+
   return (
     <>
-      <Hero
-        hero={hero}
-      />
+      <Hero hero={hero} />
       {!!post.content && (
         <section itemProp="articleBody">
           <div className="container">
@@ -39,7 +37,7 @@ const ResourceTemplate = ({ data: { previous, next, post } }) => {
                 <div className="sticky-top">
                   {parse(acf.rightColumn)}
                 </div>
-                
+
               </div>
             </div>
           </div>
@@ -94,7 +92,7 @@ const ResourceTemplate = ({ data: { previous, next, post } }) => {
           </div>
         </section>
       )}
-      
+
     </>
   )
 }
