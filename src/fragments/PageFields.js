@@ -12,7 +12,7 @@ export const PageFields = graphql`
         localFile {
           childImageSharp {
             fluid(maxWidth: 1000, quality: 100) {
-              ...GatsbyImageSharpFluid_tracedSVG
+              ...GatsbyImageSharpFluid
             }
           }
         }
