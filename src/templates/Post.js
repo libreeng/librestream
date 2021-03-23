@@ -19,10 +19,13 @@ const PostTemplate = ({ data: { previous, next, post } }) => {
   const hero = {
     heroHeading: postCategory.categoryName
   }
-  // Related Post Logic: Taking the first 3 of every related category
-  const relatedPosts = post.categories.nodes.map(node => {
-    return node.posts.nodes.filter(post => post.acfPostTypeNews.mainImage).slice(0, 3)
-  }).reduce((a, b) => [...a, ...b])
+
+  // Related Post Logic
+  const relatedPosts = post.tags.nodes.map(node => {
+    const { posts: { nodes: taggedPosts } } = node
+
+    return taggedPosts.filter(rp => rp.id !== post.id && rp.acfPostTypeNews.mainImage)
+  }).reduce((a, b) => [...a, ...b]).slice(0, 3)
 
 
   return (
@@ -57,8 +60,8 @@ const PostTemplate = ({ data: { previous, next, post } }) => {
               <div className="row">
                 {relatedPosts && relatedPosts.map(relatedPost => {
                   return (
-                    <div className="col-12 col-sm-4 col-lg-12">
-                      <Link key={relatedPost.id} to={relatedPost.uri}>
+                    <div key={relatedPost.id} className="col-12 col-sm-4 col-lg-12">
+                      <Link to={relatedPost.uri}>
                         <PostCard post={relatedPost} />
                       </Link>
                     </div>

@@ -2,7 +2,7 @@ import React from "react"
 import { graphql } from "gatsby"
 import parse from "html-react-parser"
 import Hero from "../../common/ui/Hero"
-import Carousel from '../../common/ui/carousel/Carousel'
+import Carousel from "../../common/ui/carousel/Carousel"
 import { useNews } from "../../common/hooks/useNews"
 import { useCaseStudies } from "../../common/hooks/useCaseStudies"
 
