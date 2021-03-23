@@ -83,7 +83,7 @@ const CaseStudy = ({ data: { previous, next, post } }) => {
                 <p className="lead">{article.title && article.title}</p>
                 {article.content && parse(article.content)}
                 {article.link && (
-                  <a href={article.link.url} className="btn btn-border border-white text-white">{article.linkText ? article.linkText : 'Full Article'}</a>
+                  <a href={article.link.url} target={article.link.target} className="btn btn-border border-white text-white">{article.link.title ? article.link.title : 'Full Article'}</a>
                 )}
               </div>
               {article.image && (
@@ -147,7 +147,6 @@ export const pageQuery = graphql`
           url
           title
         }
-        articleLinkText
         articleTitle
         articleImage {
           localFile {
