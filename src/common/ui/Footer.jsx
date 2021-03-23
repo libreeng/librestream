@@ -38,9 +38,9 @@ const Footer = () => {
               </h6>
               <p className="font-weight-bold mb-0">{options.footerTollFreePhone}</p>
             </div>
-            <div className="col-12 col-md-6 col-lg my-4 my-md-0">
+            {/* <div className="col-12 col-md-6 col-lg my-4 my-md-0">
               <a href={`mailto: ${options.footerEmail}`} className="btn btn-white btn-block">{options.footerEmailTitle}</a>
-            </div>
+            </div> */}
             <div className="col-12 col-md-6 col-lg">
               <SocialMenu />
             </div>

@@ -107,8 +107,10 @@ const CaseStudy = ({ data: { previous, next, post } }) => {
           </div>
         </section>
       )}
+      {previous || next && (
+        <NextPrevMenu previous={previous} next={next} />
+      )}
       
-      <NextPrevMenu previous={previous} next={next} />
       {cta && (
         <CTA cta={cta} />
       )}
