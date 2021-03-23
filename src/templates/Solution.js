@@ -1,15 +1,16 @@
 import React from 'react'
 import PropTypes from 'prop-types'
 import { graphql } from "gatsby"
+import parse from "html-react-parser"
 import Hero from "../common/ui/Hero"
 import Intro from "../common/ui/Intro"
 import NextPrevMenu from '../common/ui/menus/NextPrevMenu'
-import parse from "html-react-parser"
-import BackgroundImage from 'gatsby-background-image'
+import Stats from '../components/Stats'
+// import BackgroundImage from 'gatsby-background-image'
 
 const Solution = ({ data: { previous, next, post } }) => {
   const acf = post.acfPostTypeSolution
-
+  const stats = post.acfStats.statistics
   const hero = post.acfHero
   const intro = post.acfIntro
   console.log(intro)
@@ -47,6 +48,9 @@ const Solution = ({ data: { previous, next, post } }) => {
           </div>
         </div>
       </section>
+      {stats && (
+        <Stats stats={stats} />
+      )}
       <NextPrevMenu previous={previous} next={next} />
     </>
   )
@@ -69,6 +73,7 @@ export const pageQuery = graphql`
     post: wpSolution(id: { eq: $id }) {
       ...SolutionHero
       ...SolutionIntro
+      ...SolutionStats
       id
       title
       uri
