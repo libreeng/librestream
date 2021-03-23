@@ -49,6 +49,9 @@ const PlatformFeatureSpecializedAccessories = ({ data: { page, subnav } }) => {
                 parse(template.feature1Description)
               )}
               <hr className="hr-xs ml-0 border-green" />
+              {template.feature1Link && (
+                <a href={template.feature1Link.url} className="btn btn-secondary mt-3" target={template.feature1Link.target}>{template.feature1Link.title ? template.feature1Link.title : 'Learn More'}</a>
+              )}
             </div>
             <div className="col-lg-6">
               {template.feature1Image &&
@@ -62,7 +65,7 @@ const PlatformFeatureSpecializedAccessories = ({ data: { page, subnav } }) => {
           </div>
         </div>
       </section>
-      <section>
+      <section className="pb-0">
         <div className="container">
           <div className="row">
             {template.links && template.links.map((link, i) => (
@@ -99,7 +102,9 @@ const PlatformFeatureSpecializedAccessories = ({ data: { page, subnav } }) => {
                     )}
                     
                     {accessory.specsDownload && (
-                      <a href={accessory.specsDownload.localFile.url && accessory.specsDownload.localFile.url} className="btn btn-outline-primary text-dark">Download The Specs</a>
+                      <div className="text-center">
+                        <a href={accessory.specsDownload.localFile.url && accessory.specsDownload.localFile.url} className="btn btn-outline-primary text-dark">Download The Specs</a>
+                      </div>
                     )}
                   </div>
                   
@@ -153,6 +158,11 @@ export const pageQuery = graphql`
               }
             }
           }
+        }
+        feature1Link {
+          title
+          target
+          url
         }
         ctaButton {
           target

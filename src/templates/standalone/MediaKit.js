@@ -16,6 +16,17 @@ const MediaKitTemplate = ({ data: { page } }) => {
     <>
       <Hero hero={hero} />
       <Intro intro={intro} bracket="true" />
+      <section className="py-0">
+        <div className="container">
+          <div className="row">
+            {acf.mediaKitLinks && acf.mediaKitLinks.map((link, i) => (
+              <div className="col-lg-4 mb-4 text-center">
+                <a href={link.mediaKitLink.url} className="btn btn-primary btn-lg text-white" target={link.mediaKitLink.target}>{link.mediaKitLink.title ? link.mediaKitLink.title : 'Download'}</a>
+              </div>
+            ))}
+          </div>
+        </div>
+      </section>
       <div className="container">
         <hr className="hr-styled" />
       </div>
@@ -26,6 +37,7 @@ const MediaKitTemplate = ({ data: { page } }) => {
               <h2>Media Contacts</h2>
             </div>
           </div>
+
           <div className="row mt-4">
             {acf.mediaContacts && acf.mediaContacts.map(contact => (
               <div className="col-lg-4 mb-4">
@@ -43,11 +55,7 @@ const MediaKitTemplate = ({ data: { page } }) => {
                 </div>
               </div>
             ))}
-            {acf.mediaKitDownload && acf.mediaKitDownload.map(download => (
-              <div className="col-lg-4 mb-4 text-center">
-                <a href={download?.mediaKitDownloadFile?.mediaItemUrl} className="btn btn-gradient-dark-blue text-white">{download.mediaKitDownloadLabel}</a>
-              </div>
-            ))}
+            
 
           </div>
         </div>
@@ -80,11 +88,12 @@ export const pageQuery = graphql`
           contactName
           contactRole
         }
-        mediaKitDownload {
-          mediaKitDownloadFile {
-            mediaItemUrl
+        mediaKitLinks {
+          mediaKitLink {
+            title
+            target
+            url
           }
-          mediaKitDownloadLabel
         }
       }
     }

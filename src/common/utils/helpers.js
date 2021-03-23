@@ -74,7 +74,7 @@ export const decodeURLParams = search => {
   }, {});
 }
 
-export function gotResizeMessage(event) {
+export function iFrameResizeMessage(event) {
 
   console.log(`got resize message: ${JSON.stringify(event.data)}`)
 
