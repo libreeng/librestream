@@ -42,4 +42,8 @@
       background-color: $white;
     }
   }
+  // offset for extra space created under slick-slider
+  .slick-slider {
+    margin-bottom: -40px;
+  }
 }

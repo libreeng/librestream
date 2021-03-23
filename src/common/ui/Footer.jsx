@@ -14,9 +14,9 @@ const Footer = () => {
     <>
       <FeaturedCTAs featured={ctas} />
       <footer id="pageFooter" className="text-white">
-        <hr className="border-white mt-0 mb-4" />
+        <hr className="border-white mb-0" />
         <LogoTicker items={partners} />
-        <hr className="border-white mt-4 mb-4" />
+        <hr className="border-white mt-0 mb-4" />
         <div className="container">
           <div className="row">
             <div className="col-12 col-md-4 col-lg">
