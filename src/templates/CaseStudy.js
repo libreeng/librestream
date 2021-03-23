@@ -19,10 +19,7 @@ const CaseStudy = ({ data: { previous, next, post } }) => {
 
   const cta = post.acfCta
   const heroHeading = 'Customer Use Case'
-  const hero = {
-    heroHeading: heroHeading,
-    heroBackgroundImage: post.acfHero.heroBackgroundImage
-  }
+  const hero = post.acfHero
 
   return (
     <>
