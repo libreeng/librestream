@@ -15,31 +15,6 @@ const ResourceTemplate = ({ data: { previous, next, post } }) => {
       <Hero
         hero={hero}
       />
-      <section>
-        <div className="container">
-          <div className="row">
-            <div className="col-12">
-              {acf.embed && (
-                <div className="responsive-iframe aspect-4x3">
-                  <iframe src={acf.embed} title={post.title} />
-                </div>
-              )}
-              {acf.document && (
-                <div className="mt-5">
-                  <div className="responsive-iframe aspect-4x3">
-                    <iframe src={acf.document.localFile.url} title={post.title} />
-                  </div>
-                </div>
-              )}
-              {acf.document && (
-                <div className="mt-5">
-                  <a href={acf.document.localFile.url} target="_blank" rel="noreferrer" className="btn btn-primary text-white">Download {post.title}</a>
-                </div>
-              )}
-            </div>
-          </div>
-        </div>
-      </section>
       {!!post.content && (
         <section itemProp="articleBody">
           <div className="container">
@@ -70,6 +45,56 @@ const ResourceTemplate = ({ data: { previous, next, post } }) => {
           </div>
         </section>
       )}
+      {acf.embed && (
+        <section>
+          <div className="container">
+            <div className="row">
+              <div className="col-12">
+                {acf.embed && (
+                  <div className="responsive-iframe aspect-4x3">
+                    <iframe src={acf.embed} title={post.title} />
+                  </div>
+                )}
+                {acf.document && (
+                  <div className="mt-5">
+                    <div className="responsive-iframe aspect-4x3">
+                      <iframe src={acf.document.localFile.url} title={post.title} />
+                    </div>
+                  </div>
+                )}
+                {acf.document && (
+                  <div className="mt-5">
+                    <a href={acf.document.localFile.url} target="_blank" rel="noreferrer" className="btn btn-primary text-white">Download {post.title}</a>
+                  </div>
+                )}
+              </div>
+            </div>
+          </div>
+        </section>
+      )}
+      {acf.document && (
+        <section>
+          <div className="container">
+            <div className="row">
+              <div className="col-12">
+                {acf.document && (
+                  <div className="mt-5">
+                    <div className="responsive-iframe aspect-4x3">
+                      <iframe src={acf.document.localFile.url} title={post.title} />
+                    </div>
+                  </div>
+                )}
+                {acf.document && (
+                  <div className="mt-5">
+                    <a href={acf.document.localFile.url} target="_blank" rel="noreferrer" className="btn btn-primary text-white">Download {post.title}</a>
+                  </div>
+                )}
+              </div>
+            </div>
+          </div>
+        </section>
+      )}
+      
     </>
   )
 }
