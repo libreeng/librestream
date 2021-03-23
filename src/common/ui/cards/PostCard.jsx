@@ -2,13 +2,13 @@ import React from 'react'
 import PropTypes from 'prop-types'
 // import BackgroundImage from 'gatsby-background-image'
 
-const PostCard = ({ post, showBracket }) => {
+const PostCard = ({ post, showBracket, className }) => {
   const { title, acfPostTypeNews: { mainImage }} = post
 
   return (
     <div className="card p-2">
       <div
-        className="card-img-top bg-image aspect-1x1 grayscale"
+        className={`card-img-top bg-image aspect-1x1 grayscale ${className}`}
         style={{ backgroundImage: `url(${mainImage && mainImage.sourceUrl || 'https://via.placeholder.com/400/000/000'})` }}
       />
       {/* <BackgroundImage

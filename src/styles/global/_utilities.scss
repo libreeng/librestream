@@ -218,7 +218,16 @@
     filter: none;
     background-color: rgba($red, 0.8);
   }
+  &.grayscale-hover {
+    filter: none;
+    @include transition(0.4s);
+    &:hover {
+      filter: grayscale(100%);
+    }
+  }
 }
+
+
 
 .icon-arrow {
   width: 0;

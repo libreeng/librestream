@@ -62,7 +62,7 @@ const PostTemplate = ({ data: { previous, next, post } }) => {
                   return (
                     <div key={relatedPost.id} className="col-12 col-sm-4 col-lg-12">
                       <Link to={relatedPost.uri}>
-                        <PostCard post={relatedPost} />
+                        <PostCard post={relatedPost} className={`grayscale-hover`} />
                       </Link>
                     </div>
                   )
