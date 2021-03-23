@@ -48,7 +48,15 @@ const UseCasesTemplate = ({ data: { page } }) => {
       </section>
 
       {!!page.content && (
-        <section itemProp="articleBody">{parse(page.content)}</section>
+        <section>
+          <div className="container">
+            <div className="row">
+              <div className="col-12">
+                {parse(page.content)}
+              </div>
+            </div>
+          </div>
+        </section>
       )}
 
     </>
