@@ -4,6 +4,10 @@ import parse from "html-react-parser"
 import Hero from "../common/ui/Hero"
 
 const ReleaseNotesTemplate = ({ data: { post } }) => {
+  const featuredImage = {
+    fluid: post.acfPostTypeNews?.mainImage?.localFile?.childImageSharp?.fluid,
+    alt: post.acfPostTypeNews?.mainImage?.altText || ``
+  }
   const hero = {
     heroHeading: post.title
   }
@@ -15,7 +19,13 @@ const ReleaseNotesTemplate = ({ data: { post } }) => {
         <div className="row">
           <div className="col-12">
             <p className="float-right mr-5">{post.date}</p>
-
+            {featuredImage?.fluid && (
+              <Image
+                fluid={featuredImage.fluid}
+                alt={featuredImage.alt}
+                style={{ marginBottom: 50 }}
+              />
+            )}
             {!!post.content && (
               <article className="py-5">{parse(post.content)}</article>
             )}
