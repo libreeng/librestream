@@ -20,7 +20,8 @@ const CaseStudy = ({ data: { previous, next, post } }) => {
   const cta = post.acfCta
   const heroHeading = 'Customer Use Case'
   const hero = {
-    heroHeading: heroHeading
+    heroHeading: heroHeading,
+    heroBackgroundImage: post.acfHero.heroBackgroundImage
   }
 
   return (
@@ -82,7 +83,7 @@ const CaseStudy = ({ data: { previous, next, post } }) => {
                 <p className="lead">{article.title && article.title}</p>
                 {article.content && parse(article.content)}
                 {article.link && (
-                  <a href={article.link} className="btn btn-border border-white text-white">{article.linkText ? article.linkText : 'Full Article'}</a>
+                  <a href={article.link.url} className="btn btn-border border-white text-white">{article.linkText ? article.linkText : 'Full Article'}</a>
                 )}
               </div>
               {article.image && (
@@ -141,7 +142,11 @@ export const pageQuery = graphql`
       slug
       acfPostTypeUseCase {
         articleContent
-        articleLink
+        articleLink {
+          target
+          url
+          title
+        }
         articleLinkText
         articleTitle
         articleImage {
