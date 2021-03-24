@@ -15,11 +15,11 @@ const DefaultTemplate = ({ data: { page } }) => {
   return (
     <>
       <Hero hero={hero} />
-      <section>
-        <div className="container">
-          <div className="row">
-            {acf.columns && (
-              acf.columns.map(columns =>
+      {acf.columns && (
+        <section>
+          <div className="container">
+            <div className="row">
+              {acf.columns.map(columns =>
                 columns.columns.map((column, i) => (
                   <div className={column.columnWidth} key={`link_${i}`}>
                     <div className={column.columnWidth !== 'col_full' ? 'sticky-top' : ''}>
@@ -32,10 +32,12 @@ const DefaultTemplate = ({ data: { page } }) => {
                     </div>
                   </div>
                 ))
-              ))}
+              )}
+            </div>
           </div>
-        </div>
-      </section>
+        </section>
+      )}
+      
       {!!page.content && (
         <section>
           <div className="container">
