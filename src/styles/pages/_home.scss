@@ -1,4 +1,22 @@
+
 .home-hero {
-  height: 80vh;
-  max-height: 700px;
+  @include media-breakpoint-up(lg) {
+    padding-top: 56.25%;
+    @include transition(0.5s);
+    .bg-content {
+      position: absolute;
+      align-items: center;
+      
+    }
+  }
+  
 }
+
+body.has-scrolled {
+  @include media-breakpoint-up(lg) {
+    .home-hero {
+      padding-top: 45%;
+    }
+  }
+}
+
