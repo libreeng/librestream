@@ -1,6 +1,6 @@
 import { graphql } from "gatsby"
 
-export const PostFields = graphql`
+export const PostDetails = graphql`
   fragment PostDetails on WpPost {
     id
     excerpt
@@ -41,6 +41,6 @@ export const PostFields = graphql`
           }
         }
       }
-    }   
+    }
   }
 `

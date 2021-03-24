@@ -37,13 +37,13 @@ const ReleaseNotesTemplate = ({ data: { post } }) => {
   )
 }
 
-export const pageQuery = graphql`
-  query ReleaseNotesTemplateQuery($id: String!) {
-    # selecting the current page by id
-    page: wpPost(id: { eq: $id }) {
-      ...PostDetails
-    }
-  }
-`
+// export const pageQuery = graphql`
+//   query ReleaseNotesTemplateQuery($id: String!) {
+//     # selecting the current page by id
+//     page: wpPost(id: { eq: $id }) {
+//       ...PostDetails
+//     }
+//   }
+// `
 
 export default ReleaseNotesTemplate

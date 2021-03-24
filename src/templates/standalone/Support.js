@@ -11,6 +11,7 @@ import AccordionNav from "../../components/AccordionNav"
 
 
 const SupportTemplate = ({ data: { page } }) => {
+  const { acfSupportSections: { supportSections: sections } } = page
   const hero = {
     heroHeading: page.title
   }
@@ -76,6 +77,20 @@ export const pageQuery = graphql`
     page: wpPage(id: { eq: $id }) {
       ...PageDetails
       ...PageHero
+      acfSupportSections {
+        supportSections {
+          supportSectionTitle
+          sectionKnowledgebases {
+            kbTitle
+            knowledgebasePost {
+              ... on WpSupport {
+                id
+                title
+              }
+            }
+          }
+        }
+      }
     }
   }
 `
