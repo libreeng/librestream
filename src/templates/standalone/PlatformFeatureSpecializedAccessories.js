@@ -89,25 +89,25 @@ const PlatformFeatureSpecializedAccessories = ({ data: { page, subnav } }) => {
                 <div className="d-flex flex-column justify-content-between h-100">
                   <div>
                     <hr className="hr-styled" />
-                    <h3 className="mt-5">{accessory.title && accessory.title }</h3>
+                    <h3 className="mt-5">{accessory.title && accessory.title}</h3>
                     <p>{accessory.description && accessory.description}</p>
                   </div>
                   <div>
                     {accessory.featuredImage && (
-                      <Image 
+                      <Image
                         fluid={accessory.featuredImage.localFile.childImageSharp.fluid}
                         alt={accessory.featuredImage.altText}
                         className="mt-4 mb-3"
                       />
                     )}
-                    
+
                     {accessory.specsDownload && (
                       <div className="text-center">
                         <a href={accessory.specsDownload.localFile.url && accessory.specsDownload.localFile.url} className="btn btn-outline-primary text-dark">Download The Specs</a>
                       </div>
                     )}
                   </div>
-                  
+
                 </div>
               </div>
             ))}
@@ -140,6 +140,7 @@ export const pageQuery = graphql`
           featuredImage {
             altText
             localFile {
+              publicURL
               childImageSharp {
                 fluid(maxWidth: 1000, quality: 100) {
                   ...GatsbyImageSharpFluid
@@ -152,6 +153,7 @@ export const pageQuery = graphql`
         feature1Image {
           altText
           localFile {
+            publicURL
             childImageSharp {
               fluid(maxWidth: 1000, quality: 100) {
                 ...GatsbyImageSharpFluid
@@ -174,6 +176,7 @@ export const pageQuery = graphql`
           documentLabel
           document {
             localFile {
+              publicURL
               url
             }
           }

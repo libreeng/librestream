@@ -6,7 +6,7 @@ import Hero from "../../common/ui/Hero"
 
 // Might be able to combine this template and Campaign-Whitepaper into a more flexible template
 const CampaignWebinarTemplate = ({ data: { page } }) => {
-  const acf = page.acfTemplateCampaignWebinar 
+  const acf = page.acfTemplateCampaignWebinar
   const hero = page.acfHero
 
   return (
@@ -35,7 +35,7 @@ const CampaignWebinarTemplate = ({ data: { page } }) => {
               <div className="sticky-top">
                 {page.content && parse(page.content)}
                 {acf.featuredImage && (
-                  <Image 
+                  <Image
                     fluid={acf.featuredImage.localFile.childImageSharp.fluid}
                     alt={acf.featuredImage.altText}
                   />
@@ -68,6 +68,7 @@ export const pageQuery = graphql`
         featuredImage {
           altText
           localFile {
+            publicURL
             childImageSharp {
               fluid(maxWidth: 1000, quality: 100) {
                 ...GatsbyImageSharpFluid

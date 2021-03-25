@@ -67,7 +67,7 @@ const PlatformFeatureTemplate = ({ data: { page, subnav } }) => {
         </div>
       </section>
 
-      
+
       <section>
         <div className="container">
           <div className="row align-items-center">
@@ -146,15 +146,15 @@ const PlatformFeatureTemplate = ({ data: { page, subnav } }) => {
                   const iconData = highlight.highlightIcon ? highlight.highlightIcon.localFile.url : false
                   return (
                     <div className="col-6 col-lg-4 mb-3">
-                      <button className="card h-100 w-100 justify-content-between border-0 bg-transparent" onClick={() => dispatch(openModal("HighlightModal", {highlight: highlight}))}>
-                
+                      <button className="card h-100 w-100 justify-content-between border-0 bg-transparent" onClick={() => dispatch(openModal("HighlightModal", { highlight: highlight }))}>
+
                         {iconData && (
                           <div className="w-100 p-3 p-lg-4">
-                            <div 
-                            style={{ backgroundImage: `url(${ iconData })`}}
-                            className="bg-image aspect-1x1 bg-contain" />
+                            <div
+                              style={{ backgroundImage: `url(${iconData})` }}
+                              className="bg-image aspect-1x1 bg-contain" />
                           </div>
-                          
+
                         )}
                         <div className="card-body p-0 d-flex text-center w-100">
                           {highlight.highlightTitle && (
@@ -165,7 +165,7 @@ const PlatformFeatureTemplate = ({ data: { page, subnav } }) => {
                           <div className="border-bracket-bottom" />
                         </div>
                       </button>
-                    </div>  
+                    </div>
                   )
                 })}
               </div>
@@ -206,6 +206,7 @@ export const pageQuery = graphql`
         feature1Image {
           altText
           localFile {
+            publicURL
             childImageSharp {
               fluid(maxWidth: 1000) {
                 ...GatsbyImageSharpFluid
@@ -222,6 +223,7 @@ export const pageQuery = graphql`
         feature2Image {
           altText
           localFile {
+            publicURL
             childImageSharp {
               fluid(maxWidth: 1000) {
                 ...GatsbyImageSharpFluid
@@ -247,6 +249,7 @@ export const pageQuery = graphql`
             id
             altText
             localFile {
+              publicURL
               url
             }
           }
@@ -257,6 +260,7 @@ export const pageQuery = graphql`
         productHighlightsImage {
           altText
           localFile {
+            publicURL
             childImageSharp {
               fluid(maxWidth: 1000) {
                 ...GatsbyImageSharpFluid
@@ -270,6 +274,7 @@ export const pageQuery = graphql`
           highlightIcon {
             altText
             localFile {
+              publicURL
               url
             }
           }

@@ -95,6 +95,7 @@ export const pageQuery = graphql`
         accordionFeaturedImage {
           altText
           localFile {
+            publicURL
             childImageSharp {
               fluid(maxWidth: 1000, quality: 100) {
                 ...GatsbyImageSharpFluid

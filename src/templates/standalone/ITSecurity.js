@@ -37,12 +37,12 @@ const ItSecurityTemplate = ({ data: { page } }) => {
                 {acf.certificationImages && acf.certificationImages.map(image => (
                   image.certificationDocument ? (
                     <a href={image.certificationDocument.localFile.url} target="_blank">
-                      <img src={image?.certificationImage?.localFile?.publicURL} className="img-fluid" alt=""/>
+                      <img src={image?.certificationImage?.localFile?.publicURL} className="img-fluid" alt="" />
                     </a>
-                  ):(
-                    <img src={image?.certificationImage?.localFile?.publicURL} className="img-fluid" alt=""/>
+                  ) : (
+                    <img src={image?.certificationImage?.localFile?.publicURL} className="img-fluid" alt="" />
                   )
-                  
+
                 ))}
               </div>
             </div>
@@ -84,6 +84,7 @@ export const pageQuery = graphql`
           }
           certificationDocument {
             localFile {
+              publicURL
               url
             }
           }
@@ -91,6 +92,7 @@ export const pageQuery = graphql`
         downloads {
           download {
             localFile {
+              publicURL
               url
             }
             altText

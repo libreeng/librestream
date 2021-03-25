@@ -22,7 +22,7 @@ const AboutTemplate = ({ data: { page } }) => {
       <div id="our-story">
         <Intro intro={intro} />
       </div>
-      
+
       <div className="container">
         <hr className="hr-styled" />
       </div>
@@ -81,7 +81,7 @@ const AboutTemplate = ({ data: { page } }) => {
             {acf.board && acf.board.map((boardmember, i) => {
               return (
                 <div key={`board_${i}`} className="col-12 col-lg-3 mb-4">
-                  <button onClick={() => dispatch(openModal("BoardModal", {board: boardmember}))} type="button" className="border-0 bg-transparent p-0">
+                  <button onClick={() => dispatch(openModal("BoardModal", { board: boardmember }))} type="button" className="border-0 bg-transparent p-0">
                     {boardmember.image && (
                       <BackgroundImage
                         Tag="div"
@@ -92,7 +92,7 @@ const AboutTemplate = ({ data: { page } }) => {
                     <h4 className="mb-0 text-dark">{boardmember.name && boardmember.name}</h4>
                     <p className="text-primary">{boardmember.title && boardmember.title}</p>
                   </button>
-                  
+
                 </div>
               )
             })}
@@ -106,7 +106,7 @@ const AboutTemplate = ({ data: { page } }) => {
           <div className="row">
             {acf.board && acf.board.map((boardmember, i) => (
               <div key={`board_management_${i}`} className="col-12 col-lg-3 mb-4">
-                <button onClick={() => dispatch(openModal("BoardModal", {board: boardmember}))} type="button" className="border-0 bg-transparent p-0">
+                <button onClick={() => dispatch(openModal("BoardModal", { board: boardmember }))} type="button" className="border-0 bg-transparent p-0">
                   {boardmember.image && (
                     <BackgroundImage
                       Tag="div"
@@ -141,6 +141,7 @@ export const pageQuery = graphql`
             id
             altText
             localFile {
+              publicURL
               childImageSharp {
                 fluid(maxWidth: 1000, quality: 100) {
                   ...GatsbyImageSharpFluid
@@ -157,6 +158,7 @@ export const pageQuery = graphql`
           image {
             altText
             localFile {
+              publicURL
               childImageSharp {
                 fluid(maxWidth: 1000, quality: 100) {
                   ...GatsbyImageSharpFluid
@@ -172,6 +174,7 @@ export const pageQuery = graphql`
           designations
           image {
             localFile {
+              publicURL
               childImageSharp {
                 fluid(maxWidth: 1000, quality: 100) {
                   ...GatsbyImageSharpFluid

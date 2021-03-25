@@ -116,6 +116,7 @@ export const postQuery = graphql`
         embed
         document {
           localFile {
+            publicURL
             url
           }
         }

@@ -13,6 +13,7 @@ export const PlatformFeatures = graphql`
           srcSet
           sourceUrl
           localFile {
+            publicURL
             childImageSharp {
               fluid(maxWidth: 800, quality: 100) {
                 ...GatsbyImageSharpFluid

@@ -70,6 +70,7 @@ export const formConfirmationQuery = graphql`
       acfPostTypeFormConfirmation {
         document {
           localFile {
+            publicURL
             url
           }
         }

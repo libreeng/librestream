@@ -108,6 +108,7 @@ export const pageQuery = graphql`
           }
           carouselSlideFeaturedImage {
             localFile {
+              publicURL
               childImageSharp {
                 fluid {
                   ...GatsbyImageSharpFluid

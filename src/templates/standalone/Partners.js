@@ -33,8 +33,8 @@ const PartnersTemplate = ({ data: { page } }) => {
                   <div className="col-lg-4">
                     {partnerSection.image && (
                       <div className="border-bracket py-3 ml-lg-auto w-75">
-                        <div 
-                          style={{ backgroundImage: `url(${ partnerSection?.image?.localFile?.publicURL })`}}
+                        <div
+                          style={{ backgroundImage: `url(${partnerSection?.image?.localFile?.publicURL})` }}
                           className="bg-image aspect-3x1 bg-contain" />
                       </div>
                     )}
@@ -43,7 +43,7 @@ const PartnersTemplate = ({ data: { page } }) => {
                 <div className="row row-cols-1 row-cols-md-4 mt-5">
                   {partnerSection.companies && partnerSection.companies.map(partner =>
                     <div className="col" key={partner.id}>
-                      <div className="card border border-primary" onClick={() => dispatch(openModal("PartnerModal", {partner: partner.acfPostTypePartner}))}>
+                      <div className="card border border-primary" onClick={() => dispatch(openModal("PartnerModal", { partner: partner.acfPostTypePartner }))}>
                         <div className="bg-image aspect-1x1">
                           <div className="bg-fill bg-transparent p-3">
                             <div className="w-100">
@@ -103,6 +103,7 @@ export const pageQuery = graphql`
                   videoEmbed
                   linkDownload {
                     localFile {
+                      publicURL
                       url
                     }
                   }

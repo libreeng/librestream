@@ -1,7 +1,7 @@
 import { useStaticQuery, graphql } from 'gatsby'
 
 export const useSiteFooter = () => {
-  
+
   const data = useStaticQuery(graphql`
     query SiteFooterQuery {
       wp(id: {eq: "/graphql--rootfields"}) {
@@ -34,6 +34,7 @@ export const useSiteFooter = () => {
                 srcSet
                 sourceUrl
                 localFile {
+                  publicURL
                   childImageSharp {
                     fluid(maxWidth: 500, quality: 100) {
                       ...GatsbyImageSharpFluid
@@ -78,7 +79,7 @@ export const useSiteFooter = () => {
   const { nodes } = data.wpMenu.menuItems
   const options = data.wp.globalOptions.acfSiteOptions
 
-  return { 
+  return {
     options,
     logo: data.logo,
     menuItems: nodes

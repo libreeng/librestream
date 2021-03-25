@@ -89,6 +89,7 @@ export const pageQuery = graphql`
                   kbImage {
                     altText
                     localFile {
+                      publicURL
                       childImageSharp {
                         fluid(maxWidth: 500, quality: 100) {
                           ...GatsbyImageSharpFluid
