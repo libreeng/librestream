@@ -11,24 +11,26 @@ const SolutionsTemplate = ({ data: { page, solutions } }) => {
   }
   const intro = page.acfIntro
   const allSolutions = solutions.edges
-  console.log('all solutions', allSolutions)
+
   return (
     <>
       <Hero hero={hero} />
+      <Intro intro={intro} />
       <section>
         <div className="container">
           <div className="row mt-5">
 
             {allSolutions && allSolutions.map(solution => {
-              const {title, uri, description} = solution.post 
+              const { id, uri, title, acfPostTypeSolution: { solutionDescription, solutionTitle } } = solution.post
               const featuredImage = solution.post.acfIntro.introFeaturedImage
+
               return (
-                <div className="col-12 col-sm-6 col-lg-4">
+                <div key={id} className="col-12 col-sm-6 col-lg-4">
                   <Link to={uri}>
                     <div className='card p-2'>
                       <div
                         className="card-img-top bg-image aspect-1x1 grayscale"
-                        style={{ backgroundImage: `url(${featuredImage ? featuredImage.localFile.publicURL :  'https://via.placeholder.com/400/000/000'})` }}
+                        style={{ backgroundImage: `url(${featuredImage ? featuredImage.localFile.publicURL : 'https://via.placeholder.com/400/000/000'})` }}
                       >
                         {/* <div className="bg-fill bg-hover-red">
                           {logoImage && (
@@ -38,8 +40,8 @@ const SolutionsTemplate = ({ data: { page, solutions } }) => {
                       </div>
                       <div>
                         <p>
-                          <span className="text-dark">{title}</span><br />
-                          <span className="text-gray">{description}</span>
+                          <span className="text-dark">{solutionTitle || title}</span><br />
+                          <span className="text-gray">{solutionDescription}</span>
                         </p>
                       </div>
                     </div>
@@ -88,6 +90,10 @@ export const pageQuery = graphql`
                 publicURL
               }
             }
+          }
+          acfPostTypeSolution {
+            solutionTitle
+            solutionDescription
           }
         }
       }
