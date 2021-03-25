@@ -1,12 +1,12 @@
 import React from "react"
 import { graphql } from "gatsby"
-import Image from "gatsby-image"
 import parse from "html-react-parser"
-import AddCircleLineIcon from 'remixicon-react/AddCircleLineIcon';
-import IndeterminateCircleFillIcon from 'remixicon-react/IndeterminateCircleFillIcon';
+
+
 import Hero from "../../common/ui/Hero"
-import AccordionNav from "../../components/AccordionNav"
-// import AccordionItems from "../../components/AccordionItems"
+import SupportNav from '../../components/support/SupportNav'
+import { slugify } from '../../common/utils/helpers'
+import SupportKnowledgeBase from "../../components/support/SupportKnowledgebase"
 
 
 
@@ -15,6 +15,7 @@ const SupportTemplate = ({ data: { page } }) => {
   const hero = {
     heroHeading: page.title
   }
+
   return (
     <>
       <Hero hero={hero} />
@@ -22,39 +23,37 @@ const SupportTemplate = ({ data: { page } }) => {
         <div className="container">
           <div className="row">
             <div className="col-12 col-lg-4">
-              <AccordionNav />
+              <SupportNav sections={sections} />
               <div className="border-bracket mt-5 mb-3 text-center">
                 <h6>Onsight Service Status</h6>
               </div>
               <a href="#link" className="btn btn-primary btn-block">View Onsight Service</a>
             </div>
             <div className="col-12 col-lg-8">
-              <h4 className="text-uppercase"><strong>Support Section Title</strong></h4>
-              {[...Array(6)].map((x, i) => (
-                <div className="row border-bottom border-primary py-3 my-3">
-                  <div className="col-lg-6">
-                    <h3>Windows VXX.X.X (XXXX)</h3>
-                    {/* <AccordionItems /> */}
-                    <ul className="list-unstyled">
-                      <li>
-                        <a href="#link" className="text-uppercase">
-                          <AddCircleLineIcon size="24" />
-                          <IndeterminateCircleFillIcon size="24" />
-                          Downloads and Updates
-                        </a>
-                      </li>
-                    </ul>
+              {sections && sections.map(section => {
+                const { supportSectionTitle, sectionKnowledgebases } = section
+                const slug = slugify(supportSectionTitle)
+
+                return (
+                  <div key={slug} className="row my-3">
+                    <div className="col-12">
+                      <h3>{supportSectionTitle}</h3>
+                      <div className="list-group">
+                        {sectionKnowledgebases && sectionKnowledgebases.map(knowledgebase => {
+                          const { kbTitle, knowledgebasePost } = knowledgebase
+                          return <SupportKnowledgeBase key={knowledgebasePost.id} post={knowledgebasePost} title={kbTitle} />
+                        })}
+                      </div>
+                      <hr className="hr-styled" />
+                    </div>
                   </div>
-                  <div className="col-lg-3 ml-lg-auto">
-                    <img src="https://via.placeholder.com/500" className="img-fluid" alt="" />
-                  </div>
-                </div>
-              )
-              )}
+                )
+              })}
             </div>
           </div>
         </div>
       </section>
+
       {!!page.content && (
         <section>
           <div className="container">
@@ -86,6 +85,38 @@ export const pageQuery = graphql`
               ... on WpSupport {
                 id
                 title
+                acfKnowledgebase {
+                  kbImage {
+                    altText
+                    localFile {
+                      childImageSharp {
+                        fluid(maxWidth: 500, quality: 100) {
+                          ...GatsbyImageSharpFluid
+                        }
+                      }
+                    }
+                  }
+                  section {
+                    sectionTitle
+                    sectionType
+                    links {
+                      videoEmbed
+                      url
+                      linkType
+                      linkText
+                      pdf {
+                        localFile {
+                          publicURL
+                        }
+                      }
+                      content
+                    }
+                    faqs {
+                      answer
+                      question
+                    }
+                  }
+                }
               }
             }
           }

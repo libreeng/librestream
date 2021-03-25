@@ -41,6 +41,7 @@
     "react-slick": "^0.28.1",
     "redux": "^4.0.5",
     "redux-persist": "^6.0.0",
+    "remixicon": "^2.5.0",
     "remixicon-react": "^1.0.0",
     "semantic-ui-react": "^2.0.3",
     "slick-carousel": "^1.8.1",
