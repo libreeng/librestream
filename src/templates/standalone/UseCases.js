@@ -17,10 +17,15 @@ const UseCasesTemplate = ({ data: { page } }) => {
           <div className="row mt-5">
 
             {caseStudies && caseStudies.map(useCase => {
-              const { id, title, uri, acfPostTypeUseCase: { caption, summaryDescription, featuredImage, logoImage } } = useCase.post
+              const { id, title, uri, acfPostTypeUseCase: { caption, summaryDescription, featuredImage, logoImage, externalSource: { externalLink } } } = useCase.post
+
+              const url = externalLink
+                ? externalLink.url
+                : uri
+
               return (
                 <div key={id} className="col-12 col-sm-6 col-lg-4">
-                  <Link to={uri}>
+                  <Link to={url}>
                     <div className='card p-2'>
                       <div
                         className="card-img-top bg-image aspect-1x1 grayscale"
