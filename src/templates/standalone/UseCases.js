@@ -17,9 +17,9 @@ const UseCasesTemplate = ({ data: { page } }) => {
           <div className="row mt-5">
 
             {caseStudies && caseStudies.map(useCase => {
-              const { title, uri, acfPostTypeUseCase: { description, featuredImage, logoImage } } = useCase.post
+              const { id, title, uri, acfPostTypeUseCase: { description, featuredImage, logoImage } } = useCase.post
               return (
-                <div className="col-12 col-sm-6 col-lg-4">
+                <div key={id} className="col-12 col-sm-6 col-lg-4">
                   <Link to={uri}>
                     <div className='card p-2'>
                       <div

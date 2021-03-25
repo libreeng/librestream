@@ -31,13 +31,6 @@ const CaseStudy = ({ data: { previous, next, post } }) => {
               <h2>{post.title}</h2>
             </div>
           </div>
-        </div>
-      </section>
-      <div className="container">
-        <hr />
-      </div>
-      <section>
-        <div className="container">
           <div className="row">
             {acf.solution && (
               <div className="col-lg-4">
@@ -58,7 +51,7 @@ const CaseStudy = ({ data: { previous, next, post } }) => {
                   {parse(acf.solution)}
                 </div>
               </div>
-            )}  
+            )}
             {acf.results && (
               <div className="col-lg-4">
                 <div className="bg-orange p-2">
@@ -68,10 +61,11 @@ const CaseStudy = ({ data: { previous, next, post } }) => {
                   {parse(acf.results)}
                 </div>
               </div>
-            )}  
+            )}
           </div>
         </div>
       </section>
+
       {article.title && (
         <section className="bg-primary text-white bg-offset-right mt-5">
           <div className="container">
@@ -110,7 +104,7 @@ const CaseStudy = ({ data: { previous, next, post } }) => {
       {previous || next && (
         <NextPrevMenu previous={previous} next={next} />
       )}
-      
+
       {cta && (
         <CTA cta={cta} />
       )}
