@@ -47,12 +47,16 @@ const Carousel = ({ posts, config }) => {
       <div className="col-12">
         <Slider {...settings}>
           {posts && posts.map(post => {
-            const url = post.acfPostTypeNews?.externalSource
-              ? post.acfPostTypeNews.externalSource.externalLink.url
+            const externalLink = post.nodeType === 'Post'
+              ? post.acfPostTypeNews?.externalSource?.externalLink
+              : post.acfPostTypeUseCase?.externalSource?.externalLink
+
+            const url = externalLink
+              ? externalLink.url
               : post.uri
 
             return (
-              <Link to={url} key={post.id} target={post.acfPostTypeNews?.externalSource ? '_blank' : ''}>
+              <Link to={url} key={post.id} target={externalLink ? '_blank' : ''}>
                 {post.nodeType === 'Post'
                   ? <PostCard post={post} showBracket={settings.showBracket} />
                   : <UseCaseCard post={post} />}

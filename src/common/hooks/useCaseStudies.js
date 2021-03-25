@@ -13,6 +13,13 @@ export const useCaseStudies = () => {
             acfPostTypeUseCase {
               caption
               summaryDescription
+              externalSource {
+                externalLink {
+                  target
+                  title
+                  url
+                }
+              }
               logoImage {
                 srcSet
                 sourceUrl

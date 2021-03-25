@@ -1,8 +1,9 @@
+/* eslint-disable jsx-a11y/no-static-element-interactions */
 import React from 'react'
 import PropTypes from 'prop-types'
 
 const UseCaseCard = ({ post }) => {
-  const { title, acfPostTypeUseCase: {caption, description, featuredImage, logoImage}} = post
+  const { title, acfPostTypeUseCase: { caption, summaryDescription, featuredImage, logoImage }} = post
 
   return (
     <div className='card p-2'>
@@ -30,7 +31,7 @@ const UseCaseCard = ({ post }) => {
         </div>
       </div>
       <div className="card-footer bg-transparent text-primary text-center text-uppercase">
-        <h6 className="mt-5 text-dark">{description}</h6>
+        <h6 className="mt-5 text-dark">{summaryDescription}</h6>
         <div className="border-bracket-bottom" />
       </div>
     </div>
