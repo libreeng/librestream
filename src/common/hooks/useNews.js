@@ -5,8 +5,7 @@ export const useNews = () => {
     query AllNews {
       press: allWpPost(
         filter: {categories: {nodes: {elemMatch: {name: {eq: "Press Releases"}}}}},
-        sort: {order: DESC, fields: date},
-        limit: 10
+        sort: {order: DESC, fields: date}
         ) {
         nodes {
           ...PostSummary
@@ -14,8 +13,7 @@ export const useNews = () => {
       }
       events: allWpPost(
         filter: {categories: {nodes: {elemMatch: {name: {eq: "Events"}}}}},
-        sort: {order: DESC, fields: date},
-        limit: 10
+        sort: {order: DESC, fields: date}
         ) {
         nodes {
           ...PostSummary
@@ -23,8 +21,7 @@ export const useNews = () => {
       }
       news: allWpPost(
         filter: {categories: {nodes: {elemMatch: {name: {eq: "In The News"}}}}},
-        sort: {order: DESC, fields: date},
-        limit: 10
+        sort: {order: DESC, fields: date}
         ) {
         nodes {
           ...PostSummary
@@ -41,8 +38,7 @@ export const useNews = () => {
       }
       videos: allWpPost(
         filter: {categories: {nodes: {elemMatch: {name: {eq: "Videos"}}}}},
-        sort: {order: DESC, fields: date},
-        limit: 10
+        sort: {order: DESC, fields: date}
         ) {
         nodes {
           ...PostSummary
@@ -50,8 +46,7 @@ export const useNews = () => {
       }
       webinars: allWpPost(
         filter: {categories: {nodes: {elemMatch: {name: {eq: "Webinars"}}}}},
-        sort: {order: DESC, fields: date},
-        limit: 10
+        sort: {order: DESC, fields: date}
         ) {
         nodes {
           ...PostSummary
@@ -59,8 +54,7 @@ export const useNews = () => {
       }
       blog: allWpPost(
         filter: {categories: {nodes: {elemMatch: {name: {eq: "Blog"}}}}},
-        sort: {order: DESC, fields: date},
-        limit: 10
+        sort: {order: DESC, fields: date}
         ) {
         nodes {
           ...PostSummary

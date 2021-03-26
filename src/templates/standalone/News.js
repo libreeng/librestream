@@ -108,7 +108,7 @@ const NewsTemplate = ({ data: { page } }) => {
         </div>
       </section>
 
-      <section>
+      <section className="overflow-hidden">
         <Carousel
           posts={featuredCaseStudies}
           config={{
