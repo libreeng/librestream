@@ -162,14 +162,13 @@
           padding-right: 0;
           white-space: normal;
           font-size: 1.2rem;
-          color: $primary;
+          color: $white;
           @include media-breakpoint-down(md) {
             padding-left: 15px;
             padding-right: 15px;
             padding: 10px 15px;
-            color: $primary;
+            color: $white;
             border-top: 1px solid $primary;
-            background: $blue-mid;
             &:hover,
             &:active {
               background: $primary;
