@@ -6,7 +6,6 @@ import Hero from "../common/ui/Hero"
 import Intro from "../common/ui/Intro"
 import NextPrevMenu from '../common/ui/menus/NextPrevMenu'
 import Stats from '../components/Stats'
-// import BackgroundImage from 'gatsby-background-image'
 
 const Solution = ({ data: { previous, next, post } }) => {
   const stats = post.acfStats.statistics

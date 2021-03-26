@@ -323,7 +323,6 @@ async function getPages({ graphql, reporter }) {
     )
     return
   }
-  // console.log(graphqlResult.data.allWpPage.nodes)
   const pages = graphqlResult.data.allWpPage.nodes
 
   return pages
@@ -350,7 +349,6 @@ async function getCategories({ graphql, reporter }) {
     )
     return
   }
-  // console.log(graphqlResult.data.allWpPage.nodes)
   const categories = graphqlResult.data.allWpCategory.nodes
 
   return categories

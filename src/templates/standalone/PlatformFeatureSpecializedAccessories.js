@@ -11,9 +11,7 @@ const PlatformFeatureSpecializedAccessories = ({ data: { page, subnav } }) => {
   const hero = page.acfHero
   const nav = subnav.menuItems.nodes
   const accessories = template.accessories
-  // const {featureLinks} = template.links
-  // const {featureDocuments} = template.documents
-  console.log('docs and links', template.links, template.documents)
+
   return (
     <>
       <Hero

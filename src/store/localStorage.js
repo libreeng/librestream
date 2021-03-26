@@ -12,10 +12,10 @@ export const SetTransform = createTransform(
     return { ...outboundState, mySet: new Set(outboundState.mySet) };
   },
   // define which reducers this transform gets called for.
-  { whitelist: ['shopify'] }
+  { whitelist: ['librestream'] }
 )
 
-export const ShopifyTransform = createTransform(
+export const LibrestreamTransform = createTransform(
   // transform state on its way to being serialized and persisted.
   (inboundState, key) => {
     return { ...inboundState };
@@ -28,6 +28,6 @@ export const ShopifyTransform = createTransform(
     return { ...outboundState }
   },
   // define which reducers this transform gets called for.
-  { whitelist: ['shopify'] }
+  { whitelist: ['librestream'] }
 )
 

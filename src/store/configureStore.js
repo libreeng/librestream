@@ -1,14 +1,14 @@
 import { applyMiddleware, compose, createStore } from 'redux'
 import { persistReducer } from 'redux-persist'
 import storage from 'redux-persist/lib/storage'
-import { ShopifyTransform } from './localStorage'
+import { LibrestreamTransform } from './localStorage'
 import rootReducer from './reducers'
 
 
 const persistConfig = { // configuration object for redux-persist
-  key: 'shopify',
+  key: 'librestream',
   storage, // define which storage to use
-  transforms: [ShopifyTransform],
+  transforms: [LibrestreamTransform],
 }
 
 const persistedReducer = persistReducer(persistConfig, rootReducer()) // create a persisted reducer

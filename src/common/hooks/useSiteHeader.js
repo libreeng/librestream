@@ -21,7 +21,6 @@ export const useSiteHeader = () => {
     }
   `)
 
-  // console.log("data.logo.childImageSharp.fixed.srcWebp", data.logo.childImageSharp.fixed.srcWebp)
   const { nodes } = data.wpMenu.menuItems
 
   return { menuItems: nodes, logo: data.logo }

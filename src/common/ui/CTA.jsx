@@ -3,7 +3,7 @@ import PropTypes from 'prop-types'
 import parse from "html-react-parser"
 
 const CTA = ({ cta }) => {
-  console.log('cta',cta)
+
   return (
     <section className="bg-primary text-white">
       <div className="container">
@@ -17,7 +17,7 @@ const CTA = ({ cta }) => {
             {cta.link && (
               <a href={cta.link.url} target={cta.target} className="btn btn-secondary text-dark">{cta.link.title ? cta.link.title : 'Learn More'}</a>
             )}
-            
+
           </div>
         </div>
       </div>

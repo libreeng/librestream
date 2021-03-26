@@ -1,14 +1,15 @@
 import React from 'react'
 import PropTypes from 'prop-types'
 import { useDispatch } from 'react-redux'
-import { Modal, Button } from 'react-bootstrap'
+import { Modal } from 'react-bootstrap'
+
 import { closeModal } from './modalActions'
-import parse from "html-react-parser"
+
 
 
 const HighlightModal = ({highlight}) => {
   const dispatch = useDispatch()
-  console.log(highlight)
+
   return (
     <>
       <Modal show onHide={() => dispatch(closeModal())} size="lg">

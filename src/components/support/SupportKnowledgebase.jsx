@@ -22,7 +22,7 @@ const SupportKnowledgeBase = ({ title, post }) => {
             {section && section.map(section => {
               const { sectionTitle, sectionType, links, faq } = section
               const slug = slugify(sectionTitle)
-              console.log(section)
+
               return (
                 <Card key={slug}>
                   <Card.Header>
