@@ -1,5 +1,5 @@
 import React from 'react'
-import PropTypes from 'prop-types'
+// import PropTypes from 'prop-types'
 import FacebookFillIcon from 'remixicon-react/FacebookFillIcon';
 import TwitterFillIcon from 'remixicon-react/TwitterFillIcon';
 import LinkedinFillIcon from 'remixicon-react/LinkedinFillIcon';
@@ -21,7 +21,7 @@ const SocialNav = () => {
         <div className="icon-circle-bg mr-3">
           <MailFillIcon size="14" />
         </div>
-      </div> 
+      </div>
     </>
   )
 }
