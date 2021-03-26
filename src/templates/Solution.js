@@ -9,11 +9,11 @@ import Stats from '../components/Stats'
 // import BackgroundImage from 'gatsby-background-image'
 
 const Solution = ({ data: { previous, next, post } }) => {
-  const acf = post.acfPostTypeSolution
   const stats = post.acfStats.statistics
-  const hero = post.acfHero
+  const hero = {
+    heroHeading: "Industry Solution"
+  }
   const intro = post.acfIntro
-  console.log(intro)
   const featuredImage = intro.introFeaturedImage.localFile.publicURL
   return (
     <>
@@ -22,8 +22,7 @@ const Solution = ({ data: { previous, next, post } }) => {
         <div className="container">
           <div className="row">
             <div className="col-12">
-              <h2>Industry Solution</h2>
-              <h3 className="lead text-primary">{post.title}</h3>
+              <h2>{post.title}</h2>
             </div>
           </div>
           <hr />
@@ -34,14 +33,14 @@ const Solution = ({ data: { previous, next, post } }) => {
         <div className="container">
           <div className="row">
             <div className="col-lg-6">
-              {!!post.content &&  parse(post.content)}
+              {!!post.content && parse(post.content)}
             </div>
-            
+
             <div className="col-lg-5">
               {featuredImage && (
-                <div 
-                  style={{ backgroundImage: `url(${ intro.introFeaturedImage.localFile.publicURL })`}}
-                  className="bg-image aspect-1x1 img-offset-top" 
+                <div
+                  style={{ backgroundImage: `url(${intro.introFeaturedImage.localFile.publicURL})` }}
+                  className="bg-image aspect-1x1 img-offset-top"
                 />
               )}
             </div>
@@ -71,7 +70,6 @@ export const pageQuery = graphql`
   ) {
     # selecting the current post by id
     post: wpSolution(id: { eq: $id }) {
-      ...SolutionHero
       ...SolutionIntro
       ...SolutionStats
       id
