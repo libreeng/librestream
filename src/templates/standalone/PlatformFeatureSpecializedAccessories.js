@@ -103,7 +103,7 @@ const PlatformFeatureSpecializedAccessories = ({ data: { page, subnav } }) => {
 
                     {accessory.specsDownload && (
                       <div className="text-center">
-                        <a href={accessory.specsDownload.localFile.url && accessory.specsDownload.localFile.url} className="btn btn-outline-primary text-dark">Download The Specs</a>
+                        <a href={accessory.specsDownload.localFile.url && accessory.specsDownload.localFile.url} className="btn btn-outline-primary text-dark">View Specs</a>
                       </div>
                     )}
                   </div>
