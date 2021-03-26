@@ -23,7 +23,6 @@ const NewsTemplate = ({ data: { page } }) => {
         <div className="container">
           <div className="row">
             <div className="col-12">
-              <p className="float-right mr-5">{page.date}</p>
               <h2>Featured News</h2>
             </div>
           </div>
