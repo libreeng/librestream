@@ -18,8 +18,9 @@ const CaseStudy = ({ data: { previous, next, post } }) => {
   }
 
   const cta = post.acfCta
-  const heroHeading = 'Customer Use Case'
-  const hero = post.acfHero
+  const hero = {
+    heroHeading: "Use Case"
+  }
 
   return (
     <>
@@ -127,7 +128,6 @@ export const pageQuery = graphql`
   ) {
     # selecting the current post by id
     post: wpCaseStudy(id: { eq: $id }) {
-      ...CaseStudyHero
       ...CaseStudyCta
       id
       title
