@@ -32,17 +32,40 @@ const AboutTemplate = ({ data: { page } }) => {
             </div>
           </div>
           <div className="row row-cols-1 row-cols-md-2 align-items-center justify-content-between">
-            {acf.awards && acf.awards.map(award => {
-              return (
-                <div key={award.image.id} className="col-12 col-lg-2 mb-4">
-                  <Image
-                    fluid={award.image.localFile.childImageSharp.fluid && award.image.localFile.childImageSharp.fluid}
-                    alt={award.image.altText && award.image.altText}
-                  />
-                </div>
-              )
+          {acf.awards && acf.awards.map(award => {
+              if(award.image){ // testing by Paul
+                return (
+                  <div key={award.image.id} className="col-12 col-lg-2 mb-4">
+                    <Image
+                      fluid={award.image.localFile.childImageSharp.fluid && award.image.localFile.childImageSharp.fluid}
+                      alt={award.image.altText && award.image.altText}
+                    />
+                  </div>
+                )
+              } else {
+                // log this to help troubleshoot. 1 4 2 3 5
+                console.log("Could not find property 'image' on 'award'.",award); // testing by Paul
+              }
             }
             )}
+
+            {acf.theawards && acf.theawards.map(award => {
+              if(award.image){ // testing by Paul
+                return (
+                  <div key={award.image.id} className="col-12 col-lg-2 mb-4">
+                    <Image
+                      fluid={award.image.localFile.childImageSharp.fluid && award.image.localFile.childImageSharp.fluid}
+                      alt={award.image.altText && award.image.altText}
+                    />
+                  </div>
+                )
+              } else {
+                // log this to help troubleshoot. 1 4 2 3 5
+                console.log("Could not find property 'image' on 'theaward'.",award); // testing by Paul
+              }
+            }
+            )}
+
           </div>
         </div>
       </section>
@@ -135,6 +158,20 @@ export const pageQuery = graphql`
       ...PageIntro
       acfTemplateAbout {
         awards {
+          image {
+            id
+            altText
+            localFile {
+              publicURL
+              childImageSharp {
+                fluid(maxWidth: 1000, quality: 100) {
+                  ...GatsbyImageSharpFluid
+                }
+              }
+            }
+          }
+        }
+        theawards {
           image {
             id
             altText
