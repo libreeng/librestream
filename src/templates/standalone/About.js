@@ -2,12 +2,10 @@ import React from "react"
 import { graphql } from "gatsby"
 import Image from "gatsby-image"
 import BackgroundImage from 'gatsby-background-image'
-import parse from "html-react-parser"
 import { useDispatch } from "react-redux"
 import Hero from "../../common/ui/Hero"
 import Intro from "../../common/ui/Intro"
 import { openModal } from "../../common/modals/modalActions"
-import BoardModal from '../../common/modals/BoardModal'
 
 const AboutTemplate = ({ data: { page } }) => {
   const dispatch = useDispatch();
