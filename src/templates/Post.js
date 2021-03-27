@@ -21,11 +21,15 @@ const PostTemplate = ({ data: { previous, next, post } }) => {
   }
 
   // Related Post Logic
-  const relatedPosts = post.tags.nodes.map(node => {
-    const { posts: { nodes: taggedPosts } } = node
+  let relatedPosts = post.tags.nodes.length > 0
+    ? post.tags.nodes
+    : post.categories.nodes
 
+  relatedPosts.map(node => {
+    const { posts: { nodes: taggedPosts } } = node
     return taggedPosts.filter(rp => rp.id !== post.id && rp.acfPostTypeNews.mainImage)
   }).reduce((a, b) => [...a, ...b]).slice(0, 3)
+
 
 
   return (
