@@ -21,16 +21,15 @@ const PostTemplate = ({ data: { previous, next, post } }) => {
   }
 
   // Related Post Logic
-  let relatedPosts = post.tags.nodes.length > 0
+  const nodes = post.tags.nodes.length > 0
     ? post.tags.nodes
     : post.categories.nodes
 
-  relatedPosts.map(node => {
-    const { posts: { nodes: taggedPosts } } = node
-    return taggedPosts.filter(rp => rp.id !== post.id && rp.acfPostTypeNews.mainImage)
+  const relatedPosts = nodes.map(node => {
+    const { posts: { nodes } } = node
+    const qualifiedPosts = nodes.filter(rp => rp.id !== post.id && rp.acfPostTypeNews.mainImage)
+    return qualifiedPosts
   }).reduce((a, b) => [...a, ...b]).slice(0, 3)
-
-
 
   return (
     <>
@@ -62,7 +61,7 @@ const PostTemplate = ({ data: { previous, next, post } }) => {
               <hr />
               <h6>Related Posts</h6>
               <div className="row">
-                {relatedPosts && relatedPosts.map(relatedPost => {
+                {relatedPosts.length > 0 && relatedPosts.map(relatedPost => {
                   return (
                     <div key={relatedPost.id} className="col-12 col-sm-4 col-lg-12">
                       <Link to={relatedPost.uri}>
