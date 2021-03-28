@@ -1,11 +1,11 @@
 import React from "react"
 import { graphql } from "gatsby"
-import Image from "gatsby-image"
+// import Image from "gatsby-image"
 import parse from "html-react-parser"
 import Hero from "../../common/ui/Hero"
 import { useDispatch } from "react-redux"
 import { openModal } from "../../common/modals/modalActions"
-import PartnerModal from '../../common/modals/PartnerModal'
+// import PartnerModal from '../../common/modals/PartnerModal'
 
 const PartnersTemplate = ({ data: { page } }) => {
   const dispatch = useDispatch();
