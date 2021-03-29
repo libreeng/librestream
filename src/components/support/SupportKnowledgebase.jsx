@@ -31,13 +31,17 @@ const SupportKnowledgeBase = ({ title, post }) => {
                         <AddLineIcon size="20" />
                         {sectionTitle}
                       </div>
-                      {/* <i className="icon-arrow arrow-down" /> */}
                     </Accordion.Toggle>
                   </Card.Header>
                   {sectionType && (
                     <Accordion.Collapse eventKey={slug}>
                       <Card.Body>
-                        {sectionType}
+                        {sectionType && sectionType === 'Links' && (
+                          links.map((link, i) => {
+                            // console.log(link)
+                            return <div key={`link_${i}`}>Parse Content</div>
+                          })
+                        )}
                       </Card.Body>
                     </Accordion.Collapse>
                   )}
@@ -47,12 +51,13 @@ const SupportKnowledgeBase = ({ title, post }) => {
           </Accordion>
         </div>
         <div className="col-lg-3 ml-lg-auto">
-          <Image
-            fluid={featuredImage.fluid}
-            alt={featuredImage.alt}
-            style={{ marginBottom: 50 }}
-          />
-
+          {featuredImage.fluid && (
+            <Image
+              fluid={featuredImage.fluid}
+              alt={featuredImage.alt}
+              style={{ marginBottom: 50 }}
+            />
+          )}
         </div>
 
       </div>
