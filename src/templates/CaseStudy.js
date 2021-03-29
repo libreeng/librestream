@@ -19,7 +19,9 @@ const CaseStudy = ({ data: { previous, next, post } }) => {
 
   const pageCTA = post.acfCta
   const hero = {
-    heroHeading: "Use Case"
+    heroHeading: "Use Case",
+    heroBackgroundImage: post.acfHero.heroBackgroundImage ? post.acfHero.heroBackgroundImage : false,
+    heroFeaturedImage: post.acfHero.heroFeaturedImage ? post.acfHero.heroFeaturedImage : false
   }
 
   return (
@@ -134,6 +136,24 @@ export const pageQuery = graphql`
           target
           title
           url
+        }
+      }
+      acfHero {
+        heroFeaturedImage {
+          altText
+          localFile {
+            publicURL
+          }
+        }
+        heroBackgroundImage {
+          altText
+          localFile {
+            childImageSharp {
+              fluid(maxWidth: 1920, quality: 100) {
+                ...GatsbyImageSharpFluid
+              }
+            }
+          }
         }
       }
       id
