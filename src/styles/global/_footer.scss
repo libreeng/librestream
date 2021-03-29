@@ -1,22 +1,22 @@
 #pageFooter {
   color: $dark;
   overflow: hidden;
-  background: transparent linear-gradient(180deg, $primary 0%, $dark 100%) 0% 0% no-repeat padding-box;
+  // background: transparent linear-gradient(180deg, $primary 0%, $dark 100%) 0% 0% no-repeat padding-box;
   h3 {
     text-transform: uppercase;
   }
-  h6 {
-    a {
-      color: $white;
-    }
-  }
+  // h6 {
+  //   a {
+  //     color: $white;
+  //   }
+  // }
   .nav-link {
     color: $dark;
     padding-left: 0;
     padding-right: 0;
     font-size: 1rem;
     padding: 0.3rem 0;
-    color: $white;
+    // color: $white;
   }
   .navbar-brand {
     display: block;
@@ -44,6 +44,6 @@
   }
   // offset for extra space created under slick-slider
   .slick-slider {
-    margin-bottom: -40px;
+    height: 110px;
   }
 }

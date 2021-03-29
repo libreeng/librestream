@@ -34,24 +34,17 @@ const AboutTemplate = ({ data: { page } }) => {
             </div>
           </div>
           <div className="row row-cols-1 row-cols-md-2 align-items-center justify-content-between">
-            {acf.awards && acf.awards.map(award => {
-              if (award.image) { // testing by Paul
-                return (
-                  <div key={award.image.id} className="col-12 col-lg-2 mb-4">
-                    <Image
-                      fluid={award.image.localFile.childImageSharp.fluid && award.image.localFile.childImageSharp.fluid}
-                      alt={award.image.altText && award.image.altText}
-                    />
-                  </div>
-                )
-              } else {
-                // log this to help troubleshoot. 1 4 2 3 5
-                console.log("Could not find property 'image' on 'award'.", award); // testing by Paul
-              }
-            }
+            {acf.awards && acf.awards.map(award => (
+              <div key={award.image.id} className="col-12 col-lg-2 mb-4">
+                <Image
+                  fluid={award.image.localFile.childImageSharp.fluid && award.image.localFile.childImageSharp.fluid}
+                  alt={award.image.altText && award.image.altText}
+                />
+              </div>
+            )
             )}
 
-            {acf.theawards && acf.theawards.map(award => {
+            {/* {acf.theawards && acf.theawards.map(award => {
               if (award.image) { // testing by Paul
                 return (
                   <div key={award.image.id} className="col-12 col-lg-2 mb-4">
@@ -66,32 +59,13 @@ const AboutTemplate = ({ data: { page } }) => {
                 console.log("Could not find property 'image' on 'theaward'.", award); // testing by Paul
               }
             }
-            )}
+            )} */}
 
           </div>
         </div>
       </section>
       <div className="container">
         <hr className="hr-styled" />
-      </div>
-      <section id="timeline">
-        <div className="container">
-          <div className="row">
-            <div className="col-12">
-              {acf.timelineTitle && (
-                <h2>{acf.timelineTitle}</h2>
-              )}
-            </div>
-          </div>
-        </div>
-      </section>
-      <div className="responsive-iframe aspect-16x9">
-        <div className="bg-fill bg-dark">
-          <h1 className="text-white">Timeline video</h1>
-        </div>
-        {acf.timelineVideo && (
-          <iframe src={acf.timelineVideo} title="Timeline Video" />
-        )}
       </div>
       <section id="board-of-directors">
         <div className="container">
