@@ -27,7 +27,7 @@ const CaseStudy = ({ data: { previous, next, post } }) => {
   return (
     <>
       <Hero hero={hero} />
-      <section>
+      <section className="pb-3">
         <div className="container">
           <div className="row">
             <div className="col-12">
