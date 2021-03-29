@@ -1,4 +1,4 @@
-import React from 'react'
+import React, {useState} from 'react'
 // import PropTypes from 'prop-types'
 import { graphql } from "gatsby"
 import Image from "gatsby-image"
@@ -6,16 +6,19 @@ import BackgroundImage from 'gatsby-background-image'
 import parse from "html-react-parser"
 import Hero from "../../common/ui/Hero"
 import FooterCTAs from '../../common/ui/FooterCTAs'
-import { useDispatch } from "react-redux"
-import { openModal } from "../../common/modals/modalActions"
-import PartnerModal from '../../common/modals/PartnerModal'
+import Collapse from 'react-bootstrap/Collapse'
+import Highlight from '../../components/Highlight'
+// import { useDispatch } from "react-redux"
+// import { openModal } from "../../common/modals/modalActions"
+// import PartnerModal from '../../common/modals/PartnerModal'
 
 const PlatformFeatureTemplate = ({ data: { page, subnav } }) => {
-  const dispatch = useDispatch();
+  // const dispatch = useDispatch();
   const template = page.acfTemplatePlaformFeature
   const hero = page.acfHero
   const nav = subnav.menuItems.nodes
   const { cta } = page.acfFooterCTAs
+  
 
   return (
     <>
@@ -142,37 +145,14 @@ const PlatformFeatureTemplate = ({ data: { page, subnav } }) => {
             </div>
           </div>
           <div className="row">
-            <div className="col-lg-6">
+            <div className="col-12 col-xl-6">
               <div className="row">
-                {template.highlights && template.highlights.map(highlight => {
-                  const iconData = highlight.highlightIcon ? highlight.highlightIcon.localFile.url : false
-                  return (
-                    <div className="col-6 col-lg-4 mb-3">
-                      <button className="card h-100 w-100 justify-content-between border-0 bg-transparent" onClick={() => dispatch(openModal("HighlightModal", { highlight: highlight }))}>
-
-                        {iconData && (
-                          <div className="w-100 p-3 p-lg-4">
-                            <div
-                              style={{ backgroundImage: `url(${iconData})` }}
-                              className="bg-image aspect-1x1 bg-contain" />
-                          </div>
-
-                        )}
-                        <div className="card-body p-0 d-flex text-center w-100">
-                          {highlight.highlightTitle && (
-                            <h6 className="text-center mt-3 mb-0 w-100">{highlight.highlightTitle}</h6>
-                          )}
-                        </div>
-                        <div className="card-footer bg-transparent border-0 w-100">
-                          <div className="border-bracket-bottom" />
-                        </div>
-                      </button>
-                    </div>
-                  )
-                })}
+                {template.highlights && template.highlights.map(highlight => (
+                  <Highlight highlight={highlight} />
+                ))}
               </div>
             </div>
-            <div className="col-lg-6">
+            <div className="col-12 col-xl-6">
               {template.productHighlightsImage && (
                 <Image
                   fluid={template?.productHighlightsImage?.localFile.childImageSharp.fluid}
