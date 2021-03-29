@@ -146,7 +146,7 @@ const PlatformFeatureTemplate = ({ data: { page, subnav } }) => {
           </div>
           <div className="row">
             <div className="col-12 col-xl-6">
-              <div className="row">
+              <div className="row justify-content-center">
                 {template.highlights && template.highlights.map(highlight => (
                   <Highlight highlight={highlight} />
                 ))}
