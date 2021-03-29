@@ -10,7 +10,8 @@
     "react/no-danger": "off",
     "react/no-array-index-key": "off",
     "react/jsx-one-expression-per-line": "off",
-    "import/prefer-default-export": "off"
+    "import/prefer-default-export": "off",
+    "import/no-named-as-default": "off"
   },
   "settings": {
     "import/core-modules": []
