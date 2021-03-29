@@ -19,8 +19,8 @@
     align-items: flex-end;
   }
 
-  img.img-cover {
-    position: absolute;
+  .img-cover {
+    position: absolute !important;
     top: 0;
     left: 0;
     width: 100%;

@@ -13,13 +13,13 @@ const Hero = ({ hero, nav, className }) => {
   return (
     <div className={`hero ${className}`}>
       {backgroundImage && (
-        <img src={heroBackgroundImage.sourceUrl} alt={heroBackgroundImage.alt} className="img-cover" />
+        // <img src={heroBackgroundImage.sourceUrl} alt={heroBackgroundImage.alt} className="img-cover" />
         // <BackgroundImage
         //   Tag="div"
         //   className="bg-image"
         //   fluid={backgroundImage}
         // />
-        // <Image fluid={backgroundImage} alt={hero.backgroundImage.alt} className="img-cover" />
+        <Image fluid={backgroundImage} alt={heroBackgroundImage.altText} className="img-cover" />
       )}
 
       <div className="bg-content">

@@ -7,7 +7,7 @@ import { useSiteFooter } from '../hooks/useSiteFooter'
 const FooterCTAs = ({ featured }) => {
   const { options: { ctas } } = useSiteFooter()
   let featuredCTAs = ctas
-  console.log(featured)
+
   if(featured) {
     featuredCTAs = [...featured].splice(0, 3)
   }

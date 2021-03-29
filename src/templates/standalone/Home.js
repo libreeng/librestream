@@ -46,7 +46,7 @@ const HomeTemplate = ({ data: { page } }) => {
         </div>
       </section>
 
-      <section>
+      <section className="overflow-hidden">
         <Carousel
           posts={featuredCaseStudies}
           config={{
@@ -61,7 +61,7 @@ const HomeTemplate = ({ data: { page } }) => {
 
       <hr className="hr-styled" />
 
-      <section>
+      <section className="overflow-hidden">
         <div className="container">
           <div className="row mb-4">
             <div className="col-12">
