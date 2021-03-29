@@ -4,14 +4,17 @@ import { graphql } from "gatsby"
 import parse from "html-react-parser"
 import Hero from "../../common/ui/Hero"
 import Intro from "../../common/ui/Intro"
+import FooterCTAs from '../../common/ui/FooterCTAs'
 
 const ProductRecyclingTemplate = ({ data: { page } }) => {
-  
+
   const acf = page.acfTemplateProductRecycling
   const hero = {
     heroHeading: page.title
   }
   const intro = page.acfIntro
+  const { cta } = page.acfFooterCTAs
+
   return (
     <>
       <Hero hero={hero} />
@@ -52,6 +55,7 @@ const ProductRecyclingTemplate = ({ data: { page } }) => {
         </section>
       )}
 
+      <FooterCTAs featured={cta} />
     </>
   )
 }
@@ -62,6 +66,7 @@ export const pageQuery = graphql`
     page: wpPage(id: { eq: $id }) {
       ...PageDetails
       ...PageIntro
+      ...FooterCTAs
       acfTemplateProductRecycling {
         shippingAddress
         shippingDescription

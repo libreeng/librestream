@@ -4,6 +4,7 @@ import Image from "gatsby-image"
 import parse from "html-react-parser"
 import Hero from "../../common/ui/Hero"
 import Intro from '../../common/ui/Intro'
+import FooterCTAs from '../../common/ui/FooterCTAs'
 
 const SolutionsTemplate = ({ data: { page, solutions } }) => {
   const hero = {
@@ -11,6 +12,7 @@ const SolutionsTemplate = ({ data: { page, solutions } }) => {
   }
   const intro = page.acfIntro
   const allSolutions = solutions.edges
+  const { cta } = page.acfFooterCTAs
 
   return (
     <>
@@ -65,6 +67,7 @@ const SolutionsTemplate = ({ data: { page, solutions } }) => {
         </section>
       )}
 
+      <FooterCTAs featured={cta} />
     </>
   )
 }
@@ -76,6 +79,7 @@ export const pageQuery = graphql`
       ...PageDetails
       ...PageIntro
       ...PageHero
+      ...FooterCTAs
     }
     solutions: allWpSolution(sort: { fields: [date], order: DESC }) {
       edges {

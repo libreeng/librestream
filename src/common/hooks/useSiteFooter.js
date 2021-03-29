@@ -28,22 +28,20 @@ export const useSiteFooter = () => {
               url
             }
             ctas {
-              label
-              image {
-                altText
-                srcSet
-                sourceUrl
+              ctaTitle
+              ctaLink {
+                url
+                title
+                target
+              }
+              ctaFeaturedImage {
                 localFile {
-                  publicURL
                   childImageSharp {
                     fluid(maxWidth: 500, quality: 100) {
                       ...GatsbyImageSharpFluid
                     }
                   }
                 }
-              }
-              link {
-                url
               }
             }
             partners {

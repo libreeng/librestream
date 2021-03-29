@@ -1,6 +1,5 @@
 import React from 'react'
 import { useSiteFooter } from '../hooks/useSiteFooter'
-import FeaturedCTAs from './FeaturedCTAs'
 import LogoTicker from './LogoTicker'
 import FooterMenu from './menus/FooterMenu'
 import SocialMenu from './menus/SocialMenu'
@@ -8,13 +7,11 @@ import SocialMenu from './menus/SocialMenu'
 
 const Footer = () => {
   const { options } = useSiteFooter()
-  const { partners, ctas } = options
+  const { partners } = options
 
   return (
     <>
-      <FeaturedCTAs featured={ctas} />
       <footer id="pageFooter" className="text-white">
-        <hr className="border-white mb-0" />
         <LogoTicker items={partners} />
         <hr className="border-white mt-0 mb-4" />
         <div className="container">

@@ -2,11 +2,13 @@ import React from "react"
 import { graphql } from "gatsby"
 import parse from "html-react-parser"
 import Hero from "../../common/ui/Hero"
+import FooterCTAs from '../../common/ui/FooterCTAs'
 
 const ReleaseBulletinTemplate = ({ data: { page } }) => {
   const hero = {
     heroHeading: page.title
   }
+  const { cta } = page.acfFooterCTAs
 
   return (
     <>
@@ -23,6 +25,7 @@ const ReleaseBulletinTemplate = ({ data: { page } }) => {
         </div>
       </div>
 
+      <FooterCTAs featured={cta} />
     </>
   )
 }
@@ -32,6 +35,7 @@ export const pageQuery = graphql`
     # selecting the current page by id
     page: wpPage(id: { eq: $id }) {
       ...PageDetails
+      ...FooterCTAs
     }
   }
 `

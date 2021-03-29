@@ -2,11 +2,13 @@ import React from "react"
 import { graphql } from "gatsby"
 import parse from "html-react-parser"
 import Hero from "../../common/ui/Hero"
+import FooterCTAs from '../../common/ui/FooterCTAs'
 
 const AwardTemplate = ({ data: { page } }) => {
   const hero = {
     heroHeading: page.title
   }
+  const { cta } = page.acfFooterCTAs
 
   return (
     <>
@@ -22,7 +24,7 @@ const AwardTemplate = ({ data: { page } }) => {
           </div>
         </div>
       </div>
-
+      <FooterCTAs featured={cta} />
     </>
   )
 }

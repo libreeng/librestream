@@ -17,7 +17,7 @@ const CaseStudy = ({ data: { previous, next, post } }) => {
     image: acf.articleImage?.localFile.childImageSharp.fluid
   }
 
-  const cta = post.acfCta
+  const pageCTA = post.acfCta
   const hero = {
     heroHeading: "Use Case"
   }
@@ -106,8 +106,8 @@ const CaseStudy = ({ data: { previous, next, post } }) => {
         <NextPrevMenu previous={previous} next={next} />
       )}
 
-      {cta && (
-        <CTA cta={cta} />
+      {pageCTA && (
+        <CTA cta={pageCTA} />
       )}
     </>
   )
@@ -128,7 +128,14 @@ export const pageQuery = graphql`
   ) {
     # selecting the current post by id
     post: wpCaseStudy(id: { eq: $id }) {
-      ...CaseStudyCta
+      acfCta {
+        ctaDescription
+        link {
+          target
+          title
+          url
+        }
+      }
       id
       title
       uri

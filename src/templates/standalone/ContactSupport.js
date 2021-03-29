@@ -3,13 +3,15 @@ import { graphql } from "gatsby"
 import parse from "html-react-parser"
 import { useSiteFooter } from '../../common/hooks/useSiteFooter'
 import Hero from "../../common/ui/Hero"
+import FooterCTAs from '../../common/ui/FooterCTAs'
 
 const ContactSupportTemplate = ({ data: { page } }) => {
   const acf = page.acfTemplateContactSupport
-  const {options} = useSiteFooter()
+  const { options } = useSiteFooter()
   const hero = {
     heroHeading: page.title
   }
+  const { cta } = page.acfFooterCTAs
 
   return (
     <>
@@ -44,7 +46,7 @@ const ContactSupportTemplate = ({ data: { page } }) => {
           </div>
         </div>
       </section>
-      
+
       <section className="pt-0">
         <div className="container">
           <div className="row justify-content-center">
@@ -64,14 +66,14 @@ const ContactSupportTemplate = ({ data: { page } }) => {
                   )}
                 </div>
                 <div className="col-12 col-lg-5">
-                  <div className="border-bracket"> 
+                  <div className="border-bracket">
                     <h6 className="mb-0">{options.phoneTitle}</h6>
                     <p className="text-primary">{options.phoneNumber}</p>
                     <h6 className="mb-0">{options.tollFreeTitle}</h6>
                     <p className="text-primary">{options.tollFree}</p>
                     <h6 className="mb-0">{options.faxTitle}</h6>
                     <p className="text-primary">{options.faxNumber}</p>
-                    
+
                   </div>
                 </div>
               </div>
@@ -79,6 +81,7 @@ const ContactSupportTemplate = ({ data: { page } }) => {
           </div>
         </div>
       </section>
+      <FooterCTAs featured={cta} />
     </>
   )
 }
@@ -88,6 +91,7 @@ export const pageQuery = graphql`
     # selecting the current page by id
     page: wpPage(id: { eq: $id }) {
       ...PageDetails
+      ...FooterCTAs
       acfTemplateContactSupport {
         accessSupportLink {
           target

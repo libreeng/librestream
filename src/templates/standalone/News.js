@@ -2,6 +2,7 @@ import React from "react"
 import { graphql } from "gatsby"
 import parse from "html-react-parser"
 import Hero from "../../common/ui/Hero"
+import FooterCTAs from '../../common/ui/FooterCTAs'
 import Carousel from "../../common/ui/carousel/Carousel"
 import { useNews } from "../../common/hooks/useNews"
 import { useCaseStudies } from "../../common/hooks/useCaseStudies"
@@ -14,7 +15,7 @@ const NewsTemplate = ({ data: { page } }) => {
   const { acfFeaturedPosts: { featured } } = page
   const { featuredCaseStudies } = useCaseStudies()
   const featuredPosts = featured.map(item => item.featuredPost)
-
+  const { cta } = page.acfFooterCTAs
 
   return (
     <>
@@ -116,6 +117,7 @@ const NewsTemplate = ({ data: { page } }) => {
         />
       </section>
 
+      <FooterCTAs featured={cta} />
     </>
   )
 }
@@ -125,6 +127,7 @@ export const pageQuery = graphql`
     # selecting the current page by id
     page: wpPage(id: { eq: $id }) {
       ...PageDetails
+      ...FooterCTAs
       acfFeaturedPosts {
         featured {
           featuredPost {

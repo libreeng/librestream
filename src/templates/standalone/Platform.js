@@ -2,6 +2,7 @@ import React from "react"
 import { graphql } from "gatsby"
 import parse from "html-react-parser"
 import Hero from "../../common/ui/Hero"
+import FooterCTAs from '../../common/ui/FooterCTAs'
 import PlatformFeatures from '../../components/PlatformFeatures'
 import Stats from '../../components/Stats'
 import Carousel from '../../common/ui/carousel/Carousel'
@@ -14,6 +15,7 @@ const PlatformTemplate = ({ data: { page } }) => {
   const stats = page.acfStats.statistics
   const featuresContent = page.acfPlatformFeatures
   const { featuredCaseStudies } = useCaseStudies()
+  const { cta } = page.acfFooterCTAs
 
   return (
     <>
@@ -67,6 +69,8 @@ const PlatformTemplate = ({ data: { page } }) => {
           </div>
         </div>
       </section>
+
+      <FooterCTAs featured={cta} />
     </>
   )
 }
@@ -79,6 +83,7 @@ export const pageQuery = graphql`
       ...PageHero
       ...PageStats
       ...PlatformFeatures
+      ...FooterCTAs
       acfTemplatePlatform {
         platformDescription
         platformVideo

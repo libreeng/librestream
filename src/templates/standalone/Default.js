@@ -3,6 +3,7 @@ import { graphql } from "gatsby"
 import Image from "gatsby-image"
 import parse from "html-react-parser"
 import Hero from "../../common/ui/Hero"
+import FooterCTAs from '../../common/ui/FooterCTAs'
 
 const DefaultTemplate = ({ data: { page } }) => {
   const acf = page.acfTemplateDefault
@@ -11,6 +12,7 @@ const DefaultTemplate = ({ data: { page } }) => {
     heroDescription: acf.heroDescription ? acf.heroDescription : false,
     backgroundImage: acf.heroBackground ? acf.heroBackground : false
   }
+  const { cta } = page.acfFooterCTAs
 
   return (
     <>
@@ -37,7 +39,7 @@ const DefaultTemplate = ({ data: { page } }) => {
           </div>
         </section>
       )}
-      
+
       {!!page.content && (
         <section>
           <div className="container">
@@ -49,6 +51,8 @@ const DefaultTemplate = ({ data: { page } }) => {
           </div>
         </section>
       )}
+
+      <FooterCTAs featured={cta} />
     </>
   )
 }
@@ -58,6 +62,7 @@ export const pageQuery = graphql`
     # selecting the current page by id
     page: wpPage(id: { eq: $id }) {
       ...PageDetails
+      ...FooterCTAs
       acfTemplateDefault {
         columns {
           ... on WpPage_Acftemplatedefault_Columns_Columns {

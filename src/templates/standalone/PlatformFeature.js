@@ -5,6 +5,7 @@ import Image from "gatsby-image"
 import BackgroundImage from 'gatsby-background-image'
 import parse from "html-react-parser"
 import Hero from "../../common/ui/Hero"
+import FooterCTAs from '../../common/ui/FooterCTAs'
 import { useDispatch } from "react-redux"
 import { openModal } from "../../common/modals/modalActions"
 import PartnerModal from '../../common/modals/PartnerModal'
@@ -14,6 +15,7 @@ const PlatformFeatureTemplate = ({ data: { page, subnav } }) => {
   const template = page.acfTemplatePlaformFeature
   const hero = page.acfHero
   const nav = subnav.menuItems.nodes
+  const { cta } = page.acfFooterCTAs
 
   return (
     <>
@@ -181,6 +183,8 @@ const PlatformFeatureTemplate = ({ data: { page, subnav } }) => {
           </div>
         </div>
       </section>
+
+      <FooterCTAs featured={cta} />
     </>
   )
 }
@@ -195,6 +199,7 @@ export const pageQuery = graphql`
     page: wpPage(id: { eq: $id }) {
       ...PageDetails
       ...PageHero
+      ...FooterCTAs
       acfTemplatePlaformFeature {
         ctaMessage
         ctaButton {

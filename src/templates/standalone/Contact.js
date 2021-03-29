@@ -4,13 +4,16 @@ import { graphql } from 'gatsby'
 import parse from "html-react-parser"
 import { useSiteFooter } from '../../common/hooks/useSiteFooter'
 import Hero from "../../common/ui/Hero"
+import FooterCTAs from '../../common/ui/FooterCTAs'
 
 const ContactTemplate = ({ data: { page } }) => {
-  const {options} = useSiteFooter()
+  const { options } = useSiteFooter()
   const acf = page.acfTemplateContact
   const hero = {
     heroHeading: page.title
   }
+  const { cta } = page.acfFooterCTAs
+
   return (
     <>
       <Hero hero={hero} />
@@ -55,20 +58,21 @@ const ContactTemplate = ({ data: { page } }) => {
                 <a href={acf.mapLink.url} target={acf.mapLink.target} className="btn btn-outline-primary text-dark btn-block">{acf.mapLink.title}</a>
               )}
 
-              <div className="border-bracket mt-5"> 
+              <div className="border-bracket mt-5">
                 <h6 className="mb-0">{options.phoneTitle}</h6>
                 <p className="text-primary">{options.phoneNumber}</p>
                 <h6 className="mb-0">{options.tollFreeTitle}</h6>
                 <p className="text-primary">{options.tollFree}</p>
                 <h6 className="mb-0">{options.faxTitle}</h6>
                 <p className="text-primary">{options.faxNumber}</p>
-                
+
               </div>
             </div>
           </div>
         </div>
       </section>
-      <hr className="hr-styled" />
+
+      <FooterCTAs featured={cta} />
     </>
   )
 }
@@ -82,6 +86,7 @@ export const pageQuery = graphql`
     # selecting the current page by id
     page: wpPage(id: { eq: $id }) {
       ...PageDetails
+      ...FooterCTAs
       acfTemplateContact {
         address
         addressTitle

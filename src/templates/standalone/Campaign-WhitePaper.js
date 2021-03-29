@@ -2,13 +2,15 @@ import React from "react"
 import { graphql } from "gatsby"
 import parse from "html-react-parser"
 import Hero from "../../common/ui/Hero"
+import FooterCTAs from '../../common/ui/FooterCTAs'
 
 
 // this template may be able to be combined with Campaign-Webinar into a more flexible single 2 column form template
 const CampaignWhitePaperTemplate = ({ data: { page } }) => {
-
   const acf = page.acfTemplateCampaignWhitePaper
   const hero = page.acfHero
+  const { cta } = page.acfFooterCTAs
+
   return (
     <>
       <Hero hero={hero} />
@@ -44,6 +46,8 @@ const CampaignWhitePaperTemplate = ({ data: { page } }) => {
           </div>
         </div>
       </section>
+
+      <FooterCTAs featured={cta} />
     </>
   )
 }
@@ -54,6 +58,7 @@ export const pageQuery = graphql`
     page: wpPage(id: { eq: $id }) {
       ...PageDetails
       ...PageHero
+      ...FooterCTAs
       acfTemplateCampaignWhitePaper {
         formEmbed
         intro

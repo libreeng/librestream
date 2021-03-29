@@ -3,11 +3,13 @@ import { graphql } from "gatsby"
 import Image from "gatsby-image"
 import parse from "html-react-parser"
 import Hero from "../../common/ui/Hero"
+import FooterCTAs from '../../common/ui/FooterCTAs'
 
 // Might be able to combine this template and Campaign-Whitepaper into a more flexible template
 const CampaignWebinarTemplate = ({ data: { page } }) => {
   const acf = page.acfTemplateCampaignWebinar
   const hero = page.acfHero
+  const { cta } = page.acfFooterCTAs
 
   return (
     <>
@@ -54,6 +56,8 @@ const CampaignWebinarTemplate = ({ data: { page } }) => {
           </div>
         </div>
       </section>
+
+      <FooterCTAs featured={cta} />
     </>
   )
 }
@@ -64,6 +68,7 @@ export const pageQuery = graphql`
     page: wpPage(id: { eq: $id }) {
       ...PageDetails
       ...PageHero
+      ...FooterCTAs
       acfTemplateCampaignWebinar {
         featuredImage {
           altText

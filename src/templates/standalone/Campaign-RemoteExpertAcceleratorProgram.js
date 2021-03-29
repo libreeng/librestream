@@ -5,6 +5,7 @@ import BackgroundImage from 'gatsby-background-image'
 import parse from "html-react-parser"
 import Hero from "../../common/ui/Hero"
 import Intro from '../../common/ui/Intro'
+import FooterCTAs from '../../common/ui/FooterCTAs'
 import AccordionItems from "../../components/AccordionItems"
 
 const CampaignRemoteExpertAcceleratorProgramTemplate = ({ data: { page } }) => {
@@ -14,7 +15,9 @@ const CampaignRemoteExpertAcceleratorProgramTemplate = ({ data: { page } }) => {
     heroHeading: page.acfHero.heroHeading ? page.acfHero.heroHeading : page.title
   }
   const intro = page.acfIntro
+  const { cta } = page.acfFooterCTAs
   const aspect = 'aspect-4x3'
+
   return (
     <>
       <Hero hero={hero} />
@@ -76,6 +79,7 @@ const CampaignRemoteExpertAcceleratorProgramTemplate = ({ data: { page } }) => {
         </section>
       )}
 
+      <FooterCTAs featured={cta} />
     </>
   )
 }
@@ -87,6 +91,7 @@ export const pageQuery = graphql`
       ...PageDetails
       ...PageIntro
       ...PageHero
+      ...FooterCTAs
       acfTemplateRemoteExpertAcceleratorProgram {
         accordionSections {
           sectionContent

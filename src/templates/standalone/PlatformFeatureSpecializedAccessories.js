@@ -5,12 +5,14 @@ import Image from "gatsby-image"
 import BackgroundImage from 'gatsby-background-image'
 import parse from "html-react-parser"
 import Hero from "../../common/ui/Hero"
+import FooterCTAs from '../../common/ui/FooterCTAs'
 
 const PlatformFeatureSpecializedAccessories = ({ data: { page, subnav } }) => {
   const template = page.acfTemplatePlatformFeatureSpecialized
   const hero = page.acfHero
   const nav = subnav.menuItems.nodes
   const accessories = template.accessories
+  const { cta } = page.acfFooterCTAs
 
   return (
     <>
@@ -112,6 +114,8 @@ const PlatformFeatureSpecializedAccessories = ({ data: { page, subnav } }) => {
           </div>
         </div>
       </section>
+
+      <FooterCTAs featured={cta} />
     </>
   )
 }
@@ -126,6 +130,7 @@ export const pageQuery = graphql`
     page: wpPage(id: { eq: $id }) {
       ...PageDetails
       ...PageHero
+      ...FooterCTAs
       acfTemplatePlatformFeatureSpecialized {
         accessories {
           description

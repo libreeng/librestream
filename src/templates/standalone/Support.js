@@ -1,9 +1,8 @@
 import React from "react"
 import { graphql } from "gatsby"
 import parse from "html-react-parser"
-
-
 import Hero from "../../common/ui/Hero"
+import FooterCTAs from '../../common/ui/FooterCTAs'
 import SupportNav from '../../components/support/SupportNav'
 import { slugify } from '../../common/utils/helpers'
 import SupportKnowledgeBase from "../../components/support/SupportKnowledgebase"
@@ -15,6 +14,7 @@ const SupportTemplate = ({ data: { page } }) => {
   const hero = {
     heroHeading: page.title
   }
+  const { cta } = page.acfFooterCTAs
 
   return (
     <>
@@ -66,6 +66,7 @@ const SupportTemplate = ({ data: { page } }) => {
         </section>
       )}
 
+      <FooterCTAs featured={cta} />
     </>
   )
 }
@@ -76,6 +77,7 @@ export const pageQuery = graphql`
     page: wpPage(id: { eq: $id }) {
       ...PageDetails
       ...PageHero
+      ...FooterCTAs
       acfSupportSections {
         supportSections {
           supportSectionTitle

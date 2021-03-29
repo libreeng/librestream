@@ -5,6 +5,7 @@ import BackgroundImage from 'gatsby-background-image'
 import { useDispatch } from "react-redux"
 import Hero from "../../common/ui/Hero"
 import Intro from "../../common/ui/Intro"
+import FooterCTAs from '../../common/ui/FooterCTAs'
 import { openModal } from "../../common/modals/modalActions"
 
 const AboutTemplate = ({ data: { page } }) => {
@@ -13,6 +14,7 @@ const AboutTemplate = ({ data: { page } }) => {
   const hero = page.acfHero
   const nav = page.acfSubnav.subnav.map(item => item.subnavItemLink)
   const intro = page.acfIntro
+  const { cta } = page.acfFooterCTAs
 
   return (
     <>
@@ -32,8 +34,8 @@ const AboutTemplate = ({ data: { page } }) => {
             </div>
           </div>
           <div className="row row-cols-1 row-cols-md-2 align-items-center justify-content-between">
-          {acf.awards && acf.awards.map(award => {
-              if(award.image){ // testing by Paul
+            {acf.awards && acf.awards.map(award => {
+              if (award.image) { // testing by Paul
                 return (
                   <div key={award.image.id} className="col-12 col-lg-2 mb-4">
                     <Image
@@ -44,13 +46,13 @@ const AboutTemplate = ({ data: { page } }) => {
                 )
               } else {
                 // log this to help troubleshoot. 1 4 2 3 5
-                console.log("Could not find property 'image' on 'award'.",award); // testing by Paul
+                console.log("Could not find property 'image' on 'award'.", award); // testing by Paul
               }
             }
             )}
 
             {acf.theawards && acf.theawards.map(award => {
-              if(award.image){ // testing by Paul
+              if (award.image) { // testing by Paul
                 return (
                   <div key={award.image.id} className="col-12 col-lg-2 mb-4">
                     <Image
@@ -61,7 +63,7 @@ const AboutTemplate = ({ data: { page } }) => {
                 )
               } else {
                 // log this to help troubleshoot. 1 4 2 3 5
-                console.log("Could not find property 'image' on 'theaward'.",award); // testing by Paul
+                console.log("Could not find property 'image' on 'theaward'.", award); // testing by Paul
               }
             }
             )}
@@ -143,7 +145,8 @@ const AboutTemplate = ({ data: { page } }) => {
           </div>
         </div>
       </section>
-      <hr className="hr-styled" />
+
+      <FooterCTAs featured={cta} />
     </>
   )
 }
@@ -156,6 +159,7 @@ export const pageQuery = graphql`
       ...PageHero
       ...Subnav
       ...PageIntro
+      ...FooterCTAs
       acfTemplateAbout {
         awards {
           image {

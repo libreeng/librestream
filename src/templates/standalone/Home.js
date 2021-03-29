@@ -3,6 +3,7 @@ import { graphql } from "gatsby"
 // import Image from "gatsby-image"
 import parse from "html-react-parser"
 import Hero from '../../common/ui/Hero'
+import FooterCTAs from '../../common/ui/FooterCTAs'
 import CarouselOffset from '../../common/ui/carousel/CarouselOffset'
 import Carousel from '../../common/ui/carousel/Carousel'
 import Stats from '../../components/Stats'
@@ -15,6 +16,7 @@ const HomeTemplate = ({ data: { page } }) => {
   const stats = page.acfStats.statistics
   const { featuredNews } = useFeaturedNews()
   const { featuredCaseStudies } = useCaseStudies()
+  const { cta } = page.acfFooterCTAs
 
   return (
     <>
@@ -86,6 +88,7 @@ const HomeTemplate = ({ data: { page } }) => {
         </div>
       </section>
 
+      <FooterCTAs featured={cta} />
     </>
   )
 }
@@ -97,6 +100,7 @@ export const pageQuery = graphql`
       ...PageDetails
       ...PageHero
       ...PageStats
+      ...FooterCTAs
       acfTemplateHome {
         carouselSlide {
           carouselSlideTitle

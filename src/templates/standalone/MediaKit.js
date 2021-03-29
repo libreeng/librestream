@@ -4,14 +4,16 @@ import Image from "gatsby-image"
 import parse from "html-react-parser"
 import Hero from "../../common/ui/Hero"
 import Intro from "../../common/ui/Intro"
+import FooterCTAs from '../../common/ui/FooterCTAs'
 
 const MediaKitTemplate = ({ data: { page } }) => {
-
   const acf = page.acfTemplateMediaKit
   const hero = {
     heroHeading: page.title
   }
   const intro = page.acfIntro
+  const { cta } = page.acfFooterCTAs
+
   return (
     <>
       <Hero hero={hero} />
@@ -55,7 +57,7 @@ const MediaKitTemplate = ({ data: { page } }) => {
                 </div>
               </div>
             ))}
-            
+
 
           </div>
         </div>
@@ -72,6 +74,7 @@ const MediaKitTemplate = ({ data: { page } }) => {
         </section>
       )}
 
+      <FooterCTAs featured={cta} />
     </>
   )
 }
@@ -82,6 +85,7 @@ export const pageQuery = graphql`
     page: wpPage(id: { eq: $id }) {
       ...PageDetails
       ...PageIntro
+      ...FooterCTAs
       acfTemplateMediaKit {
         mediaContacts {
           contactEmail

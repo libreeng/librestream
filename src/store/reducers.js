@@ -1,4 +1,4 @@
-import { combineReducers } from 'redux';
+import { combineReducers } from 'redux'
 import { reducer as toastrReducer } from 'react-redux-toastr'
 import asyncReducer from '../common/async/asyncReducer'
 import modalReducer from '../common/modals/modalReducer'

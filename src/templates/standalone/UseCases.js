@@ -3,12 +3,15 @@ import { graphql, Link } from "gatsby"
 import parse from "html-react-parser"
 import { useCaseStudies } from "../../common/hooks/useCaseStudies"
 import Hero from "../../common/ui/Hero"
+import FooterCTAs from '../../common/ui/FooterCTAs'
 
 const UseCasesTemplate = ({ data: { page } }) => {
   const { caseStudies } = useCaseStudies()
   const hero = {
     heroHeading: 'Use Cases'
   }
+  const { cta } = page.acfFooterCTAs
+
   return (
     <>
       <Hero hero={hero} />
@@ -64,6 +67,7 @@ const UseCasesTemplate = ({ data: { page } }) => {
         </section>
       )}
 
+      <FooterCTAs featured={cta} />
     </>
   )
 }
@@ -73,6 +77,7 @@ export const pageQuery = graphql`
     # selecting the current page by id
     page: wpPage(id: { eq: $id }) {
       ...PageDetails
+      ...FooterCTAs
     }
   }
 `

@@ -3,6 +3,7 @@ import { graphql } from "gatsby"
 // import Image from "gatsby-image"
 import parse from "html-react-parser"
 import Hero from "../../common/ui/Hero"
+import FooterCTAs from '../../common/ui/FooterCTAs'
 import { useDispatch } from "react-redux"
 import { openModal } from "../../common/modals/modalActions"
 // import PartnerModal from '../../common/modals/PartnerModal'
@@ -13,6 +14,8 @@ const PartnersTemplate = ({ data: { page } }) => {
   const hero = {
     heroHeading: page.title
   }
+  const { cta } = page.acfFooterCTAs
+
   return (
     <>
       <Hero hero={hero} />
@@ -78,6 +81,8 @@ const PartnersTemplate = ({ data: { page } }) => {
           </div>
         </section>
       )}
+
+      <FooterCTAs featured={cta} />
     </>
   )
 }
@@ -87,6 +92,7 @@ export const pageQuery = graphql`
     # selecting the current page by id
     page: wpPage(id: { eq: $id }) {
       ...PageDetails
+      ...FooterCTAs
       acfTemplatePartners {
         partners {
           companies {

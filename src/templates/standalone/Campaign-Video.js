@@ -2,6 +2,7 @@ import React from "react"
 import { graphql } from "gatsby"
 import parse from "html-react-parser"
 import Hero from "../../common/ui/Hero"
+import FooterCTAs from '../../common/ui/FooterCTAs'
 
 // Not sure if this template is necessary as we also have video custom post type
 const CampaignVideoTemplate = ({ data: { page } }) => {
@@ -9,6 +10,8 @@ const CampaignVideoTemplate = ({ data: { page } }) => {
   const hero = {
     heroHeading: page.acfHero.heroHeading ? page.acfHero.heroHeading : page.title
   }
+  const { cta } = page.acfFooterCTAs
+
   return (
     <>
       <Hero hero={hero} />
@@ -37,6 +40,7 @@ const CampaignVideoTemplate = ({ data: { page } }) => {
         </section>
       )}
 
+      <FooterCTAs featured={cta} />
     </>
   )
 }
@@ -47,6 +51,7 @@ export const pageQuery = graphql`
     page: wpPage(id: { eq: $id }) {
       ...PageDetails
       ...PageHero
+      ...FooterCTAs
       acfTemplateCampaignVideo {
         videoEmbed
       }
