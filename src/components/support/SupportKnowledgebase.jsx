@@ -4,6 +4,7 @@ import Image from "gatsby-image"
 import { Accordion, Card, Button } from 'react-bootstrap'
 import AddLineIcon from 'remixicon-react/AddLineIcon'
 import { slugify } from '../../common/utils/helpers'
+import SupportKnowledgebaseLink from '../../components/support/SupportKnowledgebaseLink'
 
 
 const SupportKnowledgeBase = ({ title, post }) => {
@@ -39,7 +40,9 @@ const SupportKnowledgeBase = ({ title, post }) => {
                         {sectionType && sectionType === 'Links' && (
                           links.map((link, i) => {
                             // console.log(link)
-                            return <div key={`link_${i}`}>Parse Content</div>
+                            return <div key={`link_${i}`}>
+                              <SupportKnowledgebaseLink link={link} />
+                            </div>
                           })
                         )}
                       </Card.Body>

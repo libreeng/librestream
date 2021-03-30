@@ -5,12 +5,16 @@ import TestModal from './TestModal'
 import PartnerModal from './PartnerModal'
 import BoardModal from './BoardModal'
 import HighlightModal from './HighlightModal'
+import SupportModal from './SupportModal'
+import VideoModal from './VideoModal'
 
 const modalLookup = {
   TestModal,
   PartnerModal,
   BoardModal,
-  HighlightModal
+  HighlightModal,
+  SupportModal,
+  VideoModal
 }
 
 const ModalWrapper = () => {
