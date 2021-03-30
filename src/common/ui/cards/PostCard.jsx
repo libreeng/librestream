@@ -10,15 +10,16 @@ const PostCard = ({ post, showBracket, className }) => {
 
   return (
     <div className="card p-2">
-      {/* <div
-        className={`card-img-top bg-image aspect-1x1 grayscale ${className}`}
-        style={{ backgroundImage: `url(${featuredImage || 'https://via.placeholder.com/400/000/000'})` }}
-      /> */}
-      <BackgroundImage
-        Tag="div"
-        className={`card-img-top bg-image aspect-1x1 grayscale ${className}`}
-        fluid={featuredImage.fluid || 'https://via.placeholder.com/500/000/000'}
-      />
+      {featuredImage.fluid ? (
+        <BackgroundImage
+          Tag="div"
+          className={`card-img-top bg-image aspect-1x1 grayscale ${className}`}
+          fluid={featuredImage.fluid}
+        />
+      ):(
+        <div className={`card-img-top bg-image bg-black aspect-1x1 grayscale ${className}`} />
+      )}
+
       {showBracket ? (
         <div className="card-footer bg-transparent text-dark text-center text-uppercase">
           <h6 className="mt-4 text-dark">{post.title}</h6>

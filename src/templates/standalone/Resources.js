@@ -29,11 +29,15 @@ const ResourcesTemplate = ({ data: { page, resources } }) => {
                 <div key={id} className="col-12 col-sm-6 col-lg-4">
                   <Link to={uri}>
                     <div className="card p-2">
-                      <BackgroundImage
-                        Tag="div"
-                        className={`card-img-top bg-image aspect-1x1 grayscale`}
-                        fluid={featuredImage.fluid || 'https://via.placeholder.com/500/000/000'}
-                      />
+                      {featuredImage.fluid ? (
+                        <BackgroundImage
+                          Tag="div"
+                          className={`card-img-top bg-image aspect-1x1 grayscale`}
+                          fluid={featuredImage.fluid}
+                        />
+                      ) : (
+                        <div className={`card-img-top bg-image bg-black aspect-1x1 ${className}`} />
+                      )}
 
                       <div className="card-footer bg-transparent text-dark text-center text-uppercase">
                         <h6 className="mt-4 text-dark">{caption}</h6>

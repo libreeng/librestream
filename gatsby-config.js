@@ -1,3 +1,6 @@
+const fs = require('fs')
+const path = require('path')
+
 module.exports = {
   flags: {},
   siteMetadata: {
@@ -20,11 +23,6 @@ module.exports = {
        */
       resolve: `gatsby-source-wordpress`,
       options: {
-        // debug: {
-        //   graphql: {
-        //     writeQueriesToDisk: true,
-        //   },
-        // },
         // the only required plugin option for WordPress is the GraphQL url.
         url: process.env.WPGRAPHQL_URL || `https://librestreamcms.kinsta.cloud/graphql`,
         // schema: {
@@ -50,21 +48,6 @@ module.exports = {
         // },
       },
     },
-
-    // {
-    //   resolve: 'gatsby-wpgraphql-inline-images', // https://www.gatsbyjs.com/plugins/gatsby-wpgraphql-inline-images/
-    //   options: {
-    //     wordPressUrl: 'https://librestreamcms.kinsta.cloud',
-    //     uploadsUrl: 'https://librestreamcms.kinsta.cloud/media',
-    //     processPostTypes: ['Page', 'Post', 'product'],
-    //     graphqlTypeName: 'WPGraphQL',
-    //     /*
-    //     httpHeaders: {
-    //       Authorization: `Bearer ${process.env.GITHUB_TOKEN}`,
-    //     }
-    //     */
-    //   },
-    // },
 
     'gatsby-plugin-sharp',
     'gatsby-transformer-sharp',
@@ -98,6 +81,59 @@ module.exports = {
         },
       },
     },
-    'gatsby-plugin-netlify', // make sure to keep it last in the array
+    // You can have multiple instances of this plugin to create indexes with
+    // different names or engines. For example, multi-lingual sites could create
+    // an index for each language.
+    {
+      resolve: 'gatsby-plugin-local-search',
+      options: {
+        // A unique name for the search index. This should be descriptive of
+        // what the index contains. This is required.
+        name: 'posts',
+
+        // Set the search engine to create the index. This is required.
+        // The following engines are supported: flexsearch, lunr
+        engine: 'flexsearch',
+
+        // Provide options to the engine. This is optional and only recommended
+        // for advanced users.
+        //
+        // Note: Only the flexsearch engine supports options.
+        engineOptions: 'speed',
+
+        // GraphQL query used to fetch all data for the search index. This is
+        // required.
+        query: fs.readFileSync(
+          path.resolve(__dirname, 'src/searchQuery.graphql'),
+          'utf-8',
+        ),
+
+        // Field used as the reference value for each document.
+        // Default: 'id'.
+        ref: 'url',
+
+        // List of keys to index. The values of the keys are taken from the
+        // normalizer function below.
+        // Default: all fields
+        index: ['url', 'title', 'content', 'tags'],
+
+        // List of keys to store and make available in your UI. The values of
+        // the keys are taken from the normalizer function below.
+        // Default: all fields
+        store: ['url', 'title', 'description'],
+
+        // Function used to map the result from the GraphQL query. This should
+        // return an array of items to index in the form of flat objects
+        // containing properties to index. The objects must contain the `ref`
+        // field above (default: 'id'). This is required.
+        normalizer: ({ data }) =>
+          data.allWpPost.nodes.map(node => ({
+            url: node.uri,
+            title: node.title,
+            description: node.content,
+            tags: node.tags.nodes.map(tag => tag.name),
+          })),
+      },
+    },
   ],
 }
