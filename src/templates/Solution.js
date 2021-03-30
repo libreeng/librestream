@@ -14,6 +14,7 @@ const Solution = ({ data: { previous, next, post } }) => {
   }
   const intro = post.acfIntro
   const featuredImage = intro.introFeaturedImage.localFile.publicURL
+  const acf = post.acfPostTypeSolution
   return (
     <>
       <Hero hero={hero} />
@@ -33,6 +34,9 @@ const Solution = ({ data: { previous, next, post } }) => {
           <div className="row">
             <div className="col-lg-6">
               {!!post.content && parse(post.content)}
+              {acf.solutionLink && (
+                <a href={acf.solutionLink.url} target={acf.solutionLink.target} className="btn btn-secondary text-dark">{acf.solutionLink.title ? acf.solutionLink.title : 'Learn More'}</a>
+              )}
             </div>
 
             <div className="col-lg-5">
@@ -76,6 +80,13 @@ export const pageQuery = graphql`
       uri
       slug
       content
+      acfPostTypeSolution {
+        solutionLink {
+          target
+          title
+          url
+        }
+      }
     }
 
     # this gets us the previous post by id (if it exists)

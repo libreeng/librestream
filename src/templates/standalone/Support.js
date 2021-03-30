@@ -104,6 +104,12 @@ export const pageQuery = graphql`
                     sectionType
                     links {
                       videoEmbed
+                      videoMp4 {
+                        localFile {
+                          url
+                          publicURL
+                        }
+                      }
                       url
                       linkType
                       linkText

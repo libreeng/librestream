@@ -1,11 +1,13 @@
+/* eslint-disable import/no-named-as-default-member */
 import React from "react"
-import { graphql } from "gatsby"
+import { Link, graphql } from "gatsby"
 import parse from "html-react-parser"
 import Hero from "../../common/ui/Hero"
 import FooterCTAs from '../../common/ui/FooterCTAs'
 import Carousel from "../../common/ui/carousel/Carousel"
 import { useNews } from "../../common/hooks/useNews"
 import { useCaseStudies } from "../../common/hooks/useCaseStudies"
+import Filters from '../../common/ui/Filters'
 
 const NewsTemplate = ({ data: { page } }) => {
   const hero = {
@@ -50,11 +52,22 @@ const NewsTemplate = ({ data: { page } }) => {
         <div className="container">
           <div className="row">
             <div className="col-12">
-              <h3 className="mt-5">Press Releases</h3>
+              <Filters />
+            </div>
+          </div>
+        </div>
+        <hr className="hr-styled caret-left" />
+        <div className="container">
+          <div className="row">
+            <div className="col-12">
+              <h3 className="mt-5">
+                Press Releases
+                <Link to="/press-releases" className="float-right btn btn-outline-primary">View All</Link>
+              </h3>
             </div>
           </div>
           <Carousel
-            posts={pressReleases}
+            posts={pressReleases.slice(0, 4)}
             config={{
               dots: false
             }}
@@ -63,15 +76,18 @@ const NewsTemplate = ({ data: { page } }) => {
       </section>
 
       <section id="news">
-        <hr className="hr-styled" />
+        <hr className="hr-styled caret-left" />
         <div className="container">
           <div className="row">
             <div className="col-12">
-              <h3 className="mt-5">In The News</h3>
+              <h3 className="mt-5">
+                In The News
+                <Link to="/in-the-news" className="float-right btn btn-outline-primary">View All</Link>
+              </h3>
             </div>
           </div>
           <Carousel
-            posts={news}
+            posts={news.slice(0, 4)}
             config={{
               dots: false
             }}
@@ -80,17 +96,21 @@ const NewsTemplate = ({ data: { page } }) => {
       </section>
 
       <section id="events">
-        <hr className="hr-styled" />
+        <hr className="hr-styled caret-left" />
         <div className="container">
           <div className="row">
             <div className="col-12">
-              <h3 className="mt-5">Events</h3>
+              <h3 className="mt-5">
+                Events
+                <Link to="/events" className="float-right btn btn-outline-primary">View All</Link>
+              </h3>
             </div>
           </div>
           <Carousel
-            posts={events}
+            posts={events.slice(0, 4)}
             config={{
               dots: false
+
             }}
           />
         </div>

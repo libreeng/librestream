@@ -27,7 +27,8 @@ const CategoryTemplate = ({ data: { category } }) => {
         <div className="container">
           <div className="row mt-5">
             {activeCategory && activeCategory.map(post => {
-              const url = post.acfPostTypeNews?.externalSource?.externalLink
+              const externalLink = post.acfPostTypeNews?.externalSource?.externalLink
+              const url = externalLink
                 ? externalLink.url
                 : post.uri
               return (

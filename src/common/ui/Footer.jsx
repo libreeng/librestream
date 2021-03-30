@@ -11,7 +11,7 @@ const Footer = () => {
 
   return (
     <>
-      <footer id="pageFooter" className="text-white">
+      <footer id="pageFooter">
         <LogoTicker items={partners} />
         <hr className="border-white mt-0 mb-4" />
         <div className="container">
@@ -36,16 +36,16 @@ const Footer = () => {
               <p className="font-weight-bold mb-0">{options.footerTollFreePhone}</p>
             </div>
             <div className="col-12 col-md-6 col-lg my-4 my-md-0">
-              <a href={`mailto: ${options.footerEmail}`} className="btn btn-white btn-block">{options.footerEmailTitle}</a>
+              <a href={`mailto: ${options.footerEmail}`} className="btn btn-outline-dark btn-block">{options.footerEmailTitle}</a>
             </div>
             <div className="col-12 col-md-6 col-lg">
               <SocialMenu />
             </div>
           </div>
         </div>
-        <hr className="border-white" />
+        <hr />
         <FooterMenu />
-        <hr className="border-white" />
+        <hr />
         <div className="container">
           <div className="row">
             <div className="col-12">

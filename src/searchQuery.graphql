@@ -1,0 +1,14 @@
+query {
+  allWpPost {
+    nodes {
+      uri
+      title
+      content
+      tags {
+        nodes {
+          name
+        }
+      }
+    }
+  }
+}
