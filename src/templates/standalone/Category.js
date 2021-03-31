@@ -3,6 +3,7 @@ import { Link, graphql } from "gatsby"
 import Hero from "../../common/ui/Hero"
 import { useNews } from "../../common/hooks/useNews"
 import PostCard from "../../common/ui/cards/PostCard"
+import FooterCTAs from '../../common/ui/FooterCTAs'
 
 const CategoryTemplate = ({ data: { category } }) => {
   // const template = category.slug.replace(/-./g, x => x[1].toUpperCase()[1]).replace(/^\w/, s => s.toUpperCase())
@@ -42,6 +43,7 @@ const CategoryTemplate = ({ data: { category } }) => {
           </div>
         </div>
       </section>
+      <FooterCTAs />
     </>
   )
 }

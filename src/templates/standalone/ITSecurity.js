@@ -3,6 +3,7 @@ import { graphql } from "gatsby"
 import parse from "html-react-parser"
 import Hero from "../../common/ui/Hero"
 import Intro from "../../common/ui/Intro"
+import FooterCTAs from '../../common/ui/FooterCTAs'
 import CTA from '../../common/ui/CTA'
 
 const ItSecurityTemplate = ({ data: { page } }) => {
@@ -62,6 +63,7 @@ const ItSecurityTemplate = ({ data: { page } }) => {
       {pageCTA && (
         <CTA cta={pageCTA} />
       )}
+      <FooterCTAs featured={cta} />
     </>
   )
 }
@@ -72,6 +74,7 @@ export const pageQuery = graphql`
     page: wpPage(id: { eq: $id }) {
       ...PageDetails
       ...PageIntro
+      ...FooterCTAs
       acfCta {
         ctaDescription
         link {
