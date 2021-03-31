@@ -30,10 +30,12 @@ const UseCaseCard = ({ post }) => {
           </div>
         </div>
       </div>
-      <div className="card-footer bg-transparent text-primary text-center text-uppercase">
-        <h6 className="mt-5 text-dark">{summaryDescription}</h6>
-        <div className="border-bracket-bottom" />
-      </div>
+      {/* Removing as per Sam's request
+        <div className="card-footer bg-transparent text-primary text-center text-uppercase">
+          <h6 className="mt-5 text-dark">{summaryDescription}</h6>
+          <div className="border-bracket-bottom" />
+        </div>
+      */}
     </div>
   )
 }

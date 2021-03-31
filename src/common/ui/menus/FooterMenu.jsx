@@ -14,7 +14,7 @@ const FooterMenu = () => {
           return submenu.length > 0 ? (
             <div className="col-12 col-md-4 col-lg-2 mb-3 mb-md-0" key={item.id}>
               <h6>
-                <a href={item.path} className="text-white">{item.label}</a>
+                <a href={item.path} className="text-dark"><strong>{item.label}</strong></a>
               </h6>
               <ul className="nav flex-column">
                 {submenu.map(child => (
