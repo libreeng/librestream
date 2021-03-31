@@ -13,7 +13,7 @@ const FooterCTAs = ({ featured }) => {
   }
 
   return (
-    <section id="footerCTAs" className="bg-primary folder-border folder-top border-primary text-white">
+    <section id="footerCTAs" className="bg-light text-dark">
       <div className="container">
         <div className="row">
           {featuredCTAs && featuredCTAs.map((cta, i) => {
@@ -29,7 +29,7 @@ const FooterCTAs = ({ featured }) => {
                     ):(
                       <div className="card-img-top bg-image aspect-1x1 grayscale" style={{ backgroundImage: `url('https://via.placeholder.com/400/000/000')` }} />
                     )}
-                    <div className="card-footer bg-transparent text-white text-uppercase pl-0">
+                    <div className="card-footer bg-transparent text-dark text-uppercase pl-0">
                       {ctaTitle}
                     </div>
                   </div>
