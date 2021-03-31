@@ -3,6 +3,7 @@ import { Link, graphql } from "gatsby"
 import Hero from "../../common/ui/Hero"
 import { useNews } from "../../common/hooks/useNews"
 import PostCard from "../../common/ui/cards/PostCard"
+import FooterCTAs from '../../common/ui/FooterCTAs'
 
 const CategoryTemplate = ({ data: { category } }) => {
   // const template = category.slug.replace(/-./g, x => x[1].toUpperCase()[1]).replace(/^\w/, s => s.toUpperCase())
@@ -33,7 +34,7 @@ const CategoryTemplate = ({ data: { category } }) => {
                 : post.uri
               return (
                 <div key={post.id} className="col-12 col-sm-6 col-lg-4">
-                  <Link to={url}>
+                  <Link to={url} target={externalLink ? '_blank' : '_self'}>
                     <PostCard post={post} />
                   </Link>
                 </div>
@@ -42,6 +43,7 @@ const CategoryTemplate = ({ data: { category } }) => {
           </div>
         </div>
       </section>
+      <FooterCTAs />
     </>
   )
 }

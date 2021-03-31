@@ -3,6 +3,7 @@ import { graphql } from "gatsby"
 import parse from "html-react-parser"
 import Hero from "../../common/ui/Hero"
 import Intro from "../../common/ui/Intro"
+import FooterCTAs from '../../common/ui/FooterCTAs'
 import CTA from '../../common/ui/CTA'
 
 const ItSecurityTemplate = ({ data: { page } }) => {
@@ -12,6 +13,7 @@ const ItSecurityTemplate = ({ data: { page } }) => {
   }
   const intro = page.acfIntro
   const pageCTA = page.acfCta
+  const { cta } = page.acfFooterCTAs
 
   return (
     <>
@@ -33,13 +35,13 @@ const ItSecurityTemplate = ({ data: { page } }) => {
             </div>
             <div className="col-lg-4">
               <div className="px-5 w-75">
-                {acf.certificationImages && acf.certificationImages.map(image => (
+                {acf.certificationImages && acf.certificationImages.map((image, index) => (
                   image.certificationDocument ? (
-                    <a href={image.certificationDocument.localFile.url} target="_blank">
+                    <a key={`image_${index}`} href={image.certificationDocument.localFile.url} target="_blank">
                       <img src={image?.certificationImage?.localFile?.publicURL} className="img-fluid" alt="" />
                     </a>
                   ) : (
-                    <img src={image?.certificationImage?.localFile?.publicURL} className="img-fluid" alt="" />
+                    <img key={`image_${index}`} src={image?.certificationImage?.localFile?.publicURL} className="img-fluid" alt="" />
                   )
 
                 ))}
@@ -62,6 +64,7 @@ const ItSecurityTemplate = ({ data: { page } }) => {
       {pageCTA && (
         <CTA cta={pageCTA} />
       )}
+      <FooterCTAs featured={cta} />
     </>
   )
 }
@@ -72,6 +75,7 @@ export const pageQuery = graphql`
     page: wpPage(id: { eq: $id }) {
       ...PageDetails
       ...PageIntro
+      ...FooterCTAs
       acfCta {
         ctaDescription
         link {

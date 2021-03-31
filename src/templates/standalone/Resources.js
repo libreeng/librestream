@@ -36,7 +36,7 @@ const ResourcesTemplate = ({ data: { page, resources } }) => {
                           fluid={featuredImage.fluid}
                         />
                       ) : (
-                        <div className={`card-img-top bg-image bg-black aspect-1x1 ${className}`} />
+                        <div className={`card-img-top bg-image bg-black aspect-1x1`} />
                       )}
 
                       <div className="card-footer bg-transparent text-dark text-center text-uppercase">
