@@ -120,7 +120,7 @@ module.exports = {
         // List of keys to store and make available in your UI. The values of
         // the keys are taken from the normalizer function below.
         // Default: all fields
-        store: ['url', 'title', 'description'],
+        store: ['url', 'title', 'description', 'mainImage'],
 
         // Function used to map the result from the GraphQL query. This should
         // return an array of items to index in the form of flat objects
@@ -131,6 +131,8 @@ module.exports = {
             url: node.uri,
             title: node.title,
             description: node.content,
+            // featuredImage: node.acfPostTypeNews.mainImage.localFile.childImageSharp,
+            mainImage: node.acfPostTypeNews.mainImage,
             tags: node.tags.nodes.map(tag => tag.name),
           })),
       },

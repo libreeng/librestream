@@ -1,0 +1,22 @@
+.searchInput {
+  position: relative;
+  display: block;
+  text-transform: uppercase;
+  padding: 0.5rem 4rem 0.3rem;
+  border-radius: 3rem;
+  text-transform: uppercase;
+  color: $primary;
+  font-size: 1.5rem;
+  font-weight: 400;
+  &::before {
+    content: "";
+    display: block;
+    position: absolute;
+    width: 30px;
+    height: 30px;
+    top: 0;
+    right: 1.5rem;
+    transform: translateY(-50%);
+    background-color: red;
+  }
+}
