@@ -13,6 +13,7 @@ const ItSecurityTemplate = ({ data: { page } }) => {
   }
   const intro = page.acfIntro
   const pageCTA = page.acfCta
+  const { cta } = page.acfFooterCTAs
 
   return (
     <>
