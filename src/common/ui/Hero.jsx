@@ -8,13 +8,12 @@ import CarouselHero from "../../common/ui/carousel/CarouselHero"
 
 const Hero = ({ hero, nav, className }) => {
   const { heroHeading, heroDescription, heroCta, heroFeaturedImage, heroBackgroundImage, heroGallery } = hero
-  const backgroundImage = heroBackgroundImage ? heroBackgroundImage.localFile.childImageSharp.fluid : false
+  const backgroundImage = heroBackgroundImage?.localFile?.publicURL
   const featuredImage = heroFeaturedImage ? heroFeaturedImage.localFile.publicURL : false
   let heroImages = []
   let heroBackgroundClass = ''
   if(heroGallery){
     heroImages = heroGallery.map(image => image?.galleryImage?.localFile?.childImageSharp?.fluid)
-    console.log(heroImages)
     heroBackgroundClass = 'bg-hero-carousel'
   }
   if(backgroundImage) {
@@ -22,15 +21,13 @@ const Hero = ({ hero, nav, className }) => {
   }
 
   return (
-    <div className={`hero ${className} ${heroBackgroundClass}`}>
-      {heroImages && heroImages.length > 0  ? (
-        <CarouselHero images={heroImages} />
-      ):(
-        backgroundImage && (
-          <Image fluid={backgroundImage} alt={heroBackgroundImage.altText} className="img-cover" />
-        )
-      )}
 
+    <div 
+      style={ backgroundImage ? { backgroundImage: `url(${ backgroundImage })`} : null}
+      className={`hero ${className} ${heroBackgroundClass}`}>
+      {heroImages && heroImages.length > 0  && (
+        <CarouselHero images={heroImages} />
+      )}
       <div className="bg-content">
         <div className="container">
           <div className="row align-items-center">

@@ -22,7 +22,7 @@ const FooterCTAs = ({ featured }) => {
 
             return (
               <div key={`cta_${i}`} className="col-12 col-lg-4">
-                <Link to={ctaLink.url}>
+                <Link to={ctaLink?.url}>
                   <div className="card p-2 bg-transparent">
                     {featuredImage ? (
                       <BackgroundImage Tag="div" className="card-img-top bg-image aspect-1x1 grayscale" fluid={featuredImage} />

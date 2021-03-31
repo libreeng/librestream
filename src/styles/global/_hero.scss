@@ -3,7 +3,6 @@
   display: block;
   height: auto;
   padding: 160px 0 0;
-  // padding-top: calc(10vw + 80px);
   background-repeat: no-repeat;
   background-size: cover;
   background-position: center center;
@@ -11,12 +10,13 @@
   background-image: linear-gradient(290deg, $dark 0%, $blue 100%);
   overflow: hidden;
   @include bottom-shape-cutout();
-  &.hero-lg {
-    // padding-top: calc(43vw + 100px);
-  }
   .bg-content {
     position: relative;
     align-items: flex-end;
+    padding-bottom: 2rem;
+    @include media-breakpoint-up(lg) {
+      padding-bottom: 1rem;
+    }
   }
 
   .img-cover {
@@ -47,7 +47,7 @@
     padding-top: 0;
     .bg-content {
       position: relative;
-      padding-top: 50px;
+      padding-top: 100px;
       @include media-breakpoint-up(lg) {
         position: absolute;
         align-items: center;
@@ -55,18 +55,20 @@
     }
     .bg-image {
       background-position: center bottom !important;
+      padding-top: 100%;
+      @include media-breakpoint-up (lg) {
+        padding-top: 56.25%;
+      }
     }
     .slick-slider {
-      @include media-breakpoint-up(lg) {
-        position: absolute;
-        top: 0;
-        left: 0;
-        width: 100%;
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      .slick-list,
+      .slick-track {
         height: 100%;
-        .slick-list,
-        .slick-track {
-          height: 100%;
-        }
       }
     }
   }
