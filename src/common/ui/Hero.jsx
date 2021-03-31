@@ -6,10 +6,10 @@ import Image from "gatsby-image"
 // import BackgroundImage from 'gatsby-background-image'
 
 const Hero = ({ hero, nav, className }) => {
-  const { heroHeading, heroDescription, heroCta, heroFeaturedImage, heroBackgroundImage } = hero
+  const { heroHeading, heroDescription, heroCta, heroFeaturedImage, heroBackgroundImage, heroGallery } = hero
   const backgroundImage = heroBackgroundImage ? heroBackgroundImage.localFile.childImageSharp.fluid : false
   const featuredImage = heroFeaturedImage ? heroFeaturedImage.localFile.publicURL : false
-
+  console.log('hero gallery', heroGallery)
   return (
     <div className={`hero ${className}`}>
       {backgroundImage && (
