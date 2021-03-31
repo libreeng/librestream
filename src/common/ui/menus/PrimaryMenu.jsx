@@ -67,7 +67,7 @@ const PrimaryMenu = () => {
               </a>
             </li>
             <li className="nav-item">
-              <a href="#" className="nav-link">Login</a>
+              <a href="https://onsight.librestream.com/OamAdministrator/Login.aspx" target="_blank" className="nav-link" rel="noreferrer">Login</a>
             </li>
             <li className="nav-item">
               <a href="/contact-us" className="nav-link">Contact</a>

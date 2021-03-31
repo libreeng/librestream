@@ -8,15 +8,26 @@
   color: $primary;
   font-size: 1.5rem;
   font-weight: 400;
-  &::before {
-    content: "";
-    display: block;
+  &:focus {
+    outline: none;
+  }
+  &::placeholder {
+    text-align: center;
+    color: $body-color;
+  }  
+}
+
+.searchInputWrapper {
+  position: relative;
+  
+  .remixicon-icon {
     position: absolute;
-    width: 30px;
-    height: 30px;
-    top: 0;
-    right: 1.5rem;
-    transform: translateY(-50%);
-    background-color: red;
+    top: 50%;
+    transform: translateY(-50%) rotate(85deg);
+    right: 15px;
+    pointer-events: none;
   }
 }
+
+
+

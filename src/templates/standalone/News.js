@@ -11,6 +11,7 @@ import { useNews } from "../../common/hooks/useNews"
 import { useCaseStudies } from "../../common/hooks/useCaseStudies"
 import ResultCard from '../../common/ui/cards/ResultCard'
 import Filters from '../../common/ui/Filters'
+import SearchLineIcon from 'remixicon-react/SearchLineIcon'
 
 const NewsTemplate = ({ data: { page } }) => {
   const hero = {
@@ -52,8 +53,6 @@ const NewsTemplate = ({ data: { page } }) => {
         </div>
       </section>
 
-
-
       <section id="press-releases">
         <hr className="hr-styled" />
         <div className="container">
@@ -64,18 +63,22 @@ const NewsTemplate = ({ data: { page } }) => {
           </div>
           <div className="row mb-4">
             <div className="col-12 col-md-6">
-              <input
-                className="searchInput"
-                name="query"
-                placeholder="Search"
-                value={query}
-                onChange={(event) => setQuery(event.target.value)}
-              />
+              <div className="searchInputWrapper">
+                <input
+                  className="searchInput"
+                  name="query"
+                  placeholder="Search"
+                  value={query}
+                  onChange={(event) => setQuery(event.target.value)}
+                />
+                <SearchLineIcon size="25" />
+              </div>
+              
             </div>
             <div className="col-12 col-md-6">
-              <Link to="/media-kit" className="btn btn-block btn-outline-primary">Media Kit</Link>
+              <Link to="/media-kit" className="btn btn-block btn-outline-primary text-dark">Media Kit</Link>
             </div>
-            <div className="col-12">
+            <div className="col-12 mt-5">
               {query && (
                 results.length > 0 ? (
                   <>
