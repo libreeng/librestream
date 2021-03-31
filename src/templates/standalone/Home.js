@@ -33,12 +33,12 @@ const HomeTemplate = ({ data: { page } }) => {
                   </h1>
                 )}
                 {acf.introDescription && (
-                  <div className="display-4 text-gray my-4">
+                  <div className="display-4 text-gray mt-4">
                     {parse(acf.introDescription)}
                   </div>
                 )}
                 {acf.introLink && (
-                  <a href={acf.introLink.url} className="btn btn-outline-secondary text-dark mt-5">{acf.introLink.title}</a>
+                  <a href={acf.introLink.url} className="btn btn-outline-secondary text-dark mt-3">{acf.introLink.title}</a>
                 )}
               </div>
             </div>
@@ -46,7 +46,7 @@ const HomeTemplate = ({ data: { page } }) => {
         </div>
       </section>
 
-      <section className="overflow-hidden">
+      <section className="overflow-hidden pt-4">
         <Carousel
           posts={featuredCaseStudies}
           config={{
