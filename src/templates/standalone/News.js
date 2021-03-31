@@ -128,7 +128,16 @@ const NewsTemplate = ({ data: { page } }) => {
         </div>
       </section>
 
-      <section className="overflow-hidden">
+      <section className="overflow-hidden pt-0">
+        <div className="container">
+          <div className="row">
+            <div className="col-12">
+              <h3 className="mt-5">
+                Customer Use Cases
+              </h3>
+            </div>
+          </div>
+        </div>
         <Carousel
           posts={featuredCaseStudies}
           config={{
