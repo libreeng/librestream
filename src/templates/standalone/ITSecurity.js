@@ -35,13 +35,13 @@ const ItSecurityTemplate = ({ data: { page } }) => {
             </div>
             <div className="col-lg-4">
               <div className="px-5 w-75">
-                {acf.certificationImages && acf.certificationImages.map(image => (
+                {acf.certificationImages && acf.certificationImages.map((image, index) => (
                   image.certificationDocument ? (
-                    <a href={image.certificationDocument.localFile.url} target="_blank">
+                    <a key={`image_${index}`} href={image.certificationDocument.localFile.url} target="_blank">
                       <img src={image?.certificationImage?.localFile?.publicURL} className="img-fluid" alt="" />
                     </a>
                   ) : (
-                    <img src={image?.certificationImage?.localFile?.publicURL} className="img-fluid" alt="" />
+                    <img key={`image_${index}`} src={image?.certificationImage?.localFile?.publicURL} className="img-fluid" alt="" />
                   )
 
                 ))}
