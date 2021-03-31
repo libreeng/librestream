@@ -55,9 +55,11 @@ const PostTemplate = ({ data: { previous, next, post } }) => {
               )}
             </div>
             <div className="col-lg-3 ml-lg-auto">
-              <div className="text-right">
-                <Link to={next.uri} className="d-flex align-items-center justify-content-end">Next <i className="icon-play ml-2"></i></Link>
-              </div>
+              {/* Remove as per client request
+                <div className="text-right">
+                  <Link to={next.uri} className="d-flex align-items-center justify-content-end">Next <i className="icon-play ml-2"></i></Link>
+                </div>
+              */}
               <hr />
               <h6>Related Posts</h6>
               <div className="row">
