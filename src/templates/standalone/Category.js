@@ -34,7 +34,7 @@ const CategoryTemplate = ({ data: { category } }) => {
                 : post.uri
               return (
                 <div key={post.id} className="col-12 col-sm-6 col-lg-4">
-                  <Link to={url}>
+                  <Link to={url} target={externalLink ? '_blank' : '_self'}>
                     <PostCard post={post} />
                   </Link>
                 </div>
