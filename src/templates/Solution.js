@@ -13,7 +13,7 @@ const Solution = ({ data: { previous, next, post } }) => {
     heroHeading: "Industry Solution"
   }
   const intro = post.acfIntro
-  const featuredImage = intro.introFeaturedImage.localFile.publicURL
+  const featuredImage = intro.introFeaturedImage?.localFile?.publicURL
   const acf = post.acfPostTypeSolution
   return (
     <>

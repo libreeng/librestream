@@ -2,17 +2,20 @@
 import React from 'react'
 import PropTypes from 'prop-types'
 import Image from "gatsby-image"
+import BackgroundImage from 'gatsby-background-image'
 import Slider from "react-slick"
 
 const CarouselHero = ({ images, config }) => {
   const settings = {
     dots: false,
     infinite: true,
-    speed: 500,
+    speed: 1400,
+    autoplay: true,
     centerMode: false,
     slidesToShow: 1,
     slidesToScroll: 1,
     initialSlide: 0,
+    fade: true,
     ...config
   }
 
@@ -21,7 +24,10 @@ const CarouselHero = ({ images, config }) => {
     <Slider {...settings}>
       {images && images.map(image => {
         return (
-          <Image fluid={image.fluid} alt={image.altText} className="img-cover" />
+          image && (
+            <BackgroundImage Tag="div" className="bg-image aspect-16x9" fluid={image} />
+            // <Image fluid={image} alt="" className="img-cover" />
+          )
         )
       })}
     </Slider>

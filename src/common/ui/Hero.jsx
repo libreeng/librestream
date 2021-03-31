@@ -3,23 +3,32 @@ import PropTypes from 'prop-types'
 import { Link } from 'gatsby'
 import parse from "html-react-parser"
 import Image from "gatsby-image"
+import CarouselHero from "../../common/ui/carousel/CarouselHero"
 // import BackgroundImage from 'gatsby-background-image'
 
 const Hero = ({ hero, nav, className }) => {
   const { heroHeading, heroDescription, heroCta, heroFeaturedImage, heroBackgroundImage, heroGallery } = hero
   const backgroundImage = heroBackgroundImage ? heroBackgroundImage.localFile.childImageSharp.fluid : false
   const featuredImage = heroFeaturedImage ? heroFeaturedImage.localFile.publicURL : false
-  console.log('hero gallery', heroGallery)
+  let heroImages = []
+  let heroBackgroundClass = ''
+  if(heroGallery){
+    heroImages = heroGallery.map(image => image?.galleryImage?.localFile?.childImageSharp?.fluid)
+    console.log(heroImages)
+    heroBackgroundClass = 'bg-hero-carousel'
+  }
+  if(backgroundImage) {
+    heroBackgroundClass = 'bg-hero-image'
+  }
+
   return (
-    <div className={`hero ${className}`}>
-      {backgroundImage && (
-        // <img src={heroBackgroundImage.sourceUrl} alt={heroBackgroundImage.alt} className="img-cover" />
-        // <BackgroundImage
-        //   Tag="div"
-        //   className="bg-image"
-        //   fluid={backgroundImage}
-        // />
-        <Image fluid={backgroundImage} alt={heroBackgroundImage.altText} className="img-cover" />
+    <div className={`hero ${className} ${heroBackgroundClass}`}>
+      {heroImages && heroImages.length > 0  ? (
+        <CarouselHero images={heroImages} />
+      ):(
+        backgroundImage && (
+          <Image fluid={backgroundImage} alt={heroBackgroundImage.altText} className="img-cover" />
+        )
       )}
 
       <div className="bg-content">
