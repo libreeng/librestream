@@ -41,6 +41,8 @@
       }
     }
   }
+  
+
   &.bg-hero-carousel {
     padding-top: 0;
     .bg-content {
@@ -50,6 +52,9 @@
         position: absolute;
         align-items: center;
       }
+    }
+    .bg-image {
+      background-position: center bottom !important;
     }
     .slick-slider {
       @include media-breakpoint-up(lg) {
@@ -61,12 +66,6 @@
         .slick-list,
         .slick-track {
           height: 100%;
-          .img-cover {
-            position: relative !important;
-            left: auto !important;
-            top: auto !important;
-  
-          }
         }
       }
     }

@@ -14,10 +14,6 @@ const Highlight = ({ highlight }) => {
         >
           {iconData && (
             <div className="w-100 p-3 p-lg-4">
-              {/* <div
-                style={{ backgroundImage: `url(${iconData})` }}
-                className="bg-image aspect-1x1 bg-contain" 
-              /> */}
               <img src={iconData} className="img-fluid rounded-circle hover-glow" alt={highlight.highlightTitle}/>
             </div>
           )}

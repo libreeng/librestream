@@ -1,20 +1,21 @@
 import React from 'react'
-import PropTypes from 'prop-types'
+import { useSiteFooter } from '../common/hooks/useSiteFooter'
+import parse from "html-react-parser"
+// import PropTypes from 'prop-types'
+
+
 
 const NewsletterSignup = () => {
+  const { options } = useSiteFooter()
   return (
     <>
-      <div className="bg-image aspect-3x1">
-        <div className="bg-fill">
-          NewsletterSignup 
-        </div>
-      </div>
+     {parse(options.mailingListFormShortcode)}
     </>
   )
 }
 
-NewsletterSignup.propTypes = {
+// NewsletterSignup.propTypes = {
 
-}
+// }
 
 export default NewsletterSignup

@@ -1,7 +1,7 @@
 /* eslint-disable react/jsx-props-no-spreading */
 import React from 'react'
 import PropTypes from 'prop-types'
-import Image from "gatsby-image"
+// import Image from "gatsby-image"
 import BackgroundImage from 'gatsby-background-image'
 import Slider from "react-slick"
 
@@ -26,7 +26,6 @@ const CarouselHero = ({ images, config }) => {
         return (
           image && (
             <BackgroundImage Tag="div" className="bg-image aspect-16x9" fluid={image} />
-            // <Image fluid={image} alt="" className="img-cover" />
           )
         )
       })}
