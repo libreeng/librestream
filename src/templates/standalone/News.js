@@ -73,7 +73,7 @@ const NewsTemplate = ({ data: { page } }) => {
                 />
                 <SearchLineIcon size="25" />
               </div>
-              
+
             </div>
             <div className="col-12 col-md-6">
               <Link to="/media-kit" className="btn btn-block btn-outline-primary text-dark">Media Kit</Link>
@@ -85,11 +85,11 @@ const NewsTemplate = ({ data: { page } }) => {
                     <h3 className="text-dark text-uppersace mt-4">{results.length} results for &quot;{query}&quot;</h3>
                     <hr className="hr-styled caret-left" />
                     <div className="row">
-                      {results.map(result => <ResultCard key={result.id} result={result} />)}
+                      {results.map(result => <ResultCard key={result.url} result={result} />)}
                     </div>
                   </>
                 ) : (
-                  <p className="alert alert-warning text-center my-4">Sorry... try searching for another key term.</p>
+                  <p className="alert alert-light text-center my-4">Looking for... {query}</p>
                 )
               )}
 
