@@ -106,6 +106,10 @@
   text-transform: underline !important;
 }
 
+.text-shadow {
+  text-shadow: 2px 0 18px rgba($black, 0.9);
+}
+
 // Aspect Ratio Utilities
 .bg-contain {
   background-size: contain !important;
@@ -227,8 +231,6 @@
   }
 }
 
-
-
 .icon-arrow {
   width: 0;
   height: 0;
@@ -321,7 +323,6 @@
   &:hover {
     box-shadow: 0px 0px 15px rgba($primary, 0.9);
   }
-  
 }
 
 .text-underline {
