@@ -33,13 +33,15 @@ const AboutTemplate = ({ data: { page } }) => {
               <h2>Awards</h2>
             </div>
           </div>
-          <div className="row row-cols-1 row-cols-md-2 align-items-center justify-content-between">
+          <div className="row row-cols-1 row-cols-md-2 row-cols-lg-5 align-items-center justify-content-between">
             {acf.awards && acf.awards.map(award => (
-              <div key={award.image.id} className="col-12 col-lg-2 mb-4">
-                <Image
-                  fluid={award.image.localFile.childImageSharp.fluid && award.image.localFile.childImageSharp.fluid}
-                  alt={award.image.altText && award.image.altText}
-                />
+              <div key={award.image.id} className="col mb-4">
+                <div className="card">
+                  <Image
+                    fluid={award.image.localFile.childImageSharp.fluid && award.image.localFile.childImageSharp.fluid}
+                    alt={award.image.altText && award.image.altText}
+                  />
+                </div>
               </div>
             )
             )}
