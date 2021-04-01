@@ -18,9 +18,10 @@ const SolutionsTemplate = ({ data: { page, solutions } }) => {
     <>
       <Hero hero={hero} />
       <Intro intro={intro} />
-      <section>
+      
+      <section className="pt-0">
         <div className="container">
-          <div className="row mt-5">
+          <div className="row">
 
             {allSolutions && allSolutions.map(solution => {
               const { id, uri, title, acfPostTypeSolution: { solutionDescription, solutionTitle } } = solution.post
@@ -54,9 +55,8 @@ const SolutionsTemplate = ({ data: { page, solutions } }) => {
           </div>
         </div>
       </section>
-
       {!!page.content && (
-        <section>
+        <section className="pb-0">
           <div className="container">
             <div className="row">
               <div className="col-12">
@@ -66,7 +66,6 @@ const SolutionsTemplate = ({ data: { page, solutions } }) => {
           </div>
         </section>
       )}
-
       <FooterCTAs featured={cta} />
     </>
   )
