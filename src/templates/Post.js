@@ -8,9 +8,10 @@ import SocialShare from "../components/SocialShare"
 import PostCard from '../common/ui/cards/PostCard'
 
 const PostTemplate = ({ data: { previous, next, post } }) => {
+  const acf = post.acfPostTypeNews
   const featuredImage = {
-    fluid: post.acfPostTypeNews?.mainImage?.localFile?.childImageSharp?.fluid,
-    alt: post.acfPostTypeNews?.mainImage?.altText || ``
+    fluid: acf?.mainImage?.localFile?.childImageSharp?.fluid,
+    alt: acf?.mainImage?.altText || ``
   }
   const postCategory = {
     categoryName: post.categories.nodes[0].name,
@@ -19,6 +20,8 @@ const PostTemplate = ({ data: { previous, next, post } }) => {
   const hero = {
     heroHeading: postCategory.categoryName
   }
+
+  console.log(acf.postVideo)
 
   // Related Post Logic
   const nodes = post.tags.nodes.length > 0
@@ -52,6 +55,11 @@ const PostTemplate = ({ data: { previous, next, post } }) => {
               )}
               {!!post.content && (
                 <div itemProp="articleBody">{parse(post.content)}</div>
+              )}
+              {acf.postVideo.videoEmbed && (
+                <div className="responsive-iframe aspect-16x9 mt-5">
+                  <iframe src={acf.postVideo.videoEmbed} title={acf.postVideo.videoTitle ? acf.postVideo.videoTitle : post.title} />
+                </div>
               )}
             </div>
             <div className="col-lg-3 ml-lg-auto">
