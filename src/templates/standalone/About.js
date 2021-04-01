@@ -45,24 +45,6 @@ const AboutTemplate = ({ data: { page } }) => {
               </div>
             )
             )}
-
-            {/* {acf.theawards && acf.theawards.map(award => {
-              if (award.image) { // testing by Paul
-                return (
-                  <div key={award.image.id} className="col-12 col-lg-2 mb-4">
-                    <Image
-                      fluid={award.image.localFile.childImageSharp.fluid && award.image.localFile.childImageSharp.fluid}
-                      alt={award.image.altText && award.image.altText}
-                    />
-                  </div>
-                )
-              } else {
-                // log this to help troubleshoot. 1 4 2 3 5
-                console.log("Could not find property 'image' on 'theaward'.", award); // testing by Paul
-              }
-            }
-            )} */}
-
           </div>
         </div>
       </section>
