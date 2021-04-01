@@ -42,7 +42,7 @@ const NewsTemplate = ({ data: { page } }) => {
       </section>
 
 
-      <section className="overflow-hidden pt-0">
+      <section className="overflow-hidden py-0">
         <div className="container-fluid">
           <Carousel
             posts={featuredPosts}
@@ -54,7 +54,7 @@ const NewsTemplate = ({ data: { page } }) => {
         </div>
       </section>
 
-      <section id="press-releases">
+      <section id="press-releases" className="pb-0">
         <hr className="hr-styled" />
         <div className="container">
           <div className="row">
@@ -117,7 +117,7 @@ const NewsTemplate = ({ data: { page } }) => {
         </div>
       </section>
 
-      <section id="news">
+      <section id="news" className="pb-0">
         <hr className="hr-styled caret-left" />
         <div className="container">
           <div className="row">
@@ -137,7 +137,7 @@ const NewsTemplate = ({ data: { page } }) => {
         </div>
       </section>
 
-      <section id="events">
+      <section id="events" className="pb-0">
         <hr className="hr-styled caret-left" />
         <div className="container">
           <div className="row">

@@ -30,6 +30,11 @@ export const PostDetails = graphql`
           }
         }
       }
+      postVideo {
+        videoDescription
+        videoEmbed
+        videoTitle
+      }
     }
     featuredImage {
       node {
