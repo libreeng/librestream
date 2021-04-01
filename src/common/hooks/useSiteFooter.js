@@ -22,6 +22,7 @@ export const useSiteFooter = () => {
             faxTitle
             faxNumber
             footerMailingListTitle
+            mailingListFormShortcode
             socialLinks {
               site
               svgCode

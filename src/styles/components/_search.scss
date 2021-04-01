@@ -1,0 +1,33 @@
+.searchInput {
+  position: relative;
+  display: block;
+  text-transform: uppercase;
+  padding: 0.5rem 4rem 0.3rem;
+  border-radius: 3rem;
+  text-transform: uppercase;
+  color: $primary;
+  font-size: 1.5rem;
+  font-weight: 400;
+  &:focus {
+    outline: none;
+  }
+  &::placeholder {
+    text-align: center;
+    color: $body-color;
+  }  
+}
+
+.searchInputWrapper {
+  position: relative;
+  
+  .remixicon-icon {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%) rotate(85deg);
+    right: 15px;
+    pointer-events: none;
+  }
+}
+
+
+

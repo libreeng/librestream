@@ -10,10 +10,12 @@ import Stats from '../components/Stats'
 const Solution = ({ data: { previous, next, post } }) => {
   const stats = post.acfStats.statistics
   const hero = {
-    heroHeading: "Industry Solution"
+    heroHeading: "Industry Solution",
+    heroBackgroundImage: post.acfHero?.heroBackgroundImage ? post.acfHero?.heroBackgroundImage : false,
+    heroFeaturedImage: post.acfHero?.heroFeaturedImage ? post.acfHero?.heroFeaturedImage : false
   }
   const intro = post.acfIntro
-  const featuredImage = intro.introFeaturedImage.localFile.publicURL
+  const featuredImage = intro.introFeaturedImage?.localFile?.publicURL
   const acf = post.acfPostTypeSolution
   return (
     <>
@@ -80,6 +82,25 @@ export const pageQuery = graphql`
       uri
       slug
       content
+      acfHero {
+        heroFeaturedImage {
+          altText
+          localFile {
+            publicURL
+          }
+        }
+        heroBackgroundImage {
+          altText
+          localFile {
+            publicURL
+            childImageSharp {
+              fluid(maxWidth: 1920, quality: 100) {
+                ...GatsbyImageSharpFluid
+              }
+            }
+          }
+        }
+      }
       acfPostTypeSolution {
         solutionLink {
           target

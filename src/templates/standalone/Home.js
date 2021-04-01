@@ -12,7 +12,7 @@ import { useCaseStudies } from "../../common/hooks/useCaseStudies"
 
 const HomeTemplate = ({ data: { page } }) => {
   const acf = page.acfTemplateHome
-  const hero = page.acfHero
+  const hero = {...page.acfHero, heroGallery: acf.galleryImages}
   const stats = page.acfStats.statistics
   const { featuredNews } = useFeaturedNews()
   const { featuredCaseStudies } = useCaseStudies()
@@ -113,6 +113,17 @@ export const pageQuery = graphql`
           carouselSlideFeaturedImage {
             localFile {
               publicURL
+              childImageSharp {
+                fluid {
+                  ...GatsbyImageSharpFluid
+                }
+              }
+            }
+          }
+        }
+        galleryImages {
+          galleryImage {
+            localFile {
               childImageSharp {
                 fluid {
                   ...GatsbyImageSharpFluid

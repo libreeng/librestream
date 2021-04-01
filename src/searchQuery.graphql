@@ -1,9 +1,17 @@
 query {
   allWpPost {
     nodes {
-      uri
+      id
+      nodeType
       title
-      content
+      uri
+      acfPostTypeNews {
+        mainImage {
+          localFile {
+            publicURL
+          }
+        }
+      }
       tags {
         nodes {
           name
