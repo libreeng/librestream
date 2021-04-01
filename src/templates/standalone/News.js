@@ -3,6 +3,7 @@ import React, { useState } from "react"
 import { Link, graphql } from "gatsby"
 import parse from "html-react-parser"
 import { useFlexSearch } from 'react-use-flexsearch'
+import SearchLineIcon from 'remixicon-react/SearchLineIcon'
 import Hero from "../../common/ui/Hero"
 import FooterCTAs from '../../common/ui/FooterCTAs'
 import Carousel from "../../common/ui/carousel/Carousel"
@@ -11,7 +12,7 @@ import { useNews } from "../../common/hooks/useNews"
 import { useCaseStudies } from "../../common/hooks/useCaseStudies"
 import ResultCard from '../../common/ui/cards/ResultCard'
 import Filters from '../../common/ui/Filters'
-import SearchLineIcon from 'remixicon-react/SearchLineIcon'
+
 
 const NewsTemplate = ({ data: { page } }) => {
   const hero = {
