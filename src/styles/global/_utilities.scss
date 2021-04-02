@@ -124,12 +124,6 @@
   display: flex;
   align-items: center;
   justify-content: center;
-  &.bg-hover-red {
-    background-color: rgba($black, 0.5);
-    &:hover {
-      background-color: rgba($red, 0.75);
-    }
-  }
 }
 
 .bg-full {
@@ -216,11 +210,11 @@
 }
 
 .grayscale {
-  filter: grayscale(100%);
+  filter: grayscale(80%);
   @include transition(0.4s);
   &:hover {
     filter: none;
-    background-color: rgba($red, 0.8);
+    // background-color: rgba($red, 0.8);
   }
   &.grayscale-hover {
     filter: none;
