@@ -22,7 +22,7 @@ const LogoTicker = ({ items }) => {
   return (
     <Slider {...settings} className="bg-gradient-blue">
       {items && items.map((item, index) => (
-        <div key={`${item.id}_${index}`} className="px-3">
+        <div key={`${item.id}_${index}`} className="logo-wrapper px-3">
           <img src={item.logo.localFile.publicURL} className="img-fluid mx-5" alt={item.logo.altText} />
         </div>
       ))}

@@ -15,6 +15,17 @@ const UseCasesTemplate = ({ data: { page } }) => {
   return (
     <>
       <Hero hero={hero} />
+      {!!page.content && (
+        <section className="pb-0">
+          <div className="container">
+            <div className="row">
+              <div className="col-12">
+                {parse(page.content)}
+              </div>
+            </div>
+          </div>
+        </section>
+      )}
       <section>
         <div className="container">
           <div className="row mt-5">
@@ -54,18 +65,6 @@ const UseCasesTemplate = ({ data: { page } }) => {
           </div>
         </div>
       </section>
-
-      {!!page.content && (
-        <section>
-          <div className="container">
-            <div className="row">
-              <div className="col-12">
-                {parse(page.content)}
-              </div>
-            </div>
-          </div>
-        </section>
-      )}
 
       <FooterCTAs featured={cta} />
     </>

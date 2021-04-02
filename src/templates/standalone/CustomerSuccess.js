@@ -75,6 +75,32 @@ const CustomerSuccessTemplate = ({ data: { page } }) => {
       </div>
       <section>
         <div className="container">
+          <div className="row">
+            <div className="col-lg-6">
+              {acf.supportDescription && parse(acf.supportDescription)}
+            </div>
+            <div className="col-lg-6">
+              <div className="row align-items-center">
+                {acf.supportImages && acf.supportImages.map(image => (
+                  <div className="col-12 col-lg-4 mb-3" key={image.id}>
+                    <Image
+                      fluid={image?.supportImage?.localFile?.publicURL}
+                      alt={image?.supportImage?.altText}
+                    />
+                    {/* <h6 className="text-center mt-3">AI Computer Vision</h6> not sure if images will have borders and titles embedded
+                      <div className="border-bracket-bottom" /> */}
+                  </div>
+                ))}
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+      <div className="container">
+        <hr className="hr-styled" />
+      </div>
+      <section>
+        <div className="container">
           <div className="row mb-5">
             <div className="col-12">
               <h2 className="text-uppercase">Customer Success Highlights</h2>
@@ -130,6 +156,16 @@ export const pageQuery = graphql`
         trainingDescription
         trainingImages {
           trainingImage {
+            id
+            altText
+            localFile {
+              publicURL
+            }
+          }
+        }
+        supportDescription
+        supportImages {
+          supportImage {
             id
             altText
             localFile {
