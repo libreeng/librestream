@@ -7,8 +7,11 @@ import Hero from "../common/ui/Hero"
 const ResourceTemplate = ({ data: { post } }) => {
   const acf = post.acfPostTypeResource
   const hero = {
-    heroHeading: post.title
+    heroHeading: post.title,
+    heroBackgroundImage: post.acfHero?.heroBackgroundImage ? post.acfHero?.heroBackgroundImage : false,
+    heroFeaturedImage: post.acfHero?.heroFeaturedImage ? post.acfHero?.heroFeaturedImage : false
   }
+  console.log(hero)
 
   return (
     <>
@@ -111,6 +114,25 @@ export const postQuery = graphql`
       uri
       slug
       content
+      acfHero {
+        heroFeaturedImage {
+          altText
+          localFile {
+            publicURL
+          }
+        }
+        heroBackgroundImage {
+          altText
+          localFile {
+            publicURL
+            childImageSharp {
+              fluid(maxWidth: 1920, quality: 100) {
+                ...GatsbyImageSharpFluid
+              }
+            }
+          }
+        }
+      }
       acfPostTypeResource {
         fieldGroupName
         embed
