@@ -7,6 +7,7 @@ export const SolutionStats = graphql`
         number
         caption
         descriptor
+        numberPrefix
       }
     }
   }

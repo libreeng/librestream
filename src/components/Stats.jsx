@@ -8,13 +8,16 @@ const Stats = ({ stats }) => {
     <section>
       <div className="container">
         <div className="row justify-content-center">
-          {stats && stats.map(({ number, descriptor, caption }, i) => {
+          {stats && stats.map(({ numberPrefix, number, descriptor, caption }, i) => {
 
             return (
               <div key={`stat_${i}`} className="col-12 col-sm-6 col-lg-3">
                 
                 <div className="stat">
                   <div className="stat-number">
+                    {numberPrefix && (
+                      <span className="stat-descriptor">{numberPrefix}</span>
+                    )}
                     <CountUp end={number && number} />
                     {descriptor && (
                       <span className="stat-descriptor">{descriptor}</span>
