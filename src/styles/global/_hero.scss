@@ -41,7 +41,6 @@
       }
     }
   }
-  
 
   &.bg-hero-carousel {
     padding-top: 0;
@@ -56,7 +55,7 @@
     .bg-image {
       background-position: center bottom !important;
       padding-top: 120%;
-      @include media-breakpoint-up (lg) {
+      @include media-breakpoint-up(lg) {
         padding-top: 56.25%;
       }
     }

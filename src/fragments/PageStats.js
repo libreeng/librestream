@@ -7,6 +7,7 @@ export const PageStats = graphql`
         number
         caption
         descriptor
+        numberPrefix
       }
     }
   }

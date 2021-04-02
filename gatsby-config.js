@@ -12,6 +12,7 @@ module.exports = {
   plugins: [
     'gatsby-plugin-react-helmet',
     'gatsby-plugin-sass',
+    'gatsby-plugin-recaptcha',
     {
       /**
        * First up is the WordPress source plugin that connects Gatsby

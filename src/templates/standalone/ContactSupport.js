@@ -1,3 +1,4 @@
+/* eslint-disable no-unused-vars */
 import React from "react"
 import { graphql } from "gatsby"
 import parse from "html-react-parser"
@@ -13,6 +14,8 @@ const ContactSupportTemplate = ({ data: { page } }) => {
   }
   const { cta } = page.acfFooterCTAs
 
+  // console.log(page.content)
+  // console.log(parse(page.content))
   return (
     <>
       <Hero hero={hero} />
@@ -40,7 +43,17 @@ const ContactSupportTemplate = ({ data: { page } }) => {
           <div className="row justify-content-center">
             <div className="col-12 col-lg-8">
               {!!page.content && (
-                parse(page.content)
+                parse(page.content, {
+                  replace(domNode) {
+                    if (domNode.type === 'script' && domNode.attribs.src === 'https://www.google.com/recaptcha/api.js') {
+                      const script = document.createElement('script');
+                      // script.src = domNode.attribs.src
+                      script.src = '/js/captcha.js'
+                      script.onload = () => { console.log('Captcha Loaded') }
+                      document.head.appendChild(script)
+                    }
+                  }
+                })
               )}
             </div>
           </div>

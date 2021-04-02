@@ -106,6 +106,10 @@
   text-transform: underline !important;
 }
 
+.text-shadow {
+  text-shadow: 2px 0 18px rgba($black, 0.9);
+}
+
 // Aspect Ratio Utilities
 .bg-contain {
   background-size: contain !important;
@@ -120,12 +124,6 @@
   display: flex;
   align-items: center;
   justify-content: center;
-  &.bg-hover-red {
-    background-color: rgba($black, 0.5);
-    &:hover {
-      background-color: rgba($red, 0.75);
-    }
-  }
 }
 
 .bg-full {
@@ -212,11 +210,11 @@
 }
 
 .grayscale {
-  filter: grayscale(100%);
+  filter: grayscale(80%);
   @include transition(0.4s);
   &:hover {
     filter: none;
-    background-color: rgba($red, 0.8);
+    // background-color: rgba($red, 0.8);
   }
   &.grayscale-hover {
     filter: none;
@@ -226,8 +224,6 @@
     }
   }
 }
-
-
 
 .icon-arrow {
   width: 0;
@@ -321,7 +317,6 @@
   &:hover {
     box-shadow: 0px 0px 15px rgba($primary, 0.9);
   }
-  
 }
 
 .text-underline {

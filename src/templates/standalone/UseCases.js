@@ -45,7 +45,7 @@ const UseCasesTemplate = ({ data: { page } }) => {
                         className="card-img-top bg-image aspect-1x1 grayscale"
                         style={{ backgroundImage: `url(${featuredImage && featuredImage.sourceUrl || 'https://via.placeholder.com/400/000/000'})` }}
                       >
-                        <div className="bg-fill bg-hover-red">
+                        <div className="bg-fill">
                           {logoImage && (
                             <img src={logoImage.sourceUrl} className="img-fluid w-50" alt={title} />
                           )}

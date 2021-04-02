@@ -22,7 +22,7 @@ const Hero = ({ hero, nav, className }) => {
 
   return (
 
-    <div 
+    <div
       style={ backgroundImage ? { backgroundImage: `url(${ backgroundImage })`} : null}
       className={`hero ${className} ${heroBackgroundClass}`}>
       {heroImages && heroImages.length > 0  && (
@@ -32,7 +32,7 @@ const Hero = ({ hero, nav, className }) => {
         <div className="container">
           <div className="row align-items-center">
             <div className="col-12 col-lg-9 col-xl-8 col-xxl-7">
-              <div className="text-white pb-4">
+              <div className="text-white text-shadow pb-4">
                 {heroHeading && <h1>{parse(heroHeading)}</h1>}
                 {heroDescription && <div className="lead">{parse(heroDescription)}</div>}
                 {heroCta && <a href={heroCta.url} type="button" className="btn btn-lg btn-secondary text-dark my-5" target={heroCta.target}>{heroCta.title}</a>}
