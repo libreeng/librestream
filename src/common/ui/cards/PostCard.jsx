@@ -22,7 +22,7 @@ const PostCard = ({ post, showBracket, className }) => {
 
       {showBracket ? (
         <div className="card-footer bg-transparent text-dark text-center text-uppercase">
-          <h6 className="mt-4 text-dark">{post.title}</h6>
+          <h6 className="mt-4 text-dark"><strong>{post.title}</strong></h6>
           <div className="border-bracket-bottom" />
         </div>
       ) : (
