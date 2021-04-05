@@ -85,7 +85,7 @@ const AboutTemplate = ({ data: { page } }) => {
             </div>
           </div>
           <div className="row">
-            {acf.board && acf.board.map((boardmember, i) => (
+            {acf.management && acf.management.map((boardmember, i) => (
               <div key={`board_management_${i}`} className="col-12 col-lg-3 mb-4">
                 <button onClick={() => dispatch(openModal("BoardModal", { board: boardmember }))} type="button" className="border-0 bg-transparent p-0">
                   {boardmember.image && (

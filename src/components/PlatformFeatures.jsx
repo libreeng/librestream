@@ -67,15 +67,15 @@ const PlatformFeatures = ({ content }) => {
                     <div className="col-lg-4 border-left border-primary">
                       {footer.summary && footer.summary}
                     </div>
-                    <div className="col-lg-4 border-left border-primary">
-                      {footer.checklist && (
+                    {footer.checklist && footer.checklist.length > 0 && (
+                      <div className="col-lg-4 border-left border-primary">
                         <ul className="checklist">
-                          {footer.checklist.checklistItem.map((item, i) =>
+                          {footer.checklist?.checklistItem?.map((item, i) =>
                             <li key={`checklist_${i}`}>{item.checklistItem}</li>
                           )}
                         </ul>
-                      )}
-                    </div>
+                      </div>
+                    )}
                   </div>
                 </>
               )}
