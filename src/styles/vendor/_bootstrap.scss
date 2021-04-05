@@ -4,6 +4,7 @@
   text-transform: uppercase;
   padding: 0.5rem 4rem 0.3rem;
   border-radius: 3rem;
+  text-shadow: none !important;
   @include transition();
   &::after {
     content: "";
