@@ -17,18 +17,11 @@ const ReleaseNotesTemplate = ({ data: { post } }) => {
       <Hero hero={hero} />
       <div className="container">
         <div className="row">
-          <div className="col-12">
-            <p className="float-right mr-5">{post.date}</p>
-            {featuredImage?.fluid && (
-              <Image
-                fluid={featuredImage.fluid}
-                alt={featuredImage.alt}
-                style={{ marginBottom: 50 }}
-              />
-            )}
-            {!!post.content && (
-              <article className="py-5">{parse(post.content)}</article>
-            )}
+          <div className="col-12 col-md-4 col-lg-3">
+            <ReleaseNotesNav />
+          </div>
+          <div className="col-12 col-md-8 col-lg-9">
+
           </div>
         </div>
       </div>
