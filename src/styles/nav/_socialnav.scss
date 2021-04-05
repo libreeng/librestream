@@ -3,3 +3,11 @@
     background-color: $light;
   }
 }
+
+#socialshare-page {
+  svg {
+    path {
+      fill: $dark !important;
+    }
+  }
+}
