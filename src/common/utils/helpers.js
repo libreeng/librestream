@@ -97,8 +97,6 @@ export function getHeroParseOptions(props) {
       if (!attribs) return;
 
       if (name.includes('p')) {
-
-        // @TODO: Write logic to check if component isExists. If not - throw error
         // eslint-disable-next-line consistent-return
         return <>{domToReact(children, getHeroParseOptions(props))}</>
       }

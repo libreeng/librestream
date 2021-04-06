@@ -55,7 +55,7 @@ export const useSiteMetadata = () => {
   )
 
   const { generalSettings, seo: { schema, openGraph, social } } = data.wp
-  console.log(data.wp)
+
   const meta = {
     title: schema.siteName,
     description: generalSettings.description,
