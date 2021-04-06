@@ -9,6 +9,7 @@ import Layout from './src/containers/Layout'
 import LoadingComponent from './src/common/ui/LoadingComponent'
 import "slick-carousel/slick/slick.css"
 import "slick-carousel/slick/slick-theme.css"
+import "react-slideshow-image/dist/styles.css"
 import 'remixicon/fonts/remixicon.css'
 import './src/styles/main.scss'
 

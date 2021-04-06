@@ -5,7 +5,7 @@
  */
 
 // You can delete this file if you're not using it
-// import React from 'react'
+import React from 'react'
 import App from "./App"
 
 export const wrapRootElement = () => {
@@ -17,6 +17,12 @@ export const wrapRootElement = () => {
 
 export const onRenderBody = ({ setPostBodyComponents }) => {
   setPostBodyComponents([
+    <script
+      key="driftScript"
+      id="driftScript"
+      src="/js/drift.js"
+      defer
+    />
     // <script
     //   key="lsInitScript"
     //   id="lsInitScript"

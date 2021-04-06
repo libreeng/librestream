@@ -42,9 +42,9 @@
   &.aspect-16x9 {
     padding-top: 56.25%;
   }
-
   &.aspect-auto {
     height: auto;
+    padding: 160px 0 2rem;
   }
   &.aspect-letter {
     padding-top: 125%;
@@ -93,14 +93,6 @@
     background-position: top center;
     background-size: cover;
     background-repeat: no-repeat;
-  }
-
-  img.img-cover {
-    position: absolute;
-    top: 0;
-    left: 0;
-    max-width: 100%;
-    object-fit: cover;
   }
 }
 
@@ -213,17 +205,18 @@
 }
 
 .grayscale {
-  filter: grayscale(80%);
+  // filter: grayscale(80%);
   @include transition(0.4s);
   &:hover {
-    filter: none;
+    // filter: none;
     // background-color: rgba($red, 0.8);
+    opacity: 0.8 !important;
   }
   &.grayscale-hover {
-    filter: none;
-    @include transition(0.4s);
+    // filter: none;
     &:hover {
-      filter: grayscale(100%);
+      // filter: grayscale(100%);
+      opacity: 0.8 !important;
     }
   }
 }
