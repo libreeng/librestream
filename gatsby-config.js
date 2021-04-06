@@ -4,15 +4,16 @@ const path = require('path')
 module.exports = {
   flags: {},
   siteMetadata: {
-    title: `Librestream Website`,
-    description: `Enter in default site meta description...`,
-    lang: `en`,
-    author: `@ocupop`
+    title: `Librestream`,
+    description: `Since 2003 Librestream's augmented reality enterprise solution, Onsight, has empowered workers with a robust platform designed for industrial environments.`,
+    lang: `en-US`,
+    author: `@Librestream`
   },
   plugins: [
     'gatsby-plugin-react-helmet',
     'gatsby-plugin-sass',
     'gatsby-plugin-recaptcha',
+    'gatsby-plugin-sitemap',
     {
       /**
        * First up is the WordPress source plugin that connects Gatsby
@@ -82,6 +83,7 @@ module.exports = {
         },
       },
     },
+
     // You can have multiple instances of this plugin to create indexes with
     // different names or engines. For example, multi-lingual sites could create
     // an index for each language.

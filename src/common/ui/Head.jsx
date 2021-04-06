@@ -3,19 +3,17 @@ import PropTypes from 'prop-types'
 import Helmet from 'react-helmet'
 import { useSiteMetadata } from '../hooks/useSiteMetadata'
 
-const HEAD = ({ pageDescription, pageTitle, pageAuthor, className }) => {
-  const { title, description, author, lang } = useSiteMetadata()
+const HEAD = ({ pageDescription, pageTitle, className }) => {
+  const { title, description, lang } = useSiteMetadata()
 
   const metaTitle = pageTitle || title
   const metaDescription = pageDescription || description
-  const metaAuthor = pageAuthor || author
 
   return (
-    <Helmet titleTemplate={`%s | ${metaTitle}`} defaultTitle={title}>
+    <Helmet titleTemplate={`%s | ${metaTitle} - Librestream`} defaultTitle={title} defer={false}>
       <html lang={lang} />
       <body className={className} />
       <meta name="description" content={metaDescription} />
-      <meta name="author" content={metaAuthor} />
       {/* TODO - Add default metaData and logic for page overrides */}
     </Helmet>
   )
@@ -23,7 +21,6 @@ const HEAD = ({ pageDescription, pageTitle, pageAuthor, className }) => {
 
 HEAD.propTypes = {
   pageDescription: PropTypes.string,
-  pageAuthor: PropTypes.string,
   // meta: PropTypes.arrayOf(PropTypes.object),
   pageTitle: PropTypes.string
 }
