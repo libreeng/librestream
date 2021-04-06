@@ -70,7 +70,7 @@ const AboutTemplate = ({ data: { page } }) => {
                         fluid={boardmember.image.localFile.childImageSharp.fluid}
                       />
                     )}
-                    <h4 className="mb-0 text-dark">{boardmember.name && boardmember.name}</h4>
+                    <h4 className="mb-0 text-dark text-left">{boardmember.name && boardmember.name}</h4>
                     <p className="text-primary">{boardmember.title && boardmember.title}</p>
                   </button>
 
@@ -95,8 +95,8 @@ const AboutTemplate = ({ data: { page } }) => {
                       fluid={boardmember.image.localFile.childImageSharp.fluid}
                     />
                   )}
-                  <h4 className="mb-0 text-dark">{boardmember.name && boardmember.name}</h4>
-                  <p className="text-primary">{boardmember.title && boardmember.title}</p>
+                  <h4 className="mb-0 text-dark text-left">{boardmember.name && boardmember.name}</h4>
+                  <p className="text-primary text-left">{boardmember.title && boardmember.title}</p>
                 </button>
               </div>
             ))}
