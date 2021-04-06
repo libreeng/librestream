@@ -12,8 +12,8 @@ const Carousel = ({ posts, config }) => {
     infinite: false,
     speed: 500,
     centerMode: false,
-    slidesToShow: 4,
-    slidesToScroll: 4,
+    slidesToShow: 3,
+    slidesToScroll: 3,
     initialSlide: 0,
     responsive: [
       {

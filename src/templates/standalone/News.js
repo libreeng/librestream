@@ -43,7 +43,7 @@ const NewsTemplate = ({ data: { page } }) => {
 
 
       <section className="overflow-hidden py-0">
-        <div className="container-fluid">
+        <div className="container">
           <Carousel
             posts={featuredPosts}
             config={{
@@ -179,13 +179,14 @@ const NewsTemplate = ({ data: { page } }) => {
               </h3>
             </div>
           </div>
+          <Carousel
+            posts={featuredCaseStudies}
+            config={{
+              dots: true
+            }}
+          />
         </div>
-        <Carousel
-          posts={featuredCaseStudies}
-          config={{
-            dots: true
-          }}
-        />
+        
       </section>
 
       <FooterCTAs featured={cta} />
