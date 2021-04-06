@@ -1,5 +1,7 @@
+import React from 'react'
 import format from 'date-fns/format'
 import queryString from 'query-string'
+import { domToReact } from 'html-react-parser'
 
 
 export const formatDate = date => {
@@ -89,9 +91,17 @@ export function iFrameResizeMessage(event) {
   })
 }
 
-// export function camelize(str) {
-//   return str.replace(/(?:^\w|[A-Z]|\b\w|\s+)/g, function (match, index) {
-//     if (+match === 0) return "" // or if (/\s+/.test(match)) for white spaces
-//     return index === 0 ? match.toLowerCase() : match.toUpperCase()
-//   });
-// }
+export function getHeroParseOptions(props) {
+  return ({
+    replace: ({ attribs, name, children }) => {
+      if (!attribs) return;
+
+      if (name.includes('p')) {
+
+        // @TODO: Write logic to check if component isExists. If not - throw error
+        // eslint-disable-next-line consistent-return
+        return <>{domToReact(children, getHeroParseOptions(props))}</>
+      }
+    }
+  })
+}
