@@ -28,6 +28,7 @@
     "gatsby-transformer-sharp": "^2.2.14",
     "gatsby-wpgraphql-inline-images": "^0.2.5",
     "html-react-parser": "^1.2.4",
+    "intersection-observer": "^0.12.0",
     "lodash": "^4.17.5",
     "moment": "^2.29.1",
     "node-sass": "^4.12.0",
