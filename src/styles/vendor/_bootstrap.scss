@@ -36,51 +36,6 @@
       min-width: 300px;
     }
   }
-  //   &.btn-xl {
-  //     @include media-breakpoint-up(lg) {
-  //       min-width: 500px;
-  //       padding-top: 15px;
-  //       padding-bottom: 15px;
-  //     }
-  //   }
-  //   &.btn-gradient-blue-cyan {
-  //     background: linear-gradient(90deg, $blue 0%, $cyan 100%);
-  //   }
-  //   &.btn-gradient-green-cyan {
-  //     background: linear-gradient(90deg, $green 0%, $cyan 100%);
-  //   }
-  //   &.btn-gradient-cyan-green {
-  //     background: linear-gradient(90deg, $cyan 0%, $green 100%);
-  //   }
-  //   &.btn-gradient-dark-blue {
-  //     background: linear-gradient(90deg, $dark 0%, $blue 100%);
-  //   }
-  //   &.btn-border {
-  //     background-color: transparent;
-  //     border: 1px solid $dark;
-  //   }
-  //   &.shadow-white {
-  //     border: 2px solid $white;
-  //     box-shadow: 0 0 15px rgba($white, 0.9);
-  //   }
-  //   &.btn-block {
-  //     padding: 0.4rem 1rem;
-  //   }
-  //   &.btn-unstyled {
-  //     border: 0;
-  //     background: transparent;
-  //     padding: 0;
-  //     outline: 0;
-  //     &:hover,
-  //     &:focus {
-  //       outline: 0;
-  //       box-shadow: none;
-  //       border-radius: 0;
-  //     }
-  //     &::after {
-  //       display: none;
-  //     }
-  //   }
 }
 
 .btn-secondary {
