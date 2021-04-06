@@ -32,7 +32,7 @@ const PlatformTemplate = ({ data: { page } }) => {
           <div className="row mb-4">
             {template.platformDescription && (
               <div className="col-lg-6">
-                <div className="text-primary h3">
+                <div className="text-primary">
                   {parse(template.platformDescription)}
                 </div>
               </div>
