@@ -2,7 +2,6 @@
 .bg-image,
 .bg-video,
 .bg-iframe,
-.bg-hero,
 .responsive-iframe {
   position: relative;
   display: block;
@@ -94,14 +93,6 @@
     background-position: top center;
     background-size: cover;
     background-repeat: no-repeat;
-  }
-
-  img.img-cover {
-    position: absolute;
-    top: 0;
-    left: 0;
-    max-width: 100%;
-    object-fit: cover;
   }
 }
 

@@ -12,7 +12,7 @@ import { useCaseStudies } from "../../common/hooks/useCaseStudies"
 
 const HomeTemplate = ({ data: { page } }) => {
   const acf = page.acfTemplateHome
-  const hero = {...page.acfHero, heroGallery: acf.galleryImages}
+  const hero = { ...page.acfHero, heroGallery: acf.galleryImages }
   const stats = page.acfStats.statistics
   const { featuredNews } = useFeaturedNews()
   const { featuredCaseStudies } = useCaseStudies()
@@ -21,7 +21,7 @@ const HomeTemplate = ({ data: { page } }) => {
 
   return (
     <>
-      <Hero hero={hero} className="home-hero home-top" />
+      <Hero hero={hero} />
 
       <section id="intro" className="bg-white">
         <div className="container">
@@ -69,7 +69,7 @@ const HomeTemplate = ({ data: { page } }) => {
           </div>
         </div>
       </section>
-            
+
       <section className="bg-gradient-blue text-white">
         <div className="container">
           <div className="row align-items-center">
