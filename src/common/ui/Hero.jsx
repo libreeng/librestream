@@ -3,6 +3,7 @@ import PropTypes from 'prop-types'
 import { Link } from 'gatsby'
 import parse from "html-react-parser"
 import CarouselHero from "../../common/ui/carousel/CarouselHero"
+import { getHeroParseOptions } from '../../common/utils/helpers'
 
 const Hero = ({ hero, nav }) => {
   const { heroHeading, heroDescription, heroCta, heroFeaturedImage, heroBackgroundImage, heroGallery } = hero
@@ -12,13 +13,14 @@ const Hero = ({ hero, nav }) => {
     heroImages = heroGallery.map(image => image?.galleryImage?.localFile?.childImageSharp?.fluid)
   }
   const backgroundImage = heroBackgroundImage?.localFile?.publicURL
+  const parseOptions = getHeroParseOptions(heroHeading)
   const content = (
     <div className="bg-content">
       <div className="container">
         <div className="row align-items-center">
           <div className="col-12 col-lg-9 col-xl-8 col-xxl-7">
             <div className="text-white pb-4">
-              {heroHeading && <div className="h1">{parse(heroHeading)}</div>}
+              {heroHeading && <h1>{parse(heroHeading, parseOptions)}</h1>}
               {heroDescription && <div className="lead">{parse(heroDescription)}</div>}
               {heroCta && <a href={heroCta.url} type="button" className="btn btn-lg btn-secondary text-dark my-5" target={heroCta.target}>{heroCta.title}</a>}
             </div>
