@@ -27,7 +27,10 @@ const SupportTemplate = ({ data: { page } }) => {
               <div className="border-bracket mt-5 mb-3 text-center">
                 <h6>Onsight Service Status</h6>
               </div>
-              <a href="#link" className="btn btn-primary btn-block">View Onsight Service</a>
+              {page.acfSupportSections.serviceStatusLink && (
+                <a href={page.acfSupportSections.serviceStatusLink.url} target={page.acfSupportSections.serviceStatusLink.target} className="btn btn-primary btn-block">{page.acfSupportSections.serviceStatusLink.title ? page.acfSupportSections.serviceStatusLink.title : 'View Onsight Service'}</a>
+              )}
+              
             </div>
             <div className="col-12 col-lg-8">
               {sections && sections.map(section => {
@@ -79,6 +82,11 @@ export const pageQuery = graphql`
       ...PageHero
       ...FooterCTAs
       acfSupportSections {
+        serviceStatusLink {
+          target
+          url
+          title
+        }
         supportSections {
           supportSectionTitle
           sectionKnowledgebases {

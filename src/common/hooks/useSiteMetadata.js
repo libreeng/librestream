@@ -5,24 +5,65 @@ export const useSiteMetadata = () => {
       query SiteMetaData {
         wp(id: {eq: "/graphql--rootfields"}) {
           generalSettings {
-            title
             description
-            language
-            # author
-            # siteUrl
-            # headline
-            # description
-            # image
-            # video
-            # twitter
-            # name
-            # logo
+          }
+          seo {
+            schema {
+              inLanguage
+              siteName
+              siteUrl
+            }
+            social {
+              facebook {
+                url
+              }
+              wikipedia {
+                url
+              }
+              instagram {
+                url
+              }
+              linkedIn {
+                url
+              }
+              mySpace {
+                url
+              }
+              pinterest {
+                url
+              }
+              twitter {
+                username
+              }
+              youTube {
+                url
+              }
+            }
+            openGraph {
+              frontPage {
+                description
+                title
+              }
+              defaultImage {
+                sourceUrl
+              }
+            }
           }
         }
       }
     `
   )
-  const meta = data.wp.generalSettings
+
+  const { generalSettings, seo: { schema, openGraph, social } } = data.wp
+  console.log(data.wp)
+  const meta = {
+    title: schema.siteName,
+    description: generalSettings.description,
+    language: schema.inLanguage,
+    social,
+    image: openGraph.defaultImage.sourceUrl,
+    twitter: social.twitter.username,
+  }
 
   return meta
 }
