@@ -13,7 +13,7 @@ module.exports = {
     'gatsby-plugin-react-helmet',
     'gatsby-plugin-sass',
     'gatsby-plugin-recaptcha',
-    'gatsby-plugin-sitemap',
+    // 'gatsby-plugin-sitemap',
     {
       /**
        * First up is the WordPress source plugin that connects Gatsby
