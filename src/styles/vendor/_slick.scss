@@ -65,15 +65,23 @@
 .slick-next {
   display: flex;
   align-items: center;
-  top: 30%;
+  top: 50%;
 }
 .slick-prev {
   &::before {
     border-right: 5px solid $white;
   }
+  @include media-breakpoint-down(md) {
+    left: -15px;
+    z-index: 100;
+  }
 }
 .slick-next {
   &::before {
     border-left: 5px solid $white;
+  }
+  @include media-breakpoint-down(md) {
+    right: -15px;
+    z-index: 100;
   }
 }

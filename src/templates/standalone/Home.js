@@ -2,9 +2,9 @@ import React from "react"
 import { graphql } from "gatsby"
 // import Image from "gatsby-image"
 import parse from "html-react-parser"
+import BackgroundImage from 'gatsby-background-image'
 import Hero from '../../common/ui/Hero'
 import FooterCTAs from '../../common/ui/FooterCTAs'
-import CarouselOffset from '../../common/ui/carousel/CarouselOffset'
 import Carousel from '../../common/ui/carousel/Carousel'
 import Stats from '../../components/Stats'
 import { useFeaturedNews } from "../../common/hooks/useFeaturedNews"
@@ -17,6 +17,7 @@ const HomeTemplate = ({ data: { page } }) => {
   const { featuredNews } = useFeaturedNews()
   const { featuredCaseStudies } = useCaseStudies()
   const { cta } = page.acfFooterCTAs
+  const slide = acf.carouselSlide[0]
 
   return (
     <>
@@ -38,28 +39,63 @@ const HomeTemplate = ({ data: { page } }) => {
                   </div>
                 )}
                 {acf.introLink && (
-                  <a href={acf.introLink.url} className="btn btn-outline-secondary text-dark mt-3">{acf.introLink.title}</a>
+                  <a href={acf.introLink.url} className="btn btn-outline-secondary btn-lg text-dark mt-3">{acf.introLink.title}</a>
                 )}
               </div>
             </div>
           </div>
         </div>
       </section>
-
-      <section className="overflow-hidden pt-4">
-        <Carousel
-          posts={featuredCaseStudies}
-          config={{
-            dots: true
-          }}
-        />
+      <hr className="hr-styled caret-left" />
+      <section>
+        <div className="container">
+          <div className="row mb-4">
+            <div className="col-12">
+              <h3>Customer Use Cases</h3>
+            </div>
+          </div>
+          <Carousel
+            posts={featuredCaseStudies}
+            config={{
+              dots: true
+            }}
+          />
+          <div className="row mt-5">
+            <div className="col-12">
+              <div className="text-center">
+                <a href="/use-cases" className="btn btn-lg btn-outline-secondary text-dark">View All Use Cases </a>
+              </div>
+            </div>
+          </div>
+        </div>
       </section>
-
-      <CarouselOffset slides={acf.carouselSlide} interval={10000} />
-
+            
+      <section className="bg-gradient-blue text-white">
+        <div className="container">
+          <div className="row align-items-center">
+            <div className="col-lg-6">
+              {slide.carouselSlideFeaturedImage && (
+                <BackgroundImage
+                  Tag="div"
+                  className="bg-image aspect-4x3"
+                  fluid={slide.carouselSlideFeaturedImage.localFile.childImageSharp.fluid}
+                />
+              )}
+            </div>
+            <div className="col-12 col-lg-6">
+              <h2 className="h1 mt-3">{slide.carouselSlideTitle && slide.carouselSlideTitle}</h2>
+              <hr className="hr-xs border-green ml-0" />
+              <p>{slide.carouselSlideDescription && slide.carouselSlideDescription}</p>
+              {slide.carouselSlideLink && (
+                <a href={slide.carouselSlideLink.url} target={slide.carouselSlideLink.target} className="btn btn-secondary btn-lg mt-4">{slide.carouselSlideLink.title}</a>
+              )}
+            </div>
+          </div>
+        </div>
+      </section>
       <Stats stats={stats} />
 
-      <hr className="hr-styled" />
+      <hr className="hr-styled caret-left" />
 
       <section className="overflow-hidden">
         <div className="container">
@@ -81,7 +117,7 @@ const HomeTemplate = ({ data: { page } }) => {
           <div className="row my-5">
             <div className="col-12">
               <div className="text-center">
-                <a href="/news" className="btn btn-outline-secondary text-dark">View All News</a>
+                <a href="/news" className="btn btn-outline-secondary btn-lg text-dark">View All News</a>
               </div>
             </div>
           </div>

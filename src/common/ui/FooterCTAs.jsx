@@ -29,8 +29,8 @@ const FooterCTAs = ({ featured }) => {
                     ):(
                       <div className="card-img-top bg-image aspect-1x1 grayscale" style={{ backgroundImage: `url('https://via.placeholder.com/400/000/000')` }} />
                     )}
-                    <div className="card-footer bg-transparent text-dark text-uppercase pl-0">
-                      {ctaTitle}
+                    <div className="card-footer bg-white text-dark text-uppercase py-4 text-center">
+                      <button className="btn btn-secondary px-0 btn-block px-4">{ctaTitle}</button>
                     </div>
                   </div>
                 </Link>
