@@ -1,31 +1,31 @@
 body {
- @include media-breakpoint-up(xl) {
-  &::before {
-    content: "";
-    display: block;
-    width: 500px;
-    height: 500px;
-    background-color: rgba($dark, 0.8);
-    position: fixed;
-    top: -284px;
-    left: -436px;
-    -webkit-transform: rotate(-43deg);
-    transform: rotate(-44deg);
-    z-index: 500;
-    opacity: 1;
-    pointer-events: none;
-    @include transition(0.2s);
-    @include media-breakpoint-up(lg) {
-      z-index: 1;
-      left: -437px;
-      left: -410px;
-    }
-    @include media-breakpoint-up(xl) {
-      left: -326px;
+  @include media-breakpoint-up(xl) {
+    &::before {
+      content: "";
+      display: block;
+      width: 500px;
+      height: 500px;
+      background-color: rgba($dark, 0.8);
+      position: fixed;
+      top: -284px;
+      left: -436px;
+      -webkit-transform: rotate(-43deg);
+      transform: rotate(-44deg);
+      z-index: 500;
+      opacity: 1;
+      pointer-events: none;
+      @include transition(0.2s);
+      @include media-breakpoint-up(lg) {
+        z-index: 1;
+        left: -437px;
+        left: -410px;
+      }
+      @include media-breakpoint-up(xl) {
+        left: -326px;
+      }
     }
   }
- } 
-  
+
   &.has-scrolled {
     @include media-breakpoint-up(lg) {
       #pageHeader {
@@ -69,4 +69,8 @@ a {
   &:focus {
     text-decoration: none;
   }
+}
+
+table {
+  @extend .table;
 }

@@ -75,6 +75,7 @@ $info: $cyan !default;
 $warning: $yellow !default;
 $danger: $red !default;
 $light: $gray-400;
+$mid: $gray-600;
 $dark: $blue-dark;
 
 $theme-colors: () !default;
@@ -89,6 +90,7 @@ $theme-colors: map-merge(
     "warning": $warning,
     "danger": $danger,
     "light": $light,
+    "mid": $mid,
     "dark": $dark,
     "orange": $orange,
     "green": $green,
@@ -292,7 +294,7 @@ $line-height-base: 1.4;
 $h1-font-size: $font-size-base * 3.45;
 $h2-font-size: $font-size-base * 2.75;
 $h3-font-size: $font-size-base * 2;
-$h4-font-size: $font-size-base * 1.85;
+$h4-font-size: $font-size-base * 1.5;
 $h5-font-size: $font-size-base * 1.25 !default;
 $h6-font-size: $font-size-base !default;
 
