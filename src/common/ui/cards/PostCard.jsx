@@ -3,9 +3,11 @@ import PropTypes from 'prop-types'
 import BackgroundImage from 'gatsby-background-image'
 
 const PostCard = ({ post, showBracket, className }) => {
+  const primaryImage = post.acfPostTypeNews.summaryImage ? post.acfPostTypeNews.summaryImage : post.acfPostTypeNews.mainImage
+  console.log(primaryImage)
   const featuredImage = {
-    fluid: post.acfPostTypeNews?.mainImage?.localFile?.childImageSharp?.fluid,
-    alt: post.acfPostTypeNews?.mainImage?.altText || ``
+    fluid: primaryImage?.localFile?.childImageSharp?.fluid,
+    alt: primaryImage?.altText
   }
 
   return (
