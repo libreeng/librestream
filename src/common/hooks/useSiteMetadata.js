@@ -16,6 +16,13 @@ export const useSiteMetadata = () => {
             social {
               facebook {
                 url
+                defaultImage {
+                  sourceUrl
+                  mediaDetails {
+                    height
+                    width
+                  }
+                }
               }
               wikipedia {
                 url
@@ -57,6 +64,7 @@ export const useSiteMetadata = () => {
   const { generalSettings, seo: { schema, openGraph, social } } = data.wp
 
   const meta = {
+    url: schema.siteUrl,
     title: schema.siteName,
     description: generalSettings.description,
     language: schema.inLanguage,
