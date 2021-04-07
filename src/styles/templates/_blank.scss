@@ -2,8 +2,10 @@
   #pageHeader,
   #pageFooter,
   #footerCTAs,
+  #drift-iframe-chat,
+  #drift-frame-controller,
   .hero {
-    display: none;
+    display: none !important;
   }
   &::before {
     display: none;
