@@ -6,6 +6,7 @@ import Hero from '../common/ui/Hero'
 import NewsletterSignup from "../components/NewsletterSignup"
 import SocialShare from "../components/SocialShare"
 import PostCard from '../common/ui/cards/PostCard'
+import FooterCTAs from '../common/ui/FooterCTAs'
 
 const PostTemplate = ({ data: { previous, next, post } }) => {
   const acf = post.acfPostTypeNews
@@ -21,7 +22,9 @@ const PostTemplate = ({ data: { previous, next, post } }) => {
     heroHeading: postCategory.categoryName
   }
 
-  console.log(acf.postVideo)
+  // console.log(acf.postVideo)
+
+  const { cta } = post.acfFooterCTAs
 
   // Related Post Logic
   const nodes = post.tags.nodes.length > 0
@@ -63,11 +66,6 @@ const PostTemplate = ({ data: { previous, next, post } }) => {
               )}
             </div>
             <div className="col-lg-3 ml-lg-auto">
-              {/* Remove as per client request
-                <div className="text-right">
-                  <Link to={next.uri} className="d-flex align-items-center justify-content-end">Next <i className="icon-play ml-2"></i></Link>
-                </div>
-              */}
               <hr />
               <h6>Related Posts</h6>
               <div className="row">
@@ -91,8 +89,9 @@ const PostTemplate = ({ data: { previous, next, post } }) => {
           </div>
         </div>
       </section>
-      <hr className="hr-styled" />
-
+      {cta && (
+        <FooterCTAs featured={cta} />
+      )}
     </>
   )
 }
