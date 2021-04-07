@@ -77,6 +77,9 @@ const ContactSupportTemplate = ({ data: { page } }) => {
                   {acf.contactSalesDescription && (
                     parse(acf.contactSalesDescription)
                   )}
+                  {acf.contactSalesLink && (
+                    <a href={acf.contactSalesLink.url} target={acf.contactSalesLink.target} className="btn btn-primary mt-3">{acf.contactSalesLink.title}</a>
+                  )}
                 </div>
                 <div className="col-12 col-lg-5">
                   <div className="border-bracket">

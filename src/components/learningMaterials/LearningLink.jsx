@@ -4,12 +4,10 @@ import { useDispatch } from "react-redux"
 import BackgroundImage from 'gatsby-background-image'
 import { openModal } from "../../common/modals/modalActions"
 
-
 const LearningLink = ({ link }) => {
   const dispatch = useDispatch();
   return (
-    <div>
-      
+    <>
       {(link.linkType === 'Content' && !link.content && (
         <div className="row align-items-center">
           <div className="col-12 col-lg-4">
@@ -89,6 +87,22 @@ const LearningLink = ({ link }) => {
           </div>
         </button>
       ))
+      || (link.linkType === 'Page' && (
+        <a href={link.page.uri}>
+          <div className="row align-items-center mb-3">
+            <div className="col-12 col-lg-4">
+              <BackgroundImage
+                Tag="div"
+                className="bg-image aspect-4x3"
+                fluid={link.linkImage.localFile.childImageSharp.fluid}
+              />
+            </div>
+            <div className="col-12 col-lg-8">
+              <p>{link.linkText}</p>
+            </div>
+          </div>
+        </a>
+      ))
       || (link.linkType === 'PDF' &&
         <a href={link.pdf.localFile.publicURL} target="_blank" rel="noreferrer" className="text-underline">
           <div className="row align-items-center mb-3">
@@ -104,8 +118,8 @@ const LearningLink = ({ link }) => {
             </div>
           </div>
         </a>
-      ))}   
-    </div>
+      ))}
+    </>
   )
 }
 

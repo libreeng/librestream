@@ -24,7 +24,12 @@ const LearningNav = ({sections}) => {
                 {subSections && subSections.map((subSection, i) => {
                   // const { knowledgebasePost:{id}, kbTitle } = section
                   return (
-                    <li className="nav-item text-primary" key={subSection.id}>{subSection.sectionTitle}</li>
+                    <li className="nav-item text-primary" key={`subsection-${i}`}>
+                      <a href={`#${slugify(subSection.sectionTitle)}`}>
+                        {subSection.sectionTitle}
+                      </a>
+                      
+                    </li>
                   )
                 })}
               </ul>
