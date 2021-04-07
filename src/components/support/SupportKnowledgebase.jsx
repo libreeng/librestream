@@ -15,7 +15,7 @@ const SupportKnowledgeBase = ({ title, post }) => {
   }
 
   return (
-    <div className="list-group-item border-0 px-0">
+    <div className="list-group-item border-0 px-0" id={post.id}>
       <div className="row no-gutters align-items-start">
         <div className="col-lg-8">
           <h4>{title}</h4>
