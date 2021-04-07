@@ -20,7 +20,9 @@ const SupportNav = ({sections}) => {
                 {sectionKnowledgebases && sectionKnowledgebases.map((kb, i) => {
                   const { knowledgebasePost:{id}, kbTitle } = kb
                   return (
-                    <li className="nav-item text-primary" key={id}>{kbTitle}</li>
+                    <li className="nav-item text-primary" key={id}>
+                      <a href={`#${id}`}>{kbTitle}</a>
+                    </li>
                   )
                 })}
               </ul>

@@ -61,7 +61,7 @@ const PrimaryMenu = () => {
         <Navbar.Collapse id="mainnav" >
           <Nav id="usernav" className="nav flex-row justify-content-center justify-content-lg-end">
             {/* TODO: Add logic for CMS */}
-            <li className="nav-item">
+            <li className="nav-item d-none">
               <a href="#" className="nav-link">
                 <SearchLineIcon size="14" />
               </a>
