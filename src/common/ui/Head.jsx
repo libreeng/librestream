@@ -11,7 +11,7 @@ const HEAD = ({ pageDescription, pageTitle, pageUrl, className }) => {
   const metaUrl = pageUrl || url
   const updatedAt = "2020-10-30T21:24:23+00:00"
   const shareImage = social.facebook.defaultImage
-  console.log(social)
+
   return (
     <Helmet titleTemplate={`%s | ${metaTitle} - Librestream`} defaultTitle={title} defer={false}>
       <html lang={lang} />
