@@ -4,11 +4,11 @@ import {Link} from 'gatsby'
 // import BackgroundImage from 'gatsby-background-image'
 
 const ResultCard = ({ result }) => {
-  const { mainImage, title} = result
+  const { mainImage, title } = result
   const url = result.externalLink
     ? result.externalLink
     : result.url
-  const featuredImage = mainImage.localFile.publicURL
+  const featuredImage = mainImage?.localFile?.publicURL
     ? mainImage.localFile.publicURL
     : 'https://via.placeholder.com/400/000/000'
 
