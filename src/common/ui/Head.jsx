@@ -9,7 +9,8 @@ const HEAD = ({ pageDescription, pageTitle, pageUrl, className }) => {
   const metaTitle = pageTitle || title
   const metaDescription = pageDescription || description
   const metaUrl = pageUrl || url
-  const updatedAt = "2020-10-30T21:24:23+00:00"
+  // TODO: refactor to pull date from graphQL query
+  // const updatedAt = "2020-10-30T21:24:23+00:00"
   const shareImage = social.facebook.defaultImage
 
   return (
@@ -23,7 +24,7 @@ const HEAD = ({ pageDescription, pageTitle, pageUrl, className }) => {
       <meta property="og:url" content={metaUrl} />
       <meta property="og:site_name" content={metaTitle} />
       <meta property="article:publisher" content={social.facebook.url} />
-      <meta property="article:modified_time" content={updatedAt} />
+      {/* <meta property="article:modified_time" content={updatedAt} /> */}
       <meta property="og:image" content={shareImage.sourceUrl} />
       <meta property="og:image:width" content={shareImage.mediaDetails.width} />
       <meta property="og:image:height" content={shareImage.mediaDetails.height} />
@@ -36,7 +37,6 @@ const HEAD = ({ pageDescription, pageTitle, pageUrl, className }) => {
 
 HEAD.propTypes = {
   pageDescription: PropTypes.string,
-  // meta: PropTypes.arrayOf(PropTypes.object),
   pageTitle: PropTypes.string
 }
 

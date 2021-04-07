@@ -6,7 +6,7 @@ const Highlight = ({ highlight }) => {
   const [open, setOpen] = useState(false);
   return (
     <>
-      <div className='col-6 col-lg-4 mb-3'>
+      <div className='col-6 col-lg-4 mb-3 highlight'>
         <button 
           onClick={() => setOpen(!open)}
           className="card h-100 w-100 d-block justify-content-between border-0 bg-transparent" 
@@ -14,7 +14,7 @@ const Highlight = ({ highlight }) => {
         >
           {iconData && (
             <div className="w-100 p-3 p-lg-4">
-              <img src={iconData} className="img-fluid rounded-circle hover-glow" alt={highlight.highlightTitle}/>
+              <img src={iconData} className="img-fluid img-highlight rounded-circle hover-glow" alt={highlight.highlightTitle}/>
             </div>
           )}
           <div className="card-body p-0 text-center w-100">
