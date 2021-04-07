@@ -14,7 +14,14 @@
       padding-bottom: 1rem;
     }
   }
-
+  @include media-breakpoint-up(xl) {
+    .lead {
+      font-size: 2rem;
+    }
+    h1 {
+      font-size: 5rem;
+    }
+  }
   // subnav
   .nav {
     .nav-item {

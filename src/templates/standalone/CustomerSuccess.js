@@ -32,8 +32,6 @@ const CustomerSuccessTemplate = ({ data: { page } }) => {
                 {acf.trainingImages && acf.trainingImages.map(image => (
                   <div className="col-12 mb-3" key={image.id}>
                     <img src={image?.trainingImage?.localFile?.publicURL} className="img-fluid" alt={image?.trainingImage?.altText}/>
-                    {/* <h6 className="text-center mt-3">AI Computer Vision</h6> not sure if images will have borders and titles embedded
-                      <div className="border-bracket-bottom" /> */}
                   </div>
                 ))}
               </div>
@@ -55,8 +53,6 @@ const CustomerSuccessTemplate = ({ data: { page } }) => {
                 {acf.deploymentImages && acf.deploymentImages.map(image => (
                   <div className="col-12 mb-3" key={image.id}>
                     <img src={image?.deploymentImage?.localFile?.publicURL} className="img-fluid" alt={image?.deploymentImage?.altText}/>
-                    {/* <h6 className="text-center mt-3">AI Computer Vision</h6> not sure if images will have borders and titles embedded
-                      <div className="border-bracket-bottom" /> */}
                   </div>
                 ))}
               </div>
@@ -77,12 +73,7 @@ const CustomerSuccessTemplate = ({ data: { page } }) => {
               <div className="row align-items-center">
                 {acf.supportImages && acf.supportImages.map(image => (
                   <div className="col-12 col-lg-4 mb-3" key={image.id}>
-                    <Image
-                      fluid={image?.supportImage?.localFile?.publicURL}
-                      alt={image?.supportImage?.altText}
-                    />
-                    {/* <h6 className="text-center mt-3">AI Computer Vision</h6> not sure if images will have borders and titles embedded
-                      <div className="border-bracket-bottom" /> */}
+                    <img src={image?.supportImage?.localFile?.publicURL} className="img-fluid" alt={image?.supportImage?.altText} />
                   </div>
                 ))}
               </div>
@@ -100,7 +91,6 @@ const CustomerSuccessTemplate = ({ data: { page } }) => {
               <h2 className="text-uppercase">Customer Success Highlights</h2>
             </div>
           </div>
-
           <ul className="checklist checklist-dark row">
             {acf.customerSuccessHighlights && acf.customerSuccessHighlights.map(highlight => (
               <li className="col-md-3 text-uppercase">
