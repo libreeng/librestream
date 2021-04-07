@@ -59,8 +59,7 @@ const PartnersTemplate = ({ data: { page } }) => {
                       </div>
                       <div className="card-footer bg-transparent px-0">
                         <h6 className="text-primary mb-0">{partner.title}</h6>
-                        {/* {partner.acfPostTypePartner.partnerDescription} */}
-                        <a href="#modal" className="h6 text-uppercase">Read More</a>
+                        <button className="h6 text-uppercase p-0 bg-transparent border-0" onClick={() => dispatch(openModal("PartnerModal", { partner: partner.acfPostTypePartner }))}>Read More</button>
                       </div>
                     </div>
                   )}
