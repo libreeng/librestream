@@ -21,7 +21,7 @@ const CarouselHero = ({ images, config, content }) => {
           <BackgroundImage
             key={`carouselHero_${i}`}
             Tag="div"
-            className="bg-image aspect-auto text-shadow"
+            className="bg-image aspect-hero text-shadow"
             fluid={image}
             style={{
               backgroundPosition: 'bottom right'

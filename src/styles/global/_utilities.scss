@@ -50,7 +50,11 @@
     padding-top: 125%;
   }
   &.aspect-hero {
-    padding-top: 26.25%;
+    height: auto;
+    padding: 160px 0 2rem;
+    @include media-breakpoint-up(xl) {
+      padding: 10vw 0;
+    }
   }
 
   iframe {

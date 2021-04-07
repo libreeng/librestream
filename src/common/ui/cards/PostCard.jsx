@@ -4,7 +4,6 @@ import BackgroundImage from 'gatsby-background-image'
 
 const PostCard = ({ post, showBracket, className }) => {
   const primaryImage = post.acfPostTypeNews.summaryImage ? post.acfPostTypeNews.summaryImage : post.acfPostTypeNews.mainImage
-
   const featuredImage = {
     fluid: primaryImage?.localFile?.childImageSharp?.fluid,
     alt: primaryImage?.altText

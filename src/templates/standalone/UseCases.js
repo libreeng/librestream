@@ -32,7 +32,6 @@ const UseCasesTemplate = ({ data: { page } }) => {
 
             {caseStudies && caseStudies.map(useCase => {
               const { id, title, uri, acfPostTypeUseCase: { caption, summaryDescription, featuredImage, logoImage, externalSource: { externalLink } } } = useCase.post
-
               const url = externalLink
                 ? externalLink.url
                 : uri
@@ -43,7 +42,7 @@ const UseCasesTemplate = ({ data: { page } }) => {
                     <div className='card p-2'>
                       <div
                         className="card-img-top bg-image aspect-1x1 grayscale"
-                        style={{ backgroundImage: `url(${featuredImage && featuredImage.sourceUrl || 'https://via.placeholder.com/400/000/000'})` }}
+                        style={featuredImage && { backgroundImage: `url(${featuredImage?.sourceUrl })` }}
                       >
                         <div className="bg-fill">
                           {logoImage && (

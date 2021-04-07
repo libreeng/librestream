@@ -1,5 +1,6 @@
 import React from "react"
 import { graphql } from "gatsby"
+import Helmet from 'react-helmet'
 import parse from "html-react-parser"
 import Hero from "../../common/ui/Hero"
 import FooterCTAs from '../../common/ui/FooterCTAs'
@@ -12,12 +13,13 @@ const BlankTemplate = ({ data: { page } }) => {
 
   return (
     <>
+      <Helmet bodyAttributes={{
+          class: 'template-blank'
+        }} />
       <Hero hero={hero} />
       <div className="container">
         <div className="row">
           <div className="col-12">
-            <p className="float-right mr-5">{page.date}</p>
-
             {!!page.content && (
               <article className="py-5">{parse(page.content)}</article>
             )}
