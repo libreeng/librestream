@@ -22,7 +22,18 @@ export const onRenderBody = ({ setPostBodyComponents }) => {
       id="driftScript"
       src="/js/drift.js"
       defer
-    />
+    />,
+    // <script
+    //   key="cookie"
+    //   id="cookie"
+    //   src="https://cdn.jsdelivr.net/npm/cookieconsent@3/build/cookieconsent.min.js"
+    // />,
+    // <script
+    //   key="testScript"
+    //   id="testScript"
+    //   src="/js/test.js"
+    //   defer
+    // />,
     // <script
     //   key="lsInitScript"
     //   id="lsInitScript"

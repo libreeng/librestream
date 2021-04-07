@@ -5,6 +5,7 @@
   background-color: rgba($dark, 0.95);
   background-position: left top;
   line-height: 1.25rem;
+  z-index: 99999;
   &::before {
     content: "";
     display: block;
