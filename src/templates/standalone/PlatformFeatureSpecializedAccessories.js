@@ -13,7 +13,7 @@ const PlatformFeatureSpecializedAccessories = ({ data: { page, subnav } }) => {
   const nav = subnav.menuItems.nodes
   const accessories = template.accessories
   const { cta } = page.acfFooterCTAs
-
+  console.log(accessories)
   return (
     <>
       <Hero
@@ -84,8 +84,8 @@ const PlatformFeatureSpecializedAccessories = ({ data: { page, subnav } }) => {
       <section>
         <div className="container">
           <div className="row">
-            {accessories && accessories.map(accessory => (
-              <div className="col-lg-6 mb-5">
+            {accessories && accessories.map((accessory, i) => (
+              <div className="col-lg-6 mb-5" key={`accessory_${i}`}>
                 <div className="d-flex flex-column justify-content-between h-100">
                   <div>
                     <hr className="hr-styled" />
@@ -103,7 +103,7 @@ const PlatformFeatureSpecializedAccessories = ({ data: { page, subnav } }) => {
 
                     {accessory.specsDownload && (
                       <div className="text-center">
-                        <a href={accessory.specsDownload.localFile.url && accessory.specsDownload.localFile.url} className="btn btn-outline-primary text-dark">View Specs</a>
+                        <a href={accessory?.specsDownload?.localFile.publicURL} className="btn btn-outline-primary text-dark" target="_blank" rel="noreferrer">View Specs</a>
                       </div>
                     )}
                   </div>
