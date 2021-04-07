@@ -32,7 +32,7 @@ const PlatformTemplate = ({ data: { page } }) => {
           <div className="row mb-4">
             {template.platformDescription && (
               <div className="col-lg-6">
-                <div className="text-primary">
+                <div className="text-primary h3">
                   {parse(template.platformDescription)}
                 </div>
               </div>
@@ -40,7 +40,7 @@ const PlatformTemplate = ({ data: { page } }) => {
             {template.platformVideo && (
               <div className="col-lg-6">
                 <div className="responsive-iframe aspect-16x9">
-                  <iframe src={template.platformVideo} frameBorder="0" title='blah' />
+                  <iframe src={template.platformVideo} frameBorder="0" title={page.title} />
                 </div>
               </div>
             )}
