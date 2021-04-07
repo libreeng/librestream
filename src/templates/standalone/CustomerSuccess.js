@@ -72,7 +72,7 @@ const CustomerSuccessTemplate = ({ data: { page } }) => {
             <div className="col-lg-6">
               <div className="row align-items-center">
                 {acf.supportImages && acf.supportImages.map(image => (
-                  <div className="col-12 col-lg-4 mb-3" key={image.id}>
+                  <div className="col-12 mb-3" key={image.id}>
                     <img src={image?.supportImage?.localFile?.publicURL} className="img-fluid" alt={image?.supportImage?.altText} />
                   </div>
                 ))}
