@@ -1,0 +1,11 @@
+.template-blank {
+  #pageHeader,
+  #pageFooter,
+  #footerCTAs,
+  .hero {
+    display: none;
+  }
+  &::before {
+    display: none;
+  }
+}
