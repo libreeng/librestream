@@ -31,10 +31,7 @@ const CustomerSuccessTemplate = ({ data: { page } }) => {
               <div className="row align-items-center">
                 {acf.trainingImages && acf.trainingImages.map(image => (
                   <div className="col-12 col-lg-4 mb-3" key={image.id}>
-                    <Image
-                      fluid={image?.trainingImage?.localFile?.publicURL}
-                      alt={image?.trainingImage?.altText}
-                    />
+                    <img src={image?.trainingImage?.localFile?.publicURL} className="img-fluid" alt={image?.trainingImage?.altText}/>
                     {/* <h6 className="text-center mt-3">AI Computer Vision</h6> not sure if images will have borders and titles embedded
                       <div className="border-bracket-bottom" /> */}
                   </div>
@@ -57,10 +54,7 @@ const CustomerSuccessTemplate = ({ data: { page } }) => {
               <div className="row align-items-center">
                 {acf.deploymentImages && acf.deploymentImages.map(image => (
                   <div className="col-12 col-lg-4 mb-3" key={image.id}>
-                    <Image
-                      fluid={image?.deploymentImage?.localFile?.publicURL}
-                      alt={image?.deploymentImage?.altText}
-                    />
+                    <img src={image?.deploymentImage?.localFile?.publicURL} className="img-fluid" alt={image?.deploymentImage?.altText}/>
                     {/* <h6 className="text-center mt-3">AI Computer Vision</h6> not sure if images will have borders and titles embedded
                       <div className="border-bracket-bottom" /> */}
                   </div>

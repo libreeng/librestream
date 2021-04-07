@@ -37,7 +37,7 @@
     @include transition(0.4s);
   }
   @include media-breakpoint-up(lg) {
-    background-color: transparent;
+    background-color: rgba($black, 0.3);
   }
   @include media-breakpoint-down(md) {
     background: transparent linear-gradient(80deg, $primary 0%, $dark 100%) 0% 0% no-repeat padding-box;

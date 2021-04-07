@@ -14,8 +14,7 @@ const LearningMaterialsTemplate = ({ data: { page } }) => {
   }
 
   const { acfLearningMaterials: { materials } } = page
-  console.log('materials', materials)
-  // console.log('learning materials', learningMaterials)
+  // console.log('materials', materials)
   const { cta } = page.acfFooterCTAs
 
   return (
@@ -28,9 +27,9 @@ const LearningMaterialsTemplate = ({ data: { page } }) => {
               <LearningNav sections={materials} />
             </div>
             <div className="col-12 col-lg-8">
-              {materials && materials.map(instance => {
-                return <LearningSection instance={instance}  />
-              })}
+              {materials && materials.map((instance, i) => 
+                <LearningSection instance={instance} key={`learning-section-${i}`}  />
+              )}
             </div>
           </div>
         </div>
@@ -82,6 +81,11 @@ export const pageQuery = graphql`
                     linkText
                     linkType
                     url
+                    page {
+                      ... on WpPage {
+                        uri
+                      }
+                    }
                     videoEmbed
                     videoMp4 {
                       localFile {
