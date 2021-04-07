@@ -18,6 +18,25 @@ export const PostDetails = graphql`
         slug
       }
     }
+    acfFooterCTAs {
+      cta {
+        ctaTitle
+        ctaLink {
+          url
+          title
+          target
+        }
+        ctaFeaturedImage {
+          localFile {
+            childImageSharp {
+              fluid(maxWidth: 500, quality: 100) {
+                ...GatsbyImageSharpFluid
+              }
+            }
+          }
+        }
+      }
+    }
     acfPostTypeNews {
       mainImage {
         altText

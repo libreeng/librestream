@@ -6,6 +6,7 @@ import NextPrevMenu from '../common/ui/menus/NextPrevMenu'
 import parse from "html-react-parser"
 import BackgroundImage from 'gatsby-background-image'
 import CTA from '../common/ui/CTA'
+import FooterCTAs from '../common/ui/FooterCTAs'
 
 const CaseStudy = ({ data: { previous, next, post } }) => {
   const acf = post.acfPostTypeUseCase
@@ -18,6 +19,8 @@ const CaseStudy = ({ data: { previous, next, post } }) => {
   }
 
   const pageCTA = post.acfCta
+
+  const { cta } = post.acfFooterCTAs
   const hero = {
     heroHeading: "Use Case",
     heroBackgroundImage: post.acfHero.heroBackgroundImage ? post.acfHero.heroBackgroundImage : false,
@@ -111,6 +114,10 @@ const CaseStudy = ({ data: { previous, next, post } }) => {
       {pageCTA && (
         <CTA cta={pageCTA} />
       )}
+      {cta && (
+        <FooterCTAs featured={cta} />
+      )}
+      
     </>
   )
 }
@@ -136,6 +143,25 @@ export const pageQuery = graphql`
           target
           title
           url
+        }
+      }
+      acfFooterCTAs {
+        cta {
+          ctaTitle
+          ctaLink {
+            url
+            title
+            target
+          }
+          ctaFeaturedImage {
+            localFile {
+              childImageSharp {
+                fluid(maxWidth: 500, quality: 100) {
+                  ...GatsbyImageSharpFluid
+                }
+              }
+            }
+          }
         }
       }
       acfHero {
