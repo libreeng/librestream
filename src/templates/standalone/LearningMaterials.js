@@ -3,28 +3,51 @@ import React from "react"
 import { graphql } from "gatsby"
 import parse from "html-react-parser"
 import Hero from "../../common/ui/Hero"
+import LearningNav from '../../components/learningMaterials/LearningNav'
+import LearningSection from '../../components/learningMaterials/LearningSection'
 import FooterCTAs from '../../common/ui/FooterCTAs'
+
 
 const LearningMaterialsTemplate = ({ data: { page } }) => {
   const hero = {
     heroHeading: page.title
   }
+
+  const { acfLearningMaterials: { materials } } = page
+  console.log('materials', materials)
+  // console.log('learning materials', learningMaterials)
   const { cta } = page.acfFooterCTAs
 
   return (
     <>
       <Hero hero={hero} />
-      <div className="container">
-        <div className="row">
-          <div className="col-12">
-            <p className="float-right mr-5">{page.date}</p>
-
-            {!!page.content && (
-              <article className="py-5">{parse(page.content)}</article>
-            )}
+      <section>
+        <div className="container">
+          <div className="row">
+            <div className="col-12 col-lg-4">
+              <LearningNav sections={materials} />
+            </div>
+            <div className="col-12 col-lg-8">
+              {materials && materials.map(instance => {
+                return <LearningSection instance={instance}  />
+              })}
+            </div>
           </div>
         </div>
-      </div>
+      </section>
+
+      {!!page.content && (
+        <section>
+          <div className="container">
+            <div className="row">
+              <div className="col-12">
+                {parse(page.content)}
+              </div>
+            </div>
+          </div>
+        </section>
+      )}
+
       <FooterCTAs featured={cta} />
     </>
   )
@@ -36,6 +59,48 @@ export const pageQuery = graphql`
     page: wpPage(id: { eq: $id }) {
       ...PageDetails
       ...FooterCTAs
+      acfLearningMaterials {
+        materials {
+          materialsTitle
+          section {
+            sectionTitle
+            items {
+              ... on WpSupport {
+                id
+                title
+                acfPostLearningMaterial {
+                  links {
+                    linkImage {
+                      localFile {
+                        childImageSharp {
+                          fluid(maxWidth: 500, quality: 100) {
+                            ...GatsbyImageSharpFluid
+                          }
+                        }
+                      }
+                    }
+                    linkText
+                    linkType
+                    url
+                    videoEmbed
+                    videoMp4 {
+                      localFile {
+                        url
+                        publicURL
+                      }
+                    }
+                    pdf {
+                      localFile {
+                        publicURL
+                      }
+                    }
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
     }
   }
 `
