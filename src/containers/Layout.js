@@ -8,6 +8,7 @@ import Footer from '../common/ui/Footer'
 
 const Layout = ({ children }) => {
   const meta = useSiteMetadata()
+
   return (
     <>
       <HEAD />
