@@ -3512,5 +3512,5 @@
   {"fromPath": "/telehealth-kit/","toPath": "/resources/","type": 301,"format": "plain"},
   {"fromPath": "/verdantix-report/","toPath": "/resources/verdantix-report/","type": 301,"format": "plain"},
   {"fromPath": "/wbr-report/","toPath": "/resources/wbr-report/","type": 301,"format": "plain"},
-  {"fromPath": "/webinar-deploying-augmented-reality-beyond-the-carpet-and-into-the-field/","toPath": "/webinars/webinar-deploying-augmented-reality-ar-beyond-the-carpet-and-into-the-field/","type": 301,"format": "plain"},
+  {"fromPath": "/webinar-deploying-augmented-reality-beyond-the-carpet-and-into-the-field/","toPath": "/webinars/webinar-deploying-augmented-reality-ar-beyond-the-carpet-and-into-the-field/","type": 301,"format": "plain"}
 ]
