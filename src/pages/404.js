@@ -11,7 +11,7 @@ const NotFoundPage = () => {
       <section>
         <div className="container mt-5">
           <div className="row">
-            <div className="col-12">
+            <div className="col-12 text-center">
               <p>You just hit a route that doesn&#39;t exist...</p>
               <a href="/" className="btn btn-primary">Return to Home</a>
             </div>
