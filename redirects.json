@@ -1,10 +1,3170 @@
 [
   {
+    "fromPath": "/media/Librestream-Osight-Wearable-Overview-1.pdf",
+    "toPath": "/media/Librestream-Onsight-Cube-Overview-1.pdf",
+    "type": 301,
+    "format": "plain"
+  },
+  {
+    "fromPath": "/product-highlights/industrial-wearable-multi-purpose",
+    "toPath": "/product-highlights/industrial-wearable-multi-purpose-camera/",
+    "type": 301,
+    "format": "plain"
+  },
+  {
+    "fromPath": "/privacy-policy",
+    "toPath": "/privacy-notice/",
+    "type": 301,
+    "format": "plain"
+  },
+  {
+    "fromPath": "/privacy-policy-mobile",
+    "toPath": "/onsight-privacy-notice-mobile/",
+    "type": 301,
+    "format": "plain"
+  },
+  {
+    "fromPath": "/form-confirmations/field-technologies-confirmation",
+    "toPath": "/form-confirmations/diebold-article-confirmation/",
+    "type": 301,
+    "format": "plain"
+  },
+  {
+    "fromPath": "/form-confirmations/digital-transformation-webinar",
+    "toPath": "/form-confirmations/lns-webinar-confirmation/",
+    "type": 301,
+    "format": "plain"
+  },
+  {
+    "fromPath": "/form-confirmations/field-technologies-diebold",
+    "toPath": "/form-confirmations/diebold-article-confirmation/",
+    "type": 301,
+    "format": "plain"
+  },
+  {
+    "fromPath": "/support-archives/onsight-5000hd-eula",
+    "toPath": "/support-archives/software-hardware-eula/",
+    "type": 301,
+    "format": "plain"
+  },
+  {
+    "fromPath": "/blog/realwear-demo-of-onsight-2108",
+    "toPath": "/blog/realwear-demo-of-onsight-2018/",
+    "type": 301,
+    "format": "plain"
+  },
+  {
+    "fromPath": "/support/support-epsom-glasses",
+    "toPath": "/support/support-epson-glasses/",
+    "type": 301,
+    "format": "plain"
+  },
+  {
+    "fromPath": "/solutions",
+    "toPath": "/use-cases/",
+    "type": 301,
+    "format": "plain"
+  },
+  {
+    "fromPath": "/blog/5-tool-to-digitize-your-workers-day",
+    "toPath": "/blog/5-tools-digitize-day/",
+    "type": 301,
+    "format": "plain"
+  },
+  {
+    "fromPath": "/recycling",
+    "toPath": "/about/onsight-product-recycling/",
+    "type": 301,
+    "format": "plain"
+  },
+  {
+    "fromPath": "/Brochures/1536-LIB-Onsight-Connect-Solution.pdf",
+    "toPath": "/use-cases/",
+    "type": 301,
+    "format": "plain"
+  },
+  {
+    "fromPath": "/news/archives.html",
+    "toPath": "/news/",
+    "type": 301,
+    "format": "plain"
+  },
+  {
+    "fromPath": "/Chinese/(.*)",
+    "toPath": "http://www.librestreamcms.kinsta.cloud/",
+    "type": 301,
+    "format": "regex"
+  },
+  {
+    "fromPath": "/Spanish/(.*)",
+    "toPath": "http://www.librestreamcms.kinsta.cloud/",
+    "type": 301,
+    "format": "regex"
+  },
+  {
+    "fromPath": "/industries/(.*)",
+    "toPath": "/solutions/",
+    "type": 301,
+    "format": "regex"
+  },
+  {
+    "fromPath": "/Library/(.*)",
+    "toPath": "/onsight-support/",
+    "type": 301,
+    "format": "regex"
+  },
+  {
+    "fromPath": "/Software/(.*)",
+    "toPath": "/onsight-support/",
+    "type": 301,
+    "format": "regex"
+  },
+  {
     "fromPath": "/Brochures/ReleaseNotes/(.*)",
-    "toPath": "/onsight-support"
+    "toPath": "/onsight-support/",
+    "type": 301,
+    "format": "regex"
   },
   {
     "fromPath": "/Brochures/UserGuides/(.*)",
-    "toPath": "/onsight-support"
+    "toPath": "/onsight-support/",
+    "type": 301,
+    "format": "regex"
+  },
+  {
+    "fromPath": "http://www.librestreamcms.kinsta.cloud/Brochures/1536-LIB-Onsight-Connect-Solution.pdf",
+    "toPath": "http://www.librestreamcms.kinsta.cloud/wp-content/uploads/2016/06/Onsight-Connect.pdf",
+    "type": 301,
+    "format": "plain"
+  },
+  {
+    "fromPath": "/Brochures/Briefing/Comparison_Virtual_Presence_to_Video_Chat.pdf",
+    "toPath": "/use-cases/",
+    "type": 301,
+    "format": "plain"
+  },
+  {
+    "fromPath": "http://www.librestreamcms.kinsta.cloud/Brochures/Briefing/LIB-Briefing Paper-VIRTUALPRESENCEsm.pdf",
+    "toPath": "http://www.librestreamcms.kinsta.cloud/",
+    "type": 301,
+    "format": "plain"
+  },
+  {
+    "fromPath": "http://www.librestreamcms.kinsta.cloud/Brochures/Casestudy/Gerber Case Study Web.pdf",
+    "toPath": "http://www.librestreamcms.kinsta.cloud/articles/gerber-collision-glass/",
+    "type": 301,
+    "format": "plain"
+  },
+  {
+    "fromPath": "http://www.librestreamcms.kinsta.cloud/Brochures/Casestudy/Healthcare Case Study.pdf",
+    "toPath": "http://www.librestreamcms.kinsta.cloud/solutions/",
+    "type": 301,
+    "format": "plain"
+  },
+  {
+    "fromPath": "http://www.librestreamcms.kinsta.cloud/Brochures/Casestudy/IH Systems Case Study.pdf",
+    "toPath": "http://www.librestreamcms.kinsta.cloud/solutions/",
+    "type": 301,
+    "format": "plain"
+  },
+  {
+    "fromPath": "http://www.librestreamcms.kinsta.cloud/Brochures/Casestudy/Western Glove.pdf",
+    "toPath": "http://www.librestreamcms.kinsta.cloud/solutions/",
+    "type": 301,
+    "format": "plain"
+  },
+  {
+    "fromPath": "http://www.librestreamcms.kinsta.cloud/Brochures/Chinese/400034-08_revA.pdf",
+    "toPath": "http://www.librestreamcms.kinsta.cloud/",
+    "type": 301,
+    "format": "plain"
+  },
+  {
+    "fromPath": "http://www.librestreamcms.kinsta.cloud/Brochures/Chinese/400162-00_revA.pdf",
+    "toPath": "http://www.librestreamcms.kinsta.cloud/",
+    "type": 301,
+    "format": "plain"
+  },
+  {
+    "fromPath": "http://www.librestreamcms.kinsta.cloud/Brochures/Gerber Case Study Web.pdf",
+    "toPath": "http://www.librestreamcms.kinsta.cloud/articles/gerber-collision-glass/",
+    "type": 301,
+    "format": "plain"
+  },
+  {
+    "fromPath": "http://www.librestreamcms.kinsta.cloud/Brochures/Government Purchasing.pdf",
+    "toPath": "http://www.librestreamcms.kinsta.cloud/solutions/",
+    "type": 301,
+    "format": "plain"
+  },
+  {
+    "fromPath": "http://www.librestreamcms.kinsta.cloud/Brochures/Healthcare Case Study.pdf",
+    "toPath": "http://www.librestreamcms.kinsta.cloud/solutions/",
+    "type": 301,
+    "format": "plain"
+  },
+  {
+    "fromPath": "http://www.librestreamcms.kinsta.cloud/Brochures/IH Systems Case Study.pdf",
+    "toPath": "http://www.librestreamcms.kinsta.cloud/solutions/",
+    "type": 301,
+    "format": "plain"
+  },
+  {
+    "fromPath": "http://www.librestreamcms.kinsta.cloud/Brochures/LIB-CollaborationHUB.pdf",
+    "toPath": "http://www.librestreamcms.kinsta.cloud/wp-content/uploads/2016/06/Onsight-400R-Collaboration-Hub.pdf",
+    "type": 301,
+    "format": "plain"
+  },
+  {
+    "fromPath": "http://www.librestreamcms.kinsta.cloud/Brochures/LIB-HUB-Nov2015.pdf",
+    "toPath": "http://www.librestreamcms.kinsta.cloud/wp-content/uploads/2016/06/Onsight-400R-Collaboration-Hub.pdf",
+    "type": 301,
+    "format": "plain"
+  },
+  {
+    "fromPath": "http://www.librestreamcms.kinsta.cloud/Brochures/Onsight1000.pdf",
+    "toPath": "/products/onsight-rugged-smart-camera/",
+    "type": 301,
+    "format": "plain"
+  },
+  {
+    "fromPath": "http://www.librestreamcms.kinsta.cloud/Brochures/Onsight2000Ex.pdf",
+    "toPath": "http://www.librestreamcms.kinsta.cloud/wp-content/uploads/2016/06/Onsight-Rugged-Smart-Camera.pdf",
+    "type": 301,
+    "format": "plain"
+  },
+  {
+    "fromPath": "http://www.librestreamcms.kinsta.cloud/Brochures/Onsight2000R.pdf",
+    "toPath": "http://www.librestreamcms.kinsta.cloud/wp-content/uploads/2016/06/Onsight-Rugged-Smart-Camera.pdf",
+    "type": 301,
+    "format": "plain"
+  },
+  {
+    "fromPath": "http://www.librestreamcms.kinsta.cloud/Brochures/Onsight2500-Spec-Sheet.pdf",
+    "toPath": "http://www.librestreamcms.kinsta.cloud/wp-content/uploads/2016/06/Onsight-Rugged-Smart-Camera.pdf",
+    "type": 301,
+    "format": "plain"
+  },
+  {
+    "fromPath": "http://www.librestreamcms.kinsta.cloud/Brochures/OnsightConnect.pdf",
+    "toPath": "http://www.librestreamcms.kinsta.cloud/wp-content/uploads/2016/06/Onsight-Connect.pdf",
+    "type": 301,
+    "format": "plain"
+  },
+  {
+    "fromPath": "http://www.librestreamcms.kinsta.cloud/Brochures/Onsight-Connect-Solution.pdf",
+    "toPath": "http://www.librestreamcms.kinsta.cloud/wp-content/uploads/2016/06/Onsight-Connect.pdf",
+    "type": 301,
+    "format": "plain"
+  },
+  {
+    "fromPath": "http://www.librestreamcms.kinsta.cloud/Brochures/Onsight-Embedded.pdf",
+    "toPath": "http://www.librestreamcms.kinsta.cloud/wp-content/uploads/2016/06/Onsight-Embedded.pdf",
+    "type": 301,
+    "format": "plain"
+  },
+  {
+    "fromPath": "http://www.librestreamcms.kinsta.cloud/Brochures/OnsightExpert.pdf",
+    "toPath": "http://www.librestreamcms.kinsta.cloud/products/onsight-connect/",
+    "type": 301,
+    "format": "plain"
+  },
+  {
+    "fromPath": "http://www.librestreamcms.kinsta.cloud/Brochures/OnsightManagementSuite.pdf",
+    "toPath": "http://www.librestreamcms.kinsta.cloud/wp-content/uploads/2016/06/Onsight-Management.pdf",
+    "type": 301,
+    "format": "plain"
+  },
+  {
+    "fromPath": "http://www.librestreamcms.kinsta.cloud/Brochures/OnsightMobileCollaboration.pdf",
+    "toPath": "http://www.librestreamcms.kinsta.cloud/wp-content/uploads/2016/06/Onsight-Connect.pdf",
+    "type": 301,
+    "format": "plain"
+  },
+  {
+    "fromPath": "http://www.librestreamcms.kinsta.cloud/Brochures/OnsightSIPService.pdf",
+    "toPath": "http://www.librestreamcms.kinsta.cloud/onsight-support/",
+    "type": 301,
+    "format": "plain"
+  },
+  {
+    "fromPath": "http://www.librestreamcms.kinsta.cloud/Brochures/Onsight-Virtual-Presence-Overview.pdf",
+    "toPath": "http://www.librestreamcms.kinsta.cloud/solutions/",
+    "type": 301,
+    "format": "plain"
+  },
+  {
+    "fromPath": "http://www.librestreamcms.kinsta.cloud/Brochures/PR/bodyshoparticle.pdf",
+    "toPath": "http://www.librestreamcms.kinsta.cloud/solutions/",
+    "type": 301,
+    "format": "plain"
+  },
+  {
+    "fromPath": "http://www.librestreamcms.kinsta.cloud/Brochures/PR/Boeing Manufacturing Article.pdf",
+    "toPath": "http://www.librestreamcms.kinsta.cloud/articles/dreamliner-production/",
+    "type": 301,
+    "format": "plain"
+  },
+  {
+    "fromPath": "http://www.librestreamcms.kinsta.cloud/Brochures/PR/Ceramic Industry Manufacturing Article.pdf",
+    "toPath": "http://www.librestreamcms.kinsta.cloud/articles/advances-in-video-collaboration/",
+    "type": 301,
+    "format": "plain"
+  },
+  {
+    "fromPath": "http://www.librestreamcms.kinsta.cloud/Brochures/PR/CIM Mining Article.pdf",
+    "toPath": "http://www.librestreamcms.kinsta.cloud/articles/long-range-troubleshooting/",
+    "type": 301,
+    "format": "plain"
+  },
+  {
+    "fromPath": "http://www.librestreamcms.kinsta.cloud/Brochures/PR/CornerstoneQuarterly.pdf",
+    "toPath": "http://www.librestreamcms.kinsta.cloud/solutions/",
+    "type": 301,
+    "format": "plain"
+  },
+  {
+    "fromPath": "http://www.librestreamcms.kinsta.cloud/Brochures/PR/Design News Article.pdf",
+    "toPath": "http://www.librestreamcms.kinsta.cloud/articles/telepresence-in-manufacturing/",
+    "type": 301,
+    "format": "plain"
+  },
+  {
+    "fromPath": "http://www.librestreamcms.kinsta.cloud/Brochures/PR/DreamlinerUseofMobile Video.pdf",
+    "toPath": "http://www.librestreamcms.kinsta.cloud/articles/dreamliner-production/",
+    "type": 301,
+    "format": "plain"
+  },
+  {
+    "fromPath": "http://www.librestreamcms.kinsta.cloud/Brochures/PR/EnergyManufacturing.pdf",
+    "toPath": "/articles/being-in-two-places-at-one-time/",
+    "type": 301,
+    "format": "plain"
+  },
+  {
+    "fromPath": "http://www.librestreamcms.kinsta.cloud/Brochures/PR/GovernmentPurchasing.pdf",
+    "toPath": "http://www.librestreamcms.kinsta.cloud/solutions/",
+    "type": 301,
+    "format": "plain"
+  },
+  {
+    "fromPath": "http://www.librestreamcms.kinsta.cloud/Brochures/PR/IADC Drilling Contractor_Virtual Presence Article.pdf",
+    "toPath": "http://www.librestreamcms.kinsta.cloud/articles/virtual-presence-technology-enhances-productivity-safety/",
+    "type": 301,
+    "format": "plain"
+  },
+  {
+    "fromPath": "http://www.librestreamcms.kinsta.cloud/Brochures/PR/JustForCanadianDoctors.pdf",
+    "toPath": "http://www.librestreamcms.kinsta.cloud/solutions/",
+    "type": 301,
+    "format": "plain"
+  },
+  {
+    "fromPath": "http://www.librestreamcms.kinsta.cloud/Brochures/PR/KOTM_Sept_2012_Final.pdf",
+    "toPath": "http://www.librestreamcms.kinsta.cloud/solutions/",
+    "type": 301,
+    "format": "plain"
+  },
+  {
+    "fromPath": "http://www.librestreamcms.kinsta.cloud/Brochures/PR/Manufacturing Automation Article.pdf",
+    "toPath": "http://www.librestreamcms.kinsta.cloud/articles/long-distance-relationship/",
+    "type": 301,
+    "format": "plain"
+  },
+  {
+    "fromPath": "http://www.librestreamcms.kinsta.cloud/Brochures/PR/Manufacturing Engineering Article.pdf",
+    "toPath": "http://www.librestreamcms.kinsta.cloud/articles/manufacturing-engineering-doing-double-duty/",
+    "type": 301,
+    "format": "plain"
+  },
+  {
+    "fromPath": "http://www.librestreamcms.kinsta.cloud/Brochures/PR/Marine_Log_article-BP_FPSO.pdf",
+    "toPath": "http://www.librestreamcms.kinsta.cloud/articles/mobile-collaboration-bring-savings-home/",
+    "type": 301,
+    "format": "plain"
+  },
+  {
+    "fromPath": "http://www.librestreamcms.kinsta.cloud/Brochures/PR/MBT article eprint.pdf",
+    "toPath": "http://www.librestreamcms.kinsta.cloud/articles/manufacturing-business-technology/",
+    "type": 301,
+    "format": "plain"
+  },
+  {
+    "fromPath": "http://www.librestreamcms.kinsta.cloud/Brochures/ReleaseNotes/400206-13_revA.pdf",
+    "toPath": "http://www.librestreamcms.kinsta.cloud/onsight-support/",
+    "type": 301,
+    "format": "plain"
+  },
+  {
+    "fromPath": "http://www.librestreamcms.kinsta.cloud/Brochures/ReleaseNotes/400207-11_revA.pdf",
+    "toPath": "http://www.librestreamcms.kinsta.cloud/onsight-support/",
+    "type": 301,
+    "format": "plain"
+  },
+  {
+    "fromPath": "http://www.librestreamcms.kinsta.cloud/Brochures/ReleaseNotes/400208-11_revA.pdf",
+    "toPath": "http://www.librestreamcms.kinsta.cloud/onsight-support/",
+    "type": 301,
+    "format": "plain"
+  },
+  {
+    "fromPath": "http://www.librestreamcms.kinsta.cloud/Brochures/ReleaseNotes/400225-06_revA.pdf",
+    "toPath": "http://www.librestreamcms.kinsta.cloud/onsight-support/",
+    "type": 301,
+    "format": "plain"
+  },
+  {
+    "fromPath": "http://www.librestreamcms.kinsta.cloud/Brochures/ReleaseNotes/400256-02_revA.pdf",
+    "toPath": "http://www.librestreamcms.kinsta.cloud/onsight-support/",
+    "type": 301,
+    "format": "plain"
+  },
+  {
+    "fromPath": "http://www.librestreamcms.kinsta.cloud/Brochures/ReleaseNotes/400259-03_revA.pdf",
+    "toPath": "http://www.librestreamcms.kinsta.cloud/onsight-support/",
+    "type": 301,
+    "format": "plain"
+  },
+  {
+    "fromPath": "http://www.librestreamcms.kinsta.cloud/Brochures/ReleaseNotes/OMS Release Notes_400209-02.pdf",
+    "toPath": "http://www.librestreamcms.kinsta.cloud/onsight-support/",
+    "type": 301,
+    "format": "plain"
+  },
+  {
+    "fromPath": "http://www.librestreamcms.kinsta.cloud/Brochures/USAirforce-Patriot-Librestream-Article.pdf",
+    "toPath": "/articles/jedi-comes-to-our-galaxy/",
+    "type": 301,
+    "format": "plain"
+  },
+  {
+    "fromPath": "http://www.librestreamcms.kinsta.cloud/Brochures/UserGuides/400034-10_revA.pdf",
+    "toPath": "http://www.librestreamcms.kinsta.cloud/onsight-support/",
+    "type": 301,
+    "format": "plain"
+  },
+  {
+    "fromPath": "http://www.librestreamcms.kinsta.cloud/Brochures/UserGuides/400135-07_revA.pdf",
+    "toPath": "http://www.librestreamcms.kinsta.cloud/onsight-support/",
+    "type": 301,
+    "format": "plain"
+  },
+  {
+    "fromPath": "http://www.librestreamcms.kinsta.cloud/Brochures/UserGuides/400199-06_revA.pdf",
+    "toPath": "http://www.librestreamcms.kinsta.cloud/onsight-support/",
+    "type": 301,
+    "format": "plain"
+  },
+  {
+    "fromPath": "http://www.librestreamcms.kinsta.cloud/Brochures/UserGuides/400213-01_revA.pdf",
+    "toPath": "http://www.librestreamcms.kinsta.cloud/onsight-support/",
+    "type": 301,
+    "format": "plain"
+  },
+  {
+    "fromPath": "http://www.librestreamcms.kinsta.cloud/Brochures/UserGuides/400226-03_revA.pdf",
+    "toPath": "http://www.librestreamcms.kinsta.cloud/onsight-support/",
+    "type": 301,
+    "format": "plain"
+  },
+  {
+    "fromPath": "http://www.librestreamcms.kinsta.cloud/Brochures/UserGuides/Onsight 2500 Regulatory and Safety Guide.pdf",
+    "toPath": "http://www.librestreamcms.kinsta.cloud/onsight-support/",
+    "type": 301,
+    "format": "plain"
+  },
+  {
+    "fromPath": "http://www.librestreamcms.kinsta.cloud/Brochures/UserGuides/Onsight Management Suite User Manual.pdf",
+    "toPath": "http://www.librestreamcms.kinsta.cloud/onsight-support/",
+    "type": 301,
+    "format": "plain"
+  },
+  {
+    "fromPath": "http://www.librestreamcms.kinsta.cloud/Brochures/UserGuides/OnsightDeviceBestPracticeTips_400212-01.pdf",
+    "toPath": "http://www.librestreamcms.kinsta.cloud/onsight-support/",
+    "type": 301,
+    "format": "plain"
+  },
+  {
+    "fromPath": "http://www.librestreamcms.kinsta.cloud/Brochures/Using_Librestream_over_BGAN.PDF",
+    "toPath": "http://www.librestreamcms.kinsta.cloud/onsight-support/",
+    "type": 301,
+    "format": "plain"
+  },
+  {
+    "fromPath": "http://www.librestreamcms.kinsta.cloud/Brochures/Whitepapers/App_Note_Onsight_TeamLink_Final.pdf",
+    "toPath": "http://www.librestreamcms.kinsta.cloud/onsight-support/",
+    "type": 301,
+    "format": "plain"
+  },
+  {
+    "fromPath": "http://www.librestreamcms.kinsta.cloud/Brochures/Whitepapers/App_Note_VideoEndpoint_Onsight_Interoperability-v5.0.pdf",
+    "toPath": "http://www.librestreamcms.kinsta.cloud/onsight-support/",
+    "type": 301,
+    "format": "plain"
+  },
+  {
+    "fromPath": "http://www.librestreamcms.kinsta.cloud/Brochures/Whitepapers/AppNote_Onsight_Connect_Network_Requirements_400210-04_revA.pdf",
+    "toPath": "http://www.librestreamcms.kinsta.cloud/onsight-support/",
+    "type": 301,
+    "format": "plain"
+  },
+  {
+    "fromPath": "http://www.librestreamcms.kinsta.cloud/Brochures/Whitepapers/AppNote-Optimizing_the_Call_Experience_v4.4.pdf",
+    "toPath": "http://www.librestreamcms.kinsta.cloud/onsight-support/",
+    "type": 301,
+    "format": "plain"
+  },
+  {
+    "fromPath": "http://www.librestreamcms.kinsta.cloud/Brochures/Whitepapers/AppNote-Wireless_Network_setup_v1.1.pdf",
+    "toPath": "http://www.librestreamcms.kinsta.cloud/onsight-support/",
+    "type": 301,
+    "format": "plain"
+  },
+  {
+    "fromPath": "http://www.librestreamcms.kinsta.cloud/Brochures/Whitepapers/AppNote-WWAN_BGAN_LOW_BW_OPTIMIZATION_400211-00.pdf",
+    "toPath": "http://www.librestreamcms.kinsta.cloud/onsight-support/",
+    "type": 301,
+    "format": "plain"
+  },
+  {
+    "fromPath": "http://www.librestreamcms.kinsta.cloud/Brochures/Whitepapers/Inmarsat_ Librestream_configuration_ R1.3.pdf",
+    "toPath": "http://www.librestreamcms.kinsta.cloud/onsight-support/",
+    "type": 301,
+    "format": "plain"
+  },
+  {
+    "fromPath": "http://www.librestreamcms.kinsta.cloud/Brochures/Whitepapers/Librestream_CradlePoint_PHS300_Setup.pdf",
+    "toPath": "http://www.librestreamcms.kinsta.cloud/onsight-support/",
+    "type": 301,
+    "format": "plain"
+  },
+  {
+    "fromPath": "http://www.librestreamcms.kinsta.cloud/Brochures/Whitepapers/Librestream_FireWall_Requirements.pdf",
+    "toPath": "http://www.librestreamcms.kinsta.cloud/onsight-support/",
+    "type": 301,
+    "format": "plain"
+  },
+  {
+    "fromPath": "http://www.librestreamcms.kinsta.cloud/Brochures/Whitepapers/Librestream_InGate_QSG.pdf",
+    "toPath": "http://www.librestreamcms.kinsta.cloud/onsight-support/",
+    "type": 301,
+    "format": "plain"
+  },
+  {
+    "fromPath": "http://www.librestreamcms.kinsta.cloud/Brochures/Whitepapers/OnsightWirelessConsiderations.pdf",
+    "toPath": "http://www.librestreamcms.kinsta.cloud/onsight-support/",
+    "type": 301,
+    "format": "plain"
+  },
+  {
+    "fromPath": "http://www.librestreamcms.kinsta.cloud/Brochures/Whitepapers/WhitePaper_Librestream_Security_Overview.pdf",
+    "toPath": "http://www.librestreamcms.kinsta.cloud/wp-content/uploads/2016/07/LIB-ONSIGHT-APP-NOTES-SECURITY_OVERVIEW.pdf",
+    "type": 301,
+    "format": "plain"
+  },
+  {
+    "fromPath": "http://www.librestreamcms.kinsta.cloud/Chinese/Ch_ContactUs.html",
+    "toPath": "http://www.librestreamcms.kinsta.cloud/contact-us/",
+    "type": 301,
+    "format": "plain"
+  },
+  {
+    "fromPath": "http://www.librestreamcms.kinsta.cloud/Chinese/Ch_IndustryOverview.html",
+    "toPath": "http://www.librestreamcms.kinsta.cloud/",
+    "type": 301,
+    "format": "plain"
+  },
+  {
+    "fromPath": "http://www.librestreamcms.kinsta.cloud/Chinese/Ch_OnsightAccountManager.html",
+    "toPath": "http://www.librestreamcms.kinsta.cloud/",
+    "type": 301,
+    "format": "plain"
+  },
+  {
+    "fromPath": "http://www.librestreamcms.kinsta.cloud/Chinese/Ch_OnsightConnect.html",
+    "toPath": "http://www.librestreamcms.kinsta.cloud/",
+    "type": 301,
+    "format": "plain"
+  },
+  {
+    "fromPath": "http://www.librestreamcms.kinsta.cloud/Chinese/Ch_OnsightDeviceAccessories.html",
+    "toPath": "http://www.librestreamcms.kinsta.cloud/",
+    "type": 301,
+    "format": "plain"
+  },
+  {
+    "fromPath": "http://www.librestreamcms.kinsta.cloud/Chinese/Ch_OnsightIntegration.html",
+    "toPath": "http://www.librestreamcms.kinsta.cloud/",
+    "type": 301,
+    "format": "plain"
+  },
+  {
+    "fromPath": "http://www.librestreamcms.kinsta.cloud/Chinese/Ch_OnsightMgmtSuite.html",
+    "toPath": "http://www.librestreamcms.kinsta.cloud/",
+    "type": 301,
+    "format": "plain"
+  },
+  {
+    "fromPath": "http://www.librestreamcms.kinsta.cloud/Chinese/Ch_OnsightMobileDevices.html",
+    "toPath": "http://www.librestreamcms.kinsta.cloud/",
+    "type": 301,
+    "format": "plain"
+  },
+  {
+    "fromPath": "http://www.librestreamcms.kinsta.cloud/Chinese/Ch_OnsightProducts.html",
+    "toPath": "http://www.librestreamcms.kinsta.cloud/",
+    "type": 301,
+    "format": "plain"
+  },
+  {
+    "fromPath": "http://www.librestreamcms.kinsta.cloud/Chinese/Ch_OnsightSIP.html",
+    "toPath": "http://www.librestreamcms.kinsta.cloud/",
+    "type": 301,
+    "format": "plain"
+  },
+  {
+    "fromPath": "http://www.librestreamcms.kinsta.cloud/Chinese/Ch_OnsightTeamLink.html",
+    "toPath": "http://www.librestreamcms.kinsta.cloud/",
+    "type": 301,
+    "format": "plain"
+  },
+  {
+    "fromPath": "http://www.librestreamcms.kinsta.cloud/Chinese/ChineseHome.html",
+    "toPath": "http://www.librestreamcms.kinsta.cloud/",
+    "type": 301,
+    "format": "plain"
+  },
+  {
+    "fromPath": "http://www.librestreamcms.kinsta.cloud/cisco/energy.html",
+    "toPath": "http://www.librestreamcms.kinsta.cloud/",
+    "type": 301,
+    "format": "plain"
+  },
+  {
+    "fromPath": "http://www.librestreamcms.kinsta.cloud/cisco/Librestream-Cisco_manufacturing_overview.pdf",
+    "toPath": "http://www.librestreamcms.kinsta.cloud/solutions/manufacturing-operations/",
+    "type": 301,
+    "format": "plain"
+  },
+  {
+    "fromPath": "http://www.librestreamcms.kinsta.cloud/cisco/Librestream-Cisco_oilandgas_overview.pdf",
+    "toPath": "http://www.librestreamcms.kinsta.cloud/solutions/energy-asset-maintenance-and-hse-mobility/",
+    "type": 301,
+    "format": "plain"
+  },
+  {
+    "fromPath": "http://www.librestreamcms.kinsta.cloud/cisco/manufacturing.html",
+    "toPath": "http://www.librestreamcms.kinsta.cloud/",
+    "type": 301,
+    "format": "plain"
+  },
+  {
+    "fromPath": "http://www.librestreamcms.kinsta.cloud/cisco/overview.html",
+    "toPath": "http://www.librestreamcms.kinsta.cloud/",
+    "type": 301,
+    "format": "plain"
+  },
+  {
+    "fromPath": "http://www.librestreamcms.kinsta.cloud/cisco/Video_manufacturing.html",
+    "toPath": "http://www.librestreamcms.kinsta.cloud/",
+    "type": 301,
+    "format": "plain"
+  },
+  {
+    "fromPath": "http://www.librestreamcms.kinsta.cloud/cisco/Video_oilandgas.html",
+    "toPath": "http://www.librestreamcms.kinsta.cloud/blog/onsight-overview-video/",
+    "type": 301,
+    "format": "plain"
+  },
+  {
+    "fromPath": "http://www.librestreamcms.kinsta.cloud/company.html",
+    "toPath": "http://www.librestreamcms.kinsta.cloud/about/",
+    "type": 301,
+    "format": "plain"
+  },
+  {
+    "fromPath": "http://www.librestreamcms.kinsta.cloud/company/board-of-directors.html",
+    "toPath": "http://www.librestreamcms.kinsta.cloud/about/",
+    "type": 301,
+    "format": "plain"
+  },
+  {
+    "fromPath": "http://www.librestreamcms.kinsta.cloud/company/careers.html",
+    "toPath": "http://www.librestreamcms.kinsta.cloud/about/",
+    "type": 301,
+    "format": "plain"
+  },
+  {
+    "fromPath": "http://www.librestreamcms.kinsta.cloud/company/management.html",
+    "toPath": "http://www.librestreamcms.kinsta.cloud/about/",
+    "type": 301,
+    "format": "plain"
+  },
+  {
+    "fromPath": "http://www.librestreamcms.kinsta.cloud/company/vision.html",
+    "toPath": "http://www.librestreamcms.kinsta.cloud/about/",
+    "type": 301,
+    "format": "plain"
+  },
+  {
+    "fromPath": "http://www.librestreamcms.kinsta.cloud/contact.html",
+    "toPath": "http://www.librestreamcms.kinsta.cloud/contact-us/",
+    "type": 301,
+    "format": "plain"
+  },
+  {
+    "fromPath": "http://www.librestreamcms.kinsta.cloud/contactUs.html",
+    "toPath": "http://www.librestreamcms.kinsta.cloud/contact-us/",
+    "type": 301,
+    "format": "plain"
+  },
+  {
+    "fromPath": "http://www.librestreamcms.kinsta.cloud/events.html",
+    "toPath": "http://www.librestreamcms.kinsta.cloud/news/",
+    "type": 301,
+    "format": "plain"
+  },
+  {
+    "fromPath": "http://www.librestreamcms.kinsta.cloud/fieldview.html",
+    "toPath": "http://www.librestreamcms.kinsta.cloud/products/",
+    "type": 301,
+    "format": "plain"
+  },
+  {
+    "fromPath": "http://www.librestreamcms.kinsta.cloud/fieldview/contact.html",
+    "toPath": "http://www.librestreamcms.kinsta.cloud/",
+    "type": 301,
+    "format": "plain"
+  },
+  {
+    "fromPath": "http://www.librestreamcms.kinsta.cloud/fieldview/dictionary.html",
+    "toPath": "http://www.librestreamcms.kinsta.cloud/",
+    "type": 301,
+    "format": "plain"
+  },
+  {
+    "fromPath": "http://www.librestreamcms.kinsta.cloud/fieldview/faq.html",
+    "toPath": "http://www.librestreamcms.kinsta.cloud/",
+    "type": 301,
+    "format": "plain"
+  },
+  {
+    "fromPath": "http://www.librestreamcms.kinsta.cloud/index.html",
+    "toPath": "http://www.librestreamcms.kinsta.cloud/",
+    "type": 301,
+    "format": "plain"
+  },
+  {
+    "fromPath": "http://www.librestreamcms.kinsta.cloud/industries.html",
+    "toPath": "http://www.librestreamcms.kinsta.cloud/solutions/",
+    "type": 301,
+    "format": "plain"
+  },
+  {
+    "fromPath": "http://www.librestreamcms.kinsta.cloud/industries/energy.html",
+    "toPath": "http://www.librestreamcms.kinsta.cloud/solutions/energy-asset-maintenance-and-hse-mobility/",
+    "type": 301,
+    "format": "plain"
+  },
+  {
+    "fromPath": "http://www.librestreamcms.kinsta.cloud/industries/government-and-public-safety.html",
+    "toPath": "http://www.librestreamcms.kinsta.cloud/solutions/",
+    "type": 301,
+    "format": "plain"
+  },
+  {
+    "fromPath": "http://www.librestreamcms.kinsta.cloud/industries/government-and-public-safety/military-and-defense.html",
+    "toPath": "http://www.librestreamcms.kinsta.cloud/solutions/",
+    "type": 301,
+    "format": "plain"
+  },
+  {
+    "fromPath": "http://www.librestreamcms.kinsta.cloud/industries/government-and-public-safety/public-safety.html",
+    "toPath": "http://www.librestreamcms.kinsta.cloud/solutions/",
+    "type": 301,
+    "format": "plain"
+  },
+  {
+    "fromPath": "http://www.librestreamcms.kinsta.cloud/industries/government-and-public-safety/state-and-local.html",
+    "toPath": "http://www.librestreamcms.kinsta.cloud/solutions/",
+    "type": 301,
+    "format": "plain"
+  },
+  {
+    "fromPath": "http://www.librestreamcms.kinsta.cloud/industries/insurance-collision-repair.html",
+    "toPath": "http://www.librestreamcms.kinsta.cloud/solutions/",
+    "type": 301,
+    "format": "plain"
+  },
+  {
+    "fromPath": "http://www.librestreamcms.kinsta.cloud/industries/manufacturing.html",
+    "toPath": "http://www.librestreamcms.kinsta.cloud/solutions/manufacturing-operations/",
+    "type": 301,
+    "format": "plain"
+  },
+  {
+    "fromPath": "http://www.librestreamcms.kinsta.cloud/industries/telemedicine.html",
+    "toPath": "http://www.librestreamcms.kinsta.cloud/solutions/",
+    "type": 301,
+    "format": "plain"
+  },
+  {
+    "fromPath": "http://www.librestreamcms.kinsta.cloud/lead-registration.php",
+    "toPath": "http://www.librestreamcms.kinsta.cloud/",
+    "type": 301,
+    "format": "plain"
+  },
+  {
+    "fromPath": "http://www.librestreamcms.kinsta.cloud/Library/AppNote/400210-05_revA.pdf",
+    "toPath": "http://www.librestreamcms.kinsta.cloud/onsight-support/",
+    "type": 301,
+    "format": "plain"
+  },
+  {
+    "fromPath": "http://www.librestreamcms.kinsta.cloud/Library/AppNote/400211-02.pdf",
+    "toPath": "http://www.librestreamcms.kinsta.cloud/onsight-support/",
+    "type": 301,
+    "format": "plain"
+  },
+  {
+    "fromPath": "http://www.librestreamcms.kinsta.cloud/Library/AppNote/400218-02.pdf",
+    "toPath": "http://www.librestreamcms.kinsta.cloud/onsight-support/",
+    "type": 301,
+    "format": "plain"
+  },
+  {
+    "fromPath": "http://www.librestreamcms.kinsta.cloud/Library/AppNote/400220-01.pdf",
+    "toPath": "http://www.librestreamcms.kinsta.cloud/onsight-support/",
+    "type": 301,
+    "format": "plain"
+  },
+  {
+    "fromPath": "http://www.librestreamcms.kinsta.cloud/Library/AppNote/400221-01.pdf",
+    "toPath": "http://www.librestreamcms.kinsta.cloud/onsight-support/",
+    "type": 301,
+    "format": "plain"
+  },
+  {
+    "fromPath": "http://www.librestreamcms.kinsta.cloud/Library/AppNote/400222-01.pdf",
+    "toPath": "http://www.librestreamcms.kinsta.cloud/onsight-support/",
+    "type": 301,
+    "format": "plain"
+  },
+  {
+    "fromPath": "http://www.librestreamcms.kinsta.cloud/Library/AppNote/400226-03_revA.pdf",
+    "toPath": "http://www.librestreamcms.kinsta.cloud/onsight-support/",
+    "type": 301,
+    "format": "plain"
+  },
+  {
+    "fromPath": "http://www.librestreamcms.kinsta.cloud/Library/AppNote/Onsight Connect Enterprise Deployment Guide_v7.0.pdf",
+    "toPath": "http://www.librestreamcms.kinsta.cloud/onsight-support/",
+    "type": 301,
+    "format": "plain"
+  },
+  {
+    "fromPath": "http://www.librestreamcms.kinsta.cloud/Library/AppNote/Onsight_Cisco_ApplicationNote_v7.0.1.pdf",
+    "toPath": "http://www.librestreamcms.kinsta.cloud/onsight-support/",
+    "type": 301,
+    "format": "plain"
+  },
+  {
+    "fromPath": "http://www.librestreamcms.kinsta.cloud/Library/userguides/400268-01_revA.pdf",
+    "toPath": "http://www.librestreamcms.kinsta.cloud/onsight-support/",
+    "type": 301,
+    "format": "plain"
+  },
+  {
+    "fromPath": "http://www.librestreamcms.kinsta.cloud/news.html",
+    "toPath": "http://www.librestreamcms.kinsta.cloud/news/",
+    "type": 301,
+    "format": "plain"
+  },
+  {
+    "fromPath": "http://www.librestreamcms.kinsta.cloud/news/apr-19-2012.html",
+    "toPath": "/company-news/oilfield-customer-feature-onsight/",
+    "type": 301,
+    "format": "plain"
+  },
+  {
+    "fromPath": "http://www.librestreamcms.kinsta.cloud/news/apr-19-2016.html",
+    "toPath": "/company-news/live-video-collaboration-solution-from-librestream-earns-diebold-frost-sullivans-customer-value-leadership-award/",
+    "type": 301,
+    "format": "plain"
+  },
+  {
+    "fromPath": "http://www.librestreamcms.kinsta.cloud/news/apr-4-2014.html",
+    "toPath": "http://www.librestreamcms.kinsta.cloud/company-news/sub-zero-achieves-manufacturing-leadership-award/",
+    "type": 301,
+    "format": "plain"
+  },
+  {
+    "fromPath": "http://www.librestreamcms.kinsta.cloud/news/april-14-2009.html",
+    "toPath": "http://www.librestreamcms.kinsta.cloud/company-news/onsight-2000ex/",
+    "type": 301,
+    "format": "plain"
+  },
+  {
+    "fromPath": "http://www.librestreamcms.kinsta.cloud/news/archives.html",
+    "toPath": "http://www.librestreamcms.kinsta.cloud/news/",
+    "type": 301,
+    "format": "plain"
+  },
+  {
+    "fromPath": "http://www.librestreamcms.kinsta.cloud/news/aug-03-2010.html",
+    "toPath": "http://www.librestreamcms.kinsta.cloud/company-news/optimized-for-low-bandwidth/",
+    "type": 301,
+    "format": "plain"
+  },
+  {
+    "fromPath": "http://www.librestreamcms.kinsta.cloud/news/aug-26-2009.html",
+    "toPath": "http://www.librestreamcms.kinsta.cloud/news/",
+    "type": 301,
+    "format": "plain"
+  },
+  {
+    "fromPath": "http://www.librestreamcms.kinsta.cloud/news/current-mobile-collaboration-news.html",
+    "toPath": "http://www.librestreamcms.kinsta.cloud/news/",
+    "type": 301,
+    "format": "plain"
+  },
+  {
+    "fromPath": "http://www.librestreamcms.kinsta.cloud/news/dec-10-2008.html",
+    "toPath": "http://www.librestreamcms.kinsta.cloud/news/",
+    "type": 301,
+    "format": "plain"
+  },
+  {
+    "fromPath": "http://www.librestreamcms.kinsta.cloud/news/dec-13-2012.html",
+    "toPath": "http://www.librestreamcms.kinsta.cloud/company-news/onsight-version-6-1/",
+    "type": 301,
+    "format": "plain"
+  },
+  {
+    "fromPath": "http://www.librestreamcms.kinsta.cloud/news/dec-15-2008.html",
+    "toPath": "http://www.librestreamcms.kinsta.cloud/news/",
+    "type": 301,
+    "format": "plain"
+  },
+  {
+    "fromPath": "http://www.librestreamcms.kinsta.cloud/news/dec-2-2010.html",
+    "toPath": "http://www.librestreamcms.kinsta.cloud/news/",
+    "type": 301,
+    "format": "plain"
+  },
+  {
+    "fromPath": "http://www.librestreamcms.kinsta.cloud/news/dec-23-2008.html",
+    "toPath": "http://www.librestreamcms.kinsta.cloud/company-news/onsight-version-3/",
+    "type": 301,
+    "format": "plain"
+  },
+  {
+    "fromPath": "http://www.librestreamcms.kinsta.cloud/news/dec-5-2008.html",
+    "toPath": "http://www.librestreamcms.kinsta.cloud/news/",
+    "type": 301,
+    "format": "plain"
+  },
+  {
+    "fromPath": "http://www.librestreamcms.kinsta.cloud/news/feb-12-2007.html",
+    "toPath": "/company-news/tanberg-agreement/",
+    "type": 301,
+    "format": "plain"
+  },
+  {
+    "fromPath": "http://www.librestreamcms.kinsta.cloud/news/feb-13-2014.html",
+    "toPath": "http://www.librestreamcms.kinsta.cloud/company-news/onsight-version-6-3/",
+    "type": 301,
+    "format": "plain"
+  },
+  {
+    "fromPath": "http://www.librestreamcms.kinsta.cloud/news/feb-18-2010.html",
+    "toPath": "http://www.librestreamcms.kinsta.cloud/company-news/fortress-partnership/",
+    "type": 301,
+    "format": "plain"
+  },
+  {
+    "fromPath": "http://www.librestreamcms.kinsta.cloud/news/feb-2-2016.html",
+    "toPath": "http://www.librestreamcms.kinsta.cloud/company-news/onsight-virtual-presence-system-and-milestone-of-over-10-million-installations-globally/",
+    "type": 301,
+    "format": "plain"
+  },
+  {
+    "fromPath": "http://www.librestreamcms.kinsta.cloud/news/feb-26-2009.html",
+    "toPath": "http://www.librestreamcms.kinsta.cloud/news/",
+    "type": 301,
+    "format": "plain"
+  },
+  {
+    "fromPath": "http://www.librestreamcms.kinsta.cloud/news/feb-5-2009.html",
+    "toPath": "http://www.librestreamcms.kinsta.cloud/news/",
+    "type": 301,
+    "format": "plain"
+  },
+  {
+    "fromPath": "http://www.librestreamcms.kinsta.cloud/news/jan-22-2009.html",
+    "toPath": "http://www.librestreamcms.kinsta.cloud/company-news/onsight-2500ex/",
+    "type": 301,
+    "format": "plain"
+  },
+  {
+    "fromPath": "http://www.librestreamcms.kinsta.cloud/news/jan-28-2010.html",
+    "toPath": "http://www.librestreamcms.kinsta.cloud/company-news/tandberg-fieldview/",
+    "type": 301,
+    "format": "plain"
+  },
+  {
+    "fromPath": "http://www.librestreamcms.kinsta.cloud/news/jan-5-2011.html",
+    "toPath": "http://www.librestreamcms.kinsta.cloud/company-news/extend-onsight-mobile-collaboration-verizon/",
+    "type": 301,
+    "format": "plain"
+  },
+  {
+    "fromPath": "http://www.librestreamcms.kinsta.cloud/news/jan-6-2009.html",
+    "toPath": "http://www.librestreamcms.kinsta.cloud/company-news/onsight-mobile-collaboration-system-by-nine-canadian-jurisdictions/",
+    "type": 301,
+    "format": "plain"
+  },
+  {
+    "fromPath": "http://www.librestreamcms.kinsta.cloud/news/jan-7-2010.html",
+    "toPath": "http://www.librestreamcms.kinsta.cloud/company-news/onsight-version-4/",
+    "type": 301,
+    "format": "plain"
+  },
+  {
+    "fromPath": "http://www.librestreamcms.kinsta.cloud/news/jul-23-2013.html",
+    "toPath": "http://www.librestreamcms.kinsta.cloud/company-news/onsight-version-6-2/",
+    "type": 301,
+    "format": "plain"
+  },
+  {
+    "fromPath": "http://www.librestreamcms.kinsta.cloud/news/july-11-2005.html",
+    "toPath": "http://www.librestreamcms.kinsta.cloud/company-news/new-venture/",
+    "type": 301,
+    "format": "plain"
+  },
+  {
+    "fromPath": "http://www.librestreamcms.kinsta.cloud/news/july-7-2016.html",
+    "toPath": "http://www.librestreamcms.kinsta.cloud/company-news/wood-group-partners-with-librestream/",
+    "type": 301,
+    "format": "plain"
+  },
+  {
+    "fromPath": "http://www.librestreamcms.kinsta.cloud/news/jun-20-2012.html",
+    "toPath": "http://www.librestreamcms.kinsta.cloud/company-news/2500-mobile-device-announced/",
+    "type": 301,
+    "format": "plain"
+  },
+  {
+    "fromPath": "http://www.librestreamcms.kinsta.cloud/news/jun-28-2012.html",
+    "toPath": "http://www.librestreamcms.kinsta.cloud/company-news/newest-series-of-rugged-onsight-mobile-devices/",
+    "type": 301,
+    "format": "plain"
+  },
+  {
+    "fromPath": "http://www.librestreamcms.kinsta.cloud/news/june-07-2010.html",
+    "toPath": "/news/",
+    "type": 301,
+    "format": "plain"
+  },
+  {
+    "fromPath": "http://www.librestreamcms.kinsta.cloud/news/june-21-2010.html",
+    "toPath": "http://www.librestreamcms.kinsta.cloud/solutions/",
+    "type": 301,
+    "format": "plain"
+  },
+  {
+    "fromPath": "http://www.librestreamcms.kinsta.cloud/news/june-22-2009.html",
+    "toPath": "http://www.librestreamcms.kinsta.cloud/company-news/onsight-version-3-4/",
+    "type": 301,
+    "format": "plain"
+  },
+  {
+    "fromPath": "http://www.librestreamcms.kinsta.cloud/news/june-22-2010.html",
+    "toPath": "http://www.librestreamcms.kinsta.cloud/news/",
+    "type": 301,
+    "format": "plain"
+  },
+  {
+    "fromPath": "http://www.librestreamcms.kinsta.cloud/news/june-25-2015.html",
+    "toPath": "http://www.librestreamcms.kinsta.cloud/company-news/collaboration-hub/",
+    "type": 301,
+    "format": "plain"
+  },
+  {
+    "fromPath": "http://www.librestreamcms.kinsta.cloud/news/june-29-2011.html",
+    "toPath": "http://www.librestreamcms.kinsta.cloud/company-news/onsight-version-4-5/",
+    "type": 301,
+    "format": "plain"
+  },
+  {
+    "fromPath": "http://www.librestreamcms.kinsta.cloud/news/Librestream_AWE.pdf",
+    "toPath": "http://www.librestreamcms.kinsta.cloud/news/",
+    "type": 301,
+    "format": "plain"
+  },
+  {
+    "fromPath": "http://www.librestreamcms.kinsta.cloud/news/Mar_28_2011.html",
+    "toPath": "/company-news/librestream-eye2skye-relationship/",
+    "type": 301,
+    "format": "plain"
+  },
+  {
+    "fromPath": "http://www.librestreamcms.kinsta.cloud/news/mar-15-2016.html",
+    "toPath": "/company-news/librestream-closes-financing-to-accelerate-growth/",
+    "type": 301,
+    "format": "plain"
+  },
+  {
+    "fromPath": "http://www.librestreamcms.kinsta.cloud/news/march-14-2008.html",
+    "toPath": "http://www.librestreamcms.kinsta.cloud/news/",
+    "type": 301,
+    "format": "plain"
+  },
+  {
+    "fromPath": "http://www.librestreamcms.kinsta.cloud/news/march-25-2008.html",
+    "toPath": "http://www.librestreamcms.kinsta.cloud/news/",
+    "type": 301,
+    "format": "plain"
+  },
+  {
+    "fromPath": "http://www.librestreamcms.kinsta.cloud/news/march-25-2010.html",
+    "toPath": "http://www.librestreamcms.kinsta.cloud/company-news/secure-wi-fi-video-on-the-battlefield/",
+    "type": 301,
+    "format": "plain"
+  },
+  {
+    "fromPath": "http://www.librestreamcms.kinsta.cloud/news/march-26-2009.html",
+    "toPath": "http://www.librestreamcms.kinsta.cloud/solutions/",
+    "type": 301,
+    "format": "plain"
+  },
+  {
+    "fromPath": "http://www.librestreamcms.kinsta.cloud/news/march-3-2009.html",
+    "toPath": "/articles/librestream-onsight-review-telbit/",
+    "type": 301,
+    "format": "plain"
+  },
+  {
+    "fromPath": "http://www.librestreamcms.kinsta.cloud/news/march-4-2009.html",
+    "toPath": "http://www.librestreamcms.kinsta.cloud/news/",
+    "type": 301,
+    "format": "plain"
+  },
+  {
+    "fromPath": "http://www.librestreamcms.kinsta.cloud/news/May_3_2011.html",
+    "toPath": "http://www.librestreamcms.kinsta.cloud/company-news/amid-global-turmoil-manufacturers-conduct-business-from-afar-with-librestreams-onsight/",
+    "type": 301,
+    "format": "plain"
+  },
+  {
+    "fromPath": "http://www.librestreamcms.kinsta.cloud/news/may-14-2009.html",
+    "toPath": "http://www.librestreamcms.kinsta.cloud/solutions/",
+    "type": 301,
+    "format": "plain"
+  },
+  {
+    "fromPath": "http://www.librestreamcms.kinsta.cloud/news/may-18-2011.html",
+    "toPath": "http://www.librestreamcms.kinsta.cloud/company-news/teasacom/",
+    "type": 301,
+    "format": "plain"
+  },
+  {
+    "fromPath": "http://www.librestreamcms.kinsta.cloud/news/may-20-2015.html",
+    "toPath": "/company-news/librestream-wins-cisco-solution-partner-program-business-outcomes/",
+    "type": 301,
+    "format": "plain"
+  },
+  {
+    "fromPath": "http://www.librestreamcms.kinsta.cloud/news/may-29-2009.html",
+    "toPath": "http://www.librestreamcms.kinsta.cloud/solutions/",
+    "type": 301,
+    "format": "plain"
+  },
+  {
+    "fromPath": "http://www.librestreamcms.kinsta.cloud/news/may-8-2009.html",
+    "toPath": "http://www.librestreamcms.kinsta.cloud/company-news/onsight-sip-service/",
+    "type": 301,
+    "format": "plain"
+  },
+  {
+    "fromPath": "http://www.librestreamcms.kinsta.cloud/news/nov-10-2015.html",
+    "toPath": "/company-news/librestream-technologies-joins-edge-innovation-network/",
+    "type": 301,
+    "format": "plain"
+  },
+  {
+    "fromPath": "http://www.librestreamcms.kinsta.cloud/news/nov-12-2008.html",
+    "toPath": "http://www.librestreamcms.kinsta.cloud/news/",
+    "type": 301,
+    "format": "plain"
+  },
+  {
+    "fromPath": "http://www.librestreamcms.kinsta.cloud/news/nov-15-2010.html",
+    "toPath": "http://www.librestreamcms.kinsta.cloud/company-news/cisco-interoperability-verification-testing/",
+    "type": 301,
+    "format": "plain"
+  },
+  {
+    "fromPath": "http://www.librestreamcms.kinsta.cloud/news/nov-16-2015.html",
+    "toPath": "http://www.librestreamcms.kinsta.cloud/company-news/diebold-uses-live-video-collaboration-solution/",
+    "type": 301,
+    "format": "plain"
+  },
+  {
+    "fromPath": "http://www.librestreamcms.kinsta.cloud/news/nov-17-2011.html",
+    "toPath": "http://www.librestreamcms.kinsta.cloud/company-news/newest-release-of-its-onsight-mobile-collaboration-platform/",
+    "type": 301,
+    "format": "plain"
+  },
+  {
+    "fromPath": "http://www.librestreamcms.kinsta.cloud/news/nov-17-2014.html",
+    "toPath": "http://www.librestreamcms.kinsta.cloud/company-news/us-national-guard-deploys-video-collaboration/",
+    "type": 301,
+    "format": "plain"
+  },
+  {
+    "fromPath": "http://www.librestreamcms.kinsta.cloud/news/nov-19-2008.html",
+    "toPath": "http://www.librestreamcms.kinsta.cloud/company-news/onsight-2000r-mobile-collaboration-device/",
+    "type": 301,
+    "format": "plain"
+  },
+  {
+    "fromPath": "http://www.librestreamcms.kinsta.cloud/news/oct-1-2009.html",
+    "toPath": "http://www.librestreamcms.kinsta.cloud/company-news/webex-integration/",
+    "type": 301,
+    "format": "plain"
+  },
+  {
+    "fromPath": "http://www.librestreamcms.kinsta.cloud/news/oct-22-2013.html",
+    "toPath": "http://www.librestreamcms.kinsta.cloud/company-news/automotive-manufacturers-deploy-virtual-presence-systems-globally/",
+    "type": 301,
+    "format": "plain"
+  },
+  {
+    "fromPath": "http://www.librestreamcms.kinsta.cloud/news/oct-26-2015.html",
+    "toPath": "http://www.librestreamcms.kinsta.cloud/company-news/onsight-virtual-presence-system-and-milestone-of-over-10-million-installations-globally/",
+    "type": 301,
+    "format": "plain"
+  },
+  {
+    "fromPath": "http://www.librestreamcms.kinsta.cloud/news/oct-28-2008.html",
+    "toPath": "http://www.librestreamcms.kinsta.cloud/News/",
+    "type": 301,
+    "format": "plain"
+  },
+  {
+    "fromPath": "http://www.librestreamcms.kinsta.cloud/news/oct-30-2008.html",
+    "toPath": "http://www.librestreamcms.kinsta.cloud/company-news/gerber-collision-and-glass/",
+    "type": 301,
+    "format": "plain"
+  },
+  {
+    "fromPath": "http://www.librestreamcms.kinsta.cloud/news/sep-10-2012.html",
+    "toPath": "http://www.librestreamcms.kinsta.cloud/company-news/expanded-mobile-collaboration-on-ios-devices/",
+    "type": 301,
+    "format": "plain"
+  },
+  {
+    "fromPath": "http://www.librestreamcms.kinsta.cloud/news/sept-10-2006.html",
+    "toPath": "/company-news/librestream-introduces-onsight/",
+    "type": 301,
+    "format": "plain"
+  },
+  {
+    "fromPath": "http://www.librestreamcms.kinsta.cloud/online-demo-request.html",
+    "toPath": "http://www.librestreamcms.kinsta.cloud/",
+    "type": 301,
+    "format": "plain"
+  },
+  {
+    "fromPath": "http://www.librestreamcms.kinsta.cloud/partners.html",
+    "toPath": "http://www.librestreamcms.kinsta.cloud/",
+    "type": 301,
+    "format": "plain"
+  },
+  {
+    "fromPath": "http://www.librestreamcms.kinsta.cloud/partners/certified-partner-program.html",
+    "toPath": "http://www.librestreamcms.kinsta.cloud/",
+    "type": 301,
+    "format": "plain"
+  },
+  {
+    "fromPath": "http://www.librestreamcms.kinsta.cloud/partners/fieldview.html",
+    "toPath": "http://www.librestreamcms.kinsta.cloud/",
+    "type": 301,
+    "format": "plain"
+  },
+  {
+    "fromPath": "http://www.librestreamcms.kinsta.cloud/partners/strategic-alliances.html",
+    "toPath": "http://www.librestreamcms.kinsta.cloud/",
+    "type": 301,
+    "format": "plain"
+  },
+  {
+    "fromPath": "http://www.librestreamcms.kinsta.cloud/pdf/EnergyManufacturing2010.pdf",
+    "toPath": "/articles/being-in-two-places-at-one-time/",
+    "type": 301,
+    "format": "plain"
+  },
+  {
+    "fromPath": "http://www.librestreamcms.kinsta.cloud/pdf/GovernmentPurchasing.pdf",
+    "toPath": "http://www.librestreamcms.kinsta.cloud/solutions/",
+    "type": 301,
+    "format": "plain"
+  },
+  {
+    "fromPath": "http://www.librestreamcms.kinsta.cloud/pdf/StrokeJune2010.pdf",
+    "toPath": "http://www.librestreamcms.kinsta.cloud/solutions/",
+    "type": 301,
+    "format": "plain"
+  },
+  {
+    "fromPath": "http://www.librestreamcms.kinsta.cloud/privacy(.*)",
+    "toPath": "http://www.librestreamcms.kinsta.cloud/privacy-policy/",
+    "type": 301,
+    "format": "regex"
+  },
+  {
+    "fromPath": "http://www.librestreamcms.kinsta.cloud/products.html",
+    "toPath": "http://www.librestreamcms.kinsta.cloud/products/",
+    "type": 301,
+    "format": "plain"
+  },
+  {
+    "fromPath": "http://www.librestreamcms.kinsta.cloud/products/complementary-products.html",
+    "toPath": "http://www.librestreamcms.kinsta.cloud/products/",
+    "type": 301,
+    "format": "plain"
+  },
+  {
+    "fromPath": "http://www.librestreamcms.kinsta.cloud/products/onsight-accessories.html",
+    "toPath": "http://www.librestreamcms.kinsta.cloud/products/onsight-rugged-smart-camera/",
+    "type": 301,
+    "format": "plain"
+  },
+  {
+    "fromPath": "http://www.librestreamcms.kinsta.cloud/products/onsight-account-manager.html",
+    "toPath": "http://www.librestreamcms.kinsta.cloud/products/onsight-management/",
+    "type": 301,
+    "format": "plain"
+  },
+  {
+    "fromPath": "http://www.librestreamcms.kinsta.cloud/products/onsight-collaboration-hub.html",
+    "toPath": "http://www.librestreamcms.kinsta.cloud/products/onsight-collaboration-hub/",
+    "type": 301,
+    "format": "plain"
+  },
+  {
+    "fromPath": "http://www.librestreamcms.kinsta.cloud/products/onsight-connect.html",
+    "toPath": "http://www.librestreamcms.kinsta.cloud/products/",
+    "type": 301,
+    "format": "plain"
+  },
+  {
+    "fromPath": "http://www.librestreamcms.kinsta.cloud/products/onsight-devices.html",
+    "toPath": "http://www.librestreamcms.kinsta.cloud/products/onsight-rugged-smart-camera/",
+    "type": 301,
+    "format": "plain"
+  },
+  {
+    "fromPath": "http://www.librestreamcms.kinsta.cloud/products/onsight-devices/onsight1000.html",
+    "toPath": "http://www.librestreamcms.kinsta.cloud/products/onsight-rugged-smart-camera/",
+    "type": 301,
+    "format": "plain"
+  },
+  {
+    "fromPath": "http://www.librestreamcms.kinsta.cloud/products/onsight-devices/onsight2000ex.html",
+    "toPath": "http://www.librestreamcms.kinsta.cloud/products/onsight-rugged-smart-camera/",
+    "type": 301,
+    "format": "plain"
+  },
+  {
+    "fromPath": "http://www.librestreamcms.kinsta.cloud/products/onsight-devices/onsight2000r.html",
+    "toPath": "http://www.librestreamcms.kinsta.cloud/products/onsight-rugged-smart-camera/",
+    "type": 301,
+    "format": "plain"
+  },
+  {
+    "fromPath": "http://www.librestreamcms.kinsta.cloud/products/onsight-devices/onsight2500ex.html",
+    "toPath": "http://www.librestreamcms.kinsta.cloud/products/onsight-rugged-smart-camera/",
+    "type": 301,
+    "format": "plain"
+  },
+  {
+    "fromPath": "http://www.librestreamcms.kinsta.cloud/products/onsight-devices/onsight2500r.html",
+    "toPath": "http://www.librestreamcms.kinsta.cloud/products/onsight-rugged-smart-camera/",
+    "type": 301,
+    "format": "plain"
+  },
+  {
+    "fromPath": "http://www.librestreamcms.kinsta.cloud/products/onsight-embedded.html",
+    "toPath": "/products/onsight-embedded/",
+    "type": 301,
+    "format": "plain"
+  },
+  {
+    "fromPath": "http://www.librestreamcms.kinsta.cloud/products/onsight-expert.html",
+    "toPath": "http://www.librestreamcms.kinsta.cloud/products/onsight-connect/",
+    "type": 301,
+    "format": "plain"
+  },
+  {
+    "fromPath": "http://www.librestreamcms.kinsta.cloud/products/onsight-integration-program.html",
+    "toPath": "http://www.librestreamcms.kinsta.cloud/",
+    "type": 301,
+    "format": "plain"
+  },
+  {
+    "fromPath": "http://www.librestreamcms.kinsta.cloud/products/onsight-management-suite.html",
+    "toPath": "http://www.librestreamcms.kinsta.cloud/products/onsight-management/",
+    "type": 301,
+    "format": "plain"
+  },
+  {
+    "fromPath": "http://www.librestreamcms.kinsta.cloud/products/onsight-management-suite_v5.1.html",
+    "toPath": "http://www.librestreamcms.kinsta.cloud/products/onsight-management/",
+    "type": 301,
+    "format": "plain"
+  },
+  {
+    "fromPath": "http://www.librestreamcms.kinsta.cloud/products/onsight-sip-service.html",
+    "toPath": "http://www.librestreamcms.kinsta.cloud/products/onsight-management/",
+    "type": 301,
+    "format": "plain"
+  },
+  {
+    "fromPath": "http://www.librestreamcms.kinsta.cloud/products/onsight-teamlink.html",
+    "toPath": "http://www.librestreamcms.kinsta.cloud/products/onsight-management/",
+    "type": 301,
+    "format": "plain"
+  },
+  {
+    "fromPath": "http://www.librestreamcms.kinsta.cloud/products/termsofuse.html",
+    "toPath": "/support-archives/termsofuse/",
+    "type": 301,
+    "format": "plain"
+  },
+  {
+    "fromPath": "http://www.librestreamcms.kinsta.cloud/productspecs.html",
+    "toPath": "http://www.librestreamcms.kinsta.cloud/wp-content/uploads/2016/06/Onsight-Rugged-Smart-Camera.pdf",
+    "type": 301,
+    "format": "plain"
+  },
+  {
+    "fromPath": "http://www.librestreamcms.kinsta.cloud/recycling.html",
+    "toPath": "http://www.librestreamcms.kinsta.cloud/about/onsight-product-recycling/",
+    "type": 301,
+    "format": "plain"
+  },
+  {
+    "fromPath": "http://www.librestreamcms.kinsta.cloud/sitemap.html",
+    "toPath": "http://www.librestreamcms.kinsta.cloud/",
+    "type": 301,
+    "format": "plain"
+  },
+  {
+    "fromPath": "http://www.librestreamcms.kinsta.cloud/Software/5.0/Librestream_english_OnsightExpert_5.0.29.iso",
+    "toPath": "http://www.librestreamcms.kinsta.cloud/onsight-support/",
+    "type": 301,
+    "format": "plain"
+  },
+  {
+    "fromPath": "http://www.librestreamcms.kinsta.cloud/Software/5.0/Librestream_OnsightManagementSuite_v2.2.3_UserManual.pdf",
+    "toPath": "http://www.librestreamcms.kinsta.cloud/onsight-support/",
+    "type": 301,
+    "format": "plain"
+  },
+  {
+    "fromPath": "http://www.librestreamcms.kinsta.cloud/Software/5.0/OE_400192-00_rev01.pdf",
+    "toPath": "http://www.librestreamcms.kinsta.cloud/onsight-support/",
+    "type": 301,
+    "format": "plain"
+  },
+  {
+    "fromPath": "http://www.librestreamcms.kinsta.cloud/Software/5.0/OnsightExpert_5.0.29.exe",
+    "toPath": "http://www.librestreamcms.kinsta.cloud/onsight-support/",
+    "type": 301,
+    "format": "plain"
+  },
+  {
+    "fromPath": "http://www.librestreamcms.kinsta.cloud/Software/5.1/Librestream_english_OnsightExpert_5.1.9.iso",
+    "toPath": "http://www.librestreamcms.kinsta.cloud/onsight-support/",
+    "type": 301,
+    "format": "plain"
+  },
+  {
+    "fromPath": "http://www.librestreamcms.kinsta.cloud/Software/5.1/OE_400192-01_revA.pdf",
+    "toPath": "http://www.librestreamcms.kinsta.cloud/onsight-support/",
+    "type": 301,
+    "format": "plain"
+  },
+  {
+    "fromPath": "http://www.librestreamcms.kinsta.cloud/Software/5.1/OnsightLauncher.exe",
+    "toPath": "http://www.librestreamcms.kinsta.cloud/onsight-support/",
+    "type": 301,
+    "format": "plain"
+  },
+  {
+    "fromPath": "http://www.librestreamcms.kinsta.cloud/Software/6.0/400192-02_revA.pdf",
+    "toPath": "http://www.librestreamcms.kinsta.cloud/onsight-support/",
+    "type": 301,
+    "format": "plain"
+  },
+  {
+    "fromPath": "http://www.librestreamcms.kinsta.cloud/Software/6.0/Librestream_english_OnsightExpert_6.0.8.iso",
+    "toPath": "http://www.librestreamcms.kinsta.cloud/onsight-support/",
+    "type": 301,
+    "format": "plain"
+  },
+  {
+    "fromPath": "http://www.librestreamcms.kinsta.cloud/Software/6.0/OnsightLauncher.exe",
+    "toPath": "http://www.librestreamcms.kinsta.cloud/onsight-support/",
+    "type": 301,
+    "format": "plain"
+  },
+  {
+    "fromPath": "http://www.librestreamcms.kinsta.cloud/Software/6.1/400192-03_revA.pdf",
+    "toPath": "http://www.librestreamcms.kinsta.cloud/onsight-support/",
+    "type": 301,
+    "format": "plain"
+  },
+  {
+    "fromPath": "http://www.librestreamcms.kinsta.cloud/Software/6.1/Librestream_english_OnsightExpert_6.1.10.iso",
+    "toPath": "http://www.librestreamcms.kinsta.cloud/onsight-support/",
+    "type": 301,
+    "format": "plain"
+  },
+  {
+    "fromPath": "http://www.librestreamcms.kinsta.cloud/Software/6.1/OnsightLauncher.exe",
+    "toPath": "http://www.librestreamcms.kinsta.cloud/onsight-support/",
+    "type": 301,
+    "format": "plain"
+  },
+  {
+    "fromPath": "http://www.librestreamcms.kinsta.cloud/Software/6.2/400192-04_revA.pdf",
+    "toPath": "http://www.librestreamcms.kinsta.cloud/onsight-support/",
+    "type": 301,
+    "format": "plain"
+  },
+  {
+    "fromPath": "http://www.librestreamcms.kinsta.cloud/Software/6.2/Librestream_english_OnsightExpert_6.2.6.iso",
+    "toPath": "http://www.librestreamcms.kinsta.cloud/onsight-support/",
+    "type": 301,
+    "format": "plain"
+  },
+  {
+    "fromPath": "http://www.librestreamcms.kinsta.cloud/Software/6.2/OnsightLauncher.exe",
+    "toPath": "http://www.librestreamcms.kinsta.cloud/onsight-support/",
+    "type": 301,
+    "format": "plain"
+  },
+  {
+    "fromPath": "http://www.librestreamcms.kinsta.cloud/Software/6.3/400192-05_revA.pdf",
+    "toPath": "http://www.librestreamcms.kinsta.cloud/onsight-support/",
+    "type": 301,
+    "format": "plain"
+  },
+  {
+    "fromPath": "http://www.librestreamcms.kinsta.cloud/Software/6.3/Librestream_english_OnsightExpert_6.3.14.zip",
+    "toPath": "http://www.librestreamcms.kinsta.cloud/onsight-support/",
+    "type": 301,
+    "format": "plain"
+  },
+  {
+    "fromPath": "http://www.librestreamcms.kinsta.cloud/Software/6.3/OnsightLauncher.exe",
+    "toPath": "http://www.librestreamcms.kinsta.cloud/onsight-support/",
+    "type": 301,
+    "format": "plain"
+  },
+  {
+    "fromPath": "http://www.librestreamcms.kinsta.cloud/Software/6.4/400192-06_revA.pdf",
+    "toPath": "http://www.librestreamcms.kinsta.cloud/onsight-support/",
+    "type": 301,
+    "format": "plain"
+  },
+  {
+    "fromPath": "http://www.librestreamcms.kinsta.cloud/Software/6.4/Librestream_english_OnsightExpert_6.4.16.zip",
+    "toPath": "http://www.librestreamcms.kinsta.cloud/onsight-support/",
+    "type": 301,
+    "format": "plain"
+  },
+  {
+    "fromPath": "http://www.librestreamcms.kinsta.cloud/Software/6.4/OnsightLauncher.exe",
+    "toPath": "http://www.librestreamcms.kinsta.cloud/onsight-support/",
+    "type": 301,
+    "format": "plain"
+  },
+  {
+    "fromPath": "http://www.librestreamcms.kinsta.cloud/Software/6.5/Librestream_english_OnsightConnect_6.5.10.zip",
+    "toPath": "http://www.librestreamcms.kinsta.cloud/onsight-support/",
+    "type": 301,
+    "format": "plain"
+  },
+  {
+    "fromPath": "http://www.librestreamcms.kinsta.cloud/Software/6.5/OnsightLauncher.exe",
+    "toPath": "http://www.librestreamcms.kinsta.cloud/onsight-support/",
+    "type": 301,
+    "format": "plain"
+  },
+  {
+    "fromPath": "http://www.librestreamcms.kinsta.cloud/Software/6.7/Librestream_english_OnsightConnect_6.7.5.zip",
+    "toPath": "http://www.librestreamcms.kinsta.cloud/onsight-support/",
+    "type": 301,
+    "format": "plain"
+  },
+  {
+    "fromPath": "http://www.librestreamcms.kinsta.cloud/Software/6.7/OnsightLauncher_v6.7.5.exe",
+    "toPath": "http://www.librestreamcms.kinsta.cloud/onsight-support/",
+    "type": 301,
+    "format": "plain"
+  },
+  {
+    "fromPath": "http://www.librestreamcms.kinsta.cloud/Software/7.0/400192-07_revA.pdf",
+    "toPath": "http://www.librestreamcms.kinsta.cloud/onsight-support/",
+    "type": 301,
+    "format": "plain"
+  },
+  {
+    "fromPath": "http://www.librestreamcms.kinsta.cloud/Software/7.0/Librestream_english_OnsightConnect_7.0.36.zip",
+    "toPath": "http://www.librestreamcms.kinsta.cloud/onsight-support/",
+    "type": 301,
+    "format": "plain"
+  },
+  {
+    "fromPath": "http://www.librestreamcms.kinsta.cloud/Software/7.0/OnsightLauncher_v7.0.36.exe",
+    "toPath": "http://www.librestreamcms.kinsta.cloud/onsight-support/",
+    "type": 301,
+    "format": "plain"
+  },
+  {
+    "fromPath": "http://www.librestreamcms.kinsta.cloud/Software/OnsightConnectforAndroid.html",
+    "toPath": "http://www.librestreamcms.kinsta.cloud/onsight-support/",
+    "type": 301,
+    "format": "plain"
+  },
+  {
+    "fromPath": "http://www.librestreamcms.kinsta.cloud/Software/OnsightConnectforAndroidPlaystore.html",
+    "toPath": "http://www.librestreamcms.kinsta.cloud/onsight-support/",
+    "type": 301,
+    "format": "plain"
+  },
+  {
+    "fromPath": "http://www.librestreamcms.kinsta.cloud/Software/OnsightConnectforWindows.html",
+    "toPath": "http://www.librestreamcms.kinsta.cloud/onsight-support/",
+    "type": 301,
+    "format": "plain"
+  },
+  {
+    "fromPath": "http://www.librestreamcms.kinsta.cloud/solutions.html",
+    "toPath": "http://www.librestreamcms.kinsta.cloud/solutions/",
+    "type": 301,
+    "format": "plain"
+  },
+  {
+    "fromPath": "http://www.librestreamcms.kinsta.cloud/solutions/equipment-maintenance-repair-overhaul.html",
+    "toPath": "http://www.librestreamcms.kinsta.cloud/solutions/aircraft-maintenance-inspections/",
+    "type": 301,
+    "format": "plain"
+  },
+  {
+    "fromPath": "http://www.librestreamcms.kinsta.cloud/solutions/field-service.html",
+    "toPath": "http://www.librestreamcms.kinsta.cloud/solutions/video-enabled-service/",
+    "type": 301,
+    "format": "plain"
+  },
+  {
+    "fromPath": "http://www.librestreamcms.kinsta.cloud/solutions/mobile-telemedicine.html",
+    "toPath": "http://www.librestreamcms.kinsta.cloud/solutions/",
+    "type": 301,
+    "format": "plain"
+  },
+  {
+    "fromPath": "http://www.librestreamcms.kinsta.cloud/solutions/mobile-video-conferencing-system.html",
+    "toPath": "http://www.librestreamcms.kinsta.cloud/solutions/mobile-telepresence/",
+    "type": 301,
+    "format": "plain"
+  },
+  {
+    "fromPath": "http://www.librestreamcms.kinsta.cloud/solutions/product-process-reviews.html",
+    "toPath": "http://www.librestreamcms.kinsta.cloud/solutions/manufacturing-operations/",
+    "type": 301,
+    "format": "plain"
+  },
+  {
+    "fromPath": "http://www.librestreamcms.kinsta.cloud/solutions/remote-video-inspection-cameras.html",
+    "toPath": "/products/",
+    "type": 301,
+    "format": "plain"
+  },
+  {
+    "fromPath": "http://www.librestreamcms.kinsta.cloud/Spanish/Spanish_1000.html",
+    "toPath": "http://www.librestreamcms.kinsta.cloud/",
+    "type": 301,
+    "format": "plain"
+  },
+  {
+    "fromPath": "http://www.librestreamcms.kinsta.cloud/Spanish/Spanish_2000.html",
+    "toPath": "http://www.librestreamcms.kinsta.cloud/",
+    "type": 301,
+    "format": "plain"
+  },
+  {
+    "fromPath": "http://www.librestreamcms.kinsta.cloud/Spanish/Spanish_Dispositivos.html",
+    "toPath": "http://www.librestreamcms.kinsta.cloud/",
+    "type": 301,
+    "format": "plain"
+  },
+  {
+    "fromPath": "http://www.librestreamcms.kinsta.cloud/Spanish/Spanish_Expert.html",
+    "toPath": "http://www.librestreamcms.kinsta.cloud/",
+    "type": 301,
+    "format": "plain"
+  },
+  {
+    "fromPath": "http://www.librestreamcms.kinsta.cloud/Spanish/Spanish_Home.html",
+    "toPath": "http://www.librestreamcms.kinsta.cloud/",
+    "type": 301,
+    "format": "plain"
+  },
+  {
+    "fromPath": "http://www.librestreamcms.kinsta.cloud/Spanish/Spanish_OMS.html",
+    "toPath": "http://www.librestreamcms.kinsta.cloud/",
+    "type": 301,
+    "format": "plain"
+  },
+  {
+    "fromPath": "http://www.librestreamcms.kinsta.cloud/Spanish/Spanish_Producto.html",
+    "toPath": "http://www.librestreamcms.kinsta.cloud/",
+    "type": 301,
+    "format": "plain"
+  },
+  {
+    "fromPath": "http://www.librestreamcms.kinsta.cloud/Spanish/Spanish_Soluciones.html",
+    "toPath": "http://www.librestreamcms.kinsta.cloud/",
+    "type": 301,
+    "format": "plain"
+  },
+  {
+    "fromPath": "http://www.librestreamcms.kinsta.cloud/Spanish/Spanish_Vision.html",
+    "toPath": "http://www.librestreamcms.kinsta.cloud/",
+    "type": 301,
+    "format": "plain"
+  },
+  {
+    "fromPath": "http://www.librestreamcms.kinsta.cloud/support.html",
+    "toPath": "http://www.librestreamcms.kinsta.cloud/onsight-support/",
+    "type": 301,
+    "format": "plain"
+  },
+  {
+    "fromPath": "http://www.librestreamcms.kinsta.cloud/support/faq.html",
+    "toPath": "http://www.librestreamcms.kinsta.cloud/onsight-support/",
+    "type": 301,
+    "format": "plain"
+  },
+  {
+    "fromPath": "http://www.librestreamcms.kinsta.cloud/support/fieldview-support.html",
+    "toPath": "http://www.librestreamcms.kinsta.cloud/onsight-support/",
+    "type": 301,
+    "format": "plain"
+  },
+  {
+    "fromPath": "http://www.librestreamcms.kinsta.cloud/support/frost-sullivan.html",
+    "toPath": "http://www.librestreamcms.kinsta.cloud/",
+    "type": 301,
+    "format": "plain"
+  },
+  {
+    "fromPath": "http://www.librestreamcms.kinsta.cloud/support/knowbase.html",
+    "toPath": "https://www.librestreamcms.kinsta.cloud/onsight-support/",
+    "type": 301,
+    "format": "plain"
+  },
+  {
+    "fromPath": "http://www.librestreamcms.kinsta.cloud/support/release-bulletins.html",
+    "toPath": "http://www.librestreamcms.kinsta.cloud/onsight-support/",
+    "type": 301,
+    "format": "plain"
+  },
+  {
+    "fromPath": "http://www.librestreamcms.kinsta.cloud/support/rma-form.html",
+    "toPath": "http://www.librestreamcms.kinsta.cloud/onsight-support/",
+    "type": 301,
+    "format": "plain"
+  },
+  {
+    "fromPath": "http://www.librestreamcms.kinsta.cloud/support/SHA-2.html",
+    "toPath": "http://www.librestreamcms.kinsta.cloud/onsight-support/",
+    "type": 301,
+    "format": "plain"
+  },
+  {
+    "fromPath": "http://www.librestreamcms.kinsta.cloud/support/support-request.html",
+    "toPath": "http://www.librestreamcms.kinsta.cloud/onsight-support/",
+    "type": 301,
+    "format": "plain"
+  },
+  {
+    "fromPath": "http://www.librestreamcms.kinsta.cloud/support/support-request.php",
+    "toPath": "http://www.librestreamcms.kinsta.cloud/onsight-support/",
+    "type": 301,
+    "format": "plain"
+  },
+  {
+    "fromPath": "http://www.librestreamcms.kinsta.cloud/support/teamlink-request.html",
+    "toPath": "http://www.librestreamcms.kinsta.cloud/onsight-support/",
+    "type": 301,
+    "format": "plain"
+  },
+  {
+    "fromPath": "http://www.librestreamcms.kinsta.cloud/trademark.html",
+    "toPath": "http://www.librestreamcms.kinsta.cloud/",
+    "type": 301,
+    "format": "plain"
+  },
+  {
+    "fromPath": "http://www.librestreamcms.kinsta.cloud/video/equipment-field-service.html",
+    "toPath": "http://www.librestreamcms.kinsta.cloud/blog/onsight-overview-video/",
+    "type": 301,
+    "format": "plain"
+  },
+  {
+    "fromPath": "http://www.librestreamcms.kinsta.cloud/video/gerber-remote-appraisals.html",
+    "toPath": "http://www.librestreamcms.kinsta.cloud/articles/gerber-collision-glass/",
+    "type": 301,
+    "format": "plain"
+  },
+  {
+    "fromPath": "http://www.librestreamcms.kinsta.cloud/video/manufacturing.html",
+    "toPath": "http://www.librestreamcms.kinsta.cloud/blog/onsight-overview-video/",
+    "type": 301,
+    "format": "plain"
+  },
+  {
+    "fromPath": "http://www.librestreamcms.kinsta.cloud/video/MOV versions/Generic_Mark_WSD.mov",
+    "toPath": "http://www.librestreamcms.kinsta.cloud/blog/onsight-rugged-industrial-camera/",
+    "type": 301,
+    "format": "plain"
+  },
+  {
+    "fromPath": "http://www.librestreamcms.kinsta.cloud/video/MOV versions/Generic_Promo_WSD.mov",
+    "toPath": "http://www.librestreamcms.kinsta.cloud/solutions/",
+    "type": 301,
+    "format": "plain"
+  },
+  {
+    "fromPath": "http://www.librestreamcms.kinsta.cloud/video/MOV versions/Gerber_WHD.mov",
+    "toPath": "http://www.librestreamcms.kinsta.cloud/blog/onsight-overview-video/",
+    "type": 301,
+    "format": "plain"
+  },
+  {
+    "fromPath": "http://www.librestreamcms.kinsta.cloud/video/MOV versions/IHS_WHD.mov",
+    "toPath": "http://www.librestreamcms.kinsta.cloud/solutions/",
+    "type": 301,
+    "format": "plain"
+  },
+  {
+    "fromPath": "http://www.librestreamcms.kinsta.cloud/video/MOV versions/LS_Mfg.mov",
+    "toPath": "http://www.librestreamcms.kinsta.cloud/solutions/",
+    "type": 301,
+    "format": "plain"
+  },
+  {
+    "fromPath": "http://www.librestreamcms.kinsta.cloud/video/MOV versions/SloMo_Final.mov",
+    "toPath": "http://www.librestreamcms.kinsta.cloud/blog/onsight-rugged-industrial-camera/",
+    "type": 301,
+    "format": "plain"
+  },
+  {
+    "fromPath": "http://www.librestreamcms.kinsta.cloud/video/MOV versions/Telehealth2.mov",
+    "toPath": "http://www.librestreamcms.kinsta.cloud/blog/onsight-overview-video/",
+    "type": 301,
+    "format": "plain"
+  },
+  {
+    "fromPath": "http://www.librestreamcms.kinsta.cloud/video/MOV versions/WGW_WHD.mov",
+    "toPath": "http://www.librestreamcms.kinsta.cloud/blog/onsight-overview-video/",
+    "type": 301,
+    "format": "plain"
+  },
+  {
+    "fromPath": "http://www.librestreamcms.kinsta.cloud/video/oil-and-gas.html",
+    "toPath": "http://www.librestreamcms.kinsta.cloud/blog/onsight-overview-video/",
+    "type": 301,
+    "format": "plain"
+  },
+  {
+    "fromPath": "http://www.librestreamcms.kinsta.cloud/video/onsight-overview.html",
+    "toPath": "http://www.librestreamcms.kinsta.cloud/blog/onsight-overview-video/",
+    "type": 301,
+    "format": "plain"
+  },
+  {
+    "fromPath": "http://www.librestreamcms.kinsta.cloud/video/rugged-device.html",
+    "toPath": "http://www.librestreamcms.kinsta.cloud/blog/onsight-rugged-industrial-camera/",
+    "type": 301,
+    "format": "plain"
+  },
+  {
+    "fromPath": "http://www.librestreamcms.kinsta.cloud/video/telehealth.html",
+    "toPath": "http://www.librestreamcms.kinsta.cloud/blog/onsight-overview-video/",
+    "type": 301,
+    "format": "plain"
+  },
+  {
+    "fromPath": "http://www.librestreamcms.kinsta.cloud/video/western-glove-manufacturing.html",
+    "toPath": "http://www.librestreamcms.kinsta.cloud/solutions/manufacturing-operations/",
+    "type": 301,
+    "format": "plain"
+  },
+  {
+    "fromPath": "http://www.librestreamcms.kinsta.cloud/video/WMV versions/Generic_Mark_WSD.wmv",
+    "toPath": "http://www.librestreamcms.kinsta.cloud/solutions/",
+    "type": 301,
+    "format": "plain"
+  },
+  {
+    "fromPath": "http://www.librestreamcms.kinsta.cloud/video/WMV versions/Generic_Promo_WSD.wmv",
+    "toPath": "http://www.librestreamcms.kinsta.cloud/solutions/",
+    "type": 301,
+    "format": "plain"
+  },
+  {
+    "fromPath": "http://www.librestreamcms.kinsta.cloud/video/WMV versions/Gerber_WHD.wmv",
+    "toPath": "http://www.librestreamcms.kinsta.cloud/blog/onsight-overview-video/",
+    "type": 301,
+    "format": "plain"
+  },
+  {
+    "fromPath": "http://www.librestreamcms.kinsta.cloud/video/WMV versions/IHS_WHD.wmv",
+    "toPath": "http://www.librestreamcms.kinsta.cloud/solutions/",
+    "type": 301,
+    "format": "plain"
+  },
+  {
+    "fromPath": "http://www.librestreamcms.kinsta.cloud/video/WMV versions/LS_Mfg.wmv",
+    "toPath": "http://www.librestreamcms.kinsta.cloud/solutions/",
+    "type": 301,
+    "format": "plain"
+  },
+  {
+    "fromPath": "http://www.librestreamcms.kinsta.cloud/video/WMV versions/SloMo_Final.wmv",
+    "toPath": "http://www.librestreamcms.kinsta.cloud/blog/onsight-rugged-industrial-camera/",
+    "type": 301,
+    "format": "plain"
+  },
+  {
+    "fromPath": "http://www.librestreamcms.kinsta.cloud/video/WMV versions/Telehealth2.wmv",
+    "toPath": "http://www.librestreamcms.kinsta.cloud/solutions/",
+    "type": 301,
+    "format": "plain"
+  },
+  {
+    "fromPath": "http://www.librestreamcms.kinsta.cloud/video/WMV versions/WGW_WHD.wmv",
+    "toPath": "http://www.librestreamcms.kinsta.cloud/blog/onsight-overview-video/",
+    "type": 301,
+    "format": "plain"
+  },
+  {
+    "fromPath": "http://www.librestreamcms.kinsta.cloud/videos.html",
+    "toPath": "http://www.librestreamcms.kinsta.cloud/",
+    "type": 301,
+    "format": "plain"
+  },
+  {
+    "fromPath": "http://www.librestreamcms.kinsta.cloud/company_management.html",
+    "toPath": "http://www.librestreamcms.kinsta.cloud/about/",
+    "type": 301,
+    "format": "plain"
+  },
+  {
+    "fromPath": "http://www.librestreamcms.kinsta.cloud/Partners.html",
+    "toPath": "http://www.librestreamcms.kinsta.cloud/",
+    "type": 301,
+    "format": "plain"
+  },
+  {
+    "fromPath": "http://www.librestreamcms.kinsta.cloud/Company_BoardofDirectors.html",
+    "toPath": "http://www.librestreamcms.kinsta.cloud/about/",
+    "type": 301,
+    "format": "plain"
+  },
+  {
+    "fromPath": "http://www.librestreamcms.kinsta.cloud/(.*).cfm",
+    "toPath": "http://www.librestreamcms.kinsta.cloud/",
+    "type": 301,
+    "format": "regex"
+  },
+  {
+    "fromPath": "http://www.librestreamcms.kinsta.cloud/automotive/(.*)",
+    "toPath": "http://www.librestreamcms.kinsta.cloud/solutions/",
+    "type": 301,
+    "format": "regex"
+  },
+  {
+    "fromPath": "http://www.librestreamcms.kinsta.cloud/Brochures/Whitepapers/(.*)",
+    "toPath": "http://www.librestreamcms.kinsta.cloud/onsight-support/",
+    "type": 301,
+    "format": "regex"
+  },
+  {
+    "fromPath": "http://www.librestreamcms.kinsta.cloud/cisco/overview",
+    "toPath": "http://www.librestreamcms.kinsta.cloud/",
+    "type": 301,
+    "format": "plain"
+  },
+  {
+    "fromPath": "http://www.librestreamcms.kinsta.cloud/Company(.*)",
+    "toPath": "http://www.librestreamcms.kinsta.cloud/about/",
+    "type": 301,
+    "format": "regex"
+  },
+  {
+    "fromPath": "http://www.librestreamcms.kinsta.cloud/contact.php",
+    "toPath": "http://www.librestreamcms.kinsta.cloud/",
+    "type": 301,
+    "format": "plain"
+  },
+  {
+    "fromPath": "http://www.librestreamcms.kinsta.cloud/fieldservice(.*)",
+    "toPath": "http://www.librestreamcms.kinsta.cloud/solutions/",
+    "type": 301,
+    "format": "regex"
+  },
+  {
+    "fromPath": "http://www.librestreamcms.kinsta.cloud/flv/(.*)",
+    "toPath": "http://www.librestreamcms.kinsta.cloud/solutions/",
+    "type": 301,
+    "format": "regex"
+  },
+  {
+    "fromPath": "http://www.librestreamcms.kinsta.cloud/(.*).swf",
+    "toPath": "http://www.librestreamcms.kinsta.cloud/",
+    "type": 301,
+    "format": "regex"
+  },
+  {
+    "fromPath": "http://www.librestreamcms.kinsta.cloud/military/(.*)",
+    "toPath": "http://www.librestreamcms.kinsta.cloud/",
+    "type": 301,
+    "format": "regex"
+  },
+  {
+    "fromPath": "http://www.librestreamcms.kinsta.cloud/ndt/(.*)",
+    "toPath": "http://www.librestreamcms.kinsta.cloud/",
+    "type": 301,
+    "format": "regex"
+  },
+  {
+    "fromPath": "http://www.librestreamcms.kinsta.cloud/FSAWARD.html",
+    "toPath": "http://www.librestreamcms.kinsta.cloud/",
+    "type": 301,
+    "format": "plain"
+  },
+  {
+    "fromPath": "http://www.librestreamcms.kinsta.cloud/info_request.html",
+    "toPath": "http://www.librestreamcms.kinsta.cloud/",
+    "type": 301,
+    "format": "plain"
+  },
+  {
+    "fromPath": "http://www.librestreamcms.kinsta.cloud/oilandgas/(.*)",
+    "toPath": "http://www.librestreamcms.kinsta.cloud/solutions/",
+    "type": 301,
+    "format": "regex"
+  },
+  {
+    "fromPath": "http://www.librestreamcms.kinsta.cloud/products/EULA/(.*)",
+    "toPath": "/support-archives/termsofuse/",
+    "type": 301,
+    "format": "regex"
+  },
+  {
+    "fromPath": "http://www.librestreamcms.kinsta.cloud/pdf/OnsightWirelessConsiderations.pdf",
+    "toPath": "http://www.librestreamcms.kinsta.cloud/onsight-support/",
+    "type": 301,
+    "format": "plain"
+  },
+  {
+    "fromPath": "http://www.librestreamcms.kinsta.cloud/pdf/InlandAV.pdf",
+    "toPath": "http://www.librestreamcms.kinsta.cloud/solutions/",
+    "type": 301,
+    "format": "plain"
+  },
+  {
+    "fromPath": "http://www.librestreamcms.kinsta.cloud/Partners_CertifiedPartnerProgram.html",
+    "toPath": "http://www.librestreamcms.kinsta.cloud/",
+    "type": 301,
+    "format": "plain"
+  },
+  {
+    "fromPath": "http://www.librestreamcms.kinsta.cloud/newslettersignup.html",
+    "toPath": "http://www.librestreamcms.kinsta.cloud/",
+    "type": 301,
+    "format": "plain"
+  },
+  {
+    "fromPath": "http://www.librestreamcms.kinsta.cloud/Products_(.*)",
+    "toPath": "http://www.librestreamcms.kinsta.cloud/products/",
+    "type": 301,
+    "format": "regex"
+  },
+  {
+    "fromPath": "http://www.librestreamcms.kinsta.cloud/recycling",
+    "toPath": "/about/onsight-product-recycling/",
+    "type": 301,
+    "format": "plain"
+  },
+  {
+    "fromPath": "http://www.librestreamcms.kinsta.cloud/search.php",
+    "toPath": "http://www.librestreamcms.kinsta.cloud/",
+    "type": 301,
+    "format": "plain"
+  },
+  {
+    "fromPath": "http://www.librestreamcms.kinsta.cloud/Solutions_(.*)",
+    "toPath": "http://www.librestreamcms.kinsta.cloud/solutions/",
+    "type": 301,
+    "format": "regex"
+  },
+  {
+    "fromPath": "http://www.librestreamcms.kinsta.cloud/Strategic_(.*)",
+    "toPath": "http://www.librestreamcms.kinsta.cloud/solutions/",
+    "type": 301,
+    "format": "regex"
+  },
+  {
+    "fromPath": "http://www.librestreamcms.kinsta.cloud/Support.html",
+    "toPath": "http://www.librestreamcms.kinsta.cloud/onsight-support/",
+    "type": 301,
+    "format": "plain"
+  },
+  {
+    "fromPath": "http://www.librestreamcms.kinsta.cloud/news/apr-19-2012",
+    "toPath": "/news/",
+    "type": 301,
+    "format": "plain"
+  },
+  {
+    "fromPath": "http://www.librestreamcms.kinsta.cloud/News/Dec_2_2010.html",
+    "toPath": "/news/",
+    "type": 301,
+    "format": "plain"
+  },
+  {
+    "fromPath": "http://www.librestreamcms.kinsta.cloud/news/dec-11-2009.html",
+    "toPath": "/news/",
+    "type": 301,
+    "format": "plain"
+  },
+  {
+    "fromPath": "http://www.librestreamcms.kinsta.cloud/news/dec-19-2007.html",
+    "toPath": "/news/",
+    "type": 301,
+    "format": "plain"
+  },
+  {
+    "fromPath": "http://www.librestreamcms.kinsta.cloud/News/Feb_18_2010.html",
+    "toPath": "/news/",
+    "type": 301,
+    "format": "plain"
+  },
+  {
+    "fromPath": "http://www.librestreamcms.kinsta.cloud/News/Feb_5_2009.html",
+    "toPath": "/news/",
+    "type": 301,
+    "format": "plain"
+  },
+  {
+    "fromPath": "http://www.librestreamcms.kinsta.cloud/News/Jan_28_2010.html",
+    "toPath": "/news/",
+    "type": 301,
+    "format": "plain"
+  },
+  {
+    "fromPath": "http://www.librestreamcms.kinsta.cloud/News/Jan_5_2011.html",
+    "toPath": "/news/",
+    "type": 301,
+    "format": "plain"
+  },
+  {
+    "fromPath": "http://www.librestreamcms.kinsta.cloud/News/Jan_6_2009.html",
+    "toPath": "/news/",
+    "type": 301,
+    "format": "plain"
+  },
+  {
+    "fromPath": "http://www.librestreamcms.kinsta.cloud/News/Jan_7_2010.html",
+    "toPath": "/news/",
+    "type": 301,
+    "format": "plain"
+  },
+  {
+    "fromPath": "http://www.librestreamcms.kinsta.cloud/news/jan-12-2016.html",
+    "toPath": "/news/",
+    "type": 301,
+    "format": "plain"
+  },
+  {
+    "fromPath": "http://www.librestreamcms.kinsta.cloud/news/jan-20-2010.html",
+    "toPath": "/news/",
+    "type": 301,
+    "format": "plain"
+  },
+  {
+    "fromPath": "http://www.librestreamcms.kinsta.cloud/News/July_11_2005.html",
+    "toPath": "/news/",
+    "type": 301,
+    "format": "plain"
+  },
+  {
+    "fromPath": "http://www.librestreamcms.kinsta.cloud/News/June_07_2010.html",
+    "toPath": "/news/",
+    "type": 301,
+    "format": "plain"
+  },
+  {
+    "fromPath": "http://www.librestreamcms.kinsta.cloud/News/June_21_2010.html",
+    "toPath": "/news/",
+    "type": 301,
+    "format": "plain"
+  },
+  {
+    "fromPath": "http://www.librestreamcms.kinsta.cloud/news/june-15-2010.html",
+    "toPath": "/news/",
+    "type": 301,
+    "format": "plain"
+  },
+  {
+    "fromPath": "http://www.librestreamcms.kinsta.cloud/News/Mar_25_2010.html",
+    "toPath": "/news/",
+    "type": 301,
+    "format": "plain"
+  },
+  {
+    "fromPath": "http://www.librestreamcms.kinsta.cloud/news/mar-28-2011.html",
+    "toPath": "/news/",
+    "type": 301,
+    "format": "plain"
+  },
+  {
+    "fromPath": "http://www.librestreamcms.kinsta.cloud/News/March_14_2008.html",
+    "toPath": "/news/",
+    "type": 301,
+    "format": "plain"
+  },
+  {
+    "fromPath": "http://www.librestreamcms.kinsta.cloud/News/May_18_2011.html",
+    "toPath": "/news/",
+    "type": 301,
+    "format": "plain"
+  },
+  {
+    "fromPath": "http://www.librestreamcms.kinsta.cloud/News/May_29_2009.html",
+    "toPath": "/news/",
+    "type": 301,
+    "format": "plain"
+  },
+  {
+    "fromPath": "http://www.librestreamcms.kinsta.cloud/News/Nov_12_2008.html",
+    "toPath": "/news/",
+    "type": 301,
+    "format": "plain"
+  },
+  {
+    "fromPath": "http://www.librestreamcms.kinsta.cloud/news/nov-10-2007.html",
+    "toPath": "/news/",
+    "type": 301,
+    "format": "plain"
+  },
+  {
+    "fromPath": "http://www.librestreamcms.kinsta.cloud/news/nov-12(2)-2008.html",
+    "toPath": "/news/",
+    "type": 301,
+    "format": "plain"
+  },
+  {
+    "fromPath": "http://www.librestreamcms.kinsta.cloud/news/nov-24-2007.html",
+    "toPath": "/news/",
+    "type": 301,
+    "format": "plain"
+  },
+  {
+    "fromPath": "http://www.librestreamcms.kinsta.cloud/News/Oct_1_2009.html",
+    "toPath": "/news/",
+    "type": 301,
+    "format": "plain"
+  },
+  {
+    "fromPath": "http://www.librestreamcms.kinsta.cloud/News/Oct_30_2008.html",
+    "toPath": "/news/",
+    "type": 301,
+    "format": "plain"
+  },
+  {
+    "fromPath": "http://www.librestreamcms.kinsta.cloud/news/oct-20-2009.html",
+    "toPath": "/news/",
+    "type": 301,
+    "format": "plain"
+  },
+  {
+    "fromPath": "http://www.librestreamcms.kinsta.cloud/news/oct-31-2007.html",
+    "toPath": "/news/",
+    "type": 301,
+    "format": "plain"
+  },
+  {
+    "fromPath": "http://www.librestreamcms.kinsta.cloud/News/Sept_10_2006.html",
+    "toPath": "/news/",
+    "type": 301,
+    "format": "plain"
+  },
+  {
+    "fromPath": "http://www.librestreamcms.kinsta.cloud/news/sept-2-2009.html",
+    "toPath": "/news/",
+    "type": 301,
+    "format": "plain"
+  },
+  {
+    "fromPath": "http://www.librestreamcms.kinsta.cloud/News_Archives.html",
+    "toPath": "/news/",
+    "type": 301,
+    "format": "plain"
+  },
+  {
+    "fromPath": "http://www.librestreamcms.kinsta.cloud/news_release/2008-11-19.php",
+    "toPath": "/news/",
+    "type": 301,
+    "format": "plain"
+  },
+  {
+    "fromPath": "http://www.librestreamcms.kinsta.cloud/news_release/2008-12-05.php",
+    "toPath": "/news/",
+    "type": 301,
+    "format": "plain"
+  },
+  {
+    "fromPath": "http://www.librestreamcms.kinsta.cloud/news_release/2008-12-10.php",
+    "toPath": "/news/",
+    "type": 301,
+    "format": "plain"
+  },
+  {
+    "fromPath": "http://www.librestreamcms.kinsta.cloud/news_release/2009-02-05.php",
+    "toPath": "/news/",
+    "type": 301,
+    "format": "plain"
+  },
+  {
+    "fromPath": "http://www.librestreamcms.kinsta.cloud/news_release/2009-05-08.php",
+    "toPath": "/news/",
+    "type": 301,
+    "format": "plain"
+  },
+  {
+    "fromPath": "http://www.librestreamcms.kinsta.cloud/sitemap-US.xml",
+    "toPath": "/sitemapindex.xml",
+    "type": 301,
+    "format": "plain"
+  },
+  {
+    "fromPath": "http://www.librestreamcms.kinsta.cloud/Solutions.html",
+    "toPath": "http://www.librestreamcms.kinsta.cloud/solutions/",
+    "type": 301,
+    "format": "plain"
+  },
+  {
+    "fromPath": "http://www.librestreamcms.kinsta.cloud/support/7.1/index.html",
+    "toPath": "http://www.librestreamcms.kinsta.cloud/onsight-support/",
+    "type": 301,
+    "format": "plain"
+  },
+  {
+    "fromPath": "http://www.librestreamcms.kinsta.cloud/support/knowbase",
+    "toPath": "http://www.librestreamcms.kinsta.cloud/onsight-support/",
+    "type": 301,
+    "format": "plain"
+  },
+  {
+    "fromPath": "http://www.librestreamcms.kinsta.cloud/support/OAMvideo.html",
+    "toPath": "http://www.librestreamcms.kinsta.cloud/onsight-support/",
+    "type": 301,
+    "format": "plain"
+  },
+  {
+    "fromPath": "http://www.librestreamcms.kinsta.cloud/support/OAMvideo1.html",
+    "toPath": "http://www.librestreamcms.kinsta.cloud/onsight-support/",
+    "type": 301,
+    "format": "plain"
+  },
+  {
+    "fromPath": "http://www.librestreamcms.kinsta.cloud/Support_FAQ.html",
+    "toPath": "http://www.librestreamcms.kinsta.cloud/onsight-support/",
+    "type": 301,
+    "format": "plain"
+  },
+  {
+    "fromPath": "http://www.librestreamcms.kinsta.cloud/Support_ReleaseBulletins.html",
+    "toPath": "http://www.librestreamcms.kinsta.cloud/onsight-support/",
+    "type": 301,
+    "format": "plain"
+  },
+  {
+    "fromPath": "http://www.librestreamcms.kinsta.cloud/Support_RMAForm.html",
+    "toPath": "http://www.librestreamcms.kinsta.cloud/onsight-support/",
+    "type": 301,
+    "format": "plain"
+  },
+  {
+    "fromPath": "http://www.librestreamcms.kinsta.cloud/Support_SupportRequest.html",
+    "toPath": "http://www.librestreamcms.kinsta.cloud/onsight-support/",
+    "type": 301,
+    "format": "plain"
+  },
+  {
+    "fromPath": "http://www.librestreamcms.kinsta.cloud/terms.html",
+    "toPath": "/support-archives/termsofuse/",
+    "type": 301,
+    "format": "plain"
+  },
+  {
+    "fromPath": "http://www.librestreamcms.kinsta.cloud/Terms.html",
+    "toPath": "/support-archives/termsofuse/",
+    "type": 301,
+    "format": "plain"
+  },
+  {
+    "fromPath": "http://www.librestreamcms.kinsta.cloud/video/mp4/SloMo_Final.mp4?_=1",
+    "toPath": "http://www.librestreamcms.kinsta.cloud/solutions/",
+    "type": 301,
+    "format": "plain"
+  },
+  {
+    "fromPath": "http://www.librestreamcms.kinsta.cloud/Video_Telehealth2.html",
+    "toPath": "http://www.librestreamcms.kinsta.cloud/solutions/",
+    "type": 301,
+    "format": "plain"
+  },
+  {
+    "fromPath": "/virtualpresence/overview.html",
+    "toPath": "/solutions/",
+    "type": 301,
+    "format": "plain"
+  },
+  {
+    "fromPath": "http://www.librestreamcms.kinsta.cloud/support/",
+    "toPath": "http://www.librestreamcms.kinsta.cloud/onsight-support/",
+    "type": 301,
+    "format": "plain"
+  },
+  {
+    "fromPath": "http://www.librestreamcms.kinsta.cloud/training-materials/",
+    "toPath": "/training-deployment-adoption-materials/",
+    "type": 301,
+    "format": "plain"
+  },
+  {
+    "fromPath": "/gettingstarted/findview",
+    "toPath": "/media/FindView.mp4",
+    "type": 301,
+    "format": "plain"
+  },
+  {
+    "fromPath": "/librestreamcms.kinsta.cloud/products/termsofuse.html",
+    "toPath": "/support-archives/termsofuse/",
+    "type": 301,
+    "format": "plain"
+  },
+  {
+    "fromPath": "/support/knowbase.html",
+    "toPath": "/training-deployment-adoption-materials/",
+    "type": 301,
+    "format": "plain"
+  },
+  {
+    "fromPath": "/recycling.html",
+    "toPath": "/about/onsight-product-recycling/",
+    "type": 301,
+    "format": "plain"
+  },
+  {
+    "fromPath": "https://www.librestreamcms.kinsta.cloud/recycling",
+    "toPath": "/about/onsight-product-recycling/",
+    "type": 301,
+    "format": "plain"
+  },
+  {
+    "fromPath": "/blog/3-takeaways-from-the-industrial-vr-ar-foru",
+    "toPath": "/blog/3-takeaways-from-the-industrial-vr-ar-forum/",
+    "type": 301,
+    "format": "plain"
+  },
+  {
+    "fromPath": "/gettingstarted/uploading",
+    "toPath": "/media/Upload.mp4",
+    "type": 301,
+    "format": "plain"
+  },
+  {
+    "fromPath": "/gettingstarted/intro",
+    "toPath": "/media/Intro.mp4",
+    "type": 301,
+    "format": "plain"
+  },
+  {
+    "fromPath": "/userguides",
+    "toPath": "/onsight-support/",
+    "type": 301,
+    "format": "plain"
+  },
+  {
+    "fromPath": "/products/termsofuse.html",
+    "toPath": "/support-archives/termsofuse/",
+    "type": 301,
+    "format": "plain"
+  },
+  {
+    "fromPath": "/company-news/librestream-and-ecom-join-forces-to-improve-safety-for-the-oil-and-gas-industry-with-the-cube-ex",
+    "toPath": "/company-news/librestream-and-ecom-cube-ex/",
+    "type": 301,
+    "format": "plain"
+  },
+  {
+    "fromPath": "/support/cube",
+    "toPath": "/support/Cube/",
+    "type": 301,
+    "format": "plain"
+  },
+  {
+    "fromPath": "/use-cases/national-oilwell-varco-increase-effectiveness-of-service-technicians",
+    "toPath": "/use-cases/nov-increase-effectiveness-of-service-technicians/",
+    "type": 301,
+    "format": "plain"
+  },
+  {
+    "fromPath": "/use-cases/nov-increase-effectiveness-of-service-technicians",
+    "toPath": "/use-cases/nov/",
+    "type": 301,
+    "format": "plain"
+  },
+  {
+    "fromPath": "/onsight-privacy-notice-mobile",
+    "toPath": "/onsight-privacy-notice-mobile-2/",
+    "type": 301,
+    "format": "plain"
+  },
+  {
+    "fromPath": "/solutions/mobile-telepresence",
+    "toPath": "/solutions/remote-video-inspections/",
+    "type": 301,
+    "format": "plain"
+  },
+  {
+    "fromPath": "/products/onsight-embedded",
+    "toPath": "/products/",
+    "type": 301,
+    "format": "plain"
+  },
+  {
+    "fromPath": "/cube/instructions",
+    "toPath": "/support/Cube/",
+    "type": 301,
+    "format": "plain"
+  },
+  {
+    "fromPath": "/events/ewts-2018-2",
+    "toPath": "/events/ewts-2019/",
+    "type": 301,
+    "format": "plain"
+  },
+  {
+    "fromPath": "/products/platform",
+    "toPath": "/platform/",
+    "type": 301,
+    "format": "plain"
+  },
+  {
+    "fromPath": "/media/pdfs/AppNotes/Onsight-Firewall-and-Proxy-Configuration-Guide_400295-05.pdf",
+    "toPath": "/media/pdfs/Guides/Onsight-Firewall-and-Proxy-Configuration-Guide_400295-06.pdf",
+    "type": 301,
+    "format": "plain"
+  },
+  {
+    "fromPath": "/partner/6962-2",
+    "toPath": "/partner/realwear/",
+    "type": 301,
+    "format": "plain"
+  },
+  {
+    "fromPath": "/partner/7000-2",
+    "toPath": "/partner/microsoft/",
+    "type": 301,
+    "format": "plain"
+  },
+  {
+    "fromPath": "/partner/7001-2",
+    "toPath": "/partner/avanade/",
+    "type": 301,
+    "format": "plain"
+  },
+  {
+    "fromPath": "/media/pdfs/Guides/CubeUserGuide_400335-06_revA.pdf",
+    "toPath": "/media/pdfs/Guides/CubeUserGuide_400335-06_revA_02.04.2020.pdf",
+    "type": 301,
+    "format": "plain"
+  },
+  {
+    "fromPath": "/media/pdfs/Guides/OnsightRealWear-UserGuide_400349-01_revA.pdf",
+    "toPath": "/media/pdfs/Guides/OnsightRealWear-UserGuide_400349-01_revA_02.03.2020.pdf",
+    "type": 301,
+    "format": "plain"
+  },
+  {
+    "fromPath": "/events/join-us-at-hannover-messe-2020__trashed",
+    "toPath": "/events/join-us-at-hannover-messe-2020/",
+    "type": 301,
+    "format": "plain"
+  },
+  {
+    "fromPath": "/use-cases-2",
+    "toPath": "/use-cases/",
+    "type": 301,
+    "format": "plain"
+  },
+  {
+    "fromPath": "/media/Onsight-Pro.pdf",
+    "toPath": "/media/pdfs/Onsight-Pro.pdf",
+    "type": 301,
+    "format": "plain"
+  },
+  {
+    "fromPath": "/media/Onsight-Enterprise.pdf",
+    "toPath": "/media/pdfs/Onsight-Enterprise.pdf",
+    "type": 301,
+    "format": "plain"
+  },
+  {
+    "fromPath": "/media/Onsight-Essentials.pdf",
+    "toPath": "/media/pdfs/Onsight-Essentials.pdf",
+    "type": 301,
+    "format": "plain"
+  },
+  {
+    "fromPath": "/form-confirmations/mailing-list-form-confirmation-2",
+    "toPath": "/form-confirmations/telehealth-kit/",
+    "type": 301,
+    "format": "plain"
+  },
+  {
+    "fromPath": "/use-cases/ziegler-cat",
+    "toPath": "/use-cases/",
+    "type": 301,
+    "format": "plain"
+  },
+  {
+    "fromPath": "/support/tda-guide-onsight-flow",
+    "toPath": "/support/tda-videos-guide-onsight-flow/",
+    "type": 301,
+    "format": "plain"
+  },
+  {
+    "fromPath": "/support/tda-videos-onsight-hub",
+    "toPath": "/support/tda-videos-guides-onsight-cube/",
+    "type": 301,
+    "format": "plain"
+  },
+  {
+    "fromPath": "/support/tda-videos-onsight-connect",
+    "toPath": "/support/tda-videos-guides-onsight-connect/",
+    "type": 301,
+    "format": "plain"
+  },
+  {
+    "fromPath": "/support/tda-guides-onsight-hub",
+    "toPath": "/support/tda-videos-guides-onsight-hub/",
+    "type": 301,
+    "format": "plain"
+  },
+  {
+    "fromPath": "/company-news/librestream-realwear-team-up-to-provide-free-augmented-reality-solutions-to-organizations-facing-hurricane-laura-related-continuity-challenges",
+    "toPath": "/company-news/librestream-supports-hurricane-laura-related-challenges-with-free-augmented-reality-software/",
+    "type": 301,
+    "format": "plain"
+  },
+  {
+    "fromPath": "/reap-training-materials",
+    "toPath": "/remote-expert-ap-training-materials/",
+    "type": 301,
+    "format": "plain"
+  },
+  {
+    "fromPath": "/remote-expert-industry-guide",
+    "toPath": "/remote-expert-guide/",
+    "type": 301,
+    "format": "plain"
+  },
+  {
+    "fromPath": "/blog/librestream-platform-video-2020-2",
+    "toPath": "/blog/platform-video-2020/",
+    "type": 301,
+    "format": "plain"
+  },
+  {
+    "fromPath": "/blog/librestream-platform-video-2020",
+    "toPath": "/blog/platform-video-2020/",
+    "type": 301,
+    "format": "plain"
+  },
+  {
+    "fromPath": "/blog/platform-video-2020__trashed",
+    "toPath": "/blog/platform-video-2020/",
+    "type": 301,
+    "format": "plain"
+  },
+  {
+    "fromPath": "/test-forms",
+    "toPath": "/reseller-orders/",
+    "type": 301,
+    "format": "plain"
+  },
+  {
+    "fromPath": "/blog/renault-trucks-accelerates-service-with-optiview-powered-by-librestream-2",
+    "toPath": "/blog/volvo-trucks-deploy-augmented-reality-solutions-within-dealer-network/",
+    "type": 301,
+    "format": "plain"
+  },
+  {
+    "fromPath": "/solutions/military-operational-support-and-asset-inspection",
+    "toPath": "/solutions/defense-operations-and-sustainment/",
+    "type": 301,
+    "format": "plain"
+  },
+  {
+    "fromPath": "/products",
+    "toPath": "/platform/",
+    "type": 301,
+    "format": "plain"
+  },
+  {
+    "fromPath": "/remote-expert",
+    "toPath": "/platform/remote-expert/",
+    "type": 301,
+    "format": "plain"
+  },
+  {
+    "fromPath": "/guides/9335",
+    "toPath": "/guides/test-whitepaper/",
+    "type": 301,
+    "format": "plain"
+  },
+  {
+    "fromPath": "/guides-whitepapers",
+    "toPath": "/guides-and-whitepapers/",
+    "type": 301,
+    "format": "plain"
+  },
+  {
+    "fromPath": "/press-releases/librestream-extends-free-service-program-that-enabled-over-1500-individuals-to-safely-inspect-diagnose-and-train-despite-covid-19",
+    "toPath": "/librestream.com/news",
+    "type": 301,
+    "format": "plain"
+  },
+  {
+    "fromPath": "/company-news/librestream-supports-hurricane-laura-related-challenges-with-free-augmented-reality-software",
+    "toPath": "/librestream.com/news",
+    "type": 301,
+    "format": "plain"
+  },
+  {
+    "fromPath": "/events/webinar-onsight-summer-release-2020",
+    "toPath": "/librestream.com/news",
+    "type": 301,
+    "format": "plain"
+  },
+  {
+    "fromPath": "/events/tmforum-digital-transformation",
+    "toPath": "/librestream.com/events",
+    "type": 301,
+    "format": "plain"
+  },
+  {
+    "fromPath": "/events/join-us-at-ewts-everywhere",
+    "toPath": "/librestream.com/events",
+    "type": 301,
+    "format": "plain"
+  },
+  {
+    "fromPath": "/company-news/librestreams-remote-expert-augmented-reality-solution-selected-by-renault-trucks-uk-ireland-to-power-increased-uptime-and-productivity",
+    "toPath": "/librestream.com/news",
+    "type": 301,
+    "format": "plain"
+  },
+  {
+    "fromPath": "/articles/manufacturing-engineering-doing-double-duty",
+    "toPath": "/librestream.com/blog",
+    "type": 301,
+    "format": "plain"
+  },
+  {
+    "fromPath": "/company-news/onsight-version-6-2",
+    "toPath": "/librestream.com/blog",
+    "type": 301,
+    "format": "plain"
+  },
+  {
+    "fromPath": "/company-news/2500-mobile-device-announced",
+    "toPath": "/librestream.com/blog",
+    "type": 301,
+    "format": "plain"
+  },
+  {
+    "fromPath": "/company-news/newest-series-of-rugged-onsight-mobile-devices",
+    "toPath": "/librestream.com/blog",
+    "type": 301,
+    "format": "plain"
+  },
+  {
+    "fromPath": "/articles/mobile-collaboration-bring-savings-home",
+    "toPath": "/librestream.com/blog",
+    "type": 301,
+    "format": "plain"
+  },
+  {
+    "fromPath": "/company-news/expanded-mobile-collaboration-on-ios-devices",
+    "toPath": "/librestream.com/blog",
+    "type": 301,
+    "format": "plain"
+  },
+  {
+    "fromPath": "/company-news/onsight-version-6-1",
+    "toPath": "/librestream.com/blog",
+    "type": 301,
+    "format": "plain"
+  },
+  {
+    "fromPath": "/articles/librestream-top-enterprise-video-collaboration-providers-by-abi-research",
+    "toPath": "/librestream.com/blog",
+    "type": 301,
+    "format": "plain"
+  },
+  {
+    "fromPath": "/company-news/automotive-manufacturers-deploy-virtual-presence-systems-globally",
+    "toPath": "/librestream.com/blog",
+    "type": 301,
+    "format": "plain"
+  },
+  {
+    "fromPath": "/company-news/oilfield-customer-feature-onsight",
+    "toPath": "/librestream.com/blog",
+    "type": 301,
+    "format": "plain"
+  },
+  {
+    "fromPath": "/company-news/onsight-version-6-3",
+    "toPath": "/librestream.com/blog",
+    "type": 301,
+    "format": "plain"
+  },
+  {
+    "fromPath": "/company-news/sub-zero-achieves-manufacturing-leadership-award",
+    "toPath": "/librestream.com/blog",
+    "type": 301,
+    "format": "plain"
+  },
+  {
+    "fromPath": "/articles/virtual-tools-close-gap-between-remote-operations-og-experts",
+    "toPath": "/librestream.com/blog",
+    "type": 301,
+    "format": "plain"
+  },
+  {
+    "fromPath": "/blog/onsight-rugged-industrial-camera",
+    "toPath": "/librestream.com/blog",
+    "type": 301,
+    "format": "plain"
+  },
+  {
+    "fromPath": "/articles/gerber-collision-glass",
+    "toPath": "/librestream.com/blog",
+    "type": 301,
+    "format": "plain"
+  },
+  {
+    "fromPath": "/articles/oil-and-gas-satellite",
+    "toPath": "/librestream.com/blog",
+    "type": 301,
+    "format": "plain"
+  },
+  {
+    "fromPath": "/articles/virtual-presence-technology-enhances-productivity-safety",
+    "toPath": "/librestream.com/blog",
+    "type": 301,
+    "format": "plain"
+  },
+  {
+    "fromPath": "/blog/verizon-wind-farm",
+    "toPath": "/librestream.com/blog",
+    "type": 301,
+    "format": "plain"
+  },
+  {
+    "fromPath": "/company-news/librestream-integrates-with-cisco-uc",
+    "toPath": "/librestream.com/blog",
+    "type": 301,
+    "format": "plain"
+  },
+  {
+    "fromPath": "/company-news/amid-global-turmoil-manufacturers-conduct-business-from-afar-with-librestreams-onsight",
+    "toPath": "/librestream.com/blog",
+    "type": 301,
+    "format": "plain"
+  },
+  {
+    "fromPath": "/blog/being-in-two-places-at-one-time",
+    "toPath": "/librestream.com/blog",
+    "type": 301,
+    "format": "plain"
+  },
+  {
+    "fromPath": "/company-news/optimized-for-low-bandwidth",
+    "toPath": "/librestream.com/blog",
+    "type": 301,
+    "format": "plain"
+  },
+  {
+    "fromPath": "/articles/remote-operations-centers",
+    "toPath": "/librestream.com/blog",
+    "type": 301,
+    "format": "plain"
+  },
+  {
+    "fromPath": "/company-news/cisco-interoperability-verification-testing",
+    "toPath": "/librestream.com/blog",
+    "type": 301,
+    "format": "plain"
+  },
+  {
+    "fromPath": "/articles/telepresence-in-manufacturing",
+    "toPath": "/librestream.com/blog",
+    "type": 301,
+    "format": "plain"
+  },
+  {
+    "fromPath": "/company-news/extend-onsight-mobile-collaboration-verizon",
+    "toPath": "/librestream.com/blog",
+    "type": 301,
+    "format": "plain"
+  },
+  {
+    "fromPath": "/company-news/teasacom",
+    "toPath": "/librestream.com/blog",
+    "type": 301,
+    "format": "plain"
+  },
+  {
+    "fromPath": "/company-news/newest-release-of-its-onsight-mobile-collaboration-platform",
+    "toPath": "/librestream.com/blog",
+    "type": 301,
+    "format": "plain"
+  },
+  {
+    "fromPath": "/blog/the-tinkers-toolbox",
+    "toPath": "/librestream.com/blog",
+    "type": 301,
+    "format": "plain"
+  },
+  {
+    "fromPath": "/articles/long-distance-relationship",
+    "toPath": "/librestream.com/blog",
+    "type": 301,
+    "format": "plain"
+  },
+  {
+    "fromPath": "/company-news/onsight-version-4-5",
+    "toPath": "/librestream.com/blog",
+    "type": 301,
+    "format": "plain"
+  },
+  {
+    "fromPath": "/blog/advances-in-video-collaboration",
+    "toPath": "/librestream.com/blog",
+    "type": 301,
+    "format": "plain"
+  },
+  {
+    "fromPath": "/articles/long-range-troubleshooting",
+    "toPath": "/librestream.com/blog",
+    "type": 301,
+    "format": "plain"
+  },
+  {
+    "fromPath": "/company-news/streaming-video-can-economize-vendor-acceptance-tests-on-equipment",
+    "toPath": "/librestream.com/blog",
+    "type": 301,
+    "format": "plain"
+  },
+  {
+    "fromPath": "/company-news/us-national-guard-deploys-video-collaboration",
+    "toPath": "/librestream.com/blog",
+    "type": 301,
+    "format": "plain"
+  },
+  {
+    "fromPath": "/form_confirmations/10431",
+    "toPath": "/form_confirmations/wbr-report/",
+    "type": 301,
+    "format": "plain"
+  },
+  {
+    "fromPath": "/hololens2-webinar",
+    "toPath": "/webinars/webinar-exclusive-look-at-the-onsight-connect-for-hololens-2/",
+    "type": 301,
+    "format": "plain"
+  },
+  {
+    "fromPath": "/webinars/webinar-exclusive-look-at-the-onsight-connect-for-hololens-2",
+    "toPath": "/webinars/hololens2/",
+    "type": 301,
+    "format": "plain"
+  },
+  {
+    "fromPath": "/webinars/webinar-remote-audits-inspections-future-proofing-your-operations-against-disruption",
+    "toPath": "/webinars/foodsure/",
+    "type": 301,
+    "format": "plain"
+  },
+  {
+    "fromPath": "/foodsure-webinar",
+    "toPath": "/webinars/foodsure/",
+    "type": 301,
+    "format": "plain"
+  },
+  {
+    "fromPath": "/onsight-flow-webinar",
+    "toPath": "/form-confirmations/onsight-flow-customer-webinar/",
+    "type": 301,
+    "format": "plain"
+  },
+  {
+    "fromPath": "/resources/test-whitepaper",
+    "toPath": "/resources/wbr-report/",
+    "type": 301,
+    "format": "plain"
+  },
+  {
+    "fromPath": "/wbr-report",
+    "toPath": "/resources/wbr-report/",
+    "type": 301,
+    "format": "plain"
+  },
+  {
+    "fromPath": "/remote-expert-guide",
+    "toPath": "/resources/remote-expert/guide/",
+    "type": 301,
+    "format": "plain"
+  },
+  {
+    "fromPath": "/verdantix-report",
+    "toPath": "/resources/verdantix-report/",
+    "type": 301,
+    "format": "plain"
+  },
+  {
+    "fromPath": "/cybersecurity-whitepaper",
+    "toPath": "/resources/cybersecurity-whitepaper/",
+    "type": 301,
+    "format": "plain"
+  },
+  {
+    "fromPath": "/solutions/energy-asset-maintenance-and-hse-mobility-2",
+    "toPath": "/solutions/wearables/",
+    "type": 301,
+    "format": "plain"
+  },
+  {
+    "fromPath": "/webinars/webinar-onsight-teams-app",
+    "toPath": "/webinars/power-up-your-collaboration-in-microsoft-teams-with-onsight/",
+    "type": 301,
+    "format": "plain"
+  },
+  {
+    "fromPath": "/solutions/video-enabled-services",
+    "toPath": "/solutions/video-enabled-service/",
+    "type": 301,
+    "format": "plain"
+  },
+  {
+    "fromPath": "/use-cases/volvo",
+    "toPath": "/use-cases/",
+    "type": 301,
+    "format": "plain"
+  },
+  {
+    "fromPath": "/test-sf-f",
+    "toPath": "/test-sf-form/",
+    "type": 301,
+    "format": "plain"
+  },
+  {
+    "fromPath": "/solutions/video-enabled-service",
+    "toPath": "/blog/key-challenges-affecting-collaboration-between-field-teams-and-remote-experts/",
+    "type": 301,
+    "format": "plain"
+  },
+  {
+    "fromPath": "/solutions/wearables",
+    "toPath": "/blog/4-drivers-of-augmented-reality-wearables-in-2021/",
+    "type": 301,
+    "format": "plain"
+  },
+  {
+    "fromPath": "/partner/verizon",
+    "toPath": "/partner/verizon-2/",
+    "type": 301,
+    "format": "plain"
+  },
+  {
+    "fromPath": "/products/onsight-cube-ex",
+    "toPath": "/specialized-accessories/",
+    "type": 301,
+    "format": "plain"
+  },
+  {
+    "fromPath": "/products/onsight-cube",
+    "toPath": "/specialized-accessories/",
+    "type": 301,
+    "format": "plain"
+  },
+  {
+    "fromPath": "/products/onsight-flow",
+    "toPath": "/platform/digital-work-instructions/",
+    "type": 301,
+    "format": "plain"
+  },
+  {
+    "fromPath": "/products/onsight-workspace",
+    "toPath": "/platform/knowledge-base/",
+    "type": 301,
+    "format": "plain"
+  },
+  {
+    "fromPath": "/products/onsight-connect",
+    "toPath": "/platform/remote-expert/",
+    "type": 301,
+    "format": "plain"
+  },
+  {
+    "fromPath": "/products/onsight-collaboration-hub",
+    "toPath": "/platform/specialized-accessories/",
+    "type": 301,
+    "format": "plain"
+  },
+  {
+    "fromPath": "/products/onsight-management",
+    "toPath": "/platform/",
+    "type": 301,
+    "format": "plain"
   }
 ]
