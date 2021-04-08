@@ -1,5 +1,11 @@
 [
   {
+    "fromPath": "https://librestream.gatsbyjs.io",
+    "toPath": "https://librestream.com/",
+    "type": 301,
+    "format": "plain"
+  },
+  {
     "fromPath": "/company-news/new-venture/",
     "toPath": "/news",
     "type": 301,
