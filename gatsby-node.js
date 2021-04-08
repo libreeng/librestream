@@ -1,6 +1,6 @@
 /* eslint-disable consistent-return */
 const path = require(`path`)
-const redirects = require("./redirects.json")
+const redirects = require("./test.json")
 
 // This is a simple debugging tool
 // dd() will prettily dump to the terminal and kill the process
@@ -363,11 +363,16 @@ async function getCategories({ graphql, reporter }) {
  */
 exports.createPages = async gatsbyUtilities => {
   const { createRedirect } = gatsbyUtilities.actions
+  // redirects.forEach(redirect => {
+  //   console.log(redirect.fromPath)
+  //   console.log(createRedirect())
+  // })
 
   redirects.forEach(redirect =>
     createRedirect({
       fromPath: redirect.fromPath,
       toPath: redirect.toPath,
+      isPermanent: redirect.type === 301
     })
   )
   // Query our posts from the GraphQL server
