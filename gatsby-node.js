@@ -1,6 +1,6 @@
 /* eslint-disable consistent-return */
 const path = require(`path`)
-const redirects = require("./test.json")
+const redirects = require("./redirects.json")
 
 // This is a simple debugging tool
 // dd() will prettily dump to the terminal and kill the process
