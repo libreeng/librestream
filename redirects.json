@@ -6,6 +6,42 @@
     "format": "plain"
   },
   {
+    "fromPath": "https://librestream.com/company-news/tanberg-agreement/",
+    "toPath": "/news",
+    "type": 301,
+    "format": "plain"
+  },
+  {
+    "fromPath": "https://librestream.com/company-news/librestream-introduces-onsight/",
+    "toPath": "/news",
+    "type": 301,
+    "format": "plain"
+  },
+  {
+    "fromPath": "https://librestream.com/company-news/gerber-collision-and-glass/",
+    "toPath": "/news",
+    "type": 301,
+    "format": "plain"
+  },
+  {
+    "fromPath": "https://librestream.com/company-news/onsight-2000r-mobile-collaboration-device/",
+    "toPath": "/news",
+    "type": 301,
+    "format": "plain"
+  },
+  {
+    "fromPath": "",
+    "toPath": "/news",
+    "type": 301,
+    "format": "plain"
+  },
+  {
+    "fromPath": "",
+    "toPath": "/news",
+    "type": 301,
+    "format": "plain"
+  },
+  {
     "fromPath": "/media/Librestream-Osight-Wearable-Overview-1.pdf",
     "toPath": "/media/Librestream-Onsight-Cube-Overview-1.pdf",
     "type": 301,
