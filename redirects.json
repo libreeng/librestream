@@ -1,7 +1,7 @@
 [
   {
-    "fromPath": "https://librestream.gatsbyjs.io",
-    "toPath": "https://librestream.com/",
+    "fromPath": "librestream.gatsbyjs.io",
+    "toPath": "librestream.com",
     "type": 301,
     "format": "plain"
   },
