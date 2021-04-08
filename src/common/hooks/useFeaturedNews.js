@@ -15,6 +15,19 @@ export const useFeaturedNews = () => {
             uri
             date(formatString: "MMM, Y")
             acfPostTypeNews {
+              summaryImage {
+                altText
+                srcSet
+                sourceUrl
+                localFile {
+                  publicURL
+                  childImageSharp {
+                    fluid(maxWidth: 500, quality: 100) {
+                      ...GatsbyImageSharpFluid
+                    }
+                  }
+                }
+              }
               mainImage {
                 altText
                 srcSet
