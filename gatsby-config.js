@@ -25,6 +25,7 @@ module.exports = {
     'gatsby-plugin-react-helmet',
     'gatsby-plugin-sass',
     'gatsby-plugin-recaptcha',
+    'gatsby-plugin-gatsby-cloud',
     // 'gatsby-plugin-sitemap',
     {
       resolve: "gatsby-plugin-google-tagmanager",
