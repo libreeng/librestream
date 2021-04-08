@@ -1,0 +1,10 @@
+[
+  {
+    "fromPath": "/Brochures/ReleaseNotes/(.*)",
+    "toPath": "/onsight-support"
+  },
+  {
+    "fromPath": "/Brochures/UserGuides/(.*)",
+    "toPath": "/onsight-support"
+  }
+]
