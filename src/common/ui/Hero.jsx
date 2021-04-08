@@ -22,7 +22,7 @@ const Hero = ({ hero, nav }) => {
             <div className="text-white pb-4">
               {heroHeading && <h1>{parse(heroHeading, parseOptions)}</h1>}
               {heroDescription && <div className="lead">{parse(heroDescription)}</div>}
-              {heroCta && <a href={heroCta.url} type="button" className="btn btn-lg btn-secondary text-dark my-5" target={heroCta.target}>{heroCta.title}</a>}
+              {heroCta && <a href={heroCta.url} className="btn btn-lg btn-secondary text-dark my-5" target={heroCta.target}>{heroCta.title}</a>}
             </div>
             {nav && (
               <ul className="nav mt-4 pb-3">
