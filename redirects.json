@@ -6,6 +6,18 @@
     "format": "plain"
   },
   {
+    "fromPath": "/video-enabled-service-report-by-aberdeen-group/",
+    "toPath": "/blog",
+    "type": 301,
+    "format": "plain"
+  },
+  {
+    "fromPath": "/ziegler-cat-improves-service-through-video-collaboration/",
+    "toPath": "/blog",
+    "type": 301,
+    "format": "plain"
+  },
+  {
     "fromPath": "/company-news/new-venture/",
     "toPath": "/news",
     "type": 301,
