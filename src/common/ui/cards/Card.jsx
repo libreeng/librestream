@@ -9,7 +9,7 @@ const Card = ({ post }) => {
       <BackgroundImage
         Tag="div"
         className="card-img-top bg-image aspect-1x1 grayscale"
-        fluid={mainImage.localFile.childImageSharp.fluid || 'https://via.placeholder.com/500/000/000'}
+        fluid={mainImage?.localFile?.childImageSharp?.fluid || 'https://via.placeholder.com/500/000/000'}
       >
         <div className="bg-fill">
           <div className="card-logo-overlay text-white">

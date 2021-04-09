@@ -38,7 +38,7 @@ const CampaignWebinarTemplate = ({ data: { page } }) => {
                 {page.content && parse(page.content)}
                 {acf.featuredImage && (
                   <Image
-                    fluid={acf.featuredImage.localFile.childImageSharp.fluid}
+                    fluid={acf.featuredImage?.localFile?.childImageSharp.fluid}
                     alt={acf.featuredImage.altText}
                   />
                 )}

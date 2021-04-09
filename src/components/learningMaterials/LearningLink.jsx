@@ -14,14 +14,14 @@ const LearningLink = ({ link }) => {
             <BackgroundImage
               Tag="div"
               className="bg-image aspect-4x3"
-              fluid={link.linkImage.localFile.childImageSharp.fluid}
+              fluid={link.linkImage?.localFile?.childImageSharp?.fluid}
             />
           </div>
           <div className="col-12 col-lg-8">
             <p>{link.linkText}</p>
           </div>
         </div>
-      )}  
+      )}
       {link.linkType === 'Content' && link.content && (
           <button onClick={() => dispatch(openModal("SupportModal", { content: link.content }))} type="button" className="border-0 bg-transparent p-0 text-primary w-100">
             <div className="row align-items-center mb-3">
@@ -29,7 +29,7 @@ const LearningLink = ({ link }) => {
                 <BackgroundImage
                   Tag="div"
                   className="bg-image aspect-4x3"
-                  fluid={link.linkImage.localFile.childImageSharp.fluid}
+                  fluid={link.linkImage?.localFile?.childImageSharp?.fluid}
                 />
               </div>
               <div className="col-12 col-lg-8">
@@ -37,7 +37,7 @@ const LearningLink = ({ link }) => {
               </div>
             </div>
           </button>
-      )} 
+      )}
       { link.linkType === 'External URL' && (
         <a href={link.url} target="_blank" rel="noreferrer">
           <div className="row align-items-center mb-3">
@@ -45,7 +45,7 @@ const LearningLink = ({ link }) => {
               <BackgroundImage
                 Tag="div"
                 className="bg-image aspect-4x3"
-                fluid={link.linkImage.localFile.childImageSharp.fluid}
+                fluid={link.linkImage?.localFile?.childImageSharp?.fluid}
               />
             </div>
             <div className="col-12 col-lg-8">
@@ -61,7 +61,7 @@ const LearningLink = ({ link }) => {
               <BackgroundImage
                 Tag="div"
                 className="bg-image aspect-4x3"
-                fluid={link.linkImage.localFile.childImageSharp.fluid}
+                fluid={link.linkImage?.localFile?.childImageSharp?.fluid}
               />
             </div>
             <div className="col-12 col-lg-8">
@@ -78,7 +78,7 @@ const LearningLink = ({ link }) => {
               <BackgroundImage
                 Tag="div"
                 className="bg-image aspect-4x3"
-                fluid={link.linkImage.localFile.childImageSharp.fluid}
+                fluid={link.linkImage?.localFile?.childImageSharp?.fluid}
               />
             </div>
             <div className="col-12 col-lg-8">
@@ -94,7 +94,7 @@ const LearningLink = ({ link }) => {
               <BackgroundImage
                 Tag="div"
                 className="bg-image aspect-4x3"
-                fluid={link.linkImage.localFile.childImageSharp.fluid}
+                fluid={link.linkImage?.localFile?.childImageSharp?.fluid}
               />
             </div>
             <div className="col-12 col-lg-8">
@@ -103,14 +103,14 @@ const LearningLink = ({ link }) => {
           </div>
         </a>
       )}
-      { link.linkType === 'PDF' && (
-        <a href={link.pdf.localFile.publicURL} target="_blank" rel="noreferrer" className="text-underline">
+      {link.linkType === 'PDF' && (
+        <a href={link.pdf.mediaItemUrl} target="_blank" rel="noreferrer" className="text-underline">
           <div className="row align-items-center mb-3">
             <div className="col-12 col-lg-4">
               <BackgroundImage
                 Tag="div"
                 className="bg-image aspect-4x3"
-                fluid={link.linkImage.localFile.childImageSharp.fluid}
+                fluid={link.linkImage?.localFile?.childImageSharp?.fluid}
               />
             </div>
             <div className="col-12 col-lg-8">
