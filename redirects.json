@@ -49,7 +49,7 @@
   },
   {
     "fromPath": "",
-    "toPath": "/news",
+    "toPath": "/",
     "type": 301,
     "format": "plain"
   },
