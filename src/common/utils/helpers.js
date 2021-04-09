@@ -103,3 +103,13 @@ export function getHeroParseOptions(props) {
     }
   })
 }
+
+export const embedUrl = (string) => {
+  let url;
+  try {
+    url = new URL(string);
+  } catch (_) {
+    return `https://librestreamcms.kinsta.cloud${string}`
+  }
+  return url;
+}
