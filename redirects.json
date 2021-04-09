@@ -6,6 +6,12 @@
     "format": "plain"
   },
   {
+    "fromPath": "",
+    "toPath": "/",
+    "type": 301,
+    "format": "plain"
+  },
+  {
     "fromPath": "/video-enabled-service-report-by-aberdeen-group/",
     "toPath": "/blog",
     "type": 301,
