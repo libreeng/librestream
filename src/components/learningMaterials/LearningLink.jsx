@@ -8,7 +8,7 @@ const LearningLink = ({ link }) => {
   const dispatch = useDispatch();
   return (
     <>
-      {(link.linkType === 'Content' && !link.content && (
+      {link.linkType === 'Content' && !link.content && (
         <div className="row align-items-center">
           <div className="col-12 col-lg-4">
             <BackgroundImage
@@ -21,9 +21,8 @@ const LearningLink = ({ link }) => {
             <p>{link.linkText}</p>
           </div>
         </div>
-      )  
-      || (link.linkType === 'Content' && link.content &&
-          link.content && (
+      )}  
+      {link.linkType === 'Content' && link.content && (
           <button onClick={() => dispatch(openModal("SupportModal", { content: link.content }))} type="button" className="border-0 bg-transparent p-0 text-primary w-100">
             <div className="row align-items-center mb-3">
               <div className="col-12 col-lg-4">
@@ -38,8 +37,8 @@ const LearningLink = ({ link }) => {
               </div>
             </div>
           </button>
-      ))
-      || (link.linkType === 'External URL' && (
+      )} 
+      { link.linkType === 'External URL' && (
         <a href={link.url} target="_blank" rel="noreferrer">
           <div className="row align-items-center mb-3">
             <div className="col-12 col-lg-4">
@@ -54,8 +53,8 @@ const LearningLink = ({ link }) => {
             </div>
           </div>
         </a>
-      ))
-      || (link.linkType === 'Video' && link.url && (
+      )}
+      { link.linkType === 'Video' && link.url && (
         <a href={link.url} target="_blank" rel="noreferrer">
           <div className="row align-items-center mb-3">
             <div className="col-12 col-lg-4">
@@ -70,9 +69,10 @@ const LearningLink = ({ link }) => {
             </div>
           </div>
         </a>
-      ))
-      || (link.linkType === 'Video' && !link.url && (
-        <button onClick={() => dispatch(openModal("VideoModal", { embed: link?.videoEmbed, video: link?.videoMp4?.localFile?.url, title: link.linkText }))} type="button" className="border-0 bg-transparent p-0 text-primary text-left text-underline w-100">
+      )}
+      { link.linkType === 'Video' && !link.url && (
+        // console.log('link', link)
+        <button onClick={() => dispatch(openModal("VideoModal", { embed: link?.videoEmbed, video: link?.videoMp4?.mediaItemUrl, title: link.linkText }))} type="button" className="border-0 bg-transparent p-0 text-primary text-left text-underline w-100">
           <div className="row align-items-center mb-3">
             <div className="col-12 col-lg-4">
               <BackgroundImage
@@ -86,8 +86,8 @@ const LearningLink = ({ link }) => {
             </div>
           </div>
         </button>
-      ))
-      || (link.linkType === 'Page' && (
+      )}
+      { link.linkType === 'Page' && (
         <a href={link.page.uri}>
           <div className="row align-items-center mb-3">
             <div className="col-12 col-lg-4">
@@ -102,8 +102,8 @@ const LearningLink = ({ link }) => {
             </div>
           </div>
         </a>
-      ))
-      || (link.linkType === 'PDF' &&
+      )}
+      { link.linkType === 'PDF' && (
         <a href={link.pdf.localFile.publicURL} target="_blank" rel="noreferrer" className="text-underline">
           <div className="row align-items-center mb-3">
             <div className="col-12 col-lg-4">
@@ -118,7 +118,7 @@ const LearningLink = ({ link }) => {
             </div>
           </div>
         </a>
-      ))}
+      )}
     </>
   )
 }

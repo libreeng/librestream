@@ -113,10 +113,7 @@ export const pageQuery = graphql`
                     links {
                       videoEmbed
                       videoMp4 {
-                        localFile {
-                          url
-                          publicURL
-                        }
+                        mediaItemUrl
                       }
                       url
                       linkType

@@ -88,10 +88,7 @@ export const pageQuery = graphql`
                     }
                     videoEmbed
                     videoMp4 {
-                      localFile {
-                        url
-                        publicURL
-                      }
+                      mediaItemUrl
                     }
                     pdf {
                       localFile {
