@@ -44,7 +44,7 @@ const Solution = ({ data: { previous, next, post } }) => {
             <div className="col-lg-5">
               {featuredImage && (
                 <div
-                  style={{ backgroundImage: `url(${intro.introFeaturedImage.localFile.publicURL})` }}
+                  style={{ backgroundImage: `url(${intro.introFeaturedImage?.localFile?.publicURL})` }}
                   className="bg-image aspect-1x1 img-offset-top"
                 />
               )}

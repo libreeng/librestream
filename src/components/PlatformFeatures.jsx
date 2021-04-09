@@ -32,7 +32,7 @@ const PlatformFeatures = ({ content }) => {
               >
                 {features && features.map((feature, i) => {
                   const {link: {title, target, url}} = feature
-                  const featuredImage = feature.featuredImage ? feature.featuredImage.localFile.childImageSharp.fluid : false
+                  const featuredImage = feature.featuredImage ? feature.featuredImage.localFile?.childImageSharp.fluid : false
                   return (
                     <Tab key={`tab_${i}`} eventKey={i} title={feature.heading}>
                       <div className="row">

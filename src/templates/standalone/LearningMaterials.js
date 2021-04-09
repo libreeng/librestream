@@ -27,8 +27,8 @@ const LearningMaterialsTemplate = ({ data: { page } }) => {
               <LearningNav sections={materials} />
             </div>
             <div className="col-12 col-lg-8">
-              {materials && materials.map((instance, i) => 
-                <LearningSection instance={instance} key={`learning-section-${i}`}  />
+              {materials && materials.map((instance, i) =>
+                <LearningSection instance={instance} key={`learning-section-${i}`} />
               )}
             </div>
           </div>
@@ -91,9 +91,7 @@ export const pageQuery = graphql`
                       mediaItemUrl
                     }
                     pdf {
-                      localFile {
-                        publicURL
-                      }
+                      mediaItemUrl
                     }
                   }
                 }

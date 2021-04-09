@@ -95,7 +95,7 @@ const PlatformFeatureSpecializedAccessories = ({ data: { page, subnav } }) => {
                   <div>
                     {accessory.featuredImage && (
                       <Image
-                        fluid={accessory.featuredImage.localFile.childImageSharp.fluid}
+                        fluid={accessory.featuredImage?.localFile?.childImageSharp.fluid}
                         alt={accessory.featuredImage.altText}
                         className="mt-4 mb-3"
                       />
@@ -103,7 +103,7 @@ const PlatformFeatureSpecializedAccessories = ({ data: { page, subnav } }) => {
 
                     {accessory.specsDownload && (
                       <div className="text-center">
-                        <a href={accessory?.specsDownload?.localFile.publicURL} className="btn btn-outline-primary text-dark" target="_blank" rel="noreferrer">View Specs</a>
+                        <a href={accessory?.specsDownload?.localFile?.publicURL} className="btn btn-outline-primary text-dark" target="_blank" rel="noreferrer">View Specs</a>
                       </div>
                     )}
                   </div>

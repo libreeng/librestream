@@ -18,7 +18,7 @@ const SolutionsTemplate = ({ data: { page, solutions } }) => {
     <>
       <Hero hero={hero} />
       <Intro intro={intro} />
-      
+
       <section className="pt-0">
         <div className="container">
           <div className="row">
@@ -33,7 +33,7 @@ const SolutionsTemplate = ({ data: { page, solutions } }) => {
                     <div className='card p-2'>
                       <div
                         className="card-img-top bg-image aspect-1x1 grayscale"
-                        style={{ backgroundImage: `url(${featuredImage ? featuredImage.localFile.publicURL : 'https://via.placeholder.com/400/000/000'})` }}
+                        style={{ backgroundImage: `url(${featuredImage ? featuredImage?.localFile?.publicURL : 'https://via.placeholder.com/400/000/000'})` }}
                       >
                         {/* <div className="bg-fill bg-hover-red">
                           {logoImage && (

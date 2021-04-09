@@ -38,7 +38,7 @@ const AboutTemplate = ({ data: { page } }) => {
               <div key={award.image.id} className="col mb-4">
                 <div className="card">
                   <Image
-                    fluid={award.image.localFile.childImageSharp.fluid && award.image.localFile.childImageSharp.fluid}
+                    fluid={award.image?.localFile?.childImageSharp?.fluid}
                     alt={award.image.altText && award.image.altText}
                   />
                 </div>
@@ -67,7 +67,7 @@ const AboutTemplate = ({ data: { page } }) => {
                       <BackgroundImage
                         Tag="div"
                         className="bg-image aspect-1x1"
-                        fluid={boardmember.image.localFile.childImageSharp.fluid}
+                        fluid={boardmember.image?.localFile?.childImageSharp.fluid}
                       />
                     )}
                     <h4 className="mb-0 text-dark text-left">{boardmember.name && boardmember.name}</h4>
@@ -92,7 +92,7 @@ const AboutTemplate = ({ data: { page } }) => {
                     <BackgroundImage
                       Tag="div"
                       className="bg-image aspect-1x1"
-                      fluid={boardmember.image.localFile.childImageSharp.fluid}
+                      fluid={boardmember.image?.localFile?.childImageSharp.fluid}
                     />
                   )}
                   <h4 className="mb-0 text-dark text-left">{boardmember.name && boardmember.name}</h4>

@@ -78,7 +78,7 @@ const HomeTemplate = ({ data: { page } }) => {
                 <BackgroundImage
                   Tag="div"
                   className="bg-image aspect-4x3"
-                  fluid={slide.carouselSlideFeaturedImage.localFile.childImageSharp.fluid}
+                  fluid={slide.carouselSlideFeaturedImage?.localFile?.childImageSharp.fluid}
                 />
               )}
             </div>
