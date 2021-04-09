@@ -8,6 +8,7 @@ import { closeModal } from './modalActions'
 const VideoModal = ({embed, video, title}) => {
   const dispatch = useDispatch()
   const src = embed || video
+  console.log('embed',embed, 'video', video)
   return (
     <>
       <Modal show onHide={() => dispatch(closeModal())} size="lg">

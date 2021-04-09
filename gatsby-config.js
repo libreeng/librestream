@@ -68,11 +68,19 @@ module.exports = {
       options: {
         // the only required plugin option for WordPress is the GraphQL url.
         url: process.env.WPGRAPHQL_URL || `https://librestreamcms.kinsta.cloud/graphql`,
-        // schema: {
-        //   perPage: 5,
-        //   requestConcurrency: 5, // currently set to 15
-        //   previewRequestConcurrency: 2, // currently set to 5
-        // }
+        type: {
+          MediaItem: {
+            localFile: {
+              maxFileSizeBytes: 104857600, // 100Mb
+            },
+          },
+        },
+        schema: {
+          // perPage: 5,
+          // requestConcurrency: 5, // currently set to 15
+          // previewRequestConcurrency: 2, // currently set to 5
+          timeout: 300000,
+        }
         // useACF: true,
         // type: {
         //   Post: {
