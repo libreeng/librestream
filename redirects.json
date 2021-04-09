@@ -48,6 +48,18 @@
     "format": "plain"
   },
   {
+    "fromPath": "",
+    "toPath": "/news",
+    "type": 301,
+    "format": "plain"
+  },
+  {
+    "fromPath": "",
+    "toPath": "/news",
+    "type": 301,
+    "format": "plain"
+  },
+  {
     "fromPath": "/media/Librestream-Osight-Wearable-Overview-1.pdf",
     "toPath": "/media/Librestream-Onsight-Cube-Overview-1.pdf",
     "type": 301,
@@ -3468,7 +3480,8 @@
   {"fromPath": "/form-confirmations/opportunity-registered/","toPath": "/","type": 301,"format": "plain"},
   {"fromPath": "/form-confirmations/order-submitted/","toPath": "/","type": 301,"format": "plain"},
   {"fromPath": "/form-confirmations/registration-submitted/","toPath": "/","type": 301,"format": "plain"},
-  {"fromPath": "/form-confirmations/remote-expert-accelerator-package/","toPath": "/form-confirmations/remote-expert-accelerator-package-free-trial/","type": 301,"format": "plain"},
+  {"fromPath": "/form-confirmations/remote-expert-accelerator-package/","toPath": "/","type": 301,"format": "plain"},
+  {"fromPath": "/form-confirmations/remote-expert-accelerator-package-free-trial/","toPath": "/","type": 301,"format": "plain"},
   {"fromPath": "/form-confirmations/remote-expert-download-confirmation-july-2020/","toPath": "/","type": 301,"format": "plain"},
   {"fromPath": "/form-confirmations/request-consultation-confirmation/","toPath": "/","type": 301,"format": "plain"},
   {"fromPath": "/form-confirmations/request-demo-confirmation-cube/","toPath": "/","type": 301,"format": "plain"},
