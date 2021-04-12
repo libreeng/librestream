@@ -368,13 +368,16 @@ exports.createPages = async gatsbyUtilities => {
   //   console.log(createRedirect())
   // })
 
-  redirects.forEach(redirect =>
-    createRedirect({
-      fromPath: redirect.fromPath,
-      toPath: redirect.toPath,
-      isPermanent: redirect.type === 301
-    })
-  )
+  redirects.forEach(redirect => {
+    const { fromPath, toPath, type } = redirect
+    if (fromPath !== "" && toPath !== "") {
+      createRedirect({
+        fromPath,
+        toPath,
+        isPermanent: type === 301
+      })
+    }
+  })
   // Query our posts from the GraphQL server
   const posts = await getPosts(gatsbyUtilities)
   const pages = await getPages(gatsbyUtilities)
