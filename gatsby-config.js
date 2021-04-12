@@ -71,7 +71,7 @@ module.exports = {
         type: {
           MediaItem: {
             localFile: {
-              maxFileSizeBytes: 104857600, // 100Mb
+              maxFileSizeBytes: 1048576000, // 1GB
             },
           },
         },
