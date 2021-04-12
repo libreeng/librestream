@@ -41,7 +41,7 @@ const PlatformTemplate = ({ data: { page } }) => {
             {template.platformVideo && (
               <div className="col-lg-6">
                 <div className="responsive-iframe aspect-16x9">
-                  <iframe src={embedUrl(template.platformVideo)} frameBorder="0" title={page.title} />
+                  <iframe src={template.platformVideo} frameBorder="0" title={page.title} />
                 </div>
               </div>
             )}

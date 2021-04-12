@@ -49,7 +49,7 @@ const CampaignWebinarTemplate = ({ data: { page } }) => {
               <div className="sticky-top">
                 {acf.formEmbed && (
                   <div className="responsive-iframe aspect-1x1">
-                    <iframe src={embedUrl(acf.formEmbed)} title={page.title} />
+                    <iframe src={acf.formEmbed} title={page.title} />
                   </div>
                 )}
               </div>
