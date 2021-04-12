@@ -363,11 +363,6 @@ async function getCategories({ graphql, reporter }) {
  */
 exports.createPages = async gatsbyUtilities => {
   const { createRedirect } = gatsbyUtilities.actions
-  // redirects.forEach(redirect => {
-  //   console.log(redirect.fromPath)
-  //   console.log(createRedirect())
-  // })
-
   redirects.forEach(redirect => {
     const { fromPath, toPath, type } = redirect
     if (fromPath !== "" && toPath !== "") {
