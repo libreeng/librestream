@@ -2,13 +2,14 @@ import React from 'react'
 import PropTypes from 'prop-types'
 import { useDispatch } from 'react-redux'
 import { Modal } from 'react-bootstrap'
+import {embedUrl} from "../utils/helpers"
 import { closeModal } from './modalActions'
 
 
 const VideoModal = ({embed, video, title}) => {
   const dispatch = useDispatch()
   const src = embed || video
-  console.log('embed',embed, 'video', video)
+  // console.log('embed',embed, 'video', video)
   return (
     <>
       <Modal show onHide={() => dispatch(closeModal())} size="lg">
@@ -19,7 +20,7 @@ const VideoModal = ({embed, video, title}) => {
             
             <div className="col-12">
               <div className="responsive-iframe aspect-16x9">
-                <iframe src={src} title={title} />
+                <iframe src={embedUrl(src)} title={title} />
               </div>
               
             </div>

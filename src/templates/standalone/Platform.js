@@ -1,6 +1,7 @@
 import React from "react"
 import { graphql } from "gatsby"
 import parse from "html-react-parser"
+import {embedUrl} from "../common/utils/helpers"
 import Hero from "../../common/ui/Hero"
 import FooterCTAs from '../../common/ui/FooterCTAs'
 import PlatformFeatures from '../../components/PlatformFeatures'
@@ -40,7 +41,7 @@ const PlatformTemplate = ({ data: { page } }) => {
             {template.platformVideo && (
               <div className="col-lg-6">
                 <div className="responsive-iframe aspect-16x9">
-                  <iframe src={template.platformVideo} frameBorder="0" title={page.title} />
+                  <iframe src={embedUrl(template.platformVideo)} frameBorder="0" title={page.title} />
                 </div>
               </div>
             )}

@@ -2,6 +2,7 @@ import React from "react"
 import { graphql } from "gatsby"
 import Image from "gatsby-image"
 import parse from "html-react-parser"
+import {embedUrl} from "../common/utils/helpers"
 import Hero from "../../common/ui/Hero"
 import FooterCTAs from '../../common/ui/FooterCTAs'
 
@@ -48,7 +49,7 @@ const CampaignWebinarTemplate = ({ data: { page } }) => {
               <div className="sticky-top">
                 {acf.formEmbed && (
                   <div className="responsive-iframe aspect-1x1">
-                    <iframe src={acf.formEmbed} title={page.title} />
+                    <iframe src={embedUrl(acf.formEmbed)} title={page.title} />
                   </div>
                 )}
               </div>
