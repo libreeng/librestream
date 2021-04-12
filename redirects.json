@@ -2767,247 +2767,247 @@
   },
   {
     "fromPath": "/press-releases/librestream-extends-free-service-program-that-enabled-over-1500-individuals-to-safely-inspect-diagnose-and-train-despite-covid-19",
-    "toPath": "/news",
+    "toPath": "/news/",
     "type": 301,
     "format": "plain"
   },
   {
     "fromPath": "/company-news/librestream-supports-hurricane-laura-related-challenges-with-free-augmented-reality-software",
-    "toPath": "/news",
+    "toPath": "/news/",
     "type": 301,
     "format": "plain"
   },
   {
     "fromPath": "/events/webinar-onsight-summer-release-2020",
-    "toPath": "/news",
+    "toPath": "/news/",
     "type": 301,
     "format": "plain"
   },
   {
     "fromPath": "/events/tmforum-digital-transformation",
-    "toPath": "/events",
+    "toPath": "/events/",
     "type": 301,
     "format": "plain"
   },
   {
     "fromPath": "/events/join-us-at-ewts-everywhere",
-    "toPath": "/events",
+    "toPath": "/events/",
     "type": 301,
     "format": "plain"
   },
   {
     "fromPath": "/company-news/librestreams-remote-expert-augmented-reality-solution-selected-by-renault-trucks-uk-ireland-to-power-increased-uptime-and-productivity",
-    "toPath": "/news",
+    "toPath": "/news/",
     "type": 301,
     "format": "plain"
   },
   {
     "fromPath": "/articles/manufacturing-engineering-doing-double-duty",
-    "toPath": "/blog",
+    "toPath": "/blog/",
     "type": 301,
     "format": "plain"
   },
   {
     "fromPath": "/company-news/onsight-version-6-2",
-    "toPath": "/blog",
+    "toPath": "/blog/",
     "type": 301,
     "format": "plain"
   },
   {
     "fromPath": "/company-news/2500-mobile-device-announced",
-    "toPath": "/blog",
+    "toPath": "/blog/",
     "type": 301,
     "format": "plain"
   },
   {
     "fromPath": "/company-news/newest-series-of-rugged-onsight-mobile-devices",
-    "toPath": "/blog",
+    "toPath": "/blog/",
     "type": 301,
     "format": "plain"
   },
   {
     "fromPath": "/articles/mobile-collaboration-bring-savings-home",
-    "toPath": "/blog",
+    "toPath": "/blog/",
     "type": 301,
     "format": "plain"
   },
   {
     "fromPath": "/company-news/expanded-mobile-collaboration-on-ios-devices",
-    "toPath": "/blog",
+    "toPath": "/blog/",
     "type": 301,
     "format": "plain"
   },
   {
     "fromPath": "/company-news/onsight-version-6-1",
-    "toPath": "/blog",
+    "toPath": "/blog/",
     "type": 301,
     "format": "plain"
   },
   {
     "fromPath": "/articles/librestream-top-enterprise-video-collaboration-providers-by-abi-research",
-    "toPath": "/blog",
+    "toPath": "/blog/",
     "type": 301,
     "format": "plain"
   },
   {
     "fromPath": "/company-news/automotive-manufacturers-deploy-virtual-presence-systems-globally",
-    "toPath": "/blog",
+    "toPath": "/blog/",
     "type": 301,
     "format": "plain"
   },
   {
     "fromPath": "/company-news/oilfield-customer-feature-onsight",
-    "toPath": "/blog",
+    "toPath": "/blog/",
     "type": 301,
     "format": "plain"
   },
   {
     "fromPath": "/company-news/onsight-version-6-3",
-    "toPath": "/blog",
+    "toPath": "/blog/",
     "type": 301,
     "format": "plain"
   },
   {
     "fromPath": "/company-news/sub-zero-achieves-manufacturing-leadership-award",
-    "toPath": "/blog",
+    "toPath": "/blog/",
     "type": 301,
     "format": "plain"
   },
   {
     "fromPath": "/articles/virtual-tools-close-gap-between-remote-operations-og-experts",
-    "toPath": "/blog",
+    "toPath": "/blog/",
     "type": 301,
     "format": "plain"
   },
   {
     "fromPath": "/blog/onsight-rugged-industrial-camera",
-    "toPath": "/blog",
+    "toPath": "/blog/",
     "type": 301,
     "format": "plain"
   },
   {
     "fromPath": "/articles/gerber-collision-glass",
-    "toPath": "/blog",
+    "toPath": "/blog/",
     "type": 301,
     "format": "plain"
   },
   {
     "fromPath": "/articles/oil-and-gas-satellite",
-    "toPath": "/blog",
+    "toPath": "/blog/",
     "type": 301,
     "format": "plain"
   },
   {
     "fromPath": "/articles/virtual-presence-technology-enhances-productivity-safety",
-    "toPath": "/blog",
+    "toPath": "/blog/",
     "type": 301,
     "format": "plain"
   },
   {
     "fromPath": "/blog/verizon-wind-farm",
-    "toPath": "/blog",
+    "toPath": "/blog/",
     "type": 301,
     "format": "plain"
   },
   {
     "fromPath": "/company-news/librestream-integrates-with-cisco-uc",
-    "toPath": "/blog",
+    "toPath": "/blog/",
     "type": 301,
     "format": "plain"
   },
   {
     "fromPath": "/company-news/amid-global-turmoil-manufacturers-conduct-business-from-afar-with-librestreams-onsight",
-    "toPath": "/blog",
+    "toPath": "/blog/",
     "type": 301,
     "format": "plain"
   },
   {
     "fromPath": "/blog/being-in-two-places-at-one-time",
-    "toPath": "/blog",
+    "toPath": "/blog/",
     "type": 301,
     "format": "plain"
   },
   {
     "fromPath": "/company-news/optimized-for-low-bandwidth",
-    "toPath": "/blog",
+    "toPath": "/blog/",
     "type": 301,
     "format": "plain"
   },
   {
     "fromPath": "/articles/remote-operations-centers",
-    "toPath": "/blog",
+    "toPath": "/blog/",
     "type": 301,
     "format": "plain"
   },
   {
     "fromPath": "/company-news/cisco-interoperability-verification-testing",
-    "toPath": "/blog",
+    "toPath": "/blog/",
     "type": 301,
     "format": "plain"
   },
   {
     "fromPath": "/articles/telepresence-in-manufacturing",
-    "toPath": "/blog",
+    "toPath": "/blog/",
     "type": 301,
     "format": "plain"
   },
   {
     "fromPath": "/company-news/extend-onsight-mobile-collaboration-verizon",
-    "toPath": "/blog",
+    "toPath": "/blog/",
     "type": 301,
     "format": "plain"
   },
   {
     "fromPath": "/company-news/teasacom",
-    "toPath": "/blog",
+    "toPath": "/blog/",
     "type": 301,
     "format": "plain"
   },
   {
     "fromPath": "/company-news/newest-release-of-its-onsight-mobile-collaboration-platform",
-    "toPath": "/blog",
+    "toPath": "/blog/",
     "type": 301,
     "format": "plain"
   },
   {
     "fromPath": "/blog/the-tinkers-toolbox",
-    "toPath": "/blog",
+    "toPath": "/blog/",
     "type": 301,
     "format": "plain"
   },
   {
     "fromPath": "/articles/long-distance-relationship",
-    "toPath": "/blog",
+    "toPath": "/blog/",
     "type": 301,
     "format": "plain"
   },
   {
     "fromPath": "/company-news/onsight-version-4-5",
-    "toPath": "/blog",
+    "toPath": "/blog/",
     "type": 301,
     "format": "plain"
   },
   {
     "fromPath": "/blog/advances-in-video-collaboration",
-    "toPath": "/blog",
+    "toPath": "/blog/",
     "type": 301,
     "format": "plain"
   },
   {
     "fromPath": "/articles/long-range-troubleshooting",
-    "toPath": "/blog",
+    "toPath": "/blog/",
     "type": 301,
     "format": "plain"
   },
   {
     "fromPath": "/company-news/streaming-video-can-economize-vendor-acceptance-tests-on-equipment",
-    "toPath": "/blog",
+    "toPath": "/blog/",
     "type": 301,
     "format": "plain"
   },
   {
     "fromPath": "/company-news/us-national-guard-deploys-video-collaboration",
-    "toPath": "/blog",
+    "toPath": "/blog/",
     "type": 301,
     "format": "plain"
   },
@@ -3169,37 +3169,37 @@
   },
   {
     "fromPath": "/press-releases/librestream-launches-augmented-reality-dimensioning-capability/",
-    "toPath": "/platform",
+    "toPath": "/platform/",
     "type": 301,
     "format": "plain"
   },
   {
     "fromPath": "/company-news/new-venture/",
-    "toPath": "/news",
+    "toPath": "/news/",
     "type": 301,
     "format": "plain"
   },
   {
     "fromPath": "/company-news/tanberg-agreement/",
-    "toPath": "/news",
+    "toPath": "/news/",
     "type": 301,
     "format": "plain"
   },
   {
     "fromPath": "/company-news/librestream-introduces-onsight/",
-    "toPath": "/news",
+    "toPath": "/news/",
     "type": 301,
     "format": "plain"
   },
   {
     "fromPath": "/company-news/gerber-collision-and-glass/",
-    "toPath": "/news",
+    "toPath": "/news/",
     "type": 301,
     "format": "plain"
   },
   {
     "fromPath": "/company-news/onsight-2000r-mobile-collaboration-device/",
-    "toPath": "/news",
+    "toPath": "/news/",
     "type": 301,
     "format": "plain"
   },
