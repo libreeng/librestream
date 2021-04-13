@@ -16,11 +16,6 @@ export const useSiteMetadata = () => {
         }
         wp(id: {eq: "/graphql--rootfields"}) {
           seo {
-            redirects {
-              origin
-              target
-              type
-            }
             social {
               facebook {
                 url
@@ -60,9 +55,9 @@ export const useSiteMetadata = () => {
     `
   )
 
-  const { site, wp: { seo: { redirects, social } } } = data
+  const { site, wp: { seo: { social } } } = data
 
   const defaultSEO = { ...site.siteMetadata, ...social }
 
-  return { social, defaultSEO, redirects }
+  return { social, defaultSEO }
 }

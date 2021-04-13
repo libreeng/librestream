@@ -1,8 +1,0 @@
-[
-  {
-    "fromPath": "/test-redirect/",
-    "toPath": "/",
-    "type": 301,
-    "format": "plain"
-  }
-]
