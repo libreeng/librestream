@@ -18,7 +18,7 @@
     "format": "plain"
   },
   {
-    "fromPath": "/Chinese/(.*)",
+    "fromPath": "/Chinese/*",
     "toPath": "/",
     "type": 301,
     "format": "regex"
