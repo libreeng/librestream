@@ -3,6 +3,7 @@ import React from "react"
 import { graphql } from "gatsby"
 import Image from "gatsby-image"
 import parse from "html-react-parser"
+import SEO from "../../containers/SEO"
 
 const ProductsARSPTemplate = ({ data: { page } }) => {
   const featuredImage = {
@@ -12,7 +13,7 @@ const ProductsARSPTemplate = ({ data: { page } }) => {
 
   return (
     <>
-
+      <SEO pageSEO={page.seo} />
       <header>
         <h1 itemProp="headline">{parse(page.title)}</h1>
 

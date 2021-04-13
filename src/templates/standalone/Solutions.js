@@ -2,6 +2,7 @@ import React from "react"
 import { graphql, Link } from "gatsby"
 import Image from "gatsby-image"
 import parse from "html-react-parser"
+import SEO from "../../containers/SEO"
 import Hero from "../../common/ui/Hero"
 import Intro from '../../common/ui/Intro'
 import FooterCTAs from '../../common/ui/FooterCTAs'
@@ -16,6 +17,7 @@ const SolutionsTemplate = ({ data: { page, solutions } }) => {
 
   return (
     <>
+      <SEO pageSEO={page.seo} />
       <Hero hero={hero} />
       <Intro intro={intro} />
 

@@ -3,15 +3,23 @@ import { useStaticQuery, graphql } from "gatsby"
 export const useSiteMetadata = () => {
   const data = useStaticQuery(graphql`
       query SiteMetaData {
-        wp(id: {eq: "/graphql--rootfields"}) {
-          generalSettings {
+        site {
+          siteMetadata {
+            siteUrl
+            title
+            headline
             description
+            inLanguage
+            ogLanguage
+            shareImage
           }
+        }
+        wp(id: {eq: "/graphql--rootfields"}) {
           seo {
-            schema {
-              inLanguage
-              siteName
-              siteUrl
+            redirects {
+              origin
+              target
+              type
             }
             social {
               facebook {
@@ -46,32 +54,15 @@ export const useSiteMetadata = () => {
                 url
               }
             }
-            openGraph {
-              frontPage {
-                description
-                title
-              }
-              defaultImage {
-                sourceUrl
-              }
-            }
           }
         }
       }
     `
   )
 
-  const { generalSettings, seo: { schema, openGraph, social } } = data.wp
+  const { site, wp: { seo: { redirects, social } } } = data
 
-  const meta = {
-    url: schema.siteUrl,
-    title: schema.siteName,
-    description: generalSettings.description,
-    language: schema.inLanguage,
-    social,
-    image: openGraph.defaultImage.sourceUrl,
-    twitter: social.twitter.username,
-  }
+  const defaultSEO = { ...site.siteMetadata, ...social }
 
-  return meta
+  return { social, defaultSEO, redirects }
 }

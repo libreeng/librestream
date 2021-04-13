@@ -4,6 +4,7 @@ import { Link, graphql } from "gatsby"
 import parse from "html-react-parser"
 import { useFlexSearch } from 'react-use-flexsearch'
 import SearchLineIcon from 'remixicon-react/SearchLineIcon'
+import SEO from "../../containers/SEO"
 import Hero from "../../common/ui/Hero"
 import FooterCTAs from '../../common/ui/FooterCTAs'
 import Carousel from "../../common/ui/carousel/Carousel"
@@ -30,6 +31,7 @@ const NewsTemplate = ({ data: { page } }) => {
 
   return (
     <>
+      <SEO pageSEO={page.seo} />
       <Hero hero={hero} />
       <section>
         <div className="container">
@@ -186,7 +188,7 @@ const NewsTemplate = ({ data: { page } }) => {
             }}
           />
         </div>
-        
+
       </section>
 
       <FooterCTAs featured={cta} />

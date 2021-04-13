@@ -4,6 +4,7 @@ import { graphql } from "gatsby"
 import Image from "gatsby-image"
 import BackgroundImage from 'gatsby-background-image'
 import parse from "html-react-parser"
+import SEO from "../../containers/SEO"
 import Hero from "../../common/ui/Hero"
 import FooterCTAs from '../../common/ui/FooterCTAs'
 
@@ -16,6 +17,7 @@ const PlatformFeatureSpecializedAccessories = ({ data: { page, subnav } }) => {
   console.log(accessories)
   return (
     <>
+      <SEO pageSEO={page.seo} />
       <Hero
         className=""
         hero={hero}
