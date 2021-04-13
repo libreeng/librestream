@@ -102,11 +102,14 @@ const createSiteRedirects = async ({ redirects, gatsbyUtilities }) => {
   const { createRedirect } = gatsbyUtilities.actions
   Promise.all(
     redirects.map(redirect => {
+      console.log(`Creating: ${redirect.length} redirects`)
       const { origin, target, type } = redirect
+      const fromPath = origin.replace("http://www.librestreamcms.kinsta.cloud", "")
+      const toPath = target.replace("http://www.librestreamcms.kinsta.cloud", "")
+      // const isPermanent = type === 301
       createRedirect({
-        fromPath: origin,
-        toPath: target,
-        isPermanent: type === 301
+        fromPath,
+        toPath,
       })
     })
   )
