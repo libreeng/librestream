@@ -1,5 +1,6 @@
 /* eslint-disable consistent-return */
 const path = require(`path`)
+const staticRedirects = require("./redirects.json")
 
 // This is a simple debugging tool
 // dd() will prettily dump to the terminal and kill the process
@@ -107,20 +108,21 @@ const createCategoryPages = async ({ categories, gatsbyUtilities }) =>
   )
 
 const createSiteRedirects = async ({ redirects, gatsbyUtilities }) => {
+  console.log(`Creating: ${staticRedirects.length} Redirects`)
   const { createRedirect } = gatsbyUtilities.actions
   Promise.all(
-    redirects.map(redirect => {
+    staticRedirects.map(redirect => {
+      const { fromPath, toPath } = redirect
       // console.log(`Creating: ${redirects.length} redirects`)
-      const { origin, target, type, format } = redirect
-      const fromPath = sanitizeRedirect(origin)
-      const toPath = sanitizeRedirect(target)
+      // const { origin, target, type, format } = redirect
+      // const fromPath = sanitizeRedirect(origin)
+      // const toPath = sanitizeRedirect(target)
       // const isPermanent = type === 301
-      if (format === 'plain') {
-        createRedirect({
-          fromPath,
-          toPath,
-        })
-      }
+      createRedirect({
+        fromPath,
+        toPath,
+        isPermanent: false
+      })
     })
   )
 }
