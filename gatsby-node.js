@@ -5,6 +5,14 @@ const path = require(`path`)
 // dd() will prettily dump to the terminal and kill the process
 // const { dd } = require(`dumper.js`)
 
+function sanitizeRedirect(path) {
+  const sanitized = path
+    .replace("http://www.librestreamcms.kinsta.cloud", "")
+    .replace("https://www.librestreamcms.kinsta.cloud", "")
+    .replace("librestream.com", "")
+
+  return sanitized.startsWith('/') ? sanitized : `/${sanitized}`
+}
 
 
 const createStandalonePages = async ({ pages, gatsbyUtilities }) =>
@@ -104,8 +112,9 @@ const createSiteRedirects = async ({ redirects, gatsbyUtilities }) => {
     redirects.map(redirect => {
       console.log(`Creating: ${redirect.length} redirects`)
       const { origin, target, type } = redirect
-      const fromPath = origin.replace("http://www.librestreamcms.kinsta.cloud", "")
-      const toPath = target.replace("http://www.librestreamcms.kinsta.cloud", "")
+      const fromPath = sanitizeRedirect(origin)
+      const toPath = sanitizeRedirect(target)
+
       // const isPermanent = type === 301
       createRedirect({
         fromPath,
