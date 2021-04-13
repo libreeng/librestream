@@ -110,16 +110,17 @@ const createSiteRedirects = async ({ redirects, gatsbyUtilities }) => {
   const { createRedirect } = gatsbyUtilities.actions
   Promise.all(
     redirects.map(redirect => {
-      console.log(`Creating: ${redirect.length} redirects`)
-      const { origin, target, type } = redirect
+      // console.log(`Creating: ${redirects.length} redirects`)
+      const { origin, target, type, format } = redirect
       const fromPath = sanitizeRedirect(origin)
       const toPath = sanitizeRedirect(target)
-
       // const isPermanent = type === 301
-      createRedirect({
-        fromPath,
-        toPath,
-      })
+      if (format === 'plain') {
+        createRedirect({
+          fromPath,
+          toPath,
+        })
+      }
     })
   )
 }
@@ -312,6 +313,7 @@ async function getRedirects({ graphql, reporter }) {
             origin
             target
             type
+            format
           }
         }
       }
