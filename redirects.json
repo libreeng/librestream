@@ -10,5 +10,17 @@
     "toPath": "/media/Librestream-Onsight-Cube-Overview-1.pdf",
     "type": 301,
     "format": "plain"
+  },
+  {
+    "fromPath": "privacy-policy",
+    "toPath": "/privacy-notice",
+    "type": 301,
+    "format": "plain"
+  },
+  {
+    "fromPath": "/Chinese/(.*)",
+    "toPath": "/",
+    "type": 301,
+    "format": "regex"
   }
 ]
