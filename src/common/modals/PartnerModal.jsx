@@ -28,7 +28,7 @@ const PartnerModal = ({partner}) => {
               {partner.partnerActions && partner.partnerActions.map((action, i) =>
                 <div>
                   {(action.actionType === 'External Link' &&
-                      <a href={action.external} className="btn btn-outline-primary text-dark mb-3 btn-block" target="_blank" rel="noreferrer">{action.title}</a>
+                    <a href={action.external} className="btn btn-outline-primary text-dark mb-3 btn-block" target="_blank" rel="noopener">{action.title}</a>
                     )
                   || (action.actionType === 'Internal Link' &&
                       <a href={action?.linkPage?.slug} className="btn btn-outline-primary text-dark mb-3 btn-block">{action.title}</a>
