@@ -121,8 +121,10 @@ const createSiteRedirects = async ({ redirects, gatsbyUtilities }) => {
       createRedirect({
         fromPath,
         toPath,
-        isPermanent: false
+        isPermanent: false,
+        // ignoreCase: true
       })
+
     })
   )
 }
