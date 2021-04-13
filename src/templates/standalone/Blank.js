@@ -2,6 +2,7 @@ import React from "react"
 import { graphql } from "gatsby"
 import Helmet from 'react-helmet'
 import parse from "html-react-parser"
+import SEO from "../../containers/SEO"
 import Hero from "../../common/ui/Hero"
 import FooterCTAs from '../../common/ui/FooterCTAs'
 
@@ -13,9 +14,11 @@ const BlankTemplate = ({ data: { page } }) => {
 
   return (
     <>
+      <SEO pageSEO={page.seo} />
+      {/* TODO: Look for small refactor */}
       <Helmet bodyAttributes={{
-          class: 'template-blank'
-        }} />
+        class: 'template-blank'
+      }} />
       <Hero hero={hero} />
       <div className="container">
         <div className="row">

@@ -2,8 +2,8 @@ import { graphql } from "gatsby"
 
 export const PostDetails = graphql`
   fragment PostDetails on WpPost {
+    ...PostSEO
     id
-    excerpt
     content
     title
     date(formatString: "MMM DD, YYYY")

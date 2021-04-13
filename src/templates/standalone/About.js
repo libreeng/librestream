@@ -7,9 +7,10 @@ import Hero from "../../common/ui/Hero"
 import Intro from "../../common/ui/Intro"
 import FooterCTAs from '../../common/ui/FooterCTAs'
 import { openModal } from "../../common/modals/modalActions"
+import SEO from "../../containers/SEO"
 
 const AboutTemplate = ({ data: { page } }) => {
-  const dispatch = useDispatch();
+  const dispatch = useDispatch()
   const acf = page.acfTemplateAbout
   const hero = page.acfHero
   const nav = page.acfSubnav.subnav.map(item => item.subnavItemLink)
@@ -18,6 +19,7 @@ const AboutTemplate = ({ data: { page } }) => {
 
   return (
     <>
+      <SEO pageSEO={page.seo} />
       <Hero hero={hero} nav={nav} />
       <div id="our-story">
         <Intro intro={intro} />

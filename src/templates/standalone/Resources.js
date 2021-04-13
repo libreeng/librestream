@@ -1,6 +1,7 @@
 import React from "react"
 import { graphql, Link } from "gatsby"
 import parse from "html-react-parser"
+import SEO from "../../containers/SEO"
 import BackgroundImage from 'gatsby-background-image'
 import Hero from "../../common/ui/Hero"
 import FooterCTAs from '../../common/ui/FooterCTAs'
@@ -14,6 +15,7 @@ const ResourcesTemplate = ({ data: { page, resources } }) => {
 
   return (
     <>
+      <SEO pageSEO={page.seo} />
       <Hero hero={hero} />
       <section>
         <div className="container">

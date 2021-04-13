@@ -3,6 +3,7 @@ import { graphql } from "gatsby"
 // import Image from "gatsby-image"
 import parse from "html-react-parser"
 import BackgroundImage from 'gatsby-background-image'
+import SEO from "../../containers/SEO"
 import Hero from '../../common/ui/Hero'
 import FooterCTAs from '../../common/ui/FooterCTAs'
 import Carousel from '../../common/ui/carousel/Carousel'
@@ -21,6 +22,7 @@ const HomeTemplate = ({ data: { page } }) => {
 
   return (
     <>
+      <SEO pageSEO={page.seo} />
       <Hero hero={hero} />
 
       <section id="intro" className="bg-white">

@@ -1,17 +1,6 @@
 import { applyMiddleware, compose, createStore } from 'redux'
-import { persistReducer } from 'redux-persist'
-import storage from 'redux-persist/lib/storage'
-import { LibrestreamTransform } from './localStorage'
 import rootReducer from './reducers'
 
-
-const persistConfig = { // configuration object for redux-persist
-  key: 'librestream',
-  storage, // define which storage to use
-  transforms: [LibrestreamTransform],
-}
-
-const persistedReducer = persistReducer(persistConfig, rootReducer()) // create a persisted reducer
 
 export default function createReduxStore() {
   // ======================================================
@@ -38,7 +27,7 @@ export default function createReduxStore() {
   // ======================================================
 
   const store = createStore(
-    persistedReducer,
+    rootReducer(),
     compose(applyMiddleware(...middleware), ...enhancers)
   )
 

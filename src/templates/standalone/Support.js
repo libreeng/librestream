@@ -1,6 +1,7 @@
 import React from "react"
 import { graphql } from "gatsby"
 import parse from "html-react-parser"
+import SEO from "../../containers/SEO"
 import Hero from "../../common/ui/Hero"
 import FooterCTAs from '../../common/ui/FooterCTAs'
 import SupportNav from '../../components/support/SupportNav'
@@ -18,6 +19,7 @@ const SupportTemplate = ({ data: { page } }) => {
 
   return (
     <>
+      <SEO pageSEO={page.seo} />
       <Hero hero={hero} />
       <section>
         <div className="container">
@@ -30,7 +32,7 @@ const SupportTemplate = ({ data: { page } }) => {
               {page.acfSupportSections.serviceStatusLink && (
                 <a href={page.acfSupportSections.serviceStatusLink.url} target={page.acfSupportSections.serviceStatusLink.target} className="btn btn-primary btn-block">{page.acfSupportSections.serviceStatusLink.title ? page.acfSupportSections.serviceStatusLink.title : 'View Onsight Service'}</a>
               )}
-              
+
             </div>
             <div className="col-12 col-lg-8">
               {sections && sections.map(section => {
