@@ -1350,12 +1350,6 @@
     "format": "plain"
   },
   {
-    "fromPath": "/privacy(.*)",
-    "toPath": "/privacy-policy/",
-    "type": 301,
-    "format": "regex"
-  },
-  {
     "fromPath": "/products.html",
     "toPath": "/products/",
     "type": 301,
@@ -1991,10 +1985,3039 @@
     "type": 301,
     "format": "plain"
   },
-
+  {
+    "fromPath": "/video/WMV versions/WGW_WHD.wmv",
+    "toPath": "/blog/onsight-overview-video/",
+    "type": 301,
+    "format": "plain"
+  },
+  {
+    "fromPath": "/videos.html",
+    "toPath": "/",
+    "type": 301,
+    "format": "plain"
+  },
+  {
+    "fromPath": "/company_management.html",
+    "toPath": "/about/",
+    "type": 301,
+    "format": "plain"
+  },
+  {
+    "fromPath": "/Partners.html",
+    "toPath": "/",
+    "type": 301,
+    "format": "plain"
+  },
+  {
+    "fromPath": "/Company_BoardofDirectors.html",
+    "toPath": "/about/",
+    "type": 301,
+    "format": "plain"
+  },
+  {
+    "fromPath": "/(.*).cfm",
+    "toPath": "/",
+    "type": 301,
+    "format": "regex"
+  },
+  {
+    "fromPath": "/automotive/(.*)",
+    "toPath": "/solutions/",
+    "type": 301,
+    "format": "regex"
+  },
+  {
+    "fromPath": "/Brochures/Whitepapers/(.*)",
+    "toPath": "/onsight-support/",
+    "type": 301,
+    "format": "regex"
+  },
+  {
+    "fromPath": "/cisco/overview",
+    "toPath": "/",
+    "type": 301,
+    "format": "plain"
+  },
+  {
+    "fromPath": "/Company(.*)",
+    "toPath": "/about/",
+    "type": 301,
+    "format": "regex"
+  },
+  {
+    "fromPath": "/contact.php",
+    "toPath": "/",
+    "type": 301,
+    "format": "plain"
+  },
+  {
+    "fromPath": "/fieldservice(.*)",
+    "toPath": "/solutions/",
+    "type": 301,
+    "format": "regex"
+  },
+  {
+    "fromPath": "/flv/(.*)",
+    "toPath": "/solutions/",
+    "type": 301,
+    "format": "regex"
+  },
+  {
+    "fromPath": "/(.*).swf",
+    "toPath": "/",
+    "type": 301,
+    "format": "regex"
+  },
+  {
+    "fromPath": "/military/(.*)",
+    "toPath": "/",
+    "type": 301,
+    "format": "regex"
+  },
+  {
+    "fromPath": "/ndt/(.*)",
+    "toPath": "/",
+    "type": 301,
+    "format": "regex"
+  },
+  {
+    "fromPath": "/FSAWARD.html",
+    "toPath": "/",
+    "type": 301,
+    "format": "plain"
+  },
+  {
+    "fromPath": "/info_request.html",
+    "toPath": "/",
+    "type": 301,
+    "format": "plain"
+  },
+  {
+    "fromPath": "/oilandgas/(.*)",
+    "toPath": "/solutions/",
+    "type": 301,
+    "format": "regex"
+  },
+  {
+    "fromPath": "/products/EULA/(.*)",
+    "toPath": "/support-archives/termsofuse/",
+    "type": 301,
+    "format": "regex"
+  },
+  {
+    "fromPath": "/pdf/OnsightWirelessConsiderations.pdf",
+    "toPath": "/onsight-support/",
+    "type": 301,
+    "format": "plain"
+  },
+  {
+    "fromPath": "/pdf/InlandAV.pdf",
+    "toPath": "/solutions/",
+    "type": 301,
+    "format": "plain"
+  },
+  {
+    "fromPath": "/Partners_CertifiedPartnerProgram.html",
+    "toPath": "/",
+    "type": 301,
+    "format": "plain"
+  },
+  {
+    "fromPath": "/newslettersignup.html",
+    "toPath": "/",
+    "type": 301,
+    "format": "plain"
+  },
+  {
+    "fromPath": "/Products_(.*)",
+    "toPath": "/products/",
+    "type": 301,
+    "format": "regex"
+  },
+  {
+    "fromPath": "/recycling",
+    "toPath": "/about/onsight-product-recycling/",
+    "type": 301,
+    "format": "plain"
+  },
+  {
+    "fromPath": "/search.php",
+    "toPath": "/",
+    "type": 301,
+    "format": "plain"
+  },
+  {
+    "fromPath": "/Solutions_(.*)",
+    "toPath": "/solutions/",
+    "type": 301,
+    "format": "regex"
+  },
+  {
+    "fromPath": "/Strategic_(.*)",
+    "toPath": "/solutions/",
+    "type": 301,
+    "format": "regex"
+  },
+  {
+    "fromPath": "/Support.html",
+    "toPath": "/onsight-support/",
+    "type": 301,
+    "format": "plain"
+  },
+  {
+    "fromPath": "/news/apr-19-2012",
+    "toPath": "/news/",
+    "type": 301,
+    "format": "plain"
+  },
+  {
+    "fromPath": "/News/Dec_2_2010.html",
+    "toPath": "/news/",
+    "type": 301,
+    "format": "plain"
+  },
+  {
+    "fromPath": "/news/dec-11-2009.html",
+    "toPath": "/news/",
+    "type": 301,
+    "format": "plain"
+  },
+  {
+    "fromPath": "/news/dec-19-2007.html",
+    "toPath": "/news/",
+    "type": 301,
+    "format": "plain"
+  },
+  {
+    "fromPath": "/News/Feb_18_2010.html",
+    "toPath": "/news/",
+    "type": 301,
+    "format": "plain"
+  },
+  {
+    "fromPath": "/News/Feb_5_2009.html",
+    "toPath": "/news/",
+    "type": 301,
+    "format": "plain"
+  },
+  {
+    "fromPath": "/News/Jan_28_2010.html",
+    "toPath": "/news/",
+    "type": 301,
+    "format": "plain"
+  },
+  {
+    "fromPath": "/News/Jan_5_2011.html",
+    "toPath": "/news/",
+    "type": 301,
+    "format": "plain"
+  },
+  {
+    "fromPath": "/News/Jan_6_2009.html",
+    "toPath": "/news/",
+    "type": 301,
+    "format": "plain"
+  },
+  {
+    "fromPath": "/News/Jan_7_2010.html",
+    "toPath": "/news/",
+    "type": 301,
+    "format": "plain"
+  },
+  {
+    "fromPath": "/news/jan-12-2016.html",
+    "toPath": "/news/",
+    "type": 301,
+    "format": "plain"
+  },
+  {
+    "fromPath": "/news/jan-20-2010.html",
+    "toPath": "/news/",
+    "type": 301,
+    "format": "plain"
+  },
+  {
+    "fromPath": "/News/July_11_2005.html",
+    "toPath": "/news/",
+    "type": 301,
+    "format": "plain"
+  },
+  {
+    "fromPath": "/News/June_07_2010.html",
+    "toPath": "/news/",
+    "type": 301,
+    "format": "plain"
+  },
+  {
+    "fromPath": "/News/June_21_2010.html",
+    "toPath": "/news/",
+    "type": 301,
+    "format": "plain"
+  },
+  {
+    "fromPath": "/news/june-15-2010.html",
+    "toPath": "/news/",
+    "type": 301,
+    "format": "plain"
+  },
+  {
+    "fromPath": "/News/Mar_25_2010.html",
+    "toPath": "/news/",
+    "type": 301,
+    "format": "plain"
+  },
+  {
+    "fromPath": "/news/mar-28-2011.html",
+    "toPath": "/news/",
+    "type": 301,
+    "format": "plain"
+  },
+  {
+    "fromPath": "/News/March_14_2008.html",
+    "toPath": "/news/",
+    "type": 301,
+    "format": "plain"
+  },
+  {
+    "fromPath": "/News/May_18_2011.html",
+    "toPath": "/news/",
+    "type": 301,
+    "format": "plain"
+  },
+  {
+    "fromPath": "/News/May_29_2009.html",
+    "toPath": "/news/",
+    "type": 301,
+    "format": "plain"
+  },
+  {
+    "fromPath": "/News/Nov_12_2008.html",
+    "toPath": "/news/",
+    "type": 301,
+    "format": "plain"
+  },
+  {
+    "fromPath": "/news/nov-10-2007.html",
+    "toPath": "/news/",
+    "type": 301,
+    "format": "plain"
+  },
+  {
+    "fromPath": "/news/nov-12(2)-2008.html",
+    "toPath": "/news/",
+    "type": 301,
+    "format": "plain"
+  },
+  {
+    "fromPath": "/news/nov-24-2007.html",
+    "toPath": "/news/",
+    "type": 301,
+    "format": "plain"
+  },
+  {
+    "fromPath": "/News/Oct_1_2009.html",
+    "toPath": "/news/",
+    "type": 301,
+    "format": "plain"
+  },
+  {
+    "fromPath": "/News/Oct_30_2008.html",
+    "toPath": "/news/",
+    "type": 301,
+    "format": "plain"
+  },
+  {
+    "fromPath": "/news/oct-20-2009.html",
+    "toPath": "/news/",
+    "type": 301,
+    "format": "plain"
+  },
+  {
+    "fromPath": "/news/oct-31-2007.html",
+    "toPath": "/news/",
+    "type": 301,
+    "format": "plain"
+  },
+  {
+    "fromPath": "/News/Sept_10_2006.html",
+    "toPath": "/news/",
+    "type": 301,
+    "format": "plain"
+  },
+  {
+    "fromPath": "/news/sept-2-2009.html",
+    "toPath": "/news/",
+    "type": 301,
+    "format": "plain"
+  },
+  {
+    "fromPath": "/News_Archives.html",
+    "toPath": "/news/",
+    "type": 301,
+    "format": "plain"
+  },
+  {
+    "fromPath": "/news_release/2008-11-19.php",
+    "toPath": "/news/",
+    "type": 301,
+    "format": "plain"
+  },
+  {
+    "fromPath": "/news_release/2008-12-05.php",
+    "toPath": "/news/",
+    "type": 301,
+    "format": "plain"
+  },
+  {
+    "fromPath": "/news_release/2008-12-10.php",
+    "toPath": "/news/",
+    "type": 301,
+    "format": "plain"
+  },
+  {
+    "fromPath": "/news_release/2009-02-05.php",
+    "toPath": "/news/",
+    "type": 301,
+    "format": "plain"
+  },
+  {
+    "fromPath": "/news_release/2009-05-08.php",
+    "toPath": "/news/",
+    "type": 301,
+    "format": "plain"
+  },
+  {
+    "fromPath": "/sitemap-US.xml",
+    "toPath": "/sitemapindex.xml",
+    "type": 301,
+    "format": "plain"
+  },
+  {
+    "fromPath": "/Solutions.html",
+    "toPath": "/solutions/",
+    "type": 301,
+    "format": "plain"
+  },
+  {
+    "fromPath": "/support/7.1/index.html",
+    "toPath": "/onsight-support/",
+    "type": 301,
+    "format": "plain"
+  },
+  {
+    "fromPath": "/support/knowbase",
+    "toPath": "/onsight-support/",
+    "type": 301,
+    "format": "plain"
+  },
+  {
+    "fromPath": "/support/OAMvideo.html",
+    "toPath": "/onsight-support/",
+    "type": 301,
+    "format": "plain"
+  },
+  {
+    "fromPath": "/support/OAMvideo1.html",
+    "toPath": "/onsight-support/",
+    "type": 301,
+    "format": "plain"
+  },
+  {
+    "fromPath": "/Support_FAQ.html",
+    "toPath": "/onsight-support/",
+    "type": 301,
+    "format": "plain"
+  },
+  {
+    "fromPath": "/Support_ReleaseBulletins.html",
+    "toPath": "/onsight-support/",
+    "type": 301,
+    "format": "plain"
+  },
+  {
+    "fromPath": "/Support_RMAForm.html",
+    "toPath": "/onsight-support/",
+    "type": 301,
+    "format": "plain"
+  },
+  {
+    "fromPath": "/Support_SupportRequest.html",
+    "toPath": "/onsight-support/",
+    "type": 301,
+    "format": "plain"
+  },
+  {
+    "fromPath": "/terms.html",
+    "toPath": "/support-archives/termsofuse/",
+    "type": 301,
+    "format": "plain"
+  },
+  {
+    "fromPath": "/Terms.html",
+    "toPath": "/support-archives/termsofuse/",
+    "type": 301,
+    "format": "plain"
+  },
+  {
+    "fromPath": "/video/mp4/SloMo_Final.mp4?_=1",
+    "toPath": "/solutions/",
+    "type": 301,
+    "format": "plain"
+  },
+  {
+    "fromPath": "/Video_Telehealth2.html",
+    "toPath": "/solutions/",
+    "type": 301,
+    "format": "plain"
+  },
+  {
+    "fromPath": "/virtualpresence/overview.html",
+    "toPath": "/solutions/",
+    "type": 301,
+    "format": "plain"
+  },
+  {
+    "fromPath": "/support/",
+    "toPath": "/onsight-support/",
+    "type": 301,
+    "format": "plain"
+  },
+  {
+    "fromPath": "/training-materials/",
+    "toPath": "/training-deployment-adoption-materials/",
+    "type": 301,
+    "format": "plain"
+  },
+  {
+    "fromPath": "/gettingstarted/findview",
+    "toPath": "/media/FindView.mp4",
+    "type": 301,
+    "format": "plain"
+  },
+  {
+    "fromPath": "/librestreamcms.kinsta.cloud/products/termsofuse.html",
+    "toPath": "/support-archives/termsofuse/",
+    "type": 301,
+    "format": "plain"
+  },
+  {
+    "fromPath": "/support/knowbase.html",
+    "toPath": "/training-deployment-adoption-materials/",
+    "type": 301,
+    "format": "plain"
+  },
+  {
+    "fromPath": "/recycling.html",
+    "toPath": "/about/onsight-product-recycling/",
+    "type": 301,
+    "format": "plain"
+  },
+  {
+    "fromPath": "/recycling",
+    "toPath": "/about/onsight-product-recycling/",
+    "type": 301,
+    "format": "plain"
+  },
+  {
+    "fromPath": "/blog/3-takeaways-from-the-industrial-vr-ar-foru",
+    "toPath": "/blog/3-takeaways-from-the-industrial-vr-ar-forum/",
+    "type": 301,
+    "format": "plain"
+  },
+  {
+    "fromPath": "/gettingstarted/uploading",
+    "toPath": "/media/Upload.mp4",
+    "type": 301,
+    "format": "plain"
+  },
+  {
+    "fromPath": "/gettingstarted/intro",
+    "toPath": "/media/Intro.mp4",
+    "type": 301,
+    "format": "plain"
+  },
+  {
+    "fromPath": "/userguides",
+    "toPath": "/onsight-support/",
+    "type": 301,
+    "format": "plain"
+  },
+  {
+    "fromPath": "/products/termsofuse.html",
+    "toPath": "/support-archives/termsofuse/",
+    "type": 301,
+    "format": "plain"
+  },
+  {
+    "fromPath": "/company-news/librestream-and-ecom-join-forces-to-improve-safety-for-the-oil-and-gas-industry-with-the-cube-ex",
+    "toPath": "/company-news/librestream-and-ecom-cube-ex/",
+    "type": 301,
+    "format": "plain"
+  },
+  {
+    "fromPath": "/support/cube",
+    "toPath": "/support/Cube/",
+    "type": 301,
+    "format": "plain"
+  },
+  {
+    "fromPath": "/use-cases/national-oilwell-varco-increase-effectiveness-of-service-technicians",
+    "toPath": "/use-cases/nov-increase-effectiveness-of-service-technicians/",
+    "type": 301,
+    "format": "plain"
+  },
+  {
+    "fromPath": "/use-cases/nov-increase-effectiveness-of-service-technicians",
+    "toPath": "/use-cases/nov/",
+    "type": 301,
+    "format": "plain"
+  },
+  {
+    "fromPath": "/onsight-privacy-notice-mobile",
+    "toPath": "/onsight-privacy-notice-mobile-2/",
+    "type": 301,
+    "format": "plain"
+  },
+  {
+    "fromPath": "/solutions/mobile-telepresence",
+    "toPath": "/solutions/remote-video-inspections/",
+    "type": 301,
+    "format": "plain"
+  },
+  {
+    "fromPath": "/products/onsight-embedded",
+    "toPath": "/products/",
+    "type": 301,
+    "format": "plain"
+  },
+  {
+    "fromPath": "/cube/instructions",
+    "toPath": "/support/Cube/",
+    "type": 301,
+    "format": "plain"
+  },
+  {
+    "fromPath": "/events/ewts-2018-2",
+    "toPath": "/events/ewts-2019/",
+    "type": 301,
+    "format": "plain"
+  },
+  {
+    "fromPath": "/products/platform",
+    "toPath": "/platform/",
+    "type": 301,
+    "format": "plain"
+  },
+  {
+    "fromPath": "/media/pdfs/AppNotes/Onsight-Firewall-and-Proxy-Configuration-Guide_400295-05.pdf",
+    "toPath": "/media/pdfs/Guides/Onsight-Firewall-and-Proxy-Configuration-Guide_400295-06.pdf",
+    "type": 301,
+    "format": "plain"
+  },
+  {
+    "fromPath": "/partner/6962-2",
+    "toPath": "/partner/realwear/",
+    "type": 301,
+    "format": "plain"
+  },
+  {
+    "fromPath": "/partner/7000-2",
+    "toPath": "/partner/microsoft/",
+    "type": 301,
+    "format": "plain"
+  },
+  {
+    "fromPath": "/partner/7001-2",
+    "toPath": "/partner/avanade/",
+    "type": 301,
+    "format": "plain"
+  },
+  {
+    "fromPath": "/media/pdfs/Guides/CubeUserGuide_400335-06_revA.pdf",
+    "toPath": "/media/pdfs/Guides/CubeUserGuide_400335-06_revA_02.04.2020.pdf",
+    "type": 301,
+    "format": "plain"
+  },
+  {
+    "fromPath": "/media/pdfs/Guides/OnsightRealWear-UserGuide_400349-01_revA.pdf",
+    "toPath": "/media/pdfs/Guides/OnsightRealWear-UserGuide_400349-01_revA_02.03.2020.pdf",
+    "type": 301,
+    "format": "plain"
+  },
+  {
+    "fromPath": "/events/join-us-at-hannover-messe-2020__trashed",
+    "toPath": "/events/join-us-at-hannover-messe-2020/",
+    "type": 301,
+    "format": "plain"
+  },
+  {
+    "fromPath": "/use-cases-2",
+    "toPath": "/use-cases/",
+    "type": 301,
+    "format": "plain"
+  },
+  {
+    "fromPath": "/media/Onsight-Pro.pdf",
+    "toPath": "/media/pdfs/Onsight-Pro.pdf",
+    "type": 301,
+    "format": "plain"
+  },
+  {
+    "fromPath": "/media/Onsight-Enterprise.pdf",
+    "toPath": "/media/pdfs/Onsight-Enterprise.pdf",
+    "type": 301,
+    "format": "plain"
+  },
+  {
+    "fromPath": "/media/Onsight-Essentials.pdf",
+    "toPath": "/media/pdfs/Onsight-Essentials.pdf",
+    "type": 301,
+    "format": "plain"
+  },
+  {
+    "fromPath": "/form-confirmations/mailing-list-form-confirmation-2",
+    "toPath": "/form-confirmations/telehealth-kit/",
+    "type": 301,
+    "format": "plain"
+  },
+  {
+    "fromPath": "/use-cases/ziegler-cat",
+    "toPath": "/use-cases/",
+    "type": 301,
+    "format": "plain"
+  },
+  {
+    "fromPath": "/support/tda-guide-onsight-flow",
+    "toPath": "/support/tda-videos-guide-onsight-flow/",
+    "type": 301,
+    "format": "plain"
+  },
+  {
+    "fromPath": "/support/tda-videos-onsight-hub",
+    "toPath": "/support/tda-videos-guides-onsight-cube/",
+    "type": 301,
+    "format": "plain"
+  },
+  {
+    "fromPath": "/support/tda-videos-onsight-connect",
+    "toPath": "/support/tda-videos-guides-onsight-connect/",
+    "type": 301,
+    "format": "plain"
+  },
+  {
+    "fromPath": "/support/tda-guides-onsight-hub",
+    "toPath": "/support/tda-videos-guides-onsight-hub/",
+    "type": 301,
+    "format": "plain"
+  },
+  {
+    "fromPath": "/company-news/librestream-realwear-team-up-to-provide-free-augmented-reality-solutions-to-organizations-facing-hurricane-laura-related-continuity-challenges",
+    "toPath": "/company-news/librestream-supports-hurricane-laura-related-challenges-with-free-augmented-reality-software/",
+    "type": 301,
+    "format": "plain"
+  },
+  {
+    "fromPath": "/reap-training-materials",
+    "toPath": "/remote-expert-ap-training-materials/",
+    "type": 301,
+    "format": "plain"
+  },
+  {
+    "fromPath": "/remote-expert-industry-guide",
+    "toPath": "/remote-expert-guide/",
+    "type": 301,
+    "format": "plain"
+  },
+  {
+    "fromPath": "/blog/librestream-platform-video-2020-2",
+    "toPath": "/blog/platform-video-2020/",
+    "type": 301,
+    "format": "plain"
+  },
+  {
+    "fromPath": "/blog/librestream-platform-video-2020",
+    "toPath": "/blog/platform-video-2020/",
+    "type": 301,
+    "format": "plain"
+  },
+  {
+    "fromPath": "/blog/platform-video-2020__trashed",
+    "toPath": "/blog/platform-video-2020/",
+    "type": 301,
+    "format": "plain"
+  },
+  {
+    "fromPath": "/test-forms",
+    "toPath": "/reseller-orders/",
+    "type": 301,
+    "format": "plain"
+  },
+  {
+    "fromPath": "/blog/renault-trucks-accelerates-service-with-optiview-powered-by-librestream-2",
+    "toPath": "/blog/volvo-trucks-deploy-augmented-reality-solutions-within-dealer-network/",
+    "type": 301,
+    "format": "plain"
+  },
+  {
+    "fromPath": "/solutions/military-operational-support-and-asset-inspection",
+    "toPath": "/solutions/defense-operations-and-sustainment/",
+    "type": 301,
+    "format": "plain"
+  },
+  {
+    "fromPath": "/products",
+    "toPath": "/platform/",
+    "type": 301,
+    "format": "plain"
+  },
+  {
+    "fromPath": "/remote-expert",
+    "toPath": "/platform/remote-expert/",
+    "type": 301,
+    "format": "plain"
+  },
+  {
+    "fromPath": "/guides/9335",
+    "toPath": "/guides/test-whitepaper/",
+    "type": 301,
+    "format": "plain"
+  },
+  {
+    "fromPath": "/guides-whitepapers",
+    "toPath": "/guides-and-whitepapers/",
+    "type": 301,
+    "format": "plain"
+  },
+  {
+    "fromPath": "/press-releases/librestream-extends-free-service-program-that-enabled-over-1500-individuals-to-safely-inspect-diagnose-and-train-despite-covid-19",
+    "toPath": "/news",
+    "type": 301,
+    "format": "plain"
+  },
+  {
+    "fromPath": "/company-news/librestream-supports-hurricane-laura-related-challenges-with-free-augmented-reality-software",
+    "toPath": "/news",
+    "type": 301,
+    "format": "plain"
+  },
+  {
+    "fromPath": "/events/webinar-onsight-summer-release-2020",
+    "toPath": "/news",
+    "type": 301,
+    "format": "plain"
+  },
+  {
+    "fromPath": "/events/tmforum-digital-transformation",
+    "toPath": "/events",
+    "type": 301,
+    "format": "plain"
+  },
+  {
+    "fromPath": "/events/join-us-at-ewts-everywhere",
+    "toPath": "/events",
+    "type": 301,
+    "format": "plain"
+  },
+  {
+    "fromPath": "/company-news/librestreams-remote-expert-augmented-reality-solution-selected-by-renault-trucks-uk-ireland-to-power-increased-uptime-and-productivity",
+    "toPath": "/news",
+    "type": 301,
+    "format": "plain"
+  },
+  {
+    "fromPath": "/articles/manufacturing-engineering-doing-double-duty",
+    "toPath": "/blog",
+    "type": 301,
+    "format": "plain"
+  },
+  {
+    "fromPath": "/company-news/onsight-version-6-2",
+    "toPath": "/blog",
+    "type": 301,
+    "format": "plain"
+  },
+  {
+    "fromPath": "/company-news/2500-mobile-device-announced",
+    "toPath": "/blog",
+    "type": 301,
+    "format": "plain"
+  },
+  {
+    "fromPath": "/company-news/newest-series-of-rugged-onsight-mobile-devices",
+    "toPath": "/blog",
+    "type": 301,
+    "format": "plain"
+  },
+  {
+    "fromPath": "/articles/mobile-collaboration-bring-savings-home",
+    "toPath": "/blog",
+    "type": 301,
+    "format": "plain"
+  },
+  {
+    "fromPath": "/company-news/expanded-mobile-collaboration-on-ios-devices",
+    "toPath": "/blog",
+    "type": 301,
+    "format": "plain"
+  },
+  {
+    "fromPath": "/company-news/onsight-version-6-1",
+    "toPath": "/blog",
+    "type": 301,
+    "format": "plain"
+  },
+  {
+    "fromPath": "/articles/librestream-top-enterprise-video-collaboration-providers-by-abi-research",
+    "toPath": "/blog",
+    "type": 301,
+    "format": "plain"
+  },
+  {
+    "fromPath": "/company-news/automotive-manufacturers-deploy-virtual-presence-systems-globally",
+    "toPath": "/blog",
+    "type": 301,
+    "format": "plain"
+  },
+  {
+    "fromPath": "/company-news/oilfield-customer-feature-onsight",
+    "toPath": "/blog",
+    "type": 301,
+    "format": "plain"
+  },
+  {
+    "fromPath": "/company-news/onsight-version-6-3",
+    "toPath": "/blog",
+    "type": 301,
+    "format": "plain"
+  },
+  {
+    "fromPath": "/company-news/sub-zero-achieves-manufacturing-leadership-award",
+    "toPath": "/blog",
+    "type": 301,
+    "format": "plain"
+  },
+  {
+    "fromPath": "/articles/virtual-tools-close-gap-between-remote-operations-og-experts",
+    "toPath": "/blog",
+    "type": 301,
+    "format": "plain"
+  },
+  {
+    "fromPath": "/blog/onsight-rugged-industrial-camera",
+    "toPath": "/blog",
+    "type": 301,
+    "format": "plain"
+  },
+  {
+    "fromPath": "/articles/gerber-collision-glass",
+    "toPath": "/blog",
+    "type": 301,
+    "format": "plain"
+  },
+  {
+    "fromPath": "/articles/oil-and-gas-satellite",
+    "toPath": "/blog",
+    "type": 301,
+    "format": "plain"
+  },
+  {
+    "fromPath": "/articles/virtual-presence-technology-enhances-productivity-safety",
+    "toPath": "/blog",
+    "type": 301,
+    "format": "plain"
+  },
+  {
+    "fromPath": "/blog/verizon-wind-farm",
+    "toPath": "/blog",
+    "type": 301,
+    "format": "plain"
+  },
+  {
+    "fromPath": "/company-news/librestream-integrates-with-cisco-uc",
+    "toPath": "/blog",
+    "type": 301,
+    "format": "plain"
+  },
+  {
+    "fromPath": "/company-news/amid-global-turmoil-manufacturers-conduct-business-from-afar-with-librestreams-onsight",
+    "toPath": "/blog",
+    "type": 301,
+    "format": "plain"
+  },
+  {
+    "fromPath": "/blog/being-in-two-places-at-one-time",
+    "toPath": "/blog",
+    "type": 301,
+    "format": "plain"
+  },
+  {
+    "fromPath": "/company-news/optimized-for-low-bandwidth",
+    "toPath": "/blog",
+    "type": 301,
+    "format": "plain"
+  },
+  {
+    "fromPath": "/articles/remote-operations-centers",
+    "toPath": "/blog",
+    "type": 301,
+    "format": "plain"
+  },
+  {
+    "fromPath": "/company-news/cisco-interoperability-verification-testing",
+    "toPath": "/blog",
+    "type": 301,
+    "format": "plain"
+  },
+  {
+    "fromPath": "/articles/telepresence-in-manufacturing",
+    "toPath": "/blog",
+    "type": 301,
+    "format": "plain"
+  },
+  {
+    "fromPath": "/company-news/extend-onsight-mobile-collaboration-verizon",
+    "toPath": "/blog",
+    "type": 301,
+    "format": "plain"
+  },
+  {
+    "fromPath": "/company-news/teasacom",
+    "toPath": "/blog",
+    "type": 301,
+    "format": "plain"
+  },
+  {
+    "fromPath": "/company-news/newest-release-of-its-onsight-mobile-collaboration-platform",
+    "toPath": "/blog",
+    "type": 301,
+    "format": "plain"
+  },
+  {
+    "fromPath": "/blog/the-tinkers-toolbox",
+    "toPath": "/blog",
+    "type": 301,
+    "format": "plain"
+  },
+  {
+    "fromPath": "/articles/long-distance-relationship",
+    "toPath": "/blog",
+    "type": 301,
+    "format": "plain"
+  },
+  {
+    "fromPath": "/company-news/onsight-version-4-5",
+    "toPath": "/blog",
+    "type": 301,
+    "format": "plain"
+  },
+  {
+    "fromPath": "/blog/advances-in-video-collaboration",
+    "toPath": "/blog",
+    "type": 301,
+    "format": "plain"
+  },
+  {
+    "fromPath": "/articles/long-range-troubleshooting",
+    "toPath": "/blog",
+    "type": 301,
+    "format": "plain"
+  },
+  {
+    "fromPath": "/company-news/streaming-video-can-economize-vendor-acceptance-tests-on-equipment",
+    "toPath": "/blog",
+    "type": 301,
+    "format": "plain"
+  },
+  {
+    "fromPath": "/company-news/us-national-guard-deploys-video-collaboration",
+    "toPath": "/blog",
+    "type": 301,
+    "format": "plain"
+  },
+  {
+    "fromPath": "/form_confirmations/10431",
+    "toPath": "/form_confirmations/wbr-report/",
+    "type": 301,
+    "format": "plain"
+  },
+  {
+    "fromPath": "/hololens2-webinar",
+    "toPath": "/webinars/webinar-exclusive-look-at-the-onsight-connect-for-hololens-2/",
+    "type": 301,
+    "format": "plain"
+  },
+  {
+    "fromPath": "/webinars/webinar-exclusive-look-at-the-onsight-connect-for-hololens-2",
+    "toPath": "/webinars/hololens2/",
+    "type": 301,
+    "format": "plain"
+  },
+  {
+    "fromPath": "/webinars/webinar-remote-audits-inspections-future-proofing-your-operations-against-disruption",
+    "toPath": "/webinars/foodsure/",
+    "type": 301,
+    "format": "plain"
+  },
+  {
+    "fromPath": "/foodsure-webinar",
+    "toPath": "/webinars/foodsure/",
+    "type": 301,
+    "format": "plain"
+  },
+  {
+    "fromPath": "/onsight-flow-webinar",
+    "toPath": "/form-confirmations/onsight-flow-customer-webinar/",
+    "type": 301,
+    "format": "plain"
+  },
+  {
+    "fromPath": "/resources/test-whitepaper",
+    "toPath": "/resources/wbr-report/",
+    "type": 301,
+    "format": "plain"
+  },
+  {
+    "fromPath": "/wbr-report",
+    "toPath": "/resources/wbr-report/",
+    "type": 301,
+    "format": "plain"
+  },
+  {
+    "fromPath": "/remote-expert-guide",
+    "toPath": "/resources/remote-expert/guide/",
+    "type": 301,
+    "format": "plain"
+  },
+  {
+    "fromPath": "/verdantix-report",
+    "toPath": "/resources/verdantix-report/",
+    "type": 301,
+    "format": "plain"
+  },
+  {
+    "fromPath": "/cybersecurity-whitepaper",
+    "toPath": "/resources/cybersecurity-whitepaper/",
+    "type": 301,
+    "format": "plain"
+  },
+  {
+    "fromPath": "/solutions/energy-asset-maintenance-and-hse-mobility-2",
+    "toPath": "/solutions/wearables/",
+    "type": 301,
+    "format": "plain"
+  },
+  {
+    "fromPath": "/webinars/webinar-onsight-teams-app",
+    "toPath": "/webinars/power-up-your-collaboration-in-microsoft-teams-with-onsight/",
+    "type": 301,
+    "format": "plain"
+  },
+  {
+    "fromPath": "/solutions/video-enabled-services",
+    "toPath": "/solutions/video-enabled-service/",
+    "type": 301,
+    "format": "plain"
+  },
+  {
+    "fromPath": "/use-cases/volvo",
+    "toPath": "/use-cases/",
+    "type": 301,
+    "format": "plain"
+  },
+  {
+    "fromPath": "/test-sf-f",
+    "toPath": "/test-sf-form/",
+    "type": 301,
+    "format": "plain"
+  },
+  {
+    "fromPath": "/solutions/video-enabled-service",
+    "toPath": "/blog/key-challenges-affecting-collaboration-between-field-teams-and-remote-experts/",
+    "type": 301,
+    "format": "plain"
+  },
+  {
+    "fromPath": "/solutions/wearables",
+    "toPath": "/blog/4-drivers-of-augmented-reality-wearables-in-2021/",
+    "type": 301,
+    "format": "plain"
+  },
+  {
+    "fromPath": "/partner/verizon",
+    "toPath": "/partner/verizon-2/",
+    "type": 301,
+    "format": "plain"
+  },
+  {
+    "fromPath": "/products/onsight-cube-ex",
+    "toPath": "/specialized-accessories/",
+    "type": 301,
+    "format": "plain"
+  },
+  {
+    "fromPath": "/products/onsight-cube",
+    "toPath": "/specialized-accessories/",
+    "type": 301,
+    "format": "plain"
+  },
+  {
+    "fromPath": "/products/onsight-flow",
+    "toPath": "/platform/digital-work-instructions/",
+    "type": 301,
+    "format": "plain"
+  },
+  {
+    "fromPath": "/products/onsight-workspace",
+    "toPath": "/platform/knowledge-base/",
+    "type": 301,
+    "format": "plain"
+  },
+  {
+    "fromPath": "/products/onsight-connect",
+    "toPath": "/platform/remote-expert/",
+    "type": 301,
+    "format": "plain"
+  },
+  {
+    "fromPath": "/products/onsight-collaboration-hub",
+    "toPath": "/platform/specialized-accessories/",
+    "type": 301,
+    "format": "plain"
+  },
+  {
+    "fromPath": "/products/onsight-management",
+    "toPath": "/platform/",
+    "type": 301,
+    "format": "plain"
+  },
+  {
+    "fromPath": "/about/history/",
+    "toPath": "/about/",
+    "type": 301,
+    "format": "plain"
+  },
+  {
+    "fromPath": "/about/mobile-innovator-award/",
+    "toPath": "/about/",
+    "type": 301,
+    "format": "plain"
+  },
+  {
+    "fromPath": "/ai-connected-expert-ewts/",
+    "toPath": "/events/",
+    "type": 301,
+    "format": "plain"
+  },
+  {
+    "fromPath": "/ar-telehealth-webinar/",
+    "toPath": "/webinars/",
+    "type": 301,
+    "format": "plain"
+  },
+  {
+    "fromPath": "/articles/3-ways-video-collaboration-empowers-your-service-operation/",
+    "toPath": "/blog/",
+    "type": 301,
+    "format": "plain"
+  },
+  {
+    "fromPath": "/articles/advances-in-video-collaboration/",
+    "toPath": "/blog/",
+    "type": 301,
+    "format": "plain"
+  },
+  {
+    "fromPath": "/articles/being-in-two-places-at-one-time/",
+    "toPath": "/blog/",
+    "type": 301,
+    "format": "plain"
+  },
+  {
+    "fromPath": "/articles/building-business-case-for-ar/",
+    "toPath": "/blog/",
+    "type": 301,
+    "format": "plain"
+  },
+  {
+    "fromPath": "/articles/claims-processing-simplified-with-virtual-presence-technology/",
+    "toPath": "/blog/",
+    "type": 301,
+    "format": "plain"
+  },
+  {
+    "fromPath": "/articles/connecting-onsite-wind-techs-with-offsite-support/",
+    "toPath": "/blog/",
+    "type": 301,
+    "format": "plain"
+  },
+  {
+    "fromPath": "/articles/dreamliner-production/",
+    "toPath": "/blog/",
+    "type": 301,
+    "format": "plain"
+  },
+  {
+    "fromPath": "/articles/four-ways-virtual-presence-is-transforming-the-claims-process/",
+    "toPath": "/blog/",
+    "type": 301,
+    "format": "plain"
+  },
+  {
+    "fromPath": "/articles/how-to-embrace-augmented-reality-in-field-service/",
+    "toPath": "/blog/",
+    "type": 301,
+    "format": "plain"
+  },
+  {
+    "fromPath": "/articles/investments-in-it-collaboration-simplification-to-can-help-up-efficiencies/",
+    "toPath": "/blog/",
+    "type": 301,
+    "format": "plain"
+  },
+  {
+    "fromPath": "/articles/jedi-comes-to-our-galaxy/",
+    "toPath": "/blog/",
+    "type": 301,
+    "format": "plain"
+  },
+  {
+    "fromPath": "/articles/librestream-onsight-review-telbit/",
+    "toPath": "/blog/",
+    "type": 301,
+    "format": "plain"
+  },
+  {
+    "fromPath": "/articles/librestream-top-enterprise-video-collaboration-providers-by-abi-research/",
+    "toPath": "/blog/",
+    "type": 301,
+    "format": "plain"
+  },
+  {
+    "fromPath": "/articles/long-distance-relationship/",
+    "toPath": "/blog/",
+    "type": 301,
+    "format": "plain"
+  },
+  {
+    "fromPath": "/articles/long-range-troubleshooting/",
+    "toPath": "/blog/",
+    "type": 301,
+    "format": "plain"
+  },
+  {
+    "fromPath": "/articles/manufacturing-business-technology/",
+    "toPath": "/blog/",
+    "type": 301,
+    "format": "plain"
+  },
+  {
+    "fromPath": "/articles/manufacturing-engineering-doing-double-duty/",
+    "toPath": "/blog/",
+    "type": 301,
+    "format": "plain"
+  },
+  {
+    "fromPath": "/articles/mobile-collaboration-bring-savings-home/",
+    "toPath": "/blog/",
+    "type": 301,
+    "format": "plain"
+  },
+  {
+    "fromPath": "/articles/oil-and-gas-satellite/",
+    "toPath": "/blog/",
+    "type": 301,
+    "format": "plain"
+  },
+  {
+    "fromPath": "/articles/remote-operations-centers/",
+    "toPath": "/blog/",
+    "type": 301,
+    "format": "plain"
+  },
+  {
+    "fromPath": "/articles/remote-technologies-augment-capabilities/",
+    "toPath": "/blog/",
+    "type": 301,
+    "format": "plain"
+  },
+  {
+    "fromPath": "/articles/secure-wi-fi-video-on-the-battlefield/",
+    "toPath": "/blog/",
+    "type": 301,
+    "format": "plain"
+  },
+  {
+    "fromPath": "/articles/take-a-real-time-look-at-damage-before-setting-foot-on-site/",
+    "toPath": "/blog/",
+    "type": 301,
+    "format": "plain"
+  },
+  {
+    "fromPath": "/articles/telepresence-in-manufacturing/",
+    "toPath": "/blog/",
+    "type": 301,
+    "format": "plain"
+  },
+  {
+    "fromPath": "/articles/the-big-discussion-augmented-reality/",
+    "toPath": "/blog/",
+    "type": 301,
+    "format": "plain"
+  },
+  {
+    "fromPath": "/articles/three-ways-digital-technologies-improve-machine-safety/",
+    "toPath": "/blog/",
+    "type": 301,
+    "format": "plain"
+  },
+  {
+    "fromPath": "/articles/virtual-presence-technology-enhances-productivity-safety/",
+    "toPath": "/blog/",
+    "type": 301,
+    "format": "plain"
+  },
+  {
+    "fromPath": "/articles/virtual-tools-close-gap-between-remote-operations-og-experts/",
+    "toPath": "/blog/",
+    "type": 301,
+    "format": "plain"
+  },
+  {
+    "fromPath": "/articles/wearable-advancements-expand-ar-use-cases-in-field-service/",
+    "toPath": "/blog/",
+    "type": 301,
+    "format": "plain"
+  },
+  {
+    "fromPath": "/articles/why-iot-future-of-field-service/",
+    "toPath": "/blog/",
+    "type": 301,
+    "format": "plain"
+  },
+  {
+    "fromPath": "/blog/2018-customer-forums/",
+    "toPath": "/blog/",
+    "type": 301,
+    "format": "plain"
+  },
+  {
+    "fromPath": "/blog/a-better-way-to-collaborate-in-industry/",
+    "toPath": "/blog/",
+    "type": 301,
+    "format": "plain"
+  },
+  {
+    "fromPath": "/blog/aerospace-demo-video/",
+    "toPath": "/blog/",
+    "type": 301,
+    "format": "plain"
+  },
+  {
+    "fromPath": "/blog/cisco-the-factory-of-the-future-is-already-here/",
+    "toPath": "/blog/",
+    "type": 301,
+    "format": "plain"
+  },
+  {
+    "fromPath": "/blog/collaborate-on-projects-from-near-or-far/",
+    "toPath": "/blog/",
+    "type": 301,
+    "format": "plain"
+  },
+  {
+    "fromPath": "/blog/cube-demo-video/",
+    "toPath": "/blog/",
+    "type": 301,
+    "format": "plain"
+  },
+  {
+    "fromPath": "/blog/cube-ex-video/",
+    "toPath": "/blog/",
+    "type": 301,
+    "format": "plain"
+  },
+  {
+    "fromPath": "/blog/demo-onsight-flow/",
+    "toPath": "/blog/",
+    "type": 301,
+    "format": "plain"
+  },
+  {
+    "fromPath": "/blog/digitize-your-workers-day-with-onsight-video/",
+    "toPath": "/blog/",
+    "type": 301,
+    "format": "plain"
+  },
+  {
+    "fromPath": "/blog/how-is-augmented-reality-helping-support-workers-video/",
+    "toPath": "/blog/",
+    "type": 301,
+    "format": "plain"
+  },
+  {
+    "fromPath": "/blog/librestream-platform-video-2020/",
+    "toPath": "/blog/",
+    "type": 301,
+    "format": "plain"
+  },
+  {
+    "fromPath": "/blog/onsight-cube-hockey-scrimmage/",
+    "toPath": "/blog/",
+    "type": 301,
+    "format": "plain"
+  },
+  {
+    "fromPath": "/blog/onsight-rugged-industrial-camera/",
+    "toPath": "/blog/",
+    "type": 301,
+    "format": "plain"
+  },
+  {
+    "fromPath": "/blog/platform-video-2020/",
+    "toPath": "/blog/",
+    "type": 301,
+    "format": "plain"
+  },
+  {
+    "fromPath": "/blog/power-up-your-collaboration-in-microsoft-teams-with-onsight/",
+    "toPath": "/blog/",
+    "type": 301,
+    "format": "plain"
+  },
+  {
+    "fromPath": "/blog/realwear-demo-of-onsight-2018/",
+    "toPath": "/blog/",
+    "type": 301,
+    "format": "plain"
+  },
+  {
+    "fromPath": "/blog/tear-3m-operationalizing-augmented-reality-within-the-defense-industry/",
+    "toPath": "/blog/",
+    "type": 301,
+    "format": "plain"
+  },
+  {
+    "fromPath": "/blog/the-dig-cec-mining-systems-adopt-augmented-reality/",
+    "toPath": "/blog/",
+    "type": 301,
+    "format": "plain"
+  },
+  {
+    "fromPath": "/blog/the-tinkers-toolbox/",
+    "toPath": "/blog/",
+    "type": 301,
+    "format": "plain"
+  },
+  {
+    "fromPath": "/blog/transforming-service-at-renault-trucks-using-hands-free-remote-support-realwear-x-librestream/",
+    "toPath": "/blog/",
+    "type": 301,
+    "format": "plain"
+  },
+  {
+    "fromPath": "/blog/verizon-wind-farm/",
+    "toPath": "/blog/",
+    "type": 301,
+    "format": "plain"
+  },
+  {
+    "fromPath": "/blog/video-hatch-remote-inspections/",
+    "toPath": "/blog/",
+    "type": 301,
+    "format": "plain"
+  },
+  {
+    "fromPath": "/blog/video-mro-europe-2017-recap/",
+    "toPath": "/blog/",
+    "type": 301,
+    "format": "plain"
+  },
+  {
+    "fromPath": "/blog/video-onsight-cube/",
+    "toPath": "/blog/",
+    "type": 301,
+    "format": "plain"
+  },
+  {
+    "fromPath": "/blog/video-onsight-cube-industrial-wearable-1kg-impact-test/",
+    "toPath": "/blog/",
+    "type": 301,
+    "format": "plain"
+  },
+  {
+    "fromPath": "/blog/video-onsight-cube-industrial-wearable-2-metre-drop-test/",
+    "toPath": "/blog/",
+    "type": 301,
+    "format": "plain"
+  },
+  {
+    "fromPath": "/blog/video-onsight-cube-industrial-wearable-splash-test/",
+    "toPath": "/blog/",
+    "type": 301,
+    "format": "plain"
+  },
+  {
+    "fromPath": "/blog/video-onsight-cube-industrial-wearable-the-rugged-test/",
+    "toPath": "/blog/",
+    "type": 301,
+    "format": "plain"
+  },
+  {
+    "fromPath": "/blog/video-onsight-cube-launch/",
+    "toPath": "/blog/",
+    "type": 301,
+    "format": "plain"
+  },
+  {
+    "fromPath": "/blog/video-safran-expert-link-new-remote-assistance-service/",
+    "toPath": "/blog/",
+    "type": 301,
+    "format": "plain"
+  },
+  {
+    "fromPath": "/blog/webinar-digital-service-worker/",
+    "toPath": "/blog/",
+    "type": 301,
+    "format": "plain"
+  },
+  {
+    "fromPath": "/blog/webinar-digital-transformation-linking-people-technology/",
+    "toPath": "/blog/",
+    "type": 301,
+    "format": "plain"
+  },
+  {
+    "fromPath": "/blog/webinar-sdce-iot-ii/",
+    "toPath": "/blog/",
+    "type": 301,
+    "format": "plain"
+  },
+  {
+    "fromPath": "/blog/webinar-shift-to-paperless/",
+    "toPath": "/blog/",
+    "type": 301,
+    "format": "plain"
+  },
+  {
+    "fromPath": "/blog/webinar-the-wearable-revolution/",
+    "toPath": "/blog/",
+    "type": 301,
+    "format": "plain"
+  },
+  {
+    "fromPath": "/business-continuity2/",
+    "toPath": "/remote-expert-package-free-trial/",
+    "type": 301,
+    "format": "plain"
+  },
+  {
+    "fromPath": "/business-continuity-package/",
+    "toPath": "/remote-expert-package-free-trial/",
+    "type": 301,
+    "format": "plain"
+  },
+  {
+    "fromPath": "/company-news/2015-frost-award-video/",
+    "toPath": "/blog/",
+    "type": 301,
+    "format": "plain"
+  },
+  {
+    "fromPath": "/company-news/2500-mobile-device-announced/",
+    "toPath": "/blog/",
+    "type": 301,
+    "format": "plain"
+  },
+  {
+    "fromPath": "/company-news/amid-global-turmoil-manufacturers-conduct-business-from-afar-with-librestreams-onsight/",
+    "toPath": "/blog/",
+    "type": 301,
+    "format": "plain"
+  },
+  {
+    "fromPath": "/company-news/automotive-manufacturers-deploy-virtual-presence-systems-globally/",
+    "toPath": "/blog/",
+    "type": 301,
+    "format": "plain"
+  },
+  {
+    "fromPath": "/company-news/barloworld-equipment-innovates/",
+    "toPath": "/blog/",
+    "type": 301,
+    "format": "plain"
+  },
+  {
+    "fromPath": "/company-news/belgian-air-force-to-benefit-from-safran/",
+    "toPath": "/blog/",
+    "type": 301,
+    "format": "plain"
+  },
+  {
+    "fromPath": "/company-news/bt-features-librestreams-onsight-augmented-worker-platform-in-its-connected-industry-customer-showcase/",
+    "toPath": "/blog/",
+    "type": 301,
+    "format": "plain"
+  },
+  {
+    "fromPath": "/company-news/cisco-interoperability-verification-testing/",
+    "toPath": "/blog/",
+    "type": 301,
+    "format": "plain"
+  },
+  {
+    "fromPath": "/company-news/collaboration-hub/",
+    "toPath": "/blog/",
+    "type": 301,
+    "format": "plain"
+  },
+  {
+    "fromPath": "/company-news/connecting-remote-teams-virtually-to-support-rolls-royce-on-time-every-time-vision/",
+    "toPath": "/blog/",
+    "type": 301,
+    "format": "plain"
+  },
+  {
+    "fromPath": "/company-news/cube-shipping/",
+    "toPath": "/blog/",
+    "type": 301,
+    "format": "plain"
+  },
+  {
+    "fromPath": "/company-news/delegates-award-at-hazardex-2020/",
+    "toPath": "/blog/",
+    "type": 301,
+    "format": "plain"
+  },
+  {
+    "fromPath": "/company-news/deployment-onsight-bw-catcher/",
+    "toPath": "/blog/",
+    "type": 301,
+    "format": "plain"
+  },
+  {
+    "fromPath": "/company-news/diebold-uses-live-video-collaboration-solution/",
+    "toPath": "/blog/",
+    "type": 301,
+    "format": "plain"
+  },
+  {
+    "fromPath": "/company-news/expanded-content-mgmt-and-ar/",
+    "toPath": "/blog/",
+    "type": 301,
+    "format": "plain"
+  },
+  {
+    "fromPath": "/company-news/expanded-mobile-collaboration-on-ios-devices/",
+    "toPath": "/blog/",
+    "type": 301,
+    "format": "plain"
+  },
+  {
+    "fromPath": "/company-news/extend-onsight-mobile-collaboration-verizon/",
+    "toPath": "/blog/",
+    "type": 301,
+    "format": "plain"
+  },
+  {
+    "fromPath": "/company-news/fortress-partnership/",
+    "toPath": "/blog/",
+    "type": 301,
+    "format": "plain"
+  },
+  {
+    "fromPath": "/company-news/free-remote-expert-collaboration/",
+    "toPath": "/blog/",
+    "type": 301,
+    "format": "plain"
+  },
+  {
+    "fromPath": "/company-news/gerber-collision-and-glass/",
+    "toPath": "/blog/",
+    "type": 301,
+    "format": "plain"
+  },
+  {
+    "fromPath": "/company-news/grocery-giant-tesco-receives-top-supply-chain-award-for-its-implementation-of-librestreams-onsight-augmented-reality-technology/",
+    "toPath": "/blog/",
+    "type": 301,
+    "format": "plain"
+  },
+  {
+    "fromPath": "/company-news/honeywell-and-evergy-ventures-invest-in-librestream-to-advance-industrial-workforce-transformation/",
+    "toPath": "/blog/",
+    "type": 301,
+    "format": "plain"
+  },
+  {
+    "fromPath": "/company-news/librestream-and-ecom-cube-ex/",
+    "toPath": "/blog/",
+    "type": 301,
+    "format": "plain"
+  },
+  {
+    "fromPath": "/company-news/librestream-and-olympus-bring-remote-ndtrvi-experts-into-the-field-virtually/",
+    "toPath": "/blog/",
+    "type": 301,
+    "format": "plain"
+  },
+  {
+    "fromPath": "/company-news/librestream-and-realwear-partner-on-hands-free-virtual-presence-for-enterprises/",
+    "toPath": "/blog/",
+    "type": 301,
+    "format": "plain"
+  },
+  {
+    "fromPath": "/company-news/librestream-and-samsung-collaborate-to-deliver-an-augmented-reality-solution-for-improved-worker-communications-and-safety/",
+    "toPath": "/blog/",
+    "type": 301,
+    "format": "plain"
+  },
+  {
+    "fromPath": "/company-news/librestream-closes-financing-to-accelerate-growth/",
+    "toPath": "/blog/",
+    "type": 301,
+    "format": "plain"
+  },
+  {
+    "fromPath": "/company-news/librestream-closes-series-d-financing-round-of-24-million-to-expand-market-presence-for-its-augmented-worker-platform/",
+    "toPath": "/blog/",
+    "type": 301,
+    "format": "plain"
+  },
+  {
+    "fromPath": "/company-news/librestream-earns-top-honors-from-frost-sullivan-for-its-onsight-video-collaboration-solution/",
+    "toPath": "/blog/",
+    "type": 301,
+    "format": "plain"
+  },
+  {
+    "fromPath": "/company-news/librestream-ecom-join-forces/",
+    "toPath": "/blog/",
+    "type": 301,
+    "format": "plain"
+  },
+  {
+    "fromPath": "/company-news/librestream-extends-free-service-program-that-enabled-over-1500-individuals-to-safely-inspect-diagnose-and-train-despite-covid-19/",
+    "toPath": "/blog/",
+    "type": 301,
+    "format": "plain"
+  },
+  {
+    "fromPath": "/company-news/librestream-extends-iot-capabilities-of-the-onsight-400r-collaboration-hub/",
+    "toPath": "/blog/",
+    "type": 301,
+    "format": "plain"
+  },
+  {
+    "fromPath": "/company-news/librestream-identified-as-top-augmented-reality-service-provider-by-independent-research-firm/",
+    "toPath": "/blog/",
+    "type": 301,
+    "format": "plain"
+  },
+  {
+    "fromPath": "/company-news/librestream-integrates-with-cisco-uc/",
+    "toPath": "/blog/",
+    "type": 301,
+    "format": "plain"
+  },
+  {
+    "fromPath": "/company-news/librestream-introduces-onsight/",
+    "toPath": "/blog/",
+    "type": 301,
+    "format": "plain"
+  },
+  {
+    "fromPath": "/company-news/librestream-launches-augmented-reality-dimensioning-capability/",
+    "toPath": "/blog/",
+    "type": 301,
+    "format": "plain"
+  },
+  {
+    "fromPath": "/company-news/librestream-launches-next-generation-of-its-pioneer-rugged-smart-camera/",
+    "toPath": "/blog/",
+    "type": 301,
+    "format": "plain"
+  },
+  {
+    "fromPath": "/company-news/librestream-named-supply-demand-chain-executives-100-top/",
+    "toPath": "/blog/",
+    "type": 301,
+    "format": "plain"
+  },
+  {
+    "fromPath": "/company-news/librestream-onsight-flow/",
+    "toPath": "/blog/",
+    "type": 301,
+    "format": "plain"
+  },
+  {
+    "fromPath": "/company-news/librestream-powers-new-remote-assistance-service-safran/",
+    "toPath": "/blog/",
+    "type": 301,
+    "format": "plain"
+  },
+  {
+    "fromPath": "/company-news/librestream-reaches-milestones/",
+    "toPath": "/blog/",
+    "type": 301,
+    "format": "plain"
+  },
+  {
+    "fromPath": "/company-news/librestreams-onsight-ar-platform-selected-by-safran-for-remote-assistance-within-service-operations/",
+    "toPath": "/blog/",
+    "type": 301,
+    "format": "plain"
+  },
+  {
+    "fromPath": "/company-news/librestreams-remote-expert-augmented-reality-solution-selected-by-renault-trucks-uk-ireland-to-power-increased-uptime-and-productivity/",
+    "toPath": "/blog/",
+    "type": 301,
+    "format": "plain"
+  },
+  {
+    "fromPath": "/company-news/librestream-supports-hurricane-laura-related-challenges-with-free-augmented-reality-software/",
+    "toPath": "/blog/",
+    "type": 301,
+    "format": "plain"
+  },
+  {
+    "fromPath": "/company-news/librestream-technologies-joins-edge-innovation-network/",
+    "toPath": "/blog/",
+    "type": 301,
+    "format": "plain"
+  },
+  {
+    "fromPath": "/company-news/librestream-wins-cisco-solution-partner-program-business-outcomes/",
+    "toPath": "/blog/",
+    "type": 301,
+    "format": "plain"
+  },
+  {
+    "fromPath": "/company-news/librestream-wins-field-service-wbr-award/",
+    "toPath": "/blog/",
+    "type": 301,
+    "format": "plain"
+  },
+  {
+    "fromPath": "/company-news/live-video-collaboration-solution-from-librestream-earns-diebold-frost-sullivans-customer-value-leadership-award/",
+    "toPath": "/blog/",
+    "type": 301,
+    "format": "plain"
+  },
+  {
+    "fromPath": "/company-news/maintaining-a-virtual-presence/",
+    "toPath": "/blog/",
+    "type": 301,
+    "format": "plain"
+  },
+  {
+    "fromPath": "/company-news/multinational-manufacturer-buys-onsight-collaboration-system-from-librestream-to-replace-travel-to-mexico/",
+    "toPath": "/blog/",
+    "type": 301,
+    "format": "plain"
+  },
+  {
+    "fromPath": "/company-news/newest-release-of-its-onsight-mobile-collaboration-platform/",
+    "toPath": "/blog/",
+    "type": 301,
+    "format": "plain"
+  },
+  {
+    "fromPath": "/company-news/newest-series-of-rugged-onsight-mobile-devices/",
+    "toPath": "/blog/",
+    "type": 301,
+    "format": "plain"
+  },
+  {
+    "fromPath": "/company-news/new-important-changes-to-onsight-release-version-8-1/",
+    "toPath": "/blog/",
+    "type": 301,
+    "format": "plain"
+  },
+  {
+    "fromPath": "/company-news/new-venture/",
+    "toPath": "/blog/",
+    "type": 301,
+    "format": "plain"
+  },
+  {
+    "fromPath": "/company-news/oilfield-customer-feature-onsight/",
+    "toPath": "/blog/",
+    "type": 301,
+    "format": "plain"
+  },
+  {
+    "fromPath": "/company-news/onsight-2000ex/",
+    "toPath": "/blog/",
+    "type": 301,
+    "format": "plain"
+  },
+  {
+    "fromPath": "/company-news/onsight-2000r-mobile-collaboration-device/",
+    "toPath": "/blog/",
+    "type": 301,
+    "format": "plain"
+  },
+  {
+    "fromPath": "/company-news/onsight-2500ex/",
+    "toPath": "/blog/",
+    "type": 301,
+    "format": "plain"
+  },
+  {
+    "fromPath": "/company-news/onsight-cube/",
+    "toPath": "/blog/",
+    "type": 301,
+    "format": "plain"
+  },
+  {
+    "fromPath": "/company-news/onsight-mobile-collaboration-system-by-nine-canadian-jurisdictions/",
+    "toPath": "/blog/",
+    "type": 301,
+    "format": "plain"
+  },
+  {
+    "fromPath": "/company-news/onsight-sip-service/",
+    "toPath": "/blog/",
+    "type": 301,
+    "format": "plain"
+  },
+  {
+    "fromPath": "/company-news/onsight-version-3/",
+    "toPath": "/blog/",
+    "type": 301,
+    "format": "plain"
+  },
+  {
+    "fromPath": "/company-news/onsight-version-3-4/",
+    "toPath": "/blog/",
+    "type": 301,
+    "format": "plain"
+  },
+  {
+    "fromPath": "/company-news/onsight-version-4/",
+    "toPath": "/blog/",
+    "type": 301,
+    "format": "plain"
+  },
+  {
+    "fromPath": "/company-news/onsight-version-4-5/",
+    "toPath": "/blog/",
+    "type": 301,
+    "format": "plain"
+  },
+  {
+    "fromPath": "/company-news/onsight-version-6-1/",
+    "toPath": "/blog/",
+    "type": 301,
+    "format": "plain"
+  },
+  {
+    "fromPath": "/company-news/onsight-version-6-2/",
+    "toPath": "/blog/",
+    "type": 301,
+    "format": "plain"
+  },
+  {
+    "fromPath": "/company-news/onsight-version-6-3/",
+    "toPath": "/blog/",
+    "type": 301,
+    "format": "plain"
+  },
+  {
+    "fromPath": "/company-news/onsight-virtual-presence-system-and-milestone-of-over-10-million-installations-globally/",
+    "toPath": "/blog/",
+    "type": 301,
+    "format": "plain"
+  },
+  {
+    "fromPath": "/company-news/optimized-for-low-bandwidth/",
+    "toPath": "/blog/",
+    "type": 301,
+    "format": "plain"
+  },
+  {
+    "fromPath": "/company-news/pdo-deploys-video-collaboration-technology-for-rapid-response-and-improved-safety-in-the-field/",
+    "toPath": "/blog/",
+    "type": 301,
+    "format": "plain"
+  },
+  {
+    "fromPath": "/company-news/pratt-whitney-canada-enhances-service-capabilities-with-virtual-presence-customer-collaboration-solution/",
+    "toPath": "/blog/",
+    "type": 301,
+    "format": "plain"
+  },
+  {
+    "fromPath": "/company-news/remote-expert-technology-must-be-deployed-enterprise-wide-new-survey-reveals/",
+    "toPath": "/blog/",
+    "type": 301,
+    "format": "plain"
+  },
+  {
+    "fromPath": "/company-news/siemens-energy-selects-librestream-to-help-enhance-worker-safety-productivity-through-remote-services/",
+    "toPath": "/blog/",
+    "type": 301,
+    "format": "plain"
+  },
+  {
+    "fromPath": "/company-news/streaming-video-can-economize-vendor-acceptance-tests-on-equipment/",
+    "toPath": "/blog/",
+    "type": 301,
+    "format": "plain"
+  },
+  {
+    "fromPath": "/company-news/sub-zero-achieves-manufacturing-leadership-award/",
+    "toPath": "/blog/",
+    "type": 301,
+    "format": "plain"
+  },
+  {
+    "fromPath": "/company-news/tanberg-agreement/",
+    "toPath": "/blog/",
+    "type": 301,
+    "format": "plain"
+  },
+  {
+    "fromPath": "/company-news/tandberg-fieldview/",
+    "toPath": "/blog/",
+    "type": 301,
+    "format": "plain"
+  },
+  {
+    "fromPath": "/company-news/teasacom/",
+    "toPath": "/blog/",
+    "type": 301,
+    "format": "plain"
+  },
+  {
+    "fromPath": "/company-news/usaa-simplifies-claims-processing-with-librestreams-onsight-embedded-capabilities/",
+    "toPath": "/blog/",
+    "type": 301,
+    "format": "plain"
+  },
+  {
+    "fromPath": "/company-news/us-national-guard-deploys-video-collaboration/",
+    "toPath": "/blog/",
+    "type": 301,
+    "format": "plain"
+  },
+  {
+    "fromPath": "/company-news/video-collaboration-in-the-enterprise-mediaplatform-podcast/",
+    "toPath": "/blog/",
+    "type": 301,
+    "format": "plain"
+  },
+  {
+    "fromPath": "/company-news/video-realwear-remote-mentor/",
+    "toPath": "/blog/",
+    "type": 301,
+    "format": "plain"
+  },
+  {
+    "fromPath": "/company-news/vuzix-and-librestream-launch-joint-telehealth-solution/",
+    "toPath": "/blog/",
+    "type": 301,
+    "format": "plain"
+  },
+  {
+    "fromPath": "/company-news/vuzix-librestream-announce-joint-augmented-reality-solution/",
+    "toPath": "/blog/",
+    "type": 301,
+    "format": "plain"
+  },
+  {
+    "fromPath": "/company-news/webex-integration/",
+    "toPath": "/blog/",
+    "type": 301,
+    "format": "plain"
+  },
+  {
+    "fromPath": "/company-news/wood-group-extends-collaboration-with-librestream-technologies-on-leading-edge-digital-solutions-for-oil-and-gas/",
+    "toPath": "/blog/",
+    "type": 301,
+    "format": "plain"
+  },
+  {
+    "fromPath": "/company-news/wood-group-partners-with-librestream/",
+    "toPath": "/blog/",
+    "type": 301,
+    "format": "plain"
+  },
+  {
+    "fromPath": "/customer-news/2019-cnh-industrial-aftermarket-solutions-expo/",
+    "toPath": "/blog/",
+    "type": 301,
+    "format": "plain"
+  },
+  {
+    "fromPath": "/customer-news/bw-papersystems-award/",
+    "toPath": "/blog/",
+    "type": 301,
+    "format": "plain"
+  },
+  {
+    "fromPath": "/customer-news/diebold-enhancing-field-service-efficiency-through-mobile-collaboration-video/",
+    "toPath": "/blog/",
+    "type": 301,
+    "format": "plain"
+  },
+  {
+    "fromPath": "/customer-news/digitize-your-next-inspection-connecting-previously-unconnected-devices/",
+    "toPath": "/blog/",
+    "type": 301,
+    "format": "plain"
+  },
+  {
+    "fromPath": "/customer-news/gerber-collision-glass/",
+    "toPath": "/blog/",
+    "type": 301,
+    "format": "plain"
+  },
+  {
+    "fromPath": "/customer-news/innovator-forum-2017/",
+    "toPath": "/blog/",
+    "type": 301,
+    "format": "plain"
+  },
+  {
+    "fromPath": "/customer-news/manufacturer-finds-a-purpose-for-video-collaboration/",
+    "toPath": "/blog/",
+    "type": 301,
+    "format": "plain"
+  },
+  {
+    "fromPath": "/customer-news/minimising-jet-engine-downtime-with-remote-boreblending/",
+    "toPath": "/blog/",
+    "type": 301,
+    "format": "plain"
+  },
+  {
+    "fromPath": "/customer-news/point-troubleshoot/",
+    "toPath": "/blog/",
+    "type": 301,
+    "format": "plain"
+  },
+  {
+    "fromPath": "/customer-news/pwc-leading-the-transformation-of-customer-service-through-virtual-presence/",
+    "toPath": "/blog/",
+    "type": 301,
+    "format": "plain"
+  },
+  {
+    "fromPath": "/customer-news/remote-technology-points-to-cost-efficiency-and-quality-gains/",
+    "toPath": "/blog/",
+    "type": 301,
+    "format": "plain"
+  },
+  {
+    "fromPath": "/customer-news/renault-trucks-accelerates-service-with-optiview-powered-by-librestream/",
+    "toPath": "/blog/",
+    "type": 301,
+    "format": "plain"
+  },
+  {
+    "fromPath": "/customer-news/rolls-royce-opens-new-airline-aircraft-availability-centre-supporting-its-on-time-every-time-vision/",
+    "toPath": "/blog/",
+    "type": 301,
+    "format": "plain"
+  },
+  {
+    "fromPath": "/customer-news/rolls-royce-remote-boroblending-development/",
+    "toPath": "/blog/",
+    "type": 301,
+    "format": "plain"
+  },
+  {
+    "fromPath": "/customer-news/sgs-increases-productivity-and-improves-safety-with-remote-inspections/",
+    "toPath": "/blog/",
+    "type": 301,
+    "format": "plain"
+  },
+  {
+    "fromPath": "/customer-news/software-increases-engine-service-speed-and-flexibility/",
+    "toPath": "/blog/",
+    "type": 301,
+    "format": "plain"
+  },
+  {
+    "fromPath": "/customer-news/video-empowered-innovators-delivering-responsive-service-and-uptime-for-customers/",
+    "toPath": "/blog/",
+    "type": 301,
+    "format": "plain"
+  },
+  {
+    "fromPath": "/customer-news/video-enabling-the-smart-connected-farm-ecosystem/",
+    "toPath": "/blog/",
+    "type": 301,
+    "format": "plain"
+  },
+  {
+    "fromPath": "/customer-news/volvo-trucks-deploy-augmented-reality-solutions-within-dealer-network/",
+    "toPath": "/blog/",
+    "type": 301,
+    "format": "plain"
+  },
+  {
+    "fromPath": "/customer-news/ziegler-cat-improves-service-through-video-collaboration/",
+    "toPath": "/blog/",
+    "type": 301,
+    "format": "plain"
+  },
+  {
+    "fromPath": "/cybersecurity-whitepaper/",
+    "toPath": "/resources/cybersecurity-whitepaper/",
+    "type": 301,
+    "format": "plain"
+  },
+  {
+    "fromPath": "/events/2016-fia/",
+    "toPath": "/events/",
+    "type": 301,
+    "format": "plain"
+  },
+  {
+    "fromPath": "/events/2016-rockwell-automation-fair/",
+    "toPath": "/events/",
+    "type": 301,
+    "format": "plain"
+  },
+  {
+    "fromPath": "/events/field-service-east-2018/",
+    "toPath": "/events/",
+    "type": 301,
+    "format": "plain"
+  },
+  {
+    "fromPath": "/events/field-service-europe-2018/",
+    "toPath": "/events/",
+    "type": 301,
+    "format": "plain"
+  },
+  {
+    "fromPath": "/events/field-service-usa-2018/",
+    "toPath": "/events/",
+    "type": 301,
+    "format": "plain"
+  },
+  {
+    "fromPath": "/events/hannover-messe-2021-digital-edition/",
+    "toPath": "/events/",
+    "type": 301,
+    "format": "plain"
+  },
+  {
+    "fromPath": "/events/helitech-2018/",
+    "toPath": "/events/",
+    "type": 301,
+    "format": "plain"
+  },
+  {
+    "fromPath": "/events/industrial-ar-vr-forum/",
+    "toPath": "/events/",
+    "type": 301,
+    "format": "plain"
+  },
+  {
+    "fromPath": "/events/join-us-at-adipec-2016/",
+    "toPath": "/events/",
+    "type": 301,
+    "format": "plain"
+  },
+  {
+    "fromPath": "/events/join-us-at-american-manufacturing-summit-2019/",
+    "toPath": "/events/",
+    "type": 301,
+    "format": "plain"
+  },
+  {
+    "fromPath": "/events/join-us-at-aviation-week-mro-america-2017/",
+    "toPath": "/events/",
+    "type": 301,
+    "format": "plain"
+  },
+  {
+    "fromPath": "/events/join-us-at-aviation-week-mro-europe2017/",
+    "toPath": "/events/",
+    "type": 301,
+    "format": "plain"
+  },
+  {
+    "fromPath": "/events/join-us-at-awea-2018/",
+    "toPath": "/events/",
+    "type": 301,
+    "format": "plain"
+  },
+  {
+    "fromPath": "/events/join-us-at-awea-oms/",
+    "toPath": "/events/",
+    "type": 301,
+    "format": "plain"
+  },
+  {
+    "fromPath": "/events/join-us-at-bedigital-2019/",
+    "toPath": "/events/",
+    "type": 301,
+    "format": "plain"
+  },
+  {
+    "fromPath": "/events/join-us-at-ewts2017/",
+    "toPath": "/events/",
+    "type": 301,
+    "format": "plain"
+  },
+  {
+    "fromPath": "/events/join-us-at-field-service-fall/",
+    "toPath": "/events/",
+    "type": 301,
+    "format": "plain"
+  },
+  {
+    "fromPath": "/events/join-us-at-field-service-palm-springs-2020/",
+    "toPath": "/events/",
+    "type": 301,
+    "format": "plain"
+  },
+  {
+    "fromPath": "/events/join-us-at-field-service-usa/",
+    "toPath": "/events/",
+    "type": 301,
+    "format": "plain"
+  },
+  {
+    "fromPath": "/events/join-us-at-field-service-usa-2019/",
+    "toPath": "/events/",
+    "type": 301,
+    "format": "plain"
+  },
+  {
+    "fromPath": "/events/join-us-at-hannover-messe-2019/",
+    "toPath": "/events/",
+    "type": 301,
+    "format": "plain"
+  },
+  {
+    "fromPath": "/events/join-us-at-mro-america-2018/",
+    "toPath": "/events/",
+    "type": 301,
+    "format": "plain"
+  },
+  {
+    "fromPath": "/events/join-us-at-mro-europe/",
+    "toPath": "/events/",
+    "type": 301,
+    "format": "plain"
+  },
+  {
+    "fromPath": "/events/join-us-at-ogv-innovate/",
+    "toPath": "/events/",
+    "type": 301,
+    "format": "plain"
+  },
+  {
+    "fromPath": "/events/join-us-at-otc-2019/",
+    "toPath": "/events/",
+    "type": 301,
+    "format": "plain"
+  },
+  {
+    "fromPath": "/events/join-us-at-quad-a-2017/",
+    "toPath": "/events/",
+    "type": 301,
+    "format": "plain"
+  },
+  {
+    "fromPath": "/events/join-us-at-technology-service-world/",
+    "toPath": "/events/",
+    "type": 301,
+    "format": "plain"
+  },
+  {
+    "fromPath": "/events/join-us-at-the-speed-news-aerospace-manufacturing-conference/",
+    "toPath": "/events/",
+    "type": 301,
+    "format": "plain"
+  },
+  {
+    "fromPath": "/events/join-us-for-field-service-europe/",
+    "toPath": "/events/",
+    "type": 301,
+    "format": "plain"
+  },
+  {
+    "fromPath": "/events/join-us-for-langley-fort-eustis-tech-expo-2016/",
+    "toPath": "/events/",
+    "type": 301,
+    "format": "plain"
+  },
+  {
+    "fromPath": "/events/librestream-2019-event-schedule/",
+    "toPath": "/events/",
+    "type": 301,
+    "format": "plain"
+  },
+  {
+    "fromPath": "/events/marine-maintenance-expo-2017/",
+    "toPath": "/events/",
+    "type": 301,
+    "format": "plain"
+  },
+  {
+    "fromPath": "/events/marine-maintenance-expo-2018/",
+    "toPath": "/events/",
+    "type": 301,
+    "format": "plain"
+  },
+  {
+    "fromPath": "/events/mro-america-2019/",
+    "toPath": "/events/",
+    "type": 301,
+    "format": "plain"
+  },
+  {
+    "fromPath": "/events/mro-europe/",
+    "toPath": "/events/",
+    "type": 301,
+    "format": "plain"
+  },
+  {
+    "fromPath": "/events/offshore-europe-2019/",
+    "toPath": "/events/",
+    "type": 301,
+    "format": "plain"
+  },
+  {
+    "fromPath": "/events/ogv-transition-2020/",
+    "toPath": "/events/",
+    "type": 301,
+    "format": "plain"
+  },
+  {
+    "fromPath": "/events/oil-comm-2018/",
+    "toPath": "/events/",
+    "type": 301,
+    "format": "plain"
+  },
+  {
+    "fromPath": "/events/onsight-training/",
+    "toPath": "/events/",
+    "type": 301,
+    "format": "plain"
+  },
+  {
+    "fromPath": "/events/sprint-robotics-conference-2018/",
+    "toPath": "/events/",
+    "type": 301,
+    "format": "plain"
+  },
+  {
+    "fromPath": "/events/stop-by-the-verizon-booth-to-see-our-solution-at-supplyside-west/",
+    "toPath": "/events/",
+    "type": 301,
+    "format": "plain"
+  },
+  {
+    "fromPath": "/events/tmforum-digital-transformation/",
+    "toPath": "/events/",
+    "type": 301,
+    "format": "plain"
+  },
+  {
+    "fromPath": "/events/tsw-2018/",
+    "toPath": "/events/",
+    "type": 301,
+    "format": "plain"
+  },
+  {
+    "fromPath": "/events/webinar-deploying-ar-beyond-the-carpet-into-field/",
+    "toPath": "/events/",
+    "type": 301,
+    "format": "plain"
+  },
+  {
+    "fromPath": "/events/webinar-digitize-service-worker/",
+    "toPath": "/events/",
+    "type": 301,
+    "format": "plain"
+  },
+  {
+    "fromPath": "/events/webinar-exclusive-look-at-the-onsight-connect-for-hololens-2/",
+    "toPath": "/events/",
+    "type": 301,
+    "format": "plain"
+  },
+  {
+    "fromPath": "/events/webinar-onsight-flow-digital-work-instructions/",
+    "toPath": "/events/",
+    "type": 301,
+    "format": "plain"
+  },
+  {
+    "fromPath": "/events/webinar-onsight-spring-2020-release/",
+    "toPath": "/events/",
+    "type": 301,
+    "format": "plain"
+  },
+  {
+    "fromPath": "/events/webinar-onsight-summer-release-2020/",
+    "toPath": "/events/",
+    "type": 301,
+    "format": "plain"
+  },
+  {
+    "fromPath": "/events/webinar-onsight-teams-app/",
+    "toPath": "/events/",
+    "type": 301,
+    "format": "plain"
+  },
+  {
+    "fromPath": "/events/webinar-re-augmented-reality-now/",
+    "toPath": "/events/",
+    "type": 301,
+    "format": "plain"
+  },
+  {
+    "fromPath": "/events/webinar-remote-audits-inspections-future-proofing-your-operations-against-disruption/",
+    "toPath": "/events/",
+    "type": 301,
+    "format": "plain"
+  },
+  {
+    "fromPath": "/events/webinar-telehealth-solution-overview-via-vuzix-and-librestream/",
+    "toPath": "/events/",
+    "type": 301,
+    "format": "plain"
+  },
+  {
+    "fromPath": "/events/well-be-at-awe-europe/",
+    "toPath": "/events/",
+    "type": 301,
+    "format": "plain"
+  },
+  {
+    "fromPath": "/events/well-be-at-field-service-europe/",
+    "toPath": "/events/",
+    "type": 301,
+    "format": "plain"
+  },
+  {
+    "fromPath": "/events/well-be-at-hxgn-live-2017/",
+    "toPath": "/events/",
+    "type": 301,
+    "format": "plain"
+  },
+  {
+    "fromPath": "/foodsure-webinar/",
+    "toPath": "/webinars/foodsure/",
+    "type": 301,
+    "format": "plain"
+  },
+  {
+    "fromPath": "/form-confirmations/",
+    "toPath": "/",
+    "type": 301,
+    "format": "plain"
+  },
+  {
+    "fromPath": "/form-confirmations/aberdeen-confirmation/",
+    "toPath": "/",
+    "type": 301,
+    "format": "plain"
+  },
+  {
+    "fromPath": "/form-confirmations/armor-mobility-confirmation/",
+    "toPath": "/",
+    "type": 301,
+    "format": "plain"
+  },
+  {
+    "fromPath": "/form-confirmations/business-continuity/",
+    "toPath": "/",
+    "type": 301,
+    "format": "plain"
+  },
+  {
+    "fromPath": "/form-confirmations/contact-engineer-confirmation/",
+    "toPath": "/",
+    "type": 301,
+    "format": "plain"
+  },
+  {
+    "fromPath": "/form-confirmations/cube-vip-confirmation/",
+    "toPath": "/",
+    "type": 301,
+    "format": "plain"
+  },
+  {
+    "fromPath": "/form-confirmations/diebold-article-confirmation/",
+    "toPath": "/",
+    "type": 301,
+    "format": "plain"
+  },
+  {
+    "fromPath": "/form-confirmations/free-demo/",
+    "toPath": "/",
+    "type": 301,
+    "format": "plain"
+  },
+  {
+    "fromPath": "/form-confirmations/frost-sullivan-confirmation/",
+    "toPath": "/",
+    "type": 301,
+    "format": "plain"
+  },
+  {
+    "fromPath": "/form-confirmations/lns-webinar-confirmation/",
+    "toPath": "/",
+    "type": 301,
+    "format": "plain"
+  },
+  {
+    "fromPath": "/form-confirmations/mailing-list-form-confirmation/",
+    "toPath": "/",
+    "type": 301,
+    "format": "plain"
+  },
+  {
+    "fromPath": "/form-confirmations/mailing-list-signup-confirmation/",
+    "toPath": "/",
+    "type": 301,
+    "format": "plain"
+  },
+  {
+    "fromPath": "/form-confirmations/onsight-flow-webinar/",
+    "toPath": "/",
+    "type": 301,
+    "format": "plain"
+  },
+  {
+    "fromPath": "/form-confirmations/opportunity-registered/",
+    "toPath": "/",
+    "type": 301,
+    "format": "plain"
+  },
+  {
+    "fromPath": "/form-confirmations/order-submitted/",
+    "toPath": "/",
+    "type": 301,
+    "format": "plain"
+  },
+  {
+    "fromPath": "/form-confirmations/registration-submitted/",
+    "toPath": "/",
+    "type": 301,
+    "format": "plain"
+  },
+  {
+    "fromPath": "/form-confirmations/remote-expert-accelerator-package/",
+    "toPath": "/",
+    "type": 301,
+    "format": "plain"
+  },
+  {
+    "fromPath": "/form-confirmations/remote-expert-accelerator-package-free-trial/",
+    "toPath": "/",
+    "type": 301,
+    "format": "plain"
+  },
+  {
+    "fromPath": "/form-confirmations/remote-expert-download-confirmation-july-2020/",
+    "toPath": "/",
+    "type": 301,
+    "format": "plain"
+  },
+  {
+    "fromPath": "/form-confirmations/request-consultation-confirmation/",
+    "toPath": "/",
+    "type": 301,
+    "format": "plain"
+  },
+  {
+    "fromPath": "/form-confirmations/request-demo-confirmation-cube/",
+    "toPath": "/",
+    "type": 301,
+    "format": "plain"
+  },
+  {
+    "fromPath": "/form-confirmations/request-demo-confirmation-cube-ex/",
+    "toPath": "/",
+    "type": 301,
+    "format": "plain"
+  },
+  {
+    "fromPath": "/form-confirmations/request-demo-confirmation-flow/",
+    "toPath": "/",
+    "type": 301,
+    "format": "plain"
+  },
+  {
+    "fromPath": "/form-confirmations/request-demo-confirmation-hub/",
+    "toPath": "/",
+    "type": 301,
+    "format": "plain"
+  },
+  {
+    "fromPath": "/form-confirmations/request-demo-confirmation-onsight-connect/",
+    "toPath": "/",
+    "type": 301,
+    "format": "plain"
+  },
+  {
+    "fromPath": "/form-confirmations/request-demo-confirmation-workspace/",
+    "toPath": "/",
+    "type": 301,
+    "format": "plain"
+  },
+  {
+    "fromPath": "/form-confirmations/rma-request-confirmation/",
+    "toPath": "/",
+    "type": 301,
+    "format": "plain"
+  },
+  {
+    "fromPath": "/form-confirmations/support-request-confirmation/",
+    "toPath": "/",
+    "type": 301,
+    "format": "plain"
+  },
+  {
+    "fromPath": "/form-confirmations/telehealth-kit/",
+    "toPath": "/",
+    "type": 301,
+    "format": "plain"
+  },
+  {
+    "fromPath": "/form-confirmations/telehealth-webinar/",
+    "toPath": "/",
+    "type": 301,
+    "format": "plain"
+  },
+  {
+    "fromPath": "/form-confirmations/upstream-confirmation/",
+    "toPath": "/",
+    "type": 301,
+    "format": "plain"
+  },
+  {
+    "fromPath": "/form-confirmations/webinar-digital-worker/",
+    "toPath": "/",
+    "type": 301,
+    "format": "plain"
+  },
+  {
+    "fromPath": "/form-confirmations/webinar-shift-to-paperless/",
+    "toPath": "/",
+    "type": 301,
+    "format": "plain"
+  },
+  {
+    "fromPath": "/form-confirmations/webinar-wearable-revolution/",
+    "toPath": "/",
+    "type": 301,
+    "format": "plain"
+  },
+  {
+    "fromPath": "/hazloc/",
+    "toPath": "/platform/",
+    "type": 301,
+    "format": "plain"
+  },
+  {
+    "fromPath": "/hazloc/hazloc-eu/",
+    "toPath": "/platform/",
+    "type": 301,
+    "format": "plain"
+  },
+  {
+    "fromPath": "/hazloc/hazloc-ex-headset/",
+    "toPath": "/platform/",
+    "type": 301,
+    "format": "plain"
+  },
+  {
+    "fromPath": "/hazloc/hazloc-na/",
+    "toPath": "/platform/",
+    "type": 301,
+    "format": "plain"
+  },
+  {
+    "fromPath": "/hololens2-webinar/",
+    "toPath": "/webinars/hololens2/",
+    "type": 301,
+    "format": "plain"
+  },
+  {
+    "fromPath": "/news/search/",
+    "toPath": "/news/",
+    "type": 301,
+    "format": "plain"
+  },
+  {
+    "fromPath": "/product-highlights/expanded-ar-advanced-telestration/",
+    "toPath": "/blog/",
+    "type": 301,
+    "format": "plain"
+  },
+  {
+    "fromPath": "/product-highlights/external-guest-invites/",
+    "toPath": "/blog/",
+    "type": 301,
+    "format": "plain"
+  },
+  {
+    "fromPath": "/product-highlights/industrial-wearable-multi-purpose-camera/",
+    "toPath": "/blog/",
+    "type": 301,
+    "format": "plain"
+  },
+  {
+    "fromPath": "/product-highlights/onsight-400r-collaboration-hub/",
+    "toPath": "/blog/",
+    "type": 301,
+    "format": "plain"
+  },
+  {
+    "fromPath": "/product-highlights/onsight-highlight-field-vs-expert-view/",
+    "toPath": "/blog/",
+    "type": 301,
+    "format": "plain"
+  },
+  {
+    "fromPath": "/product-highlights/single-sign-on-sso/",
+    "toPath": "/blog/",
+    "type": 301,
+    "format": "plain"
+  },
+  {
+    "fromPath": "/product-highlights/snip-tool/",
+    "toPath": "/blog/",
+    "type": 301,
+    "format": "plain"
+  },
+  {
+    "fromPath": "/product-highlights/thermal-imaging/",
+    "toPath": "/blog/",
+    "type": 301,
+    "format": "plain"
+  },
+  {
+    "fromPath": "/products/",
+    "toPath": "/platform/",
+    "type": 301,
+    "format": "plain"
+  },
+  {
+    "fromPath": "/products/onsight-collaboration-hub/",
+    "toPath": "/platform/specialized-accessories/",
+    "type": 301,
+    "format": "plain"
+  },
+  {
+    "fromPath": "/products/onsight-connect/",
+    "toPath": "/platform/remote-expert/",
+    "type": 301,
+    "format": "plain"
+  },
+  {
+    "fromPath": "/products/onsight-cube/",
+    "toPath": "/platform/specialized-accessories/",
+    "type": 301,
+    "format": "plain"
+  },
+  {
+    "fromPath": "/products/onsight-cube-ex/",
+    "toPath": "/platform/specialized-accessories/",
+    "type": 301,
+    "format": "plain"
+  },
+  {
+    "fromPath": "/products/onsight-flow/",
+    "toPath": "/platform/digital-work-instructions/",
+    "type": 301,
+    "format": "plain"
+  },
+  {
+    "fromPath": "/products/onsight-management/",
+    "toPath": "/platform/",
+    "type": 301,
+    "format": "plain"
+  },
+  {
+    "fromPath": "/products/onsight-workspace/",
+    "toPath": "/platform/knowledge-base/",
+    "type": 301,
+    "format": "plain"
+  },
+  {
+    "fromPath": "/remote-expert-accelerator-package/",
+    "toPath": "/remote-expert-package-free-trial/",
+    "type": 301,
+    "format": "plain"
+  },
+  {
+    "fromPath": "/remote-expert-guide/",
+    "toPath": "/resources/remote-expert-guide/",
+    "type": 301,
+    "format": "plain"
+  },
+  {
+    "fromPath": "/request-demo-confirmation-opm/",
+    "toPath": "/free-demo/",
+    "type": 301,
+    "format": "plain"
+  },
+  {
+    "fromPath": "/services/",
+    "toPath": "/customer-success/",
+    "type": 301,
+    "format": "plain"
+  },
+  {
+    "fromPath": "/solutions/remote-video-inspections/",
+    "toPath": "/solutions/",
+    "type": 301,
+    "format": "plain"
+  },
+  {
+    "fromPath": "/solutions/video-enabled-service/",
+    "toPath": "/solutions/",
+    "type": 301,
+    "format": "plain"
+  },
+  {
+    "fromPath": "/solutions/wearables/",
+    "toPath": "/solutions/",
+    "type": 301,
+    "format": "plain"
+  },
+  {
+    "fromPath": "/telehealth-kit/",
+    "toPath": "/resources/",
+    "type": 301,
+    "format": "plain"
+  },
+  {
+    "fromPath": "/verdantix-report/",
+    "toPath": "/resources/verdantix-report/",
+    "type": 301,
+    "format": "plain"
+  },
+  {
+    "fromPath": "/wbr-report/",
+    "toPath": "/resources/wbr-report/",
+    "type": 301,
+    "format": "plain"
+  },
+  {
+    "fromPath": "/webinar-deploying-augmented-reality-beyond-the-carpet-and-into-the-field/",
+    "toPath": "/webinars/webinar-deploying-augmented-reality-ar-beyond-the-carpet-and-into-the-field/",
+    "type": 301,
+    "format": "plain"
+  },
   {
     "fromPath": "/test/",
-    "toPath": "https://ocupop.com",
+    "toPath": "https://interledger.org",
     "type": 301,
     "format": "plain"
   }
