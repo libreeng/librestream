@@ -912,6 +912,12 @@
     "format": "plain"
   },
   {
+    "fromPath": "/test.html",
+    "toPath": "/news/",
+    "type": 301,
+    "format": "plain"
+  },
+  {
     "fromPath": "/news/apr-19-2012",
     "toPath": "/company-news/oilfield-customer-feature-onsight/",
     "type": 301,
