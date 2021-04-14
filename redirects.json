@@ -912,7 +912,7 @@
     "format": "plain"
   },
   {
-    "fromPath": "/test.html",
+    "fromPath": "/news.html",
     "toPath": "/news/",
     "type": 301,
     "format": "plain"
