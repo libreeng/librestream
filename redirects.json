@@ -5003,11 +5003,5 @@
     "toPath": "/webinars/webinar-deploying-augmented-reality-ar-beyond-the-carpet-and-into-the-field/",
     "type": 301,
     "format": "plain"
-  },
-  {
-    "fromPath": "/test/",
-    "toPath": "https://google.com",
-    "type": 301,
-    "format": "plain"
   }
 ]
