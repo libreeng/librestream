@@ -120,7 +120,7 @@
     "format": "plain"
   },
   {
-    "fromPath": "/news/archives",
+    "fromPath": "/news/archives/",
     "toPath": "/news/",
     "type": 301,
     "format": "plain"
@@ -600,79 +600,79 @@
     "format": "plain"
   },
   {
-    "fromPath": "/Chinese/Ch_ContactUs",
+    "fromPath": "/Chinese/Ch_ContactUs/",
     "toPath": "/contact-us/",
     "type": 301,
     "format": "plain"
   },
   {
-    "fromPath": "/Chinese/Ch_IndustryOverview",
+    "fromPath": "/Chinese/Ch_IndustryOverview/",
     "toPath": "/",
     "type": 301,
     "format": "plain"
   },
   {
-    "fromPath": "/Chinese/Ch_OnsightAccountManager",
+    "fromPath": "/Chinese/Ch_OnsightAccountManager/",
     "toPath": "/",
     "type": 301,
     "format": "plain"
   },
   {
-    "fromPath": "/Chinese/Ch_OnsightConnect",
+    "fromPath": "/Chinese/Ch_OnsightConnect/",
     "toPath": "/",
     "type": 301,
     "format": "plain"
   },
   {
-    "fromPath": "/Chinese/Ch_OnsightDeviceAccessories",
+    "fromPath": "/Chinese/Ch_OnsightDeviceAccessories/",
     "toPath": "/",
     "type": 301,
     "format": "plain"
   },
   {
-    "fromPath": "/Chinese/Ch_OnsightIntegration",
+    "fromPath": "/Chinese/Ch_OnsightIntegration/",
     "toPath": "/",
     "type": 301,
     "format": "plain"
   },
   {
-    "fromPath": "/Chinese/Ch_OnsightMgmtSuite",
+    "fromPath": "/Chinese/Ch_OnsightMgmtSuite/",
     "toPath": "/",
     "type": 301,
     "format": "plain"
   },
   {
-    "fromPath": "/Chinese/Ch_OnsightMobileDevices",
+    "fromPath": "/Chinese/Ch_OnsightMobileDevices/",
     "toPath": "/",
     "type": 301,
     "format": "plain"
   },
   {
-    "fromPath": "/Chinese/Ch_OnsightProducts",
+    "fromPath": "/Chinese/Ch_OnsightProducts/",
     "toPath": "/",
     "type": 301,
     "format": "plain"
   },
   {
-    "fromPath": "/Chinese/Ch_OnsightSIP",
+    "fromPath": "/Chinese/Ch_OnsightSIP/",
     "toPath": "/",
     "type": 301,
     "format": "plain"
   },
   {
-    "fromPath": "/Chinese/Ch_OnsightTeamLink",
+    "fromPath": "/Chinese/Ch_OnsightTeamLink/",
     "toPath": "/",
     "type": 301,
     "format": "plain"
   },
   {
-    "fromPath": "/Chinese/ChineseHome",
+    "fromPath": "/Chinese/ChineseHome/",
     "toPath": "/",
     "type": 301,
     "format": "plain"
   },
   {
-    "fromPath": "/cisco/energy",
+    "fromPath": "/cisco/energy/",
     "toPath": "/",
     "type": 301,
     "format": "plain"
@@ -690,157 +690,157 @@
     "format": "plain"
   },
   {
-    "fromPath": "/cisco/manufacturing",
+    "fromPath": "/cisco/manufacturing/",
     "toPath": "/",
     "type": 301,
     "format": "plain"
   },
   {
-    "fromPath": "/cisco/overview",
+    "fromPath": "/cisco/overview/",
     "toPath": "/",
     "type": 301,
     "format": "plain"
   },
   {
-    "fromPath": "/cisco/Video_manufacturing",
+    "fromPath": "/cisco/Video_manufacturing/",
     "toPath": "/",
     "type": 301,
     "format": "plain"
   },
   {
-    "fromPath": "/cisco/Video_oilandgas",
+    "fromPath": "/cisco/Video_oilandgas/",
     "toPath": "/blog/onsight-overview-video/",
     "type": 301,
     "format": "plain"
   },
   {
-    "fromPath": "/company",
+    "fromPath": "/company/",
     "toPath": "/about/",
     "type": 301,
     "format": "plain"
   },
   {
-    "fromPath": "/company/board-of-directors",
+    "fromPath": "/company/board-of-directors/",
     "toPath": "/about/",
     "type": 301,
     "format": "plain"
   },
   {
-    "fromPath": "/company/careers",
+    "fromPath": "/company/careers/",
     "toPath": "/about/",
     "type": 301,
     "format": "plain"
   },
   {
-    "fromPath": "/company/management",
+    "fromPath": "/company/management/",
     "toPath": "/about/",
     "type": 301,
     "format": "plain"
   },
   {
-    "fromPath": "/company/vision",
+    "fromPath": "/company/vision/",
     "toPath": "/about/",
     "type": 301,
     "format": "plain"
   },
   {
-    "fromPath": "/contact",
+    "fromPath": "/contact/",
     "toPath": "/contact-us/",
     "type": 301,
     "format": "plain"
   },
   {
-    "fromPath": "/contactUs",
+    "fromPath": "/contactUs/",
     "toPath": "/contact-us/",
     "type": 301,
     "format": "plain"
   },
   {
-    "fromPath": "/events",
+    "fromPath": "/events/",
     "toPath": "/news/",
     "type": 301,
     "format": "plain"
   },
   {
-    "fromPath": "/fieldview",
+    "fromPath": "/fieldview/",
     "toPath": "/products/",
     "type": 301,
     "format": "plain"
   },
   {
-    "fromPath": "/fieldview/contact",
+    "fromPath": "/fieldview/contact/",
     "toPath": "/",
     "type": 301,
     "format": "plain"
   },
   {
-    "fromPath": "/fieldview/dictionary",
+    "fromPath": "/fieldview/dictionary/",
     "toPath": "/",
     "type": 301,
     "format": "plain"
   },
   {
-    "fromPath": "/fieldview/faq",
+    "fromPath": "/fieldview/faq/",
     "toPath": "/",
     "type": 301,
     "format": "plain"
   },
   {
-    "fromPath": "/index",
+    "fromPath": "/index/",
     "toPath": "/",
     "type": 301,
     "format": "plain"
   },
   {
-    "fromPath": "/industries",
+    "fromPath": "/industries/",
     "toPath": "/solutions/",
     "type": 301,
     "format": "plain"
   },
   {
-    "fromPath": "/industries/energy",
+    "fromPath": "/industries/energy/",
     "toPath": "/solutions/energy-asset-maintenance-and-hse-mobility/",
     "type": 301,
     "format": "plain"
   },
   {
-    "fromPath": "/industries/government-and-public-safety",
+    "fromPath": "/industries/government-and-public-safety/",
     "toPath": "/solutions/",
     "type": 301,
     "format": "plain"
   },
   {
-    "fromPath": "/industries/government-and-public-safety/military-and-defense",
+    "fromPath": "/industries/government-and-public-safety/military-and-defense/",
     "toPath": "/solutions/",
     "type": 301,
     "format": "plain"
   },
   {
-    "fromPath": "/industries/government-and-public-safety/public-safety",
+    "fromPath": "/industries/government-and-public-safety/public-safety/",
     "toPath": "/solutions/",
     "type": 301,
     "format": "plain"
   },
   {
-    "fromPath": "/industries/government-and-public-safety/state-and-local",
+    "fromPath": "/industries/government-and-public-safety/state-and-local/",
     "toPath": "/solutions/",
     "type": 301,
     "format": "plain"
   },
   {
-    "fromPath": "/industries/insurance-collision-repair",
+    "fromPath": "/industries/insurance-collision-repair/",
     "toPath": "/solutions/",
     "type": 301,
     "format": "plain"
   },
   {
-    "fromPath": "/industries/manufacturing",
+    "fromPath": "/industries/manufacturing/",
     "toPath": "/solutions/manufacturing-operations/",
     "type": 301,
     "format": "plain"
   },
   {
-    "fromPath": "/industries/telemedicine",
+    "fromPath": "/industries/telemedicine/",
     "toPath": "/solutions/",
     "type": 301,
     "format": "plain"
@@ -912,92 +912,93 @@
     "format": "plain"
   },
   {
-    "fromPath": "/news/apr-19-2012",
+    "fromPath": "/news/apr-19-2012/",
     "toPath": "/company-news/oilfield-customer-feature-onsight/",
     "type": 301,
     "format": "plain"
   },
   {
-    "fromPath": "/news/apr-19-2016",
+    "fromPath": "/news/apr-19-2016/",
     "toPath": "/company-news/live-video-collaboration-solution-from-librestream-earns-diebold-frost-sullivans-customer-value-leadership-award/",
     "type": 301,
     "format": "plain"
   },
   {
-    "fromPath": "/news/apr-4-2014",
+    "fromPath": "/news/apr-4-2014/",
     "toPath": "/company-news/sub-zero-achieves-manufacturing-leadership-award/",
     "type": 301,
     "format": "plain"
   },
   {
-    "fromPath": "/news/april-14-2009",
+    "fromPath": "/news/april-14-2009/",
     "toPath": "/company-news/onsight-2000ex/",
     "type": 301,
     "format": "plain"
   },
   {
-    "fromPath": "/news/archives",
+    "fromPath": "/news/archives/",
     "toPath": "/news/",
     "type": 301,
     "format": "plain"
   },
   {
-    "fromPath": "/news/aug-03-2010",
+    "fromPath": "/news/aug-03-2010/",
     "toPath": "/company-news/optimized-for-low-bandwidth/",
     "type": 301,
     "format": "plain"
   },
   {
-    "fromPath": "/news/aug-26-2009",
+    "fromPath": "/news/aug-26-2009/",
     "toPath": "/news/",
     "type": 301,
     "format": "plain"
   },
   {
-    "fromPath": "/news/current-mobile-collaboration-news",
+    "fromPath": "/news/current-mobile-collaboration-news/",
     "toPath": "/news/",
     "type": 301,
     "format": "plain"
   },
   {
-    "fromPath": "/news/dec-10-2008",
+    "fromPath": "/news/dec-10-2008/",
     "toPath": "/news/",
     "type": 301,
     "format": "plain"
   },
   {
-    "fromPath": "/news/dec-13-2012",
+    "fromPath": "/news/dec-13-2012/",
     "toPath": "/company-news/onsight-version-6-1/",
     "type": 301,
     "format": "plain"
   },
   {
-    "fromPath": "/news/dec-15-2008",
+    "fromPath": "/news/dec-15-2008/",
     "toPath": "/news/",
     "type": 301,
     "format": "plain"
   },
   {
-    "fromPath": "/news/dec-2-2010",
+    "fromPath": "/news/dec-2-2010/",
     "toPath": "/news/",
     "type": 301,
     "format": "plain"
   },
   {
-    "fromPath": "/news/dec-23-2008",
+    "fromPath": "/news/dec-23-2008/",
     "toPath": "/company-news/onsight-version-3/",
     "type": 301,
     "format": "plain"
   },
   {
-    "fromPath": "/news/dec-5-2008",
+    "fromPath": "/news/dec-5-2008/",
     "toPath": "/news/",
     "type": 301,
     "format": "plain"
-  },
+  }
+
   {
     "fromPath": "/test/",
-    "toPath": "https://google.com",
+    "toPath": "https://ocupop.com",
     "type": 301,
     "format": "plain"
   }
