@@ -7,6 +7,10 @@ const staticRedirects = require("./redirects.json")
 // const { dd } = require(`dumper.js`)
 
 function sanitizeRedirect(path) {
+  // strip absolute url
+  // strip .html extensions
+  // replace regex pattern
+
   const sanitized = path
     .replace("http://www.librestreamcms.kinsta.cloud", "")
     .replace("https://www.librestreamcms.kinsta.cloud", "")
@@ -122,6 +126,7 @@ const createSiteRedirects = async ({ redirects, gatsbyUtilities }) => {
         fromPath,
         toPath,
         isPermanent: false,
+        force: false,
         // ignoreCase: true
       })
 

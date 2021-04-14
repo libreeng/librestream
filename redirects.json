@@ -2016,19 +2016,19 @@
     "format": "plain"
   },
   {
-    "fromPath": "/(.*).cfm",
+    "fromPath": "/*.cfm",
     "toPath": "/",
     "type": 301,
     "format": "regex"
   },
   {
-    "fromPath": "/automotive/(.*)",
+    "fromPath": "/automotive/*",
     "toPath": "/solutions/",
     "type": 301,
     "format": "regex"
   },
   {
-    "fromPath": "/Brochures/Whitepapers/(.*)",
+    "fromPath": "/Brochures/Whitepapers/*",
     "toPath": "/onsight-support/",
     "type": 301,
     "format": "regex"
@@ -2039,12 +2039,7 @@
     "type": 301,
     "format": "plain"
   },
-  {
-    "fromPath": "/Company(.*)",
-    "toPath": "/about/",
-    "type": 301,
-    "format": "regex"
-  },
+
   {
     "fromPath": "/contact.php",
     "toPath": "/",
@@ -2052,31 +2047,25 @@
     "format": "plain"
   },
   {
-    "fromPath": "/fieldservice(.*)",
+    "fromPath": "/flv/*",
     "toPath": "/solutions/",
     "type": 301,
     "format": "regex"
   },
   {
-    "fromPath": "/flv/(.*)",
-    "toPath": "/solutions/",
-    "type": 301,
-    "format": "regex"
-  },
-  {
-    "fromPath": "/(.*).swf",
+    "fromPath": "/*.swf",
     "toPath": "/",
     "type": 301,
     "format": "regex"
   },
   {
-    "fromPath": "/military/(.*)",
+    "fromPath": "/military/*",
     "toPath": "/",
     "type": 301,
     "format": "regex"
   },
   {
-    "fromPath": "/ndt/(.*)",
+    "fromPath": "/ndt/*",
     "toPath": "/",
     "type": 301,
     "format": "regex"
@@ -2094,13 +2083,13 @@
     "format": "plain"
   },
   {
-    "fromPath": "/oilandgas/(.*)",
+    "fromPath": "/oilandgas/*",
     "toPath": "/solutions/",
     "type": 301,
     "format": "regex"
   },
   {
-    "fromPath": "/products/EULA/(.*)",
+    "fromPath": "/products/EULA/*",
     "toPath": "/support-archives/termsofuse/",
     "type": 301,
     "format": "regex"
@@ -2130,7 +2119,7 @@
     "format": "plain"
   },
   {
-    "fromPath": "/Products_(.*)",
+    "fromPath": "/Products_*",
     "toPath": "/products/",
     "type": 301,
     "format": "regex"
@@ -2148,13 +2137,13 @@
     "format": "plain"
   },
   {
-    "fromPath": "/Solutions_(.*)",
+    "fromPath": "/Solutions_*",
     "toPath": "/solutions/",
     "type": 301,
     "format": "regex"
   },
   {
-    "fromPath": "/Strategic_(.*)",
+    "fromPath": "/Strategic_*",
     "toPath": "/solutions/",
     "type": 301,
     "format": "regex"
