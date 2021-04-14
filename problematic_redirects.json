@@ -35,4 +35,16 @@
       "type": 301,
       "format": "regex"
     },
+    {
+      "fromPath": "/news.html",
+      "toPath": "/news/",
+      "type": 301,
+      "format": "plain"
+    },
+    {
+      "fromPath": "/Library/AppNote/Onsight Connect Enterprise Deployment Guide_v7.0.pdf",
+      "toPath": "/onsight-support/",
+      "type": 301,
+      "format": "plain"
+    },
 ]
