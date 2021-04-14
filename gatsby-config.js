@@ -83,6 +83,15 @@ module.exports = {
     },
     'gatsby-plugin-sharp',
     'gatsby-transformer-sharp',
+    {
+      resolve: 'gatsby-plugin-robots-txt',
+      options: {
+        host: website.url,
+        sitemap: `${website.url}/sitemap.xml`,
+        policy: [{ userAgent: '*', allow: '/' }],
+        output: '/robots.txt'
+      }
+    },
     // {
     //   // Removes unused css rules
     //   resolve: 'gatsby-plugin-purgecss',
