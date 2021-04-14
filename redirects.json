@@ -5014,11 +5014,5 @@
     "toPath": "/webinars/webinar-deploying-augmented-reality-ar-beyond-the-carpet-and-into-the-field/",
     "type": 301,
     "format": "plain"
-  },
-  {
-    "fromPath": "/test/",
-    "toPath": "https://interledger.org",
-    "type": 301,
-    "format": "plain"
   }
 ]
