@@ -1,9 +1,10 @@
-import React, {useState} from 'react'
+import React, { useState } from 'react'
 // import PropTypes from 'prop-types'
 import { graphql } from "gatsby"
 import Image from "gatsby-image"
 import BackgroundImage from 'gatsby-background-image'
 import parse from "html-react-parser"
+import SEO from "../../containers/SEO"
 import Hero from "../../common/ui/Hero"
 import FooterCTAs from '../../common/ui/FooterCTAs'
 import Collapse from 'react-bootstrap/Collapse'
@@ -18,10 +19,11 @@ const PlatformFeatureTemplate = ({ data: { page, subnav } }) => {
   const hero = page.acfHero
   const nav = subnav.menuItems.nodes
   const { cta } = page.acfFooterCTAs
-  
+
 
   return (
     <>
+      <SEO pageSEO={page.seo} />
       <Hero
         className=""
         hero={hero}

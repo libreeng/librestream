@@ -2,6 +2,7 @@
 import React from "react"
 import { graphql } from "gatsby"
 import parse from "html-react-parser"
+import SEO from "../../containers/SEO"
 import { useSiteFooter } from '../../common/hooks/useSiteFooter'
 import Hero from "../../common/ui/Hero"
 import FooterCTAs from '../../common/ui/FooterCTAs'
@@ -18,6 +19,7 @@ const ContactSupportTemplate = ({ data: { page } }) => {
   // console.log(parse(page.content))
   return (
     <>
+      <SEO pageSEO={page.seo} />
       <Hero hero={hero} />
       <section className="pb-0">
         <div className="container">

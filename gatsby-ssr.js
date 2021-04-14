@@ -33,12 +33,6 @@ export const onRenderBody = ({ setPostBodyComponents }) => {
     //   id="testScript"
     //   src="/js/test.js"
     //   defer
-    // />,
-    // <script
-    //   key="lsInitScript"
-    //   id="lsInitScript"
-    //   src="https://livesupporti.com/Scripts/clientAsync.js?acc=848b298c-f82a-4868-a975-2cd8aae81c0b&skin=Classic"
-    //   defer
     // />
   ])
 }

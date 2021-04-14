@@ -5,6 +5,7 @@ import parse from "html-react-parser"
 import Hero from "../../common/ui/Hero"
 import FooterCTAs from '../../common/ui/FooterCTAs'
 import { useDispatch } from "react-redux"
+import SEO from "../../containers/SEO"
 import { openModal } from "../../common/modals/modalActions"
 // import PartnerModal from '../../common/modals/PartnerModal'
 
@@ -18,6 +19,7 @@ const PartnersTemplate = ({ data: { page } }) => {
 
   return (
     <>
+      <SEO pageSEO={page.seo} />
       <Hero hero={hero} />
       {acf.partners && acf.partners.map(
         partnerSection =>

@@ -1,6 +1,8 @@
 import React from "react"
 import { graphql } from "gatsby"
 import parse from "html-react-parser"
+import SEO from "../../containers/SEO"
+import { embedUrl } from "../../common/utils/helpers"
 import Hero from "../../common/ui/Hero"
 import FooterCTAs from '../../common/ui/FooterCTAs'
 
@@ -13,6 +15,7 @@ const CampaignWhitePaperTemplate = ({ data: { page } }) => {
 
   return (
     <>
+      <SEO pageSEO={page.seo} />
       <Hero hero={hero} />
       <section>
         <div className="container">
@@ -39,7 +42,7 @@ const CampaignWhitePaperTemplate = ({ data: { page } }) => {
             <div className="col-lg-6">
               {acf.formEmbed && (
                 <div className="responsive-iframe aspect-1x1">
-                  <iframe src={acf.formEmbed} title={page.title} />
+                  <iframe src={embedUrl(acf.formEmbed)} title={page.title} />
                 </div>
               )}
             </div>

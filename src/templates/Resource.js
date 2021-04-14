@@ -1,6 +1,7 @@
 import React from "react"
 import { graphql } from "gatsby"
 import parse from "html-react-parser"
+import {embedUrl} from "../common/utils/helpers"
 import Hero from "../common/ui/Hero"
 
 
@@ -53,13 +54,13 @@ const ResourceTemplate = ({ data: { post } }) => {
               <div className="col-12">
                 {acf.embed && (
                   <div className="responsive-iframe aspect-4x3">
-                    <iframe src={acf.embed} title={post.title} />
+                    <iframe src={embedUrl(acf.embed)} title={post.title} />
                   </div>
                 )}
                 {acf.document && (
                   <div className="mt-5">
                     <div className="responsive-iframe aspect-4x3">
-                      <iframe src={acf.document.localFile.url} title={post.title} />
+                      <iframe src={embedUrl(acf.document.localFile.url)} title={post.title} />
                     </div>
                   </div>
                 )}
@@ -81,7 +82,7 @@ const ResourceTemplate = ({ data: { post } }) => {
                 {acf.document && (
                   <div className="mt-5">
                     <div className="responsive-iframe aspect-4x3">
-                      <iframe src={acf.document.localFile.url} title={post.title} />
+                      <iframe src={embedUrl(acf.document.localFile.url)} title={post.title} />
                     </div>
                   </div>
                 )}

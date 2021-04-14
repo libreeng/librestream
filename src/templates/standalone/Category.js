@@ -2,6 +2,7 @@ import React, { useState } from "react"
 import { Link, graphql } from "gatsby"
 import { useFlexSearch } from 'react-use-flexsearch'
 import SearchLineIcon from 'remixicon-react/SearchLineIcon'
+import SEO from "../../containers/SEO"
 import Hero from "../../common/ui/Hero"
 import { useSearch } from "../../common/hooks/useSearch"
 import { useNews } from "../../common/hooks/useNews"
@@ -31,6 +32,7 @@ const CategoryTemplate = ({ data: { category } }) => {
 
   return (
     <>
+      <SEO pageSEO={page.seo} />
       <Hero hero={hero} />
 
       <section>

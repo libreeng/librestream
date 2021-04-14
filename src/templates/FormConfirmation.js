@@ -1,6 +1,7 @@
 import React from "react"
 import { graphql } from "gatsby"
 import parse from "html-react-parser"
+import {embedUrl} from "../common/utils/helpers"
 import Hero from "../common/ui/Hero"
 
 
@@ -30,7 +31,7 @@ const FormConfirmationTemplate = ({ data: { post } }) => {
                 <>
                   <hr className="hr-styled my-5" />
                   <div className="responsive-iframe aspect-4x3">
-                    <iframe src={acf.videoEmbed} title={post.title} />
+                    <iframe src={embedUrl(acf.videoEmbed)} title={post.title} />
                   </div>
                 </>
               )}
@@ -38,7 +39,7 @@ const FormConfirmationTemplate = ({ data: { post } }) => {
                 <>
                   <hr className="hr-styled" />
                   <div className="responsive-iframe aspect-letter my-5">
-                    <iframe src={acf.document.localFile.url} title={post.title} />
+                    <iframe src={embedUrl(acf.document.localFile.url)} title={post.title} />
                   </div>
                   <div className="text-center">
                     <a href={acf.document.localFile.url} target="_blank" rel="noreferrer" className="btn btn-primary mx-auto text-white">Download</a>

@@ -1,7 +1,7 @@
 import React from "react"
 import { graphql } from "gatsby"
-import Image from "gatsby-image"
 import parse from "html-react-parser"
+import SEO from "../../containers/SEO"
 import Hero from "../../common/ui/Hero"
 import Intro from "../../common/ui/Intro"
 import FooterCTAs from '../../common/ui/FooterCTAs'
@@ -16,6 +16,7 @@ const CustomerSuccessTemplate = ({ data: { page } }) => {
 
   return (
     <>
+      <SEO pageSEO={page.seo} />
       <Hero hero={hero} />
       <Intro intro={intro} bracket="true" />
       <div className="container">
@@ -31,7 +32,7 @@ const CustomerSuccessTemplate = ({ data: { page } }) => {
               <div className="row align-items-center">
                 {acf.trainingImages && acf.trainingImages.map(image => (
                   <div className="col-12 mb-3" key={image.id}>
-                    <img src={image?.trainingImage?.localFile?.publicURL} className="img-fluid" alt={image?.trainingImage?.altText}/>
+                    <img src={image?.trainingImage?.localFile?.publicURL} className="img-fluid" alt={image?.trainingImage?.altText} />
                   </div>
                 ))}
               </div>
@@ -52,7 +53,7 @@ const CustomerSuccessTemplate = ({ data: { page } }) => {
               <div className="row align-items-center">
                 {acf.deploymentImages && acf.deploymentImages.map(image => (
                   <div className="col-12 mb-3" key={image.id}>
-                    <img src={image?.deploymentImage?.localFile?.publicURL} className="img-fluid" alt={image?.deploymentImage?.altText}/>
+                    <img src={image?.deploymentImage?.localFile?.publicURL} className="img-fluid" alt={image?.deploymentImage?.altText} />
                   </div>
                 ))}
               </div>

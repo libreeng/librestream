@@ -2,6 +2,7 @@ import React from "react"
 import { graphql } from "gatsby"
 // import Image from "gatsby-image"
 import parse from "html-react-parser"
+import SEO from "../../containers/SEO"
 import Hero from "../../common/ui/Hero"
 import Intro from "../../common/ui/Intro"
 import FooterCTAs from '../../common/ui/FooterCTAs'
@@ -17,6 +18,7 @@ const ProductRecyclingTemplate = ({ data: { page } }) => {
 
   return (
     <>
+      <SEO pageSEO={page.seo} />
       <Hero hero={hero} />
       <Intro intro={intro} bracket="true" />
       <div className="container">

@@ -2,6 +2,7 @@ import React from "react"
 import { Link, graphql } from "gatsby"
 import Image from "gatsby-image"
 import parse from "html-react-parser"
+import {embedUrl} from "../common/utils/helpers"
 import Hero from '../common/ui/Hero'
 import NewsletterSignup from "../components/NewsletterSignup"
 import SocialShare from "../components/SocialShare"
@@ -61,7 +62,7 @@ const PostTemplate = ({ data: { previous, next, post } }) => {
               )}
               {acf.postVideo.videoEmbed && (
                 <div className="responsive-iframe aspect-16x9 mt-5">
-                  <iframe src={acf.postVideo.videoEmbed} title={acf.postVideo.videoTitle ? acf.postVideo.videoTitle : post.title} />
+                  <iframe src={embedUrl(acf.postVideo.videoEmbed)} title={acf.postVideo.videoTitle ? acf.postVideo.videoTitle : post.title} />
                 </div>
               )}
             </div>

@@ -1,6 +1,7 @@
 import React from "react"
 import { graphql, Link } from "gatsby"
 import parse from "html-react-parser"
+import SEO from "../../containers/SEO"
 import { useCaseStudies } from "../../common/hooks/useCaseStudies"
 import Hero from "../../common/ui/Hero"
 import FooterCTAs from '../../common/ui/FooterCTAs'
@@ -14,6 +15,7 @@ const UseCasesTemplate = ({ data: { page } }) => {
 
   return (
     <>
+      <SEO pageSEO={page.seo} />
       <Hero hero={hero} />
       {!!page.content && (
         <section className="pb-0">
@@ -42,7 +44,7 @@ const UseCasesTemplate = ({ data: { page } }) => {
                     <div className='card p-2'>
                       <div
                         className="card-img-top bg-image aspect-1x1 grayscale"
-                        style={featuredImage && { backgroundImage: `url(${featuredImage?.sourceUrl })` }}
+                        style={featuredImage && { backgroundImage: `url(${featuredImage?.sourceUrl})` }}
                       >
                         <div className="bg-fill">
                           {logoImage && (

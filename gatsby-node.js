@@ -1,16 +1,25 @@
 /* eslint-disable consistent-return */
 const path = require(`path`)
-const redirects = require("./redirects.json")
+const staticRedirects = require("./redirects.json")
 
 // This is a simple debugging tool
 // dd() will prettily dump to the terminal and kill the process
 // const { dd } = require(`dumper.js`)
 
+function sanitizeRedirect(path) {
+  // strip absolute url
+  // strip .html extensions
+  // replace regex pattern
+
+  const sanitized = path
+    .replace("http://www.librestreamcms.kinsta.cloud", "")
+    .replace("https://www.librestreamcms.kinsta.cloud", "")
+    .replace("librestream.com", "")
+
+  return sanitized.startsWith('/') ? sanitized : `/${sanitized}`
+}
 
 
-/**
- * This function creates all the individual standalone pages in this site
- */
 const createStandalonePages = async ({ pages, gatsbyUtilities }) =>
   Promise.all(
     pages.map(page => {
@@ -41,9 +50,7 @@ const createStandalonePages = async ({ pages, gatsbyUtilities }) =>
     })
   )
 
-/**
- * This function creates all the individual blog pages in this site
- */
+
 const createIndividualBlogPostPages = async ({ posts, gatsbyUtilities }) =>
   Promise.all(
     posts.map(({ previous, post, next }) =>
@@ -73,9 +80,6 @@ const createIndividualBlogPostPages = async ({ posts, gatsbyUtilities }) =>
     )
   )
 
-/**
- * This function creates all the individual standalone pages in this site
- */
 const createCategoryPages = async ({ categories, gatsbyUtilities }) =>
   Promise.all(
     categories.map(category => {
@@ -106,76 +110,30 @@ const createCategoryPages = async ({ categories, gatsbyUtilities }) =>
 
     })
   )
-/**
- * This function creates all archive pages in this site
- */
-// async function createBlogPostArchive({ posts, gatsbyUtilities }) {
-//   const graphqlResult = await gatsbyUtilities.graphql(/* GraphQL */ `
-//     {
-//       wp {
-//         readingSettings {
-//           postsPerPage
-//         }
-//       }
-//     }
-//   `)
 
-//   const { postsPerPage } = graphqlResult.data.wp.readingSettings
+const createSiteRedirects = async ({ redirects, gatsbyUtilities }) => {
+  console.log(`Creating: ${staticRedirects.length} Redirects`)
+  const { createRedirect } = gatsbyUtilities.actions
+  Promise.all(
+    staticRedirects.map(redirect => {
+      const { fromPath, toPath } = redirect
+      // console.log(`Creating: ${redirects.length} redirects`)
+      // const { origin, target, type, format } = redirect
+      // const fromPath = sanitizeRedirect(origin)
+      // const toPath = sanitizeRedirect(target)
+      // const isPermanent = type === 301
+      createRedirect({
+        fromPath,
+        toPath,
+        isPermanent: false,
+        force: false,
+        // ignoreCase: true
+      })
 
-//   const postsChunkedIntoArchivePages = chunk(posts, postsPerPage)
-//   const totalPages = postsChunkedIntoArchivePages.length
+    })
+  )
+}
 
-//   return Promise.all(
-//     postsChunkedIntoArchivePages.map(async (_posts, index) => {
-//       const pageNumber = index + 1
-
-//       const getPagePath = page => {
-//         if (page > 0 && page <= totalPages) {
-//           // Since our homepage is our blog page
-//           // we want the first page to be "/" and any additional pages
-//           // to be numbered.
-//           // "/blog/2" for example
-//           return page === 1 ? `/` : `/blog/${page}`
-//         }
-
-//         return null
-//       }
-
-//       // createPage is an action passed to createPages
-//       // See https://www.gatsbyjs.com/docs/actions#createPage for more info
-//       await gatsbyUtilities.actions.createPage({
-//         path: getPagePath(pageNumber),
-
-//         // use the blog post archive template as the page component
-//         component: path.resolve(`./src/templates/blog-post-archive.js`),
-
-//         // `context` is available in the template as a prop and
-//         // as a variable in GraphQL.
-//         context: {
-//           // the index of our loop is the offset of which posts we want to display
-//           // so for page 1, 0 * 10 = 0 offset, for page 2, 1 * 10 = 10 posts offset,
-//           // etc
-//           offset: index * postsPerPage,
-
-//           // We need to tell the template how many posts to display too
-//           postsPerPage,
-
-//           nextPagePath: getPagePath(pageNumber + 1),
-//           previousPagePath: getPagePath(pageNumber - 1),
-//         },
-//       })
-//     })
-//   )
-// }
-
-/**
- * This function queries Gatsby's GraphQL server and asks for
- * All WordPress blog posts. If there are any GraphQL error it throws an error
- * Otherwise it will return the posts 🙌
- *
- * We're passing in the utilities we got from createPages.
- * So see https://www.gatsbyjs.com/docs/node-apis/#createPages for more info!
- */
 async function getPosts({ graphql, reporter }) {
   const graphqlResult = await graphql(/* GraphQL */ `
     query WpPosts {
@@ -354,39 +312,46 @@ async function getCategories({ graphql, reporter }) {
   return categories
 }
 
+async function getRedirects({ graphql, reporter }) {
+  const graphqlResult = await graphql(/* GraphQL */ `
+    query WpPages {
+      # Query all WordPress redirects
+      wp(id: {eq: "/graphql--rootfields"}) {
+        seo {
+          redirects {
+            origin
+            target
+            type
+            format
+          }
+        }
+      }
+    }
+  `)
 
-/**
- * exports.createPages is a built-in Gatsby Node API.
- * It's purpose is to allow you to create pages for your site! 💡
- *
- * See https://www.gatsbyjs.com/docs/node-apis/#createPages for more info.
- */
+  if (graphqlResult.errors) {
+    reporter.panicOnBuild(
+      `There was an error loading your site redirects`,
+      graphqlResult.errors
+    )
+    return
+  }
+  const redirects = graphqlResult.data.wp.seo.redirects
+
+  return redirects
+}
+
 exports.createPages = async gatsbyUtilities => {
-  const { createRedirect } = gatsbyUtilities.actions
-  // redirects.forEach(redirect => {
-  //   console.log(redirect.fromPath)
-  //   console.log(createRedirect())
-  // })
-
-  redirects.forEach(redirect =>
-    createRedirect({
-      fromPath: redirect.fromPath,
-      toPath: redirect.toPath,
-      isPermanent: redirect.type === 301
-    })
-  )
-  // Query our posts from the GraphQL server
+  // Query the GraphQL server
   const posts = await getPosts(gatsbyUtilities)
   const pages = await getPages(gatsbyUtilities)
   const categories = await getCategories(gatsbyUtilities)
+  const redirects = await getRedirects(gatsbyUtilities)
 
-
-  // Create pages for each post and standalone page
   await createIndividualBlogPostPages({ posts, gatsbyUtilities })
   await createStandalonePages({ pages, gatsbyUtilities })
   await createCategoryPages({ categories, gatsbyUtilities })
+  await createSiteRedirects({ redirects, gatsbyUtilities })
 
-  // Paginated archives
-  // await createBlogPostArchive({ posts, gatsbyUtilities })
 }
 

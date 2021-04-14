@@ -11,11 +11,10 @@ module.exports = {
     siteUrl: website.url + pathPrefix, // For gatsby-plugin-sitemap
     pathPrefix,
     title: website.title,
-    titleAlt: website.titleAlt,
     description: website.description,
-    banner: website.logo,
+    shareImage: website.shareImage,
     headline: website.headline,
-    siteLanguage: website.siteLanguage,
+    inLanguage: website.inLanguage,
     ogLanguage: website.ogLanguage,
     author: website.author,
     twitter: website.twitter,
@@ -31,43 +30,14 @@ module.exports = {
       resolve: "gatsby-plugin-google-tagmanager",
       options: {
         id: "GTM-W3BZNJ2",
-
-        // Include GTM in development.
-        //
-        // Defaults to false meaning GTM will only be loaded in production.
         includeInDevelopment: false,
-
-        // datalayer to be set before GTM is loaded
-        // should be an object or a function that is executed in the browser
-        //
-        // Defaults to null
-        // defaultDataLayer: { platform: "gatsby" },
-
-        // Specify optional GTM environment details.
-        // gtmAuth: "YOUR_GOOGLE_TAGMANAGER_ENVIRONMENT_AUTH_STRING",
-        // gtmPreview: "YOUR_GOOGLE_TAGMANAGER_ENVIRONMENT_PREVIEW_NAME",
-        // dataLayerName: "YOUR_DATA_LAYER_NAME",
-
-        // Name of the event that is triggered
-        // on every Gatsby route change.
-        //
-        // Defaults to gatsby-route-change
-        // routeChangeEventName: "YOUR_ROUTE_CHANGE_EVENT_NAME",
       },
     },
     {
-      /**
-       * First up is the WordPress source plugin that connects Gatsby
-       * to your WordPress site.
-       *
-       * visit the plugin docs to learn more
-       * https://github.com/gatsbyjs/gatsby/blob/master/packages/gatsby-source-wordpress/README.md
-       *
-       */
       resolve: `gatsby-source-wordpress`,
       options: {
         // the only required plugin option for WordPress is the GraphQL url.
-        url: process.env.WPGRAPHQL_URL || `https://librestreamcms.kinsta.cloud/graphql`,
+        url: process.env.WPGRAPHQL_URL || 'https://librestreamcms.kinsta.cloud/graphql',
         type: {
           MediaItem: {
             localFile: {
@@ -108,7 +78,7 @@ module.exports = {
         background_color: `#014168`,
         theme_color: `#014168`,
         display: `standalone`,
-        icon: 'src/img/favicon.png'
+        icon: 'static/img/favicon.png'
       },
     },
     'gatsby-plugin-sharp',
