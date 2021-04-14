@@ -1,0 +1,38 @@
+[
+    {
+      "fromPath": "/privacy(.*)",
+      "toPath": "/privacy-policy/",
+      "type": 301,
+      "format": "regex"
+    },
+    {
+      "fromPath": "/Company(.*)",
+      "toPath": "/about/",
+      "type": 301,
+      "format": "regex"
+    },
+    {
+      "fromPath": "/fieldservice(.*)",
+      "toPath": "/solutions/",
+      "type": 301,
+      "format": "regex"
+    },
+    {
+      "fromPath": "/Products_(.*)",
+      "toPath": "/products/",
+      "type": 301,
+      "format": "regex"
+    },
+    {
+      "fromPath": "/Solutions_(.*)",
+      "toPath": "/solutions/",
+      "type": 301,
+      "format": "regex"
+    },
+    {
+      "fromPath": "/Strategic_(.*)",
+      "toPath": "/solutions/",
+      "type": 301,
+      "format": "regex"
+    },
+]
