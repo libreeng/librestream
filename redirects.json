@@ -994,7 +994,1003 @@
     "toPath": "/news/",
     "type": 301,
     "format": "plain"
-  }
+  },
+  {
+    "fromPath": "/news/feb-12-2007.html",
+    "toPath": "/company-news/tanberg-agreement/",
+    "type": 301,
+    "format": "plain"
+  },
+  {
+    "fromPath": "/news/feb-13-2014.html",
+    "toPath": "/company-news/onsight-version-6-3/",
+    "type": 301,
+    "format": "plain"
+  },
+  {
+    "fromPath": "/news/feb-18-2010.html",
+    "toPath": "/company-news/fortress-partnership/",
+    "type": 301,
+    "format": "plain"
+  },
+  {
+    "fromPath": "/news/feb-2-2016.html",
+    "toPath": "/company-news/onsight-virtual-presence-system-and-milestone-of-over-10-million-installations-globally/",
+    "type": 301,
+    "format": "plain"
+  },
+  {
+    "fromPath": "/news/feb-26-2009.html",
+    "toPath": "/news/",
+    "type": 301,
+    "format": "plain"
+  },
+  {
+    "fromPath": "/news/feb-5-2009.html",
+    "toPath": "/news/",
+    "type": 301,
+    "format": "plain"
+  },
+  {
+    "fromPath": "/news/jan-22-2009.html",
+    "toPath": "/company-news/onsight-2500ex/",
+    "type": 301,
+    "format": "plain"
+  },
+  {
+    "fromPath": "/news/jan-28-2010.html",
+    "toPath": "/company-news/tandberg-fieldview/",
+    "type": 301,
+    "format": "plain"
+  },
+  {
+    "fromPath": "/news/jan-5-2011.html",
+    "toPath": "/company-news/extend-onsight-mobile-collaboration-verizon/",
+    "type": 301,
+    "format": "plain"
+  },
+  {
+    "fromPath": "/news/jan-6-2009.html",
+    "toPath": "/company-news/onsight-mobile-collaboration-system-by-nine-canadian-jurisdictions/",
+    "type": 301,
+    "format": "plain"
+  },
+  {
+    "fromPath": "/news/jan-7-2010.html",
+    "toPath": "/company-news/onsight-version-4/",
+    "type": 301,
+    "format": "plain"
+  },
+  {
+    "fromPath": "/news/jul-23-2013.html",
+    "toPath": "/company-news/onsight-version-6-2/",
+    "type": 301,
+    "format": "plain"
+  },
+  {
+    "fromPath": "/news/july-11-2005.html",
+    "toPath": "/company-news/new-venture/",
+    "type": 301,
+    "format": "plain"
+  },
+  {
+    "fromPath": "/news/july-7-2016.html",
+    "toPath": "/company-news/wood-group-partners-with-librestream/",
+    "type": 301,
+    "format": "plain"
+  },
+  {
+    "fromPath": "/news/jun-20-2012.html",
+    "toPath": "/company-news/2500-mobile-device-announced/",
+    "type": 301,
+    "format": "plain"
+  },
+  {
+    "fromPath": "/news/jun-28-2012.html",
+    "toPath": "/company-news/newest-series-of-rugged-onsight-mobile-devices/",
+    "type": 301,
+    "format": "plain"
+  },
+  {
+    "fromPath": "/news/june-07-2010.html",
+    "toPath": "/news/",
+    "type": 301,
+    "format": "plain"
+  },
+  {
+    "fromPath": "/news/june-21-2010.html",
+    "toPath": "/solutions/",
+    "type": 301,
+    "format": "plain"
+  },
+  {
+    "fromPath": "/news/june-22-2009.html",
+    "toPath": "/company-news/onsight-version-3-4/",
+    "type": 301,
+    "format": "plain"
+  },
+  {
+    "fromPath": "/news/june-22-2010.html",
+    "toPath": "/news/",
+    "type": 301,
+    "format": "plain"
+  },
+  {
+    "fromPath": "/news/june-25-2015.html",
+    "toPath": "/company-news/collaboration-hub/",
+    "type": 301,
+    "format": "plain"
+  },
+  {
+    "fromPath": "/news/june-29-2011.html",
+    "toPath": "/company-news/onsight-version-4-5/",
+    "type": 301,
+    "format": "plain"
+  },
+  {
+    "fromPath": "/news/Librestream_AWE.pdf",
+    "toPath": "/news/",
+    "type": 301,
+    "format": "plain"
+  },
+  {
+    "fromPath": "/news/Mar_28_2011.html",
+    "toPath": "/company-news/librestream-eye2skye-relationship/",
+    "type": 301,
+    "format": "plain"
+  },
+  {
+    "fromPath": "/news/mar-15-2016.html",
+    "toPath": "/company-news/librestream-closes-financing-to-accelerate-growth/",
+    "type": 301,
+    "format": "plain"
+  },
+  {
+    "fromPath": "/news/march-14-2008.html",
+    "toPath": "/news/",
+    "type": 301,
+    "format": "plain"
+  },
+  {
+    "fromPath": "/news/march-25-2008.html",
+    "toPath": "/news/",
+    "type": 301,
+    "format": "plain"
+  },
+  {
+    "fromPath": "/news/march-25-2010.html",
+    "toPath": "/company-news/secure-wi-fi-video-on-the-battlefield/",
+    "type": 301,
+    "format": "plain"
+  },
+  {
+    "fromPath": "/news/march-26-2009.html",
+    "toPath": "/solutions/",
+    "type": 301,
+    "format": "plain"
+  },
+  {
+    "fromPath": "/news/march-3-2009.html",
+    "toPath": "/articles/librestream-onsight-review-telbit/",
+    "type": 301,
+    "format": "plain"
+  },
+  {
+    "fromPath": "/news/march-4-2009.html",
+    "toPath": "/news/",
+    "type": 301,
+    "format": "plain"
+  },
+  {
+    "fromPath": "/news/May_3_2011.html",
+    "toPath": "/company-news/amid-global-turmoil-manufacturers-conduct-business-from-afar-with-librestreams-onsight/",
+    "type": 301,
+    "format": "plain"
+  },
+  {
+    "fromPath": "/news/may-14-2009.html",
+    "toPath": "/solutions/",
+    "type": 301,
+    "format": "plain"
+  },
+  {
+    "fromPath": "/news/may-18-2011.html",
+    "toPath": "/company-news/teasacom/",
+    "type": 301,
+    "format": "plain"
+  },
+  {
+    "fromPath": "/news/may-20-2015.html",
+    "toPath": "/company-news/librestream-wins-cisco-solution-partner-program-business-outcomes/",
+    "type": 301,
+    "format": "plain"
+  },
+  {
+    "fromPath": "/news/may-29-2009.html",
+    "toPath": "/solutions/",
+    "type": 301,
+    "format": "plain"
+  },
+  {
+    "fromPath": "/news/may-8-2009.html",
+    "toPath": "/company-news/onsight-sip-service/",
+    "type": 301,
+    "format": "plain"
+  },
+  {
+    "fromPath": "/news/nov-10-2015.html",
+    "toPath": "/company-news/librestream-technologies-joins-edge-innovation-network/",
+    "type": 301,
+    "format": "plain"
+  },
+  {
+    "fromPath": "/news/nov-12-2008.html",
+    "toPath": "/news/",
+    "type": 301,
+    "format": "plain"
+  },
+  {
+    "fromPath": "/news/nov-15-2010.html",
+    "toPath": "/company-news/cisco-interoperability-verification-testing/",
+    "type": 301,
+    "format": "plain"
+  },
+  {
+    "fromPath": "/news/nov-16-2015.html",
+    "toPath": "/company-news/diebold-uses-live-video-collaboration-solution/",
+    "type": 301,
+    "format": "plain"
+  },
+  {
+    "fromPath": "/news/nov-17-2011.html",
+    "toPath": "/company-news/newest-release-of-its-onsight-mobile-collaboration-platform/",
+    "type": 301,
+    "format": "plain"
+  },
+  {
+    "fromPath": "/news/nov-17-2014.html",
+    "toPath": "/company-news/us-national-guard-deploys-video-collaboration/",
+    "type": 301,
+    "format": "plain"
+  },
+  {
+    "fromPath": "/news/nov-19-2008.html",
+    "toPath": "/company-news/onsight-2000r-mobile-collaboration-device/",
+    "type": 301,
+    "format": "plain"
+  },
+  {
+    "fromPath": "/news/oct-1-2009.html",
+    "toPath": "/company-news/webex-integration/",
+    "type": 301,
+    "format": "plain"
+  },
+  {
+    "fromPath": "/news/oct-22-2013.html",
+    "toPath": "/company-news/automotive-manufacturers-deploy-virtual-presence-systems-globally/",
+    "type": 301,
+    "format": "plain"
+  },
+  {
+    "fromPath": "/news/oct-26-2015.html",
+    "toPath": "/company-news/onsight-virtual-presence-system-and-milestone-of-over-10-million-installations-globally/",
+    "type": 301,
+    "format": "plain"
+  },
+  {
+    "fromPath": "/news/oct-28-2008.html",
+    "toPath": "/News/",
+    "type": 301,
+    "format": "plain"
+  },
+  {
+    "fromPath": "/news/oct-30-2008.html",
+    "toPath": "/company-news/gerber-collision-and-glass/",
+    "type": 301,
+    "format": "plain"
+  },
+  {
+    "fromPath": "/news/sep-10-2012.html",
+    "toPath": "/company-news/expanded-mobile-collaboration-on-ios-devices/",
+    "type": 301,
+    "format": "plain"
+  },
+  {
+    "fromPath": "/news/sept-10-2006.html",
+    "toPath": "/company-news/librestream-introduces-onsight/",
+    "type": 301,
+    "format": "plain"
+  },
+  {
+    "fromPath": "/online-demo-request.html",
+    "toPath": "/",
+    "type": 301,
+    "format": "plain"
+  },
+  {
+    "fromPath": "/partners.html",
+    "toPath": "/",
+    "type": 301,
+    "format": "plain"
+  },
+  {
+    "fromPath": "/partners/certified-partner-program.html",
+    "toPath": "/",
+    "type": 301,
+    "format": "plain"
+  },
+  {
+    "fromPath": "/partners/fieldview.html",
+    "toPath": "/",
+    "type": 301,
+    "format": "plain"
+  },
+  {
+    "fromPath": "/partners/strategic-alliances.html",
+    "toPath": "/",
+    "type": 301,
+    "format": "plain"
+  },
+  {
+    "fromPath": "/pdf/EnergyManufacturing2010.pdf",
+    "toPath": "/articles/being-in-two-places-at-one-time/",
+    "type": 301,
+    "format": "plain"
+  },
+  {
+    "fromPath": "/pdf/GovernmentPurchasing.pdf",
+    "toPath": "/solutions/",
+    "type": 301,
+    "format": "plain"
+  },
+  {
+    "fromPath": "/pdf/StrokeJune2010.pdf",
+    "toPath": "/solutions/",
+    "type": 301,
+    "format": "plain"
+  },
+  {
+    "fromPath": "/privacy(.*)",
+    "toPath": "/privacy-policy/",
+    "type": 301,
+    "format": "regex"
+  },
+  {
+    "fromPath": "/products.html",
+    "toPath": "/products/",
+    "type": 301,
+    "format": "plain"
+  },
+  {
+    "fromPath": "/products/complementary-products.html",
+    "toPath": "/products/",
+    "type": 301,
+    "format": "plain"
+  },
+  {
+    "fromPath": "/products/onsight-accessories.html",
+    "toPath": "/products/onsight-rugged-smart-camera/",
+    "type": 301,
+    "format": "plain"
+  },
+  {
+    "fromPath": "/products/onsight-account-manager.html",
+    "toPath": "/products/onsight-management/",
+    "type": 301,
+    "format": "plain"
+  },
+  {
+    "fromPath": "/products/onsight-collaboration-hub.html",
+    "toPath": "/products/onsight-collaboration-hub/",
+    "type": 301,
+    "format": "plain"
+  },
+  {
+    "fromPath": "/products/onsight-connect.html",
+    "toPath": "/products/",
+    "type": 301,
+    "format": "plain"
+  },
+  {
+    "fromPath": "/products/onsight-devices.html",
+    "toPath": "/products/onsight-rugged-smart-camera/",
+    "type": 301,
+    "format": "plain"
+  },
+  {
+    "fromPath": "/products/onsight-devices/onsight1000.html",
+    "toPath": "/products/onsight-rugged-smart-camera/",
+    "type": 301,
+    "format": "plain"
+  },
+  {
+    "fromPath": "/products/onsight-devices/onsight2000ex.html",
+    "toPath": "/products/onsight-rugged-smart-camera/",
+    "type": 301,
+    "format": "plain"
+  },
+  {
+    "fromPath": "/products/onsight-devices/onsight2000r.html",
+    "toPath": "/products/onsight-rugged-smart-camera/",
+    "type": 301,
+    "format": "plain"
+  },
+  {
+    "fromPath": "/products/onsight-devices/onsight2500ex.html",
+    "toPath": "/products/onsight-rugged-smart-camera/",
+    "type": 301,
+    "format": "plain"
+  },
+  {
+    "fromPath": "/products/onsight-devices/onsight2500r.html",
+    "toPath": "/products/onsight-rugged-smart-camera/",
+    "type": 301,
+    "format": "plain"
+  },
+  {
+    "fromPath": "/products/onsight-embedded.html",
+    "toPath": "/products/onsight-embedded/",
+    "type": 301,
+    "format": "plain"
+  },
+  {
+    "fromPath": "/products/onsight-expert.html",
+    "toPath": "/products/onsight-connect/",
+    "type": 301,
+    "format": "plain"
+  },
+  {
+    "fromPath": "/products/onsight-integration-program.html",
+    "toPath": "/",
+    "type": 301,
+    "format": "plain"
+  },
+  {
+    "fromPath": "/products/onsight-management-suite.html",
+    "toPath": "/products/onsight-management/",
+    "type": 301,
+    "format": "plain"
+  },
+  {
+    "fromPath": "/products/onsight-management-suite_v5.1.html",
+    "toPath": "/products/onsight-management/",
+    "type": 301,
+    "format": "plain"
+  },
+  {
+    "fromPath": "/products/onsight-sip-service.html",
+    "toPath": "/products/onsight-management/",
+    "type": 301,
+    "format": "plain"
+  },
+  {
+    "fromPath": "/products/onsight-teamlink.html",
+    "toPath": "/products/onsight-management/",
+    "type": 301,
+    "format": "plain"
+  },
+  {
+    "fromPath": "/products/termsofuse.html",
+    "toPath": "/support-archives/termsofuse/",
+    "type": 301,
+    "format": "plain"
+  },
+  {
+    "fromPath": "/productspecs.html",
+    "toPath": "/wp-content/uploads/2016/06/Onsight-Rugged-Smart-Camera.pdf",
+    "type": 301,
+    "format": "plain"
+  },
+  {
+    "fromPath": "/recycling.html",
+    "toPath": "/about/onsight-product-recycling/",
+    "type": 301,
+    "format": "plain"
+  },
+  {
+    "fromPath": "/sitemap.html",
+    "toPath": "/",
+    "type": 301,
+    "format": "plain"
+  },
+  {
+    "fromPath": "/Software/5.0/Librestream_english_OnsightExpert_5.0.29.iso",
+    "toPath": "/onsight-support/",
+    "type": 301,
+    "format": "plain"
+  },
+  {
+    "fromPath": "/Software/5.0/Librestream_OnsightManagementSuite_v2.2.3_UserManual.pdf",
+    "toPath": "/onsight-support/",
+    "type": 301,
+    "format": "plain"
+  },
+  {
+    "fromPath": "/Software/5.0/OE_400192-00_rev01.pdf",
+    "toPath": "/onsight-support/",
+    "type": 301,
+    "format": "plain"
+  },
+  {
+    "fromPath": "/Software/5.0/OnsightExpert_5.0.29.exe",
+    "toPath": "/onsight-support/",
+    "type": 301,
+    "format": "plain"
+  },
+  {
+    "fromPath": "/Software/5.1/Librestream_english_OnsightExpert_5.1.9.iso",
+    "toPath": "/onsight-support/",
+    "type": 301,
+    "format": "plain"
+  },
+  {
+    "fromPath": "/Software/5.1/OE_400192-01_revA.pdf",
+    "toPath": "/onsight-support/",
+    "type": 301,
+    "format": "plain"
+  },
+  {
+    "fromPath": "/Software/5.1/OnsightLauncher.exe",
+    "toPath": "/onsight-support/",
+    "type": 301,
+    "format": "plain"
+  },
+  {
+    "fromPath": "/Software/6.0/400192-02_revA.pdf",
+    "toPath": "/onsight-support/",
+    "type": 301,
+    "format": "plain"
+  },
+  {
+    "fromPath": "/Software/6.0/Librestream_english_OnsightExpert_6.0.8.iso",
+    "toPath": "/onsight-support/",
+    "type": 301,
+    "format": "plain"
+  },
+  {
+    "fromPath": "/Software/6.0/OnsightLauncher.exe",
+    "toPath": "/onsight-support/",
+    "type": 301,
+    "format": "plain"
+  },
+  {
+    "fromPath": "/Software/6.1/400192-03_revA.pdf",
+    "toPath": "/onsight-support/",
+    "type": 301,
+    "format": "plain"
+  },
+  {
+    "fromPath": "/Software/6.1/Librestream_english_OnsightExpert_6.1.10.iso",
+    "toPath": "/onsight-support/",
+    "type": 301,
+    "format": "plain"
+  },
+  {
+    "fromPath": "/Software/6.1/OnsightLauncher.exe",
+    "toPath": "/onsight-support/",
+    "type": 301,
+    "format": "plain"
+  },
+  {
+    "fromPath": "/Software/6.2/400192-04_revA.pdf",
+    "toPath": "/onsight-support/",
+    "type": 301,
+    "format": "plain"
+  },
+  {
+    "fromPath": "/Software/6.2/Librestream_english_OnsightExpert_6.2.6.iso",
+    "toPath": "/onsight-support/",
+    "type": 301,
+    "format": "plain"
+  },
+  {
+    "fromPath": "/Software/6.2/OnsightLauncher.exe",
+    "toPath": "/onsight-support/",
+    "type": 301,
+    "format": "plain"
+  },
+  {
+    "fromPath": "/Software/6.3/400192-05_revA.pdf",
+    "toPath": "/onsight-support/",
+    "type": 301,
+    "format": "plain"
+  },
+  {
+    "fromPath": "/Software/6.3/Librestream_english_OnsightExpert_6.3.14.zip",
+    "toPath": "/onsight-support/",
+    "type": 301,
+    "format": "plain"
+  },
+  {
+    "fromPath": "/Software/6.3/OnsightLauncher.exe",
+    "toPath": "/onsight-support/",
+    "type": 301,
+    "format": "plain"
+  },
+  {
+    "fromPath": "/Software/6.4/400192-06_revA.pdf",
+    "toPath": "/onsight-support/",
+    "type": 301,
+    "format": "plain"
+  },
+  {
+    "fromPath": "/Software/6.4/Librestream_english_OnsightExpert_6.4.16.zip",
+    "toPath": "/onsight-support/",
+    "type": 301,
+    "format": "plain"
+  },
+  {
+    "fromPath": "/Software/6.4/OnsightLauncher.exe",
+    "toPath": "/onsight-support/",
+    "type": 301,
+    "format": "plain"
+  },
+  {
+    "fromPath": "/Software/6.5/Librestream_english_OnsightConnect_6.5.10.zip",
+    "toPath": "/onsight-support/",
+    "type": 301,
+    "format": "plain"
+  },
+  {
+    "fromPath": "/Software/6.5/OnsightLauncher.exe",
+    "toPath": "/onsight-support/",
+    "type": 301,
+    "format": "plain"
+  },
+  {
+    "fromPath": "/Software/6.7/Librestream_english_OnsightConnect_6.7.5.zip",
+    "toPath": "/onsight-support/",
+    "type": 301,
+    "format": "plain"
+  },
+  {
+    "fromPath": "/Software/6.7/OnsightLauncher_v6.7.5.exe",
+    "toPath": "/onsight-support/",
+    "type": 301,
+    "format": "plain"
+  },
+  {
+    "fromPath": "/Software/7.0/400192-07_revA.pdf",
+    "toPath": "/onsight-support/",
+    "type": 301,
+    "format": "plain"
+  },
+  {
+    "fromPath": "/Software/7.0/Librestream_english_OnsightConnect_7.0.36.zip",
+    "toPath": "/onsight-support/",
+    "type": 301,
+    "format": "plain"
+  },
+  {
+    "fromPath": "/Software/7.0/OnsightLauncher_v7.0.36.exe",
+    "toPath": "/onsight-support/",
+    "type": 301,
+    "format": "plain"
+  },
+  {
+    "fromPath": "/Software/OnsightConnectforAndroid.html",
+    "toPath": "/onsight-support/",
+    "type": 301,
+    "format": "plain"
+  },
+  {
+    "fromPath": "/Software/OnsightConnectforAndroidPlaystore.html",
+    "toPath": "/onsight-support/",
+    "type": 301,
+    "format": "plain"
+  },
+  {
+    "fromPath": "/Software/OnsightConnectforWindows.html",
+    "toPath": "/onsight-support/",
+    "type": 301,
+    "format": "plain"
+  },
+  {
+    "fromPath": "/solutions.html",
+    "toPath": "/solutions/",
+    "type": 301,
+    "format": "plain"
+  },
+  {
+    "fromPath": "/solutions/equipment-maintenance-repair-overhaul.html",
+    "toPath": "/solutions/aircraft-maintenance-inspections/",
+    "type": 301,
+    "format": "plain"
+  },
+  {
+    "fromPath": "/solutions/field-service.html",
+    "toPath": "/solutions/video-enabled-service/",
+    "type": 301,
+    "format": "plain"
+  },
+  {
+    "fromPath": "/solutions/mobile-telemedicine.html",
+    "toPath": "/solutions/",
+    "type": 301,
+    "format": "plain"
+  },
+  {
+    "fromPath": "/solutions/mobile-video-conferencing-system.html",
+    "toPath": "/solutions/mobile-telepresence/",
+    "type": 301,
+    "format": "plain"
+  },
+  {
+    "fromPath": "/solutions/product-process-reviews.html",
+    "toPath": "/solutions/manufacturing-operations/",
+    "type": 301,
+    "format": "plain"
+  },
+  {
+    "fromPath": "/solutions/remote-video-inspection-cameras.html",
+    "toPath": "/products/",
+    "type": 301,
+    "format": "plain"
+  },
+  {
+    "fromPath": "/Spanish/Spanish_1000.html",
+    "toPath": "/",
+    "type": 301,
+    "format": "plain"
+  },
+  {
+    "fromPath": "/Spanish/Spanish_2000.html",
+    "toPath": "/",
+    "type": 301,
+    "format": "plain"
+  },
+  {
+    "fromPath": "/Spanish/Spanish_Dispositivos.html",
+    "toPath": "/",
+    "type": 301,
+    "format": "plain"
+  },
+  {
+    "fromPath": "/Spanish/Spanish_Expert.html",
+    "toPath": "/",
+    "type": 301,
+    "format": "plain"
+  },
+  {
+    "fromPath": "/Spanish/Spanish_Home.html",
+    "toPath": "/",
+    "type": 301,
+    "format": "plain"
+  },
+  {
+    "fromPath": "/Spanish/Spanish_OMS.html",
+    "toPath": "/",
+    "type": 301,
+    "format": "plain"
+  },
+  {
+    "fromPath": "/Spanish/Spanish_Producto.html",
+    "toPath": "/",
+    "type": 301,
+    "format": "plain"
+  },
+  {
+    "fromPath": "/Spanish/Spanish_Soluciones.html",
+    "toPath": "/",
+    "type": 301,
+    "format": "plain"
+  },
+  {
+    "fromPath": "/Spanish/Spanish_Vision.html",
+    "toPath": "/",
+    "type": 301,
+    "format": "plain"
+  },
+  {
+    "fromPath": "/support.html",
+    "toPath": "/onsight-support/",
+    "type": 301,
+    "format": "plain"
+  },
+  {
+    "fromPath": "/support/faq.html",
+    "toPath": "/onsight-support/",
+    "type": 301,
+    "format": "plain"
+  },
+  {
+    "fromPath": "/support/fieldview-support.html",
+    "toPath": "/onsight-support/",
+    "type": 301,
+    "format": "plain"
+  },
+  {
+    "fromPath": "/support/frost-sullivan.html",
+    "toPath": "/",
+    "type": 301,
+    "format": "plain"
+  },
+  {
+    "fromPath": "/support/knowbase.html",
+    "toPath": "/onsight-support/",
+    "type": 301,
+    "format": "plain"
+  },
+  {
+    "fromPath": "/support/release-bulletins.html",
+    "toPath": "/onsight-support/",
+    "type": 301,
+    "format": "plain"
+  },
+  {
+    "fromPath": "/support/rma-form.html",
+    "toPath": "/onsight-support/",
+    "type": 301,
+    "format": "plain"
+  },
+  {
+    "fromPath": "/support/SHA-2.html",
+    "toPath": "/onsight-support/",
+    "type": 301,
+    "format": "plain"
+  },
+  {
+    "fromPath": "/support/support-request.html",
+    "toPath": "/onsight-support/",
+    "type": 301,
+    "format": "plain"
+  },
+  {
+    "fromPath": "/support/support-request.php",
+    "toPath": "/onsight-support/",
+    "type": 301,
+    "format": "plain"
+  },
+  {
+    "fromPath": "/support/teamlink-request.html",
+    "toPath": "/onsight-support/",
+    "type": 301,
+    "format": "plain"
+  },
+  {
+    "fromPath": "/trademark.html",
+    "toPath": "/",
+    "type": 301,
+    "format": "plain"
+  },
+  {
+    "fromPath": "/video/equipment-field-service.html",
+    "toPath": "/blog/onsight-overview-video/",
+    "type": 301,
+    "format": "plain"
+  },
+  {
+    "fromPath": "/video/gerber-remote-appraisals.html",
+    "toPath": "/articles/gerber-collision-glass/",
+    "type": 301,
+    "format": "plain"
+  },
+  {
+    "fromPath": "/video/manufacturing.html",
+    "toPath": "/blog/onsight-overview-video/",
+    "type": 301,
+    "format": "plain"
+  },
+  {
+    "fromPath": "/video/MOV versions/Generic_Mark_WSD.mov",
+    "toPath": "/blog/onsight-rugged-industrial-camera/",
+    "type": 301,
+    "format": "plain"
+  },
+  {
+    "fromPath": "/video/MOV versions/Generic_Promo_WSD.mov",
+    "toPath": "/solutions/",
+    "type": 301,
+    "format": "plain"
+  },
+  {
+    "fromPath": "/video/MOV versions/Gerber_WHD.mov",
+    "toPath": "/blog/onsight-overview-video/",
+    "type": 301,
+    "format": "plain"
+  },
+  {
+    "fromPath": "/video/MOV versions/IHS_WHD.mov",
+    "toPath": "/solutions/",
+    "type": 301,
+    "format": "plain"
+  },
+  {
+    "fromPath": "/video/MOV versions/LS_Mfg.mov",
+    "toPath": "/solutions/",
+    "type": 301,
+    "format": "plain"
+  },
+  {
+    "fromPath": "/video/MOV versions/SloMo_Final.mov",
+    "toPath": "/blog/onsight-rugged-industrial-camera/",
+    "type": 301,
+    "format": "plain"
+  },
+  {
+    "fromPath": "/video/MOV versions/Telehealth2.mov",
+    "toPath": "/blog/onsight-overview-video/",
+    "type": 301,
+    "format": "plain"
+  },
+  {
+    "fromPath": "/video/MOV versions/WGW_WHD.mov",
+    "toPath": "/blog/onsight-overview-video/",
+    "type": 301,
+    "format": "plain"
+  },
+  {
+    "fromPath": "/video/oil-and-gas.html",
+    "toPath": "/blog/onsight-overview-video/",
+    "type": 301,
+    "format": "plain"
+  },
+  {
+    "fromPath": "/video/onsight-overview.html",
+    "toPath": "/blog/onsight-overview-video/",
+    "type": 301,
+    "format": "plain"
+  },
+  {
+    "fromPath": "/video/rugged-device.html",
+    "toPath": "/blog/onsight-rugged-industrial-camera/",
+    "type": 301,
+    "format": "plain"
+  },
+  {
+    "fromPath": "/video/telehealth.html",
+    "toPath": "/blog/onsight-overview-video/",
+    "type": 301,
+    "format": "plain"
+  },
+  {
+    "fromPath": "/video/western-glove-manufacturing.html",
+    "toPath": "/solutions/manufacturing-operations/",
+    "type": 301,
+    "format": "plain"
+  },
+  {
+    "fromPath": "/video/WMV versions/Generic_Mark_WSD.wmv",
+    "toPath": "/solutions/",
+    "type": 301,
+    "format": "plain"
+  },
+  {
+    "fromPath": "/video/WMV versions/Generic_Promo_WSD.wmv",
+    "toPath": "/solutions/",
+    "type": 301,
+    "format": "plain"
+  },
+  {
+    "fromPath": "/video/WMV versions/Gerber_WHD.wmv",
+    "toPath": "/blog/onsight-overview-video/",
+    "type": 301,
+    "format": "plain"
+  },
+  {
+    "fromPath": "/video/WMV versions/IHS_WHD.wmv",
+    "toPath": "/solutions/",
+    "type": 301,
+    "format": "plain"
+  },
+  {
+    "fromPath": "/video/WMV versions/LS_Mfg.wmv",
+    "toPath": "/solutions/",
+    "type": 301,
+    "format": "plain"
+  },
+  {
+    "fromPath": "/video/WMV versions/SloMo_Final.wmv",
+    "toPath": "/blog/onsight-rugged-industrial-camera/",
+    "type": 301,
+    "format": "plain"
+  },
+  {
+    "fromPath": "/video/WMV versions/Telehealth2.wmv",
+    "toPath": "/solutions/",
+    "type": 301,
+    "format": "plain"
+  },
 
   {
     "fromPath": "/test/",
