@@ -46,18 +46,10 @@ module.exports = {
               maxFileSizeBytes: 1048576000, // 1GB
             },
           },
-          // Post: {
-          //   limit:
-          //     process.env.NODE_ENV === `development`
-          //       ? // Lets just pull 50 posts in development to make it easy on ourselves.
-          //       50
-          //       : // And all posts in production
-          //       null,
-          // },
         },
         schema: {
           // perPage: 5,
-          requestConcurrency: 5, // currently set to 15
+          // requestConcurrency: 5, // currently set to 15
           // previewRequestConcurrency: 2, // currently set to 5
           timeout: 300000,
         }
