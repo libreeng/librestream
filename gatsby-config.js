@@ -144,17 +144,17 @@ module.exports = {
           })),
       },
     },
-    // {
-    //   resolve: `gatsby-plugin-manifest`,
-    //   options: {
-    //     name: `Librestream`,
-    //     short_name: `Librestream`,
-    //     start_url: `/`,
-    //     background_color: `#014168`,
-    //     theme_color: `#014168`,
-    //     display: `standalone`,
-    //     icon: 'static/img/favicon.png'
-    //   },
-    // },
+    {
+      resolve: `gatsby-plugin-manifest`,
+      options: {
+        name: `Librestream`,
+        short_name: `Librestream`,
+        start_url: `/`,
+        background_color: `#014168`,
+        theme_color: `#014168`,
+        display: `standalone`,
+        icon: 'static/img/favicon.png'
+      },
+    },
   ],
 }

@@ -41,7 +41,11 @@ const UseCasesTemplate = ({ data: { page } }) => {
 
               return (
                 <div key={id} className="col-12 col-sm-6 col-lg-4">
-                  <Link to={url} target={externalLink ? '_blank' : '_self'}>
+                  <Link
+                    to={url}
+                    target={externalLink ? '_blank' : '_self'}
+                    rel={externalLink ? 'noopener' : ''}
+                  >
                     <div className='card p-2'>
                       <div
                         className="card-img-top bg-image aspect-1x1 grayscale"

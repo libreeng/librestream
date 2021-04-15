@@ -15,7 +15,7 @@ const SupportKnowledgebaseLink = ({ link }) => {
             : <p>{link.linkText}</p>
           ),
           'External URL': (
-            <a href={link.url} target="_blank" rel="noreferrer">{link.linkText} (Link)</a>
+            <a href={link.url} target="_blank" rel="noopener">{link.linkText} (Link)</a>
           ),
           'Video': (
             <button onClick={() => dispatch(openModal("VideoModal", { embed: link.videoEmbed, video: link.videoMp4.mediaItemUrl, title: link.linkText }))} type="button" className="border-0 bg-transparent p-0 text-primary">{link.linkText}&nbsp;(Video)</button>
