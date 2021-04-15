@@ -109,7 +109,7 @@ export const embedUrl = (string) => {
   try {
     url = new URL(string);
   } catch (_) {
-    return `https://librestreamcms.kinsta.cloud${string}`
+    return `https://cms.librestream.com${string}`
   }
   return url;
 }
