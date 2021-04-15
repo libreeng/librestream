@@ -25,7 +25,9 @@ module.exports = {
     'gatsby-plugin-sass',
     'gatsby-plugin-recaptcha',
     'gatsby-plugin-gatsby-cloud',
-    // 'gatsby-plugin-sitemap',
+    'gatsby-plugin-sitemap',
+    'gatsby-plugin-sharp',
+    'gatsby-transformer-sharp',
     {
       resolve: "gatsby-plugin-google-tagmanager",
       options: {
@@ -51,38 +53,8 @@ module.exports = {
           // previewRequestConcurrency: 2, // currently set to 5
           timeout: 300000,
         }
-        // useACF: true,
-        // type: {
-        //   Post: {
-        //     limit:
-        //       process.env.NODE_ENV === `development`
-        //         ? // Lets just pull 50 posts in development to make it easy on ourselves.
-        //         50
-        //         : // And all posts in production
-        //         null,
-        //   },
-        //   MediaItem: {
-        //     localFile: {
-        //       requestConcurrency: 50
-        //     }
-        //   }
-        // },
       },
     },
-    {
-      resolve: `gatsby-plugin-manifest`,
-      options: {
-        name: `Librestream`,
-        short_name: `Librestream`,
-        start_url: `/`,
-        background_color: `#014168`,
-        theme_color: `#014168`,
-        display: `standalone`,
-        icon: 'static/img/favicon.png'
-      },
-    },
-    'gatsby-plugin-sharp',
-    'gatsby-transformer-sharp',
     {
       resolve: 'gatsby-plugin-robots-txt',
       options: {
@@ -92,21 +64,6 @@ module.exports = {
         output: '/robots.txt'
       }
     },
-    // {
-    //   // Removes unused css rules
-    //   resolve: 'gatsby-plugin-purgecss',
-    //   options: {
-    //     // Activates purging in gatsby develop
-    //     develop: true,
-    //     // Purge only the main css file
-    //     purgeOnly: ['/main.scss'],
-    //     printAll: true,
-    //     printRejected: true,
-    //     // whitelist: () => ['html', 'body', 'collapse', 'collapsing'], // ERRORED: "gatsby-plugin-purgecss" threw an error while running the onCreateWebpackConfig lifecycle: userOptions.whitelist is not iterable
-    //     whitelistPatterns: () => [/modal*/, /accordion*/, /card*/, /navbar*/],
-    //     whitelistPatternsChildren: () => [/modal*/, /accordion*/, /card*/, /navbar*/]
-    //   },
-    // }, // must be after other CSS plugins
     {
       resolve: `gatsby-source-filesystem`,
       options: {
@@ -177,6 +134,18 @@ module.exports = {
             mainImage: node.acfPostTypeNews.mainImage,
             tags: node.tags.nodes.map(tag => tag.name),
           })),
+      },
+    },
+    {
+      resolve: `gatsby-plugin-manifest`,
+      options: {
+        name: `Librestream`,
+        short_name: `Librestream`,
+        start_url: `/`,
+        background_color: `#014168`,
+        theme_color: `#014168`,
+        display: `standalone`,
+        icon: 'static/img/favicon.png'
       },
     },
   ],
