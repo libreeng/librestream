@@ -37,7 +37,7 @@ module.exports = {
       resolve: `gatsby-source-wordpress`,
       options: {
         // the only required plugin option for WordPress is the GraphQL url.
-        url: process.env.WPGRAPHQL_URL || 'https://librestreamcms.kinsta.cloud/graphql',
+        url: process.env.WPGRAPHQL_URL || 'https://cms.librestream.com/graphql',
         type: {
           MediaItem: {
             localFile: {
