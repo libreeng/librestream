@@ -11,14 +11,14 @@ const SEO = ({ pageSEO, className }) => {
   }
 
   return (
-    <Helmet titleTemplate={`%s | ${seo.title} - Librestream`} defaultTitle={seo.title} defer={false}>
+    <Helmet titleTemplate={`%s | ${seo.title} - Librestream`} defaultTitle={seo.title}>
       <html lang={seo.inLanguage} />
       <body className={className} />
       <meta name="description" content={seo.description} />
       <meta property="og:type" content="website" />
       <meta property="og:title" content={seo.opengraphTitle} />
       <meta property="og:description" content={seo.metaDesc || seo.description} />
-      <meta property="og:url" content={seo.opengraphUrl} />
+      <meta property="og:url" content={seo.opengraphUrl ? seo.opengraphUrl.replace('https://librestream.gatsbyjs.io', 'https://librestream.com') : 'https://librestream.com'} />
       <meta property="og:site_name" content={seo.opengraphSiteName} />
       <meta property="article:publisher" content={seo.facebook.url} />
       <meta property="article:modified_time" content={seo.opengraphModifiedTime} />

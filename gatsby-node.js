@@ -1,10 +1,23 @@
 /* eslint-disable consistent-return */
 const path = require(`path`)
+const staticRedirects = require("./redirects.json")
 
 // This is a simple debugging tool
 // dd() will prettily dump to the terminal and kill the process
 // const { dd } = require(`dumper.js`)
 
+function sanitizeRedirect(path) {
+  // strip absolute url
+  // strip .html extensions
+  // replace regex pattern
+
+  const sanitized = path
+    .replace("http://www.librestreamcms.kinsta.cloud", "")
+    .replace("https://www.librestreamcms.kinsta.cloud", "")
+    .replace("librestream.com", "")
+
+  return sanitized.startsWith('/') ? sanitized : `/${sanitized}`
+}
 
 
 const createStandalonePages = async ({ pages, gatsbyUtilities }) =>
@@ -99,15 +112,24 @@ const createCategoryPages = async ({ categories, gatsbyUtilities }) =>
   )
 
 const createSiteRedirects = async ({ redirects, gatsbyUtilities }) => {
+  console.log(`Creating: ${staticRedirects.length} Redirects`)
   const { createRedirect } = gatsbyUtilities.actions
   Promise.all(
-    redirects.map(redirect => {
-      const { origin, target, type } = redirect
+    staticRedirects.map(redirect => {
+      const { fromPath, toPath } = redirect
+      // console.log(`Creating: ${redirects.length} redirects`)
+      // const { origin, target, type, format } = redirect
+      // const fromPath = sanitizeRedirect(origin)
+      // const toPath = sanitizeRedirect(target)
+      // const isPermanent = type === 301
       createRedirect({
-        fromPath: origin,
-        toPath: target,
-        isPermanent: type === 301
+        fromPath,
+        toPath,
+        isPermanent: false,
+        force: false,
+        // ignoreCase: true
       })
+
     })
   )
 }
@@ -300,6 +322,7 @@ async function getRedirects({ graphql, reporter }) {
             origin
             target
             type
+            format
           }
         }
       }

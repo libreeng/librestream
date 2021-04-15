@@ -32,7 +32,7 @@ const CategoryTemplate = ({ data: { category } }) => {
 
   return (
     <>
-      <SEO pageSEO={page.seo} />
+      <SEO />
       <Hero hero={hero} />
 
       <section>

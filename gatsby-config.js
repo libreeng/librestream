@@ -37,7 +37,7 @@ module.exports = {
       resolve: `gatsby-source-wordpress`,
       options: {
         // the only required plugin option for WordPress is the GraphQL url.
-        url: process.env.WPGRAPHQL_URL || 'https://librestreamcms.kinsta.cloud/graphql',
+        url: process.env.WPGRAPHQL_URL || 'https://cms.librestream.com/graphql',
         type: {
           MediaItem: {
             localFile: {
@@ -83,6 +83,15 @@ module.exports = {
     },
     'gatsby-plugin-sharp',
     'gatsby-transformer-sharp',
+    {
+      resolve: 'gatsby-plugin-robots-txt',
+      options: {
+        host: website.url,
+        sitemap: `${website.url}/sitemap.xml`,
+        policy: [{ userAgent: '*', allow: '/' }],
+        output: '/robots.txt'
+      }
+    },
     // {
     //   // Removes unused css rules
     //   resolve: 'gatsby-plugin-purgecss',
