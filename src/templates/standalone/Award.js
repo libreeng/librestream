@@ -4,6 +4,7 @@ import parse from "html-react-parser"
 import SEO from "../../containers/SEO"
 import Hero from "../../common/ui/Hero"
 import FooterCTAs from '../../common/ui/FooterCTAs'
+import Layout from "../../containers/Layout"
 
 const AwardTemplate = ({ data: { page } }) => {
   const hero = {
@@ -12,7 +13,7 @@ const AwardTemplate = ({ data: { page } }) => {
   const { cta } = page.acfFooterCTAs
 
   return (
-    <>
+    <Layout>
       <SEO pageSEO={page.seo} />
       <Hero hero={hero} />
       <div className="container">
@@ -27,7 +28,7 @@ const AwardTemplate = ({ data: { page } }) => {
         </div>
       </div>
       <FooterCTAs featured={cta} />
-    </>
+    </Layout>
   )
 }
 

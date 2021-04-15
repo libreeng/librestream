@@ -5,6 +5,7 @@ import SEO from "../../containers/SEO"
 import BackgroundImage from 'gatsby-background-image'
 import Hero from "../../common/ui/Hero"
 import FooterCTAs from '../../common/ui/FooterCTAs'
+import Layout from "../../containers/Layout"
 
 const ResourcesTemplate = ({ data: { page, resources } }) => {
   const hero = {
@@ -14,7 +15,7 @@ const ResourcesTemplate = ({ data: { page, resources } }) => {
   const { cta } = page.acfFooterCTAs
 
   return (
-    <>
+    <Layout>
       <SEO pageSEO={page.seo} />
       <Hero hero={hero} />
       <section>
@@ -70,7 +71,7 @@ const ResourcesTemplate = ({ data: { page, resources } }) => {
       }
 
       <FooterCTAs featured={cta} />
-    </>
+    </Layout>
   )
 }
 

@@ -1,8 +1,9 @@
 import React from "react"
 import { graphql } from "gatsby"
 import parse from "html-react-parser"
-import {embedUrl} from "../common/utils/helpers"
+import { embedUrl } from "../common/utils/helpers"
 import Hero from "../common/ui/Hero"
+import Layout from "../containers/Layout"
 
 
 const ResourceTemplate = ({ data: { post } }) => {
@@ -15,7 +16,7 @@ const ResourceTemplate = ({ data: { post } }) => {
   console.log(hero)
 
   return (
-    <>
+    <Layout>
       <Hero hero={hero} />
       {!!post.content && (
         <section itemProp="articleBody">
@@ -97,7 +98,7 @@ const ResourceTemplate = ({ data: { post } }) => {
         </section>
       )}
 
-    </>
+    </Layout>
   )
 }
 

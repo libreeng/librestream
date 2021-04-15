@@ -7,6 +7,7 @@ import parse from "html-react-parser"
 import BackgroundImage from 'gatsby-background-image'
 import CTA from '../common/ui/CTA'
 import FooterCTAs from '../common/ui/FooterCTAs'
+import Layout from '../containers/Layout'
 
 const CaseStudy = ({ data: { previous, next, post } }) => {
   const acf = post.acfPostTypeUseCase
@@ -28,7 +29,7 @@ const CaseStudy = ({ data: { previous, next, post } }) => {
   }
 
   return (
-    <>
+    <Layout>
       <Hero hero={hero} />
       <section className="pb-3">
         <div className="container">
@@ -117,8 +118,8 @@ const CaseStudy = ({ data: { previous, next, post } }) => {
       {cta && (
         <FooterCTAs featured={cta} />
       )}
-      
-    </>
+
+    </Layout>
   )
 }
 

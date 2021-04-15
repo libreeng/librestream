@@ -6,6 +6,7 @@ import SEO from "../../containers/SEO"
 import Hero from "../../common/ui/Hero"
 import Intro from '../../common/ui/Intro'
 import FooterCTAs from '../../common/ui/FooterCTAs'
+import Layout from "../../containers/Layout"
 
 const SolutionsTemplate = ({ data: { page, solutions } }) => {
   const hero = {
@@ -16,7 +17,7 @@ const SolutionsTemplate = ({ data: { page, solutions } }) => {
   const { cta } = page.acfFooterCTAs
 
   return (
-    <>
+    <Layout>
       <SEO pageSEO={page.seo} />
       <Hero hero={hero} />
       <Intro intro={intro} />
@@ -69,7 +70,7 @@ const SolutionsTemplate = ({ data: { page, solutions } }) => {
         </section>
       )}
       <FooterCTAs featured={cta} />
-    </>
+    </Layout>
   )
 }
 

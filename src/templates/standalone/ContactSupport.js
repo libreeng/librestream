@@ -6,6 +6,7 @@ import SEO from "../../containers/SEO"
 import { useSiteFooter } from '../../common/hooks/useSiteFooter'
 import Hero from "../../common/ui/Hero"
 import FooterCTAs from '../../common/ui/FooterCTAs'
+import Layout from "../../containers/Layout"
 
 const ContactSupportTemplate = ({ data: { page } }) => {
   const acf = page.acfTemplateContactSupport
@@ -18,7 +19,7 @@ const ContactSupportTemplate = ({ data: { page } }) => {
   // console.log(page.content)
   // console.log(parse(page.content))
   return (
-    <>
+    <Layout>
       <SEO pageSEO={page.seo} />
       <Hero hero={hero} />
       <section className="pb-0">
@@ -100,7 +101,7 @@ const ContactSupportTemplate = ({ data: { page } }) => {
         </div>
       </section>
       <FooterCTAs featured={cta} />
-    </>
+    </Layout>
   )
 }
 

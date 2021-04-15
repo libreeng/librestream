@@ -7,6 +7,7 @@ import parse from "html-react-parser"
 import SEO from "../../containers/SEO"
 import Hero from "../../common/ui/Hero"
 import FooterCTAs from '../../common/ui/FooterCTAs'
+import Layout from '../../containers/Layout'
 
 const PlatformFeatureSpecializedAccessories = ({ data: { page, subnav } }) => {
   const template = page.acfTemplatePlatformFeatureSpecialized
@@ -16,7 +17,7 @@ const PlatformFeatureSpecializedAccessories = ({ data: { page, subnav } }) => {
   const { cta } = page.acfFooterCTAs
   console.log(accessories)
   return (
-    <>
+    <Layout>
       <SEO pageSEO={page.seo} />
       <Hero
         className=""
@@ -118,7 +119,7 @@ const PlatformFeatureSpecializedAccessories = ({ data: { page, subnav } }) => {
       </section>
 
       <FooterCTAs featured={cta} />
-    </>
+    </Layout>
   )
 }
 

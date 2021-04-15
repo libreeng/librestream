@@ -5,6 +5,7 @@ import SEO from "../../containers/SEO"
 import { useCaseStudies } from "../../common/hooks/useCaseStudies"
 import Hero from "../../common/ui/Hero"
 import FooterCTAs from '../../common/ui/FooterCTAs'
+import Layout from "../../containers/Layout"
 
 const UseCasesTemplate = ({ data: { page } }) => {
   const { caseStudies } = useCaseStudies()
@@ -14,7 +15,7 @@ const UseCasesTemplate = ({ data: { page } }) => {
   const { cta } = page.acfFooterCTAs
 
   return (
-    <>
+    <Layout>
       <SEO pageSEO={page.seo} />
       <Hero hero={hero} />
       {!!page.content && (
@@ -68,7 +69,7 @@ const UseCasesTemplate = ({ data: { page } }) => {
       </section>
 
       <FooterCTAs featured={cta} />
-    </>
+    </Layout>
   )
 }
 

@@ -3,6 +3,7 @@ import { graphql } from "gatsby"
 import parse from "html-react-parser"
 import Hero from "../common/ui/Hero"
 import ReleaseNotesNav from '../components/ReleaseNotesNav'
+import Layout from "../containers/Layout"
 
 const ReleaseNoteTemplate = ({ data: { post } }) => {
   const { title, acfPostTypeReleaseNotes: { sections } } = post
@@ -11,7 +12,7 @@ const ReleaseNoteTemplate = ({ data: { post } }) => {
   }
 
   return (
-    <>
+    <Layout>
       <Hero hero={hero} />
       <div className="container">
         <div className="row">
@@ -32,7 +33,7 @@ const ReleaseNoteTemplate = ({ data: { post } }) => {
         </div>
       </div>
 
-    </>
+    </Layout>
   )
 }
 

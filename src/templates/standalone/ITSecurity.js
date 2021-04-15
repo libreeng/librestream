@@ -6,6 +6,7 @@ import Hero from "../../common/ui/Hero"
 import Intro from "../../common/ui/Intro"
 import FooterCTAs from '../../common/ui/FooterCTAs'
 import CTA from '../../common/ui/CTA'
+import Layout from "../../containers/Layout"
 
 const ItSecurityTemplate = ({ data: { page } }) => {
   const acf = page.acfTemplateItSecurity
@@ -17,7 +18,7 @@ const ItSecurityTemplate = ({ data: { page } }) => {
   const { cta } = page.acfFooterCTAs
 
   return (
-    <>
+    <Layout>
       <SEO pageSEO={page.seo} />
       <Hero hero={hero} />
       <Intro intro={intro} bracket="true" />
@@ -67,7 +68,7 @@ const ItSecurityTemplate = ({ data: { page } }) => {
         <CTA cta={pageCTA} />
       )}
       <FooterCTAs featured={cta} />
-    </>
+    </Layout>
   )
 }
 

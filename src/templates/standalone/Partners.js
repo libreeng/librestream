@@ -7,6 +7,7 @@ import FooterCTAs from '../../common/ui/FooterCTAs'
 import { useDispatch } from "react-redux"
 import SEO from "../../containers/SEO"
 import { openModal } from "../../common/modals/modalActions"
+import Layout from "../../containers/Layout"
 // import PartnerModal from '../../common/modals/PartnerModal'
 
 const PartnersTemplate = ({ data: { page } }) => {
@@ -18,7 +19,7 @@ const PartnersTemplate = ({ data: { page } }) => {
   const { cta } = page.acfFooterCTAs
 
   return (
-    <>
+    <Layout>
       <SEO pageSEO={page.seo} />
       <Hero hero={hero} />
       {acf.partners && acf.partners.map(
@@ -84,7 +85,7 @@ const PartnersTemplate = ({ data: { page } }) => {
       )}
 
       <FooterCTAs featured={cta} />
-    </>
+    </Layout>
   )
 }
 

@@ -1,8 +1,9 @@
 import React from "react"
 import { graphql } from "gatsby"
 import parse from "html-react-parser"
-import {embedUrl} from "../common/utils/helpers"
+import { embedUrl } from "../common/utils/helpers"
 import Hero from "../common/ui/Hero"
+import Layout from "../containers/Layout"
 
 
 const FormConfirmationTemplate = ({ data: { post } }) => {
@@ -12,7 +13,7 @@ const FormConfirmationTemplate = ({ data: { post } }) => {
   }
   // eslint-disable-next-line no-console
   return (
-    <>
+    <Layout>
       <Hero hero={hero} />
       <section>
         <div className="container">
@@ -50,7 +51,7 @@ const FormConfirmationTemplate = ({ data: { post } }) => {
           </div>
         </div>
       </section>
-    </>
+    </Layout>
   )
 }
 

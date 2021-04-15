@@ -3,6 +3,7 @@ import { graphql } from "gatsby"
 import parse from "html-react-parser"
 import SEO from "../../containers/SEO"
 import Hero from "../../common/ui/Hero"
+import Layout from "../../containers/Layout"
 
 const NewsSearchTemplate = ({ data: { page } }) => {
   const hero = {
@@ -10,7 +11,7 @@ const NewsSearchTemplate = ({ data: { page } }) => {
   }
 
   return (
-    <>
+    <Layout>
       <SEO pageSEO={page.seo} />
       <Hero hero={hero} />
       <div className="container">
@@ -25,7 +26,7 @@ const NewsSearchTemplate = ({ data: { page } }) => {
         </div>
       </div>
 
-    </>
+    </Layout>
   )
 }
 

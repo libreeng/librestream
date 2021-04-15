@@ -8,6 +8,7 @@ import Intro from "../../common/ui/Intro"
 import FooterCTAs from '../../common/ui/FooterCTAs'
 import { openModal } from "../../common/modals/modalActions"
 import SEO from "../../containers/SEO"
+import Layout from "../../containers/Layout"
 
 const AboutTemplate = ({ data: { page } }) => {
   const dispatch = useDispatch()
@@ -18,7 +19,7 @@ const AboutTemplate = ({ data: { page } }) => {
   const { cta } = page.acfFooterCTAs
 
   return (
-    <>
+    <Layout>
       <SEO pageSEO={page.seo} />
       <Hero hero={hero} nav={nav} />
       <div id="our-story">
@@ -107,7 +108,7 @@ const AboutTemplate = ({ data: { page } }) => {
       </section>
 
       <FooterCTAs featured={cta} />
-    </>
+    </Layout>
   )
 }
 

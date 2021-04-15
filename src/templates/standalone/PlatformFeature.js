@@ -9,6 +9,7 @@ import Hero from "../../common/ui/Hero"
 import FooterCTAs from '../../common/ui/FooterCTAs'
 import Collapse from 'react-bootstrap/Collapse'
 import Highlight from '../../components/Highlight'
+import Layout from '../../containers/Layout'
 // import { useDispatch } from "react-redux"
 // import { openModal } from "../../common/modals/modalActions"
 // import PartnerModal from '../../common/modals/PartnerModal'
@@ -22,7 +23,7 @@ const PlatformFeatureTemplate = ({ data: { page, subnav } }) => {
 
 
   return (
-    <>
+    <Layout>
       <SEO pageSEO={page.seo} />
       <Hero
         className=""
@@ -167,7 +168,7 @@ const PlatformFeatureTemplate = ({ data: { page, subnav } }) => {
       </section>
 
       <FooterCTAs featured={cta} />
-    </>
+    </Layout>
   )
 }
 
