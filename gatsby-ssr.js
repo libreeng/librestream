@@ -42,5 +42,12 @@ export const onRenderBody = ({ setPostBodyComponents }) => {
     //   src="/js/captcha.js"
     //   defer
     // />,
+    // <script
+    //   key="recaptcha"
+    //   id="recaptcha"
+    //   src="https://www.google.com/recaptcha/api.js"
+    //   defer
+    // />,
+
   ])
 }
