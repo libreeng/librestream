@@ -20,17 +20,17 @@ const SEO = ({ pageSEO, meta, className }) => {
         class: className
       }}
       title={seo.title}
-      titleTemplate={`%s | ${seo.title} - Librestream`}
+      titleTemplate={`${seo.title}`}
       meta={[
         { name: 'description', content: seo.description },
         { name: 'og:type', content: "website" },
-        { name: "og:title", content: seo.opengraphTitle || seo.title },
-        { name: "og:description", content: seo.metaDesc || seo.description },
+        { name: "og:title", content: seo.opengraphTitle ? seo.opengraphTitle : seo.title },
+        { name: "og:description", content: seo.metaDesc ? seo.metaDesc : seo.description },
         { name: "og:url", content: seo.opengraphUrl ? seo.opengraphUrl.replace('https://librestream.gatsbyjs.io', 'https://librestream.com') : seo.siteUrl },
-        { name: "og:site_name", content: seo.opengraphSiteName || seo.title },
-        { name: "article:publisher", content: seo.facebook.url || seo.siteUrl },
+        { name: "og:site_name", content: seo.opengraphSiteName ? seo.opengraphSiteName : seo.title },
+        { name: "article:publisher", content: seo.facebook.url ? seo.facebook.url : seo.siteUrl },
         { name: "article:modified_time", content: seo.opengraphModifiedTime },
-        { name: "og:image", content: seo.opengraphImage?.sourceUrl || seo.shareImage },
+        { name: "og:image", content: seo.opengraphImage?.sourceUrl ? seo.opengraphImage?.sourceUrl : seo.shareImage },
         { name: "og:image:width", content: `1200px` },
         { name: "og:image:height", content: `1200px` },
         { name: "twitter:card", content: "summary_large_image" },
