@@ -1,6 +1,7 @@
 import React from 'react'
 import PropTypes from 'prop-types'
 import { useDispatch } from "react-redux"
+import {embedUrl} from "../../common/utils/helpers"
 import { openModal } from "../../common/modals/modalActions"
 
 
@@ -21,7 +22,7 @@ const SupportKnowledgebaseLink = ({ link }) => {
             : <p>{link.linkText}</p>
           ),
           'External URL': (
-            <a href={link.url} target="_blank" rel="noopener">{link.linkText} (Link)</a>
+            <a href={embedUrl(link.url)} target="_blank" rel="noopener">{link.linkText} (Link)</a>
           ),
           'Video': (
             <button
@@ -29,7 +30,7 @@ const SupportKnowledgebaseLink = ({ link }) => {
               type="button" className="border-0 bg-transparent p-0 text-primary">{link.linkText}&nbsp;(Video)</button>
           ),
           'PDF': (
-            <a href={link.pdf?.localFile?.publicURL} target="_blank" rel="noreferrer" className="text-underline">{link.linkText} (PDF)</a>
+            <a href={embedUrl(link.pdf?.localFile?.publicURL)} target="_blank" rel="noreferrer" className="text-underline">{link.linkText} (PDF)</a>
           )
       }[link.linkType]}
     </div>
