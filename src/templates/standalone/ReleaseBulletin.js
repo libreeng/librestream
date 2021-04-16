@@ -4,6 +4,7 @@ import parse from "html-react-parser"
 import SEO from "../../containers/SEO"
 import Hero from "../../common/ui/Hero"
 import FooterCTAs from '../../common/ui/FooterCTAs'
+import Layout from "../../containers/Layout"
 
 const ReleaseBulletinTemplate = ({ data: { page, allWpReleaseBulletin: { edges } } }) => {
   const bulletins = edges.map(item => item.node)
@@ -13,7 +14,7 @@ const ReleaseBulletinTemplate = ({ data: { page, allWpReleaseBulletin: { edges }
   const { cta } = page.acfFooterCTAs
 
   return (
-    <>
+    <Layout>
       <SEO pageSEO={page.seo} />
       <Hero hero={hero} />
       <section>
@@ -43,7 +44,7 @@ const ReleaseBulletinTemplate = ({ data: { page, allWpReleaseBulletin: { edges }
         </div>
       </section>
       <FooterCTAs featured={cta} />
-    </>
+    </Layout>
   )
 }
 

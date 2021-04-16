@@ -6,6 +6,7 @@ import SEO from "../../containers/SEO"
 import Hero from "../../common/ui/Hero"
 import Intro from "../../common/ui/Intro"
 import FooterCTAs from '../../common/ui/FooterCTAs'
+import Layout from "../../containers/Layout"
 
 const MediaKitTemplate = ({ data: { page } }) => {
   const acf = page.acfTemplateMediaKit
@@ -16,7 +17,7 @@ const MediaKitTemplate = ({ data: { page } }) => {
   const { cta } = page.acfFooterCTAs
 
   return (
-    <>
+    <Layout>
       <SEO pageSEO={page.seo} />
       <Hero hero={hero} />
       <Intro intro={intro} bracket="true" />
@@ -77,7 +78,7 @@ const MediaKitTemplate = ({ data: { page } }) => {
       )}
 
       <FooterCTAs featured={cta} />
-    </>
+    </Layout>
   )
 }
 

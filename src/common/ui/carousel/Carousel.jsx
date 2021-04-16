@@ -56,7 +56,12 @@ const Carousel = ({ posts, config }) => {
               : post.uri
 
             return (
-              <Link to={url} key={post.id} target={externalLink ? '_blank' : ''}>
+              <Link
+                key={post.id}
+                to={url}
+                target={externalLink ? '_blank' : ''}
+                rel={externalLink ? 'noopener' : ''}
+              >
                 {post.nodeType === 'Post'
                   ? <PostCard post={post} showBracket={settings.showBracket} />
                   : <UseCaseCard post={post} />}

@@ -68,5 +68,10 @@ Hero.propTypes = {
   nav: PropTypes.instanceOf(Array),
   className: PropTypes.string
 }
+Hero.defaultProps = {
+  hero: {},
+  className: '',
+  nav: []
+}
 
 export default Hero

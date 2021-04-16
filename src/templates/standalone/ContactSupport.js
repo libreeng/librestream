@@ -6,6 +6,7 @@ import SEO from "../../containers/SEO"
 import { useSiteFooter } from '../../common/hooks/useSiteFooter'
 import Hero from "../../common/ui/Hero"
 import FooterCTAs from '../../common/ui/FooterCTAs'
+import Layout from "../../containers/Layout"
 
 const ContactSupportTemplate = ({ data: { page } }) => {
   const acf = page.acfTemplateContactSupport
@@ -18,7 +19,7 @@ const ContactSupportTemplate = ({ data: { page } }) => {
   // console.log(page.content)
   // console.log(parse(page.content))
   return (
-    <>
+    <Layout>
       <SEO pageSEO={page.seo} />
       <Hero hero={hero} />
       <section className="pb-0">
@@ -44,19 +45,7 @@ const ContactSupportTemplate = ({ data: { page } }) => {
         <div className="container">
           <div className="row justify-content-center">
             <div className="col-12 col-lg-8">
-              {!!page.content && (
-                parse(page.content, {
-                  replace(domNode) {
-                    if (domNode.type === 'script' && domNode.attribs.src === 'https://www.google.com/recaptcha/api.js') {
-                      const script = document.createElement('script');
-                      // script.src = domNode.attribs.src
-                      script.src = '/js/captcha.js'
-                      script.onload = () => { console.log('Captcha Loaded') }
-                      document.head.appendChild(script)
-                    }
-                  }
-                })
-              )}
+              {!!page.content && parse(page.content)}
             </div>
           </div>
         </div>
@@ -100,7 +89,7 @@ const ContactSupportTemplate = ({ data: { page } }) => {
         </div>
       </section>
       <FooterCTAs featured={cta} />
-    </>
+    </Layout>
   )
 }
 

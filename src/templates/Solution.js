@@ -6,6 +6,7 @@ import Hero from "../common/ui/Hero"
 import Intro from "../common/ui/Intro"
 import NextPrevMenu from '../common/ui/menus/NextPrevMenu'
 import Stats from '../components/Stats'
+import Layout from '../containers/Layout'
 
 const Solution = ({ data: { previous, next, post } }) => {
   const stats = post.acfStats.statistics
@@ -18,7 +19,7 @@ const Solution = ({ data: { previous, next, post } }) => {
   const featuredImage = intro.introFeaturedImage?.localFile?.publicURL
   const acf = post.acfPostTypeSolution
   return (
-    <>
+    <Layout>
       <Hero hero={hero} />
       <section className="pb-0">
         <div className="container">
@@ -56,7 +57,7 @@ const Solution = ({ data: { previous, next, post } }) => {
         <Stats stats={stats} />
       )}
       <NextPrevMenu previous={previous} next={next} />
-    </>
+    </Layout>
   )
 }
 

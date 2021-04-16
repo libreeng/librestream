@@ -14,7 +14,10 @@ const ResultCard = ({ result }) => {
 
   return (
     <div className="col-12 col-sm-6 col-md-3 col-lg-4">
-      <Link to={url} target={result.externalLink ? '_blank' : '_self'}>
+      <Link
+        to={url}
+        target={result.externalLink ? '_blank' : '_self'}
+        rel={result.externalLink ? 'noopener' : ''}>
         <div className="card p-2">
           <div
             className="card-img-top bg-image aspect-1x1 grayscale"

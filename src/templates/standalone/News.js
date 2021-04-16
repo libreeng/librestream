@@ -13,6 +13,7 @@ import { useNews } from "../../common/hooks/useNews"
 import { useCaseStudies } from "../../common/hooks/useCaseStudies"
 import ResultCard from '../../common/ui/cards/ResultCard'
 import Filters from '../../common/ui/Filters'
+import Layout from "../../containers/Layout"
 
 
 const NewsTemplate = ({ data: { page } }) => {
@@ -30,7 +31,7 @@ const NewsTemplate = ({ data: { page } }) => {
   const { cta } = page.acfFooterCTAs
 
   return (
-    <>
+    <Layout>
       <SEO pageSEO={page.seo} />
       <Hero hero={hero} />
       <section>
@@ -192,7 +193,7 @@ const NewsTemplate = ({ data: { page } }) => {
       </section>
 
       <FooterCTAs featured={cta} />
-    </>
+    </Layout>
   )
 }
 

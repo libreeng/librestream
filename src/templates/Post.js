@@ -2,12 +2,13 @@ import React from "react"
 import { Link, graphql } from "gatsby"
 import Image from "gatsby-image"
 import parse from "html-react-parser"
-import {embedUrl} from "../common/utils/helpers"
+import { embedUrl } from "../common/utils/helpers"
 import Hero from '../common/ui/Hero'
 import NewsletterSignup from "../components/NewsletterSignup"
 import SocialShare from "../components/SocialShare"
 import PostCard from '../common/ui/cards/PostCard'
 import FooterCTAs from '../common/ui/FooterCTAs'
+import Layout from "../containers/Layout"
 
 const PostTemplate = ({ data: { previous, next, post } }) => {
   const acf = post.acfPostTypeNews
@@ -39,7 +40,7 @@ const PostTemplate = ({ data: { previous, next, post } }) => {
   }).reduce((a, b) => [...a, ...b]).slice(0, 3)
 
   return (
-    <>
+    <Layout>
       <Hero hero={hero} />
       <section>
         <div className="container">
@@ -93,7 +94,7 @@ const PostTemplate = ({ data: { previous, next, post } }) => {
       {cta && (
         <FooterCTAs featured={cta} />
       )}
-    </>
+    </Layout>
   )
 }
 

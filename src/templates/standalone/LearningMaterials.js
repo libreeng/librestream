@@ -7,6 +7,7 @@ import Hero from "../../common/ui/Hero"
 import LearningNav from '../../components/learningMaterials/LearningNav'
 import LearningSection from '../../components/learningMaterials/LearningSection'
 import FooterCTAs from '../../common/ui/FooterCTAs'
+import Layout from "../../containers/Layout"
 
 
 const LearningMaterialsTemplate = ({ data: { page } }) => {
@@ -19,7 +20,7 @@ const LearningMaterialsTemplate = ({ data: { page } }) => {
   const { cta } = page.acfFooterCTAs
 
   return (
-    <>
+    <Layout>
       <SEO pageSEO={page.seo} />
       <Hero hero={hero} />
       <section>
@@ -50,7 +51,7 @@ const LearningMaterialsTemplate = ({ data: { page } }) => {
       )}
 
       <FooterCTAs featured={cta} />
-    </>
+    </Layout>
   )
 }
 

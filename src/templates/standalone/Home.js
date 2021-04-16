@@ -10,6 +10,7 @@ import Carousel from '../../common/ui/carousel/Carousel'
 import Stats from '../../components/Stats'
 import { useFeaturedNews } from "../../common/hooks/useFeaturedNews"
 import { useCaseStudies } from "../../common/hooks/useCaseStudies"
+import Layout from "../../containers/Layout"
 
 const HomeTemplate = ({ data: { page } }) => {
   const acf = page.acfTemplateHome
@@ -21,7 +22,7 @@ const HomeTemplate = ({ data: { page } }) => {
   const slide = acf.carouselSlide[0]
 
   return (
-    <>
+    <Layout>
       <SEO pageSEO={page.seo} />
       <Hero hero={hero} />
 
@@ -127,7 +128,7 @@ const HomeTemplate = ({ data: { page } }) => {
       </section>
 
       <FooterCTAs featured={cta} />
-    </>
+    </Layout>
   )
 }
 

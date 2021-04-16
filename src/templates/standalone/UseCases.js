@@ -5,6 +5,7 @@ import SEO from "../../containers/SEO"
 import { useCaseStudies } from "../../common/hooks/useCaseStudies"
 import Hero from "../../common/ui/Hero"
 import FooterCTAs from '../../common/ui/FooterCTAs'
+import Layout from "../../containers/Layout"
 
 const UseCasesTemplate = ({ data: { page } }) => {
   const { caseStudies } = useCaseStudies()
@@ -14,7 +15,7 @@ const UseCasesTemplate = ({ data: { page } }) => {
   const { cta } = page.acfFooterCTAs
 
   return (
-    <>
+    <Layout>
       <SEO pageSEO={page.seo} />
       <Hero hero={hero} />
       {!!page.content && (
@@ -40,7 +41,11 @@ const UseCasesTemplate = ({ data: { page } }) => {
 
               return (
                 <div key={id} className="col-12 col-sm-6 col-lg-4">
-                  <Link to={url} target={externalLink ? '_blank' : '_self'}>
+                  <Link
+                    to={url}
+                    target={externalLink ? '_blank' : '_self'}
+                    rel={externalLink ? 'noopener' : ''}
+                  >
                     <div className='card p-2'>
                       <div
                         className="card-img-top bg-image aspect-1x1 grayscale"
@@ -68,7 +73,7 @@ const UseCasesTemplate = ({ data: { page } }) => {
       </section>
 
       <FooterCTAs featured={cta} />
-    </>
+    </Layout>
   )
 }
 

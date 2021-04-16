@@ -5,6 +5,7 @@ import SEO from "../../containers/SEO"
 import { embedUrl } from "../common/utils/helpers"
 import Hero from "../../common/ui/Hero"
 import FooterCTAs from '../../common/ui/FooterCTAs'
+import Layout from "../../containers/Layout"
 
 // Not sure if this template is necessary as we also have video custom post type
 const CampaignVideoTemplate = ({ data: { page } }) => {
@@ -15,7 +16,7 @@ const CampaignVideoTemplate = ({ data: { page } }) => {
   const { cta } = page.acfFooterCTAs
 
   return (
-    <>
+    <Layout>
       <SEO pageSEO={page.seo} />
       <Hero hero={hero} />
       <section>
@@ -44,7 +45,7 @@ const CampaignVideoTemplate = ({ data: { page } }) => {
       )}
 
       <FooterCTAs featured={cta} />
-    </>
+    </Layout>
   )
 }
 

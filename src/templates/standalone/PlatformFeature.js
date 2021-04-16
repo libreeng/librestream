@@ -7,14 +7,17 @@ import parse from "html-react-parser"
 import SEO from "../../containers/SEO"
 import Hero from "../../common/ui/Hero"
 import FooterCTAs from '../../common/ui/FooterCTAs'
-import Collapse from 'react-bootstrap/Collapse'
 import Highlight from '../../components/Highlight'
+import Layout from '../../containers/Layout'
 // import { useDispatch } from "react-redux"
 // import { openModal } from "../../common/modals/modalActions"
 // import PartnerModal from '../../common/modals/PartnerModal'
 
 const PlatformFeatureTemplate = ({ data: { page, subnav } }) => {
-  // const dispatch = useDispatch();
+  // let dispatch = () => { }
+  // if (typeof window !== 'undefined') {
+  //   dispatch = useDispatch()
+  // }
   const template = page.acfTemplatePlaformFeature
   const hero = page.acfHero
   const nav = subnav.menuItems.nodes
@@ -22,7 +25,7 @@ const PlatformFeatureTemplate = ({ data: { page, subnav } }) => {
 
 
   return (
-    <>
+    <Layout>
       <SEO pageSEO={page.seo} />
       <Hero
         className=""
@@ -104,7 +107,7 @@ const PlatformFeatureTemplate = ({ data: { page, subnav } }) => {
           <div className="row">
             {template.featureDownloads && template.featureDownloads.map((download, i) => (
               <div className="col-12 col-xl-4" key={`download_${i}`}>
-                <a href={download?.featureDownload?.localFile.url} className="btn btn-outline-secondary text-dark btn-block mb-3">{download?.downloadLabel}</a>
+                <a href={download?.featureDownload?.localFile?.publicURL} className="btn btn-outline-secondary text-dark btn-block mb-3">{download?.downloadLabel}</a>
               </div>
             ))}
             {template.featureLinks && template.featureLinks.map((link, i) => (
@@ -157,7 +160,7 @@ const PlatformFeatureTemplate = ({ data: { page, subnav } }) => {
             <div className="col-12 col-xl-6">
               {template.productHighlightsImage && (
                 <Image
-                  fluid={template?.productHighlightsImage?.localFile.childImageSharp.fluid}
+                  fluid={template?.productHighlightsImage?.localFile?.childImageSharp.fluid}
                   alt={template?.productHighlightsImage?.altText}
                 />
               )}
@@ -167,7 +170,7 @@ const PlatformFeatureTemplate = ({ data: { page, subnav } }) => {
       </section>
 
       <FooterCTAs featured={cta} />
-    </>
+    </Layout>
   )
 }
 
@@ -237,7 +240,6 @@ export const pageQuery = graphql`
             altText
             localFile {
               publicURL
-              url
             }
           }
         }
@@ -262,7 +264,6 @@ export const pageQuery = graphql`
             altText
             localFile {
               publicURL
-              url
             }
           }
         }

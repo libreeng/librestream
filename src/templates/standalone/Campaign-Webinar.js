@@ -5,6 +5,7 @@ import parse from "html-react-parser"
 import SEO from "../../containers/SEO"
 import Hero from "../../common/ui/Hero"
 import FooterCTAs from '../../common/ui/FooterCTAs'
+import Layout from "../../containers/Layout"
 
 // Might be able to combine this template and Campaign-Whitepaper into a more flexible template
 const CampaignWebinarTemplate = ({ data: { page } }) => {
@@ -13,7 +14,7 @@ const CampaignWebinarTemplate = ({ data: { page } }) => {
   const { cta } = page.acfFooterCTAs
 
   return (
-    <>
+    <Layout>
       <SEO pageSEO={page.seo} />
       <Hero hero={hero} />
       <section>
@@ -60,7 +61,7 @@ const CampaignWebinarTemplate = ({ data: { page } }) => {
       </section>
 
       <FooterCTAs featured={cta} />
-    </>
+    </Layout>
   )
 }
 
