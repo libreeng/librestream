@@ -21,7 +21,7 @@ const SEO = ({ pageSEO, meta, className }) => {
       title={seo.title}
       titleTemplate={`${seo.title}`}
       meta={[
-        { name: 'description', content: seo.description },
+        { name: 'description', content: seo.metaDesc ? seo.metaDesc : seo.description },
         { name: 'og:type', content: "website" },
         { name: "og:title", content: seo.opengraphTitle ? seo.opengraphTitle : seo.title },
         { name: "og:description", content: seo.metaDesc ? seo.metaDesc : seo.description },
