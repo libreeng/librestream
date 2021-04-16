@@ -2,8 +2,7 @@ import React from 'react'
 import format from 'date-fns/format'
 import queryString from 'query-string'
 import { domToReact } from 'html-react-parser'
-
-
+import parse from "html-react-parser"
 export const formatDate = date => {
   let dateFormated = ''
   if (date) {
@@ -102,6 +101,34 @@ export function getHeroParseOptions(props) {
       }
     }
   })
+}
+
+function checkExtension(str) {
+  const extensions = ['pdf', 'mp4']
+  const ext = (str.match(/\.([^.]*?)(?=\?|#|$)/) || [])[1]
+
+  return extensions.includes(ext)
+}
+
+function getContentParseOptions(props) {
+  return ({
+    replace: ({ attribs, name, children }) => {
+      if (!attribs) return
+
+      if (name.includes('a') && checkExtension(attribs.href)) {
+        // eslint-disable-next-line consistent-return
+        attribs.href = `https://cms.librestream.com${attribs.href}`
+        return <a {...attribs}>{domToReact(children)}</a>
+      }
+    }
+  })
+}
+
+export const customParse = (props, options) => {
+  if (!options) {
+    return parse(props, getContentParseOptions(props))
+  }
+  return parse(props, options)
 }
 
 export const embedUrl = (string) => {
