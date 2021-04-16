@@ -104,6 +104,7 @@ export function getHeroParseOptions(props) {
 }
 
 function checkExtension(str) {
+  if (!str) return true
   const extensions = ['pdf', 'mp4']
   const ext = (str.match(/\.([^.]*?)(?=\?|#|$)/) || [])[1]
 
