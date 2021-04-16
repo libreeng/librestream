@@ -95,7 +95,7 @@ export function getHeroParseOptions(props) {
     replace: ({ attribs, name, children }) => {
       if (!attribs) return;
 
-      if (name.includes('p')) {
+      if (name === 'p') {
         // eslint-disable-next-line consistent-return
         return <>{domToReact(children, getHeroParseOptions(props))}</>
       }
@@ -116,7 +116,7 @@ function getContentParseOptions(props) {
     replace: ({ attribs, name, children }) => {
       if (!attribs) return
 
-      if (name.includes('a') && checkExtension(attribs.href)) {
+      if (name === 'a' && checkExtension(attribs.href)) {
         // eslint-disable-next-line consistent-return
         attribs.href = `https://cms.librestream.com${attribs.href}`
         return <a {...attribs}>{domToReact(children)}</a>
