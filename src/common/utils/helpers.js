@@ -95,7 +95,7 @@ export function getHeroParseOptions(props) {
     replace: ({ attribs, name, children }) => {
       if (!attribs) return;
 
-      if (name === 'p')) {
+      if (name === 'p') {
         // eslint-disable-next-line consistent-return
         return <>{domToReact(children, getHeroParseOptions(props))}</>
       }
