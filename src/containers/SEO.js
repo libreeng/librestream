@@ -3,43 +3,56 @@ import PropTypes from "prop-types"
 import { Helmet } from "react-helmet"
 import { useSiteMetadata } from '../common/hooks/useSiteMetadata'
 
-const SEO = ({ pageSEO, className }) => {
+const SEO = ({ pageSEO, meta, className }) => {
   const { defaultSEO } = useSiteMetadata()
   const seo = {
     ...defaultSEO,
     ...pageSEO,
   }
+  console.log(seo)
 
   return (
-    <Helmet titleTemplate={`%s | ${seo.title} - Librestream`} defaultTitle={seo.title} defer={false}>
-      <html lang={seo.inLanguage} />
-      <body className={className} />
-      <meta name="description" content={seo.description} />
-      <meta property="og:type" content="website" />
-      <meta property="og:title" content={seo.opengraphTitle} />
-      <meta property="og:description" content={seo.metaDesc || seo.description} />
-      <meta property="og:url" content={seo.opengraphUrl} />
-      <meta property="og:site_name" content={seo.opengraphSiteName} />
-      <meta property="article:publisher" content={seo.facebook.url} />
-      <meta property="article:modified_time" content={seo.opengraphModifiedTime} />
-      <meta property="og:image" content={seo.opengraphImage?.sourceUrl || seo.shareImage} />
-      <meta property="og:image:width" content={`1200px`} />
-      <meta property="og:image:height" content={`1200px`} />
-      <meta name="twitter:card" content="summary_large_image" />
-      <meta name="twitter:creator" content={`@${seo.twitter.username}`} />
-      <meta name="twitter:site" content={`@${seo.twitter.username}`} />
-    </Helmet>
+    <Helmet
+      htmlAttributes={{
+        lang: seo.inLanguage,
+      }}
+      bodyAttributes={{
+        class: className
+      }}
+      title={seo.title}
+      titleTemplate={`%s | ${seo.title} - Librestream`}
+      meta={[
+        { name: 'description', content: seo.description },
+        { name: 'og:type', content: "website" },
+        { name: "og:title", content: seo.opengraphTitle || seo.title },
+        { name: "og:description", content: seo.metaDesc || seo.description },
+        { name: "og:url", content: seo.opengraphUrl ? seo.opengraphUrl.replace('https://librestream.gatsbyjs.io', 'https://librestream.com') : seo.siteUrl },
+        { name: "og:site_name", content: seo.opengraphSiteName || seo.title },
+        { name: "article:publisher", content: seo.facebook.url || seo.siteUrl },
+        { name: "article:modified_time", content: seo.opengraphModifiedTime },
+        { name: "og:image", content: seo.opengraphImage?.sourceUrl || seo.shareImage },
+        { name: "og:image:width", content: `1200px` },
+        { name: "og:image:height", content: `1200px` },
+        { name: "twitter:card", content: "summary_large_image" },
+        { name: "twitter:creator", content: `@${seo.twitter.username}` },
+        { name: "twitter:site", content: `@${seo.twitter.username}` },
+      ].concat(meta)}
+    />
+
   )
 }
 
 SEO.propTypes = {
   pageSEO: PropTypes.instanceOf(Object),
   className: PropTypes.string,
+  meta: PropTypes.arrayOf(PropTypes.object),
 }
 SEO.defaultProps = {
   pageSEO: null,
   className: '',
+  meta: []
 }
+
 
 
 export default SEO

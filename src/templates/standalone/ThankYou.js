@@ -5,11 +5,12 @@ import Image from "gatsby-image"
 import parse from "html-react-parser"
 import SEO from "../../containers/SEO"
 import Hero from "../../common/ui/Hero"
+import Layout from "../../containers/Layout"
 
 const ThankYouTemplate = ({ data: { page } }) => {
   // I believe this template is now form-confirmation, remove once confirmed
   return (
-    <>
+    <Layout>
       <SEO pageSEO={page.seo} />
       <Hero heroTitle={page.title} />
       Thank you template
@@ -24,7 +25,7 @@ const ThankYouTemplate = ({ data: { page } }) => {
           </div>
         </section>
       )}
-    </>
+    </Layout>
   )
 }
 

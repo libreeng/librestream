@@ -7,6 +7,7 @@ import FooterCTAs from '../../common/ui/FooterCTAs'
 import SupportNav from '../../components/support/SupportNav'
 import { slugify } from '../../common/utils/helpers'
 import SupportKnowledgeBase from "../../components/support/SupportKnowledgebase"
+import Layout from "../../containers/Layout"
 
 
 
@@ -18,7 +19,7 @@ const SupportTemplate = ({ data: { page } }) => {
   const { cta } = page.acfFooterCTAs
 
   return (
-    <>
+    <Layout>
       <SEO pageSEO={page.seo} />
       <Hero hero={hero} />
       <section>
@@ -72,7 +73,7 @@ const SupportTemplate = ({ data: { page } }) => {
       )}
 
       <FooterCTAs featured={cta} />
-    </>
+    </Layout>
   )
 }
 

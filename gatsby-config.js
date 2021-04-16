@@ -21,92 +21,9 @@ module.exports = {
     facebook: website.facebook,
   },
   plugins: [
-    'gatsby-plugin-react-helmet',
     'gatsby-plugin-sass',
-    'gatsby-plugin-recaptcha',
-    'gatsby-plugin-gatsby-cloud',
-    // 'gatsby-plugin-sitemap',
-    {
-      resolve: "gatsby-plugin-google-tagmanager",
-      options: {
-        id: "GTM-W3BZNJ2",
-        includeInDevelopment: false,
-      },
-    },
-    {
-      resolve: `gatsby-source-wordpress`,
-      options: {
-        // the only required plugin option for WordPress is the GraphQL url.
-        url: process.env.WPGRAPHQL_URL || 'https://cms.librestream.com/graphql',
-        type: {
-          MediaItem: {
-            localFile: {
-              maxFileSizeBytes: 1048576000, // 1GB
-            },
-          },
-        },
-        schema: {
-          // perPage: 5,
-          // requestConcurrency: 5, // currently set to 15
-          // previewRequestConcurrency: 2, // currently set to 5
-          timeout: 300000,
-        }
-        // useACF: true,
-        // type: {
-        //   Post: {
-        //     limit:
-        //       process.env.NODE_ENV === `development`
-        //         ? // Lets just pull 50 posts in development to make it easy on ourselves.
-        //         50
-        //         : // And all posts in production
-        //         null,
-        //   },
-        //   MediaItem: {
-        //     localFile: {
-        //       requestConcurrency: 50
-        //     }
-        //   }
-        // },
-      },
-    },
-    {
-      resolve: `gatsby-plugin-manifest`,
-      options: {
-        name: `Librestream`,
-        short_name: `Librestream`,
-        start_url: `/`,
-        background_color: `#014168`,
-        theme_color: `#014168`,
-        display: `standalone`,
-        icon: 'static/img/favicon.png'
-      },
-    },
     'gatsby-plugin-sharp',
     'gatsby-transformer-sharp',
-    {
-      resolve: 'gatsby-plugin-robots-txt',
-      options: {
-        host: website.url,
-        sitemap: `${website.url}/sitemap.xml`,
-        policy: [{ userAgent: '*', allow: '/' }],
-        output: '/robots.txt'
-      }
-    },
-    // {
-    //   // Removes unused css rules
-    //   resolve: 'gatsby-plugin-purgecss',
-    //   options: {
-    //     // Activates purging in gatsby develop
-    //     develop: true,
-    //     // Purge only the main css file
-    //     purgeOnly: ['/main.scss'],
-    //     printAll: true,
-    //     printRejected: true,
-    //     // whitelist: () => ['html', 'body', 'collapse', 'collapsing'], // ERRORED: "gatsby-plugin-purgecss" threw an error while running the onCreateWebpackConfig lifecycle: userOptions.whitelist is not iterable
-    //     whitelistPatterns: () => [/modal*/, /accordion*/, /card*/, /navbar*/],
-    //     whitelistPatternsChildren: () => [/modal*/, /accordion*/, /card*/, /navbar*/]
-    //   },
-    // }, // must be after other CSS plugins
     {
       resolve: `gatsby-source-filesystem`,
       options: {
@@ -115,12 +32,49 @@ module.exports = {
       },
     },
     {
-      resolve: "gatsby-plugin-web-font-loader",
+      resolve: `gatsby-source-wordpress`,
       options: {
-        typekit: {
-          id: process.env.TYPEKIT_ID
+        // the only required plugin option for WordPress is the GraphQL url.
+        url: process.env.WPGRAPHQL_URL || 'https://cms.librestream.com/graphql',
+        develop: {
+          hardCacheMediaFiles: true,
+          // hardCacheData: true
         },
+        production: {
+          hardCacheMediaFiles: true,
+          // hardCacheData: true
+        },
+        type: {
+          MediaItem: {
+            localFile: {
+              maxFileSizeBytes: 1048576000, // 1GB
+            },
+          },
+          // Post: {
+          //   limit:
+          //     process.env.NODE_ENV === `development`
+          //       ? // Lets just pull 50 posts in development to make it easy on ourselves.
+          //       50
+          //       : // And all posts in production
+          //       null,
+          // },
+        },
+        schema: {
+          // perPage: 5,
+          requestConcurrency: 5, // currently set to 15
+          // previewRequestConcurrency: 2, // currently set to 5
+          timeout: 300000,
+        }
       },
+    },
+    {
+      resolve: 'gatsby-plugin-robots-txt',
+      options: {
+        host: website.url,
+        sitemap: `${website.url}/sitemap.xml`,
+        policy: [{ userAgent: '*', allow: '/' }],
+        output: '/robots.txt'
+      }
     },
 
     // You can have multiple instances of this plugin to create indexes with
@@ -179,5 +133,36 @@ module.exports = {
           })),
       },
     },
+    'gatsby-plugin-recaptcha',
+    'gatsby-plugin-sitemap',
+    {
+      resolve: "gatsby-plugin-web-font-loader",
+      options: {
+        typekit: {
+          id: process.env.TYPEKIT_ID
+        },
+      },
+    },
+    {
+      resolve: "gatsby-plugin-google-tagmanager",
+      options: {
+        id: "GTM-W3BZNJ2",
+        includeInDevelopment: false,
+      },
+    },
+    {
+      resolve: `gatsby-plugin-manifest`,
+      options: {
+        name: `Librestream`,
+        short_name: `Librestream`,
+        start_url: `/`,
+        background_color: `#014168`,
+        theme_color: `#014168`,
+        display: `standalone`,
+        icon: 'static/img/favicon.png'
+      },
+    },
+    'gatsby-plugin-react-helmet',
+    'gatsby-plugin-gatsby-cloud',
   ],
 }

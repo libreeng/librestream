@@ -2,14 +2,14 @@ import React, {useState} from 'react'
 import PropTypes from 'prop-types'
 
 const Highlight = ({ highlight }) => {
-  const iconData = highlight.highlightIcon ? highlight.highlightIcon.localFile.url : false
+  const iconData = highlight.highlightIcon ? highlight.highlightIcon.localFile?.publicURL : false
   const [open, setOpen] = useState(false);
   return (
     <>
       <div className='col-6 col-lg-4 mb-3 highlight'>
-        <button 
+        <button
           onClick={() => setOpen(!open)}
-          className="card h-100 w-100 d-block justify-content-between border-0 bg-transparent" 
+          className="card h-100 w-100 d-block justify-content-between border-0 bg-transparent"
           type="button"
         >
           {iconData && (
@@ -30,7 +30,7 @@ const Highlight = ({ highlight }) => {
                 )}
               </div>
             )}
-            
+
           </div>
           <div className="card-footer bg-transparent border-0 w-100">
             <div className="border-bracket-bottom" />

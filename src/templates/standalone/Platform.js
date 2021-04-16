@@ -8,6 +8,7 @@ import PlatformFeatures from '../../components/PlatformFeatures'
 import Stats from '../../components/Stats'
 import Carousel from '../../common/ui/carousel/Carousel'
 import { useCaseStudies } from "../../common/hooks/useCaseStudies"
+import Layout from "../../containers/Layout"
 
 
 const PlatformTemplate = ({ data: { page } }) => {
@@ -19,7 +20,7 @@ const PlatformTemplate = ({ data: { page } }) => {
   const { cta } = page.acfFooterCTAs
 
   return (
-    <>
+    <Layout>
       <SEO pageSEO={page.seo} />
       <Hero hero={hero} />
 
@@ -73,7 +74,7 @@ const PlatformTemplate = ({ data: { page } }) => {
       </section>
 
       <FooterCTAs featured={cta} />
-    </>
+    </Layout>
   )
 }
 
