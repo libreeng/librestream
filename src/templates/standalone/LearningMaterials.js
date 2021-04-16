@@ -95,6 +95,9 @@ export const pageQuery = graphql`
                     }
                     pdf {
                       mediaItemUrl
+                      localFile {
+                        publicURL
+                      }
                     }
                   }
                 }
