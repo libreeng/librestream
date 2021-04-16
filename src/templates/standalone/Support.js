@@ -127,6 +127,11 @@ export const pageQuery = graphql`
                         }
                       }
                       content
+                      page {
+                        ... on WpPage {
+                          uri
+                        }
+                      }
                     }
                     faqs {
                       answer

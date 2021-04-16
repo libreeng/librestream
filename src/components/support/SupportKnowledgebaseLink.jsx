@@ -31,6 +31,9 @@ const SupportKnowledgebaseLink = ({ link }) => {
           ),
           'PDF': (
             <a href={embedUrl(link.pdf?.localFile?.publicURL)} target="_blank" rel="noreferrer" className="text-underline">{link.linkText} (PDF)</a>
+          ),
+          'Page': (
+            <a href={link.page?.uri} className="text-underline">{link.linkText} (Page)</a>
           )
       }[link.linkType]}
     </div>
