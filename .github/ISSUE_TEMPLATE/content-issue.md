@@ -1,6 +1,6 @@
 ---
 name: Content help request
-about: Describe inconsistencies in content
+about: Describe inconsistencies in content management and expected behavior
 title: ''
 labels: CMS
 assignees: ''
