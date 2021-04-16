@@ -21,18 +21,14 @@ module.exports = {
     facebook: website.facebook,
   },
   plugins: [
-    'gatsby-plugin-react-helmet-async',
     'gatsby-plugin-sass',
-    'gatsby-plugin-recaptcha',
-    'gatsby-plugin-gatsby-cloud',
-    'gatsby-plugin-sitemap',
     'gatsby-plugin-sharp',
     'gatsby-transformer-sharp',
     {
-      resolve: "gatsby-plugin-google-tagmanager",
+      resolve: `gatsby-source-filesystem`,
       options: {
-        id: "GTM-W3BZNJ2",
-        includeInDevelopment: false,
+        name: `images`,
+        path: `${__dirname}/src/img/`,
       },
     },
     {
@@ -40,6 +36,14 @@ module.exports = {
       options: {
         // the only required plugin option for WordPress is the GraphQL url.
         url: process.env.WPGRAPHQL_URL || 'https://cms.librestream.com/graphql',
+        develop: {
+          hardCacheMediaFiles: true,
+          // hardCacheData: true
+        },
+        production: {
+          hardCacheMediaFiles: true,
+          // hardCacheData: true
+        },
         type: {
           MediaItem: {
             localFile: {
@@ -71,21 +75,6 @@ module.exports = {
         policy: [{ userAgent: '*', allow: '/' }],
         output: '/robots.txt'
       }
-    },
-    {
-      resolve: `gatsby-source-filesystem`,
-      options: {
-        name: `images`,
-        path: `${__dirname}/src/img/`,
-      },
-    },
-    {
-      resolve: "gatsby-plugin-web-font-loader",
-      options: {
-        typekit: {
-          id: process.env.TYPEKIT_ID
-        },
-      },
     },
 
     // You can have multiple instances of this plugin to create indexes with
@@ -144,6 +133,23 @@ module.exports = {
           })),
       },
     },
+    'gatsby-plugin-recaptcha',
+    'gatsby-plugin-sitemap',
+    {
+      resolve: "gatsby-plugin-web-font-loader",
+      options: {
+        typekit: {
+          id: process.env.TYPEKIT_ID
+        },
+      },
+    },
+    {
+      resolve: "gatsby-plugin-google-tagmanager",
+      options: {
+        id: "GTM-W3BZNJ2",
+        includeInDevelopment: false,
+      },
+    },
     {
       resolve: `gatsby-plugin-manifest`,
       options: {
@@ -156,5 +162,7 @@ module.exports = {
         icon: 'static/img/favicon.png'
       },
     },
+    'gatsby-plugin-react-helmet',
+    'gatsby-plugin-gatsby-cloud',
   ],
 }

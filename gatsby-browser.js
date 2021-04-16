@@ -6,11 +6,3 @@ import './src/styles/main.scss'
 
 import App from "./App"
 export const wrapRootElement = App
-
-// export const onClientEntry = () => {
-//   // IntersectionObserver polyfill for gatsby-background-image (Safari, IE)
-//   if (!(`IntersectionObserver` in window)) {
-//     import(`intersection-observer`)
-//     console.log(`# IntersectionObserver is polyfilled!`)
-//   }
-// }
