@@ -312,19 +312,13 @@
     "format": "plain"
   },
   {
-    "fromPath": "/blog/librestream-platform-video-2020/",
-    "toPath": "/blog/platform-video-2020/",
-    "type": 301,
-    "format": "plain"
-  },
-  {
     "fromPath": "/blog/librestream-platform-video-2020-2",
     "toPath": "/blog/platform-video-2020/",
     "type": 301,
     "format": "plain"
   },
   {
-    "fromPath": "/blog/platform-video-2020__trashed",
+    "fromPath": "/blog/librestream-platform-video-2020/",
     "toPath": "/blog/platform-video-2020/",
     "type": 301,
     "format": "plain"
@@ -338,6 +332,12 @@
   {
     "fromPath": "/blog/onsight-rugged-industrial-camera/",
     "toPath": "/blog/",
+    "type": 301,
+    "format": "plain"
+  },
+  {
+    "fromPath": "/blog/platform-video-2020__trashed",
+    "toPath": "/blog/platform-video-2020/",
     "type": 301,
     "format": "plain"
   },
@@ -402,12 +402,6 @@
     "format": "plain"
   },
   {
-    "fromPath": "/blog/video-onsight-cube/",
-    "toPath": "/blog/",
-    "type": 301,
-    "format": "plain"
-  },
-  {
     "fromPath": "/blog/video-onsight-cube-industrial-wearable-1kg-impact-test/",
     "toPath": "/videos/video-onsight-cube-industrial-wearable-1kg-impact-test/",
     "type": 301,
@@ -434,6 +428,12 @@
   {
     "fromPath": "/blog/video-onsight-cube-launch/",
     "toPath": "/videos/video-onsight-cube/",
+    "type": 301,
+    "format": "plain"
+  },
+  {
+    "fromPath": "/blog/video-onsight-cube/",
+    "toPath": "/blog/",
     "type": 301,
     "format": "plain"
   },
@@ -564,6 +564,24 @@
     "format": "plain"
   },
   {
+    "fromPath": "/Brochures/Onsight-Connect-Solution.pdf",
+    "toPath": "/platform/remote-expert/",
+    "type": 301,
+    "format": "plain"
+  },
+  {
+    "fromPath": "/Brochures/Onsight-Embedded.pdf",
+    "toPath": "/platform/remote-expert/",
+    "type": 301,
+    "format": "plain"
+  },
+  {
+    "fromPath": "/Brochures/Onsight-Virtual-Presence-Overview.pdf",
+    "toPath": "/solutions/",
+    "type": 301,
+    "format": "plain"
+  },
+  {
     "fromPath": "/Brochures/Onsight1000.pdf",
     "toPath": "/platform/",
     "type": 301,
@@ -594,18 +612,6 @@
     "format": "plain"
   },
   {
-    "fromPath": "/Brochures/Onsight-Connect-Solution.pdf",
-    "toPath": "/platform/remote-expert/",
-    "type": 301,
-    "format": "plain"
-  },
-  {
-    "fromPath": "/Brochures/Onsight-Embedded.pdf",
-    "toPath": "/platform/remote-expert/",
-    "type": 301,
-    "format": "plain"
-  },
-  {
     "fromPath": "/Brochures/OnsightExpert.pdf",
     "toPath": "/platform/remote-expert/",
     "type": 301,
@@ -626,12 +632,6 @@
   {
     "fromPath": "/Brochures/OnsightSIPService.pdf",
     "toPath": "/platform/remote-expert/",
-    "type": 301,
-    "format": "plain"
-  },
-  {
-    "fromPath": "/Brochures/Onsight-Virtual-Presence-Overview.pdf",
-    "toPath": "/solutions/",
     "type": 301,
     "format": "plain"
   },
@@ -864,12 +864,6 @@
     "format": "plain"
   },
   {
-    "fromPath": "/Brochures/Whitepapers/AppNote_Onsight_Connect_Network_Requirements_400210-04_revA.pdf",
-    "toPath": "/onsight-support/",
-    "type": 301,
-    "format": "plain"
-  },
-  {
     "fromPath": "/Brochures/Whitepapers/AppNote-Optimizing_the_Call_Experience_v4.4.pdf",
     "toPath": "/onsight-support/",
     "type": 301,
@@ -883,6 +877,12 @@
   },
   {
     "fromPath": "/Brochures/Whitepapers/AppNote-WWAN_BGAN_LOW_BW_OPTIMIZATION_400211-00.pdf",
+    "toPath": "/onsight-support/",
+    "type": 301,
+    "format": "plain"
+  },
+  {
+    "fromPath": "/Brochures/Whitepapers/AppNote_Onsight_Connect_Network_Requirements_400210-04_revA.pdf",
     "toPath": "/onsight-support/",
     "type": 301,
     "format": "plain"
@@ -924,13 +924,13 @@
     "format": "plain"
   },
   {
-    "fromPath": "/business-continuity2/",
+    "fromPath": "/business-continuity-package/",
     "toPath": "/remote-expert-package-free-trial/",
     "type": 301,
     "format": "plain"
   },
   {
-    "fromPath": "/business-continuity-package/",
+    "fromPath": "/business-continuity2/",
     "toPath": "/remote-expert-package-free-trial/",
     "type": 301,
     "format": "plain"
@@ -1052,48 +1052,6 @@
   {
     "fromPath": "/cisco/Video_oilandgas/",
     "toPath": "/solutions/energy-asset-maintenance-and-hse-mobility/",
-    "type": 301,
-    "format": "plain"
-  },
-  {
-    "fromPath": "/company/",
-    "toPath": "/about/",
-    "type": 301,
-    "format": "plain"
-  },
-  {
-    "fromPath": "/company/board-of-directors/",
-    "toPath": "/about/",
-    "type": 301,
-    "format": "plain"
-  },
-  {
-    "fromPath": "/company/careers/",
-    "toPath": "/about/",
-    "type": 301,
-    "format": "plain"
-  },
-  {
-    "fromPath": "/company/management/",
-    "toPath": "/about/",
-    "type": 301,
-    "format": "plain"
-  },
-  {
-    "fromPath": "/company/vision/",
-    "toPath": "/about/",
-    "type": 301,
-    "format": "plain"
-  },
-  {
-    "fromPath": "/Company_BoardofDirectors.html",
-    "toPath": "/about/",
-    "type": 301,
-    "format": "plain"
-  },
-  {
-    "fromPath": "/company_management.html",
-    "toPath": "/about/",
     "type": 301,
     "format": "plain"
   },
@@ -1356,18 +1314,6 @@
     "format": "plain"
   },
   {
-    "fromPath": "/company-news/librestreams-onsight-ar-platform-selected-by-safran-for-remote-assistance-within-service-operations/",
-    "toPath": "/press-releases/librestreams-onsight-ar-platform-selected-by-safran-for-remote-assistance-within-service-operations/",
-    "type": 301,
-    "format": "plain"
-  },
-  {
-    "fromPath": "/company-news/librestreams-remote-expert-augmented-reality-solution-selected-by-renault-trucks-uk-ireland-to-power-increased-uptime-and-productivity/",
-    "toPath": "/press-releases/librestreams-remote-expert-augmented-reality-solution-selected-by-renault-trucks-uk-ireland-to-power-increased-uptime-and-productivity/",
-    "type": 301,
-    "format": "plain"
-  },
-  {
     "fromPath": "/company-news/librestream-supports-hurricane-laura-related-challenges-with-free-augmented-reality-software/",
     "toPath": "/press-releases/librestream-supports-hurricane-laura-related-challenges-with-free-augmented-reality-software/",
     "type": 301,
@@ -1392,6 +1338,18 @@
     "format": "plain"
   },
   {
+    "fromPath": "/company-news/librestreams-onsight-ar-platform-selected-by-safran-for-remote-assistance-within-service-operations/",
+    "toPath": "/press-releases/librestreams-onsight-ar-platform-selected-by-safran-for-remote-assistance-within-service-operations/",
+    "type": 301,
+    "format": "plain"
+  },
+  {
+    "fromPath": "/company-news/librestreams-remote-expert-augmented-reality-solution-selected-by-renault-trucks-uk-ireland-to-power-increased-uptime-and-productivity/",
+    "toPath": "/press-releases/librestreams-remote-expert-augmented-reality-solution-selected-by-renault-trucks-uk-ireland-to-power-increased-uptime-and-productivity/",
+    "type": 301,
+    "format": "plain"
+  },
+  {
     "fromPath": "/company-news/live-video-collaboration-solution-from-librestream-earns-diebold-frost-sullivans-customer-value-leadership-award/",
     "toPath": "/press-releases/live-video-collaboration-solution-from-librestream-earns-diebold-frost-sullivans-customer-value-leadership-award/",
     "type": 301,
@@ -1410,18 +1368,6 @@
     "format": "plain"
   },
   {
-    "fromPath": "/company-news/newest-release-of-its-onsight-mobile-collaboration-platform/",
-    "toPath": "/news/",
-    "type": 301,
-    "format": "plain"
-  },
-  {
-    "fromPath": "/company-news/newest-series-of-rugged-onsight-mobile-devices/",
-    "toPath": "/news/",
-    "type": 301,
-    "format": "plain"
-  },
-  {
     "fromPath": "/company-news/new-important-changes-to-onsight-release-version-8-1/",
     "toPath": "/news/",
     "type": 301,
@@ -1429,6 +1375,18 @@
   },
   {
     "fromPath": "/company-news/new-venture/",
+    "toPath": "/news/",
+    "type": 301,
+    "format": "plain"
+  },
+  {
+    "fromPath": "/company-news/newest-release-of-its-onsight-mobile-collaboration-platform/",
+    "toPath": "/news/",
+    "type": 301,
+    "format": "plain"
+  },
+  {
+    "fromPath": "/company-news/newest-series-of-rugged-onsight-mobile-devices/",
     "toPath": "/news/",
     "type": 301,
     "format": "plain"
@@ -1476,25 +1434,25 @@
     "format": "plain"
   },
   {
-    "fromPath": "/company-news/onsight-version-3/",
-    "toPath": "/news/",
-    "type": 301,
-    "format": "plain"
-  },
-  {
     "fromPath": "/company-news/onsight-version-3-4/",
     "toPath": "/news/",
     "type": 301,
     "format": "plain"
   },
   {
-    "fromPath": "/company-news/onsight-version-4/",
+    "fromPath": "/company-news/onsight-version-3/",
     "toPath": "/news/",
     "type": 301,
     "format": "plain"
   },
   {
     "fromPath": "/company-news/onsight-version-4-5/",
+    "toPath": "/news/",
+    "type": 301,
+    "format": "plain"
+  },
+  {
+    "fromPath": "/company-news/onsight-version-4/",
     "toPath": "/news/",
     "type": 301,
     "format": "plain"
@@ -1584,14 +1542,14 @@
     "format": "plain"
   },
   {
-    "fromPath": "/company-news/usaa-simplifies-claims-processing-with-librestreams-onsight-embedded-capabilities/",
-    "toPath": "/press-releases/usaa-simplifies-claims-processing-with-librestreams-onsight-embedded-capabilities/",
+    "fromPath": "/company-news/us-national-guard-deploys-video-collaboration/",
+    "toPath": "/news/",
     "type": 301,
     "format": "plain"
   },
   {
-    "fromPath": "/company-news/us-national-guard-deploys-video-collaboration/",
-    "toPath": "/news/",
+    "fromPath": "/company-news/usaa-simplifies-claims-processing-with-librestreams-onsight-embedded-capabilities/",
+    "toPath": "/press-releases/usaa-simplifies-claims-processing-with-librestreams-onsight-embedded-capabilities/",
     "type": 301,
     "format": "plain"
   },
@@ -1634,6 +1592,48 @@
   {
     "fromPath": "/company-news/wood-group-partners-with-librestream/",
     "toPath": "/press-releases/wood-group-partners-with-librestream/",
+    "type": 301,
+    "format": "plain"
+  },
+  {
+    "fromPath": "/company/",
+    "toPath": "/about/",
+    "type": 301,
+    "format": "plain"
+  },
+  {
+    "fromPath": "/company/board-of-directors/",
+    "toPath": "/about/",
+    "type": 301,
+    "format": "plain"
+  },
+  {
+    "fromPath": "/company/careers/",
+    "toPath": "/about/",
+    "type": 301,
+    "format": "plain"
+  },
+  {
+    "fromPath": "/company/management/",
+    "toPath": "/about/",
+    "type": 301,
+    "format": "plain"
+  },
+  {
+    "fromPath": "/company/vision/",
+    "toPath": "/about/",
+    "type": 301,
+    "format": "plain"
+  },
+  {
+    "fromPath": "/Company_BoardofDirectors.html",
+    "toPath": "/about/",
+    "type": 301,
+    "format": "plain"
+  },
+  {
+    "fromPath": "/company_management.html",
+    "toPath": "/about/",
     "type": 301,
     "format": "plain"
   },
@@ -1884,13 +1884,13 @@
     "format": "plain"
   },
   {
-    "fromPath": "/events/join-us-at-ewts2017/",
+    "fromPath": "/events/join-us-at-ewts-everywhere",
     "toPath": "/events/",
     "type": 301,
     "format": "plain"
   },
   {
-    "fromPath": "/events/join-us-at-ewts-everywhere",
+    "fromPath": "/events/join-us-at-ewts2017/",
     "toPath": "/events/",
     "type": 301,
     "format": "plain"
@@ -1908,13 +1908,13 @@
     "format": "plain"
   },
   {
-    "fromPath": "/events/join-us-at-field-service-usa/",
+    "fromPath": "/events/join-us-at-field-service-usa-2019/",
     "toPath": "/events/",
     "type": 301,
     "format": "plain"
   },
   {
-    "fromPath": "/events/join-us-at-field-service-usa-2019/",
+    "fromPath": "/events/join-us-at-field-service-usa/",
     "toPath": "/events/",
     "type": 301,
     "format": "plain"
@@ -2178,12 +2178,6 @@
     "format": "plain"
   },
   {
-    "fromPath": "/form_confirmations/10431",
-    "toPath": "/",
-    "type": 301,
-    "format": "plain"
-  },
-  {
     "fromPath": "/form-confirmations/",
     "toPath": "/",
     "type": 301,
@@ -2346,6 +2340,12 @@
     "format": "plain"
   },
   {
+    "fromPath": "/form_confirmations/10431",
+    "toPath": "/",
+    "type": 301,
+    "format": "plain"
+  },
+  {
     "fromPath": "/FSAWARD.html",
     "toPath": "/",
     "type": 301,
@@ -2370,14 +2370,14 @@
     "format": "plain"
   },
   {
-    "fromPath": "/guides/9335",
-    "toPath": "/guides/test-whitepaper/",
+    "fromPath": "/guides-whitepapers",
+    "toPath": "/guides-and-whitepapers/",
     "type": 301,
     "format": "plain"
   },
   {
-    "fromPath": "/guides-whitepapers",
-    "toPath": "/guides-and-whitepapers/",
+    "fromPath": "/guides/9335",
+    "toPath": "/guides/test-whitepaper/",
     "type": 301,
     "format": "plain"
   },
@@ -2652,12 +2652,6 @@
     "format": "plain"
   },
   {
-    "fromPath": "/News/Dec_2_2010.html",
-    "toPath": "/news/",
-    "type": 301,
-    "format": "plain"
-  },
-  {
     "fromPath": "/news/dec-10-2008/",
     "toPath": "/news/",
     "type": 301,
@@ -2706,13 +2700,7 @@
     "format": "plain"
   },
   {
-    "fromPath": "/News/Feb_18_2010.html",
-    "toPath": "/news/",
-    "type": 301,
-    "format": "plain"
-  },
-  {
-    "fromPath": "/News/Feb_5_2009.html",
+    "fromPath": "/News/Dec_2_2010.html",
     "toPath": "/news/",
     "type": 301,
     "format": "plain"
@@ -2754,25 +2742,13 @@
     "format": "plain"
   },
   {
-    "fromPath": "/News/Jan_28_2010.html",
+    "fromPath": "/News/Feb_18_2010.html",
     "toPath": "/news/",
     "type": 301,
     "format": "plain"
   },
   {
-    "fromPath": "/News/Jan_5_2011.html",
-    "toPath": "/news/",
-    "type": 301,
-    "format": "plain"
-  },
-  {
-    "fromPath": "/News/Jan_6_2009.html",
-    "toPath": "/news/",
-    "type": 301,
-    "format": "plain"
-  },
-  {
-    "fromPath": "/News/Jan_7_2010.html",
+    "fromPath": "/News/Feb_5_2009.html",
     "toPath": "/news/",
     "type": 301,
     "format": "plain"
@@ -2820,13 +2796,31 @@
     "format": "plain"
   },
   {
-    "fromPath": "/news/jul-23-2013.html",
+    "fromPath": "/News/Jan_28_2010.html",
     "toPath": "/news/",
     "type": 301,
     "format": "plain"
   },
   {
-    "fromPath": "/News/July_11_2005.html",
+    "fromPath": "/News/Jan_5_2011.html",
+    "toPath": "/news/",
+    "type": 301,
+    "format": "plain"
+  },
+  {
+    "fromPath": "/News/Jan_6_2009.html",
+    "toPath": "/news/",
+    "type": 301,
+    "format": "plain"
+  },
+  {
+    "fromPath": "/News/Jan_7_2010.html",
+    "toPath": "/news/",
+    "type": 301,
+    "format": "plain"
+  },
+  {
+    "fromPath": "/news/jul-23-2013.html",
     "toPath": "/news/",
     "type": 301,
     "format": "plain"
@@ -2844,6 +2838,12 @@
     "format": "plain"
   },
   {
+    "fromPath": "/News/July_11_2005.html",
+    "toPath": "/news/",
+    "type": 301,
+    "format": "plain"
+  },
+  {
     "fromPath": "/news/jun-20-2012.html",
     "toPath": "/news/",
     "type": 301,
@@ -2851,18 +2851,6 @@
   },
   {
     "fromPath": "/news/jun-28-2012.html",
-    "toPath": "/news/",
-    "type": 301,
-    "format": "plain"
-  },
-  {
-    "fromPath": "/News/June_07_2010.html",
-    "toPath": "/news/",
-    "type": 301,
-    "format": "plain"
-  },
-  {
-    "fromPath": "/News/June_21_2010.html",
     "toPath": "/news/",
     "type": 301,
     "format": "plain"
@@ -2910,19 +2898,19 @@
     "format": "plain"
   },
   {
+    "fromPath": "/News/June_07_2010.html",
+    "toPath": "/news/",
+    "type": 301,
+    "format": "plain"
+  },
+  {
+    "fromPath": "/News/June_21_2010.html",
+    "toPath": "/news/",
+    "type": 301,
+    "format": "plain"
+  },
+  {
     "fromPath": "/news/Librestream_AWE.pdf",
-    "toPath": "/news/",
-    "type": 301,
-    "format": "plain"
-  },
-  {
-    "fromPath": "/News/Mar_25_2010.html",
-    "toPath": "/news/",
-    "type": 301,
-    "format": "plain"
-  },
-  {
-    "fromPath": "/news/Mar_28_2011.html",
     "toPath": "/news/",
     "type": 301,
     "format": "plain"
@@ -2940,7 +2928,13 @@
     "format": "plain"
   },
   {
-    "fromPath": "/News/March_14_2008.html",
+    "fromPath": "/News/Mar_25_2010.html",
+    "toPath": "/news/",
+    "type": 301,
+    "format": "plain"
+  },
+  {
+    "fromPath": "/news/Mar_28_2011.html",
     "toPath": "/news/",
     "type": 301,
     "format": "plain"
@@ -2982,19 +2976,7 @@
     "format": "plain"
   },
   {
-    "fromPath": "/News/May_18_2011.html",
-    "toPath": "/news/",
-    "type": 301,
-    "format": "plain"
-  },
-  {
-    "fromPath": "/News/May_29_2009.html",
-    "toPath": "/news/",
-    "type": 301,
-    "format": "plain"
-  },
-  {
-    "fromPath": "/news/May_3_2011.html",
+    "fromPath": "/News/March_14_2008.html",
     "toPath": "/news/",
     "type": 301,
     "format": "plain"
@@ -3030,7 +3012,19 @@
     "format": "plain"
   },
   {
-    "fromPath": "/News/Nov_12_2008.html",
+    "fromPath": "/News/May_18_2011.html",
+    "toPath": "/news/",
+    "type": 301,
+    "format": "plain"
+  },
+  {
+    "fromPath": "/News/May_29_2009.html",
+    "toPath": "/news/",
+    "type": 301,
+    "format": "plain"
+  },
+  {
+    "fromPath": "/news/May_3_2011.html",
     "toPath": "/news/",
     "type": 301,
     "format": "plain"
@@ -3096,13 +3090,7 @@
     "format": "plain"
   },
   {
-    "fromPath": "/News/Oct_1_2009.html",
-    "toPath": "/news/",
-    "type": 301,
-    "format": "plain"
-  },
-  {
-    "fromPath": "/News/Oct_30_2008.html",
+    "fromPath": "/News/Nov_12_2008.html",
     "toPath": "/news/",
     "type": 301,
     "format": "plain"
@@ -3150,6 +3138,18 @@
     "format": "plain"
   },
   {
+    "fromPath": "/News/Oct_1_2009.html",
+    "toPath": "/news/",
+    "type": 301,
+    "format": "plain"
+  },
+  {
+    "fromPath": "/News/Oct_30_2008.html",
+    "toPath": "/news/",
+    "type": 301,
+    "format": "plain"
+  },
+  {
     "fromPath": "/news/search/",
     "toPath": "/news/",
     "type": 301,
@@ -3162,12 +3162,6 @@
     "format": "plain"
   },
   {
-    "fromPath": "/News/Sept_10_2006.html",
-    "toPath": "/news/",
-    "type": 301,
-    "format": "plain"
-  },
-  {
     "fromPath": "/news/sept-10-2006.html",
     "toPath": "/news/",
     "type": 301,
@@ -3175,6 +3169,12 @@
   },
   {
     "fromPath": "/news/sept-2-2009.html",
+    "toPath": "/news/",
+    "type": 301,
+    "format": "plain"
+  },
+  {
+    "fromPath": "/News/Sept_10_2006.html",
     "toPath": "/news/",
     "type": 301,
     "format": "plain"
@@ -3564,12 +3564,6 @@
     "format": "plain"
   },
   {
-    "fromPath": "/products/onsight-management/",
-    "toPath": "/platform/remote-expert/",
-    "type": 301,
-    "format": "plain"
-  },
-  {
     "fromPath": "/products/onsight-management-suite.html",
     "toPath": "/platform/remote-expert/",
     "type": 301,
@@ -3577,6 +3571,12 @@
   },
   {
     "fromPath": "/products/onsight-management-suite_v5.1.html",
+    "toPath": "/platform/remote-expert/",
+    "type": 301,
+    "format": "plain"
+  },
+  {
+    "fromPath": "/products/onsight-management/",
     "toPath": "/platform/remote-expert/",
     "type": 301,
     "format": "plain"
@@ -3678,14 +3678,14 @@
     "format": "plain"
   },
   {
-    "fromPath": "/sitemap.html",
-    "toPath": "/",
+    "fromPath": "/sitemap-US.xml",
+    "toPath": "/sitemapindex.xml",
     "type": 301,
     "format": "plain"
   },
   {
-    "fromPath": "/sitemap-US.xml",
-    "toPath": "/sitemapindex.xml",
+    "fromPath": "/sitemap.html",
+    "toPath": "/",
     "type": 301,
     "format": "plain"
   },
@@ -3858,6 +3858,12 @@
     "format": "regex"
   },
   {
+    "fromPath": "/support-archives/onsight-5000hd-eula",
+    "toPath": "/support-archives/software-hardware-eula/",
+    "type": 301,
+    "format": "plain"
+  },
+  {
     "fromPath": "/support.html",
     "toPath": "/onsight-support/",
     "type": 301,
@@ -4008,12 +4014,6 @@
     "format": "plain"
   },
   {
-    "fromPath": "/support-archives/onsight-5000hd-eula",
-    "toPath": "/support-archives/software-hardware-eula/",
-    "type": 301,
-    "format": "plain"
-  },
-  {
     "fromPath": "/telehealth-kit/",
     "toPath": "/resources/",
     "type": 301,
@@ -4034,6 +4034,12 @@
   {
     "fromPath": "/training-materials/",
     "toPath": "/training-deployment-adoption-materials/",
+    "type": 301,
+    "format": "plain"
+  },
+  {
+    "fromPath": "/use-cases-2",
+    "toPath": "/use-cases/",
     "type": 301,
     "format": "plain"
   },
@@ -4062,12 +4068,6 @@
     "format": "plain"
   },
   {
-    "fromPath": "/use-cases-2",
-    "toPath": "/use-cases/",
-    "type": 301,
-    "format": "plain"
-  },
-  {
     "fromPath": "/userguides",
     "toPath": "/onsight-support/",
     "type": 301,
@@ -4076,6 +4076,12 @@
   {
     "fromPath": "/verdantix-report/",
     "toPath": "/resources/verdantix-report/",
+    "type": 301,
+    "format": "plain"
+  },
+  {
+    "fromPath": "/video-enabled-service-report-by-aberdeen-group/",
+    "toPath": "/blog/",
     "type": 301,
     "format": "plain"
   },
@@ -4232,12 +4238,6 @@
   {
     "fromPath": "/Video_Telehealth2.html",
     "toPath": "/videos/",
-    "type": 301,
-    "format": "plain"
-  },
-  {
-    "fromPath": "/video-enabled-service-report-by-aberdeen-group/",
-    "toPath": "/blog/",
     "type": 301,
     "format": "plain"
   },
