@@ -11,7 +11,11 @@ import SEO from "../../containers/SEO"
 import Layout from "../../containers/Layout"
 
 const AboutTemplate = ({ data: { page } }) => {
-  const dispatch = useDispatch()
+  let dispatch = () => { }
+  if (typeof window !== 'undefined') {
+    dispatch = useDispatch()
+  }
+
   const acf = page.acfTemplateAbout
   const hero = page.acfHero
   const nav = page.acfSubnav.subnav.map(item => item.subnavItemLink)
@@ -65,7 +69,9 @@ const AboutTemplate = ({ data: { page } }) => {
             {acf.board && acf.board.map((boardmember, i) => {
               return (
                 <div key={`board_${i}`} className="col-12 col-lg-3 mb-4">
-                  <button onClick={() => dispatch(openModal("BoardModal", { board: boardmember }))} type="button" className="border-0 bg-transparent p-0">
+                  <button
+                    onClick={() => dispatch(openModal("BoardModal", { board: boardmember }))}
+                    type="button" className="border-0 bg-transparent p-0">
                     {boardmember.image && (
                       <BackgroundImage
                         Tag="div"
@@ -90,7 +96,9 @@ const AboutTemplate = ({ data: { page } }) => {
           <div className="row">
             {acf.management && acf.management.map((boardmember, i) => (
               <div key={`board_management_${i}`} className="col-12 col-lg-3 mb-4">
-                <button onClick={() => dispatch(openModal("BoardModal", { board: boardmember }))} type="button" className="border-0 bg-transparent p-0">
+                <button
+                  onClick={() => dispatch(openModal("BoardModal", { board: boardmember }))}
+                  type="button" className="border-0 bg-transparent p-0">
                   {boardmember.image && (
                     <BackgroundImage
                       Tag="div"

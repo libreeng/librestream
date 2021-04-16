@@ -9,6 +9,7 @@ const SEO = ({ pageSEO, meta, className }) => {
     ...defaultSEO,
     ...pageSEO,
   }
+  console.log(seo)
 
   return (
     <Helmet

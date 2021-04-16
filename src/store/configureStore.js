@@ -27,7 +27,7 @@ export default function createReduxStore() {
   // ======================================================
 
   const store = createStore(
-    rootReducer,
+    rootReducer(),
     compose(applyMiddleware(...middleware), ...enhancers)
   )
 

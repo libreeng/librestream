@@ -38,7 +38,7 @@ const CategoryTemplate = ({ data: { category } }) => {
 
       <section>
         <div className="container">
-          {activeCategory.length > 15 && (
+          {activeCategory && activeCategory.length > 15 && (
             <>
               <div className="row justify-content-end">
                 <div className="col-12">

@@ -5,7 +5,11 @@ import BackgroundImage from 'gatsby-background-image'
 import { openModal } from "../../common/modals/modalActions"
 
 const LearningLink = ({ link }) => {
-  const dispatch = useDispatch();
+  let dispatch = () => { }
+  if (typeof window !== 'undefined') {
+    dispatch = useDispatch()
+  }
+
   return (
     <>
       {link.linkType === 'Content' && !link.content && (
@@ -23,7 +27,9 @@ const LearningLink = ({ link }) => {
         </div>
       )}
       {link.linkType === 'Content' && link.content && (
-          <button onClick={() => dispatch(openModal("SupportModal", { content: link.content }))} type="button" className="border-0 bg-transparent p-0 text-primary w-100">
+          <button
+            onClick={() => dispatch(openModal("SupportModal", { content: link.content }))}
+            type="button" className="border-0 bg-transparent p-0 text-primary w-100">
             <div className="row align-items-center mb-3">
               <div className="col-12 col-lg-4">
                 <BackgroundImage

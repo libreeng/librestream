@@ -8,10 +8,13 @@ import { useDispatch } from "react-redux"
 import SEO from "../../containers/SEO"
 import { openModal } from "../../common/modals/modalActions"
 import Layout from "../../containers/Layout"
-// import PartnerModal from '../../common/modals/PartnerModal'
+import PartnerModal from '../../common/modals/PartnerModal'
 
 const PartnersTemplate = ({ data: { page } }) => {
-  const dispatch = useDispatch();
+  let dispatch = () => { }
+  if (typeof window !== 'undefined') {
+    dispatch = useDispatch()
+  }
   const acf = page.acfTemplatePartners
   const hero = {
     heroHeading: page.title
@@ -49,7 +52,10 @@ const PartnersTemplate = ({ data: { page } }) => {
                 <div className="row row-cols-1 row-cols-md-4 mt-5">
                   {partnerSection.companies && partnerSection.companies.map(partner =>
                     <div className="col" key={partner.id}>
-                      <div className="card border border-primary" onClick={() => dispatch(openModal("PartnerModal", { partner: partner.acfPostTypePartner }))}>
+                      <div
+                        className="card border border-primary"
+                        onClick={() => dispatch(openModal("PartnerModal", { partner: partner.acfPostTypePartner }))}
+                      >
                         <div className="bg-image aspect-1x1">
                           <div className="bg-fill bg-transparent p-3">
                             <div className="w-100">
@@ -62,7 +68,12 @@ const PartnersTemplate = ({ data: { page } }) => {
                       </div>
                       <div className="card-footer bg-transparent px-0">
                         <h6 className="text-primary mb-0">{partner.title}</h6>
-                        <button className="h6 text-uppercase p-0 bg-transparent border-0" onClick={() => dispatch(openModal("PartnerModal", { partner: partner.acfPostTypePartner }))}>Read More</button>
+                        <button
+                          className="h6 text-uppercase p-0 bg-transparent border-0"
+                          onClick={() => dispatch(openModal("PartnerModal", { partner: partner.acfPostTypePartner }))}
+                        >
+                          Read More
+                        </button>
                       </div>
                     </div>
                   )}
@@ -112,7 +123,6 @@ export const pageQuery = graphql`
                   linkDownload {
                     localFile {
                       publicURL
-                      url
                     }
                   }
                   linkPage {

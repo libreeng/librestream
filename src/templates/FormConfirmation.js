@@ -40,10 +40,10 @@ const FormConfirmationTemplate = ({ data: { post } }) => {
                 <>
                   <hr className="hr-styled" />
                   <div className="responsive-iframe aspect-letter my-5">
-                    <iframe src={embedUrl(acf.document.localFile.url)} title={post.title} />
+                    <iframe src={embedUrl(acf.document.localFile.publicURL)} title={post.title} />
                   </div>
                   <div className="text-center">
-                    <a href={acf.document.localFile.url} target="_blank" rel="noreferrer" className="btn btn-primary mx-auto text-white">Download</a>
+                    <a href={acf.document.localFile.publicURL} title="Download" target="_blank" rel="noreferrer" className="btn btn-primary mx-auto text-white">Download</a>
                   </div>
                 </>
               )}
@@ -73,7 +73,6 @@ export const formConfirmationQuery = graphql`
         document {
           localFile {
             publicURL
-            url
           }
         }
         videoEmbed

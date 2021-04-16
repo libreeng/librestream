@@ -32,7 +32,7 @@ const ItSecurityTemplate = ({ data: { page } }) => {
               {acf.details && parse(acf.details)}
               <div className="mt-5">
                 {acf.downloads && acf.downloads.map(download => (
-                  <p><a href={download.download} target="_blank" className="btn btn-gradient-dark-blue text-white">{download.downloadLabel}</a></p>
+                  <p><a href={download.download?.localFile?.publicURL} target="_blank" className="btn btn-gradient-dark-blue text-white">{download.downloadLabel}</a></p>
                 ))}
               </div>
             </div>
@@ -40,7 +40,7 @@ const ItSecurityTemplate = ({ data: { page } }) => {
               <div className="px-5 w-75">
                 {acf.certificationImages && acf.certificationImages.map((image, index) => (
                   image.certificationDocument ? (
-                    <a key={`image_${index}`} href={image.certificationDocument.localFile.url} target="_blank">
+                    <a key={`image_${index}`} href={image.certificationDocument?.localFile?.publicURL} target="_blank">
                       <img src={image?.certificationImage?.localFile?.publicURL} className="img-fluid" alt="" />
                     </a>
                   ) : (
@@ -98,7 +98,6 @@ export const pageQuery = graphql`
           certificationDocument {
             localFile {
               publicURL
-              url
             }
           }
         }
@@ -106,7 +105,6 @@ export const pageQuery = graphql`
           download {
             localFile {
               publicURL
-              url
             }
             altText
           }

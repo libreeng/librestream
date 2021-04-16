@@ -1,4 +1,5 @@
 import React from "react"
+// import PropTypes from 'prop-types'
 import { graphql } from "gatsby"
 import parse from "html-react-parser"
 import SEO from "../../containers/SEO"
@@ -10,7 +11,7 @@ const AwardTemplate = ({ data: { page } }) => {
   const hero = {
     heroHeading: page.title
   }
-  const { cta } = page.acfFooterCTAs
+  const cta = page.acfFooterCTAs?.cta || []
 
   return (
     <Layout>
@@ -40,5 +41,6 @@ export const pageQuery = graphql`
     }
   }
 `
+
 
 export default AwardTemplate
