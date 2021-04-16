@@ -9,6 +9,7 @@ import { useNews } from "../../common/hooks/useNews"
 import PostCard from "../../common/ui/cards/PostCard"
 import ResultCard from "../../common/ui/cards/ResultCard"
 import FooterCTAs from '../../common/ui/FooterCTAs'
+import Layout from "../../containers/Layout"
 // import Filters from "../../common/ui/Filters"
 
 const CategoryTemplate = ({ data: { category } }) => {
@@ -31,13 +32,13 @@ const CategoryTemplate = ({ data: { category } }) => {
   const results = useFlexSearch(query, index, store)
 
   return (
-    <>
+    <Layout>
       <SEO />
       <Hero hero={hero} />
 
       <section>
         <div className="container">
-          {activeCategory.length > 15 && (
+          {activeCategory && activeCategory.length > 15 && (
             <>
               <div className="row justify-content-end">
                 <div className="col-12">
@@ -100,7 +101,7 @@ const CategoryTemplate = ({ data: { category } }) => {
         </div>
       </section>
       <FooterCTAs />
-    </>
+    </Layout>
   )
 }
 

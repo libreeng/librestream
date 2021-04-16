@@ -6,6 +6,7 @@ import Hero from "../../common/ui/Hero"
 import Intro from "../../common/ui/Intro"
 import FooterCTAs from '../../common/ui/FooterCTAs'
 import CTA from '../../common/ui/CTA'
+import Layout from "../../containers/Layout"
 
 const ItSecurityTemplate = ({ data: { page } }) => {
   const acf = page.acfTemplateItSecurity
@@ -17,7 +18,7 @@ const ItSecurityTemplate = ({ data: { page } }) => {
   const { cta } = page.acfFooterCTAs
 
   return (
-    <>
+    <Layout>
       <SEO pageSEO={page.seo} />
       <Hero hero={hero} />
       <Intro intro={intro} bracket="true" />
@@ -31,7 +32,7 @@ const ItSecurityTemplate = ({ data: { page } }) => {
               {acf.details && parse(acf.details)}
               <div className="mt-5">
                 {acf.downloads && acf.downloads.map(download => (
-                  <p><a href={download.download} target="_blank" className="btn btn-gradient-dark-blue text-white">{download.downloadLabel}</a></p>
+                  <p><a href={download.download?.localFile?.publicURL} target="_blank" className="btn btn-gradient-dark-blue text-white">{download.downloadLabel}</a></p>
                 ))}
               </div>
             </div>
@@ -39,7 +40,7 @@ const ItSecurityTemplate = ({ data: { page } }) => {
               <div className="px-5 w-75">
                 {acf.certificationImages && acf.certificationImages.map((image, index) => (
                   image.certificationDocument ? (
-                    <a key={`image_${index}`} href={image.certificationDocument.localFile.url} target="_blank">
+                    <a key={`image_${index}`} href={image.certificationDocument?.localFile?.publicURL} target="_blank">
                       <img src={image?.certificationImage?.localFile?.publicURL} className="img-fluid" alt="" />
                     </a>
                   ) : (
@@ -67,7 +68,7 @@ const ItSecurityTemplate = ({ data: { page } }) => {
         <CTA cta={pageCTA} />
       )}
       <FooterCTAs featured={cta} />
-    </>
+    </Layout>
   )
 }
 
@@ -97,7 +98,6 @@ export const pageQuery = graphql`
           certificationDocument {
             localFile {
               publicURL
-              url
             }
           }
         }
@@ -105,7 +105,6 @@ export const pageQuery = graphql`
           download {
             localFile {
               publicURL
-              url
             }
             altText
           }

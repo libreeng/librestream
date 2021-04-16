@@ -6,6 +6,7 @@ import SEO from "../../containers/SEO"
 import { embedUrl } from "../../common/utils/helpers"
 import Hero from "../../common/ui/Hero"
 import FooterCTAs from '../../common/ui/FooterCTAs'
+import Layout from "../../containers/Layout"
 
 const DefaultTemplate = ({ data: { page } }) => {
   const acf = page.acfTemplateDefault
@@ -17,7 +18,7 @@ const DefaultTemplate = ({ data: { page } }) => {
   const { cta } = page.acfFooterCTAs
 
   return (
-    <>
+    <Layout>
       <SEO pageSEO={page.seo} />
       <Hero hero={hero} />
       {acf.columns && (
@@ -57,7 +58,7 @@ const DefaultTemplate = ({ data: { page } }) => {
       )}
 
       <FooterCTAs featured={cta} />
-    </>
+    </Layout>
   )
 }
 

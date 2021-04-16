@@ -4,6 +4,7 @@ import { graphql } from "gatsby"
 import Image from "gatsby-image"
 import parse from "html-react-parser"
 import SEO from "../../containers/SEO"
+import Layout from "../../containers/Layout"
 
 const ProductsARSPTemplate = ({ data: { page } }) => {
   const featuredImage = {
@@ -12,7 +13,7 @@ const ProductsARSPTemplate = ({ data: { page } }) => {
   }
 
   return (
-    <>
+    <Layout>
       <SEO pageSEO={page.seo} />
       <header>
         <h1 itemProp="headline">{parse(page.title)}</h1>
@@ -33,7 +34,7 @@ const ProductsARSPTemplate = ({ data: { page } }) => {
         <section itemProp="articleBody">{parse(page.content)}</section>
       )}
 
-    </>
+    </Layout>
   )
 }
 

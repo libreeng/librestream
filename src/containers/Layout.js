@@ -9,7 +9,6 @@ const Layout = ({ children }) => {
 
   return (
     <>
-      <SEO />
       <Header />
       <main id="pageContent">
         {children}

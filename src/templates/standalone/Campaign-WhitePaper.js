@@ -5,6 +5,7 @@ import SEO from "../../containers/SEO"
 import { embedUrl } from "../../common/utils/helpers"
 import Hero from "../../common/ui/Hero"
 import FooterCTAs from '../../common/ui/FooterCTAs'
+import Layout from "../../containers/Layout"
 
 
 // this template may be able to be combined with Campaign-Webinar into a more flexible single 2 column form template
@@ -14,7 +15,7 @@ const CampaignWhitePaperTemplate = ({ data: { page } }) => {
   const { cta } = page.acfFooterCTAs
 
   return (
-    <>
+    <Layout>
       <SEO pageSEO={page.seo} />
       <Hero hero={hero} />
       <section>
@@ -51,7 +52,7 @@ const CampaignWhitePaperTemplate = ({ data: { page } }) => {
       </section>
 
       <FooterCTAs featured={cta} />
-    </>
+    </Layout>
   )
 }
 

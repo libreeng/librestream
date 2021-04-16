@@ -6,6 +6,7 @@ import SEO from "../../containers/SEO"
 import { useSiteFooter } from '../../common/hooks/useSiteFooter'
 import Hero from "../../common/ui/Hero"
 import FooterCTAs from '../../common/ui/FooterCTAs'
+import Layout from '../../containers/Layout'
 
 const ContactTemplate = ({ data: { page } }) => {
   const { options } = useSiteFooter()
@@ -16,7 +17,7 @@ const ContactTemplate = ({ data: { page } }) => {
   const { cta } = page.acfFooterCTAs
 
   return (
-    <>
+    <Layout>
       <SEO pageSEO={page.seo} />
       <Hero hero={hero} />
       <section>
@@ -75,7 +76,7 @@ const ContactTemplate = ({ data: { page } }) => {
       </section>
 
       <FooterCTAs featured={cta} />
-    </>
+    </Layout>
   )
 }
 

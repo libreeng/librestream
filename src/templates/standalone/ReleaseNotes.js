@@ -6,6 +6,7 @@ import Hero from "../../common/ui/Hero"
 import FooterCTAs from '../../common/ui/FooterCTAs'
 import ReleaseNotesNav from "../../components/ReleaseNotesNav"
 import { useReleaseNotes } from '../../common/hooks/useReleaseNotes'
+import Layout from "../../containers/Layout"
 
 
 const ReleaseNotesTemplate = ({ data: { page } }) => {
@@ -17,7 +18,7 @@ const ReleaseNotesTemplate = ({ data: { page } }) => {
   const { cta } = page.acfFooterCTAs
 
   return (
-    <>
+    <Layout>
       <SEO pageSEO={page.seo} />
       <Hero hero={hero} />
       <div className="container">
@@ -43,7 +44,7 @@ const ReleaseNotesTemplate = ({ data: { page } }) => {
       </div>
 
       <FooterCTAs featured={cta} />
-    </>
+    </Layout>
   )
 }
 

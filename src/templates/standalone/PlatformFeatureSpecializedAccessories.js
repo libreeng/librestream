@@ -7,16 +7,17 @@ import parse from "html-react-parser"
 import SEO from "../../containers/SEO"
 import Hero from "../../common/ui/Hero"
 import FooterCTAs from '../../common/ui/FooterCTAs'
+import Layout from '../../containers/Layout'
 
 const PlatformFeatureSpecializedAccessories = ({ data: { page, subnav } }) => {
   const template = page.acfTemplatePlatformFeatureSpecialized
   const hero = page.acfHero
   const nav = subnav.menuItems.nodes
   const accessories = template.accessories
-  const { cta } = page.acfFooterCTAs
-  console.log(accessories)
+  const cta = page.acfFooterCTAs?.cta || []
+
   return (
-    <>
+    <Layout>
       <SEO pageSEO={page.seo} />
       <Hero
         className=""
@@ -77,7 +78,7 @@ const PlatformFeatureSpecializedAccessories = ({ data: { page, subnav } }) => {
             ))}
             {template.documents && template.documents.map((document, i) => (
               <div className="col-12 col-xl-4" key={`download_${i}`}>
-                <a href={document?.document?.localFile.url} className="btn btn-outline-secondary text-dark btn-block mb-3">{document?.documentLabel}</a>
+                <a href={document?.document?.localFile?.publicURL} className="btn btn-outline-secondary text-dark btn-block mb-3">{document?.documentLabel}</a>
               </div>
             ))}
           </div>
@@ -98,7 +99,7 @@ const PlatformFeatureSpecializedAccessories = ({ data: { page, subnav } }) => {
                     {accessory.featuredImage && (
                       <Image
                         fluid={accessory.featuredImage?.localFile?.childImageSharp.fluid}
-                        alt={accessory.featuredImage.altText}
+                        alt={accessory.featuredImage?.altText}
                         className="mt-4 mb-3"
                       />
                     )}
@@ -118,7 +119,7 @@ const PlatformFeatureSpecializedAccessories = ({ data: { page, subnav } }) => {
       </section>
 
       <FooterCTAs featured={cta} />
-    </>
+    </Layout>
   )
 }
 
@@ -182,7 +183,6 @@ export const pageQuery = graphql`
           document {
             localFile {
               publicURL
-              url
             }
           }
         }
