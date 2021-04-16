@@ -1,6 +1,7 @@
 import React from "react"
 import { graphql } from "gatsby"
 import { customParse as parse } from "../../common/utils/helpers"
+// import parse from "html-react-parser"
 import SEO from "../../containers/SEO"
 import { embedUrl } from "../../common/utils/helpers"
 import Hero from "../../common/ui/Hero"
