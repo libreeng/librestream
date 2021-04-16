@@ -36,11 +36,11 @@ export const onRenderBody = ({ setPostBodyComponents }) => {
       src="/js/drift.js"
       defer
     />,
-    <script
-      key="captchaScript"
-      id="captchaScript"
-      src="/js/captcha.js"
-      defer
-    />,
+    // <script
+    //   key="captchaScript"
+    //   id="captchaScript"
+    //   src="/js/captcha.js"
+    //   defer
+    // />,
   ])
 }
