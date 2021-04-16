@@ -36,28 +36,20 @@ module.exports = {
       options: {
         // the only required plugin option for WordPress is the GraphQL url.
         url: process.env.WPGRAPHQL_URL || 'https://cms.librestream.com/graphql',
-        develop: {
-          hardCacheMediaFiles: true,
-          // hardCacheData: true
-        },
-        production: {
-          hardCacheMediaFiles: true,
-          // hardCacheData: true
-        },
+        // develop: {
+        //   hardCacheMediaFiles: true,
+        //   // hardCacheData: true
+        // },
+        // production: {
+        //   hardCacheMediaFiles: true,
+        //   // hardCacheData: true
+        // },
         type: {
           MediaItem: {
             localFile: {
               maxFileSizeBytes: 1048576000, // 1GB
             },
           },
-          // Post: {
-          //   limit:
-          //     process.env.NODE_ENV === `development`
-          //       ? // Lets just pull 50 posts in development to make it easy on ourselves.
-          //       50
-          //       : // And all posts in production
-          //       null,
-          // },
         },
         schema: {
           // perPage: 5,
@@ -133,8 +125,14 @@ module.exports = {
           })),
       },
     },
-    'gatsby-plugin-recaptcha',
     'gatsby-plugin-sitemap',
+    {
+      resolve: 'gatsby-plugin-load-script',
+      options: {
+        // disable: process.env.NODE_ENV !== `production`, // When do you want to disable it ?
+        src: 'https://www.google.com/recaptcha/api.js',
+      },
+    },
     {
       resolve: "gatsby-plugin-web-font-loader",
       options: {
