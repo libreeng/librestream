@@ -127,13 +127,6 @@ module.exports = {
     },
     'gatsby-plugin-sitemap',
     {
-      resolve: 'gatsby-plugin-load-script',
-      options: {
-        // disable: process.env.NODE_ENV !== `production`, // When do you want to disable it ?
-        src: 'https://www.google.com/recaptcha/api.js',
-      },
-    },
-    {
       resolve: "gatsby-plugin-web-font-loader",
       options: {
         typekit: {
