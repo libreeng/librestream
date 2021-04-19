@@ -40,7 +40,7 @@ const FormConfirmationTemplate = ({ data: { post } }) => {
                 <>
                   <hr className="hr-styled" />
                   <div className="responsive-iframe aspect-letter my-5">
-                    <iframe src={embedUrl(acf.document.link)} title={post.title} />
+                    <iframe src={acf.document.link} title={post.title} />
                   </div>
                   <div className="text-center">
                     <a href={acf.document.link} title="Download" target="_blank" rel="noreferrer" className="btn btn-primary mx-auto text-white">Download</a>
