@@ -4,7 +4,10 @@
   height: auto;
   background-color: $primary;
   background: linear-gradient(290deg, $dark 0%, $blue 100%);
-
+  .bg-image{
+    background-size: cover;
+    background-position: left bottom;
+  }
   @include bottom-shape-cutout();
   .bg-content {
     position: relative;
