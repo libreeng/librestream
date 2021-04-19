@@ -276,6 +276,7 @@ export const pageQuery = graphql`
           id
           label
           url
+          path
         }
       }
       name
