@@ -6,9 +6,6 @@ import CarouselHero from "../../common/ui/carousel/CarouselHero"
 import { getHeroParseOptions } from '../../common/utils/helpers'
 
 const Hero = ({ hero, nav }) => {
-  console.log("~~~~~~~~~~~~~~~~~~~");
-  console.log("Outputting value of nav");
-  console.log(nav);
   const { heroHeading, heroDescription, heroCta, heroFeaturedImage, heroBackgroundImage, heroGallery } = hero
   const featuredImage = heroFeaturedImage ? heroFeaturedImage.localFile.publicURL : false
   let heroImages = []

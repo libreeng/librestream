@@ -18,16 +18,11 @@ const PlatformFeatureTemplate = ({ data: { page, subnav } }) => {
   // if (typeof window !== 'undefined') {
   //   dispatch = useDispatch()
   // }
-  console.log("~~~~~~~~~~~~~~~~~~~");
-  console.log("Outputting value of subnav from within PlatrormFeature.js");
-  console.log(subnav);
   const template = page.acfTemplatePlaformFeature
   const hero = page.acfHero
   const nav = subnav.menuItems.nodes
   const { cta } = page.acfFooterCTAs
-  console.log("~~~~~~~~~~~~~~~~~~~");
-  console.log("Outputting value of nav from within PlatrormFeature.js");
-  console.log(nav);
+
 
   return (
     <Layout>
