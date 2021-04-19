@@ -134,7 +134,11 @@ export const customParse = (props, options) => {
 
 export const embedUrl = (string) => {
   let url;
+  
   try {
+    if(string.startsWith("/static/")) {
+      return string
+    }
     url = new URL(string);
   } catch (_) {
     return `https://cms.librestream.com${string}`
