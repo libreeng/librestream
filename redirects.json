@@ -1,7 +1,13 @@
 [
   {
     "fromPath": "/support/OCH/index.php",
-    "toPath": "https://librestream.com/support/OCH/index.php",
+    "toPath": "https://cms.librestream.com/media/hub_user_guide.pdf",
+    "type": 301,
+    "format": "plain"
+  },
+  {
+    "fromPath": "/support/Cube/",
+    "toPath": "https://cms.librestream.com/media/cube_user_guide.pdf",
     "type": 301,
     "format": "plain"
   },
@@ -3883,12 +3889,6 @@
   },
   {
     "fromPath": "/support/7.1/index.html",
-    "toPath": "/onsight-support/",
-    "type": 301,
-    "format": "plain"
-  },
-  {
-    "fromPath": "/support/cube",
     "toPath": "/onsight-support/",
     "type": 301,
     "format": "plain"
