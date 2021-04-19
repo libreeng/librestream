@@ -1,6 +1,7 @@
 import React from "react"
 import { graphql } from "gatsby"
 import parse from "html-react-parser"
+import {customParse} from '../../common/utils/helpers'
 import SEO from "../../containers/SEO"
 import Hero from "../../common/ui/Hero"
 import Intro from "../../common/ui/Intro"
@@ -29,7 +30,7 @@ const ItSecurityTemplate = ({ data: { page } }) => {
         <div className="container">
           <div className="row">
             <div className="col-lg-8">
-              {acf.details && parse(acf.details)}
+              {acf.details && customParse(acf.details)}
               <div className="mt-5">
                 {acf.downloads && acf.downloads.map(download => (
                   <p><a href={download.download?.localFile?.publicURL} target="_blank" className="btn btn-gradient-dark-blue text-white">{download.downloadLabel}</a></p>
