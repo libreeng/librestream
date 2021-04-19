@@ -1,5 +1,11 @@
 [
   {
+    "fromPath": "/support/OCH/*",
+    "toPath": "https://librestream.com/support/OCH/index.php",
+    "type": 301,
+    "format": "regex"
+  },
+  {
     "fromPath": "/*.cfm",
     "toPath": "/",
     "type": 301,
