@@ -1,9 +1,9 @@
 [
   {
-    "fromPath": "/support/OCH/*",
+    "fromPath": "/support/OCH/index.php",
     "toPath": "https://librestream.com/support/OCH/index.php",
     "type": 301,
-    "format": "regex"
+    "format": "plain"
   },
   {
     "fromPath": "/*.cfm",
