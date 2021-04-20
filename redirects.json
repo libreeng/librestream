@@ -1,5 +1,11 @@
 [
   {
+    "fromPath": "/media/LMS-Navigation-Video.mp4",
+    "toPath": "https://cms.librestream.com/media/LMS-Navigation-Video.mp4",
+    "type": 301,
+    "format": "plain"
+  },
+  {
     "fromPath": "/media/pdfs/Librestream-Onsight_Technical_Service_Program_v3.0.pdf",
     "toPath": "https://cms.librestream.com/media/pdfs/Librestream-Onsight_Technical_Service_Program_v3.0.pdf",
     "type": 301,
