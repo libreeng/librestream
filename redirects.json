@@ -1,5 +1,29 @@
 [
   {
+    "fromPath": "/media/pdfs/Librestream-Onsight_Technical_Service_Program_v3.0.pdf",
+    "toPath": "https://cms.librestream.com/media/pdfs/Librestream-Onsight_Technical_Service_Program_v3.0.pdf",
+    "type": 301,
+    "format": "plain"
+  },
+  {
+    "fromPath": "/media/pdfs/Onsight-Essentials.pdf",
+    "toPath": "https://cms.librestream.com/media/pdfs/Onsight-Essentials.pdf",
+    "type": 301,
+    "format": "plain"
+  },
+  {
+    "fromPath": "/media/pdfs/Onsight-Pro.pdf",
+    "toPath": "https://cms.librestream.com/media/pdfs/Onsight-Pro.pdf",
+    "type": 301,
+    "format": "plain"
+  },
+  {
+    "fromPath": "/media/pdfs/Onsight-Enterprise.pdf",
+    "toPath": "https://cms.librestream.com/media/pdfs/Onsight-Enterprise.pdf",
+    "type": 301,
+    "format": "plain"
+  },
+  {
     "fromPath": "/support/OCH/index.php",
     "toPath": "https://cms.librestream.com/media/hub_user_guide.pdf",
     "type": 301,
