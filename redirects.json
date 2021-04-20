@@ -1,7 +1,67 @@
 [
   {
+    "fromPath": "/media/HowTo-Onsight-Flow-Builder_NOV2020.pdf",
+    "toPath": "https://cms.librestream.com/media/HowTo-Onsight-Flow-Builder_NOV2020.pdf",
+    "type": 301,
+    "format": "plain"
+  },
+  {
+    "fromPath": "/media/HowTo-Onsight-Flow-User-Client_NOV2020.pdf",
+    "toPath": "https://cms.librestream.com/media/HowTo-Onsight-Flow-User-Client_NOV2020.pdf",
+    "type": 301,
+    "format": "plain"
+  },
+  {
+    "fromPath": "/media/LMS-Navigation-Video.mp4",
+    "toPath": "https://cms.librestream.com/media/LMS-Navigation-Video.mp4",
+    "type": 301,
+    "format": "plain"
+  },
+  {
+    "fromPath": "/media/pdfs/Librestream-Onsight_Technical_Service_Program_v3.0.pdf",
+    "toPath": "https://cms.librestream.com/media/Librestream-Onsight_Technical_Service_Program_v3.0.pdf",
+    "type": 301,
+    "format": "plain"
+  },
+  {
+    "fromPath": "/media/pdfs/Onsight-Essentials.pdf",
+    "toPath": "https://cms.librestream.com/media/pdfs/Onsight-Essentials.pdf",
+    "type": 301,
+    "format": "plain"
+  },
+  {
+    "fromPath": "/media/pdfs/Onsight-Pro.pdf",
+    "toPath": "https://cms.librestream.com/media/pdfs/Onsight-Pro.pdf",
+    "type": 301,
+    "format": "plain"
+  },
+  {
+    "fromPath": "/media/pdfs/Onsight-Enterprise.pdf",
+    "toPath": "https://cms.librestream.com/media/pdfs/Onsight-Enterprise.pdf",
+    "type": 301,
+    "format": "plain"
+  },
+  {
     "fromPath": "/support/OCH/index.php",
-    "toPath": "https://librestream.com/support/OCH/index.php",
+    "toPath": "https://cms.librestream.com/media/hub_user_guide.pdf",
+    "type": 301,
+    "format": "plain"
+  },
+  {
+    "fromPath": "/support/OCH/",
+    "toPath": "https://cms.librestream.com/media/hub_user_guide.pdf",
+    "type": 301,
+    "format": "plain"
+  },
+  {
+    "fromPath": "/support/cube/index.php",
+    "toPath": "https://cms.librestream.com/media/cube_user_guide.pdf",
+    "type": 301,
+    "format": "plain"
+  },
+  {
+    "fromPath": "/support/Cube/",
+    "toPath": "https://cms.librestream.com/media/cube_user_guide.pdf",
     "type": 301,
     "format": "plain"
   },
@@ -2268,12 +2328,6 @@
     "format": "plain"
   },
   {
-    "fromPath": "/form-confirmations/remote-expert-accelerator-package-free-trial/",
-    "toPath": "/form-confirmations/remote-expert-accelerator-package-free-trial/",
-    "type": 301,
-    "format": "plain"
-  },
-  {
     "fromPath": "/form-confirmations/remote-expert-download-confirmation-july-2020/",
     "toPath": "/",
     "type": 301,
@@ -3883,12 +3937,6 @@
   },
   {
     "fromPath": "/support/7.1/index.html",
-    "toPath": "/onsight-support/",
-    "type": 301,
-    "format": "plain"
-  },
-  {
-    "fromPath": "/support/cube",
     "toPath": "/onsight-support/",
     "type": 301,
     "format": "plain"
