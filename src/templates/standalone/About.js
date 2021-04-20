@@ -11,7 +11,6 @@ import SEO from "../../containers/SEO"
 import Layout from "../../containers/Layout"
 
 const AboutTemplate = ({ data: { page } }) => {
-  console.log("Loggin the contents of the ACF subnav",page.acfSubnav)
   let dispatch = () => { }
   if (typeof window !== 'undefined') {
     dispatch = useDispatch()
@@ -22,6 +21,7 @@ const AboutTemplate = ({ data: { page } }) => {
   const nav = page.acfSubnav.subnav.map(item => item.subnavItemLink)
   const intro = page.acfIntro
   const { cta } = page.acfFooterCTAs
+  console.log("Loggin the contents of nav in About.js",nav)
 
   return (
     <Layout>
