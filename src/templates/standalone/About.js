@@ -21,7 +21,6 @@ const AboutTemplate = ({ data: { page } }) => {
   const nav = page.acfSubnav.subnav.map(item => item.subnavItemLink)
   const intro = page.acfIntro
   const { cta } = page.acfFooterCTAs
-  console.log("Loggin the contents of nav in About.js",nav)
 
   return (
     <Layout>
