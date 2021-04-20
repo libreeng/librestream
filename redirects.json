@@ -2316,12 +2316,6 @@
     "format": "plain"
   },
   {
-    "fromPath": "/form-confirmations/remote-expert-accelerator-package-free-trial/",
-    "toPath": "/form-confirmations/remote-expert-accelerator-package-free-trial/",
-    "type": 301,
-    "format": "plain"
-  },
-  {
     "fromPath": "/form-confirmations/remote-expert-download-confirmation-july-2020/",
     "toPath": "/",
     "type": 301,
