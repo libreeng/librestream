@@ -2,6 +2,7 @@ import React from "react"
 import { graphql } from "gatsby"
 import parse from "html-react-parser"
 import { embedUrl } from "../common/utils/helpers"
+import SEO from "../containers/SEO"
 import Hero from "../common/ui/Hero"
 import Layout from "../containers/Layout"
 
@@ -14,6 +15,7 @@ const FormConfirmationTemplate = ({ data: { post } }) => {
   // eslint-disable-next-line no-console
   return (
     <Layout>
+      <SEO pageSEO={post.seo} />
       <Hero hero={hero} />
       <section>
         <div className="container">
@@ -40,10 +42,10 @@ const FormConfirmationTemplate = ({ data: { post } }) => {
                 <>
                   <hr className="hr-styled" />
                   <div className="responsive-iframe aspect-letter my-5">
-                    <iframe src={embedUrl(acf.document.localFile.url)} title={post.title} />
+                    <iframe src={embedUrl(acf.document.localFile?.publicURL)} title={post.title} />
                   </div>
                   <div className="text-center">
-                    <a href={acf.document.localFile.url} title="Download" target="_blank" rel="noreferrer" className="btn btn-primary mx-auto text-white">Download</a>
+                    <a href={acf.document.localFile?.publicURL} title="Download" target="_blank" rel="noreferrer" className="btn btn-primary mx-auto text-white">Download</a>
                   </div>
                 </>
               )}
@@ -69,11 +71,31 @@ export const formConfirmationQuery = graphql`
       uri
       slug
       content
+      seo {
+        title
+        canonical
+        metaDesc
+        metaRobotsNofollow
+        metaRobotsNoindex
+        opengraphSiteName
+        opengraphTitle
+        opengraphUrl
+        opengraphType
+        opengraphModifiedTime
+        opengraphImage {
+          sourceUrl
+        }
+        twitterTitle
+        twitterDescription
+        twitterImage {
+          sourceUrl
+        }
+      }
       acfPostTypeFormConfirmation {
         document {
           link
           localFile {
-            url
+            publicURL
           }
         }
         videoEmbed
