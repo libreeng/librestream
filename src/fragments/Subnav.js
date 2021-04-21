@@ -7,7 +7,7 @@ export const Subnav = graphql`
         subnavItemLink {
           target
           title
-          url
+          path: url
         }
       }
     }

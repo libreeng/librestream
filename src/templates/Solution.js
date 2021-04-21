@@ -2,6 +2,7 @@ import React from 'react'
 import PropTypes from 'prop-types'
 import { graphql } from "gatsby"
 import parse from "html-react-parser"
+import SEO from "../containers/SEO"
 import Hero from "../common/ui/Hero"
 import Intro from "../common/ui/Intro"
 import NextPrevMenu from '../common/ui/menus/NextPrevMenu'
@@ -20,6 +21,7 @@ const Solution = ({ data: { previous, next, post } }) => {
   const acf = post.acfPostTypeSolution
   return (
     <Layout>
+      <SEO pageSEO={post.seo} />
       <Hero hero={hero} />
       <section className="pb-0">
         <div className="container">
@@ -83,6 +85,26 @@ export const pageQuery = graphql`
       uri
       slug
       content
+      seo {
+        title
+        canonical
+        metaDesc
+        metaRobotsNofollow
+        metaRobotsNoindex
+        opengraphSiteName
+        opengraphTitle
+        opengraphUrl
+        opengraphType
+        opengraphModifiedTime
+        opengraphImage {
+          sourceUrl
+        }
+        twitterTitle
+        twitterDescription
+        twitterImage {
+          sourceUrl
+        }
+      }
       acfHero {
         heroFeaturedImage {
           altText

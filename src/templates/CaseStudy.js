@@ -5,6 +5,7 @@ import Hero from "../common/ui/Hero"
 import NextPrevMenu from '../common/ui/menus/NextPrevMenu'
 import parse from "html-react-parser"
 import BackgroundImage from 'gatsby-background-image'
+import SEO from "../containers/SEO"
 import CTA from '../common/ui/CTA'
 import FooterCTAs from '../common/ui/FooterCTAs'
 import Layout from '../containers/Layout'
@@ -30,6 +31,7 @@ const CaseStudy = ({ data: { previous, next, post } }) => {
 
   return (
     <Layout>
+      <SEO pageSEO={post.seo} />
       <Hero hero={hero} />
       <section className="pb-3">
         <div className="container">
@@ -138,6 +140,26 @@ export const pageQuery = graphql`
   ) {
     # selecting the current post by id
     post: wpCaseStudy(id: { eq: $id }) {
+      seo {
+        title
+        canonical
+        metaDesc
+        metaRobotsNofollow
+        metaRobotsNoindex
+        opengraphSiteName
+        opengraphTitle
+        opengraphUrl
+        opengraphType
+        opengraphModifiedTime
+        opengraphImage {
+          sourceUrl
+        }
+        twitterTitle
+        twitterDescription
+        twitterImage {
+          sourceUrl
+        }
+      }
       acfCta {
         ctaDescription
         link {

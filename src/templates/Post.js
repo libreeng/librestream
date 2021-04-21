@@ -3,6 +3,7 @@ import { Link, graphql } from "gatsby"
 import Image from "gatsby-image"
 import parse from "html-react-parser"
 import { embedUrl } from "../common/utils/helpers"
+import SEO from "../containers/SEO"
 import Hero from '../common/ui/Hero'
 import NewsletterSignup from "../components/NewsletterSignup"
 import SocialShare from "../components/SocialShare"
@@ -41,6 +42,7 @@ const PostTemplate = ({ data: { previous, next, post } }) => {
 
   return (
     <Layout>
+      <SEO pageSEO={post.seo} />
       <Hero hero={hero} />
       <section>
         <div className="container">
@@ -109,6 +111,7 @@ export const postQuery = graphql`
     post: wpPost(id: { eq: $id }) {
       ...PostDetails
       ...RelatedPosts
+      ...PostSEO
     }
     # previous and next be able to be migrated to PostFields fragment not sure?
     # this gets us the previous post by id (if it exists)
