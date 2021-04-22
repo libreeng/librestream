@@ -1,8 +1,8 @@
 import React from 'react'
 import PropTypes from 'prop-types'
 import { graphql } from "gatsby"
-import Image from "gatsby-image"
-import BackgroundImage from 'gatsby-background-image'
+import { GatsbyImage } from "gatsby-plugin-image"
+import { BgImage } from 'gbimage-bridge'
 import parse from "html-react-parser"
 import SEO from "../../containers/SEO"
 import Hero from "../../common/ui/Hero"
@@ -58,10 +58,9 @@ const PlatformFeatureSpecializedAccessories = ({ data: { page, subnav } }) => {
             </div>
             <div className="col-lg-6">
               {template.feature1Image &&
-                <BackgroundImage
-                  Tag="div"
+                <BgImage
                   className="bg-image aspect-1x1 img-offset-top"
-                  fluid={template.feature1Image?.localFile?.childImageSharp?.fluid}
+                  image={template.feature1Image?.localFile?.childImageSharp?.gatsbyImageData}
                 />
               }
             </div>
@@ -97,11 +96,10 @@ const PlatformFeatureSpecializedAccessories = ({ data: { page, subnav } }) => {
                   </div>
                   <div>
                     {accessory.featuredImage && (
-                      <Image
-                        fluid={accessory.featuredImage?.localFile?.childImageSharp.fluid}
+                      <GatsbyImage
+                        image={accessory.featuredImage?.localFile?.childImageSharp?.gatsbyImageData}
                         alt={accessory.featuredImage?.altText}
-                        className="mt-4 mb-3"
-                      />
+                        className="mt-4 mb-3" />
                     )}
 
                     {accessory.specsDownload && (
@@ -120,95 +118,89 @@ const PlatformFeatureSpecializedAccessories = ({ data: { page, subnav } }) => {
 
       <FooterCTAs featured={cta} />
     </Layout>
-  )
+  );
 }
 
 PlatformFeatureSpecializedAccessories.propTypes = {
 
 }
 
-export const pageQuery = graphql`
-  query PlatformFeatureSpecializedAccessoriesTemplateQuery($id: String!) {
-    # selecting the current page by id
-    page: wpPage(id: { eq: $id }) {
-      ...PageDetails
-      ...PageHero
-      ...FooterCTAs
-      acfTemplatePlatformFeatureSpecialized {
-        accessories {
-          description
-          title
-          specsDownload {
-            localFile {
-              publicURL
-            }
-          }
-          featuredImage {
-            altText
-            localFile {
-              publicURL
-              childImageSharp {
-                fluid(maxWidth: 1000, quality: 100) {
-                  ...GatsbyImageSharpFluid
-                }
-              }
-            }
+export const pageQuery = graphql`query PlatformFeatureSpecializedAccessoriesTemplateQuery($id: String!) {
+  page: wpPage(id: {eq: $id}) {
+    ...PageDetails
+    ...PageHero
+    ...FooterCTAs
+    acfTemplatePlatformFeatureSpecialized {
+      accessories {
+        description
+        title
+        specsDownload {
+          localFile {
+            publicURL
           }
         }
-        feature1Description
-        feature1Image {
+        featuredImage {
           altText
           localFile {
             publicURL
             childImageSharp {
-              fluid(maxWidth: 1000, quality: 100) {
-                ...GatsbyImageSharpFluid
-              }
+              gatsbyImageData(quality: 100, layout: FULL_WIDTH)
             }
           }
         }
-        feature1Link {
-          title
-          target
-          url
-        }
-        ctaButton {
-          target
-          title
-          url
-        }
-        ctaMessage
-        documents {
-          documentLabel
-          document {
-            localFile {
-              publicURL
-            }
-          }
-        }
-        links {
-          link {
-            target
-            title
-            url
+      }
+      feature1Description
+      feature1Image {
+        altText
+        localFile {
+          publicURL
+          childImageSharp {
+            gatsbyImageData(quality: 100, layout: FULL_WIDTH)
           }
         }
       }
-    }
-    subnav: wpMenu(name: {eq: "Platform Features"}) {
-      id
-      menuItems {
-        nodes {
-          parentId
-          id
-          label
-          path
+      feature1Link {
+        title
+        target
+        url
+      }
+      ctaButton {
+        target
+        title
+        url
+      }
+      ctaMessage
+      documents {
+        documentLabel
+        document {
+          localFile {
+            publicURL
+          }
+        }
+      }
+      links {
+        link {
+          target
+          title
           url
         }
       }
-      name
     }
   }
+  subnav: wpMenu(name: {eq: "Platform Features"}) {
+    id
+    menuItems {
+      nodes {
+        parentId
+        id
+        label
+        path
+        url
+      }
+    }
+    name
+  }
+}
 `
 
 export default PlatformFeatureSpecializedAccessories

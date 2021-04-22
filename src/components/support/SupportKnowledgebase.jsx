@@ -1,6 +1,6 @@
 import React from 'react'
 import PropTypes from 'prop-types'
-import Image from "gatsby-image"
+import { GatsbyImage } from "gatsby-plugin-image";
 import { Accordion, Card, Button } from 'react-bootstrap'
 import AddLineIcon from 'remixicon-react/AddLineIcon'
 import { slugify } from '../../common/utils/helpers'
@@ -10,7 +10,7 @@ import SupportKnowledgebaseLink from '../../components/support/SupportKnowledgeb
 const SupportKnowledgeBase = ({ title, post }) => {
   const {acfKnowledgebase:{section}} = post
   const featuredImage = {
-    fluid: post.acfKnowledgebase?.kbImage?.localFile?.childImageSharp?.fluid,
+    fluid: post.acfKnowledgebase?.kbImage?.localFile?.childImageSharp?.gatsbyImageData,
     alt: post.acfKnowledgebase?.kbImage?.altText || ``
   }
 
@@ -55,17 +55,16 @@ const SupportKnowledgeBase = ({ title, post }) => {
         </div>
         <div className="col-lg-3 ml-lg-auto">
           {featuredImage.fluid && (
-            <Image
-              fluid={featuredImage.fluid}
+            <GatsbyImage
+              image={featuredImage.gatsbyImageData}
               alt={featuredImage.alt}
-              style={{ marginBottom: 50 }}
-            />
+              style={{ marginBottom: 50 }} />
           )}
         </div>
 
       </div>
     </div>
-  )
+  );
 }
 
 SupportKnowledgeBase.propTypes = {

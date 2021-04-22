@@ -1,8 +1,7 @@
 import React from "react"
 import { graphql } from "gatsby"
-// import Image from "gatsby-image"
 import parse from "html-react-parser"
-import BackgroundImage from 'gatsby-background-image'
+import { BgImage } from "gbimage-bridge"
 import SEO from "../../containers/SEO"
 import Hero from '../../common/ui/Hero'
 import FooterCTAs from '../../common/ui/FooterCTAs'
@@ -11,6 +10,7 @@ import Stats from '../../components/Stats'
 import { useFeaturedNews } from "../../common/hooks/useFeaturedNews"
 import { useCaseStudies } from "../../common/hooks/useCaseStudies"
 import Layout from "../../containers/Layout"
+
 
 const HomeTemplate = ({ data: { page } }) => {
   const acf = page.acfTemplateHome
@@ -78,10 +78,9 @@ const HomeTemplate = ({ data: { page } }) => {
           <div className="row align-items-center">
             <div className="col-lg-6">
               {slide.carouselSlideFeaturedImage && (
-                <BackgroundImage
-                  Tag="div"
+                <BgImage
                   className="bg-image aspect-4x3"
-                  fluid={slide.carouselSlideFeaturedImage?.localFile?.childImageSharp.fluid}
+                  image={slide.carouselSlideFeaturedImage?.localFile?.childImageSharp?.gatsbyImageData}
                 />
               )}
             </div>
@@ -129,59 +128,52 @@ const HomeTemplate = ({ data: { page } }) => {
 
       <FooterCTAs featured={cta} />
     </Layout>
-  )
+  );
 }
 
-export const pageQuery = graphql`
-  query HomeTemplateQuery($id: String!) {
-    # selecting the current page by id
-    page: wpPage(id: { eq: $id }) {
-      ...PageDetails
-      ...PageHero
-      ...PageStats
-      ...FooterCTAs
-      acfTemplateHome {
-        carouselSlide {
-          carouselSlideTitle
-          carouselSlideDescription
-          carouselSlideLink {
-            title
-            target
-            url
-          }
-          carouselSlideFeaturedImage {
-            localFile {
-              publicURL
-              childImageSharp {
-                fluid {
-                  ...GatsbyImageSharpFluid
-                }
-              }
-            }
-          }
-        }
-        galleryImages {
-          galleryImage {
-            localFile {
-              childImageSharp {
-                fluid(maxWidth: 1920, quality: 100) {
-                  ...GatsbyImageSharpFluid
-                }
-              }
-            }
-          }
-        }
-        introTitle
-        introDescription
-        introLink {
-          target
+export const pageQuery = graphql`query HomeTemplateQuery($id: String!) {
+  page: wpPage(id: {eq: $id}) {
+    ...PageDetails
+    ...PageHero
+    ...PageStats
+    ...FooterCTAs
+    acfTemplateHome {
+      carouselSlide {
+        carouselSlideTitle
+        carouselSlideDescription
+        carouselSlideLink {
           title
+          target
           url
         }
-
+        carouselSlideFeaturedImage {
+          localFile {
+            publicURL
+            childImageSharp {
+              gatsbyImageData(layout: FULL_WIDTH)
+            }
+          }
+        }
+      }
+      galleryImages {
+        galleryImage {
+          localFile {
+            childImageSharp {
+              gatsbyImageData(quality: 100, layout: FULL_WIDTH)
+            }
+          }
+        }
+      }
+      introTitle
+      introDescription
+      introLink {
+        target
+        title
+        url
       }
     }
   }
+}
 `
 
 export default HomeTemplate

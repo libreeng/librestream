@@ -1,14 +1,15 @@
 import React, { useState } from 'react'
 // import PropTypes from 'prop-types'
 import { graphql } from "gatsby"
-import Image from "gatsby-image"
-import BackgroundImage from 'gatsby-background-image'
+import { GatsbyImage } from "gatsby-plugin-image"
+import { BgImage } from 'gbimage-bridge'
 import parse from "html-react-parser"
 import SEO from "../../containers/SEO"
 import Hero from "../../common/ui/Hero"
 import FooterCTAs from '../../common/ui/FooterCTAs'
 import Highlight from '../../components/Highlight'
 import Layout from '../../containers/Layout'
+
 // import { useDispatch } from "react-redux"
 // import { openModal } from "../../common/modals/modalActions"
 // import PartnerModal from '../../common/modals/PartnerModal'
@@ -66,10 +67,9 @@ const PlatformFeatureTemplate = ({ data: { page, subnav } }) => {
             </div>
             <div className="col-lg-6">
               {template.feature1Image &&
-                <BackgroundImage
-                  Tag="div"
+                <BgImage
                   className="bg-image aspect-1x1 img-offset-top"
-                  fluid={template.feature1Image?.localFile?.childImageSharp?.fluid}
+                  image={template.feature1Image?.localFile?.childImageSharp?.gatsbyImageData}
                 />
               }
             </div>
@@ -86,7 +86,7 @@ const PlatformFeatureTemplate = ({ data: { page, subnav } }) => {
                 <BackgroundImage
                   Tag="div"
                   className="bg-image aspect-1x1"
-                  fluid={template.feature2Image?.localFile?.childImageSharp?.fluid}
+                  fluid={template.feature2Image?.localFile?.childImageSharp?.gatsbyImageData}
                 />
               }
             </div>
@@ -159,10 +159,9 @@ const PlatformFeatureTemplate = ({ data: { page, subnav } }) => {
             </div>
             <div className="col-12 col-xl-6">
               {template.productHighlightsImage && (
-                <Image
-                  fluid={template?.productHighlightsImage?.localFile?.childImageSharp.fluid}
-                  alt={template?.productHighlightsImage?.altText}
-                />
+                <GatsbyImage
+                  image={template?.productHighlightsImage?.localFile?.childImageSharp?.gatsbyImageData}
+                  alt={template?.productHighlightsImage?.altText} />
               )}
             </div>
           </div>
@@ -171,117 +170,109 @@ const PlatformFeatureTemplate = ({ data: { page, subnav } }) => {
 
       <FooterCTAs featured={cta} />
     </Layout>
-  )
+  );
 }
 
 PlatformFeatureTemplate.propTypes = {
 
 }
 
-export const pageQuery = graphql`
-  query PlatformFeatureTemplateQuery($id: String!) {
-    # selecting the current page by id
-    page: wpPage(id: { eq: $id }) {
-      ...PageDetails
-      ...PageHero
-      ...FooterCTAs
-      acfTemplatePlaformFeature {
-        ctaMessage
-        ctaButton {
-          target
-          title
-          url
-        }
-        feature1Description
-        feature1Image {
-          altText
-          localFile {
-            publicURL
-            childImageSharp {
-              fluid(maxWidth: 1000) {
-                ...GatsbyImageSharpFluid
-              }
-            }
-          }
-        }
-        feature1Link {
-          target
-          title
-          url
-        }
-        feature2Description
-        feature2Image {
-          altText
-          localFile {
-            publicURL
-            childImageSharp {
-              fluid(maxWidth: 1000) {
-                ...GatsbyImageSharpFluid
-              }
-            }
-          }
-        }
-        feature2Link {
-          target
-          title
-          url
-        }
-        featureLinks {
-          featureLink {
-            target
-            title
-            url
-          }
-        }
-        featureDownloads {
-          downloadLabel
-          featureDownload {
-            id
-            altText
-            localFile {
-              publicURL
-            }
-          }
-        }
-        technicalDetailsHeading
-        technicalDetailsDescription
-        productHighlightsTitle
-        productHighlightsImage {
-          altText
-          localFile {
-            publicURL
-            childImageSharp {
-              fluid(maxWidth: 1000) {
-                ...GatsbyImageSharpFluid
-              }
-            }
-          }
-        }
-        highlights {
-          highlightTitle
-          highlightDescription
-          highlightIcon {
-            altText
-            localFile {
-              publicURL
-            }
+export const pageQuery = graphql`query PlatformFeatureTemplateQuery($id: String!) {
+  page: wpPage(id: {eq: $id}) {
+    ...PageDetails
+    ...PageHero
+    ...FooterCTAs
+    acfTemplatePlaformFeature {
+      ctaMessage
+      ctaButton {
+        target
+        title
+        url
+      }
+      feature1Description
+      feature1Image {
+        altText
+        localFile {
+          publicURL
+          childImageSharp {
+            gatsbyImageData(layout: FULL_WIDTH)
           }
         }
       }
-    }
-    subnav: wpMenu(name: {eq: "Platform Features"}) {
-      id
-      menuItems {
-        nodes {
+      feature1Link {
+        target
+        title
+        url
+      }
+      feature2Description
+      feature2Image {
+        altText
+        localFile {
+          publicURL
+          childImageSharp {
+            gatsbyImageData(layout: FULL_WIDTH)
+          }
+        }
+      }
+      feature2Link {
+        target
+        title
+        url
+      }
+      featureLinks {
+        featureLink {
+          target
+          title
+          url
+        }
+      }
+      featureDownloads {
+        downloadLabel
+        featureDownload {
           id
-          label
-          url
-          path
+          altText
+          localFile {
+            publicURL
+          }
         }
       }
-      name
+      technicalDetailsHeading
+      technicalDetailsDescription
+      productHighlightsTitle
+      productHighlightsImage {
+        altText
+        localFile {
+          publicURL
+          childImageSharp {
+            gatsbyImageData(layout: FULL_WIDTH)
+          }
+        }
+      }
+      highlights {
+        highlightTitle
+        highlightDescription
+        highlightIcon {
+          altText
+          localFile {
+            publicURL
+          }
+        }
+      }
     }
   }
+  subnav: wpMenu(name: {eq: "Platform Features"}) {
+    id
+    menuItems {
+      nodes {
+        id
+        label
+        url
+        path
+      }
+    }
+    name
+  }
+}
 `
 
 export default PlatformFeatureTemplate

@@ -21,12 +21,18 @@ export const useCaseStudies = () => {
                 }
               }
               logoImage {
-                srcSet
-                sourceUrl
+                localFile {
+                  childImageSharp {
+                    gatsbyImageData(width: 400, quality: 100, layout: CONSTRAINED)
+                  }
+                }
               }
               featuredImage {
-                srcSet
-                sourceUrl
+                localFile {
+                  childImageSharp {
+                    gatsbyImageData(width: 400, quality: 100, layout: CONSTRAINED)
+                  }
+                }
               }
             }
           }

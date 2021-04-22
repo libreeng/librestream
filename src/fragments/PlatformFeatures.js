@@ -1,42 +1,39 @@
 import { graphql } from "gatsby"
 
-export const PlatformFeatures = graphql`
-  fragment PlatformFeatures on WpPage {
-    acfPlatformFeatures {
+export const PlatformFeatures = graphql`fragment PlatformFeatures on WpPage {
+  acfPlatformFeatures {
+    heading
+    description
+    features {
       heading
-      description
-      features {
-        heading
-        summary
-        featuredImage {
-          altText
-          srcSet
-          sourceUrl
-          localFile {
-            publicURL
-            childImageSharp {
-              fluid(maxWidth: 800, quality: 100) {
-                ...GatsbyImageSharpFluid
-              }
-            }
+      summary
+      featuredImage {
+        altText
+        srcSet
+        sourceUrl
+        localFile {
+          publicURL
+          childImageSharp {
+            gatsbyImageData(width: 800, quality: 100, layout: CONSTRAINED)
           }
-        }
-        link {
-          target
-          title
-          url
         }
       }
-      footer {
-        heading
-        summary
-        checklist {
-          checklistItem {
-            checklistItem
-          }
+      link {
+        target
+        title
+        url
+      }
+    }
+    footer {
+      heading
+      summary
+      checklist {
+        checklistItem {
+          checklistItem
         }
       }
     }
   }
+}
 `
 

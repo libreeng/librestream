@@ -1,6 +1,6 @@
 import React from "react"
 import { Link, graphql } from "gatsby"
-import Image from "gatsby-image"
+import { GatsbyImage } from "gatsby-plugin-image";
 import parse from "html-react-parser"
 import { embedUrl } from "../common/utils/helpers"
 import Hero from '../common/ui/Hero'
@@ -13,7 +13,7 @@ import Layout from "../containers/Layout"
 const PostTemplate = ({ data: { previous, next, post } }) => {
   const acf = post.acfPostTypeNews
   const featuredImage = {
-    fluid: acf?.mainImage?.localFile?.childImageSharp?.fluid,
+    fluid: acf?.mainImage?.localFile?.childImageSharp?.gatsbyImageData,
     alt: acf?.mainImage?.altText || ``
   }
   const postCategory = {
@@ -52,11 +52,10 @@ const PostTemplate = ({ data: { previous, next, post } }) => {
                 <p className="text-mid">{post.date}</p>
               </header>
               {featuredImage?.fluid && (
-                <Image
-                  fluid={featuredImage.fluid}
+                <GatsbyImage
+                  image={featuredImage.gatsbyImageData}
                   alt={featuredImage.alt}
-                  style={{ marginBottom: 50 }}
-                />
+                  style={{ marginBottom: 50 }} />
               )}
               {!!post.content && (
                 <div itemProp="articleBody">{parse(post.content)}</div>
@@ -95,7 +94,7 @@ const PostTemplate = ({ data: { previous, next, post } }) => {
         <FooterCTAs featured={cta} />
       )}
     </Layout>
-  )
+  );
 }
 
 export const postQuery = graphql`

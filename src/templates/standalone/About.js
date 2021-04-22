@@ -1,7 +1,7 @@
 import React from "react"
 import { graphql } from "gatsby"
-import Image from "gatsby-image"
-import BackgroundImage from 'gatsby-background-image'
+import { GatsbyImage } from "gatsby-plugin-image"
+import { BgImage } from "gbimage-bridge"
 import { useDispatch } from "react-redux"
 import Hero from "../../common/ui/Hero"
 import Intro from "../../common/ui/Intro"
@@ -9,6 +9,7 @@ import FooterCTAs from '../../common/ui/FooterCTAs'
 import { openModal } from "../../common/modals/modalActions"
 import SEO from "../../containers/SEO"
 import Layout from "../../containers/Layout"
+
 
 const AboutTemplate = ({ data: { page } }) => {
   let dispatch = () => { }
@@ -44,10 +45,9 @@ const AboutTemplate = ({ data: { page } }) => {
             {acf.awards && acf.awards.map(award => (
               <div key={award.image.id} className="col mb-4">
                 <div className="card">
-                  <Image
-                    fluid={award.image?.localFile?.childImageSharp?.fluid}
-                    alt={award.image.altText && award.image.altText}
-                  />
+                  <GatsbyImage
+                    image={award.image?.localFile?.childImageSharp?.gatsbyImageData}
+                    alt={award.image.altText && award.image.altText} />
                 </div>
               </div>
             )
@@ -67,16 +67,16 @@ const AboutTemplate = ({ data: { page } }) => {
           </div>
           <div className="row">
             {acf.board && acf.board.map((boardmember, i) => {
+              const imageData = boardmember.image?.localFile?.childImageSharp?.gatsbyImageData
               return (
                 <div key={`board_${i}`} className="col-12 col-lg-3 mb-4">
                   <button
                     onClick={() => dispatch(openModal("BoardModal", { board: boardmember }))}
                     type="button" className="border-0 bg-transparent p-0">
                     {boardmember.image && (
-                      <BackgroundImage
-                        Tag="div"
+                      <BgImage
                         className="bg-image aspect-1x1"
-                        fluid={boardmember.image?.localFile?.childImageSharp.fluid}
+                        image={imageData}
                       />
                     )}
                     <h4 className="mb-0 text-dark text-left">{boardmember.name && boardmember.name}</h4>
@@ -84,7 +84,7 @@ const AboutTemplate = ({ data: { page } }) => {
                   </button>
 
                 </div>
-              )
+              );
             })}
           </div>
           <hr className="hr-styled" />
@@ -100,10 +100,9 @@ const AboutTemplate = ({ data: { page } }) => {
                   onClick={() => dispatch(openModal("BoardModal", { board: boardmember }))}
                   type="button" className="border-0 bg-transparent p-0">
                   {boardmember.image && (
-                    <BackgroundImage
-                      Tag="div"
+                    <BgImage
                       className="bg-image aspect-1x1"
-                      fluid={boardmember.image?.localFile?.childImageSharp.fluid}
+                      image={boardmember.image?.localFile?.childImageSharp?.gatsbyImageData}
                     />
                   )}
                   <h4 className="mb-0 text-dark text-left">{boardmember.name && boardmember.name}</h4>
@@ -117,86 +116,76 @@ const AboutTemplate = ({ data: { page } }) => {
 
       <FooterCTAs featured={cta} />
     </Layout>
-  )
+  );
 }
 
-export const pageQuery = graphql`
-  query AboutTemplateQuery($id: String!) {
-    # selecting the current page by id
-    page: wpPage(id: { eq: $id }) {
-      ...PageDetails
-      ...PageHero
-      ...Subnav
-      ...PageIntro
-      ...FooterCTAs
-      acfTemplateAbout {
-        awards {
-          image {
-            id
-            altText
-            localFile {
-              publicURL
-              childImageSharp {
-                fluid(maxWidth: 1000, quality: 100) {
-                  ...GatsbyImageSharpFluid
-                }
-              }
+export const pageQuery = graphql`query AboutTemplateQuery($id: String!) {
+  page: wpPage(id: {eq: $id}) {
+    ...PageDetails
+    ...PageHero
+    ...Subnav
+    ...PageIntro
+    ...FooterCTAs
+    acfTemplateAbout {
+      awards {
+        image {
+          id
+          altText
+          localFile {
+            publicURL
+            childImageSharp {
+              gatsbyImageData(quality: 100, layout: FULL_WIDTH)
             }
           }
         }
-        theawards {
-          image {
-            id
-            altText
-            localFile {
-              publicURL
-              childImageSharp {
-                fluid(maxWidth: 1000, quality: 100) {
-                  ...GatsbyImageSharpFluid
-                }
-              }
+      }
+      theawards {
+        image {
+          id
+          altText
+          localFile {
+            publicURL
+            childImageSharp {
+              gatsbyImageData(quality: 100, layout: FULL_WIDTH)
             }
           }
         }
-        board {
-          name
-          title
-          bio
-          designations
-          image {
-            altText
-            localFile {
-              publicURL
-              childImageSharp {
-                fluid(maxWidth: 1000, quality: 100) {
-                  ...GatsbyImageSharpFluid
-                }
-              }
+      }
+      board {
+        name
+        title
+        bio
+        designations
+        image {
+          altText
+          localFile {
+            publicURL
+            childImageSharp {
+              gatsbyImageData(quality: 100, layout: FULL_WIDTH)
             }
           }
         }
-        timelineTitle
-        timelineVideo
-        management {
-          bio
-          designations
-          image {
-            localFile {
-              publicURL
-              childImageSharp {
-                fluid(maxWidth: 1000, quality: 100) {
-                  ...GatsbyImageSharpFluid
-                }
-              }
+      }
+      timelineTitle
+      timelineVideo
+      management {
+        bio
+        designations
+        image {
+          localFile {
+            publicURL
+            childImageSharp {
+              gatsbyImageData(quality: 100, layout: FULL_WIDTH)
             }
-            altText
           }
-          name
-          title
+          altText
         }
+        name
+        title
       }
     }
   }
+}
 `
 
 export default AboutTemplate

@@ -8704,6 +8704,11 @@ gaze@^1.0.0:
   dependencies:
     globule "^1.0.0"
 
+gbimage-bridge@^0.1.3:
+  version "0.1.3"
+  resolved "https://registry.yarnpkg.com/gbimage-bridge/-/gbimage-bridge-0.1.3.tgz#cbc66b38212d22caba21de4a0975180ee660f064"
+  integrity sha512-0qklsVgZk8crNixk1d3Ik4xh6GZTj9UoT3UfpITwkvmPCkMRLdnlAlYZdmhWNpvnOpoDK7OPxY8FnldEPVllpQ==
+
 generate-robotstxt@^8.0.3:
   version "8.0.3"
   resolved "https://registry.yarnpkg.com/generate-robotstxt/-/generate-robotstxt-8.0.3.tgz#83384090406e760e9d02247412b2b704562c9b58"

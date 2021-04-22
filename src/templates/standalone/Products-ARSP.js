@@ -1,14 +1,14 @@
 // TODO: Confirm and remove
 import React from "react"
 import { graphql } from "gatsby"
-import Image from "gatsby-image"
+import { GatsbyImage } from "gatsby-plugin-image";
 import parse from "html-react-parser"
 import SEO from "../../containers/SEO"
 import Layout from "../../containers/Layout"
 
 const ProductsARSPTemplate = ({ data: { page } }) => {
   const featuredImage = {
-    fluid: page.featuredImage?.node?.localFile?.childImageSharp?.fluid,
+    fluid: page.featuredImage?.node?.localFile?.childImageSharp?.gatsbyImageData,
     alt: page.featuredImage?.node?.alt || ``,
   }
 
@@ -22,11 +22,10 @@ const ProductsARSPTemplate = ({ data: { page } }) => {
 
         {/* if we have a featured image for this post let's display it */}
         {featuredImage?.fluid && (
-          <Image
-            fluid={featuredImage.fluid}
+          <GatsbyImage
+            image={featuredImage.gatsbyImageData}
             alt={featuredImage.alt}
-            style={{ marginBottom: 50 }}
-          />
+            style={{ marginBottom: 50 }} />
         )}
       </header>
 
@@ -35,7 +34,7 @@ const ProductsARSPTemplate = ({ data: { page } }) => {
       )}
 
     </Layout>
-  )
+  );
 }
 
 export const pageQuery = graphql`
