@@ -5,6 +5,7 @@ import { BgImage } from 'gbimage-bridge'
 import Hero from "../common/ui/Hero"
 import NextPrevMenu from '../common/ui/menus/NextPrevMenu'
 import parse from "html-react-parser"
+import SEO from "../containers/SEO"
 import CTA from '../common/ui/CTA'
 import FooterCTAs from '../common/ui/FooterCTAs'
 import Layout from '../containers/Layout'
@@ -30,6 +31,7 @@ const CaseStudy = ({ data: { previous, next, post } }) => {
 
   return (
     <Layout>
+      <SEO pageSEO={post.seo} />
       <Hero hero={hero} />
       <section className="pb-3">
         <div className="container">
@@ -127,90 +129,115 @@ CaseStudy.propTypes = {
   next: PropTypes.string,
   previous: PropTypes.string,
 }
-
-export const pageQuery = graphql`query CaseStudyById($id: String!, $previousPostId: String, $nextPostId: String) {
-  post: wpCaseStudy(id: {eq: $id}) {
-    acfCta {
-      ctaDescription
-      link {
-        target
+export const pageQuery = graphql`
+  query CaseStudyById(
+    # these variables are passed in via createPage.pageContext in gatsby-node.js
+    $id: String!
+    $previousPostId: String
+    $nextPostId: String
+  ) {
+    # selecting the current post by id
+    post: wpCaseStudy(id: { eq: $id }) {
+      seo {
         title
-        url
-      }
-    }
-    acfFooterCTAs {
-      cta {
-        ctaTitle
-        ctaLink {
-          url
-          title
-          target
+        canonical
+        metaDesc
+        metaRobotsNofollow
+        metaRobotsNoindex
+        opengraphSiteName
+        opengraphTitle
+        opengraphUrl
+        opengraphType
+        opengraphModifiedTime
+        opengraphImage {
+          sourceUrl
         }
-        ctaFeaturedImage {
-          localFile {
-            childImageSharp {
-              gatsbyImageData(width: 500, quality: 100, layout: CONSTRAINED)
+        twitterTitle
+        twitterDescription
+        twitterImage {
+          sourceUrl
+        }
+      }
+      acfCta {
+        ctaDescription
+        link {
+          target
+          title
+          url
+        }
+      }
+      acfFooterCTAs {
+        cta {
+          ctaTitle
+          ctaLink {
+            url
+            title
+            target
+          }
+          ctaFeaturedImage {
+            localFile {
+              childImageSharp {
+                gatsbyImageData(width: 500, quality: 100, layout: CONSTRAINED)
+              }
             }
           }
         }
       }
-    }
-    acfHero {
-      heroFeaturedImage {
-        altText
-        localFile {
-          publicURL
-          childImageSharp {
-            gatsbyImageData(width: 500, quality: 100, layout: CONSTRAINED)
+      acfHero {
+        heroFeaturedImage {
+          altText
+          localFile {
+            publicURL
+          }
+        }
+        heroBackgroundImage {
+          altText
+          localFile {
+            publicURL
+            childImageSharp {
+              gatsbyImageData(quality: 100, layout: FULL_WIDTH)
+            }
           }
         }
       }
-      heroBackgroundImage {
-        altText
-        localFile {
-          publicURL
-          childImageSharp {
-            gatsbyImageData(quality: 100, layout: FULL_WIDTH)
+      id
+      title
+      uri
+      slug
+      acfPostTypeUseCase {
+        articleContent
+        articleLink {
+          target
+          url
+          title
+        }
+        articleTitle
+        articleImage {
+          localFile {
+            publicURL
+            childImageSharp {
+              gatsbyImageData(quality: 100, layout: FULL_WIDTH)
+            }
           }
         }
+        solution
+        situation
+        results
+        summaryDescription
       }
+      content
     }
-    id
-    title
-    uri
-    slug
-    acfPostTypeUseCase {
-      articleContent
-      articleLink {
-        target
-        url
-        title
-      }
-      articleTitle
-      articleImage {
-        localFile {
-          publicURL
-          childImageSharp {
-            gatsbyImageData(quality: 100, layout: FULL_WIDTH)
-          }
-        }
-      }
-      solution
-      situation
-      results
-      summaryDescription
+    # this gets us the previous post by id (if it exists)
+    previous: wpPost(id: { eq: $previousPostId }) {
+      uri
+      title
     }
-    content
+    # this gets us the next post by id (if it exists)
+    next: wpPost(id: { eq: $nextPostId }) {
+      uri
+      title
+    }
   }
-  previous: wpPost(id: {eq: $previousPostId}) {
-    uri
-    title
-  }
-  next: wpPost(id: {eq: $nextPostId}) {
-    uri
-    title
-  }
-}
 `
 
 export default CaseStudy

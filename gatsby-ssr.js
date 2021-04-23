@@ -36,6 +36,12 @@ export const onRenderBody = ({ setPostBodyComponents }) => {
       src="/js/drift.js"
       defer
     />,
+    <script
+      key="iframeResize"
+      id="iframeResize"
+      src="/js/iframeResize.js"
+      defer
+    />,
     // <script
     //   key="captchaScript"
     //   id="captchaScript"

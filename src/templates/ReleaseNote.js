@@ -1,6 +1,7 @@
 import React from "react"
 import { graphql } from "gatsby"
 import parse from "html-react-parser"
+import SEO from "../containers/SEO"
 import Hero from "../common/ui/Hero"
 import ReleaseNotesNav from '../components/ReleaseNotesNav'
 import Layout from "../containers/Layout"
@@ -13,6 +14,7 @@ const ReleaseNoteTemplate = ({ data: { post } }) => {
 
   return (
     <Layout>
+      <SEO pageSEO={post.seo} />
       <Hero hero={hero} />
       <div className="container">
         <div className="row">
@@ -42,6 +44,26 @@ export const pageQuery = graphql`
     # selecting the current page by id
     post: wpReleaseNote(id: { eq: $id }) {
       ...ReleaseNoteDetails
+      seo {
+        title
+        canonical
+        metaDesc
+        metaRobotsNofollow
+        metaRobotsNoindex
+        opengraphSiteName
+        opengraphTitle
+        opengraphUrl
+        opengraphType
+        opengraphModifiedTime
+        opengraphImage {
+          sourceUrl
+        }
+        twitterTitle
+        twitterDescription
+        twitterImage {
+          sourceUrl
+        }
+      }
     }
   }
 `
