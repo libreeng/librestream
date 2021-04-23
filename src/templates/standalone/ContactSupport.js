@@ -7,6 +7,7 @@ import { useSiteFooter } from '../../common/hooks/useSiteFooter'
 import Hero from "../../common/ui/Hero"
 import FooterCTAs from '../../common/ui/FooterCTAs'
 import Layout from "../../containers/Layout"
+import { Helmet } from "react-helmet"
 
 const ContactSupportTemplate = ({ data: { page } }) => {
   const acf = page.acfTemplateContactSupport
@@ -20,6 +21,9 @@ const ContactSupportTemplate = ({ data: { page } }) => {
   // console.log(parse(page.content))
   return (
     <Layout>
+      <Helmet>
+        <script src={`https://www.google.com/recaptcha/api.js?r=${Math.random()}`} async defer></script>
+      </Helmet>
       <SEO pageSEO={page.seo} />
       <Hero hero={hero} />
       <section className="pb-0">
