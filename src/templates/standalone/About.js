@@ -42,16 +42,21 @@ const AboutTemplate = ({ data: { page } }) => {
             </div>
           </div>
           <div className="row row-cols-1 row-cols-md-2 row-cols-lg-5 align-items-center justify-content-between">
-            {acf.awards && acf.awards.map(award => (
-              <div key={award.image.id} className="col mb-4">
-                <div className="card">
-                  <GatsbyImage
-                    image={award.image?.localFile?.childImageSharp?.gatsbyImageData}
-                    alt={award.image.altText && award.image.altText} />
+            {acf.awards && acf.awards.map(award => {
+              const awardImageData = award.image?.localFile?.childImageSharp?.gatsbyImageData
+              const awardImageAlt = award.image.altText && award.image.altText || ``
+              return (
+                <div key={award.image.id} className="col mb-4">
+                  <div className="card">
+                    {awardImageData && (
+                      <GatsbyImage
+                        image={awardImageData}
+                        alt={awardImageAlt} />
+                    )}
+                  </div>
                 </div>
-              </div>
-            )
-            )}
+              )
+            })}
           </div>
         </div>
       </section>
@@ -67,16 +72,16 @@ const AboutTemplate = ({ data: { page } }) => {
           </div>
           <div className="row">
             {acf.board && acf.board.map((boardmember, i) => {
-              const imageData = boardmember.image?.localFile?.childImageSharp?.gatsbyImageData
+              const bgImageData = boardmember.image?.localFile?.childImageSharp?.gatsbyImageData
               return (
                 <div key={`board_${i}`} className="col-12 col-lg-3 mb-4">
                   <button
                     onClick={() => dispatch(openModal("BoardModal", { board: boardmember }))}
                     type="button" className="border-0 bg-transparent p-0">
-                    {boardmember.image && (
+                    {bgImageData && (
                       <BgImage
                         className="bg-image aspect-1x1"
-                        image={imageData}
+                        image={bgImageData}
                       />
                     )}
                     <h4 className="mb-0 text-dark text-left">{boardmember.name && boardmember.name}</h4>
@@ -94,22 +99,25 @@ const AboutTemplate = ({ data: { page } }) => {
             </div>
           </div>
           <div className="row">
-            {acf.management && acf.management.map((boardmember, i) => (
-              <div key={`board_management_${i}`} className="col-12 col-lg-3 mb-4">
-                <button
-                  onClick={() => dispatch(openModal("BoardModal", { board: boardmember }))}
-                  type="button" className="border-0 bg-transparent p-0">
-                  {boardmember.image && (
-                    <BgImage
-                      className="bg-image aspect-1x1"
-                      image={boardmember.image?.localFile?.childImageSharp?.gatsbyImageData}
-                    />
-                  )}
-                  <h4 className="mb-0 text-dark text-left">{boardmember.name && boardmember.name}</h4>
-                  <p className="text-primary text-left">{boardmember.title && boardmember.title}</p>
-                </button>
-              </div>
-            ))}
+            {acf.management && acf.management.map((boardmember, i) => {
+              const bgImageData = boardmember.image?.localFile?.childImageSharp?.gatsbyImageData
+              return (
+                <div key={`board_management_${i}`} className="col-12 col-lg-3 mb-4">
+                  <button
+                    onClick={() => dispatch(openModal("BoardModal", { board: boardmember }))}
+                    type="button" className="border-0 bg-transparent p-0">
+                    {bgImageData && (
+                      <BgImage
+                        className="bg-image aspect-1x1"
+                        image={bgImageData}
+                      />
+                    )}
+                    <h4 className="mb-0 text-dark text-left">{boardmember.name && boardmember.name}</h4>
+                    <p className="text-primary text-left">{boardmember.title && boardmember.title}</p>
+                  </button>
+                </div>
+              )
+            })}
           </div>
         </div>
       </section>
@@ -134,7 +142,7 @@ export const pageQuery = graphql`query AboutTemplateQuery($id: String!) {
           localFile {
             publicURL
             childImageSharp {
-              gatsbyImageData(quality: 100, layout: FULL_WIDTH)
+              gatsbyImageData(width: 500, quality: 100, layout: CONSTRAINED)
             }
           }
         }
@@ -146,7 +154,7 @@ export const pageQuery = graphql`query AboutTemplateQuery($id: String!) {
           localFile {
             publicURL
             childImageSharp {
-              gatsbyImageData(quality: 100, layout: FULL_WIDTH)
+              gatsbyImageData(width: 500, quality: 100, layout: CONSTRAINED)
             }
           }
         }
@@ -161,7 +169,7 @@ export const pageQuery = graphql`query AboutTemplateQuery($id: String!) {
           localFile {
             publicURL
             childImageSharp {
-              gatsbyImageData(quality: 100, layout: FULL_WIDTH)
+              gatsbyImageData(width: 500, quality: 100, layout: CONSTRAINED)
             }
           }
         }
@@ -175,7 +183,7 @@ export const pageQuery = graphql`query AboutTemplateQuery($id: String!) {
           localFile {
             publicURL
             childImageSharp {
-              gatsbyImageData(quality: 100, layout: FULL_WIDTH)
+              gatsbyImageData(width: 500, quality: 100, layout: CONSTRAINED)
             }
           }
           altText

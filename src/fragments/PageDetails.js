@@ -11,7 +11,7 @@ export const PageFields = graphql`fragment PageDetails on WpPage {
       localFile {
         publicURL
         childImageSharp {
-          gatsbyImageData(quality: 100, layout: FULL_WIDTH)
+          gatsbyImageData(width: 600, quality: 100, layout: CONSTRAINED)
         }
       }
     }

@@ -1,12 +1,12 @@
 import React from "react"
 import { graphql, Link } from "gatsby"
-import { GatsbyImage } from "gatsby-plugin-image";
 import parse from "html-react-parser"
 import SEO from "../../containers/SEO"
 import Hero from "../../common/ui/Hero"
 import Intro from '../../common/ui/Intro'
 import FooterCTAs from '../../common/ui/FooterCTAs'
 import Layout from "../../containers/Layout"
+import { BgImage } from "gbimage-bridge";
 
 const SolutionsTemplate = ({ data: { page, solutions } }) => {
   const hero = {
@@ -28,22 +28,24 @@ const SolutionsTemplate = ({ data: { page, solutions } }) => {
 
             {allSolutions && allSolutions.map(solution => {
               const { id, uri, title, acfPostTypeSolution: { solutionDescription, solutionTitle } } = solution.post
-              const featuredImage = solution.post.acfIntro.introFeaturedImage
+              const featuredImageData = solution.post.acfIntro.introFeaturedImage.localFile?.childImageSharp?.gatsbyImageData
 
               return (
                 <div key={id} className="col-12 col-sm-6 col-lg-4">
                   <Link to={uri}>
                     <div className='card p-2'>
-                      <div
-                        className="card-img-top bg-image aspect-1x1 grayscale"
-                        style={{ backgroundImage: `url(${featuredImage ? featuredImage?.localFile?.publicURL : 'https://via.placeholder.com/400/000/000'})` }}
-                      >
-                        {/* <div className="bg-fill bg-hover-red">
-                          {logoImage && (
-                            <img src={logoImage.sourceUrl} className="img-fluid w-50" alt={title} />
-                          )}
-                        </div> */}
-                      </div>
+                      {featuredImageData ? (
+                        <BgImage
+                          className="card-img-top bg-image aspect-1x1 grayscale"
+                          image={featuredImageData}
+                        />
+                      ) : (
+                        <div
+                          className="card-img-top bg-image aspect-1x1 grayscale"
+                          style={{ backgroundImage: `url('https://via.placeholder.com/400/000/000')` }}
+                        />
+                      )}
+
                       <div>
                         <p>
                           <span className="text-dark">{solutionTitle || title}</span><br />

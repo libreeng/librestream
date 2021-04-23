@@ -7,10 +7,8 @@ import SEO from "../../containers/SEO"
 import Layout from "../../containers/Layout"
 
 const ProductsARSPTemplate = ({ data: { page } }) => {
-  const featuredImage = {
-    fluid: page.featuredImage?.node?.localFile?.childImageSharp?.gatsbyImageData,
-    alt: page.featuredImage?.node?.alt || ``,
-  }
+  const featuredImageData = page.featuredImage?.node?.localFile?.childImageSharp?.gatsbyImageData
+  const featuredImageAlt = page.featuredImage?.node?.alt || ``
 
   return (
     <Layout>
@@ -20,11 +18,10 @@ const ProductsARSPTemplate = ({ data: { page } }) => {
 
         <p>{page.date}</p>
 
-        {/* if we have a featured image for this post let's display it */}
-        {featuredImage?.fluid && (
+        {featuredImageData && (
           <GatsbyImage
-            image={featuredImage.gatsbyImageData}
-            alt={featuredImage.alt}
+            image={featuredImageData}
+            alt={featuredImageAlt}
             style={{ marginBottom: 50 }} />
         )}
       </header>

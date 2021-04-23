@@ -9,10 +9,8 @@ import SupportKnowledgebaseLink from '../../components/support/SupportKnowledgeb
 
 const SupportKnowledgeBase = ({ title, post }) => {
   const {acfKnowledgebase:{section}} = post
-  const featuredImage = {
-    fluid: post.acfKnowledgebase?.kbImage?.localFile?.childImageSharp?.gatsbyImageData,
-    alt: post.acfKnowledgebase?.kbImage?.altText || ``
-  }
+  const featuredImageData = post.acfKnowledgebase?.kbImage?.localFile?.childImageSharp?.gatsbyImageData
+  const featuredImageAlt= post.acfKnowledgebase?.kbImage?.altText || ``
 
   return (
     <div className="list-group-item border-0 px-0" id={post.id}>
@@ -54,10 +52,10 @@ const SupportKnowledgeBase = ({ title, post }) => {
           </Accordion>
         </div>
         <div className="col-lg-3 ml-lg-auto">
-          {featuredImage.fluid && (
+          {featuredImageData && (
             <GatsbyImage
-              image={featuredImage.gatsbyImageData}
-              alt={featuredImage.alt}
+              image={featuredImageData}
+              alt={featuredImageAlt}
               style={{ marginBottom: 50 }} />
           )}
         </div>

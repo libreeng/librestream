@@ -31,15 +31,17 @@ const PlatformFeatures = ({ content }) => {
             >
               {features && features.map((feature, i) => {
                 const {link: {title, target, url}} = feature
-                const featuredImage = feature.featuredImage ? feature.featuredImage.localFile?.childImageSharp?.gatsbyImageData : false
+                const featuredImageData = feature.featuredImage ? feature.featuredImage.localFile?.childImageSharp?.gatsbyImageData : false
                 return (
                   <Tab key={`tab_${i}`} eventKey={i} title={feature.heading}>
                     <div className="row">
                       <div className="col-12 col-md-6">
-                        <GatsbyImage
-                          image={featuredImage}
-                          alt={feature.featuredImage.alt}
-                          style={{ marginBottom: 50 }} />
+                        {featuredImageData && (
+                          <GatsbyImage
+                            image={featuredImageData}
+                            alt={feature.featuredImage.alt}
+                            style={{ marginBottom: 50 }} />
+                        )}
                       </div>
                       <div className="col-12 col-md-6">
                         <h3 className="h2">{feature.heading}</h3>

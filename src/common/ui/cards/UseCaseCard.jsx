@@ -18,7 +18,7 @@ const UseCaseCard = ({ post }) => {
           <div className="card-logo-overlay text-white">
             <div className="row">
               <div className="col-lg-6">
-                {logoImage && (
+                {logoImageData && (
                   <GatsbyImage image={logoImageData} className="img-fluid" alt={title} />
                 )}
               </div>

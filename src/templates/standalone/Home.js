@@ -89,7 +89,7 @@ const HomeTemplate = ({ data: { page } }) => {
               <hr className="hr-xs border-green ml-0" />
               <p>{slide.carouselSlideDescription && slide.carouselSlideDescription}</p>
               {slide.carouselSlideLink && (
-                <a href={slide.carouselSlideLink.url} target={slide.carouselSlideLink.target} className="btn btn-secondary btn-lg mt-4">{slide.carouselSlideLink.title}</a>
+                <a href={slide.carouselSlideLink.url} target={slide.carouselSlideLink.target} className="btn btn-secondary btn-lg mt-4" title="Learn more about customer success stories">{slide.carouselSlideLink.title}</a>
               )}
             </div>
           </div>

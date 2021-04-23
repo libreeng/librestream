@@ -12,6 +12,8 @@ const CampaignWebinarTemplate = ({ data: { page } }) => {
   const acf = page.acfTemplateCampaignWebinar
   const hero = page.acfHero
   const { cta } = page.acfFooterCTAs
+  const featuredImageData = acf.featuredImage?.localFile?.childImageSharp?.gatsbyImageData
+  const featuredImageAlt = acf.featuredImage.altText || ``
 
   return (
     <Layout>
@@ -39,10 +41,10 @@ const CampaignWebinarTemplate = ({ data: { page } }) => {
             <div className="col-lg-6">
               <div className="sticky-top">
                 {page.content && parse(page.content)}
-                {acf.featuredImage && (
+                {featuredImageData && (
                   <GatsbyImage
-                    image={acf.featuredImage?.localFile?.childImageSharp?.gatsbyImageData}
-                    alt={acf.featuredImage.altText} />
+                    image={featuredImageData}
+                    alt={featuredImageAlt} />
                 )}
               </div>
             </div>

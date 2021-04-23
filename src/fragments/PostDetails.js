@@ -38,7 +38,6 @@ export const PostDetails = graphql`fragment PostDetails on WpPost {
     mainImage {
       altText
       localFile {
-        publicURL
         childImageSharp {
           gatsbyImageData(quality: 100, layout: FULL_WIDTH)
         }

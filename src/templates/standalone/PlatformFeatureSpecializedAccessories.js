@@ -1,3 +1,4 @@
+// TODO: This template needs a refactor
 import React from 'react'
 import PropTypes from 'prop-types'
 import { graphql } from "gatsby"
@@ -86,32 +87,36 @@ const PlatformFeatureSpecializedAccessories = ({ data: { page, subnav } }) => {
       <section>
         <div className="container">
           <div className="row">
-            {accessories && accessories.map((accessory, i) => (
-              <div className="col-lg-6 mb-5" key={`accessory_${i}`}>
-                <div className="d-flex flex-column justify-content-between h-100">
-                  <div>
-                    <hr className="hr-styled" />
-                    <h3 className="mt-5">{accessory.title && accessory.title}</h3>
-                    <p>{accessory.description && accessory.description}</p>
-                  </div>
-                  <div>
-                    {accessory.featuredImage && (
-                      <GatsbyImage
-                        image={accessory.featuredImage?.localFile?.childImageSharp?.gatsbyImageData}
-                        alt={accessory.featuredImage?.altText}
-                        className="mt-4 mb-3" />
-                    )}
+            {accessories && accessories.map((accessory, i) => {
+              const accessoryImageData = accessory.featuredImage?.localFile?.childImageSharp?.gatsbyImageData
+              const accessoryImageAlt = accessory.featuredImage?.altText || ``
+              return (
+                <div className="col-lg-6 mb-5" key={`accessory_${i}`}>
+                  <div className="d-flex flex-column justify-content-between h-100">
+                    <div>
+                      <hr className="hr-styled" />
+                      <h3 className="mt-5">{accessory.title && accessory.title}</h3>
+                      <p>{accessory.description && accessory.description}</p>
+                    </div>
+                    <div>
+                      {accessoryImageData && (
+                        <GatsbyImage
+                          image={accessoryImageData}
+                          alt={accessoryImageAlt}
+                          className="mt-4 mb-3" />
+                      )}
 
-                    {accessory.specsDownload && (
-                      <div className="text-center">
-                        <a href={accessory?.specsDownload?.localFile?.publicURL} className="btn btn-outline-primary text-dark" target="_blank" rel="noreferrer">View Specs</a>
-                      </div>
-                    )}
-                  </div>
+                      {accessory.specsDownload && (
+                        <div className="text-center">
+                          <a href={accessory?.specsDownload?.localFile?.publicURL} className="btn btn-outline-primary text-dark" target="_blank" rel="noreferrer">View Specs</a>
+                        </div>
+                      )}
+                    </div>
 
+                  </div>
                 </div>
-              </div>
-            ))}
+              )
+            })}
           </div>
         </div>
       </section>

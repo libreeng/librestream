@@ -1,6 +1,6 @@
 import React from "react"
 import { Link, graphql } from "gatsby"
-import { GatsbyImage } from "gatsby-plugin-image";
+import { GatsbyImage } from "gatsby-plugin-image"
 import parse from "html-react-parser"
 import { embedUrl } from "../common/utils/helpers"
 import Hero from '../common/ui/Hero'
@@ -12,10 +12,8 @@ import Layout from "../containers/Layout"
 
 const PostTemplate = ({ data: { previous, next, post } }) => {
   const acf = post.acfPostTypeNews
-  const featuredImage = {
-    fluid: acf?.mainImage?.localFile?.childImageSharp?.gatsbyImageData,
-    alt: acf?.mainImage?.altText || ``
-  }
+  const featuredImageData = acf?.mainImage?.localFile?.childImageSharp?.gatsbyImageData
+  const featuredImageAlt = acf?.mainImage?.altText || ``
   const postCategory = {
     categoryName: post.categories.nodes[0].name,
     categorySlug: post.categories.nodes[0].slug
@@ -23,9 +21,6 @@ const PostTemplate = ({ data: { previous, next, post } }) => {
   const hero = {
     heroHeading: postCategory.categoryName
   }
-
-  // console.log(acf.postVideo)
-
   const { cta } = post.acfFooterCTAs
 
   // Related Post Logic
@@ -51,10 +46,10 @@ const PostTemplate = ({ data: { previous, next, post } }) => {
                 <hr />
                 <p className="text-mid">{post.date}</p>
               </header>
-              {featuredImage?.fluid && (
+              {featuredImageData && (
                 <GatsbyImage
-                  image={featuredImage.gatsbyImageData}
-                  alt={featuredImage.alt}
+                  image={featuredImageData}
+                  alt={featuredImageAlt}
                   style={{ marginBottom: 50 }} />
               )}
               {!!post.content && (

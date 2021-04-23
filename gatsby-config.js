@@ -24,6 +24,7 @@ module.exports = {
     facebook: website.facebook,
   },
   plugins: [
+    `gatsby-plugin-preact`,
     `gatsby-plugin-sass`,
     `gatsby-plugin-image`,
     `gatsby-plugin-sharp`,
