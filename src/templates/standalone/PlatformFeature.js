@@ -1,24 +1,36 @@
 import React, { useState } from 'react'
 // import PropTypes from 'prop-types'
 import { graphql } from "gatsby"
-import Image from "gatsby-image"
-import BackgroundImage from 'gatsby-background-image'
+import { GatsbyImage } from "gatsby-plugin-image"
+import { BgImage } from 'gbimage-bridge'
 import parse from "html-react-parser"
 import SEO from "../../containers/SEO"
 import Hero from "../../common/ui/Hero"
 import FooterCTAs from '../../common/ui/FooterCTAs'
 import Highlight from '../../components/Highlight'
 import Layout from '../../containers/Layout'
-// import { useDispatch } from "react-redux"
-// import { openModal } from "../../common/modals/modalActions"
-// import PartnerModal from '../../common/modals/PartnerModal'
 
 const PlatformFeatureTemplate = ({ data: { page, subnav } }) => {
-  // let dispatch = () => { }
-  // if (typeof window !== 'undefined') {
-  //   dispatch = useDispatch()
-  // }
-  const template = page.acfTemplatePlaformFeature
+  const {
+    ctaMessage,
+    ctaButton,
+    technicalDetailsHeading,
+    technicalDetailsDescription,
+    featureDownloads,
+    feature1Description,
+    feature1Link,
+    feature1Image,
+    feature2Description,
+    feature2Link,
+    feature2Image,
+    featureLinks,
+    highlights,
+    productHighlightsImage
+  } = page.acfTemplatePlaformFeature
+  const productHighlightsImageData = productHighlightsImage?.localFile?.childImageSharp?.gatsbyImageData
+  const productsHighlightsImageAlt = productHighlightsImage?.altText || ``
+  const feature1ImageData = feature1Image?.localFile?.childImageSharp?.gatsbyImageData
+  const feature2ImageData = feature2Image?.localFile?.childImageSharp?.gatsbyImageData
   const hero = page.acfHero
   const nav = subnav.menuItems.nodes
   const { cta } = page.acfFooterCTAs
@@ -37,14 +49,14 @@ const PlatformFeatureTemplate = ({ data: { page, subnav } }) => {
         <div className="container">
           <div className="row">
             <div className="col-12">
-              {template.ctaMessage && (
+              {ctaMessage && (
                 <div className="border-bracket text-center p-3">
-                  <h4><strong>{template.ctaMessage}</strong></h4>
+                  <h4><strong>{ctaMessage}</strong></h4>
                 </div>
               )}
-              {template.ctaButton && (
+              {ctaButton && (
                 <div className="text-center mt-2">
-                  <a href={template.ctaButton.url} className="btn btn-secondary my-5" target={template.ctaButton.target}>{template.ctaButton.title}</a>
+                  <a href={ctaButton.url} className="btn btn-secondary my-5" target={ctaButton.target}>{ctaButton.title}</a>
                 </div>
               )}
             </div>
@@ -56,20 +68,19 @@ const PlatformFeatureTemplate = ({ data: { page, subnav } }) => {
         <div className="container">
           <div className="row">
             <div className="col-lg-6">
-              {template.feature1Description && (
-                parse(template.feature1Description)
+              {feature1Description && (
+                parse(feature1Description)
               )}
               <hr className="hr-xs ml-0 border-green" />
-              {template.feature1Link && (
-                <a href={template.feature1Link.url} className="btn btn-secondary mt-3" target={template.feature1Link.target}>{template.feature1Link.title ? template.feature1Link.title : 'Learn More'}</a>
+              {feature1Link && (
+                <a href={feature1Link.url} className="btn btn-secondary mt-3" target={feature1Link.target}>{feature1Link.title ? feature1Link.title : 'Learn More'}</a>
               )}
             </div>
             <div className="col-lg-6">
-              {template.feature1Image &&
-                <BackgroundImage
-                  Tag="div"
+              {feature1ImageData &&
+                <BgImage
                   className="bg-image aspect-1x1 img-offset-top"
-                  fluid={template.feature1Image?.localFile?.childImageSharp?.fluid}
+                  image={feature1ImageData}
                 />
               }
             </div>
@@ -82,20 +93,25 @@ const PlatformFeatureTemplate = ({ data: { page, subnav } }) => {
         <div className="container">
           <div className="row align-items-center">
             <div className="col-lg-6">
-              {template.feature2Image &&
-                <BackgroundImage
-                  Tag="div"
+              {feature2ImageData &&
+                <BgImage
                   className="bg-image aspect-1x1"
-                  fluid={template.feature2Image?.localFile?.childImageSharp?.fluid}
+                  image={feature2ImageData}
                 />
               }
             </div>
             <div className="col-lg-6">
               <div className="p-4">
-                {template.feature2Description && parse(template.feature2Description)}
+                {feature2Description && parse(feature2Description)}
                 <hr className="hr-sm ml-0" />
-                {template.feature2Link && (
-                  <a href={template.feature2Link.url} className="btn btn-primary mt-3" target={template.feature2Link.target}>{template.feature2Link.title ? template.feature2Link.title : 'Learn More'}</a>
+                {feature2Link && (
+                  <a
+                    href={feature2Link.url}
+                    className="btn btn-primary mt-3"
+                    target={feature2Link.target}
+                  >
+                    {feature2Link.title ? feature2Link.title : 'Learn More'}
+                  </a>
                 )}
               </div>
             </div>
@@ -105,12 +121,12 @@ const PlatformFeatureTemplate = ({ data: { page, subnav } }) => {
       <section>
         <div className="container">
           <div className="row">
-            {template.featureDownloads && template.featureDownloads.map((download, i) => (
+            {featureDownloads && featureDownloads.map((download, i) => (
               <div className="col-12 col-xl-4" key={`download_${i}`}>
                 <a href={download?.featureDownload?.localFile?.publicURL} className="btn btn-outline-secondary text-dark btn-block mb-3">{download?.downloadLabel}</a>
               </div>
             ))}
-            {template.featureLinks && template.featureLinks.map((link, i) => (
+            {featureLinks && featureLinks.map((link, i) => (
               <div className="col-12 col-xl-4" key={`link_${i}`}>
                 <a href={link?.featureLink?.url} className="btn btn-outline-secondary text-dark btn-block mb-3">{link?.featureLink?.title}</a>
               </div>
@@ -125,15 +141,11 @@ const PlatformFeatureTemplate = ({ data: { page, subnav } }) => {
         <div className="container">
           <div className="row">
             <div className="col-lg-5">
-              {template.technicalDetailsHeading &&
-                <h3 className="text-primary">{template.technicalDetailsHeading}</h3>
-              }
+              {technicalDetailsHeading && <h3 className="text-primary">{technicalDetailsHeading}</h3>}
             </div>
             <div className="col-lg-7">
               <div className="border-left border-dark pl-4">
-                {template.technicalDetailsDescription &&
-                  parse(template.technicalDetailsDescription)
-                }
+                {technicalDetailsDescription && parse(technicalDetailsDescription)}
               </div>
             </div>
           </div>
@@ -152,17 +164,16 @@ const PlatformFeatureTemplate = ({ data: { page, subnav } }) => {
           <div className="row">
             <div className="col-12 col-xl-6">
               <div className="row justify-content-center">
-                {template.highlights && template.highlights.map((highlight, i) => (
+                {highlights && highlights.map((highlight, i) => (
                   <Highlight highlight={highlight} key={`highlight_${i}`} />
                 ))}
               </div>
             </div>
             <div className="col-12 col-xl-6">
-              {template.productHighlightsImage && (
-                <Image
-                  fluid={template?.productHighlightsImage?.localFile?.childImageSharp.fluid}
-                  alt={template?.productHighlightsImage?.altText}
-                />
+              {productHighlightsImage && (
+                <GatsbyImage
+                  image={productHighlightsImageData}
+                  alt={productsHighlightsImageAlt} />
               )}
             </div>
           </div>
@@ -171,117 +182,109 @@ const PlatformFeatureTemplate = ({ data: { page, subnav } }) => {
 
       <FooterCTAs featured={cta} />
     </Layout>
-  )
+  );
 }
 
 PlatformFeatureTemplate.propTypes = {
 
 }
 
-export const pageQuery = graphql`
-  query PlatformFeatureTemplateQuery($id: String!) {
-    # selecting the current page by id
-    page: wpPage(id: { eq: $id }) {
-      ...PageDetails
-      ...PageHero
-      ...FooterCTAs
-      acfTemplatePlaformFeature {
-        ctaMessage
-        ctaButton {
-          target
-          title
-          url
-        }
-        feature1Description
-        feature1Image {
-          altText
-          localFile {
-            publicURL
-            childImageSharp {
-              fluid(maxWidth: 1000) {
-                ...GatsbyImageSharpFluid
-              }
-            }
-          }
-        }
-        feature1Link {
-          target
-          title
-          url
-        }
-        feature2Description
-        feature2Image {
-          altText
-          localFile {
-            publicURL
-            childImageSharp {
-              fluid(maxWidth: 1000) {
-                ...GatsbyImageSharpFluid
-              }
-            }
-          }
-        }
-        feature2Link {
-          target
-          title
-          url
-        }
-        featureLinks {
-          featureLink {
-            target
-            title
-            url
-          }
-        }
-        featureDownloads {
-          downloadLabel
-          featureDownload {
-            id
-            altText
-            localFile {
-              publicURL
-            }
-          }
-        }
-        technicalDetailsHeading
-        technicalDetailsDescription
-        productHighlightsTitle
-        productHighlightsImage {
-          altText
-          localFile {
-            publicURL
-            childImageSharp {
-              fluid(maxWidth: 1000) {
-                ...GatsbyImageSharpFluid
-              }
-            }
-          }
-        }
-        highlights {
-          highlightTitle
-          highlightDescription
-          highlightIcon {
-            altText
-            localFile {
-              publicURL
-            }
+export const pageQuery = graphql`query PlatformFeatureTemplateQuery($id: String!) {
+  page: wpPage(id: {eq: $id}) {
+    ...PageDetails
+    ...PageHero
+    ...FooterCTAs
+    acfTemplatePlaformFeature {
+      ctaMessage
+      ctaButton {
+        target
+        title
+        url
+      }
+      feature1Description
+      feature1Image {
+        altText
+        localFile {
+          publicURL
+          childImageSharp {
+            gatsbyImageData(layout: FULL_WIDTH)
           }
         }
       }
-    }
-    subnav: wpMenu(name: {eq: "Platform Features"}) {
-      id
-      menuItems {
-        nodes {
+      feature1Link {
+        target
+        title
+        url
+      }
+      feature2Description
+      feature2Image {
+        altText
+        localFile {
+          publicURL
+          childImageSharp {
+            gatsbyImageData(layout: FULL_WIDTH)
+          }
+        }
+      }
+      feature2Link {
+        target
+        title
+        url
+      }
+      featureLinks {
+        featureLink {
+          target
+          title
+          url
+        }
+      }
+      featureDownloads {
+        downloadLabel
+        featureDownload {
           id
-          label
-          url
-          path
+          altText
+          localFile {
+            publicURL
+          }
         }
       }
-      name
+      technicalDetailsHeading
+      technicalDetailsDescription
+      productHighlightsTitle
+      productHighlightsImage {
+        altText
+        localFile {
+          publicURL
+          childImageSharp {
+            gatsbyImageData(width: 400, quality: 100, layout: CONSTRAINED)
+          }
+        }
+      }
+      highlights {
+        highlightTitle
+        highlightDescription
+        highlightIcon {
+          altText
+          localFile {
+            publicURL
+          }
+        }
+      }
     }
   }
+  subnav: wpMenu(name: {eq: "Platform Features"}) {
+    id
+    menuItems {
+      nodes {
+        id
+        label
+        url
+        path
+      }
+    }
+    name
+  }
+}
 `
 
 export default PlatformFeatureTemplate

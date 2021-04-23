@@ -1,3 +1,6 @@
+require('dotenv').config({
+  path: `.env.${process.env.NODE_ENV}`
+})
 const fs = require('fs')
 const path = require('path')
 const website = require('./config/website')
@@ -21,9 +24,11 @@ module.exports = {
     facebook: website.facebook,
   },
   plugins: [
-    'gatsby-plugin-sass',
-    'gatsby-plugin-sharp',
-    'gatsby-transformer-sharp',
+    `gatsby-plugin-preact`,
+    `gatsby-plugin-sass`,
+    `gatsby-plugin-image`,
+    `gatsby-plugin-sharp`,
+    `gatsby-transformer-sharp`,
     {
       resolve: `gatsby-source-filesystem`,
       options: {
@@ -35,11 +40,11 @@ module.exports = {
       resolve: `gatsby-source-wordpress`,
       options: {
         // the only required plugin option for WordPress is the GraphQL url.
-        url: process.env.WPGRAPHQL_URL || 'https://cms.librestream.com/graphql',
-        develop: {
-          hardCacheMediaFiles: true,
-          // hardCacheData: true
-        },
+        url: process.env.WPGRAPHQL_URL,
+        // develop: {
+        //   hardCacheMediaFiles: true,
+        //   // hardCacheData: true
+        // },
         // production: {
         //   hardCacheMediaFiles: true,
         //   // hardCacheData: true

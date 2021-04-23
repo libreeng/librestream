@@ -1,5 +1,11 @@
 [
   {
+    "fromPath": "/media/*",
+    "toPath": "https://cms.librestream.com/media/*",
+    "type": 301,
+    "format": "regex"
+  },
+  {
     "fromPath": "/media/HowTo-Onsight-Flow-Builder_NOV2020.pdf",
     "toPath": "https://cms.librestream.com/media/HowTo-Onsight-Flow-Builder_NOV2020.pdf",
     "type": 301,

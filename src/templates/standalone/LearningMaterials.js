@@ -55,49 +55,44 @@ const LearningMaterialsTemplate = ({ data: { page } }) => {
   )
 }
 
-export const pageQuery = graphql`
-  query LearningMaterialsTemplateQuery($id: String!) {
-    # selecting the current page by id
-    page: wpPage(id: { eq: $id }) {
-      ...PageDetails
-      ...FooterCTAs
-      acfLearningMaterials {
-        materials {
-          materialsTitle
-          section {
-            sectionTitle
-            items {
-              ... on WpSupport {
-                id
-                title
-                acfPostLearningMaterial {
-                  links {
-                    linkImage {
-                      localFile {
-                        childImageSharp {
-                          fluid(maxWidth: 500, quality: 100) {
-                            ...GatsbyImageSharpFluid
-                          }
-                        }
+export const pageQuery = graphql`query LearningMaterialsTemplateQuery($id: String!) {
+  page: wpPage(id: {eq: $id}) {
+    ...PageDetails
+    ...FooterCTAs
+    acfLearningMaterials {
+      materials {
+        materialsTitle
+        section {
+          sectionTitle
+          items {
+            ... on WpSupport {
+              id
+              title
+              acfPostLearningMaterial {
+                links {
+                  linkImage {
+                    localFile {
+                      childImageSharp {
+                        gatsbyImageData(width: 500, quality: 100, layout: CONSTRAINED)
                       }
                     }
-                    linkText
-                    linkType
-                    url
-                    page {
-                      ... on WpPage {
-                        uri
-                      }
+                  }
+                  linkText
+                  linkType
+                  url
+                  page {
+                    ... on WpPage {
+                      uri
                     }
-                    videoEmbed
-                    videoMp4 {
-                      mediaItemUrl
-                    }
-                    pdf {
-                      mediaItemUrl
-                      localFile {
-                        publicURL
-                      }
+                  }
+                  videoEmbed
+                  videoMp4 {
+                    mediaItemUrl
+                  }
+                  pdf {
+                    mediaItemUrl
+                    localFile {
+                      publicURL
                     }
                   }
                 }
@@ -108,6 +103,7 @@ export const pageQuery = graphql`
       }
     }
   }
+}
 `
 
 export default LearningMaterialsTemplate

@@ -2,17 +2,20 @@ import React from 'react'
 import PropTypes from 'prop-types'
 import { Link } from 'gatsby'
 import parse from "html-react-parser"
+import { GatsbyImage, getImage } from "gatsby-plugin-image"
+import { BgImage } from 'gbimage-bridge'
 import CarouselHero from "../../common/ui/carousel/CarouselHero"
 import { getHeroParseOptions } from '../../common/utils/helpers'
 
-const Hero = ({ hero, nav }) => {
+const Hero = ({ hero, nav, className }) => {
   const { heroHeading, heroDescription, heroCta, heroFeaturedImage, heroBackgroundImage, heroGallery } = hero
-  const featuredImage = heroFeaturedImage ? heroFeaturedImage.localFile.publicURL : false
+  const featuredImage = heroFeaturedImage ? getImage(heroFeaturedImage.localFile) : false
   let heroImages = []
-  if(heroGallery){
-    heroImages = heroGallery.map(image => image?.galleryImage?.localFile?.childImageSharp?.fluid)
+  if (heroGallery) {
+    heroImages = heroGallery.map(image => getImage(image?.galleryImage?.localFile))
   }
-  const backgroundImage = heroBackgroundImage?.localFile?.publicURL
+  const bgImage = heroBackgroundImage ? getImage(heroBackgroundImage.localFile) : `linear-gradient(rgba(220, 15, 15, 0.73), rgba(4, 243, 67, 0.73))`
+
   const parseOptions = getHeroParseOptions(heroHeading)
   const content = (
     <div className="bg-content">
@@ -38,7 +41,7 @@ const Hero = ({ hero, nav }) => {
           <div className="col-6 col-lg-3 col-xl-4">
             <div className="p-lg-5 p-xl-5">
               {featuredImage && (
-                <img src={featuredImage} className="img-fluid" alt={heroFeaturedImage.alt} />
+                <GatsbyImage image={featuredImage} className="img-fluid" alt={heroFeaturedImage.alt} />
               )}
             </div>
           </div>
@@ -56,9 +59,11 @@ const Hero = ({ hero, nav }) => {
           <CarouselHero images={heroImages} content={content} />
         </>
       ):(
-          <div className="bg-image aspect-auto" style={backgroundImage ? { backgroundImage: `url(${backgroundImage})`} : null}>
-          {content}
-        </div>
+        <BgImage image={bgImage}>
+          <div className="bg-image aspect-auto">
+            {content}
+          </div>
+        </BgImage>
       )}
     </div>
   )

@@ -1,21 +1,18 @@
 import React from 'react'
 import PropTypes from 'prop-types'
-import BackgroundImage from 'gatsby-background-image'
+import { BgImage } from 'gbimage-bridge'
 
 const PostCard = ({ post, showBracket, className }) => {
   const primaryImage = post.acfPostTypeNews.summaryImage ? post.acfPostTypeNews.summaryImage : post.acfPostTypeNews.mainImage
-  const featuredImage = {
-    fluid: primaryImage?.localFile?.childImageSharp?.fluid,
-    alt: primaryImage?.altText
-  }
+  const featuredImage = primaryImage?.localFile?.childImageSharp?.gatsbyImageData
 
   return (
     <div className="card p-2">
-      {featuredImage.fluid ? (
-        <BackgroundImage
+      {featuredImage ? (
+        <BgImage
           Tag="div"
           className={`card-img-top bg-image aspect-1x1 grayscale ${className}`}
-          fluid={featuredImage.fluid}
+          image={featuredImage}
         />
       ):(
         <div className={`card-img-top bg-image bg-black aspect-1x1 grayscale ${className}`} />
