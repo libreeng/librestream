@@ -28,7 +28,7 @@ const Hero = ({ hero, nav }) => {
               <ul className="nav mt-4 pb-3">
                 {nav.map(item => (
                   <li key={item?.path} className="nav-item">
-                    <Link to={item?.path} className="nav-link">{item?.label || item?.title}</Link>
+                    <Link to={item?.path} className="nav-link" activeClassName="active">{item?.label || item?.title}</Link>
                   </li>
                 )
                 )}
