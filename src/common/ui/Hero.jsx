@@ -87,7 +87,7 @@ const Hero = ({ hero, nav, className }) => {
           <CarouselHero images={heroImages} content={content} />
         </>
       ):(
-        <BgImage image={bgImage}>
+        <BgImage image={bgImage} style={{ backgroundPosition: 'bottom left'}}>
           <div className="bg-image aspect-auto">
             {content}
           </div>
