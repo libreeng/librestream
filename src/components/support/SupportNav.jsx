@@ -18,10 +18,11 @@ const SupportNav = ({sections}) => {
             <Accordion.Collapse eventKey={slugify(supportSectionTitle)} data-index={index}>
               <ul className="nav flex-column mb-0">
                 {sectionKnowledgebases && sectionKnowledgebases.map((kb, i) => {
-                  const { knowledgebasePost:{id}, kbTitle } = kb
+                  const { knowledgebasePost:{id}, kbTitle, linktarget, pageToLinkTo } = kb
+                  const href = (linktarget == "page") ? pageToLinkTo.uri : "#" + id
                   return (
                     <li className="nav-item text-primary" key={id}>
-                      <a href={`#${id}`}>{kbTitle}</a>
+                      <a href={href}>{kbTitle}</a>
                     </li>
                   )
                 })}
