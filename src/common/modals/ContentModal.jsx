@@ -5,22 +5,27 @@ import { Modal, Button } from 'react-bootstrap'
 import parse from "html-react-parser"
 import { closeModal } from './modalActions'
 
-
-const ContentModal = ({ heading, content }) => {
+const ContentModal = ({ heading, content, size="", showCloseBtn=true }) => {
   const dispatch = useDispatch()
 
   return (
     <>
-      <Modal show onHide={() => dispatch(closeModal())}>
-        <Modal.Header closeButton>
-          <Modal.Title>Modal {heading}</Modal.Title>
-        </Modal.Header>
+      <Modal show onHide={() => dispatch(closeModal())} size={size}>
+        <div className="bg-gradient-blue triangle-corner" />
+        <Modal.Header className="border-0 py-0" closeButton />
         <Modal.Body>
-          {parse(content)}
+          { heading && <Modal.Title><h2>{heading}</h2></Modal.Title> }
+          <div className="row align-items-center">            
+            <div className="col-12">
+              {parse(content)}
+            </div>
+          </div>
         </Modal.Body>
-        <Modal.Footer>
-          <Button variant="primary" onClick={() => dispatch(closeModal())}>Close</Button>
-        </Modal.Footer>
+        {showCloseBtn && 
+          <Modal.Footer>
+            <Button variant="primary" onClick={() => dispatch(closeModal())}>Close</Button>
+          </Modal.Footer>
+        }
       </Modal>
     </>
   )

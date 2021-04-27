@@ -28,6 +28,13 @@ export const PageHero = graphql`fragment PageHero on WpPage {
         }
       }
     }
+    linkTo
+    modalData {
+      modalContent
+      modalHeader
+      modalShowCloseButton
+      ctaLabel
+    }
   }
 }
 `
