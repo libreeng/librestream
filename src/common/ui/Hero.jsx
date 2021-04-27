@@ -10,7 +10,11 @@ import { useDispatch } from 'react-redux'
 import { openModal } from "../../common/modals/modalActions"
 
 const Hero = ({ hero, nav, className }) => {
-  const dispatch = useDispatch()
+  let dispatch = () => { }
+  if (typeof window !== 'undefined') {
+    dispatch = useDispatch()
+  }
+  
   const { heroHeading, heroDescription, heroCta, heroFeaturedImage, heroBackgroundImage, heroGallery } = hero
   const featuredImage = heroFeaturedImage ? getImage(heroFeaturedImage.localFile) : false
   const modalData = hero.modalData
