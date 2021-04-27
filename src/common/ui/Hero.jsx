@@ -23,13 +23,11 @@ const Hero = ({ hero, nav, className }) => {
 
 
   const getHeroCta = () => {
-    console.log("GetHero CTA",hero.linkTo)
-    if(hero.linkTo == 'link' && heroCta){
+    if(heroCta && hero.linkTo == 'link'){
       return (
         <a href={heroCta.url} className="btn btn-lg btn-secondary text-dark my-5" target={heroCta.target}>{heroCta.title}</a>
       )
-    } else if (hero.linkTo == "modal" && modalData){
-      console.log("modal CTA")
+    } else if (modalData && hero.linkTo == "modal" ){
       return (
         <button
           type="button"
