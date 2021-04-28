@@ -22,7 +22,7 @@ const ContactSupportTemplate = ({ data: { page } }) => {
   return (
     <Layout>
       <Helmet>
-        <script src={`https://www.google.com/recaptcha/api.js?r=${Math.random()}`} async defer></script>
+        <script src={`https://www.google.com/recaptcha/api.js`}></script>
       </Helmet>
       <SEO pageSEO={page.seo} />
       <Hero hero={hero} />
