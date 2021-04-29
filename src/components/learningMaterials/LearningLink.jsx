@@ -1,7 +1,7 @@
 import React from 'react'
 import PropTypes from 'prop-types'
 import { useDispatch } from "react-redux"
-import BackgroundImage from 'gatsby-background-image'
+import { BgImage } from 'gbimage-bridge'
 import { openModal } from "../../common/modals/modalActions"
 
 const LearningLink = ({ link }) => {
@@ -9,10 +9,11 @@ const LearningLink = ({ link }) => {
   if (typeof window !== 'undefined') {
     dispatch = useDispatch()
   }
+  const bgImage = link.linkImage?.localFile?.childImageSharp?.gatsbyImageData
 
   return (
     <>
-      {{ 
+      {{
         'Content': (
           link.content
             ? (<button
@@ -20,10 +21,9 @@ const LearningLink = ({ link }) => {
                 type="button" className="border-0 bg-transparent p-0 text-primary w-100">
                 <div className="row align-items-center mb-3">
                   <div className="col-12 col-lg-4">
-                    <BackgroundImage
-                      Tag="div"
+                    <BgImage
                       className="bg-image aspect-4x3"
-                      fluid={link.linkImage?.localFile?.childImageSharp?.fluid}
+                      image={bgImage}
                     />
                   </div>
                   <div className="col-12 col-lg-8">
@@ -33,10 +33,9 @@ const LearningLink = ({ link }) => {
               </button>)
             : (<div className="row align-items-center">
             <div className="col-12 col-lg-4">
-              <BackgroundImage
-                Tag="div"
+              <BgImage
                 className="bg-image aspect-4x3"
-                fluid={link.linkImage?.localFile?.childImageSharp?.fluid}
+                image={bgImage}
               />
             </div>
             <div className="col-12 col-lg-8">
@@ -48,10 +47,9 @@ const LearningLink = ({ link }) => {
           <a href={link.url} target="_blank" rel="noopener">
             <div className="row align-items-center mb-3">
               <div className="col-12 col-lg-4">
-                <BackgroundImage
-                  Tag="div"
+                <BgImage
                   className="bg-image aspect-4x3"
-                  fluid={link.linkImage?.localFile?.childImageSharp?.fluid}
+                  image={bgImage}
                 />
               </div>
               <div className="col-12 col-lg-8">
@@ -68,10 +66,9 @@ const LearningLink = ({ link }) => {
           >
             <div className="row align-items-center mb-3">
               <div className="col-12 col-lg-4">
-                <BackgroundImage
-                  Tag="div"
+                <BgImage
                   className="bg-image aspect-4x3"
-                  fluid={link.linkImage?.localFile?.childImageSharp?.fluid}
+                  image={bgImage}
                 />
               </div>
               <div className="col-12 col-lg-8">
@@ -84,10 +81,9 @@ const LearningLink = ({ link }) => {
           <a href={link.page?.uri}>
             <div className="row align-items-center mb-3">
               <div className="col-12 col-lg-4">
-                <BackgroundImage
-                  Tag="div"
+                <BgImage
                   className="bg-image aspect-4x3"
-                  fluid={link.linkImage?.localFile?.childImageSharp?.fluid}
+                  image={bgImage}
                 />
               </div>
               <div className="col-12 col-lg-8">
@@ -100,10 +96,9 @@ const LearningLink = ({ link }) => {
           <a href={link.pdf?.localFile?.publicURL} target="_blank" rel="noopener" className="text-underline">
             <div className="row align-items-center mb-3">
               <div className="col-12 col-lg-4">
-                <BackgroundImage
-                  Tag="div"
+                <BgImage
                   className="bg-image aspect-4x3"
-                  fluid={link.linkImage?.localFile?.childImageSharp?.fluid}
+                  image={bgImage}
                 />
               </div>
               <div className="col-12 col-lg-8">

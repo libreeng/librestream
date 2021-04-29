@@ -2,7 +2,7 @@ import React from "react"
 import { graphql, Link } from "gatsby"
 import parse from "html-react-parser"
 import SEO from "../../containers/SEO"
-import BackgroundImage from 'gatsby-background-image'
+import { BgImage } from 'gbimage-bridge'
 import Hero from "../../common/ui/Hero"
 import FooterCTAs from '../../common/ui/FooterCTAs'
 import Layout from "../../containers/Layout"
@@ -25,7 +25,7 @@ const ResourcesTemplate = ({ data: { page, resources } }) => {
             {allResources && allResources.map(resource => {
               const { id, uri, acfPostTypeResource: { summaryDescription, caption } } = resource.post
               const featuredImage = {
-                fluid: resource.post.acfPostTypeResource?.featuredImage?.localFile?.childImageSharp?.fluid,
+                fluid: resource.post.acfPostTypeResource?.featuredImage?.localFile?.childImageSharp?.gatsbyImageData,
                 alt: resource.post.acfPostTypeResource?.featuredImage?.altText || ``
               }
               return (
@@ -33,10 +33,9 @@ const ResourcesTemplate = ({ data: { page, resources } }) => {
                   <Link to={uri}>
                     <div className="card p-2">
                       {featuredImage.fluid ? (
-                        <BackgroundImage
-                          Tag="div"
+                        <BgImage
                           className={`card-img-top bg-image aspect-1x1 grayscale`}
-                          fluid={featuredImage.fluid}
+                          image={featuredImage.fluid}
                         />
                       ) : (
                         <div className={`card-img-top bg-image bg-black aspect-1x1`} />
@@ -72,35 +71,30 @@ const ResourcesTemplate = ({ data: { page, resources } }) => {
 
       <FooterCTAs featured={cta} />
     </Layout>
-  )
+  );
 }
 
-export const pageQuery = graphql`
-  query ResourcesTemplateQuery($id: String!) {
-    # selecting the current page by id
-    page: wpPage(id: { eq: $id }) {
-      ...PageDetails
-      ...PageIntro
-      ...PageHero
-      ...FooterCTAs
-    }
-    resources: allWpResource(sort: { fields: [date], order: DESC }) {
-      edges {
-        post: node {
-          id
-          title
-          uri
-          acfPostTypeResource {
-            summaryDescription
-            caption
-            featuredImage {
-              localFile {
-                publicURL
-                childImageSharp {
-                  fluid(maxWidth: 500, quality: 100) {
-                    ...GatsbyImageSharpFluid
-                  }
-                }
+export const pageQuery = graphql`query ResourcesTemplateQuery($id: String!) {
+  page: wpPage(id: {eq: $id}) {
+    ...PageDetails
+    ...PageIntro
+    ...PageHero
+    ...FooterCTAs
+  }
+  resources: allWpResource(sort: {fields: [date], order: DESC}) {
+    edges {
+      post: node {
+        id
+        title
+        uri
+        acfPostTypeResource {
+          summaryDescription
+          caption
+          featuredImage {
+            localFile {
+              publicURL
+              childImageSharp {
+                gatsbyImageData(width: 500, quality: 100, layout: CONSTRAINED)
               }
             }
           }
@@ -108,6 +102,7 @@ export const pageQuery = graphql`
       }
     }
   }
+}
 `
 
 export default ResourcesTemplate

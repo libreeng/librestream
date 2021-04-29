@@ -77,66 +77,61 @@ const SupportTemplate = ({ data: { page } }) => {
   )
 }
 
-export const pageQuery = graphql`
-  query SupportTemplateQuery($id: String!) {
-    # selecting the current page by id
-    page: wpPage(id: { eq: $id }) {
-      ...PageDetails
-      ...PageHero
-      ...FooterCTAs
-      acfSupportSections {
-        serviceStatusLink {
-          target
-          url
-          title
-        }
-        supportSections {
-          supportSectionTitle
-          sectionKnowledgebases {
-            kbTitle
-            knowledgebasePost {
-              ... on WpSupport {
-                id
-                title
-                acfKnowledgebase {
-                  kbImage {
-                    altText
-                    localFile {
-                      publicURL
-                      childImageSharp {
-                        fluid(maxWidth: 500, quality: 100) {
-                          ...GatsbyImageSharpFluid
-                        }
+export const pageQuery = graphql`query SupportTemplateQuery($id: String!) {
+  page: wpPage(id: {eq: $id}) {
+    ...PageDetails
+    ...PageHero
+    ...FooterCTAs
+    acfSupportSections {
+      serviceStatusLink {
+        target
+        url
+        title
+      }
+      supportSections {
+        supportSectionTitle
+        sectionKnowledgebases {
+          kbTitle
+          knowledgebasePost {
+            ... on WpSupport {
+              id
+              title
+              acfKnowledgebase {
+                kbImage {
+                  altText
+                  localFile {
+                    publicURL
+                    childImageSharp {
+                      gatsbyImageData(width: 500, quality: 100, layout: CONSTRAINED)
+                    }
+                  }
+                }
+                section {
+                  sectionTitle
+                  sectionType
+                  links {
+                    videoEmbed
+                    videoMp4 {
+                      mediaItemUrl
+                    }
+                    url
+                    linkType
+                    linkText
+                    pdf {
+                      localFile {
+                        publicURL
+                      }
+                    }
+                    content
+                    page {
+                      ... on WpPage {
+                        uri
                       }
                     }
                   }
-                  section {
-                    sectionTitle
-                    sectionType
-                    links {
-                      videoEmbed
-                      videoMp4 {
-                        mediaItemUrl
-                      }
-                      url
-                      linkType
-                      linkText
-                      pdf {
-                        localFile {
-                          publicURL
-                        }
-                      }
-                      content
-                      page {
-                        ... on WpPage {
-                          uri
-                        }
-                      }
-                    }
-                    faqs {
-                      answer
-                      question
-                    }
+                  faqs {
+                    answer
+                    question
                   }
                 }
               }
@@ -146,6 +141,7 @@ export const pageQuery = graphql`
       }
     }
   }
+}
 `
 
 export default SupportTemplate

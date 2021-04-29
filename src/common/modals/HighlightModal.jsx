@@ -2,8 +2,8 @@ import React from 'react'
 import PropTypes from 'prop-types'
 import { useDispatch } from 'react-redux'
 import { Modal } from 'react-bootstrap'
-
 import { closeModal } from './modalActions'
+
 
 
 
@@ -19,8 +19,8 @@ const HighlightModal = ({highlight}) => {
           <div className="row align-items-center">
             <div className="col-12">
               <div className="p-4 text-center">
-                {highlight.highlightIcon && (
-                  <img src={highlight.highlightIcon.localFile.url} className="img-fluid w-50" alt={highlight.highlightIcon.altText} />
+                {highlight.highlightIcon?.localFile && (
+                  <img src={highlight.highlightIcon?.localFile?.publicURL} className="img-fluid w-50" alt={highlight.highlightIcon.altText} />
                 )}
                 {highlight.highlightTitle && (
                   <>

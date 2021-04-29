@@ -1,10 +1,10 @@
 import React from 'react'
 import PropTypes from 'prop-types'
 import { graphql } from "gatsby"
+import { BgImage } from 'gbimage-bridge'
 import Hero from "../common/ui/Hero"
 import NextPrevMenu from '../common/ui/menus/NextPrevMenu'
 import parse from "html-react-parser"
-import BackgroundImage from 'gatsby-background-image'
 import SEO from "../containers/SEO"
 import CTA from '../common/ui/CTA'
 import FooterCTAs from '../common/ui/FooterCTAs'
@@ -17,7 +17,7 @@ const CaseStudy = ({ data: { previous, next, post } }) => {
     content: acf.articleContent,
     link: acf.articleLink,
     linkText: acf.articleLinkText,
-    image: acf.articleImage?.localFile.childImageSharp.fluid
+    image: acf.articleImage?.localFile?.childImageSharp?.gatsbyImageData
   }
 
   const pageCTA = post.acfCta
@@ -88,10 +88,9 @@ const CaseStudy = ({ data: { previous, next, post } }) => {
               </div>
               {article.image && (
                 <div className="col-lg-5">
-                  <BackgroundImage
-                    Tag="div"
+                  <BgImage
                     className="bg-image aspect-1x1 img-offset-top"
-                    fluid={article.image}
+                    image={article.image}
                   />
                 </div>
               )}
@@ -130,7 +129,6 @@ CaseStudy.propTypes = {
   next: PropTypes.string,
   previous: PropTypes.string,
 }
-
 export const pageQuery = graphql`
   query CaseStudyById(
     # these variables are passed in via createPage.pageContext in gatsby-node.js
@@ -179,9 +177,7 @@ export const pageQuery = graphql`
           ctaFeaturedImage {
             localFile {
               childImageSharp {
-                fluid(maxWidth: 500, quality: 100) {
-                  ...GatsbyImageSharpFluid
-                }
+                gatsbyImageData(width: 500, quality: 100, layout: CONSTRAINED)
               }
             }
           }
@@ -199,9 +195,7 @@ export const pageQuery = graphql`
           localFile {
             publicURL
             childImageSharp {
-              fluid(maxWidth: 1920, quality: 100) {
-                ...GatsbyImageSharpFluid
-              }
+              gatsbyImageData(quality: 100, layout: FULL_WIDTH)
             }
           }
         }
@@ -222,9 +216,7 @@ export const pageQuery = graphql`
           localFile {
             publicURL
             childImageSharp {
-              fluid(maxWidth: 1000, quality: 100) {
-                ...GatsbyImageSharpFluid
-              }
+              gatsbyImageData(quality: 100, layout: FULL_WIDTH)
             }
           }
         }
@@ -235,13 +227,11 @@ export const pageQuery = graphql`
       }
       content
     }
-
     # this gets us the previous post by id (if it exists)
     previous: wpPost(id: { eq: $previousPostId }) {
       uri
       title
     }
-
     # this gets us the next post by id (if it exists)
     next: wpPost(id: { eq: $nextPostId }) {
       uri

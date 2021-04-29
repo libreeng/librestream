@@ -1,7 +1,7 @@
 import React from 'react'
 import PropTypes from 'prop-types'
 import { Fade } from "react-slideshow-image"
-import BackgroundImage from 'gatsby-background-image'
+import { BgImage } from 'gbimage-bridge'
 
 const CarouselHero = ({ images, config, content }) => {
   const settings = {
@@ -18,16 +18,15 @@ const CarouselHero = ({ images, config, content }) => {
     <>
       <Fade {...settings}>
         {images && images.map((image, i) => (
-          <BackgroundImage
+          <BgImage
             key={`carouselHero_${i}`}
-            Tag="div"
             className="bg-image aspect-hero text-shadow"
-            fluid={image}
+            image={image}
             style={{
               backgroundPosition: 'bottom right'
             }}>
             {content}
-          </BackgroundImage>
+          </BgImage>
         ))}
       </Fade>
     </>

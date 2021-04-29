@@ -103,84 +103,71 @@ const ResourceTemplate = ({ data: { post } }) => {
   )
 }
 
-export const postQuery = graphql`
-  query ResourceById(
-    # these variables are passed in via createPage.pageContext in gatsby-node.js
-    $id: String!
-    $previousPostId: String
-    $nextPostId: String
-  ) {
-    # selecting the current post by id
-    post: wpResource(id: { eq: $id }) {
-      id
+export const postQuery = graphql`query ResourceById($id: String!, $previousPostId: String, $nextPostId: String) {
+  post: wpResource(id: {eq: $id}) {
+    id
+    title
+    uri
+    slug
+    content
+    seo {
       title
-      uri
-      slug
-      content
-      seo {
-        title
-        canonical
-        metaDesc
-        metaRobotsNofollow
-        metaRobotsNoindex
-        opengraphSiteName
-        opengraphTitle
-        opengraphUrl
-        opengraphType
-        opengraphModifiedTime
-        opengraphImage {
-          sourceUrl
-        }
-        twitterTitle
-        twitterDescription
-        twitterImage {
-          sourceUrl
-        }
+      canonical
+      metaDesc
+      metaRobotsNofollow
+      metaRobotsNoindex
+      opengraphSiteName
+      opengraphTitle
+      opengraphUrl
+      opengraphType
+      opengraphModifiedTime
+      opengraphImage {
+        sourceUrl
       }
-      acfHero {
-        heroFeaturedImage {
-          altText
-          localFile {
-            publicURL
-          }
-        }
-        heroBackgroundImage {
-          altText
-          localFile {
-            publicURL
-            childImageSharp {
-              fluid(maxWidth: 1920, quality: 100) {
-                ...GatsbyImageSharpFluid
-              }
-            }
-          }
-        }
-      }
-      acfPostTypeResource {
-        fieldGroupName
-        embed
-        document {
-          localFile {
-            publicURL
-          }
-        }
-        leftColumn
-        rightColumn
+      twitterTitle
+      twitterDescription
+      twitterImage {
+        sourceUrl
       }
     }
-    # previous and next be able to be migrated to PostFields fragment not sure?
-    # this gets us the previous post by id (if it exists)
-    previous: wpPost(id: { eq: $previousPostId }) {
-      uri
-      title
+    acfHero {
+      heroFeaturedImage {
+        altText
+        localFile {
+          publicURL
+        }
+      }
+      heroBackgroundImage {
+        altText
+        localFile {
+          publicURL
+          childImageSharp {
+            gatsbyImageData(quality: 100, layout: FULL_WIDTH)
+          }
+        }
+      }
     }
-
-    # this gets us the next post by id (if it exists)
-    next: wpPost(id: { eq: $nextPostId }) {
-      uri
-      title
+    acfPostTypeResource {
+      fieldGroupName
+      embed
+      document {
+        localFile {
+          publicURL
+        }
+      }
+      leftColumn
+      rightColumn
     }
   }
+  previous: wpPost(id: {eq: $previousPostId}) {
+    uri
+    title
+  }
+  next: wpPost(id: {eq: $nextPostId}) {
+    uri
+    title
+  }
+}
 `
 
 export default ResourceTemplate

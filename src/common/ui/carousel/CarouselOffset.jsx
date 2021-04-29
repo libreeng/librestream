@@ -1,7 +1,7 @@
 import React from 'react'
 import PropTypes from 'prop-types'
 import Carousel from 'react-bootstrap/Carousel'
-import BackgroundImage from 'gatsby-background-image'
+import { BgImage } from 'gbimage-bridge'
 
 const CarouselOffset = ({ slides, interval = 10000 }) => {
   return (
@@ -11,16 +11,15 @@ const CarouselOffset = ({ slides, interval = 10000 }) => {
           <div className="col-12">
             <Carousel className="carousel-fade" interval={interval}>
               {slides && slides.map((slide, i) => {
-
+                const bgImage = slide.carouselSlideFeaturedImage?.localFile?.childImageSharp?.gatsbyImageData
                 return (
                   <Carousel.Item key={i}>
                     <div className="row">
                       <div className="col-12 col-lg-5 col-xl-6">
                         {slide.carouselSlideFeaturedImage && (
-                          <BackgroundImage
-                            Tag="div"
+                          <BgImage
                             className="bg-image"
-                            fluid={slide.carouselSlideFeaturedImage.localFile.childImageSharp.fluid}
+                            image={bgImage}
                           />
                         )}
                       </div>
@@ -36,14 +35,14 @@ const CarouselOffset = ({ slides, interval = 10000 }) => {
                       </div>
                     </div>
                   </Carousel.Item>
-                )
+                );
               })}
             </Carousel>
           </div>
         </div>
       </div>
     </section>
-  )
+  );
 }
 
 CarouselOffset.propTypes = {

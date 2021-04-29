@@ -9,7 +9,7 @@ import NavPointer from '../NavPointer'
 
 const PrimaryMenu = () => {
   const { menuItems, logo } = useSiteHeader()
-  const { title } = useSiteMetadata()
+  const { defaultSEO: {title} } = useSiteMetadata()
   const [arrowPos, setArrowPos] = useState(-10)
   const menu = menuItems.filter(node => !node.parentId)
 
@@ -59,7 +59,7 @@ const PrimaryMenu = () => {
           </div>
         </Navbar.Toggle>
         <Navbar.Collapse id="mainnav" >
-          <Nav id="usernav" className="nav flex-row justify-content-center justify-content-lg-end">
+          <Nav as="ul" id="usernav" className="nav flex-row justify-content-center justify-content-lg-end">
             {/* TODO: Add logic for CMS */}
             <li className="nav-item d-none">
               <a href="#" className="nav-link">

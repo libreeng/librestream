@@ -69,82 +69,69 @@ Solution.propTypes = {
   previous: PropTypes.string,
 }
 
-export const pageQuery = graphql`
-  query SolutionById(
-    # these variables are passed in via createPage.pageContext in gatsby-node.js
-    $id: String!
-    $previousPostId: String
-    $nextPostId: String
-  ) {
-    # selecting the current post by id
-    post: wpSolution(id: { eq: $id }) {
-      ...SolutionIntro
-      ...SolutionStats
-      id
+export const pageQuery = graphql`query SolutionById($id: String!, $previousPostId: String, $nextPostId: String) {
+  post: wpSolution(id: {eq: $id}) {
+    ...SolutionIntro
+    ...SolutionStats
+    id
+    title
+    uri
+    slug
+    content
+    seo {
       title
-      uri
-      slug
-      content
-      seo {
-        title
-        canonical
-        metaDesc
-        metaRobotsNofollow
-        metaRobotsNoindex
-        opengraphSiteName
-        opengraphTitle
-        opengraphUrl
-        opengraphType
-        opengraphModifiedTime
-        opengraphImage {
-          sourceUrl
-        }
-        twitterTitle
-        twitterDescription
-        twitterImage {
-          sourceUrl
-        }
+      canonical
+      metaDesc
+      metaRobotsNofollow
+      metaRobotsNoindex
+      opengraphSiteName
+      opengraphTitle
+      opengraphUrl
+      opengraphType
+      opengraphModifiedTime
+      opengraphImage {
+        sourceUrl
       }
-      acfHero {
-        heroFeaturedImage {
-          altText
-          localFile {
-            publicURL
-          }
-        }
-        heroBackgroundImage {
-          altText
-          localFile {
-            publicURL
-            childImageSharp {
-              fluid(maxWidth: 1920, quality: 100) {
-                ...GatsbyImageSharpFluid
-              }
-            }
-          }
-        }
-      }
-      acfPostTypeSolution {
-        solutionLink {
-          target
-          title
-          url
-        }
+      twitterTitle
+      twitterDescription
+      twitterImage {
+        sourceUrl
       }
     }
-
-    # this gets us the previous post by id (if it exists)
-    previous: wpPost(id: { eq: $previousPostId }) {
-      uri
-      title
+    acfHero {
+      heroFeaturedImage {
+        altText
+        localFile {
+          publicURL
+      }
     }
-
-    # this gets us the next post by id (if it exists)
-    next: wpPost(id: { eq: $nextPostId }) {
-      uri
-      title
+    heroBackgroundImage {
+      altText
+      localFile {
+        publicURL
+        childImageSharp {
+          gatsbyImageData(quality: 100, layout: FULL_WIDTH)
+        }
+      }
     }
   }
+  acfPostTypeSolution {
+    solutionLink {
+      target
+      title
+      url
+    }
+  }
+}
+previous: wpPost(id: { eq: $previousPostId }) {
+  uri
+  title
+}
+next: wpPost(id: { eq: $nextPostId }) {
+  uri
+  title
+}
+}
 `
 
 export default Solution

@@ -1,6 +1,6 @@
 import React from 'react'
 import PropTypes from 'prop-types'
-import Image from "gatsby-image"
+import { GatsbyImage } from "gatsby-plugin-image";
 import { Accordion, Card, Button } from 'react-bootstrap'
 import AddLineIcon from 'remixicon-react/AddLineIcon'
 import { slugify } from '../../common/utils/helpers'
@@ -9,10 +9,8 @@ import SupportKnowledgebaseLink from '../../components/support/SupportKnowledgeb
 
 const SupportKnowledgeBase = ({ title, post }) => {
   const {acfKnowledgebase:{section}} = post
-  const featuredImage = {
-    fluid: post.acfKnowledgebase?.kbImage?.localFile?.childImageSharp?.fluid,
-    alt: post.acfKnowledgebase?.kbImage?.altText || ``
-  }
+  const featuredImageData = post.acfKnowledgebase?.kbImage?.localFile?.childImageSharp?.gatsbyImageData
+  const featuredImageAlt= post.acfKnowledgebase?.kbImage?.altText || ``
 
   return (
     <div className="list-group-item border-0 px-0" id={post.id}>
@@ -54,18 +52,17 @@ const SupportKnowledgeBase = ({ title, post }) => {
           </Accordion>
         </div>
         <div className="col-lg-3 ml-lg-auto">
-          {featuredImage.fluid && (
-            <Image
-              fluid={featuredImage.fluid}
-              alt={featuredImage.alt}
-              style={{ marginBottom: 50 }}
-            />
+          {featuredImageData && (
+            <GatsbyImage
+              image={featuredImageData}
+              alt={featuredImageAlt}
+              style={{ marginBottom: 50 }} />
           )}
         </div>
 
       </div>
     </div>
-  )
+  );
 }
 
 SupportKnowledgeBase.propTypes = {

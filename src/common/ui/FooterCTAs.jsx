@@ -1,7 +1,7 @@
 import React from 'react'
 import PropTypes from 'prop-types'
 import { Link } from "gatsby"
-import BackgroundImage from 'gatsby-background-image'
+import { BgImage } from 'gbimage-bridge'
 import { useSiteFooter } from '../hooks/useSiteFooter'
 
 const FooterCTAs = ({ featured }) => {
@@ -18,14 +18,14 @@ const FooterCTAs = ({ featured }) => {
         <div className="row">
           {featuredCTAs && featuredCTAs.map((cta, i) => {
             const { ctaTitle, ctaLink, ctaFeaturedImage } = cta
-            const featuredImage = ctaFeaturedImage?.localFile?.childImageSharp?.fluid
+            const featuredImage = ctaFeaturedImage?.localFile?.childImageSharp?.gatsbyImageData
 
             return (
               <div key={`cta_${i}`} className="col-12 col-lg-4">
                 <Link to={ctaLink?.url || '#footerCTAs'}>
                   <div className="card p-2 bg-transparent">
                     {featuredImage ? (
-                      <BackgroundImage Tag="div" className="card-img-top bg-image aspect-1x1 grayscale" fluid={featuredImage} />
+                      <BgImage image={featuredImage} className="card-img-top bg-image aspect-1x1 grayscale" />
                     ):(
                       <div className="card-img-top bg-image aspect-1x1 grayscale" style={{ backgroundImage: `url('https://via.placeholder.com/400/000/000')` }} />
                     )}
@@ -40,7 +40,7 @@ const FooterCTAs = ({ featured }) => {
         </div>
       </div>
     </section>
-  )
+  );
 }
 
 FooterCTAs.propTypes = {

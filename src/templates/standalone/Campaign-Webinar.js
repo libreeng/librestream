@@ -1,6 +1,6 @@
 import React from "react"
 import { graphql } from "gatsby"
-import Image from "gatsby-image"
+import { GatsbyImage } from "gatsby-plugin-image";
 import parse from "html-react-parser"
 import SEO from "../../containers/SEO"
 import Hero from "../../common/ui/Hero"
@@ -12,6 +12,8 @@ const CampaignWebinarTemplate = ({ data: { page } }) => {
   const acf = page.acfTemplateCampaignWebinar
   const hero = page.acfHero
   const { cta } = page.acfFooterCTAs
+  const featuredImageData = acf.featuredImage?.localFile?.childImageSharp?.gatsbyImageData
+  const featuredImageAlt = acf.featuredImage.altText || ``
 
   return (
     <Layout>
@@ -39,11 +41,10 @@ const CampaignWebinarTemplate = ({ data: { page } }) => {
             <div className="col-lg-6">
               <div className="sticky-top">
                 {page.content && parse(page.content)}
-                {acf.featuredImage && (
-                  <Image
-                    fluid={acf.featuredImage?.localFile?.childImageSharp.fluid}
-                    alt={acf.featuredImage.altText}
-                  />
+                {featuredImageData && (
+                  <GatsbyImage
+                    image={featuredImageData}
+                    alt={featuredImageAlt} />
                 )}
               </div>
             </div>
@@ -62,33 +63,29 @@ const CampaignWebinarTemplate = ({ data: { page } }) => {
 
       <FooterCTAs featured={cta} />
     </Layout>
-  )
+  );
 }
 
-export const pageQuery = graphql`
-  query CampaignWebinarTemplateQuery($id: String!) {
-    # selecting the current page by id
-    page: wpPage(id: { eq: $id }) {
-      ...PageDetails
-      ...PageHero
-      ...FooterCTAs
-      acfTemplateCampaignWebinar {
-        featuredImage {
-          altText
-          localFile {
-            publicURL
-            childImageSharp {
-              fluid(maxWidth: 1000, quality: 100) {
-                ...GatsbyImageSharpFluid
-              }
-            }
+export const pageQuery = graphql`query CampaignWebinarTemplateQuery($id: String!) {
+  page: wpPage(id: {eq: $id}) {
+    ...PageDetails
+    ...PageHero
+    ...FooterCTAs
+    acfTemplateCampaignWebinar {
+      featuredImage {
+        altText
+        localFile {
+          publicURL
+          childImageSharp {
+            gatsbyImageData(quality: 100, layout: FULL_WIDTH)
           }
         }
-        formEmbed
-        intro
       }
+      formEmbed
+      intro
     }
   }
+}
 `
 
 export default CampaignWebinarTemplate
