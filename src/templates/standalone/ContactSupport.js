@@ -27,7 +27,7 @@ const ContactSupportTemplate = ({ data: { page } }) => {
               function onloadCallback() {
                 try{
                   grecaptcha.render('g-recaptcha', {
-                    'sitekey' : '${process.env.RECAPTCHA_SITE_KEY}',
+                    'sitekey' : '${process.env.RECAPTCHA_SITE_KEY || '6Lcdu70aAAAAAPXJw-zXwUNk7ulMJtwGifOBRTsS'}',
                     'badge' : 'att',
                     'size' : 'att',
                     'tabindex' : 0,
