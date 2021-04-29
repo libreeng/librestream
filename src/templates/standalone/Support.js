@@ -92,6 +92,15 @@ export const pageQuery = graphql`query SupportTemplateQuery($id: String!) {
         supportSectionTitle
         sectionKnowledgebases {
           kbTitle
+          linktarget
+          pageToLinkTo {
+            ... on WpSupport {
+              uri
+            }
+            ... on WpPage {
+              uri
+            }
+          }
           knowledgebasePost {
             ... on WpSupport {
               id

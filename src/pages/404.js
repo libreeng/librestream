@@ -1,5 +1,6 @@
 import React from 'react'
 import Hero from "../common/ui/Hero"
+import Helmet from 'react-helmet'
 
 const NotFoundPage = () => {
   const hero = {
@@ -7,6 +8,9 @@ const NotFoundPage = () => {
   }
   return (
     <>
+      <Helmet 
+         title="Librestream | Page not found"
+      />
       <Hero hero={hero} />
       <section>
         <div className="container mt-5">

@@ -7,6 +7,7 @@ import BoardModal from './BoardModal'
 import HighlightModal from './HighlightModal'
 import SupportModal from './SupportModal'
 import VideoModal from './VideoModal'
+import ContentModal from './ContentModal'
 
 const modalLookup = {
   TestModal,
@@ -14,7 +15,8 @@ const modalLookup = {
   BoardModal,
   HighlightModal,
   SupportModal,
-  VideoModal
+  VideoModal,
+  ContentModal
 }
 
 const ModalWrapper = () => {
