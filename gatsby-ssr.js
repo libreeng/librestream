@@ -42,18 +42,5 @@ export const onRenderBody = ({ setPostBodyComponents }) => {
       src="/js/iframeResize.js"
       defer
     />,
-    // <script
-    //   key="captchaScript"
-    //   id="captchaScript"
-    //   src="/js/captcha.js"
-    //   defer
-    // />,
-    // <script
-    //   key="recaptcha"
-    //   id="recaptcha"
-    //   src="https://www.google.com/recaptcha/api.js"
-    //   defer
-    // />,
-
   ])
 }
