@@ -96,6 +96,9 @@ export const pageQuery = graphql`
             introFeaturedImage {
               localFile {
                 publicURL
+                childImageSharp {
+                  gatsbyImageData(width: 500, quality: 100, layout: CONSTRAINED)
+                }
               }
             }
           }
