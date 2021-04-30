@@ -51,8 +51,23 @@ const ContactSupportTemplate = ({ data: { page } }) => {
           {
             type: `text/javascript`,
             src: `https://www.google.com/recaptcha/api.js?onload=onloadCallback&render=explicit`,
+            //src: `https://www.google.com/recaptcha/api.js`,
             async: true,
             defer: true
+          },
+          {
+            type: `text/javascript`,
+            innerHTML: `
+              function timestamp() { 
+                var response = document.getElementById("g-recaptcha-response"); 
+                if (response == null || response.value.trim() == "") {
+                  var elems = JSON.parse(document.getElementsByName("captcha_settings")[0].value);
+                  elems["ts"] = JSON.stringify(new Date().getTime());
+                  document.getElementsByName("captcha_settings")[0].value = JSON.stringify(elems); 
+                } 
+              } 
+              setInterval(timestamp, 500);
+            `
           }
         ]}
       />
