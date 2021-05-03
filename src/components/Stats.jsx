@@ -19,13 +19,7 @@ const Stats = ({ stats }) => {
                     {numberPrefix && (
                       <span className="stat-descriptor">{numberPrefix}</span>
                     )}
-                    <CountUp start={0} end={number && number} redraw={true} >
-                        {({ countUpRef, start }) => (
-                            <VisibilitySensor onChange={start} partialVisibility={true} >
-                                <span ref={countUpRef} />
-                            </VisibilitySensor>
-                        )}
-                    </CountUp>
+                    <CountUp end={number && number} />
                     {descriptor && (
                       <span className="stat-descriptor">{descriptor}</span>
                     )}
