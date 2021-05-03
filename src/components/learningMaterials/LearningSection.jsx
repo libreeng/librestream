@@ -19,7 +19,7 @@ const learningSection = ({ instance }) =>
             <div id={slugify(sectionInstance.sectionTitle)} key={slugify(sectionInstance.sectionTitle)}>
               <h4 className=" mt-5">{sectionInstance.sectionTitle}</h4>
               <div className="row">
-                {sectionInstance.items.acfPostLearningMaterial.links && sectionInstance.items.acfPostLearningMaterial.links.map((link, i) => {
+                {sectionInstance.items.acfPostLearningMaterial?.links && sectionInstance.items.acfPostLearningMaterial.links.map((link, i) => {
                   return (
                     <div className="col-12 col-lg-6" key={`learning-link-${i}`}>
                       <LearningLink link={link} />
