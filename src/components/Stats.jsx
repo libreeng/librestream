@@ -2,6 +2,7 @@ import React from 'react'
 import PropTypes from 'prop-types'
 import parse from "html-react-parser"
 import CountUp from 'react-countup';
+import VisibilitySensor from 'react-visibility-sensor';
 
 const Stats = ({ stats }) => {
   return (

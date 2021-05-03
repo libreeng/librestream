@@ -53,6 +53,7 @@
     "react-slideshow-image": "^3.4.6",
     "react-text-mask": "^5.4.3",
     "react-use-flexsearch": "^0.1.1",
+    "react-visibility-sensor": "^5.1.1",
     "redux": "^4.0.5",
     "remixicon": "^2.5.0",
     "remixicon-react": "^1.0.0",

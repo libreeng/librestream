@@ -27,7 +27,7 @@ const ContactSupportTemplate = ({ data: { page } }) => {
               function onloadCallback() {
                 try{
                   grecaptcha.render('g-recaptcha', {
-                    'sitekey' : '${process.env.RECAPTCHA_SITE_KEY || '6Lcdu70aAAAAAPXJw-zXwUNk7ulMJtwGifOBRTsS'}',
+                    'sitekey' : '${process.env.RECAPTCHA_SITE_KEY || '6Lev7t0ZAAAAAO_BHBw7BIftHcrY9cB78Y37IIxq'}',
                     'badge' : 'att',
                     'size' : 'att',
                     'tabindex' : 0,
@@ -51,8 +51,23 @@ const ContactSupportTemplate = ({ data: { page } }) => {
           {
             type: `text/javascript`,
             src: `https://www.google.com/recaptcha/api.js?onload=onloadCallback&render=explicit`,
+            //src: `https://www.google.com/recaptcha/api.js`,
             async: true,
             defer: true
+          },
+          {
+            type: `text/javascript`,
+            innerHTML: `
+              function timestamp() { 
+                var response = document.getElementById("g-recaptcha-response"); 
+                if (response == null || response.value.trim() == "") {
+                  var elems = JSON.parse(document.getElementsByName("captcha_settings")[0].value);
+                  elems["ts"] = JSON.stringify(new Date().getTime());
+                  document.getElementsByName("captcha_settings")[0].value = JSON.stringify(elems); 
+                } 
+              } 
+              setInterval(timestamp, 500);
+            `
           }
         ]}
       />
