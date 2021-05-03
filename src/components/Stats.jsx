@@ -2,6 +2,7 @@ import React from 'react'
 import PropTypes from 'prop-types'
 import parse from "html-react-parser"
 import CountUp from 'react-countup';
+import VisibilitySensor from 'react-visibility-sensor';
 
 const Stats = ({ stats }) => {
   return (
@@ -18,7 +19,13 @@ const Stats = ({ stats }) => {
                     {numberPrefix && (
                       <span className="stat-descriptor">{numberPrefix}</span>
                     )}
-                    <CountUp end={number && number} />
+                    <CountUp start={0} end={number && number} redraw={true} >
+                        {({ countUpRef, start }) => (
+                            <VisibilitySensor onChange={start} partialVisibility={true} >
+                                <span ref={countUpRef} />
+                            </VisibilitySensor>
+                        )}
+                    </CountUp>
                     {descriptor && (
                       <span className="stat-descriptor">{descriptor}</span>
                     )}
