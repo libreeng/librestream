@@ -9,6 +9,8 @@ const learningSection = ({ instance }) =>
 {
   const { materialsTitle, section } = instance
   const slug = slugify(materialsTitle)
+
+  
   return (
     <>
       <div key={slug} className="row">
@@ -16,10 +18,13 @@ const learningSection = ({ instance }) =>
           <h3 className="mb-3 mt-5">{materialsTitle}</h3>
           <hr />
           {section && section.map(sectionInstance => (
+            sectionInstance.items &&
             <div id={slugify(sectionInstance.sectionTitle)} key={slugify(sectionInstance.sectionTitle)}>
               <h4 className=" mt-5">{sectionInstance.sectionTitle}</h4>
               <div className="row">
-                {sectionInstance.items.acfPostLearningMaterial?.links && sectionInstance.items.acfPostLearningMaterial.links.map((link, i) => {
+                
+                {sectionInstance.items.acfPostLearningMaterial.links && sectionInstance.items.acfPostLearningMaterial.links.map((link, i) => {
+                
                   return (
                     <div className="col-12 col-lg-6" key={`learning-link-${i}`}>
                       <LearningLink link={link} />
@@ -28,6 +33,7 @@ const learningSection = ({ instance }) =>
                 })}
               </div>
             </div>
+             
           ))}
         </div>
       </div>
