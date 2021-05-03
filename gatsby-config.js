@@ -53,7 +53,7 @@ module.exports = {
           MediaItem: {
             localFile: {
               maxFileSizeBytes: 1048576000, // 1GB
-              // requestConcurrency: 10, // updated by Paul because he could not build due to timeout errors.
+              //requestConcurrency: 5, // updated by Paul because he could not build due to timeout errors.
             },
           },
         },
@@ -160,6 +160,13 @@ module.exports = {
       },
     },
     'gatsby-plugin-react-helmet',
-    'gatsby-plugin-gatsby-cloud',
+    {
+      resolve: `gatsby-plugin-gatsby-cloud`,
+      options: {
+        allPageHeaders:[          
+          "x-frame-options: SAMEORIGIN",          
+        ]
+      },
+    },
   ],
 }
