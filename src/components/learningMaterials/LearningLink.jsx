@@ -78,7 +78,7 @@ const LearningLink = ({ link }) => {
           </button>
         ),
         'Page': (
-          <a href={link.page?.uri}>
+          <a href={link.page?.link}>
             <div className="row align-items-center mb-3">
               <div className="col-12 col-lg-4">
                 <BgImage
