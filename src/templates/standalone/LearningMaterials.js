@@ -26,7 +26,6 @@ const LearningMaterialsTemplate = ({ data: { page } }) => {
       <section>
         <div className="container">
           <div className="row">
-            TEST Preview Bug
             <div className="col-12 col-lg-4">
               <LearningNav sections={materials} />
             </div>
@@ -84,7 +83,6 @@ export const pageQuery = graphql`query LearningMaterialsTemplateQuery($id: Strin
                   page {
                     ... on WpPage {
                       uri
-                      link
                     }
                   }
                   videoEmbed
