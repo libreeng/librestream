@@ -23,7 +23,7 @@ const ContactSupportTemplate = ({ data: { page } }) => {
         script={[        
           {
             type: `text/javascript`,
-            src: `https://www.google.com/recaptcha/api.js?onload=onloadCallback&render=${process.env.RECAPTCHA_SITE_KEY}`,
+            src: `https://www.google.com/recaptcha/api.js?onload=onloadCallback&render=${process.env.GATSBY_RECAPTCHA_SITE_KEY}`,
             async: true,
             defer: true
           },
@@ -34,7 +34,7 @@ const ContactSupportTemplate = ({ data: { page } }) => {
               grecaptcha.ready(function() {
                 // do request for recaptcha token
                 // response is promise with passed token
-                grecaptcha.execute('${process.env.RECAPTCHA_SITE_KEY}', {action:'validate_captcha'}).then(function(token) {
+                grecaptcha.execute('${process.env.GATSBY_RECAPTCHA_SITE_KEY}', {action:'validate_captcha'}).then(function(token) {
                   // add token value to form
                   document.getElementById('g-recaptcha-response').value = token;
                 });
