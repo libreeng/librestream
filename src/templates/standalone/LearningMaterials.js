@@ -83,6 +83,7 @@ export const pageQuery = graphql`query LearningMaterialsTemplateQuery($id: Strin
                   page {
                     ... on WpPage {
                       uri
+                      link
                     }
                   }
                   videoEmbed
