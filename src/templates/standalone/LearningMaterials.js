@@ -71,7 +71,7 @@ export const pageQuery = graphql`query LearningMaterialsTemplateQuery($id: Strin
               acfPostLearningMaterial {
                 links {
                   linkImage {
-                    localFile {d
+                    localFile {
                       childImageSharp {
                         gatsbyImageData(width: 500, quality: 100, layout: CONSTRAINED)
                       }
