@@ -71,7 +71,7 @@ export const pageQuery = graphql`query LearningMaterialsTemplateQuery($id: Strin
               acfPostLearningMaterial {
                 links {
                   linkImage {
-                    localFile {
+                    localFile {d
                       childImageSharp {
                         gatsbyImageData(width: 500, quality: 100, layout: CONSTRAINED)
                       }
@@ -80,7 +80,11 @@ export const pageQuery = graphql`query LearningMaterialsTemplateQuery($id: Strin
                   linkText
                   linkType
                   url
-                 
+                  page {
+                    ... on WpPage {
+                      link
+                    }
+                  }
                   videoEmbed
                   videoMp4 {
                     mediaItemUrl
