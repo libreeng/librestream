@@ -80,11 +80,6 @@ export const pageQuery = graphql`query LearningMaterialsTemplateQuery($id: Strin
                   linkText
                   linkType
                   url
-                  page {
-                    ... on WpPage {
-                      uri
-                    }
-                  }
                   videoEmbed
                   videoMp4 {
                     mediaItemUrl
