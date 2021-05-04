@@ -53,6 +53,7 @@ module.exports = {
           MediaItem: {
             localFile: {
               maxFileSizeBytes: 1048576000, // 1GB
+              //requestConcurrency: 10 // set this to a low number if you get timeout errors when building
             },
           },
         },
