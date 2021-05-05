@@ -20,53 +20,26 @@ const ContactSupportTemplate = ({ data: { page } }) => {
   return (
     <>
       <Helmet
-        script={[
+        script={[        
           {
             type: `text/javascript`,
-            innerHTML: `
-              function onloadCallback() {
-                try{
-                  grecaptcha.render('g-recaptcha', {
-                    'sitekey' : '${process.env.RECAPTCHA_SITE_KEY || '6Lev7t0ZAAAAAO_BHBw7BIftHcrY9cB78Y37IIxq'}',
-                    'badge' : 'att',
-                    'size' : 'att',
-                    'tabindex' : 0,
-                    'callback' : function(token) {
-                      //..
-                    },
-                    'expired-callback' : function() {
-                      //...
-                    },
-                    'error-callback' : function() {
-                      //...
-                    },
-                    'isolated' : false
-                  });
-                }catch(error){
-                  console.log("There is another instance of captcha.")
-                }
-              }
-            `
-          },
-          {
-            type: `text/javascript`,
-            src: `https://www.google.com/recaptcha/api.js?onload=onloadCallback&render=explicit`,
-            //src: `https://www.google.com/recaptcha/api.js`,
+            src: `https://www.google.com/recaptcha/api.js?onload=onloadCallback&render=${process.env.GATSBY_RECAPTCHA_SITE_KEY}`,
             async: true,
             defer: true
           },
           {
             type: `text/javascript`,
             innerHTML: `
-              function timestamp() { 
-                var response = document.getElementById("g-recaptcha-response"); 
-                if (response == null || response.value.trim() == "") {
-                  var elems = JSON.parse(document.getElementsByName("captcha_settings")[0].value);
-                  elems["ts"] = JSON.stringify(new Date().getTime());
-                  document.getElementsByName("captcha_settings")[0].value = JSON.stringify(elems); 
-                } 
-              } 
-              setInterval(timestamp, 500);
+            function onloadCallback() {
+              grecaptcha.ready(function() {
+                // do request for recaptcha token
+                // response is promise with passed token
+                grecaptcha.execute('${process.env.GATSBY_RECAPTCHA_SITE_KEY}', {action:'validate_captcha'}).then(function(token) {
+                  // add token value to form
+                  document.getElementById('g-recaptcha-response').value = token;
+                });
+              });
+            }
             `
           }
         ]}
