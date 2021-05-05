@@ -6,6 +6,7 @@
     url("../includes/fonts/13ba9c94a7f164d315c9044db6d513ef.woff2") format("woff2"),
     url("../includes/fonts/13ba9c94a7f164d315c9044db6d513ef.woff") format("woff"),
     url("../includes/fonts/13ba9c94a7f164d315c9044db6d513ef.ttf") format("truetype");
+  font-display: swap;
 }
 @font-face {
   font-family: "DIN Next LT Pro";
@@ -15,6 +16,7 @@
     url("../includes/fonts/DINNextLTPro-LightCondensed.woff2") format("woff2"),
     url("../includes/fonts/DINNextLTPro-LightCondensed.woff") format("woff"),
     url("../includes/fonts/DINNextLTPro-LightCondensed.ttf") format("truetype");
+  font-display: swap;
 }
 @font-face {
   font-family: "DIN Next LT Pro";
@@ -24,6 +26,7 @@
     url("../includes/fonts/DINNextLTPro-UltraLightCond.woff2") format("woff2"),
     url("../includes/fonts/DINNextLTPro-UltraLightCond.woff") format("woff"),
     url("../includes/fonts/DINNextLTPro-UltraLightCond.ttf") format("truetype");
+  font-display: swap;
 }
 
 body {
