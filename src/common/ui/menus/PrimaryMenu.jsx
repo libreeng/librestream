@@ -5,7 +5,6 @@ import { Navbar, Nav, NavDropdown } from 'react-bootstrap'
 import SearchLineIcon from 'remixicon-react/SearchLineIcon'
 import { useSiteMetadata } from '../../hooks/useSiteMetadata'
 import { useSiteHeader } from '../../hooks/useSiteHeader'
-import NavPointer from '../NavPointer'
 
 const PrimaryMenu = () => {
   const { menuItems, logo } = useSiteHeader()
@@ -13,36 +12,13 @@ const PrimaryMenu = () => {
   const [arrowPos, setArrowPos] = useState(-10)
   const menu = menuItems.filter(node => !node.parentId)
 
-  const handleArrowMove = (leftPosition) => {
-    setArrowPos(leftPosition)
-  }
-  const moveHighlightToElement = (elem) => {
-    const centerPos = elem.getBoundingClientRect().left + (elem.getBoundingClientRect().width / 2)
-    handleArrowMove(centerPos)
-  }
   const highlightedNavRef = useRef(null)
   // TODO: the "ActiveKey" variable on Nav needs work to incorporate sub-pages
   const activeKey = null // window.location.pathname ! Window is not defined when doing a build.
 
-  useEffect(() => {
-    if (highlightedNavRef.current) {
-      moveHighlightToElement(highlightedNavRef.current)
-    }
-  }, [])
 
   function isHighlightedNav(path) {
     return activeKey === path ? highlightedNavRef : null
-  }
-
-  const handleNavMouseEnter = (e) => {
-    moveHighlightToElement(e.target)
-    // console.log("MOUSE ENTER",e.target.getBoundingClientRect());
-  }
-  const handleNavMouseLeave = () => {
-    if (highlightedNavRef.current) {
-      moveHighlightToElement(highlightedNavRef.current)
-    }
-    // console.log("MOUSE LEAVE",highlightedNavRef.current.getBoundingClientRect());
   }
 
   return (
@@ -81,8 +57,6 @@ const PrimaryMenu = () => {
                 <NavDropdown
                   key={item.id}
                   ref={isHighlightedNav(item.path)}
-                  onMouseEnter={handleNavMouseEnter}
-                  onMouseLeave={handleNavMouseLeave}
                   title={item.label}
                   className="megamenu"
                 >
@@ -92,18 +66,17 @@ const PrimaryMenu = () => {
                 </NavDropdown>
               ) : (
                 <Nav.Item key={item.id}>
-                  <Nav.Link ref={isHighlightedNav(item.path)} onMouseEnter={handleNavMouseEnter} onMouseLeave={handleNavMouseLeave} href={item.path}>{item.label}</Nav.Link>
+                  <Nav.Link ref={isHighlightedNav(item.path)} href={item.path}>{item.label}</Nav.Link>
                 </Nav.Item>
               )
             })}
           </Nav>
         </Navbar.Collapse>
       </Navbar>
-      <NavPointer arrowPos={arrowPos} />
+      
     </>
   )
 }
-
 PrimaryMenu.propTypes = {
 
 }
