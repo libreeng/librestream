@@ -132,14 +132,6 @@ module.exports = {
     },
     'gatsby-plugin-sitemap',
     {
-      resolve: "gatsby-plugin-web-font-loader",
-      options: {
-        typekit: {
-          id: process.env.TYPEKIT_ID
-        },
-      },
-    },
-    {
       resolve: "gatsby-plugin-google-tagmanager",
       options: {
         id: "GTM-W3BZNJ2",
