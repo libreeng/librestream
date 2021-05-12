@@ -1,6 +1,6 @@
 "use strict";
 window.addEventListener('scroll', function(e) {
-  setTimeout(() => {
+  setTimeout(function(){
     // Drift code here
     !function () {
       var t = window.driftt = window.drift = window.driftt || [];
