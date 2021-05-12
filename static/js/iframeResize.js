@@ -45,8 +45,6 @@ function gotResizeMessage(event)
 		if( matches[i].contentWindow == event.source ) // found the iFrame that sent us a message
 		{
 			//console.log("found iframe that sent a message: " + matches[i].src)
-			console.log(event)
-			console.log(event.data)
 				
 			if(typeof event.data.height !== 'undefined') {
 				//matches[i].width = Number( event.data.width )	 <--- we do not do anything with the page width for now
