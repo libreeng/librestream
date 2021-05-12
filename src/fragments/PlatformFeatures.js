@@ -14,7 +14,7 @@ export const PlatformFeatures = graphql`fragment PlatformFeatures on WpPage {
         localFile {
           publicURL
           childImageSharp {
-            gatsbyImageData(width: 800, quality: 100, layout: CONSTRAINED, formats: [AUTO])
+            gatsbyImageData(width: 800, quality: 100, layout: CONSTRAINED, formats: [JPG])
           }
         }
       }

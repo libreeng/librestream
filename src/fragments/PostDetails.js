@@ -28,7 +28,7 @@ export const PostDetails = graphql`fragment PostDetails on WpPost {
       ctaFeaturedImage {
         localFile {
           childImageSharp {
-            gatsbyImageData(width: 500, quality: 100, layout: CONSTRAINED, formats: [AUTO])
+            gatsbyImageData(width: 500, quality: 100, layout: CONSTRAINED, formats: [JPG])
           }
         }
       }
@@ -39,7 +39,7 @@ export const PostDetails = graphql`fragment PostDetails on WpPost {
       altText
       localFile {
         childImageSharp {
-          gatsbyImageData(quality: 100, layout: FULL_WIDTH, formats: [AUTO])
+          gatsbyImageData(quality: 100, layout: FULL_WIDTH, formats: [JPG])
         }
       }
     }
@@ -54,7 +54,7 @@ export const PostDetails = graphql`fragment PostDetails on WpPost {
       altText
       localFile {
         childImageSharp {
-          gatsbyImageData(quality: 100, layout: FULL_WIDTH, formats: [AUTO])
+          gatsbyImageData(quality: 100, layout: FULL_WIDTH, formats: [JPG])
         }
       }
     }
