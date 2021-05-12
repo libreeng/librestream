@@ -1,5 +1,5 @@
 "use strict";
-window.addEventListener('scroll', () => {
+window.addEventListener('scroll', function(e) {
   setTimeout(() => {
     // Drift code here
     !function () {
