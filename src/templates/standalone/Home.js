@@ -24,7 +24,32 @@ const HomeTemplate = ({ data: { page } }) => {
   return (
     <Layout>
       <SEO pageSEO={page.seo} />
-     
+      <Hero hero={hero} />
+
+      <section id="intro" className="bg-white">
+        <div className="container">
+          <div className="row">
+            <div className="col-12 col-lg-10 mx-lg-auto">
+              <div className="text-center">
+                {acf.introTitle && (
+                  <h1>
+                    {acf.introTitle}
+                  </h1>
+                )}
+                {acf.introDescription && (
+                  <div className="display-4 text-gray mt-4">
+                    {parse(acf.introDescription)}
+                  </div>
+                )}
+                {acf.introLink && (
+                  <a href={acf.introLink.url} className="btn btn-outline-secondary btn-lg text-dark mt-3">{acf.introLink.title}</a>
+                )}
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+      <hr className="hr-styled caret-left" />
       <section>
         <div className="container">
           <div className="row mb-4">
