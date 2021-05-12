@@ -16,7 +16,7 @@ const CarouselHero = ({ images, config, content }) => {
 
   return (
     <>
-      <div>CAROUSEL GOES HERE</div>
+      <div></div>
     </>
   )
 }
