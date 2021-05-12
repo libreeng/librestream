@@ -207,7 +207,7 @@ export const pageQuery = graphql`query PlatformFeatureTemplateQuery($id: String!
         localFile {
           publicURL
           childImageSharp {
-            gatsbyImageData(layout: FULL_WIDTH)
+            gatsbyImageData(layout: FULL_WIDTH, formats: [AUTO])
           }
         }
       }
@@ -222,7 +222,7 @@ export const pageQuery = graphql`query PlatformFeatureTemplateQuery($id: String!
         localFile {
           publicURL
           childImageSharp {
-            gatsbyImageData(layout: FULL_WIDTH)
+            gatsbyImageData(layout: FULL_WIDTH, formats: [AUTO])
           }
         }
       }
@@ -256,7 +256,7 @@ export const pageQuery = graphql`query PlatformFeatureTemplateQuery($id: String!
         localFile {
           publicURL
           childImageSharp {
-            gatsbyImageData(width: 400, quality: 100, layout: CONSTRAINED)
+            gatsbyImageData(width: 400, quality: 100, layout: CONSTRAINED, formats: [AUTO])
           }
         }
       }

@@ -21,7 +21,7 @@ export const useFeaturedNews = () => {
           localFile {
             publicURL
             childImageSharp {
-              gatsbyImageData(width: 500, quality: 100, layout: CONSTRAINED)
+              gatsbyImageData(width: 500, quality: 100, layout: CONSTRAINED, formats: [AUTO])
             }
           }
         }
@@ -31,7 +31,7 @@ export const useFeaturedNews = () => {
           sourceUrl
           localFile {
             childImageSharp {
-              gatsbyImageData(width: 500, quality: 100, layout: CONSTRAINED)
+              gatsbyImageData(width: 500, quality: 100, layout: CONSTRAINED, formats: [AUTO])
             }
           }
         }

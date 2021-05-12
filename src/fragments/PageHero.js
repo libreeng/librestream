@@ -24,7 +24,7 @@ export const PageHero = graphql`fragment PageHero on WpPage {
       localFile {
         publicURL
         childImageSharp {
-          gatsbyImageData(quality: 100, layout: FULL_WIDTH)
+          gatsbyImageData(quality: 100, layout: FULL_WIDTH, formats: [AUTO])
         }
       }
     }
