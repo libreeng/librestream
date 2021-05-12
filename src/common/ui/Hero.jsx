@@ -66,7 +66,13 @@ const Hero = ({ hero, nav, className }) => {
               </ul>
             )}
           </div>
-          
+          <div className="col-6 col-lg-3 col-xl-4">
+            <div className="p-lg-5 p-xl-5">
+              {featuredImage && (
+                <GatsbyImage image={featuredImage} className="img-fluid" alt={heroFeaturedImage.alt} />
+              )}
+            </div>
+          </div>
         </div>
       </div>
     </div>
@@ -76,7 +82,17 @@ const Hero = ({ hero, nav, className }) => {
   return (
     <div className="hero">
 
-{content}
+      {heroGallery ? (
+        <>
+          <CarouselHero images={heroImages} content={content} />
+        </>
+      ):(
+        <BgImage image={bgImage} style={{ backgroundPosition: 'bottom left'}}>
+          <div className="bg-image aspect-auto">
+            {content}
+          </div>
+        </BgImage>
+      )}
     </div>
   )
 }

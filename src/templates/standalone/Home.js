@@ -150,7 +150,7 @@ export const pageQuery = graphql`query HomeTemplateQuery($id: String!) {
           localFile {
             publicURL
             childImageSharp {
-              gatsbyImageData(layout: FULL_WIDTH, formats: [JPG])
+              gatsbyImageData(layout: FULL_WIDTH)
             }
           }
         }

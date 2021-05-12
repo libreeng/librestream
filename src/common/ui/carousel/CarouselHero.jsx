@@ -16,19 +16,7 @@ const CarouselHero = ({ images, config, content }) => {
 
   return (
     <>
-      <Fade {...settings}>
-        {images && images.map((image, i) => (
-          <BgImage
-            key={`carouselHero_${i}`}
-            className="bg-image aspect-hero text-shadow"
-            image={image}
-            style={{
-              backgroundPosition: 'bottom right'
-            }}>
-            {content}
-          </BgImage>
-        ))}
-      </Fade>
+      <div>CAROUSEL GOES HERE</div>
     </>
   )
 }
