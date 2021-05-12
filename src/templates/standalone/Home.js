@@ -20,6 +20,7 @@ const HomeTemplate = ({ data: { page } }) => {
   const { featuredCaseStudies } = useCaseStudies()
   const { cta } = page.acfFooterCTAs
   const slide = acf.carouselSlide[0]
+ 
 
   return (
     <Layout>
@@ -150,7 +151,7 @@ export const pageQuery = graphql`query HomeTemplateQuery($id: String!) {
           localFile {
             publicURL
             childImageSharp {
-              gatsbyImageData(layout: FULL_WIDTH)
+              gatsbyImageData(quality: 100, layout: FULL_WIDTH, formats: [JPG])
             }
           }
         }
