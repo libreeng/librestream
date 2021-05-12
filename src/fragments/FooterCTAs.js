@@ -12,7 +12,7 @@ export const FooterCTAs = graphql`fragment FooterCTAs on WpPage {
       ctaFeaturedImage {
         localFile {
           childImageSharp {
-            gatsbyImageData(width: 500, quality: 100, layout: CONSTRAINED, formats: [AUTO])
+            gatsbyImageData(width: 500, quality: 100, layout: CONSTRAINED, formats: [JPG])
           }
         }
       }
