@@ -1,6 +1,6 @@
 import React from "react"
 import { graphql } from "gatsby"
-import { GatsbyImage } from "gatsby-plugin-image"
+import { GatsbyImage, getImage } from "gatsby-plugin-image"
 import { BgImage } from "gbimage-bridge"
 import { useDispatch } from "react-redux"
 import Hero from "../../common/ui/Hero"
@@ -43,7 +43,8 @@ const AboutTemplate = ({ data: { page } }) => {
           </div>
           <div className="row row-cols-1 row-cols-md-2 row-cols-lg-5 align-items-center justify-content-between">
             {acf.awards && acf.awards.map(award => {
-              const awardImageData = award.image?.localFile?.childImageSharp?.gatsbyImageData
+              const awardImageData = getImage(award.image?.localFile)
+              // const awardImageData = award.image?.localFile?.childImageSharp?.gatsbyImageData // This caused problems in IE11
               const awardImageAlt = award.image.altText && award.image.altText || ``
               return (
                 <div key={award.image.id} className="col mb-4">
@@ -51,7 +52,7 @@ const AboutTemplate = ({ data: { page } }) => {
                     {awardImageData && (
                       <GatsbyImage
                         image={awardImageData}
-                        alt={awardImageAlt} />
+                        alt={awardImageAlt}  />
                     )}
                   </div>
                 </div>
@@ -142,7 +143,7 @@ export const pageQuery = graphql`query AboutTemplateQuery($id: String!) {
           localFile {
             publicURL
             childImageSharp {
-              gatsbyImageData(width: 500, quality: 100, layout: CONSTRAINED)
+              gatsbyImageData(width: 500, quality: 100, layout: CONSTRAINED, formats: [PNG])
             }
           }
         }
@@ -154,7 +155,7 @@ export const pageQuery = graphql`query AboutTemplateQuery($id: String!) {
           localFile {
             publicURL
             childImageSharp {
-              gatsbyImageData(width: 500, quality: 100, layout: CONSTRAINED)
+              gatsbyImageData(width: 500, quality: 100, layout: CONSTRAINED, formats: [PNG])
             }
           }
         }
@@ -169,7 +170,7 @@ export const pageQuery = graphql`query AboutTemplateQuery($id: String!) {
           localFile {
             publicURL
             childImageSharp {
-              gatsbyImageData(width: 500, quality: 100, layout: CONSTRAINED)
+              gatsbyImageData(width: 500, quality: 100, layout: CONSTRAINED, formats: [JPG])
             }
           }
         }
@@ -183,7 +184,7 @@ export const pageQuery = graphql`query AboutTemplateQuery($id: String!) {
           localFile {
             publicURL
             childImageSharp {
-              gatsbyImageData(width: 500, quality: 100, layout: CONSTRAINED)
+              gatsbyImageData(width: 500, quality: 100, layout: CONSTRAINED, formats: [JPG])
             }
           }
           altText

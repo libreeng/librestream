@@ -17,7 +17,7 @@ export const RelatedPosts = graphql`fragment RelatedPosts on WpPost {
               localFile {
                 publicURL
                 childImageSharp {
-                  gatsbyImageData(width: 500, quality: 100, layout: CONSTRAINED)
+                  gatsbyImageData(width: 500, quality: 100, layout: CONSTRAINED, formats: [JPG])
                 }
               }
             }
@@ -28,7 +28,7 @@ export const RelatedPosts = graphql`fragment RelatedPosts on WpPost {
               localFile {
                 publicURL
                 childImageSharp {
-                  gatsbyImageData(quality: 100, layout: FULL_WIDTH)
+                  gatsbyImageData(quality: 100, layout: FULL_WIDTH, formats: [JPG])
                 }
               }
             }
@@ -64,7 +64,7 @@ export const RelatedPosts = graphql`fragment RelatedPosts on WpPost {
               localFile {
                 publicURL
                 childImageSharp {
-                  gatsbyImageData(quality: 100, layout: FULL_WIDTH)
+                  gatsbyImageData(quality: 100, layout: FULL_WIDTH, formats: [JPG])
                 }
               }
             }
