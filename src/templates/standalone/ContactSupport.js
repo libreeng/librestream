@@ -23,23 +23,48 @@ const ContactSupportTemplate = ({ data: { page } }) => {
         script={[        
           {
             type: `text/javascript`,
-            src: `https://www.google.com/recaptcha/api.js?onload=onloadCallback&render=${process.env.GATSBY_RECAPTCHA_SITE_KEY}`,
+            src: `https://www.google.com/recaptcha/api.js?onload=onloadCallback&render=explicit`,
             async: true,
             defer: true
           },
           {
             type: `text/javascript`,
             innerHTML: `
-            function onloadCallback() {
+            var verifyCallback = function(response) {
+              removeRecaptchaError();
+              //alert(response);
+            };
+            var onloadCallback = function() {
               grecaptcha.ready(function() {
-                // do request for recaptcha token
-                // response is promise with passed token
-                grecaptcha.execute('${process.env.GATSBY_RECAPTCHA_SITE_KEY}', {action:'validate_captcha'}).then(function(token) {
-                  // add token value to form
-                  document.getElementById('g-recaptcha-response').value = token;
+                widgetId1 = grecaptcha.render('g-recaptcha-response', {
+                  'sitekey' : '${process.env.GATSBY_RECAPTCHA_SITE_KEY}',
+                  'theme' : 'light',
+                  'callback' : verifyCallback,
                 });
               });
             }
+
+            var form = document.getElementById('recaptcha-form');
+            form.onsubmit = function(e) {
+              removeRecaptchaError();
+              var res = grecaptcha.getResponse();
+              if (res == "" || res == undefined || res.length == 0){
+                var el = document.createElement("span");
+                el.innerHTML = "Please check the box to prove you are not a robot";
+                el.id = "recaptcha-error";
+                el.style = "color:red;font-size: 0.8em;";
+                var div = document.getElementById("g-recaptcha-response");
+                div.parentNode.insertBefore(el, div);
+                return false;
+              }
+              return true;
+            }
+
+            var removeRecaptchaError = function() {
+              var errorDiv = document.getElementById("recaptcha-error");
+              if(errorDiv !== null) errorDiv.parentNode.removeChild(errorDiv);
+            }
+          
             `
           }
         ]}
