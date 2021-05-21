@@ -30,41 +30,43 @@ const ContactSupportTemplate = ({ data: { page } }) => {
           {
             type: `text/javascript`,
             innerHTML: `
-            var verifyCallback = function(response) {
-              removeRecaptchaError();
-              //alert(response);
-            };
-            var onloadCallback = function() {
-              grecaptcha.ready(function() {
+            var recaptchaInitialized = false;     
+            var onloadCallback = function() {              
+              grecaptcha.ready(function() {                
+                if(recaptchaInitialized) return;               
+                recaptchaInitialized = true;               
                 widgetId1 = grecaptcha.render('g-recaptcha-response', {
                   'sitekey' : '${process.env.GATSBY_RECAPTCHA_SITE_KEY}',
                   'theme' : 'light',
                   'callback' : verifyCallback,
                 });
-              });
-            }
+              });         
 
-            var form = document.getElementById('recaptcha-form');
-            form.onsubmit = function(e) {
-              removeRecaptchaError();
-              var res = grecaptcha.getResponse();
-              if (res == "" || res == undefined || res.length == 0){
-                var el = document.createElement("span");
-                el.innerHTML = "Please check the box to prove you are not a robot";
-                el.id = "recaptcha-error";
-                el.style = "color:red;font-size: 0.8em;";
-                var div = document.getElementById("g-recaptcha-response");
-                div.parentNode.insertBefore(el, div);
-                return false;
+              var form = document.getElementById('recaptcha-form');
+              if(!form) return;
+              form.onsubmit = function(e) {
+                removeRecaptchaError();
+                var res = grecaptcha.getResponse();
+                if (res == "" || res == undefined || res.length == 0){
+                  var el = document.createElement("span");
+                  el.innerHTML = "Please check the box to prove you are not a robot";
+                  el.id = "recaptcha-error";
+                  el.style = "color:red;font-size: 0.8em;";
+                  var div = document.getElementById("g-recaptcha-response");
+                  div.parentNode.insertBefore(el, div);
+                  return false;
+                }
+                return true;
+              }                   
+              var verifyCallback = function(response) {
+                console.log("Verifing Recaptcha")
+                removeRecaptchaError();
+              };
+              var removeRecaptchaError = function() {
+                var errorDiv = document.getElementById("recaptcha-error");
+                if(errorDiv !== null) errorDiv.parentNode.removeChild(errorDiv);
               }
-              return true;
             }
-
-            var removeRecaptchaError = function() {
-              var errorDiv = document.getElementById("recaptcha-error");
-              if(errorDiv !== null) errorDiv.parentNode.removeChild(errorDiv);
-            }
-          
             `
           }
         ]}
