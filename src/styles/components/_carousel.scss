@@ -1,0 +1,7 @@
+/* This should prevent layout shift from before the carousel javascript loads to after it does. */
+.react-slideshow-fade-wrapper .react-slideshow-fade-images-wrap > div{
+    width:100vw;
+    &[aria-hidden=true]{
+        height:0;
+    }
+}
