@@ -8,7 +8,11 @@ const website = require('./config/website')
 const pathPrefix = website.pathPrefix === '/' ? '' : website.pathPrefix
 
 module.exports = {
-  flags: {},
+  flags: { 
+    //FAST_DEV: true,
+    //PRESERVE_WEBPACK_CACHE: true,
+    //PRESERVE_FILE_DOWNLOAD_CACHE: true,
+  },
   pathPrefix: website.pathPrefix,
   siteMetadata: {
     siteUrl: website.url + pathPrefix, // For gatsby-plugin-sitemap
@@ -53,6 +57,7 @@ module.exports = {
           MediaItem: {
             localFile: {
               maxFileSizeBytes: 1048576000, // 1GB
+              requestConcurrency: 5
             },
           },
         },
@@ -61,7 +66,7 @@ module.exports = {
           requestConcurrency: 5, // currently set to 15
           // previewRequestConcurrency: 2, // currently set to 5
           timeout: 300000,
-        }
+        },
       },
     },
     {
@@ -131,12 +136,30 @@ module.exports = {
       },
     },
     'gatsby-plugin-sitemap',
+    /*
     {
       resolve: "gatsby-plugin-web-font-loader",
       options: {
-        typekit: {
-          id: process.env.TYPEKIT_ID
+        custom: {
+          families: ['DIN Next LT Pro'],
         },
+        classes: true, 
+      },
+    },
+    */
+    {
+      resolve: "gatsby-omni-font-loader",    
+      options: {    
+        mode: "async",
+        enableListener: true,    
+        /* Self-hosted fonts config. Add font files and font CSS files to "static" folder */
+        custom: [
+          {
+            name: ["DIN Next LT Pro"],
+            /* Path to the font CSS file inside the "static" folder with @font-face definition */
+            file: "/fonts/fonts.css", 
+          },
+        ],
       },
     },
     {
