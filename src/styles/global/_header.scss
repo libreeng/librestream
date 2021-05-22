@@ -54,6 +54,16 @@
     @include media-breakpoint-up(lg) {
       padding-top: 40px;
       padding-bottom: 18px;
+      
+      &::after{ 
+        content: "";
+        position: absolute;
+        left: 0;
+        bottom: 0;
+        width: 100%;
+        height: 1px;
+        border-bottom: 1px solid $white;
+      }
     }
     @include media-breakpoint-up(xl) {
       padding-left: 100px;
@@ -193,7 +203,6 @@
     .nav-pointer {
       opacity: 0;
     }
-    border-bottom: 1px solid $white;
   }
 }
 
@@ -223,6 +232,7 @@
         line-height: 1;
         padding-left: 3rem;
         padding-right: 3rem;
+        padding-top: 0.6rem; padding-bottom: 0.4rem; // text was sitting a little high in the button. adjusting here.
         &::before {
           display: none;
         }

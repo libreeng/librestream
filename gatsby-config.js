@@ -57,7 +57,7 @@ module.exports = {
           MediaItem: {
             localFile: {
               maxFileSizeBytes: 1048576000, // 1GB
-               requestConcurrency: 5
+              // requestConcurrency: 5, // Default 100. Amount of images to download concurrently. Try lowering this if wordpress server crashes on import.
             },
           },
         },
@@ -137,6 +137,7 @@ module.exports = {
     },
     'gatsby-plugin-sitemap',  
     {
+<<<<<<< .mine
       resolve: "gatsby-plugin-web-font-loader",
       options: {
         custom: {
@@ -147,6 +148,18 @@ module.exports = {
       },
     },
     {
+=======
+
+
+
+
+
+
+
+
+
+
+>>>>>>> .theirs
       resolve: "gatsby-plugin-google-tagmanager",
       options: {
         id: "GTM-W3BZNJ2",
