@@ -1,0 +1,64 @@
+query {
+  allWpPost {
+    nodes {
+      id
+      nodeType
+      title
+      content
+      uri
+      link
+      excerpt
+      categories {
+        nodes {
+          name
+        }
+      }ol
+      tags {
+        nodes {
+          name
+        }
+      }
+    }
+  }
+  allWpPage {
+    nodes {
+      id
+      nodeType
+      title
+      content
+      uri
+      link
+    }
+  }
+  allWpCaseStudy {
+    nodes {
+      id
+      nodeType
+      title
+      content
+      uri
+      link
+      acfPostTypeUseCase {
+        articleTitle
+        situation
+      }
+    }
+  }
+  allWpSolution {
+    nodes {
+      id
+      nodeType
+      title
+      content
+      uri
+      link
+      acfPostTypeSolution {
+        solutionTitle
+        solutionDescription
+      }
+      acfIntro {
+        introDescription
+      }
+    }
+  }
+}
