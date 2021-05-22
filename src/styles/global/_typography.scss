@@ -18,7 +18,8 @@ h6 {
 h6 {
   text-transform: uppercase;
 }
-.wf-dinnextltpro-n4-active {
+.wf-dinnextltpro-n4-active,
+.wf-dinnextltpro-n4-inactive {
   h1,
   h2,
   h3,
@@ -34,22 +35,3 @@ em {
   font-style: normal;
   color: $cyan;
 }
-
-
-
-
-
-/*
-// before web fonts load
-body, h1,h2,h3,h4,h5,h6 {
-  font-stretch: ultra-condensed;
-}
-
-
-// after web fonts load
-.wf-dinnextltpro-n4-active {
-  body, h1,h2,h3,h4,h5,h6 {
-    font-stretch: unset;
-  }
-}
-*/

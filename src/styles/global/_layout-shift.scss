@@ -72,7 +72,7 @@ h1, .h1{
  *   
  *  The class "wf-dinnextltpro-n4-active" is added to the <html> tag by "gatsby-plugin-web-font-loader" in gatsby-config.js
 */
-.wf-dinnextltpro-n4-active {
+.wf-dinnextltpro-n4-active{
 
   h1, .h1{
     font-family: "DIN Next LT Pro", sans-serif  !important;
@@ -121,5 +121,18 @@ h1, .h1{
     }
     .hero .btn {
     }
+  }
+}
+
+.wf-loading, .wf-dinnextltpro-n4-loading{
+  // Might want to include some styles for when the font is loading.
+}
+.wf-dinnextltpro-n4-inactive{
+  h1, .h1,  
+  .hero  h1, 
+  .hero .lead,   
+  .hero .btn,
+  #primarynav .nav-item .nav-link{
+    opacity:1;
   }
 }
