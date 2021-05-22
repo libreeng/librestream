@@ -57,7 +57,7 @@ module.exports = {
           MediaItem: {
             localFile: {
               maxFileSizeBytes: 1048576000, // 1GB
-              requestConcurrency: 5
+              // requestConcurrency: 5
             },
           },
         },
@@ -135,31 +135,15 @@ module.exports = {
           })),
       },
     },
-    'gatsby-plugin-sitemap',
-    /*
+    'gatsby-plugin-sitemap',  
     {
       resolve: "gatsby-plugin-web-font-loader",
       options: {
         custom: {
           families: ['DIN Next LT Pro'],
+          urls: ['/fonts/fonts.css']
         },
         classes: true, 
-      },
-    },
-    */
-    {
-      resolve: "gatsby-omni-font-loader",    
-      options: {    
-        mode: "async",
-        enableListener: true,    
-        /* Self-hosted fonts config. Add font files and font CSS files to "static" folder */
-        custom: [
-          {
-            name: ["DIN Next LT Pro"],
-            /* Path to the font CSS file inside the "static" folder with @font-face definition */
-            file: "/fonts/fonts.css", 
-          },
-        ],
       },
     },
     {
