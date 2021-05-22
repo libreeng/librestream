@@ -137,7 +137,6 @@ module.exports = {
     },
     'gatsby-plugin-sitemap',  
     {
-<<<<<<< .mine
       resolve: "gatsby-plugin-web-font-loader",
       options: {
         custom: {
@@ -148,18 +147,6 @@ module.exports = {
       },
     },
     {
-=======
-
-
-
-
-
-
-
-
-
-
->>>>>>> .theirs
       resolve: "gatsby-plugin-google-tagmanager",
       options: {
         id: "GTM-W3BZNJ2",
