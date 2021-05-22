@@ -53,7 +53,7 @@ module.exports = {
           MediaItem: {
             localFile: {
               maxFileSizeBytes: 1048576000, // 1GB
-              // requestConcurrency: 5, // Default 100. Amount of images to download concurrently. Try lowering this if wordpress server crashes on import.
+              requestConcurrency: 5, // Default 100. Amount of images to download concurrently. Try lowering this if wordpress server crashes on import.
             },
           },
         },
@@ -83,6 +83,93 @@ module.exports = {
       options: {
         // A unique name for the search index. This should be descriptive of
         // what the index contains. This is required.
+        name: 'site',
+
+        // Set the search engine to create the index. This is required.
+        // The following engines are supported: flexsearch, lunr
+        engine: 'flexsearch',
+
+        // Provide options to the engine. This is optional and only recommended
+        // for advanced users.
+        //
+        // Note: Only the flexsearch engine supports options.
+        engineOptions: 'speed',
+
+        // GraphQL query used to fetch all data for the search index. This is
+        // required.
+        query: fs.readFileSync(
+          path.resolve(__dirname, 'src/searchSiteQuery.graphql'),
+          'utf-8',
+        ),
+
+        // Field used as the reference value for each document.
+        // Default: 'id'.
+        ref: 'url',
+
+        // List of keys to index. The values of the keys are taken from the
+        // normalizer function below.
+        // Default: all fields
+        index: ['url', 'title', 'description', 'tags'],
+
+        // List of keys to store and make available in your UI. The values of
+        // the keys are taken from the normalizer function below.
+        // Default: all fields
+        store: ['url', 'title', 'excerpt', 'nodeType'],
+
+        // Function used to map the result from the GraphQL query. This should
+        // return an array of items to index in the form of flat objects
+        // containing properties to index. The objects must contain the `ref`
+        // field above (default: 'id'). This is required.
+        normalizer: ({ data }) => {
+          const pageData = data.allWpPage.nodes.map(node => ({
+            url: node.uri,
+            title: node.title,
+            nodeType: node.nodeType,
+            description: node.content,
+            excerpt: 'page excerpt will go here',
+            tags: null,
+          }));
+          const postData = data.allWpPost.nodes.map(node => ({
+            url: node.uri,
+            title: node.title,
+            nodeType: node.categories.nodes[0].name,
+            description: node.content,
+            excerpt: node.excerpt,
+            tags: node.tags.nodes.map(tag => tag.name),
+          })); 
+          
+          const csData = data.allWpCaseStudy.nodes.map(node => ({
+            url: node.uri,
+            title: node.title,
+            nodeType: node.nodeType,
+            description: node.content, // can we combine this with other fields? i.e. node.acfPostTypeUseCase.articleTitle
+            excerpt: node.content,
+            tags: null,           
+          })); 
+          
+          const solutionData = data.allWpSolution.nodes.map(node => ({
+            url: node.uri,
+            title: node.title,
+            nodeType: node.nodeType,
+            description: node.content, // can we combine this with other fields? i.e. node.acfIntro.introDescription
+            excerpt: node.content,
+            tags: null,           
+          })); 
+     
+          return [
+            ...pageData,
+            ...postData,
+            ...csData,
+            ...solutionData
+          ]     
+        }
+      },
+    },
+    {
+      resolve: 'gatsby-plugin-local-search',
+      options: {
+        // A unique name for the search index. This should be descriptive of
+        // what the index contains. This is required.
         name: 'posts',
 
         // Set the search engine to create the index. This is required.
@@ -98,7 +185,7 @@ module.exports = {
         // GraphQL query used to fetch all data for the search index. This is
         // required.
         query: fs.readFileSync(
-          path.resolve(__dirname, 'src/searchQuery.graphql'),
+          path.resolve(__dirname, 'src/searchPostsQuery.graphql'),
           'utf-8',
         ),
 
@@ -109,7 +196,7 @@ module.exports = {
         // List of keys to index. The values of the keys are taken from the
         // normalizer function below.
         // Default: all fields
-        index: ['url', 'title', 'content', 'tags'],
+        index: ['url', 'title', 'description', 'tags'],
 
         // List of keys to store and make available in your UI. The values of
         // the keys are taken from the normalizer function below.
@@ -131,6 +218,7 @@ module.exports = {
           })),
       },
     },
+    
     'gatsby-plugin-sitemap',
     {
       resolve: "gatsby-plugin-google-tagmanager",

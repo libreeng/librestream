@@ -31,3 +31,31 @@
 
 
 
+
+/* Search Page */
+.searchForm input:focus{
+  outline: none;
+}
+.searchForm .resultCount{
+  width:8rem;
+  border-width:2px !important;
+}
+.searchResults .result-title{
+ 
+}
+.searchResults a:hover .result-title{
+ color:$blue !important;
+}
+.searchResults .more-results{
+  height:0;
+  opacity:0;
+  overflow:hidden;
+  transition:all 0.5s linear;
+}
+.searchResults .more-results.expanded{
+  height:auto;
+  opacity:1;
+  overflow:hidden;
+}
+
+
