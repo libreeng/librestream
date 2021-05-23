@@ -98,7 +98,7 @@ module.exports = {
         // GraphQL query used to fetch all data for the search index. This is
         // required.
         query: fs.readFileSync(
-          path.resolve(__dirname, 'src/searchSiteQuery.graphql'),
+          path.resolve(__dirname, 'src/fragments/searches/searchSiteQuery.graphql'),
           'utf-8',
         ),
 
@@ -168,45 +168,16 @@ module.exports = {
     {
       resolve: 'gatsby-plugin-local-search',
       options: {
-        // A unique name for the search index. This should be descriptive of
-        // what the index contains. This is required.
         name: 'posts',
-
-        // Set the search engine to create the index. This is required.
-        // The following engines are supported: flexsearch, lunr
         engine: 'flexsearch',
-
-        // Provide options to the engine. This is optional and only recommended
-        // for advanced users.
-        //
-        // Note: Only the flexsearch engine supports options.
         engineOptions: 'speed',
-
-        // GraphQL query used to fetch all data for the search index. This is
-        // required.
         query: fs.readFileSync(
-          path.resolve(__dirname, 'src/searchPostsQuery.graphql'),
+          path.resolve(__dirname, 'src/fragments/searches/searchPostsQuery.graphql'),
           'utf-8',
         ),
-
-        // Field used as the reference value for each document.
-        // Default: 'id'.
         ref: 'url',
-
-        // List of keys to index. The values of the keys are taken from the
-        // normalizer function below.
-        // Default: all fields
         index: ['url', 'title', 'description', 'tags'],
-
-        // List of keys to store and make available in your UI. The values of
-        // the keys are taken from the normalizer function below.
-        // Default: all fields
         store: ['url', 'title', 'description', 'mainImage'],
-
-        // Function used to map the result from the GraphQL query. This should
-        // return an array of items to index in the form of flat objects
-        // containing properties to index. The objects must contain the `ref`
-        // field above (default: 'id'). This is required.
         normalizer: ({ data }) =>
           data.allWpPost.nodes.map(node => ({
             url: node.uri,
@@ -218,7 +189,80 @@ module.exports = {
           })),
       },
     },
-    
+    {
+      resolve: 'gatsby-plugin-local-search',
+      options: {
+        name: 'pages',
+        engine: 'flexsearch',
+        engineOptions: 'speed',
+        query: fs.readFileSync(
+          path.resolve(__dirname, 'src/fragments/searches/searchPagesQuery.graphql'),
+          'utf-8',
+        ),
+        ref: 'url',
+        index: ['url', 'title', 'description', 'tags'],
+        store: ['url', 'title', 'excerpt', 'nodeType'],
+        normalizer: ({ data }) => 
+          data.allWpPage.nodes.map(node => ({
+            url: node.uri,
+            title: node.title,
+            nodeType: node.nodeType,
+            description: node.content,
+            excerpt: 'page excerpt will go here',
+            tags: null,
+          }))
+      },
+    },
+    {
+      resolve: 'gatsby-plugin-local-search',
+      options: {
+        name: 'solutions',
+        engine: 'flexsearch',
+        engineOptions: 'speed',
+        query: fs.readFileSync(
+          path.resolve(__dirname, 'src/fragments/searches/searchSolutionsQuery.graphql'),
+          'utf-8',
+        ),
+        ref: 'url',
+        index: ['url', 'title', 'description', 'tags'],
+        store: ['url', 'title', 'excerpt', 'nodeType'],
+        normalizer: ({ data }) => 
+          data.allWpSolution.nodes.map(node => ({
+            url: node.uri,
+            title: node.title,
+            nodeType: node.nodeType,
+            description: node.content, // can we combine this with other fields? i.e. node.acfIntro.introDescription
+            excerpt: node.content,
+            tags: null,           
+          }))
+      },
+    },
+    {
+      resolve: 'gatsby-plugin-local-search',
+      options: {
+        name: 'casestudies',
+        engine: 'flexsearch',
+        engineOptions: 'speed',
+        query: fs.readFileSync(
+          path.resolve(__dirname, 'src/fragments/searches/searchCaseStudiesQuery.graphql'),
+          'utf-8',
+        ),
+        ref: 'url',
+        index: ['url', 'title', 'description', 'tags'],
+        store: ['url', 'title', 'excerpt', 'nodeType'],
+        normalizer: ({ data }) => 
+          data.allWpCaseStudy.nodes.map(node => ({
+            url: node.uri,
+            title: node.title,
+            nodeType: node.nodeType,
+            description: node.content, // can we combine this with other fields? i.e. node.acfPostTypeUseCase.articleTitle
+            excerpt: node.content,
+            tags: null,           
+          }))
+      },
+    },
+
+
     'gatsby-plugin-sitemap',
     {
       resolve: "gatsby-plugin-google-tagmanager",

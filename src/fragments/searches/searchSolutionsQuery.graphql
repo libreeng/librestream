@@ -1,0 +1,19 @@
+query {
+  allWpSolution {
+    nodes {
+      id
+      nodeType
+      title
+      content
+      uri
+      link
+      acfPostTypeSolution {
+        solutionTitle
+        solutionDescription
+      }
+      acfIntro {
+        introDescription
+      }
+    }
+  }
+}

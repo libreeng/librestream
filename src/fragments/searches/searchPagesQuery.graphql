@@ -1,0 +1,12 @@
+query {
+  allWpPage {
+    nodes {
+      id
+      nodeType
+      title
+      content
+      uri
+      link
+    }
+  }
+}

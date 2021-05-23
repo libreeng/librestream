@@ -1,0 +1,16 @@
+query {
+  allWpCaseStudy {
+    nodes {
+      id
+      nodeType
+      title
+      content
+      uri
+      link
+      acfPostTypeUseCase {
+        articleTitle
+        situation
+      }
+    }
+  }
+}
