@@ -1,6 +1,6 @@
 import React, {useState, useEffect, useRef} from 'react'
 // import PropTypes from 'prop-types'
-import { Link } from 'gatsby'
+import { Link, navigate } from 'gatsby'
 import { Navbar, Nav, NavDropdown } from 'react-bootstrap'
 import SearchLineIcon from 'remixicon-react/SearchLineIcon'
 import { useSiteMetadata } from '../../hooks/useSiteMetadata'
@@ -10,6 +10,7 @@ const PrimaryMenu = () => {
   const { menuItems, logo } = useSiteHeader()
   const { defaultSEO: {title} } = useSiteMetadata()
   const [arrowPos, setArrowPos] = useState(-10)
+  const [searchOpen, setSearchOpen] = useState(false)
   const menu = menuItems.filter(node => !node.parentId)
 
   const highlightedNavRef = useRef(null)
@@ -19,6 +20,10 @@ const PrimaryMenu = () => {
 
   function isHighlightedNav(path) {
     return activeKey === path ? highlightedNavRef : null
+  }
+  const searchClassname = searchOpen ? 'search-open' : 'search-closed';
+  const doSearch = () => {
+    console.log("Do Search");
   }
 
   return (
@@ -34,12 +39,26 @@ const PrimaryMenu = () => {
             <span className="icon-bar" />
           </div>
         </Navbar.Toggle>
+
         <Navbar.Collapse id="mainnav" >
+          <div class={`searchbar position-absolute d-flex overflow-hidden ${searchClassname}`}>
+            <div className="searchInputWrapper">
+              <input
+                className="border-0 text-gray"
+                name="query"
+                placeholder="Search"
+                onChange={(event) => setQuery(event.target.value)}
+              />
+              <SearchLineIcon size="18" onClick={() => navigate('/search')} />
+            </div>
+            <div class="navbar-toggler d-block " onClick={() => setSearchOpen(false)}><div class="navbar-toggler-icon"><span class="icon-bar"></span><span class="icon-bar"></span><span class="icon-bar"></span></div></div>
+          </div>
+
           <Nav as="ul" id="usernav" className="nav flex-row justify-content-center justify-content-lg-end">
             {/* TODO: Add logic for CMS */}
             <li className="nav-item">
-              <a href="/search" className="nav-link">
-                <SearchLineIcon size="14" />
+              <a className="nav-link" onClick={() => setSearchOpen(true)}>
+                <SearchLineIcon size="14"  />
               </a>
             </li>
             <li className="nav-item">
@@ -49,6 +68,7 @@ const PrimaryMenu = () => {
               <a href="/contact-us" className="nav-link">Contact</a>
             </li>
           </Nav>
+          
           <Nav id="primarynav" className="ml-auto" activeKey={activeKey}>
             {menu && menu.map(item => {
               const submenu = menuItems.filter(node => node.parentId === item.id)

@@ -59,3 +59,53 @@
 }
 
 
+
+
+
+#mainnav .searchbar{
+  z-index: 5;
+  width:0%;
+  transition:width 0.3s ease-in-out;
+  &.search-open{
+    width:100%;
+  }
+  .searchInputWrapper{
+    flex:1;
+  }
+  input{ 
+    width:100%;
+    padding: 4px 10px;
+    font-size: 16px;
+    //margin: 0 7px; 
+    outline:none;
+  }
+  .remixicon-icon {
+    right:7px;
+    cursor:pointer;
+    pointer-events:all;
+  }
+  .navbar-toggler{
+    width: 48px;
+    cursor:pointer;
+    top: 0;
+    zoom: 0.6;
+  }
+  @include media-breakpoint-down(md) {
+    padding-left: 12px;
+    right: 60px;
+    left:0;
+  }
+  @include media-breakpoint-up(lg) {
+    right: 16px;
+    top:6px;
+    &.search-open{
+      width:50%;
+    }
+    .navbar-toggler{background-color:#00263a;}
+  }
+  
+  @include media-breakpoint-up(xl) {
+    right: 78px;
+    .navbar-toggler{background-color:transparent;}
+  }
+}
