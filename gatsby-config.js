@@ -4,6 +4,7 @@ require('dotenv').config({
 const fs = require('fs')
 const path = require('path')
 const website = require('./config/website')
+const algoliaQueries = require("./src/fragments/searches/algolia-queries")
 
 const pathPrefix = website.pathPrefix === '/' ? '' : website.pathPrefix
 
@@ -81,7 +82,7 @@ module.exports = {
         appId: process.env.GATSBY_ALGOLIA_APP_ID,
         apiKey: process.env.GATSBY_ALGOLIA_API_KEY,
         indexName: process.env.GATSBY_ALGOLIA_INDEX_NAME,
-        queries: require("./src/fragments/searches/algolia-queries"),
+        queries: algoliaQueries,
         chunkSize: 10000, // default: 1000
         settings: {
           // optional, any index settings
