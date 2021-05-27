@@ -58,6 +58,24 @@
   overflow:hidden;
 }
 
+/* Algolia stuff */
+.searchResults{
+  .HitCount{}
+  .ais-Hits-list{
+    margin-top: 2rem;
+    list-style: none;
+    padding-left: 0;
+    .ais-Hits-item{
+
+    }
+    .ais-Snippet-highlighted,
+    .ais-Highlight-highlighted{
+      // padding: 0;
+      // background-color: $cyan;
+    }
+  }
+}
+
 
 
 

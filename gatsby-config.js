@@ -53,7 +53,7 @@ module.exports = {
           MediaItem: {
             localFile: {
               maxFileSizeBytes: 1048576000, // 1GB
-              requestConcurrency: 5, // Default 100. Amount of images to download concurrently. Try lowering this if wordpress server crashes on import.
+              // requestConcurrency: 5, // Default 100. Amount of images to download concurrently. Try lowering this if wordpress server crashes on import.
             },
           },
         },
@@ -73,6 +73,22 @@ module.exports = {
         policy: [{ userAgent: '*', allow: '/' }],
         output: '/robots.txt'
       }
+    },
+
+    {
+      resolve: `gatsby-plugin-algolia-search`,
+      options: {
+        appId: process.env.GATSBY_ALGOLIA_APP_ID,
+        apiKey: process.env.GATSBY_ALGOLIA_API_KEY,
+        indexName: process.env.GATSBY_ALGOLIA_INDEX_NAME,
+        queries: require("./src/fragments/searches/algolia-queries"),
+        chunkSize: 10000, // default: 1000
+        settings: {
+          // optional, any index settings
+        },
+        enablePartialUpdates: true, // default: false
+        matchFields: ['slug', 'modified'], // Array<String> default: ['modified']
+      },
     },
 
     // You can have multiple instances of this plugin to create indexes with
