@@ -4,9 +4,9 @@ const path = require('path')
 function postToAlgoliaRecord({ node: { id, acfPostTypeNews, tags, seo, ...rest } }) {
   return {
     objectID: id,
-    image: (acfPostTypeNews?.mainImage?.localFile) ? acfPostTypeNews.mainImage.localFile : null,
     tags: tags.nodes,
     ...seo,
+    image: (acfPostTypeNews && acfPostTypeNews.mainImage && acfPostTypeNews.mainImage.localFile) ? acfPostTypeNews.mainImage.localFile : null,
     ...rest,
   }
 }
