@@ -73,13 +73,17 @@
     "develop": "gatsby develop",
     "serve": "gatsby serve",
     "format": "prettier --trailing-comma es5 --no-semi --single-quote --write \"{gatsby-*.js,src/**/*.js}\"",
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "cy:open": "cypress open",
+    "test:e2e": "start-server-and-test develop http://localhost:8000 cy:open"
   },
   "devDependencies": {
+    "cypress": "^7.4.0",
     "eslint-config-airbnb": "^18.2.1",
     "eslint-config-prettier": "^8.2.0",
     "prettier": "^2.2.1",
-    "rimraf": "^3.0.0"
+    "rimraf": "^3.0.0",
+    "start-server-and-test": "^1.12.3"
   },
   "prettier": {
     "trailingComma": "es5",
