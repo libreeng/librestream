@@ -30,7 +30,7 @@ export const useCaseStudies = () => {
               featuredImage {
                 localFile {
                   childImageSharp {
-                    gatsbyImageData(width: 400, quality: 100, layout: CONSTRAINED)
+                    gatsbyImageData(width: 400, quality: 100, layout: CONSTRAINED, formats: [JPG])
                   }
                 }
               }
