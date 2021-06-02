@@ -36,7 +36,7 @@ const CaseStudy = ({ data: { previous, next, post } }) => {
       <section className="pb-3">
         <div className="container">
           <div className="row">
-            <div className="col-12">
+            <div className="col-12 mb-3">
               <h2>{post.title}</h2>
             </div>
           </div>

@@ -232,6 +232,7 @@
         line-height: 1;
         padding-left: 3rem;
         padding-right: 3rem;
+        padding-top: 0.6rem; padding-bottom: 0.4rem; // text was sitting a little high in the button. adjusting here.
         &::before {
           display: none;
         }

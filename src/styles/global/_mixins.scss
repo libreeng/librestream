@@ -55,20 +55,7 @@
   }
 }
 
-@mixin curved-variant($parent, $color) {
-  #{$parent} {
-    position: relative;
-    // background-image: url("/img/swell.svg");
-    // background-color: transparent;
-    // background-size: 200%;
-    // background-position: 2% 95%;
-    // background-repeat: no-repeat;
-    // height: 10vw;
-    // width: 100%;
-    // &.curved-inset {
-    // }
-  }
-}
+
 
 @mixin bottom-shape-cutout($width: 33%, $color: $white, $size: 20px) {
   &:after {

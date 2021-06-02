@@ -4,11 +4,14 @@ import { Link } from 'gatsby'
 import { BgImage } from 'gbimage-bridge'
 
 const ResultCard = ({ result }) => {
+
   const { mainImage, title } = result
   const url = result.externalLink
     ? result.externalLink
     : result.url
-  const featuredImage = mainImage?.localFile?.childImageSharp?.gatsbyImageData
+
+  const primaryImage = result.summaryImage ? result.summaryImage : result.mainImage
+  const featuredImage = primaryImage?.localFile?.childImageSharp?.gatsbyImageData
 
   return (
     <div className="col-12 col-sm-6 col-md-3 col-lg-4">

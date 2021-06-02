@@ -53,6 +53,7 @@ module.exports = {
           MediaItem: {
             localFile: {
               maxFileSizeBytes: 1048576000, // 1GB
+              //requestConcurrency: 10, // Default 100. Amount of images to download concurrently. Try lowering this if wordpress server crashes on import.
             },
           },
         },
@@ -113,7 +114,7 @@ module.exports = {
         // List of keys to store and make available in your UI. The values of
         // the keys are taken from the normalizer function below.
         // Default: all fields
-        store: ['url', 'title', 'description', 'mainImage'],
+        store: ['url', 'title', 'description', 'mainImage', 'summaryImage'],
 
         // Function used to map the result from the GraphQL query. This should
         // return an array of items to index in the form of flat objects
@@ -124,8 +125,8 @@ module.exports = {
             url: node.uri,
             title: node.title,
             description: node.content,
-            // featuredImage: node.acfPostTypeNews.mainImage.localFile.childImageSharp,
             mainImage: node.acfPostTypeNews.mainImage,
+            summaryImage: node.acfPostTypeNews.summaryImage,
             tags: node.tags.nodes.map(tag => tag.name),
           })),
       },
