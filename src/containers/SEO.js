@@ -9,9 +9,7 @@ const SEO = ({ pageSEO, meta, className }) => {
     ...defaultSEO,
     ...pageSEO,
   }
-  console.log("Outputting Page SEO")
-  console.log(seo)
-  
+    
 
   return (
     <Helmet
