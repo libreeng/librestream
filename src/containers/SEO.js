@@ -9,6 +9,7 @@ const SEO = ({ pageSEO, meta, className }) => {
     ...defaultSEO,
     ...pageSEO,
   }
+    
 
   return (
     <Helmet
@@ -22,6 +23,7 @@ const SEO = ({ pageSEO, meta, className }) => {
       titleTemplate={`${seo.title}`}
       meta={[
         { name: 'description', content: seo.metaDesc ? seo.metaDesc : seo.description },
+        { name: "robots", content: `${seo.metaRobotsNoindex}, ${seo.metaRobotsNofollow} ` }, // Note: you can not set the wordpress CMS to "Discourage search engines from indexing this site"
         { name: 'og:type', content: "website" },
         { name: "og:title", content: seo.opengraphTitle ? seo.opengraphTitle : seo.title },
         { name: "og:description", content: seo.metaDesc ? seo.metaDesc : seo.description },

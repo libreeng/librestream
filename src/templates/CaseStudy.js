@@ -177,7 +177,7 @@ export const pageQuery = graphql`
           ctaFeaturedImage {
             localFile {
               childImageSharp {
-                gatsbyImageData(width: 500, quality: 100, layout: CONSTRAINED)
+                gatsbyImageData(width: 500, quality: 100, layout: CONSTRAINED, formats: [JPG])
               }
             }
           }
@@ -195,7 +195,7 @@ export const pageQuery = graphql`
           localFile {
             publicURL
             childImageSharp {
-              gatsbyImageData(quality: 100, layout: FULL_WIDTH)
+              gatsbyImageData(quality: 100, layout: FULL_WIDTH, formats: [JPG])
             }
           }
         }

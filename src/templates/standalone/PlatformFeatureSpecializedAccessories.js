@@ -149,7 +149,7 @@ export const pageQuery = graphql`query PlatformFeatureSpecializedAccessoriesTemp
           localFile {
             publicURL
             childImageSharp {
-              gatsbyImageData(quality: 100, layout: FULL_WIDTH)
+              gatsbyImageData(quality: 100, layout: FULL_WIDTH, formats: [JPG])
             }
           }
         }
@@ -160,7 +160,7 @@ export const pageQuery = graphql`query PlatformFeatureSpecializedAccessoriesTemp
         localFile {
           publicURL
           childImageSharp {
-            gatsbyImageData(quality: 100, layout: FULL_WIDTH)
+            gatsbyImageData(quality: 100, layout: FULL_WIDTH, formats: [JPG])
           }
         }
       }
