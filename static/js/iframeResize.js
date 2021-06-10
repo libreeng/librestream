@@ -45,8 +45,10 @@ function gotResizeMessage(event)
 		{
 			//console.log("found iframe that sent a message: " + matches[i].src)
 				
-			//matches[i].width = Number( event.data.width )	 <--- we do not do anything with the page width for now
-			matches[i].height = Number( event.data.height )
+			if(typeof event.data.height !== 'undefined') {
+				//matches[i].width = Number( event.data.width )	 <--- we do not do anything with the page width for now
+				matches[i].height = Number( event.data.height )
+			}
 			
 			return 1;
 		}
