@@ -23,12 +23,12 @@ h1, .h1{
       transition:opacity 0.5s linear !important;
       transition-delay: 0s;
       font-size: 3.95rem;
-      line-height: 1.24;
+      line-height: 1.36;
     }
     .lead {
       transition:opacity 0.5s linear 0.3s !important;    
       font-size: 1.455rem;
-      line-height: 1.34;
+      line-height: 1.44;
     }
     
     .btn {
@@ -57,7 +57,7 @@ h1, .h1{
       font-size:calc((1.5735rem + 3.882vw) * 0.8);
     }
     .hero .lead {
-      font-size: calc(1rem + 0.55vw);
+      font-size: calc(1rem + 0.47vw);
     }
     .hero .btn {}
   }
@@ -72,8 +72,8 @@ h1, .h1{
  *   
  *  The class "wf-dinnextltpro-n4-active" is added to the <html> tag by "gatsby-plugin-web-font-loader" in gatsby-config.js
 */
+.wf-dinnextltpro-n4-inactive,
 .wf-dinnextltpro-n4-active{
-
   h1, .h1{
     font-family: "DIN Next LT Pro", sans-serif  !important;
     font-stretch: ultra-condensed;
