@@ -1,6 +1,7 @@
 import React, {useState} from 'react'
 // import PropTypes from 'prop-types'
-import { Tabs, Tab } from 'react-bootstrap'
+import Tab from 'react-bootstrap/Tab'
+import Tabs from 'react-bootstrap/Tabs'
 import parse from "html-react-parser"
 import { Link } from "gatsby"
 import { GatsbyImage } from "gatsby-plugin-image";
