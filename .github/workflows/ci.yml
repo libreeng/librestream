@@ -10,6 +10,7 @@ on:
 name: Cypress Tests
 jobs:
   cypress-run:
+    environment: testing_environment
     runs-on: ubuntu-latest
     steps:
       - name: Checkout
@@ -23,4 +24,4 @@ jobs:
           start: npm run test:e2e
         env:
           # pass the Dashboard record key as an environment variable
-          WPGRAPHQL_URL: ${{ secrets.WPGRAPHQL_URL }}
+          WPGRAPHQL_URL: $WPGRAPHQL_URL
