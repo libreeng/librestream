@@ -1,37 +1,8 @@
-@font-face {
-  font-family: "DIN Next LT Pro";
-  font-weight: 400;
-  src: url("../includes/fonts/13ba9c94a7f164d315c9044db6d513ef.eot");
-  src: url("../includes/fonts/13ba9c94a7f164d315c9044db6d513ef.eot?#iefix") format("embedded-opentype"),
-    url("../includes/fonts/13ba9c94a7f164d315c9044db6d513ef.woff2") format("woff2"),
-    url("../includes/fonts/13ba9c94a7f164d315c9044db6d513ef.woff") format("woff"),
-    url("../includes/fonts/13ba9c94a7f164d315c9044db6d513ef.ttf") format("truetype");
-  font-display: swap;
-}
-@font-face {
-  font-family: "DIN Next LT Pro";
-  font-weight: 300;
-  src: url("../includes/fonts/DINNextLTPro-LightCondensed.eot");
-  src: url("../includes/fonts/DINNextLTPro-LightCondensed.eot?#iefix") format("embedded-opentype"),
-    url("../includes/fonts/DINNextLTPro-LightCondensed.woff2") format("woff2"),
-    url("../includes/fonts/DINNextLTPro-LightCondensed.woff") format("woff"),
-    url("../includes/fonts/DINNextLTPro-LightCondensed.ttf") format("truetype");
-  font-display: swap;
-}
-@font-face {
-  font-family: "DIN Next LT Pro";
-  font-weight: 200;
-  src: url("../includes/fonts/DINNextLTPro-UltraLightCond.eot");
-  src: url("../includes/fonts/DINNextLTPro-UltraLightCond.eot?#iefix") format("embedded-opentype"),
-    url("../includes/fonts/DINNextLTPro-UltraLightCond.woff2") format("woff2"),
-    url("../includes/fonts/DINNextLTPro-UltraLightCond.woff") format("woff"),
-    url("../includes/fonts/DINNextLTPro-UltraLightCond.ttf") format("truetype");
-  font-display: swap;
-}
+//@font-family declarations have been moved to the /static/fonts folder, and initialized in gatsby-config.js
 
 body {
   //font-family: "trade", "Helvetica Neue", Helvetica, Arial, sans-serif;
-  font-family: "DIN Next LT Pro", sans-serif;
+  font-family: "DIN Next LT Pro", Arial, Helvetica, sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 }
@@ -42,19 +13,22 @@ h3,
 h4,
 h5,
 h6 {
-  font-family: "DIN Next LT Pro", sans-serif;
+  font-family: "DIN Next LT Pro", Arial, Helvetica, sans-serif;
 }
 h6 {
   text-transform: uppercase;
 }
-h1,
-h2,
-h3,
-h4,
-h5,
-p,
-a {
-  @include transition();
+.wf-dinnextltpro-n4-active,
+.wf-dinnextltpro-n4-inactive {
+  h1,
+  h2,
+  h3,
+  h4,
+  h5,
+  p,
+  a {
+    @include transition();
+  }
 }
 
 em {

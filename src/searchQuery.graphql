@@ -15,6 +15,15 @@ query {
             }
           }
         }
+        
+        summaryImage {
+          localFile {
+            publicURL
+            childImageSharp {
+              gatsbyImageData(width: 400, quality: 100, layout: CONSTRAINED)
+            }
+          }
+        }
       }
       tags {
         nodes {

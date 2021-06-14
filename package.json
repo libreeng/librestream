@@ -28,7 +28,7 @@
     "gatsby-plugin-web-font-loader": "^1.0.4",
     "gatsby-remark-images": "^5.0.0",
     "gatsby-source-filesystem": "^3.2.0",
-    "gatsby-source-wordpress": "^5.3.0",
+    "gatsby-source-wordpress": "^5.6.0",
     "gatsby-transformer-remark": "^4.0.0",
     "gatsby-transformer-sharp": "^3.3.0",
     "gatsby-wpgraphql-inline-images": "^0.2.5",
@@ -81,6 +81,7 @@
     "cypress": "^7.4.0",
     "eslint-config-airbnb": "^18.2.1",
     "eslint-config-prettier": "^8.2.0",
+    "gatsby-plugin-webpack-bundle-analyser-v2": "^1.1.22",
     "prettier": "^2.2.1",
     "rimraf": "^3.0.0",
     "start-server-and-test": "^1.12.3"
