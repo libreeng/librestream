@@ -22,6 +22,3 @@ jobs:
         with:
           build: npm run build
           start: npm run test:e2e
-        # env:
-        #   # pass the Dashboard record key as an environment variable
-        #   WPGRAPHQL_URL: ${{ secrets.WPGRAPHQL_URL }}
