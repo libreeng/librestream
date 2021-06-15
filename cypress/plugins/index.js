@@ -16,10 +16,6 @@
  * @type {Cypress.PluginConfig}
  */
 
-const xlsx = require("node-xlsx").default;
-const fs = require("fs");
-const path = require("path");
-
 // eslint-disable-next-line no-unused-vars
 module.exports = (on, config) => {
   // `on` is used to hook into various events Cypress emits
@@ -48,32 +44,13 @@ module.exports = (on, config) => {
       // auto open devtools
       //launchOptions.preferences.devTools = true
     }
-
-    const downloadDirectory = path.join(__dirname, '..', 'excelDownloads')
-    if (browser.family === 'chromium') {
-      launchOptions.preferences.default['download'] = { default_directory: downloadDirectory }
-    }
-    return launchOptions;
-
+    
 
     // whatever you return here becomes the launchOptions
     return launchOptions
   })
 
 
-  // `on` is used to hook into various events Cypress emits
-  on("task", {
-    parseXlsx({ filePath }) {
-      return new Promise((resolve, reject) => {
-        try {
-          const jsonData = xlsx.parse(fs.readFileSync(filePath));
-          resolve(jsonData);
-        } catch (e) {
-          reject(e);
-        }
-      });
-    }
-  });
 
 }
 

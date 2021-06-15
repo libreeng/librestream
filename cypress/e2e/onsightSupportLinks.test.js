@@ -38,32 +38,18 @@ describe('Test Onsight Support Links', () => {
 
 
   it("Test PDF link downloads for broken links", () => {
-
     cy.get('#pageContent .list-group-item .accordion .card-body a:contains(PDF)').each($link => {              
       const linkText = "PDF " + $link.text() + " links to " + $link.attr("href") ;
-      //cy.log('LINK TEXT ' + linkText)
-
       cy.testLinkHrefExists($link)
     });
   });
   
 
   it("Test XLS Link", () => {
-   // LEt's log our .xls files here, TODO: Tigure out a way to test for these.
+   // Let's log our .xls files here, TODO: Tigure out a way to test for these.
     cy.get("a[href*='.xls']").each($link => { 
        expect(link).to.have.attr("href").not.contain("undefined")
        cy.log("COULD NOT TEST FOR DOWNLOAD " + $link.prop('href'))
-       /*
-       // Note: hve not gotten this working properly ~paul
-       $link.click();
-       cy.wait(2000);
-       cy.parseXlsx("/Users/Downloads/" + $link.prop('href')).then(
-          jsonData => {
-            // finally we write the assertion rule to check if that data matches the data we expected the excel file to have.
-            expect(jsonData[0].data[0]).to.eqls(data);
-          }
-        );
-        */
     });
 
   })
