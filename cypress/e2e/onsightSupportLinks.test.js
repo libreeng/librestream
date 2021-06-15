@@ -48,7 +48,7 @@ describe('Test Onsight Support Links', () => {
   it("Test XLS Link", () => {
    // Let's log our .xls files here, TODO: Tigure out a way to test for these.
     cy.get("a[href*='.xls']").each($link => { 
-       expect(link).to.have.attr("href").not.contain("undefined")
+       expect($link).to.have.attr("href").not.contain("undefined")
        cy.log("COULD NOT TEST FOR DOWNLOAD " + $link.prop('href'))
     });
 
