@@ -10,7 +10,7 @@ describe('Test Onsight Support Links', () => {
     cy.visit('/onsight-support/')
   })
 
-/*
+
 
 
   it("Test modal windows", () => {
@@ -47,12 +47,14 @@ describe('Test Onsight Support Links', () => {
     });
   });
   
-*/
+
   it("Test XLS Link", () => {
    // LEt's log our .xls files here, TODO: Tigure out a way to test for these.
     cy.get("a[href*='.xls']").each($link => { 
+       expect(link).to.have.attr("href").not.contain("undefined")
        cy.log("COULD NOT TEST FOR DOWNLOAD " + $link.prop('href'))
        /*
+       // Note: hve not gotten this working properly ~paul
        $link.click();
        cy.wait(2000);
        cy.parseXlsx("/Users/Downloads/" + $link.prop('href')).then(
@@ -66,13 +68,13 @@ describe('Test Onsight Support Links', () => {
 
   })
   
-  /*
+  
   it("Test for broken links", () => {
     // this does not work for downloads, such as .xls or .xlsx
     cy.get("#pageContent .list-group-item .accordion .card-body a:contains(Link):not([href*='.xls'])").each($link => {           
       cy.testLinkHrefExists($link)
     });
   })
-  */
+ 
     
 })

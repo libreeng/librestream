@@ -58,13 +58,19 @@ Cypress.Commands.add('testModalWindow', () => {
 
 
 
-Cypress.Commands.add('testLinkHrefExists', (link) => {
+Cypress.Commands.add('testLinkHrefExists', (link) => {   
+  
     
     expect(link).to.have.attr("href").not.contain("undefined")
 
     cy.request({url:link.prop('href'), failOnStatusCode: false})
     .should((response) => {
+      //let message = 'whoa, this comment does not exist'
       expect(response.status).to.eq(200) 
     })  
     
 })
+
+Cypress.Commands.add("parseXlsx", (inputFile) => {
+  return cy.task('parseXlsx', { filePath: inputFile })
+});
