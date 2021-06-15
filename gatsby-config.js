@@ -8,7 +8,11 @@ const website = require('./config/website')
 const pathPrefix = website.pathPrefix === '/' ? '' : website.pathPrefix
 
 module.exports = {
-  flags: {},
+  flags: {
+    //FAST_DEV: true,
+    //PRESERVE_WEBPACK_CACHE: true,
+    //PRESERVE_FILE_DOWNLOAD_CACHE: true,
+  },
   pathPrefix: website.pathPrefix,
   siteMetadata: {
     siteUrl: website.url + pathPrefix, // For gatsby-plugin-sitemap
@@ -40,7 +44,7 @@ module.exports = {
       resolve: `gatsby-source-wordpress`,
       options: {
         // the only required plugin option for WordPress is the GraphQL url.
-        url: process.env.WPGRAPHQL_URL,
+        url: process.env.WPGRAPHQL_URL || 'https://cms.librestream.com/graphql',
         // develop: {
         //   hardCacheMediaFiles: true,
         //   // hardCacheData: true
@@ -62,7 +66,7 @@ module.exports = {
           requestConcurrency: 5, // currently set to 15
           // previewRequestConcurrency: 2, // currently set to 5
           timeout: 300000,
-        }
+        },
       },
     },
     {
@@ -133,6 +137,16 @@ module.exports = {
     },
     'gatsby-plugin-sitemap',
     {
+      resolve: "gatsby-plugin-web-font-loader",
+      options: {
+        custom: {
+          families: ['DIN Next LT Pro'],
+          urls: ['/fonts/fonts.css']
+        },
+        classes: true,
+      },
+    },
+    {
       resolve: "gatsby-plugin-google-tagmanager",
       options: {
         id: "GTM-W3BZNJ2",
@@ -153,5 +167,12 @@ module.exports = {
     },
     'gatsby-plugin-react-helmet',
     'gatsby-plugin-gatsby-cloud',
+    {
+      resolve: "gatsby-plugin-webpack-bundle-analyser-v2",
+      options: {
+        analyzerMode: "static",
+        generateStatsFile: true
+      },
+    },
   ],
 }

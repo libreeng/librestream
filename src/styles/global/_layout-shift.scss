@@ -1,0 +1,138 @@
+/*
+ *  BEFORE WEB FONTS LOAD
+ *   
+ *  Default system fonts, styled as closely as possible to our web font "Din Next LT Pro"
+*/
+
+h1, .h1{
+    font-family: Arial, Helvetica, sans-serif !important;
+    font-stretch: ultra-condensed;
+    font-size: 3.7rem;
+    line-height:1.33;
+    transition:opacity 0.2s linear !important;
+    opacity:0;
+  }
+  
+  .hero{
+    h1, .lead, .btn{
+      font-family: Arial, Helvetica, sans-serif; 
+      opacity:0;
+      font-stretch: ultra-condensed;
+    }
+    h1 {
+      transition:opacity 0.5s linear !important;
+      transition-delay: 0s;
+      font-size: 3.95rem;
+      line-height: 1.36;
+    }
+    .lead {
+      transition:opacity 0.5s linear 0.3s !important;    
+      font-size: 1.455rem;
+      line-height: 1.44;
+    }
+    
+    .btn {
+      transition:opacity 0.5s linear 0.6s !important;
+    }
+       
+    
+  }
+  @include media-breakpoint-up(lg) {
+    #primarynav .nav-item .nav-link{ 
+      font-family: Arial, Helvetica, sans-serif;
+      font-stretch: ultra-condensed;
+      font-size: 0.86rem;
+      transition:opacity 0.2s linear !important;
+      opacity:0;
+    }
+  }
+  @media (max-width: 1280px){
+  }
+  @media (max-width: 1200px){   
+    h1, .h1 {
+      font-size: calc(1.5735rem + 3.882vw);
+      line-height: 1.1;
+    }    
+    .hero h1 {
+      font-size:calc((1.5735rem + 3.882vw) * 0.8);
+    }
+    .hero .lead {
+      font-size: calc(1rem + 0.47vw);
+    }
+    .hero .btn {}
+  }
+  
+  
+  
+
+
+  
+/*
+ *  AFTER WEB FONTS LOAD
+ *   
+ *  The class "wf-dinnextltpro-n4-active" is added to the <html> tag by "gatsby-plugin-web-font-loader" in gatsby-config.js
+*/
+.wf-dinnextltpro-n4-inactive,
+.wf-dinnextltpro-n4-active{
+  h1, .h1{
+    font-family: "DIN Next LT Pro", sans-serif  !important;
+    font-stretch: ultra-condensed;
+    font-size: calc((1.5735rem + 3.882vw) * .88);
+    line-height: 1.1;
+    opacity:1;
+  }
+  .hero{  
+    h1, .lead, .btn{font-family: "DIN Next LT Pro", sans-serif; opacity:1;font-stretch: unset; }    
+    h1 {
+      font-size: 4.485rem;
+      line-height: 1.1;
+    }
+    .lead {
+      font-size: 1.625rem;
+      line-height: 1.2;
+    }  
+  }
+  @include media-breakpoint-up(lg) {
+    #primarynav .nav-item .nav-link{ 
+      opacity:1;
+      font-family: "DIN Next LT Pro", sans-serif;
+      font-stretch: ultra-condensed;
+      font-size: 1.2rem;
+    }
+  }
+  @media (min-width: 1280px){
+    .hero h1 { 
+      font-size: 5rem;
+    }
+    .hero .lead {
+      font-size: 2rem;
+      line-height: 1.2;
+    }
+  }
+ @media (max-width: 1200px){
+    h1, .h1{
+    font-size: calc(1.5735rem + 3.882vw);
+    }
+    .hero h1 {      
+    font-size: calc(1.5735rem + 3.882vw);      
+    }
+    .hero .lead {
+    font-size: calc(1.2875rem + 0.45vw);
+    }
+    .hero .btn {
+    }
+  }
+}
+
+.wf-loading, .wf-dinnextltpro-n4-loading{
+  // Might want to include some styles for when the font is loading.
+}
+.wf-dinnextltpro-n4-inactive{
+  h1, .h1,  
+  .hero  h1, 
+  .hero .lead,   
+  .hero .btn,
+  #primarynav .nav-item .nav-link{
+    opacity:1;
+  }
+}

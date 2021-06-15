@@ -1,0 +1,24 @@
+on:
+  push:
+    branches:
+      - develop-tests
+  # pull_request:
+  #   branches:
+  #     - main
+  #   types: [assigned, opened, synchronize, reopened]
+
+name: Cypress Tests
+jobs:
+  cypress-run:
+    environment: testing_environment
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v2
+      # Install NPM dependencies, cache them correctly
+      # and run all Cypress tests
+      - name: Cypress run
+        uses: cypress-io/github-action@v2
+        with:
+          build: npm run build
+          start: npm run test:e2e
