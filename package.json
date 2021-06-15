@@ -76,8 +76,7 @@
     "format": "prettier --trailing-comma es5 --no-semi --single-quote --write \"{gatsby-*.js,src/**/*.js}\"",
     "test": "echo \"Error: no test specified\" && exit 1",
     "cy:open": "cypress open",
-    "test:e2e": "start-server-and-test develop http://localhost:8000 cy:open",
-    "testbuild:e2e": "start-server-and-test build http://localhost:9000 cy:open"
+    "test:e2e": "start-server-and-test develop http://localhost:8000 cy:open"
   },
   "devDependencies": {
     "cypress": "^7.4.0",
