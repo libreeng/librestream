@@ -57,7 +57,7 @@ module.exports = {
           MediaItem: {
             localFile: {
               maxFileSizeBytes: 1048576000, // 1GB
-              requestConcurrency: 10, // Default 100. Amount of images to download concurrently. Try lowering this if wordpress server crashes on import.
+              // requestConcurrency: 5, // Default 100. Amount of images to download concurrently. Try lowering this if wordpress server crashes on import.
             },
           },
         },
@@ -173,6 +173,23 @@ module.exports = {
         analyzerMode: "static",
         generateStatsFile: true
       },
+      
     },
+    {
+      // Removes unused css rules
+      resolve: 'gatsby-plugin-purgecss',
+      options: {
+        develop: true, // Enable while using `gatsby develop`
+        purgeOnly: ['/main.scss'], // Purge only the main css file
+        // printRejected: true,
+        // printAll: true,
+        // debug: true;
+        // printSummary: true,
+        purgeCSSOptions: {
+          // https://purgecss.com/configuration.html#options
+          safelist: [/^modal/, /^accordion/, /^card/,/^tab/, /^navbar/, /^nav/, /^button/, /^carousel/, /^wf-/,/^slick-/,/^col_/,'em','remixicon-icon'],
+        },
+      },
+    }, // must be after other CSS plugins
   ],
 }
