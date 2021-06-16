@@ -59,7 +59,6 @@ Cypress.Commands.add('testModalWindow', () => {
 
 
 Cypress.Commands.add('testLinkHrefExists', (link) => {   
-  
     
     expect(link).to.have.attr("href").not.contain("undefined")
 
