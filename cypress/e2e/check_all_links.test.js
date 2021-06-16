@@ -19,8 +19,6 @@ const urls = [
     '/webinars/',
     '/about',
     '/news',
-    '/',
-    '/platform',
 ]
 
 describe('Test for Broken Links', () => {

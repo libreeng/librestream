@@ -3,8 +3,6 @@ on:
     branches:
       - develop-tests
   workflow_dispatch:
-    branches:
-      - develop-tests
   # pull_request:
   #   branches:
   #     - main
@@ -15,6 +13,10 @@ jobs:
   cypress-run:
     environment: testing_environment
     runs-on: ubuntu-latest
+    env:
+      WPGRAPHQL_URL: "https://cms.librestream.com/graphql"
+      GATSBY_RECAPTCHA_SITE_KEY: "6Lcdu70aAAAAAPXJw-zXwUNk7ulMJtwGifOBRTsS"
+      GATSBY_WP_REST_API: "https://cms.librestream.com/wp-json/wp/v2"
     steps:
       - name: Checkout
         uses: actions/checkout@v2
