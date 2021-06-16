@@ -2,6 +2,9 @@ on:
   push:
     branches:
       - develop-tests
+  workflow_dispatch:
+    branches:
+      - develop-tests
   # pull_request:
   #   branches:
   #     - main
