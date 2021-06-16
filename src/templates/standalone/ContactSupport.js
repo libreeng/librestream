@@ -41,7 +41,7 @@ const ContactSupportTemplate = ({ data: { page } }) => {
                   'callback' : verifyCallback,
                 });
               });         
-
+ 
               var form = document.getElementById('recaptcha-form');
               if(!form) return;
               form.onsubmit = function(e) {
@@ -66,6 +66,15 @@ const ContactSupportTemplate = ({ data: { page } }) => {
                 var errorDiv = document.getElementById("recaptcha-error");
                 if(errorDiv !== null) errorDiv.parentNode.removeChild(errorDiv);
               }
+              var timestamp = function() {
+                var res = grecaptcha.getResponse();
+                if (res == null) {
+                  var elems = JSON.parse(document.getElementsByName("captcha_settings")[0].value);
+                  elems["ts"] = JSON.stringify(new Date().getTime());
+                  document.getElementsByName("captcha_settings")[0].value = JSON.stringify(elems); 
+                } 
+              } 
+              setInterval(timestamp, 500);
             }
             `
           }
