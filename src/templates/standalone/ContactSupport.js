@@ -107,7 +107,11 @@ const ContactSupportTemplate = ({ data: { page } }) => {
           <div className="container">
             <div className="row justify-content-center">
               <div className="col-12 col-lg-8">
-                {!!page.content && parse(page.content)}
+                {acf.showForm && !!page.content ? 
+                  <>{parse(page.content)}</>
+                :
+                  <>{parse(acf.emailLink)}</>
+                }
               </div>
             </div>
           </div>
@@ -170,6 +174,8 @@ export const pageQuery = graphql`
         }
         accessSupportTitle
         contactSalesDescription
+        showForm
+        emailLink
         contactSalesLink {
           target
           title
