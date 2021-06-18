@@ -36,6 +36,7 @@ const ContactSupportTemplate = ({ data: { page } }) => {
                 grecaptcha.render('g-recaptcha-response', {
                   'sitekey' : '${process.env.GATSBY_RECAPTCHA_SITE_KEY}',
                   'theme' : 'light',
+                  'callback' : verifyCallback,
                 });
               });         
  
