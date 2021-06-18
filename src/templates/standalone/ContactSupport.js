@@ -37,7 +37,41 @@ const ContactSupportTemplate = ({ data: { page } }) => {
                   'sitekey' : '${process.env.GATSBY_RECAPTCHA_SITE_KEY}',
                   'theme' : 'light',
                 });
-              });
+              });         
+ 
+              var form = document.getElementById('recaptcha-form');
+              if(!form) return;
+              form.onsubmit = function(e) {
+                removeRecaptchaError();
+                var res = grecaptcha.getResponse();
+                if (res == "" || res == undefined || res.length == 0){
+                  var el = document.createElement("span");
+                  el.innerHTML = "Please check the box to prove you are not a robot";
+                  el.id = "recaptcha-error";
+                  el.style = "color:red;font-size: 0.8em;";
+                  var div = document.getElementById("g-recaptcha-response");
+                  div.parentNode.insertBefore(el, div);
+                  return false;
+                }
+                return true;
+              }                   
+              var verifyCallback = function(response) {
+                console.log("Verifing Recaptcha")
+                removeRecaptchaError();
+              };
+              var removeRecaptchaError = function() {
+                var errorDiv = document.getElementById("recaptcha-error");
+                if(errorDiv !== null) errorDiv.parentNode.removeChild(errorDiv);
+              }
+              var timestamp = function() {
+                var res = grecaptcha.getResponse();
+                if (res == null) {
+                  var elems = JSON.parse(document.getElementsByName("captcha_settings")[0].value);
+                  elems["ts"] = JSON.stringify(new Date().getTime());
+                  document.getElementsByName("captcha_settings")[0].value = JSON.stringify(elems); 
+                } 
+              } 
+              setInterval(timestamp, 500);
             }
             function timestamp(){
               var response = document.getElementById("g-recaptcha-response"); 

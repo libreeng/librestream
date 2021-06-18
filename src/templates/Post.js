@@ -1,6 +1,6 @@
 import React from "react"
 import { Link, graphql } from "gatsby"
-import { GatsbyImage } from "gatsby-plugin-image"
+import { GatsbyImage, getImage } from "gatsby-plugin-image"
 import parse from "html-react-parser"
 import { embedUrl } from "../common/utils/helpers"
 import SEO from "../containers/SEO"
@@ -13,7 +13,8 @@ import Layout from "../containers/Layout"
 
 const PostTemplate = ({ data: { previous, next, post } }) => {
   const acf = post.acfPostTypeNews
-  const featuredImageData = acf?.mainImage?.localFile?.childImageSharp?.gatsbyImageData
+  const featuredImageData = getImage(acf?.mainImage?.localFile)
+  //const featuredImageData = acf?.mainImage?.localFile?.childImageSharp?.gatsbyImageData // This caused problems in IE11
   const featuredImageAlt = acf?.mainImage?.altText || ``
   const postCategory = {
     categoryName: post.categories.nodes[0].name,

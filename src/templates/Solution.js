@@ -110,7 +110,7 @@ export const pageQuery = graphql`query SolutionById($id: String!, $previousPostI
       localFile {
         publicURL
         childImageSharp {
-          gatsbyImageData(quality: 100, layout: FULL_WIDTH)
+          gatsbyImageData(quality: 100, layout: FULL_WIDTH, formats: [JPG])
         }
       }
     }

@@ -14,7 +14,7 @@ export const PostSummary = graphql`fragment PostSummary on WpPost {
       localFile {
         publicURL
         childImageSharp {
-          gatsbyImageData(width: 500, quality: 100, layout: CONSTRAINED)
+          gatsbyImageData(width: 500, quality: 100, layout: CONSTRAINED, formats: [JPG])
         }
       }
     }
@@ -25,7 +25,7 @@ export const PostSummary = graphql`fragment PostSummary on WpPost {
       localFile {
         publicURL
         childImageSharp {
-          gatsbyImageData(width: 500, quality: 100, layout: CONSTRAINED)
+          gatsbyImageData(width: 500, quality: 100, layout: CONSTRAINED, formats: [JPG])
         }
       }
     }

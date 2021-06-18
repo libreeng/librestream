@@ -8,7 +8,11 @@ const website = require('./config/website')
 const pathPrefix = website.pathPrefix === '/' ? '' : website.pathPrefix
 
 module.exports = {
-  flags: {},
+  flags: { 
+    //FAST_DEV: true,
+    //PRESERVE_WEBPACK_CACHE: true,
+    //PRESERVE_FILE_DOWNLOAD_CACHE: true,
+  },
   pathPrefix: website.pathPrefix,
   siteMetadata: {
     siteUrl: website.url + pathPrefix, // For gatsby-plugin-sitemap
@@ -53,7 +57,7 @@ module.exports = {
           MediaItem: {
             localFile: {
               maxFileSizeBytes: 1048576000, // 1GB
-              // requestConcurrency: 5, // Default 100. Amount of images to download concurrently. Try lowering this if wordpress server crashes on import.
+              requestConcurrency: 10, // Default 100. Amount of images to download concurrently. Try lowering this if wordpress server crashes on import.
             },
           },
         },
@@ -62,7 +66,7 @@ module.exports = {
           requestConcurrency: 5, // currently set to 15
           // previewRequestConcurrency: 2, // currently set to 5
           timeout: 300000,
-        }
+        },
       },
     },
     {
@@ -114,7 +118,7 @@ module.exports = {
         // List of keys to store and make available in your UI. The values of
         // the keys are taken from the normalizer function below.
         // Default: all fields
-        store: ['url', 'title', 'description', 'mainImage'],
+        store: ['url', 'title', 'description', 'mainImage', 'summaryImage'],
 
         // Function used to map the result from the GraphQL query. This should
         // return an array of items to index in the form of flat objects
@@ -125,13 +129,23 @@ module.exports = {
             url: node.uri,
             title: node.title,
             description: node.content,
-            // featuredImage: node.acfPostTypeNews.mainImage.localFile.childImageSharp,
             mainImage: node.acfPostTypeNews.mainImage,
+            summaryImage: node.acfPostTypeNews.summaryImage,
             tags: node.tags.nodes.map(tag => tag.name),
           })),
       },
     },
-    'gatsby-plugin-sitemap',
+    'gatsby-plugin-sitemap',  
+    {
+      resolve: "gatsby-plugin-web-font-loader",
+      options: {
+        custom: {
+          families: ['DIN Next LT Pro'],
+          urls: ['/fonts/fonts.css']
+        },
+        classes: true, 
+      },
+    },
     {
       resolve: "gatsby-plugin-google-tagmanager",
       options: {
@@ -153,5 +167,12 @@ module.exports = {
     },
     'gatsby-plugin-react-helmet',
     'gatsby-plugin-gatsby-cloud',
+    {
+      resolve: "gatsby-plugin-webpack-bundle-analyser-v2",
+      options: {
+        analyzerMode: "static",
+        generateStatsFile: true
+      },
+    },
   ],
 }

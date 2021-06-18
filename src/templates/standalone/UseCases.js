@@ -32,9 +32,9 @@ const UseCasesTemplate = ({ data: { page } }) => {
           </div>
         </section>
       )}
-      <section>
+      <section className="pt-4">
         <div className="container">
-          <div className="row mt-5">
+          <div className="row">
 
             {caseStudies && caseStudies.map(useCase => {
               const { id, title, uri, acfPostTypeUseCase: { caption, summaryDescription, featuredImage, logoImage, externalSource: { externalLink } } } = useCase.post
