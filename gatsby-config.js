@@ -8,7 +8,7 @@ const website = require('./config/website')
 const pathPrefix = website.pathPrefix === '/' ? '' : website.pathPrefix
 
 module.exports = {
-  flags: { 
+  flags: {
     //FAST_DEV: true,
     //PRESERVE_WEBPACK_CACHE: true,
     //PRESERVE_FILE_DOWNLOAD_CACHE: true,
@@ -44,7 +44,7 @@ module.exports = {
       resolve: `gatsby-source-wordpress`,
       options: {
         // the only required plugin option for WordPress is the GraphQL url.
-        url: process.env.WPGRAPHQL_URL,
+        url: process.env.WPGRAPHQL_URL || 'https://cms.librestream.com/graphql',
         // develop: {
         //   hardCacheMediaFiles: true,
         //   // hardCacheData: true
@@ -135,7 +135,7 @@ module.exports = {
           })),
       },
     },
-    'gatsby-plugin-sitemap',  
+    'gatsby-plugin-sitemap',
     {
       resolve: "gatsby-plugin-web-font-loader",
       options: {
@@ -143,7 +143,7 @@ module.exports = {
           families: ['DIN Next LT Pro'],
           urls: ['/fonts/fonts.css']
         },
-        classes: true, 
+        classes: true,
       },
     },
     {

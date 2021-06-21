@@ -18,7 +18,7 @@ const LearningLink = ({ link }) => {
           link.content
             ? (<button
                 onClick={() => dispatch(openModal("SupportModal", { content: link.content }))}
-                type="button" className="border-0 bg-transparent p-0 text-primary w-100">
+                type="button" className="border-0 bg-transparent p-0 text-primary w-100 learning-link learning-link--modal">
                 <div className="row align-items-center mb-3">
                   <div className="col-12 col-lg-4">
                     <BgImage
@@ -44,7 +44,7 @@ const LearningLink = ({ link }) => {
           </div>)
         ),
         'External URL': (
-          <a href={link.url} target="_blank" rel="noopener">
+          <a href={link.url} target="_blank" rel="noopener" className='learning-link learning-link--external'>
             <div className="row align-items-center mb-3">
               <div className="col-12 col-lg-4">
                 <BgImage
@@ -62,7 +62,7 @@ const LearningLink = ({ link }) => {
           <button
           onClick={() => dispatch(openModal("VideoModal", { embed: link?.videoEmbed, video: link?.videoMp4?.mediaItemUrl, title: link.linkText }))}
           type="button"
-          className="border-0 bg-transparent p-0 text-primary text-left text-underline w-100"
+          className="border-0 bg-transparent p-0 text-primary text-left text-underline w-100 learning-link learning-link--video"
           >
             <div className="row align-items-center mb-3">
               <div className="col-12 col-lg-4">
@@ -78,7 +78,7 @@ const LearningLink = ({ link }) => {
           </button>
         ),
         'Page': (
-          <a href={link.page?.link}>
+          <a href={link.page?.link} className='is-page'>
             <div className="row align-items-center mb-3">
               <div className="col-12 col-lg-4">
                 <BgImage
@@ -93,7 +93,7 @@ const LearningLink = ({ link }) => {
           </a>
         ),
         'PDF': (
-          <a href={link.pdf?.localFile?.publicURL} target="_blank" rel="noopener" className="text-underline">
+          <a href={link.pdf?.localFile?.publicURL} target="_blank" rel="noopener" className="text-underline learning-link learning-link--pdf">
             <div className="row align-items-center mb-3">
               <div className="col-12 col-lg-4">
                 <BgImage
