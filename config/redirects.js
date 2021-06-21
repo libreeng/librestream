@@ -1,5 +1,5 @@
+import { isEqual } from 'lodash';
 const redirects = require('../newRedirects.json')
-const _ = require('lodash')
 const fs = require('fs')
 
 function uniqueRedirects(arr) {
@@ -7,7 +7,7 @@ function uniqueRedirects(arr) {
   arr.forEach(function (itm) {
     var unique = true;
     cleaned.forEach(function (itm2) {
-      if (_.isEqual(itm, itm2)) unique = false;
+      if (isEqual(itm, itm2)) unique = false;
     })
     if (unique) cleaned.push(itm)
   })

@@ -40,7 +40,7 @@ const PlatformFeatures = ({ content }) => {
                         {featuredImageData && (
                           <GatsbyImage
                             image={featuredImageData}
-                            alt={feature.featuredImage.alt}
+                            alt={feature.featuredImage.alt ? feature.featuredImage.alt : ''}
                             style={{ marginBottom: 50 }} />
                         )}
                       </div>
