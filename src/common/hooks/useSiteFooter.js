@@ -49,6 +49,14 @@ export const useSiteFooter = () => {
             altText
             localFile {
               publicURL
+              childImageSharp {
+                gatsbyImageData(
+                  layout: FIXED
+                  height: 105
+                  placeholder: NONE
+                  formats: [AUTO, WEBP, AVIF]
+                )
+              }
             }
           }
         }

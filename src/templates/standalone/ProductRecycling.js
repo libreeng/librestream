@@ -1,6 +1,5 @@
 import React from "react"
 import { graphql } from "gatsby"
-// import Image from "gatsby-image"
 import parse from "html-react-parser"
 import SEO from "../../containers/SEO"
 import Hero from "../../common/ui/Hero"
