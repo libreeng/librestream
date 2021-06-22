@@ -26,4 +26,4 @@ jobs:
         with:
           start: npm run develop
           wait-on: 'http://localhost:8000'
-          wait-on-timeout: 401
+          wait-on-timeout: 400
