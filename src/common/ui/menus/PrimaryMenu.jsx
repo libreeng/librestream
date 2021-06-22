@@ -27,7 +27,7 @@ const PrimaryMenu = () => {
     <>
       <Navbar collapseOnSelect expand="lg" variant="light">
         <Link to="/" className='navbar-brand'>
-          <img src={logo.publicURL} className="img-fluid" alt={title} />
+          <img src={logo.publicURL} className="img-fluid" alt={title} width="200" height="23" />
         </Link>
         <Navbar.Toggle aria-controls="mainnav" className="ml-auto text-white">
           <div className="navbar-toggler-icon">
