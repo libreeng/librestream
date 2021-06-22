@@ -1,7 +1,7 @@
 on:
   push:
     branches:
-      - develop-tests
+      #- develop-tests
   workflow_dispatch:
     pull_request:
       branches:
