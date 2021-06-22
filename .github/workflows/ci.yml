@@ -1,13 +1,13 @@
 on:
-  push:
-    branches:
+  #push:
+    #branches:
       #- develop-tests
+  pull_request:
+    branches:
+      - develop
+      #- main
+    types: [assigned, opened, synchronize, reopened]    
   workflow_dispatch:
-    pull_request:
-      branches:
-        - develop
-        #- main
-      types: [assigned, opened, synchronize, reopened]
 
 name: Cypress Tests
 jobs:
