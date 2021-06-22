@@ -1,6 +1,7 @@
 import React, {useState} from 'react'
 // import PropTypes from 'prop-types'
-import { Tabs, Tab } from 'react-bootstrap'
+import Tab from 'react-bootstrap/Tab'
+import Tabs from 'react-bootstrap/Tabs'
 import parse from "html-react-parser"
 import { Link } from "gatsby"
 import { GatsbyImage } from "gatsby-plugin-image";
@@ -39,7 +40,7 @@ const PlatformFeatures = ({ content }) => {
                         {featuredImageData && (
                           <GatsbyImage
                             image={featuredImageData}
-                            alt={feature.featuredImage.alt}
+                            alt={feature.featuredImage.alt ? feature.featuredImage.alt : ''}
                             style={{ marginBottom: 50 }} />
                         )}
                       </div>

@@ -1,7 +1,6 @@
 import React from 'react'
 import PropTypes from 'prop-types'
 import parse from "html-react-parser"
-// import Image from "gatsby-image"
 
 const Intro = ({intro, bracket, aspect }) => {
   const featuredImage = intro.introFeaturedImage ? intro.introFeaturedImage.localFile.publicURL : false
