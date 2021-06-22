@@ -23,7 +23,7 @@ const ContactSupportTemplate = ({ data: { page } }) => {
         script={[        
           {
             type: `text/javascript`,
-            src: `https://www.google.com/recaptcha/api.js?onload=onloadCallback&render=explicit`,
+            src: `https://www.recaptcha.net/recaptcha/api.js?onload=onloadCallback&render=explicit`,
             async: true,
             defer: true
           },
