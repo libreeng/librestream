@@ -1,11 +1,11 @@
 on:
-  #push:
-    #branches:
-      #- develop-tests
+  push:
+    branches:
+      - develop-tests
   pull_request:
     branches:
-      - develop
-      #- main
+      #- develop
+      - main
     types: [assigned, opened, synchronize, reopened]    
   workflow_dispatch:
 
