@@ -36,6 +36,7 @@ describe('Test All Links on Training Deployment Adoption Materials Page', () => 
         cy.log('this page has '+nbrPdfLinks+' PDF Links')
         if (nbrPdfLinks > 0) {
           cy.get('#pageContent .learning-link--pdf').each($link => {  
+            cy.task('log', "LINK -> " + $link.find('.col-lg-8 p').text())
             cy.testLinkHrefExists($link)
           });
         }

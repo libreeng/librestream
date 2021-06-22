@@ -50,7 +50,11 @@ module.exports = (on, config) => {
     return launchOptions
   })
 
-
-
+  // For logging console messages in headless mode (https://www.ryanjyost.com/advanced-cypress-tips/)
+  on('task', {
+    log(message) {
+      console.log(message)
+      return null
+    }
+  })
 }
-

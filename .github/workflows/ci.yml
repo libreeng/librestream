@@ -2,12 +2,12 @@ on:
   push:
     branches:
       - develop-tests
-      - develop
+  pull_request:
+    branches:
+      #- develop
+      - main
+    types: [assigned, opened, synchronize, reopened]    
   workflow_dispatch:
-  # pull_request:
-  #   branches:
-  #     - main
-  #   types: [assigned, opened, synchronize, reopened]
 
 name: Cypress Tests
 jobs:
@@ -26,4 +26,4 @@ jobs:
         with:
           start: npm run develop
           wait-on: 'http://localhost:8000'
-          wait-on-timeout: 401
+          wait-on-timeout: 400
