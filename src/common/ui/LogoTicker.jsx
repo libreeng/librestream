@@ -3,6 +3,7 @@
 import React from 'react'
 import PropTypes from 'prop-types'
 import Slider from "react-slick"
+import { GatsbyImage, getImage } from "gatsby-plugin-image"
 
 const LogoTicker = ({ items }) => {
   const settings = {
@@ -22,8 +23,12 @@ const LogoTicker = ({ items }) => {
   return (
     <Slider {...settings} className="bg-gradient-blue">
       {items && items.map((item, index) => (
-        <div key={`${item.id}_${index}`} className="logo-wrapper px-3">
-          <img src={item.logo.localFile.publicURL} className="img-fluid mx-5" alt={item.logo.altText} />
+        <div key={`${item.id}_${index}`} className="logo-wrapper px-3  mx-5">
+          <GatsbyImage            
+            image={getImage(item.logo.localFile)} 
+            className="img-fluid" 
+            alt={item.logo.altText}             
+          />
         </div>
       ))}
     </Slider>

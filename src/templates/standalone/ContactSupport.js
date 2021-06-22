@@ -31,17 +31,15 @@ const ContactSupportTemplate = ({ data: { page } }) => {
             type: `text/javascript`,
             innerHTML: `
             var recaptchaInitialized = false;     
-            var onloadCallback = function() {              
-              grecaptcha.ready(function() {                
-                if(recaptchaInitialized) return;               
-                recaptchaInitialized = true;               
-                widgetId1 = grecaptcha.render('g-recaptcha-response', {
+            var onloadCallback = function() {          
+              grecaptcha.ready(function() {             
+                grecaptcha.render('g-recaptcha-response', {
                   'sitekey' : '${process.env.GATSBY_RECAPTCHA_SITE_KEY}',
                   'theme' : 'light',
                   'callback' : verifyCallback,
                 });
               });         
-
+ 
               var form = document.getElementById('recaptcha-form');
               if(!form) return;
               form.onsubmit = function(e) {
@@ -65,6 +63,18 @@ const ContactSupportTemplate = ({ data: { page } }) => {
               var removeRecaptchaError = function() {
                 var errorDiv = document.getElementById("recaptcha-error");
                 if(errorDiv !== null) errorDiv.parentNode.removeChild(errorDiv);
+              }
+              var timestamp = function() {
+                var res = grecaptcha.getResponse();
+                if (res == null || typeof res === 'undefined' || (res.value && res.value.trim() == "")) {
+                  var elems = JSON.parse(document.getElementsByName("captcha_settings")[0].value);
+                  elems["ts"] = JSON.stringify(new Date().getTime());
+                  document.getElementsByName("captcha_settings")[0].value = JSON.stringify(elems); 
+                }                
+              } 
+              if(document.getElementsByName("captcha_settings").length > 0){
+                console.log("captcha settings exist")
+                setInterval(timestamp, 500);
               }
             }
             `
@@ -97,7 +107,11 @@ const ContactSupportTemplate = ({ data: { page } }) => {
           <div className="container">
             <div className="row justify-content-center">
               <div className="col-12 col-lg-8">
-                {!!page.content && parse(page.content)}
+                {acf.showForm && !!page.content ? 
+                  <>{parse(page.content)}</>
+                :
+                  <>{parse(acf.emailLink)}</>
+                }
               </div>
             </div>
           </div>
@@ -160,6 +174,8 @@ export const pageQuery = graphql`
         }
         accessSupportTitle
         contactSalesDescription
+        showForm
+        emailLink
         contactSalesLink {
           target
           title

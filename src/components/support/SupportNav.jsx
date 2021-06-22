@@ -1,6 +1,8 @@
 import React from 'react'
 import PropTypes from 'prop-types'
-import { Accordion, Card, Button } from 'react-bootstrap'
+import Accordion from 'react-bootstrap/Accordion'
+import Card from 'react-bootstrap/Card'
+import Button from 'react-bootstrap/Button'
 import { slugify } from '../../common/utils/helpers'
 
 const SupportNav = ({sections}) => {

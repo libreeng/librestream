@@ -1,7 +1,9 @@
 import React from 'react'
 import PropTypes from 'prop-types'
 import { GatsbyImage } from "gatsby-plugin-image";
-import { Accordion, Card, Button } from 'react-bootstrap'
+import Accordion from 'react-bootstrap/Accordion'
+import Card from 'react-bootstrap/Card'
+import Button from 'react-bootstrap/Button'
 import AddLineIcon from 'remixicon-react/AddLineIcon'
 import { slugify } from '../../common/utils/helpers'
 import SupportKnowledgebaseLink from '../../components/support/SupportKnowledgebaseLink'
