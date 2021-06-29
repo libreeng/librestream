@@ -18,6 +18,7 @@ jobs:
       WPGRAPHQL_URL: "https://cms.librestream.com/graphql"
       GATSBY_RECAPTCHA_SITE_KEY: "6Lcdu70aAAAAAPXJw-zXwUNk7ulMJtwGifOBRTsS"
       GATSBY_WP_REST_API: "https://cms.librestream.com/wp-json/wp/v2" 
+      GATSBY_MEDIA_REQUEST_CONCURRENCY: 5
     steps:
       - name: Checkout
         uses: actions/checkout@v2
