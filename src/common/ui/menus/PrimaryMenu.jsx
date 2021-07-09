@@ -1,7 +1,9 @@
 import React, {useState, useEffect, useRef} from 'react'
 // import PropTypes from 'prop-types'
-import { Link, navigate } from 'gatsby'
-import { Navbar, Nav, NavDropdown } from 'react-bootstrap'
+import { Link } from 'gatsby'
+import Navbar from 'react-bootstrap/Navbar'
+import Nav from 'react-bootstrap/Nav'
+import NavDropdown from 'react-bootstrap/NavDropdown'
 import SearchLineIcon from 'remixicon-react/SearchLineIcon'
 import { useSiteMetadata } from '../../hooks/useSiteMetadata'
 import { useSiteHeader } from '../../hooks/useSiteHeader'
@@ -30,7 +32,7 @@ const PrimaryMenu = () => {
     <>
       <Navbar collapseOnSelect expand="lg" variant="light">
         <Link to="/" className='navbar-brand'>
-          <img src={logo.publicURL} className="img-fluid" alt={title} />
+          <img src={logo.publicURL} className="img-fluid" alt={title} width="200" height="23" />
         </Link>
         <Navbar.Toggle aria-controls="mainnav" className="ml-auto text-white">
           <div className="navbar-toggler-icon">

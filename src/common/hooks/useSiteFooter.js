@@ -37,7 +37,7 @@ export const useSiteFooter = () => {
           ctaFeaturedImage {
             localFile {
               childImageSharp {
-                gatsbyImageData(width: 500, quality: 100, layout: CONSTRAINED)
+                gatsbyImageData(width: 500, quality: 100, layout: CONSTRAINED, formats: [JPG])
               }
             }
           }
@@ -49,6 +49,14 @@ export const useSiteFooter = () => {
             altText
             localFile {
               publicURL
+              childImageSharp {
+                gatsbyImageData(
+                  layout: FIXED
+                  height: 105
+                  placeholder: NONE
+                  formats: [AUTO, WEBP, AVIF]
+                )
+              }
             }
           }
         }

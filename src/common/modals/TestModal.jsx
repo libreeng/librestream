@@ -1,7 +1,8 @@
 import React from 'react'
 // import PropTypes from 'prop-types'
 import { useDispatch } from 'react-redux'
-import { Modal, Button } from 'react-bootstrap'
+import Modal from 'react-bootstrap/Modal'
+import Button from 'react-bootstrap/Button'
 import { closeModal } from './modalActions'
 
 

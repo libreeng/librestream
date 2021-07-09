@@ -8,7 +8,11 @@ const website = require('./config/website')
 const pathPrefix = website.pathPrefix === '/' ? '' : website.pathPrefix
 
 module.exports = {
-  flags: {},
+  flags: {
+    //FAST_DEV: true,
+    //PRESERVE_WEBPACK_CACHE: true,
+    //PRESERVE_FILE_DOWNLOAD_CACHE: true,
+  },
   pathPrefix: website.pathPrefix,
   siteMetadata: {
     siteUrl: website.url + pathPrefix, // For gatsby-plugin-sitemap
@@ -40,7 +44,7 @@ module.exports = {
       resolve: `gatsby-source-wordpress`,
       options: {
         // the only required plugin option for WordPress is the GraphQL url.
-        url: process.env.WPGRAPHQL_URL,
+        url: process.env.WPGRAPHQL_URL || 'https://cms.librestream.com/graphql',
         // develop: {
         //   hardCacheMediaFiles: true,
         //   // hardCacheData: true
@@ -53,7 +57,7 @@ module.exports = {
           MediaItem: {
             localFile: {
               maxFileSizeBytes: 1048576000, // 1GB
-              requestConcurrency: 5, // Default 100. Amount of images to download concurrently. Try lowering this if wordpress server crashes on import.
+              requestConcurrency: process.env.GATSBY_MEDIA_REQUEST_CONCURRENCY || 100, // Default 100. Amount of images to download concurrently. Try lowering this if wordpress server crashes on import.
             },
           },
         },
@@ -62,7 +66,7 @@ module.exports = {
           requestConcurrency: 5, // currently set to 15
           // previewRequestConcurrency: 2, // currently set to 5
           timeout: 300000,
-        }
+        },
       },
     },
     {
@@ -130,7 +134,7 @@ module.exports = {
         // List of keys to store and make available in your UI. The values of
         // the keys are taken from the normalizer function below.
         // Default: all fields
-        store: ['url', 'title', 'excerpt', 'nodeType'],
+        store: ['url', 'title', 'description', 'mainImage', 'summaryImage'],
 
         // Function used to map the result from the GraphQL query. This should
         // return an array of items to index in the form of flat objects
@@ -199,8 +203,8 @@ module.exports = {
             url: node.uri,
             title: node.title,
             description: node.content,
-            // featuredImage: node.acfPostTypeNews.mainImage.localFile.childImageSharp,
             mainImage: node.acfPostTypeNews.mainImage,
+            summaryImage: node.acfPostTypeNews.summaryImage,
             tags: node.tags.nodes.map(tag => tag.name),
           })),
       },
@@ -281,6 +285,16 @@ module.exports = {
 
     'gatsby-plugin-sitemap',
     {
+      resolve: "gatsby-plugin-web-font-loader",
+      options: {
+        custom: {
+          families: ['DIN Next LT Pro'],
+          urls: ['/fonts/fonts.css']
+        },
+        classes: true,
+      },
+    },
+    {
       resolve: "gatsby-plugin-google-tagmanager",
       options: {
         id: "GTM-W3BZNJ2",
@@ -301,5 +315,29 @@ module.exports = {
     },
     'gatsby-plugin-react-helmet',
     'gatsby-plugin-gatsby-cloud',
+    {
+      resolve: "gatsby-plugin-webpack-bundle-analyser-v2",
+      options: {
+        analyzerMode: "static",
+        generateStatsFile: true
+      },
+      
+    },
+    {
+      // Removes unused css rules
+      resolve: 'gatsby-plugin-purgecss',
+      options: {
+        develop: true, // Enable while using `gatsby develop`
+        purgeOnly: ['/main.scss'], // Purge only the main css file
+        // printRejected: true,
+        // printAll: true,
+        // debug: true;
+        // printSummary: true,
+        purgeCSSOptions: {
+          // https://purgecss.com/configuration.html#options
+          safelist: [/^modal/, /^accordion/, /^card/,/^tab/, /^navbar/, /^nav/, /^button/, /^carousel/, /^wf-/,/^slick-/,/^col_/,/^col-/,/^tns-/,'em','remixicon-icon'],
+        },
+      },
+    }, // must be after other CSS plugins
   ],
 }

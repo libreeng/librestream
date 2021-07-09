@@ -1,7 +1,7 @@
 import React from 'react'
 import PropTypes from 'prop-types'
 import { useDispatch } from 'react-redux'
-import { Modal } from 'react-bootstrap'
+import Modal from 'react-bootstrap/Modal'
 import {embedUrl} from "../utils/helpers"
 import { closeModal } from './modalActions'
 

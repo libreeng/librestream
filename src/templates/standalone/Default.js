@@ -13,7 +13,7 @@ const DefaultTemplate = ({ data: { page } }) => {
   const hero = {
     heroHeading: acf.heroTitle ? acf.heroTitle : page.title,
     heroDescription: acf.heroDescription ? acf.heroDescription : false,
-    backgroundImage: acf.heroBackground ? acf.heroBackground : false
+    heroBackgroundImage: acf.heroBackground ? acf.heroBackground : false
   }
   const { cta } = page.acfFooterCTAs
 
@@ -81,6 +81,9 @@ export const pageQuery = graphql`
         heroBackground {
           localFile {
             publicURL
+            childImageSharp {
+              gatsbyImageData(quality: 100, layout: FULL_WIDTH, formats: [JPG])
+            }
           }
         }
         heroDescription
