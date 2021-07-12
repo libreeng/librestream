@@ -21,6 +21,219 @@ query {
         template {
           templateName
         }
+        acfTemplateDefault {
+          heroTitle
+          heroDescription
+        } 
+        acfLearningMaterials {
+          materials {
+            materialsTitle
+            section {
+              sectionTitle             
+            }
+          }
+        }
+        acfPlatformFeatures {
+          description
+          heading
+          footer {
+            heading
+            summary
+          }
+        }
+        acfSupportSections {
+          supportSections {
+            supportSectionTitle
+            sectionKnowledgebases {
+              kbTitle
+            }
+          }
+        }
+        acfTemplateAbout {
+          timelineTitle
+          board {
+            title
+            name
+            bio
+            designations
+          }
+          management {
+            title
+            name
+            designations
+            bio
+          }
+        }
+        acfTemplateCampaignWebinar {
+          intro
+        }
+        acfTemplateCampaignWhitePaper {
+          intro
+        }
+        acfTemplateCareers {
+          careers {
+            title
+            longDescription
+          }
+        }
+        acfTemplateContact {
+          address
+          addressTitle
+          intro
+          phoneNumbers {
+            phoneNumberLabel
+            phoneNumber
+          }
+          supportRequestDescription
+        }
+        acfTemplateContactSupport {
+          accessSupportTitle
+          contactSalesDescription
+          contactSalesTitle
+        }
+        acfTemplateCustomerSuccess {
+          deploymentDescription
+          supportDescription
+          trainingDescription
+          customerSuccessHighlights {
+            customerSuccessHighlight
+          }
+        }
+        acfTemplateHome {
+          introDescription
+          introTitle
+          carouselSlide {
+            carouselSlideTitle
+            carouselSlideDescription
+          }
+        }
+        acfTemplateItSecurity {
+          details
+        }
+        acfTemplateMediaKit {
+          mediaContacts {
+            contactName
+            contactEmail
+            contactRole
+          }
+        }
+        acfTemplateMobileInnovatorAward {
+          heroTitle1
+          heroTitle2
+          infoTitle1
+          infoTitle2
+          leadersDescription
+          leaders {
+            title
+            description
+          }
+        }
+        acfTemplatePartners {
+          partners {
+            title
+            content            
+          }
+        }
+
+        acfTemplatePlatform {
+          platformDescription
+        }
+        acfTemplatePlaformFeature {
+          productHighlightsTitle
+          technicalDetailsHeading
+          technicalDetailsDescription
+          feature1Description
+          feature2Description
+          highlights {
+            highlightTitle
+            highlightDescription
+          }
+        }
+        acfTemplateSolutionsSelectable {
+          topTitle1
+          topTitle2
+          bottomTitle1
+          bottomTitle2
+          bottomItems {
+            title
+            description
+          }
+        }
+        acfTemplateServices {
+          heroTitle
+          heroDescription
+          ctaDescription
+          alertTitle
+          alertDescription
+        }
+        
+        acfTemplateRemoteExpertAcceleratorProgram {
+          formIntro
+          accordionSections {
+            sectionTitle
+            sectionContent
+          }
+        }
+        acfTemplateProductsARSP {
+          heroTitle
+          heroDescription
+          highlightsTitle
+          highlightsIntro
+          highlights {
+            title
+            description
+          }
+          infographicTitle
+          infographic
+          platformTitle1
+          platformTitle2
+          platformIntro
+          platformContent
+          servicesTitle
+          servicesIntro
+        }
+        acfTemplateProducts {
+          productsTitle1
+          productsTitle2
+          productsDescription
+          platformTitle1
+          platformTitle2
+          platformIntro
+          heroTitle
+          heroDescription
+          differentiatorsTitle1
+          differentiatorsTitle2
+          differentiatorsIntro
+          differentiatorsDescription
+          differentiators {
+            title
+          }
+        }
+        acfTemplateProductRecycling {
+          shippingTitle
+          shippingDescription
+          shippingAddress
+        }
+        acfTemplatePlatformFeatureSpecialized {
+          feature1Description
+          ctaMessage
+          links {
+            link {
+              title
+            }
+          }
+          feature1Link {
+            title
+          }
+          documents {
+            documentLabel
+          }
+          accessories {
+            title
+            description
+          }
+        }
+
       }
     }
   }
@@ -33,19 +246,14 @@ query {
         link
         excerpt
         content
+        categories {
+          nodes {
+            name
+          }
+        }
         seo {
           metaDesc
           metaKeywords
-        }
-        acfPostTypeNews {
-          mainImage {
-            localFile {
-              publicURL
-              childImageSharp {
-                  gatsbyImageData(width: 400, quality: 100, layout: CONSTRAINED)
-              }
-            }
-          }
         }
         tags {
           nodes {

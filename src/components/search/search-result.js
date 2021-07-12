@@ -1,6 +1,6 @@
 import { Link } from "gatsby"
 import { default as React } from "react"
-import parse from "html-react-parser"
+import { algoliaParse } from "../../common/utils/helpers" // converts HTML entities to HTML character codes.
 import {
   Highlight,
   Hits,
@@ -9,28 +9,22 @@ import {
 } from "react-instantsearch-dom"
 
 
-
 const PageHit = ({ hit }) => {
-
   const parsedHit = {
     ...hit,
     _snippetResult: {
       ...hit._snippetResult,
       excerpt:{
         ...hit._snippetResult.excerpt,     
-        value: hit._snippetResult.excerpt?.value ? parse(hit._snippetResult.excerpt.value) : null,
+        value: hit._snippetResult.excerpt?.value ? algoliaParse(hit._snippetResult.excerpt.value) : null,
       },
-      title:{
-        ...hit._snippetResult.title,     
-        value: hit._snippetResult.excerpt?.value ? parse(hit._snippetResult.title.value) : null,
-      }
     }
   }
 
   
   return (
     <div className={``}>
-      <div class="h6 text-uppercase text-dark font-weight-normal text-gray">{hit.nodeType}</div>
+      <div class="h6 text-uppercase text-dark font-weight-normal text-gray">{hit.nodeSubType ? hit.nodeSubType : hit.nodeType}</div>
       <Link
         to={hit.link}
         target='_self'
@@ -61,7 +55,6 @@ const HitsInIndex = ({ index }) => (
 )
 
 const SearchResult = ({ indices, className }) => {
-  console.log(indices)
   return(
   <div className={className}>
     {indices.map(index => (
@@ -75,3 +68,6 @@ const SearchResult = ({ indices, className }) => {
 export default SearchResult
 
 /** Algolia asks that we add <PoweredBy /> if we're using the free tier */
+
+
+

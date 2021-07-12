@@ -145,3 +145,35 @@ export const embedUrl = (string) => {
   }
   return url;
 }
+
+
+
+
+
+
+export const algoliaParse = (string) => {
+  return replaceHtmlEntities(string, true)
+}
+
+function replaceHtmlEntities(string,doParse = true){
+  const mapObj = {
+    "&nbsp;": " ",
+    "&hellip;": "&#8230;", // ...
+    "&amp;": "&#38;",// Ampersand
+    "&ldquo;": "&#8220;",  //  Left Double Quotation Mark
+    "&rdquo;": "&#8221;", //  Right Double Quotation Mark
+    "&lsquo;": "&#8216;",// Left Single Quotation Mark
+    "&rsquo;": "&#8217;",// Right Single Quotation Mark
+    "&bull;": "&#8226;",// Bullet
+    "&ndash;": "&#8211;",// En Dash
+    "&mdash;": "&#8212;",// Em Dash
+    "&horbar;": "&#8213;",// Horizontal Bar
+  };
+  var re = new RegExp(Object.keys(mapObj).join("|"),"gi");
+
+  return string.replace(re, function(matched){
+    const replaced = mapObj[matched.toLowerCase()];    
+    return (doParse) ? parse(replaced) : replaced;      
+  });
+}
+
