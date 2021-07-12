@@ -55,4 +55,50 @@ query {
       }
     }
   }
+  IndustrySolutions: allWpSolution {
+    edges {
+      node {
+        id
+        nodeType
+        link
+        title
+        content
+        acfHero {
+          heroHeading
+          heroDescription
+        }
+        acfPostTypeSolution {
+          solutionTitle
+          solutionLink {
+            title
+          }
+        }
+      }
+    }
+  }
+  CaseStudies: allWpCaseStudy {
+    edges {
+      node {
+        id
+        nodeType
+        link
+        title
+        content
+        acfHero {
+          heroHeading
+          heroDescription
+        }
+        acfPostTypeUseCase {
+          summaryDescription
+          situation
+          solution
+          results
+          articleTitle
+          articleContent
+        }
+      }
+    }
+  }
 }
+
+

@@ -1,29 +1,34 @@
 import { Link } from "gatsby"
 import { default as React } from "react"
+import parse from "html-react-parser"
 import {
-  connectStateResults,
   Highlight,
   Hits,
   Index,
   Snippet,
-  PoweredBy,
 } from "react-instantsearch-dom"
 
-const HitCount = connectStateResults(({ searchResults }) => {
-  const hitCount = searchResults && searchResults.nbHits
 
-  return hitCount > 0 ? (
-    <div className="HitCount">
-      {hitCount} result{hitCount !== 1 ? `s` : ``}
-    </div>
-  ) : null
-})
 
 const PageHit = ({ hit }) => {
-  console.log(hit)
+
+  const parsedHit = {
+    ...hit,
+    _snippetResult: {
+      ...hit._snippetResult,
+      excerpt:{
+        ...hit._snippetResult.excerpt,     
+        value: hit._snippetResult.excerpt?.value ? parse(hit._snippetResult.excerpt.value) : null,
+      },
+      title:{
+        ...hit._snippetResult.title,     
+        value: hit._snippetResult.excerpt?.value ? parse(hit._snippetResult.title.value) : null,
+      }
+    }
+  }
+
   
   return (
-
     <div className={``}>
       <div class="h6 text-uppercase text-dark font-weight-normal text-gray">{hit.nodeType}</div>
       <Link
@@ -32,12 +37,14 @@ const PageHit = ({ hit }) => {
         >
         <div className="">          
           <h4 className="result-title text-dark font-weight-normal">
-            <Highlight attribute="title" hit={hit} tagName="mark" />
+            <Highlight attribute="title" hit={parsedHit} tagName="mark" />
           </h4>
           {hit.nodeType == "Post" ?
-            <Snippet attribute="excerpt" hit={hit} tagName="mark" className="result-excerpt text-dark "/>
+          <>
+            <Snippet attribute="excerpt" hit={parsedHit} tagName="mark" className="result-excerpt text-dark "/>
+          </>
           :
-            <Snippet attribute="content" hit={hit} tagName="mark" className="result-excerpt text-dark "/>
+            <Snippet attribute="content" hit={parsedHit} tagName="mark" className="result-excerpt text-dark "/>
           }
           
         </div>
@@ -48,8 +55,7 @@ const PageHit = ({ hit }) => {
 }
 
 const HitsInIndex = ({ index }) => (
-  <Index indexName={index.name}>
-    <HitCount />
+  <Index indexName={index.name} >
     <Hits className="Hits" hitComponent={PageHit} />
   </Index>
 )
@@ -59,10 +65,7 @@ const SearchResult = ({ indices, className }) => {
   return(
   <div className={className}>
     {indices.map(index => (
-      <>
-      <h3>{index.title}</h3>
       <HitsInIndex index={index} key={index.name} />
-      </>
     ))}
     
   </div>

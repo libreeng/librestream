@@ -4,8 +4,7 @@ import Hero from '../common/ui/Hero'
 import FooterCTAs from '../common/ui/FooterCTAs'
 import Search from "../components/search/search"
 const searchIndices = [
-  { name: `LibrestreamPages`, title: `Pages` },
-  { name: `LibrestreamPosts`, title: `Posts` },
+  { name: `LibrestreamSite`, title: `Pages` },
 ]
 
 

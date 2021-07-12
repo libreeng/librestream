@@ -1,18 +1,27 @@
 import React, {useState, useEffect, useRef} from 'react'
 // import PropTypes from 'prop-types'
-import { Link } from 'gatsby'
-import Navbar from 'react-bootstrap/Navbar'
-import Nav from 'react-bootstrap/Nav'
-import NavDropdown from 'react-bootstrap/NavDropdown'
+import { Link, navigate } from 'gatsby'
+import { Navbar, Nav, NavDropdown } from 'react-bootstrap'
 import SearchLineIcon from 'remixicon-react/SearchLineIcon'
 import { useSiteMetadata } from '../../hooks/useSiteMetadata'
 import { useSiteHeader } from '../../hooks/useSiteHeader'
+import { useLocation } from "@reach/router"
+import queryString from 'query-string'
+
+
+
 
 const PrimaryMenu = () => {
+  
+const location = useLocation(); // NEW
+const newSearchQuery = queryString.parse(location.search)
+const newSerchTerm = (newSearchQuery.s && newSearchQuery.s != 'undefined') ? newSearchQuery.s : ''
+
   const { menuItems, logo } = useSiteHeader()
   const { defaultSEO: {title} } = useSiteMetadata()
-  const [arrowPos, setArrowPos] = useState(-10)
   const [searchOpen, setSearchOpen] = useState(false)
+  const [query, setQuery] = useState(newSerchTerm)
+
   const menu = menuItems.filter(node => !node.parentId)
 
   const highlightedNavRef = useRef(null)
@@ -24,15 +33,16 @@ const PrimaryMenu = () => {
     return activeKey === path ? highlightedNavRef : null
   }
   const searchClassname = searchOpen ? 'search-open' : 'search-closed';
-  const doSearch = () => {
-    console.log("Do Search");
+  const doSearch = (e) => {
+    e.preventDefault();
+    navigate(`/algoliasearch?s=${query}`)
   }
 
   return (
     <>
       <Navbar collapseOnSelect expand="lg" variant="light">
         <Link to="/" className='navbar-brand'>
-          <img src={logo.publicURL} className="img-fluid" alt={title} width="200" height="23" />
+          <img src={logo.publicURL} className="img-fluid" alt={title} />
         </Link>
         <Navbar.Toggle aria-controls="mainnav" className="ml-auto text-white">
           <div className="navbar-toggler-icon">
@@ -45,13 +55,16 @@ const PrimaryMenu = () => {
         <Navbar.Collapse id="mainnav" >
           <div class={`searchbar position-absolute d-flex overflow-hidden ${searchClassname}`}>
             <div className="searchInputWrapper">
-              <input
-                className="border-0 text-gray"
-                name="query"
-                placeholder="Search"
-                onChange={(event) => setQuery(event.target.value)}
-              />
-              <SearchLineIcon size="18" onClick={() => navigate('/search')} />
+              <form onSubmit={doSearch}>
+                <input
+                  value={query}
+                  className="border-0 text-gray"
+                  name="query"
+                  placeholder="Search"
+                  onChange={(event) => setQuery(event.target.value)}
+                />
+                <SearchLineIcon size="18" onClick={doSearch} />
+              </form>
             </div>
             <div class="navbar-toggler d-block " onClick={() => setSearchOpen(false)}><div class="navbar-toggler-icon"><span class="icon-bar"></span><span class="icon-bar"></span><span class="icon-bar"></span></div></div>
           </div>

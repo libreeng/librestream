@@ -61,21 +61,23 @@
 /* Algolia stuff */
 .searchResults{
   .HitCount{}
-  .ais-Hits-list{
-    margin-top: 2rem;
-    list-style: none;
-    padding-left: 0;
-    .ais-Hits-item{
+  .searchResultsList{
+    .Hits ul{
+      margin-top: 2rem;
+      list-style: none !important;
+      padding-left: 0;
+      padding-left: 0 !important;
+      .ais-Hits-item{
 
-    }
-    .ais-Snippet-highlighted,
-    .ais-Highlight-highlighted{
-      // padding: 0;
-      // background-color: $cyan;
+      }
+      .ais-Snippet-highlighted,
+      .ais-Highlight-highlighted{
+        // padding: 0;
+        // background-color: $cyan;
+      }
     }
   }
 }
-
 
 
 
