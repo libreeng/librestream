@@ -35,7 +35,7 @@ const newSerchTerm = (newSearchQuery.s && newSearchQuery.s != 'undefined') ? new
   const searchClassname = searchOpen ? 'search-open' : 'search-closed';
   const doSearch = (e) => {
     e.preventDefault();
-    navigate(`/algoliasearch?s=${query}`)
+    navigate(`/search?s=${query}`)
   }
 
   return (
