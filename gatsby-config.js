@@ -146,13 +146,13 @@ module.exports = {
         classes: true,
       },
     },
-    {
-      resolve: "gatsby-plugin-google-tagmanager",
-      options: {
-        id: "GTM-W3BZNJ2",
-        includeInDevelopment: false,
-      },
-    },
+    // {
+    //   resolve: "gatsby-plugin-google-tagmanager",
+    //   options: {
+    //     id: "GTM-W3BZNJ2",
+    //     includeInDevelopment: false,
+    //   },
+    // },
     {
       resolve: `gatsby-plugin-manifest`,
       options: {
@@ -173,7 +173,7 @@ module.exports = {
         analyzerMode: "static",
         generateStatsFile: true
       },
-      
+
     },
     {
       // Removes unused css rules
@@ -187,7 +187,7 @@ module.exports = {
         // printSummary: true,
         purgeCSSOptions: {
           // https://purgecss.com/configuration.html#options
-          safelist: [/^modal/, /^accordion/, /^card/,/^tab/, /^navbar/, /^nav/, /^button/, /^carousel/, /^wf-/,/^slick-/,/^col_/,/^col-/,/^tns-/,'em','remixicon-icon'],
+          safelist: [/^modal/, /^accordion/, /^card/, /^tab/, /^navbar/, /^nav/, /^button/, /^carousel/, /^wf-/, /^slick-/, /^col_/, /^col-/, /^tns-/, 'em', 'remixicon-icon'],
         },
       },
     }, // must be after other CSS plugins
