@@ -20,7 +20,7 @@ function siteToAlgoliaRecord(data) {
 
   var solutions = data.IndustrySolutions.edges.map(page => ({ 
     objectID: page.node.id,
-    link: page.node.uri,
+    link: page.node.link,
     nodeType: page.node.nodeType,
     title: page.node.title,
     excerpt: '',
@@ -32,8 +32,13 @@ function siteToAlgoliaRecord(data) {
       page.node.acfPostTypeSolution.solutionTitle,
       page.node.content
     ],
+    seo: [
+      page.node.seo.metaDesc,
+      page.node.seo.metaKeywords
+    ],   
   }));
 
+  
   var pages = data.pages.edges.map(page => ({     
     objectID: page.node.id,
     link: page.node.link,
@@ -45,11 +50,7 @@ function siteToAlgoliaRecord(data) {
       page.node.acfHero.heroDescription,      
       page.node.acfIntro.heroDescription,
       page.node.acfTemplateDefault, 
-    ],
-    seo: [
-      page.node.seo.metaDesc,
-      page.node.seo.metaKeywords
-    ],    
+    ],  
     content: [
       page.node.content,
       page.node.acfIntro.introDescription,
@@ -77,6 +78,10 @@ function siteToAlgoliaRecord(data) {
       page.node.acfTemplateProductRecycling,
       page.node.acfTemplatePlatformFeatureSpecialized      
     ],
+    seo: [
+      page.node.seo.metaDesc,
+      page.node.seo.metaKeywords
+    ],  
   }));
 
   var posts = data.posts.edges.map(page => ({     
@@ -113,6 +118,10 @@ function siteToAlgoliaRecord(data) {
       page.node.acfPostTypeUseCase.solution,
       page.node.acfPostTypeUseCase.results,
     ],
+    seo: [
+      page.node.seo.metaDesc,
+      page.node.seo.metaKeywords
+    ],  
   }));
 
   const output = [

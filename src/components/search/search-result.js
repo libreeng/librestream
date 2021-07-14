@@ -34,9 +34,7 @@ const PageHit = ({ hit }) => {
             <Highlight attribute="title" hit={parsedHit} tagName="mark" />
           </h4>
           {hit.nodeType == "Post" ?
-          <>
             <Snippet attribute="excerpt" hit={parsedHit} tagName="mark" className="result-excerpt text-dark "/>
-          </>
           :
             <Snippet attribute="content" hit={parsedHit} tagName="mark" className="result-excerpt text-dark "/>
           }

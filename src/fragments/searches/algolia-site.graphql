@@ -1,5 +1,5 @@
 query {
-  pages: allWpPage {
+  pages: allWpPage(filter: {seo: {metaRobotsNoindex: {ne: "noindex"}}}) {
     edges{ 
       node {
         id
@@ -237,7 +237,7 @@ query {
       }
     }
   }
-  posts: allWpPost {
+  posts: allWpPost(filter: {seo: {metaRobotsNoindex: {ne: "noindex"}}}) {
     edges{ 
       node {
         id
@@ -263,7 +263,7 @@ query {
       }
     }
   }
-  IndustrySolutions: allWpSolution {
+  IndustrySolutions: allWpSolution(filter: {seo: {metaRobotsNoindex: {ne: "noindex"}}})  {
     edges {
       node {
         id
@@ -275,6 +275,10 @@ query {
           heroHeading
           heroDescription
         }
+        seo {
+          metaDesc
+          metaKeywords
+        }
         acfPostTypeSolution {
           solutionTitle
           solutionLink {
@@ -284,7 +288,7 @@ query {
       }
     }
   }
-  CaseStudies: allWpCaseStudy {
+  CaseStudies: allWpCaseStudy(filter: {seo: {metaRobotsNoindex: {ne: "noindex"}}})  {
     edges {
       node {
         id
@@ -303,6 +307,11 @@ query {
           results
           articleTitle
           articleContent
+        }
+        
+        seo {
+          metaDesc
+          metaKeywords
         }
       }
     }
