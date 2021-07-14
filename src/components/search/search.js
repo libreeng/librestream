@@ -16,19 +16,8 @@ const usePrevious = (value) => {
   return ref.current;
 };
 
-const HitCount = connectStateResults(({ searchResults }) => {
-  const hitCount = searchResults && searchResults.nbHits
-  return searchResults ? (
-    <div className="resultCount text-primary font-weight-normal border-right border-dark">
-      <span className='text-dark'>{hitCount > 0 ? hitCount : "No"}</span> Result{hitCount !== 1 ? `s` : ``}
-    </div>
-  ) : 'Searching...'
-})
-
-
 
 export default function Search({ indices }) {
-
 
   const location = useLocation(); 
   const prevLocation = usePrevious(location);   
@@ -90,6 +79,16 @@ export default function Search({ indices }) {
     navigate(`/search?s=${query}`)  
     setQuery(query)
   }
+  
+  const HitCount = connectStateResults(({ searchResults }) => {
+    const hitCount = searchResults && searchResults.nbHits
+    return searchResults ? (
+      <div className="resultCount text-primary font-weight-normal border-right border-dark">
+        <span className='text-dark'>{(query && hitCount > 0) ? hitCount : "No"}</span> Result{hitCount !== 1 ? `s` : ``} 
+      </div>
+    ) : 'Searching...'
+  })
+
 
   const LoadMore = connectStateResults(({ searchResults }) => {
     //console.log("Loading More")
