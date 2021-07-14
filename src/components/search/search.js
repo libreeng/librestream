@@ -93,7 +93,7 @@ export default function Search({ indices }) {
 
   const LoadMore = connectStateResults(({ searchResults }) => {
     //console.log("Loading More")
-    return nbrResults && searchResults && searchResults.nbHits > nbrResults && (
+    return query && nbrResults && searchResults && searchResults.nbHits > nbrResults && (
       <button class="btn btn-secondary mt-3" onClick={() => setNbrResults(null)}>Load More Results </button>
     )
   })
@@ -123,10 +123,15 @@ export default function Search({ indices }) {
           </div>
 
           <div className="mt-5 searchResultsList">
-            <SearchResult
-              show={query && query.length > 0 && hasFocus}
-              indices={indices}
-            />
+            { query ?
+              <SearchResult
+                show={query && query.length > 0 && hasFocus}
+                indices={indices}
+              />
+            :
+              <p>Please enter your search above</p>
+            }
+            
           </div>
           
           <LoadMore />
