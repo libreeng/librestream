@@ -7,10 +7,12 @@ query {
         title
         content
         link
+        modified
         seo {
           metaDesc
           metaKeywords
         }
+
         acfHero {
           heroHeading
           heroDescription
@@ -21,10 +23,7 @@ query {
         template {
           templateName
         }
-        acfTemplateDefault {
-          heroTitle
-          heroDescription
-        } 
+        
         acfLearningMaterials {
           materials {
             materialsTitle
@@ -160,8 +159,6 @@ query {
           }
         }
         acfTemplateServices {
-          heroTitle
-          heroDescription
           ctaDescription
           alertTitle
           alertDescription
@@ -175,8 +172,6 @@ query {
           }
         }
         acfTemplateProductsARSP {
-          heroTitle
-          heroDescription
           highlightsTitle
           highlightsIntro
           highlights {
@@ -199,8 +194,6 @@ query {
           platformTitle1
           platformTitle2
           platformIntro
-          heroTitle
-          heroDescription
           differentiatorsTitle1
           differentiatorsTitle2
           differentiatorsIntro
@@ -246,6 +239,7 @@ query {
         link
         excerpt
         content
+        modified
         categories {
           nodes {
             name
@@ -271,6 +265,7 @@ query {
         link
         title
         content
+        modified
         acfHero {
           heroHeading
           heroDescription
@@ -296,6 +291,7 @@ query {
         link
         title
         content
+        modified
         acfHero {
           heroHeading
           heroDescription

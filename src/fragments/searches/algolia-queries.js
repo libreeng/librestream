@@ -20,6 +20,7 @@ function siteToAlgoliaRecord(data) {
 
   var solutions = data.IndustrySolutions.edges.map(page => ({ 
     objectID: page.node.id,
+    modified: page.node.modified,
     link: page.node.link,
     nodeType: page.node.nodeType,
     title: page.node.title,
@@ -41,21 +42,20 @@ function siteToAlgoliaRecord(data) {
   
   var pages = data.pages.edges.map(page => ({     
     objectID: page.node.id,
+    modified: page.node.modified,
     link: page.node.link,
     nodeType: page.node.nodeType,
     title: page.node.title,
     //excerpt: page.node.acfHero.heroHeading + ' | ' + page.node.acfHero.heroDescription,
     hero: [
-      page.node.acfHero.heroHeading,
-      page.node.acfHero.heroDescription,      
-      page.node.acfIntro.heroDescription,
-      page.node.acfTemplateDefault, 
+      page.node.acfHero.heroHeading,    
+      page.node.acfIntro.heroDescription ? page.node.acfIntro.heroDescription : page.node.acfHero.heroDescription,
     ],  
-    content: [
-      page.node.content,
+    content: [      
       page.node.acfIntro.introDescription,
+      page.node.content,
       page.node.acfLearningMaterials,
-      page.node.acfPlatformFeatures ,
+      page.node.acfPlatformFeatures,
       page.node.acfSupportSections, 
       page.node.acfTemplateAbout, 
       page.node.acfTemplateCampaignWebinar, 
@@ -86,6 +86,7 @@ function siteToAlgoliaRecord(data) {
 
   var posts = data.posts.edges.map(page => ({     
     objectID: page.node.id,
+    modified: page.node.modified,
     link: page.node.link,
     nodeType: page.node.nodeType,
     nodeSubType:  page.node.categories,
@@ -97,11 +98,11 @@ function siteToAlgoliaRecord(data) {
       page.node.seo.metaKeywords,
       page.node.tags
     ],
-    // + ", " +  page.node.tags.nodes.join(", "),
   }));
 
   var casestudies = data.CaseStudies.edges.map(page => ({     
     objectID: page.node.id,
+    modified: page.node.modified,
     link: page.node.link,
     nodeType: page.node.nodeType,
     title: page.node.title,
@@ -142,7 +143,7 @@ function siteToAlgoliaRecord(data) {
  
 
 const queries = [
-  /*
+
   {
     query: fs.readFileSync(
       path.resolve(__dirname, 'algolia-posts.graphql'),
@@ -152,7 +153,7 @@ const queries = [
     indexName: 'LibrestreamPosts',
     settings: { attributesToSnippet: [`excerpt:50`] },
   },
-  */
+
   {
     query: fs.readFileSync(
       path.resolve(__dirname, 'algolia-site.graphql'),
@@ -190,8 +191,8 @@ function algoliaFlatten(item){
   const isString = Object.prototype.toString.call(item) === '[object String]';
   if(isArray && item !== null) {
     return algoliaFlattenArray(item)    
-  } else if(isString && item !== null){
-    if (item === null || item == 'null' || item == 'undefined') return;
+  } else if(isString){
+    if (item === null || item == 'null' || item == 'undefined' || item.trim() == '') return;
     return item
   } else if(typeof item === 'object' && item !== null){ // must be an object (is there a better way to test for this?)
     return algoliaFlattenObject(item)    
@@ -202,11 +203,8 @@ function algoliaFlatten(item){
 }
 
 function algoliaFlattenArray(arr){
-  const arrFiltered = arr.filter(el => {    
-    const isString = Object.prototype.toString.call(el) === '[object String]';
-    if (isString && (el == null || el == 'null' || el == 'undefined' || el.trim() == '')) return false
-    return el != null;
-  });
+
+  const arrFiltered = removeEmptyAndRepeats(arr)
 
   if(arrFiltered && Array.isArray(arrFiltered) && arrFiltered.length == 0) {
     return ''
@@ -222,34 +220,41 @@ function algoliaFlattenObject(obj){
   for (var key of Object.keys(obj)) {
     outputArray.push(algoliaFlatten(obj[key]))
   }
-  return outputArray.join(ALGOLIA_DELIMITER)
-}
 
+  const arrFiltered = removeEmptyAndRepeats(outputArray)
 
-
-
-
-
-/**
- * Goes through every item in the array of object. if the object contains an array, then run "algoliaJoinArray" on it to combine it into a single string.
- */
-/*
- function algoliaPrepare(obj){
-  for (key of Object.keys(obj)) {
-    if(Array.isArray(obj[key])){
-      obj[key] = algoliaJoinArray(obj[key])
-    }
+  if(arrFiltered && Array.isArray(arrFiltered) && arrFiltered.length == 0) {
+    return ''
   }
-  return obj  
-}
- */
 
-// Filters out blank elements from the array, and joins them with a special character.
-function algoliaJoinArray(array){  
-  const arrFiltered = array.filter(el => {
-    return el != null && el != 'null' && el != 'undefined' && el.trim() != '';
+  return arrFiltered.join(ALGOLIA_DELIMITER)
+}
+
+
+// this function was created in an effort to remove empty strings that got a dilimited placed after them, resulting in strings of ". . . . ";
+function removeEmptyAndRepeats(arr){
+  
+  // removes duplicates from the array
+  let arrUnique = arr.filter((c, index) => {
+    return arr.indexOf(c) === index;
   });
-  return arrFiltered.join(ALGOLIA_DELIMITER);
+
+  // filters out empty items from the array
+  let arrFiltered = arrUnique.filter(el => {    
+    const isString = Object.prototype.toString.call(el) === '[object String]';
+    if (isString && (el == null || el == 'null' || el == 'undefined' || el.trim() == '')) return false
+    return el != null;
+  });
+     
+  // removes repeating characters, i.e. ". . . . "
+  // replaces repeated occurances of the ALGOLIA_DELIMITER (period and space) (note: the "(\. )" is the pattern to match. The period is escaped with a backslash)
+  arrFiltered = arrFiltered.map((str) => {
+    const isString = Object.prototype.toString.call(str) === '[object String]';
+    if (isString) return str.replace(/(\. )\1{1,}/g, '$1');
+    return str;  
+  });
+
+  return arrFiltered
 }
 
 

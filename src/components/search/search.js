@@ -25,7 +25,7 @@ export default function Search({ indices }) {
   const newSearchQuery = queryString.parse(location.search)
   const newSearchTerm = (newSearchQuery.s && newSearchQuery.s != 'undefined') ? newSearchQuery.s : ''
 
-  const [respondToRouteChanges, setRespondToRouteChanges] = useState(true)
+  //const [respondToRouteChanges, setRespondToRouteChanges] = useState(true)
   const [nbrResults, setNbrResults] = useState(DEFAULT_NBR_RESUlTS)
   const [currentPage, setPage] = useState(0)
   const [query, setQuery] = useState(newSearchTerm)
@@ -33,12 +33,12 @@ export default function Search({ indices }) {
 
   // Listen for changes in the URL, if the change resultes in a different search parameter, do a new search
   useEffect(() => {
-    //console.log("Location Changed",location)
-    if(!respondToRouteChanges){
+    console.log("Location Changed",location)
+    //if(!respondToRouteChanges){
       //console.log("Do not respond to this route change!")      
-      setRespondToRouteChanges(true)
-      return;
-    }
+    //  setRespondToRouteChanges(true)
+    //  return;
+    //}
     const newSearchQuery = queryString.parse(location.search)
     const newSearchTerm = (newSearchQuery.s && newSearchQuery.s != 'undefined') ? newSearchQuery.s : '' 
      
@@ -72,12 +72,16 @@ export default function Search({ indices }) {
   )
 
   const onSearchInputUpdated = (query) => {  
-    //setRespondToRouteChanges(false)
-    //setQuery(query)  
     //console.log("search Input updated . do not respond to next route change")    
-    setRespondToRouteChanges(false)
-    navigate(`/search?s=${query}`)  
+    //setRespondToRouteChanges(false)
+    //navigate(`/search?s=${query}`)  
     setQuery(query)
+  }
+
+  const onLoadMore = () => {  
+    //console.log("Load More")
+    //setRespondToRouteChanges(false)
+    setNbrResults(null)
   }
   
   const HitCount = connectStateResults(({ searchResults }) => {
@@ -93,7 +97,7 @@ export default function Search({ indices }) {
   const LoadMore = connectStateResults(({ searchResults }) => {
     //console.log("Loading More")
     return query && nbrResults && searchResults && searchResults.nbHits > nbrResults && (
-      <button class="btn btn-secondary mt-3" onClick={() => setNbrResults(null)}>Load More Results </button>
+      <button class="btn btn-secondary mt-3" onClick={onLoadMore}>Load More Results </button>
     )
   })
 
