@@ -8,59 +8,26 @@ import { useLocation, navigate } from "@reach/router"
 import queryString from 'query-string'
 
 const DEFAULT_NBR_RESUlTS = 5
-const usePrevious = (value) => {
-  const ref = useRef();
-  useEffect(() => {
-      ref.current = value;
-  });
-  return ref.current;
-};
-
 
 export default function Search({ indices }) {
 
-  const location = useLocation(); 
-  const prevLocation = usePrevious(location);   
-
+  // On first load, get the search term from the URL
+  const location = useLocation();
   const newSearchQuery = queryString.parse(location.search)
   const newSearchTerm = (newSearchQuery.s && newSearchQuery.s != 'undefined') ? newSearchQuery.s : ''
 
-  //const [respondToRouteChanges, setRespondToRouteChanges] = useState(true)
   const [nbrResults, setNbrResults] = useState(DEFAULT_NBR_RESUlTS)
-  const [currentPage, setPage] = useState(0)
   const [query, setQuery] = useState(newSearchTerm)
   const [hasFocus, setFocus] = useState(false)
 
-  // Listen for changes in the URL, if the change resultes in a different search parameter, do a new search
-  useEffect(() => {
-    console.log("Location Changed",location)
-    //if(!respondToRouteChanges){
-      //console.log("Do not respond to this route change!")      
-    //  setRespondToRouteChanges(true)
-    //  return;
-    //}
-    const newSearchQuery = queryString.parse(location.search)
-    const newSearchTerm = (newSearchQuery.s && newSearchQuery.s != 'undefined') ? newSearchQuery.s : '' 
-     
-    if(! prevLocation) return  setQuery(newSearchTerm)
-    const oldSearchQuery = queryString.parse(prevLocation.search)
-    const oldSerchTerm = (oldSearchQuery.s && oldSearchQuery.s != 'undefined') ? oldSearchQuery.s : '' 
-    
-    //console.log("new vs old",newSearchTerm, oldSerchTerm) 
-    //console.log(query)  
-    if (newSearchTerm != oldSerchTerm && query != newSearchTerm) {
-        //console.log("Setting Query to " + newSearchTerm)
-        setQuery(newSearchTerm)
-    }    
-  }, [location]); // , prevLocation
+  setQuery(newSearchTerm)
 
 
-// every time the query is updated, update the URL in the address bar.
-  useEffect(() => {
-    //console.log("Query has been updated")
-    //navigate(`/search?s=${query}`)  
-  }, [query]); // , prevLocation
-
+  
+  const onBlur = (e) => {
+    if(e.target.value) navigate(`/search?s=${e.target.value}`) 
+    else navigate(`/search`) 
+  }
 
   const searchClient = useMemo(
     () =>
@@ -71,16 +38,9 @@ export default function Search({ indices }) {
     []
   )
 
-  const onSearchInputUpdated = (query) => {  
-    //console.log("search Input updated . do not respond to next route change")    
-    //setRespondToRouteChanges(false)
-    //navigate(`/search?s=${query}`)  
-    setQuery(query)
-  }
+
 
   const onLoadMore = () => {  
-    //console.log("Load More")
-    //setRespondToRouteChanges(false)
     setNbrResults(null)
   }
   
@@ -95,7 +55,6 @@ export default function Search({ indices }) {
 
 
   const LoadMore = connectStateResults(({ searchResults }) => {
-    //console.log("Loading More")
     return query && nbrResults && searchResults && searchResults.nbHits > nbrResults && (
       <button class="btn btn-secondary mt-3" onClick={onLoadMore}>Load More Results </button>
     )
@@ -106,21 +65,20 @@ export default function Search({ indices }) {
         <InstantSearch
           searchClient={searchClient}
           indexName={indices[0].name}
-          onSearchStateChange={({ query }) => onSearchInputUpdated(query)}
+          onSearchStateChange={({ query }) => setQuery(query)}
         >   
           {nbrResults && 
             <Configure
               hitsPerPage={nbrResults}
-              page={currentPage}
+              page={0}
             />  
           }
           
-          <div className="searchForm">
-            
+          <div className="searchForm">            
             <label htmlFor="query" className="d-flex align-items-center display-4 border-bottom border-dark">
               <HitCount />
               <div className="searchInputWrapper col px-0">
-                <SearchBox onFocus={() => setFocus(true)} hasFocus={hasFocus} defaultRefinement={query}/>
+                <SearchBox onBlur={onBlur} onFocus={() => setFocus(true)} hasFocus={hasFocus} defaultRefinement={query}/>
               </div>
             </label>
           </div>
@@ -147,8 +105,6 @@ export default function Search({ indices }) {
               
 
        
-
-
 // use different useFlexSearch hooks for each post type
 // https://githubmemory.com/repo/angeloashmore/gatsby-plugin-local-search/issues/23
 

@@ -9,13 +9,11 @@ import { useLocation } from "@reach/router"
 import queryString from 'query-string'
 
 
-
-
 const PrimaryMenu = () => {
   
-const location = useLocation(); // NEW
-const newSearchQuery = queryString.parse(location.search)
-const newSerchTerm = (newSearchQuery.s && newSearchQuery.s != 'undefined') ? newSearchQuery.s : ''
+  const location = useLocation();
+  const newSearchQuery = queryString.parse(location.search)
+  const newSerchTerm = (newSearchQuery.s && newSearchQuery.s != 'undefined') ? newSearchQuery.s : ''
 
   const { menuItems, logo } = useSiteHeader()
   const { defaultSEO: {title} } = useSiteMetadata()
@@ -35,7 +33,9 @@ const newSerchTerm = (newSearchQuery.s && newSearchQuery.s != 'undefined') ? new
   const searchClassname = searchOpen ? 'search-open' : 'search-closed';
   const doSearch = (e) => {
     e.preventDefault();
-    navigate(`/search?s=${query}`)
+    
+    navigate(`/search/?s=${query}`, { replace: true })
+  
   }
 
   return (
