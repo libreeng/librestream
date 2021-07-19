@@ -30,12 +30,6 @@
     "format": "plain"
   },
   {
-    "fromPath": "/blog/hcl‐and‐librestream‐offering‐critical‐remote‐it‐services‐across‐industries/",
-    "toPath": "https://librestream.com/blog/hcl-librestream/",
-    "type": 301,
-    "format": "plain"
-  },
-  {
     "fromPath": "/media/pdfs/Onsight-Essentials.pdf",
     "toPath": "https://cms.librestream.com/media/pdfs/Onsight-Essentials.pdf",
     "type": 301,
