@@ -2,10 +2,7 @@ import React from "react"
 import SearchLineIcon from 'remixicon-react/SearchLineIcon'
 import { connectSearchBox } from "react-instantsearch-dom"
 
-
-
-export default connectSearchBox( ({ refine, currentRefinement, className, onFocus, value, onBlur, queryHook }) => {
-
+export default connectSearchBox( ({ refine, currentRefinement, className, onFocus, onBlur }) => {
     return (
       <form className={className}>
         <input
@@ -18,9 +15,7 @@ export default connectSearchBox( ({ refine, currentRefinement, className, onFocu
           onFocus={onFocus}
           onBlur={onBlur} 
         />
-        <SearchLineIcon size="25" />
-        
+        <SearchLineIcon size="25" />        
       </form>
-    
   )}
 )
