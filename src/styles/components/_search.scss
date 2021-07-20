@@ -25,7 +25,8 @@
     top: 50%;
     transform: translateY(-50%) rotate(85deg);
     right: 15px;
-    pointer-events: none;
+    //pointer-events: none;
+    cursor:pointer;
   }
 }
 
@@ -71,9 +72,13 @@
 
       }
       .ais-Snippet-highlighted,
-      .ais-Highlight-highlighted{
-        // padding: 0;
-        // background-color: $cyan;
+      .ais-Highlight-highlighted,
+      mark{
+        display:inline;
+        padding: 0;
+        background-color: transparent;
+        color: $cyan;
+        text-decoration:underline;
       }
     }
   }
