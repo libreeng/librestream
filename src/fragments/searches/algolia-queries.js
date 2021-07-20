@@ -143,7 +143,8 @@ function siteToAlgoliaRecord(data) {
  
 
 const queries = [
-
+  /*
+  // Uncomment this if we want to switch to using Algolia for our Post searches. This will submit all posts to the "LibrestreamPosts" index.
   {
     query: fs.readFileSync(
       path.resolve(__dirname, 'algolia-posts.graphql'),
@@ -153,7 +154,7 @@ const queries = [
     indexName: 'LibrestreamPosts',
     settings: { attributesToSnippet: [`excerpt:50`] },
   },
-
+  */
   {
     query: fs.readFileSync(
       path.resolve(__dirname, 'algolia-site.graphql'),
