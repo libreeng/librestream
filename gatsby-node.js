@@ -346,12 +346,12 @@ exports.createPages = async gatsbyUtilities => {
   const posts = await getPosts(gatsbyUtilities)
   const pages = await getPages(gatsbyUtilities)
   const categories = await getCategories(gatsbyUtilities)
-  //const redirects = await getRedirects(gatsbyUtilities)
+  const redirects = await getRedirects(gatsbyUtilities)
 
   await createIndividualBlogPostPages({ posts, gatsbyUtilities })
   await createStandalonePages({ pages, gatsbyUtilities })
   await createCategoryPages({ categories, gatsbyUtilities })
-  //await createSiteRedirects({ redirects, gatsbyUtilities })
+  await createSiteRedirects({ redirects, gatsbyUtilities })
 
 }
 
