@@ -67,7 +67,7 @@
   },
   {
     "fromPath": "/support/Cube/",
-    "toPath": "https://cms.librestream.com/media/cube_user_guide.pdf",
+    "toPath": "https://cms.librestream.com/media/cube_user_guide_TEST.pdf",
     "type": 301,
     "format": "plain"
   },
