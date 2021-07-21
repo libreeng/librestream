@@ -122,6 +122,7 @@ const createSiteRedirects = async ({ redirects, gatsbyUtilities }) => {
       // const fromPath = sanitizeRedirect(origin)
       // const toPath = sanitizeRedirect(target)
       // const isPermanent = type === 301
+      console.log("Redirect to " + toPath)
       createRedirect({
         fromPath,
         toPath,
