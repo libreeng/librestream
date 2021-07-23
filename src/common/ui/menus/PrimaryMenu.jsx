@@ -5,15 +5,16 @@ import Navbar from 'react-bootstrap/Navbar'
 import Nav from 'react-bootstrap/Nav'
 import NavDropdown from 'react-bootstrap/NavDropdown'
 import SearchLineIcon from 'remixicon-react/SearchLineIcon'
+import SelectInput from '../../fields/SelectInput'
 import { useSiteMetadata } from '../../hooks/useSiteMetadata'
 import { useSiteHeader } from '../../hooks/useSiteHeader'
 
 const PrimaryMenu = () => {
-  const { menuItems, logo } = useSiteHeader()
+  const { menuItems, logo, languages } = useSiteHeader()
   const { defaultSEO: {title} } = useSiteMetadata()
   const [arrowPos, setArrowPos] = useState(-10)
   const menu = menuItems.filter(node => !node.parentId)
-
+  
   const highlightedNavRef = useRef(null)
   // TODO: the "ActiveKey" variable on Nav needs work to incorporate sub-pages
   const activeKey = null // window.location.pathname ! Window is not defined when doing a build.
@@ -22,6 +23,88 @@ const PrimaryMenu = () => {
   function isHighlightedNav(path) {
     return activeKey === path ? highlightedNavRef : null
   }
+
+  const languageDropdownStyles = {
+    container: (provided, state) => ({
+      ...provided,
+      padding:0,
+    }),
+    valueContainer: (provided, state) => ({
+      ...provided,
+      padding:0
+    }),
+    option: (provided, state) => ({
+      ...provided,
+      borderBottom: '1px solid #e5e7e7',
+      color: state.isSelected ? '#13aae2' : state.isFocused ? '#767676 ' : '#babcbe',
+      backgroundColor: state.isSelected ? '#FFF' : '#FFF',
+      padding: '5px 20px',
+      fontSize:'16px',
+      cursor: 'pointer', 
+    }),
+    control: () => ({
+      // none of react-select's styles are passed to <Control />
+      color:'#FFFFFF',
+      width:'65px',
+      fontSize:'16px',
+      display:'inline-block',
+      backgroundColor: 'transparent',
+      cursor: 'default', 
+      display: 'flex',
+      flexWrap: 'wrap',
+      justifyContent: 'space-between',
+      outline: '0 !important',
+      '&:hover': {
+        borderColor: 'red'
+      }
+    }),
+    singleValue: (provided, state) => ({
+      ...provided,
+      opacity: state.isDisabled ? 0.5 : 1, 
+      transition : 'opacity 300ms'
+    }),
+    placeholder: () => ({
+      color:'#FFFFFF',  
+    }),
+    clearIndicator: () => ({
+      display:'none',  
+    }),
+    indicatorSeparator: () => ({
+      display:'none',  
+    }),
+    dropdownIndicator: () => ({
+      padding:0,  
+    }),
+    menu: (provided, state) => ({
+      ...provided,
+      padding:0,  
+      width:'100px',
+    }),
+ 
+    /*
+    
+    container
+    dropdownIndicator
+    group
+    groupHeading
+    indicatorsContainer
+    indicatorSeparator
+    input
+    loadingIndicator
+    loadingMessage
+    menu
+    menuList
+    menuPortal
+    multiValue
+    multiValueLabel
+    multiValueRemove
+    noOptionsMessage
+    valueContainer
+    */
+  }
+
+
+
 
   return (
     <>
@@ -49,6 +132,22 @@ const PrimaryMenu = () => {
             </li>
             <li className="nav-item">
               <a href="/contact-us" className="nav-link">Contact</a>
+            </li>
+            <li className="nav-item">
+              <SelectInput 
+                className='language-select nav-link'
+                placeholder='Language'
+                defaultValue='english'
+                isMulti={false}
+                isSearchable={false}
+                onChange={(e) => window.location.href = e.value }
+                customStyles={languageDropdownStyles}
+                options={languages} 
+                defaultValue = {
+                  languages.filter(lang => lang.languageIsDefault)
+                }
+                
+              />
             </li>
           </Nav>
           <Nav id="primarynav" className="ml-auto" activeKey={activeKey}>
