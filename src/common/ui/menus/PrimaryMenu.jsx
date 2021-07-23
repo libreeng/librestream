@@ -46,6 +46,7 @@ const PrimaryMenu = () => {
       // none of react-select's styles are passed to <Control />
       color:'#FFFFFF',
       width:'auto',
+      minWidth: '65px',
       fontSize:'16px',
       display:'inline-block',
       backgroundColor: 'transparent',
@@ -61,7 +62,9 @@ const PrimaryMenu = () => {
     singleValue: (provided, state) => ({
       ...provided,
       opacity: state.isDisabled ? 0.5 : 1, 
-      transition : 'opacity 300ms'
+      transition : 'opacity 300ms',
+      maxWidth: 'inherit',
+      position: 'relative'
     }),
     placeholder: () => ({
       color:'#FFFFFF',  
@@ -153,6 +156,7 @@ const PrimaryMenu = () => {
                 />
               </li>
             }
+            
           </Nav>
           <Nav id="primarynav" className="ml-auto" activeKey={activeKey}>
             {menu && menu.map(item => {
