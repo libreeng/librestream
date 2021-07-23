@@ -45,7 +45,7 @@ const PrimaryMenu = () => {
     control: () => ({
       // none of react-select's styles are passed to <Control />
       color:'#FFFFFF',
-      width:'65px',
+      width:'auto',
       fontSize:'16px',
       display:'inline-block',
       backgroundColor: 'transparent',
@@ -71,6 +71,9 @@ const PrimaryMenu = () => {
     }),
     indicatorSeparator: () => ({
       display:'none',  
+    }),
+    indicatorsContainer: () => ({
+      alignItems:'flex-start'
     }),
     dropdownIndicator: () => ({
       padding:0,  
@@ -133,22 +136,23 @@ const PrimaryMenu = () => {
             <li className="nav-item">
               <a href="/contact-us" className="nav-link">Contact</a>
             </li>
-            <li className="nav-item">
-              <SelectInput 
-                className='language-select nav-link'
-                placeholder='Language'
-                defaultValue='english'
-                isMulti={false}
-                isSearchable={false}
-                onChange={(e) => window.location.href = e.value }
-                customStyles={languageDropdownStyles}
-                options={languages} 
-                defaultValue = {
-                  languages.filter(lang => lang.languageIsDefault)
-                }
-                
-              />
-            </li>
+            { languages.length > 0 && 
+              <li className="nav-item">
+                <SelectInput 
+                  className='language-select nav-link'
+                  placeholder='Language'
+                  defaultValue='english'
+                  isMulti={false}
+                  isSearchable={false}
+                  onChange={(e) => window.location.href = e.value }
+                  customStyles={languageDropdownStyles}
+                  options={languages} 
+                  defaultValue = {
+                    languages.filter(lang => lang.languageIsDefault)
+                  }
+                />
+              </li>
+            }
           </Nav>
           <Nav id="primarynav" className="ml-auto" activeKey={activeKey}>
             {menu && menu.map(item => {
