@@ -25,9 +25,18 @@ export default function Search({ indices }) {
 
   
   const onBlur = (e) => {
-    if(e.target.value) navigate(`/search?s=${e.target.value}`) 
-    else navigate(`/search`) 
+
+    // when leaving the search box, upate the top navigation so that the user can navigate back to it with the back button.
+
+    // This is problematic becase the "navigate" function scrolls to the top of the page. If clicking the "more results" link also blurs the input, the page will scroll to the top.
+    //if(e.target.value) navigate(`/search?s=${e.target.value}`) 
+    //else navigate(`/search`) 
+    if (typeof window !== `undefined`) {
+      if(e.target.value)  window.history.pushState({}, '', `/search/?s=${e.target.value}`);
+      else                window.history.pushState({}, '', `/search/`);
+    }
   }
+
 
   const searchClient = useMemo(
     () =>
@@ -86,6 +95,7 @@ export default function Search({ indices }) {
           <div className="mt-5 searchResultsList">
             { query ?
               <SearchResult
+                
                 show={query && query.length > 0 && hasFocus}
                 indices={indices}
               />
