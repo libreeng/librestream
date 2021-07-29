@@ -6,6 +6,12 @@
     "format": "regex"
   },
   {
+    "fromPath": "/use-cases/raytheon/",
+    "toPath": "https://librestream.com/blog/how-raytheon-missiles-and-defense-uses-onsight-to-maximize-business-outcomes/",
+    "type": 301,
+    "format": "plain"
+  },
+  {
     "fromPath": "/media/HowTo-Onsight-Flow-Builder_NOV2020.pdf",
     "toPath": "https://cms.librestream.com/media/HowTo-Onsight-Flow-Builder_NOV2020.pdf",
     "type": 301,
