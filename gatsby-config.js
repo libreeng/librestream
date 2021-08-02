@@ -79,6 +79,7 @@ module.exports = {
       }
     },
 
+    // NOTE: I could not get the live algolia account to work on my local machine. Only the develpoment one. Perhaps this has something to do with restrictions on API Keys? ~paul
     {
       resolve: `gatsby-plugin-algolia-search`,
       options: {
