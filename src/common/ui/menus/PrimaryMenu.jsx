@@ -81,12 +81,15 @@ const PrimaryMenu = () => {
     dropdownIndicator: () => ({
       padding:0,  
     }),
+    menuList: () => ({
+      padding:0,
+    }),
     menu: (provided, state) => ({
       ...provided,
       padding:0,  
-      width:'100px',
+      width:'100px'
     }),
- 
+
     /*
     
     container
@@ -98,14 +101,13 @@ const PrimaryMenu = () => {
     input
     loadingIndicator
     loadingMessage
-    menu
     menuList
     menuPortal
     multiValue
     multiValueLabel
     multiValueRemove
     noOptionsMessage
-    valueContainer
+  
     */
   }
 
