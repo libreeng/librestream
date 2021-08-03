@@ -79,6 +79,23 @@ module.exports = {
       }
     },
 
+    // NOTE: I could not get the live algolia account to work on my local machine. Only the develpoment one. Perhaps this has something to do with restrictions on API Keys? ~paul
+    {
+      resolve: `gatsby-plugin-algolia-search`,
+      options: {
+        appId: process.env.GATSBY_ALGOLIA_APP_ID,
+        apiKey: process.env.GATSBY_ALGOLIA_API_KEY,
+        indexName: process.env.GATSBY_ALGOLIA_INDEX_NAME,
+        queries: require("./src/fragments/searches/algolia-queries"),
+        chunkSize: 10000, // default: 1000
+        settings: {
+          // optional, any index settings
+        },
+        enablePartialUpdates: true, // default: false
+        matchFields: ['slug', 'modified'], // Array<String> default: ['modified']
+      },
+    },
+
     // You can have multiple instances of this plugin to create indexes with
     // different names or engines. For example, multi-lingual sites could create
     // an index for each language.
@@ -87,7 +104,7 @@ module.exports = {
       options: {
         // A unique name for the search index. This should be descriptive of
         // what the index contains. This is required.
-        name: 'posts',
+        name: 'site',
 
         // Set the search engine to create the index. This is required.
         // The following engines are supported: flexsearch, lunr
@@ -102,7 +119,7 @@ module.exports = {
         // GraphQL query used to fetch all data for the search index. This is
         // required.
         query: fs.readFileSync(
-          path.resolve(__dirname, 'src/searchQuery.graphql'),
+          path.resolve(__dirname, 'src/fragments/searches/searchSiteQuery.graphql'),
           'utf-8',
         ),
 
@@ -113,7 +130,7 @@ module.exports = {
         // List of keys to index. The values of the keys are taken from the
         // normalizer function below.
         // Default: all fields
-        index: ['url', 'title', 'content', 'tags'],
+        index: ['url', 'title', 'description', 'tags'],
 
         // List of keys to store and make available in your UI. The values of
         // the keys are taken from the normalizer function below.
@@ -124,6 +141,64 @@ module.exports = {
         // return an array of items to index in the form of flat objects
         // containing properties to index. The objects must contain the `ref`
         // field above (default: 'id'). This is required.
+        normalizer: ({ data }) => {
+          const pageData = data.allWpPage.nodes.map(node => ({
+            url: node.uri,
+            title: node.title,
+            nodeType: node.nodeType,
+            description: node.content,
+            excerpt: 'page excerpt will go here',
+            tags: null,
+          }));
+          const postData = data.allWpPost.nodes.map(node => ({
+            url: node.uri,
+            title: node.title,
+            nodeType: node.categories.nodes[0].name,
+            description: node.content,
+            excerpt: node.excerpt,
+            tags: node.tags.nodes.map(tag => tag.name),
+          })); 
+          
+          const csData = data.allWpCaseStudy.nodes.map(node => ({
+            url: node.uri,
+            title: node.title,
+            nodeType: node.nodeType,
+            description: node.content, // can we combine this with other fields? i.e. node.acfPostTypeUseCase.articleTitle
+            excerpt: node.content,
+            tags: null,           
+          })); 
+          
+          const solutionData = data.allWpSolution.nodes.map(node => ({
+            url: node.uri,
+            title: node.title,
+            nodeType: node.nodeType,
+            description: node.content, // can we combine this with other fields? i.e. node.acfIntro.introDescription
+            excerpt: node.content,
+            tags: null,           
+          })); 
+     
+          return [
+            ...pageData,
+            ...postData,
+            ...csData,
+            ...solutionData
+          ]     
+        }
+      },
+    },
+    {
+      resolve: 'gatsby-plugin-local-search',
+      options: {
+        name: 'posts',
+        engine: 'flexsearch',
+        engineOptions: 'speed',
+        query: fs.readFileSync(
+          path.resolve(__dirname, 'src/fragments/searches/searchPostsQuery.graphql'),
+          'utf-8',
+        ),
+        ref: 'url',
+        index: ['url', 'title', 'description', 'tags'],
+        store: ['url', 'title', 'description', 'mainImage'],
         normalizer: ({ data }) =>
           data.allWpPost.nodes.map(node => ({
             url: node.uri,

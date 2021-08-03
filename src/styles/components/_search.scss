@@ -25,9 +25,111 @@
     top: 50%;
     transform: translateY(-50%) rotate(85deg);
     right: 15px;
-    pointer-events: none;
+    //pointer-events: none;
+    cursor:pointer;
   }
 }
 
 
 
+
+/* Search Page */
+.searchForm input:focus{
+  outline: none;
+}
+.searchForm .resultCount{
+  width:8rem;
+  border-width:2px !important;
+}
+.searchResults .result-title{
+ 
+}
+.searchResults a:hover .result-title{
+ color:$blue !important;
+}
+.searchResults .more-results{
+  height:0;
+  opacity:0;
+  overflow:hidden;
+  transition:all 0.5s linear;
+}
+.searchResults .more-results.expanded{
+  height:auto;
+  opacity:1;
+  overflow:hidden;
+}
+
+/* Algolia stuff */
+.searchResults{
+  .HitCount{}
+  .searchResultsList{
+    .Hits ul{
+      margin-top: 2rem;
+      list-style: none !important;
+      padding-left: 0;
+      padding-left: 0 !important;
+      .ais-Hits-item{
+
+      }
+      .ais-Snippet-highlighted,
+      .ais-Highlight-highlighted,
+      mark{
+        display:inline;
+        padding: 0;
+        background-color: transparent;
+        color: $primary;
+      }
+    }
+  }
+}
+
+
+
+
+#mainnav .searchbar{
+  z-index: 5;
+  width:0%;
+  transition:width 0.3s ease-in-out;
+  &.search-open{
+    width:100%;
+  }
+  .searchInputWrapper{
+    flex:1;
+  }
+  input{ 
+    width:100%;
+    padding: 4px 10px;
+    font-size: 16px;
+    //margin: 0 7px; 
+    outline:none;
+  }
+  .remixicon-icon {
+    right:7px;
+    cursor:pointer;
+    pointer-events:all;
+  }
+  .navbar-toggler{
+    width: 48px;
+    cursor:pointer;
+    top: 0;
+    zoom: 0.6;
+  }
+  @include media-breakpoint-down(md) {
+    padding-left: 12px;
+    right: 60px;
+    left:0;
+  }
+  @include media-breakpoint-up(lg) {
+    right: 16px;
+    top:6px;
+    &.search-open{
+      width:50%;
+    }
+    .navbar-toggler{background-color:#00263a;}
+  }
+  
+  @include media-breakpoint-up(xl) {
+    right: 78px;
+    .navbar-toggler{background-color:transparent;}
+  }
+}
