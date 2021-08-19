@@ -1,61 +1,37 @@
-import React, { useState } from 'react'
-// import PropTypes from 'prop-types'
-import { graphql } from 'gatsby'
-import { useFlexSearch } from 'react-use-flexsearch'
+import React from 'react'
+import Layout from "../containers/Layout"
 import Hero from '../common/ui/Hero'
+import FooterCTAs from '../common/ui/FooterCTAs'
+import Search from "../components/search/search"
+const searchIndices = [
+  { name: `LibrestreamSite`, title: `Pages` },
+]
 
 
-const SearchPage = ({ data }) => {
-  const { localSearchPosts: { index, store } } = data
-  const [query, setQuery] = useState('')
-  const results = useFlexSearch(query, index, store)
-  const hero = {
-    heroHeading: "Search"
-  }
+export default function SearchPage() {
+
+  const hero = {heroHeading: "Search Results"}  
 
   return (
-    <>
+    <Layout>
       <Hero hero={hero} />
       <section>
         <div className="container">
           <div className="row">
-            <div className="col-12">
-              <label htmlFor="query">
-                <span>Search query</span>
-                <input
-                  name="query"
-                  value={query}
-                  onChange={(event) => setQuery(event.target.value)}
-                />
-              </label>
-              <h2>Results</h2>
-              {results.length > 0 ? (
-                <ul>
-                  {results.map((result) => (
-                    <li key={result.url}>{result.title}</li>
-                  ))}
-                </ul>
-              ) : (
-                <p>No results!</p>
-              )}
+            <div className="col-12 mt-5 searchResults">
+              <Search indices={searchIndices} />
             </div>
           </div>
         </div>
       </section>
-    </>
+      <FooterCTAs />
+    </Layout>
   )
 }
 
-SearchPage.propTypes = {
 
-}
-export const pageQuery = graphql`
-  query SearchQuery {
-    localSearchPosts {
-      index
-      store
-    }
-  }
-`
 
-export default SearchPage
+
+// use different useFlexSearch hooks for each post type
+// https://githubmemory.com/repo/angeloashmore/gatsby-plugin-local-search/issues/23
+

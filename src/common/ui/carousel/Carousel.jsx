@@ -51,22 +51,29 @@ const Carousel = ({ posts, config }) => {
               ? post.acfPostTypeNews?.externalSource?.externalLink
               : post.acfPostTypeUseCase?.externalSource?.externalLink
 
-            const url = externalLink
-              ? externalLink.url
-              : post.uri
-
-            return (
+            const output = externalLink ? 
+              <a
+                key={post.id}
+                href={externalLink.url}
+                target={'_blank'}
+                rel={'noopener'}
+              >
+                {post.nodeType === 'Post'
+                  ? <PostCard post={post} showBracket={settings.showBracket} />
+                  : <UseCaseCard post={post} />}
+              </a>
+            :
               <Link
                 key={post.id}
-                to={url}
-                target={externalLink ? '_blank' : ''}
-                rel={externalLink ? 'noopener' : ''}
+                to={post.uri}
+                rel={''}
               >
                 {post.nodeType === 'Post'
                   ? <PostCard post={post} showBracket={settings.showBracket} />
                   : <UseCaseCard post={post} />}
               </Link>
-            )
+
+            return output
           })}
         </Slider>
       </div>

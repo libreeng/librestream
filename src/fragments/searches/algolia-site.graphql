@@ -1,0 +1,317 @@
+query {
+  pages: allWpPage(filter: {seo: {metaRobotsNoindex: {ne: "noindex"}}}) {
+    edges{ 
+      node {
+        id
+        nodeType
+        title
+        content
+        link
+        modified
+        seo {
+          metaDesc
+          metaKeywords
+        }
+
+        acfHero {
+          heroHeading
+          heroDescription
+        }
+        acfIntro {
+          introDescription
+        }
+        template {
+          templateName
+        }
+        
+        acfLearningMaterials {
+          materials {
+            materialsTitle
+            section {
+              sectionTitle             
+            }
+          }
+        }
+        acfPlatformFeatures {
+          description
+          heading
+          footer {
+            heading
+            summary
+          }
+        }
+        acfSupportSections {
+          supportSections {
+            supportSectionTitle
+            sectionKnowledgebases {
+              kbTitle
+            }
+          }
+        }
+        acfTemplateAbout {
+          timelineTitle
+          board {
+            title
+            name
+            bio
+            designations
+          }
+          management {
+            title
+            name
+            designations
+            bio
+          }
+        }
+        acfTemplateCampaignWebinar {
+          intro
+        }
+        acfTemplateCampaignWhitePaper {
+          intro
+        }
+        acfTemplateCareers {
+          careers {
+            title
+            longDescription
+          }
+        }
+        acfTemplateContact {
+          address
+          addressTitle
+          intro
+          phoneNumbers {
+            phoneNumberLabel
+            phoneNumber
+          }
+          supportRequestDescription
+        }
+        acfTemplateContactSupport {
+          accessSupportTitle
+          contactSalesDescription
+          contactSalesTitle
+        }
+        acfTemplateCustomerSuccess {
+          deploymentDescription
+          supportDescription
+          trainingDescription
+          customerSuccessHighlights {
+            customerSuccessHighlight
+          }
+        }
+        acfTemplateHome {
+          introDescription
+          introTitle
+          carouselSlide {
+            carouselSlideTitle
+            carouselSlideDescription
+          }
+        }
+        acfTemplateItSecurity {
+          details
+        }
+        acfTemplateMediaKit {
+          mediaContacts {
+            contactName
+            contactEmail
+            contactRole
+          }
+        }
+        acfTemplateMobileInnovatorAward {
+          heroTitle1
+          heroTitle2
+          infoTitle1
+          infoTitle2
+          leadersDescription
+          leaders {
+            title
+            description
+          }
+        }
+        acfTemplatePartners {
+          partners {
+            title
+            content            
+          }
+        }
+
+        acfTemplatePlatform {
+          platformDescription
+        }
+        acfTemplatePlaformFeature {
+          productHighlightsTitle
+          technicalDetailsHeading
+          technicalDetailsDescription
+          feature1Description
+          feature2Description
+          highlights {
+            highlightTitle
+            highlightDescription
+          }
+        }
+        acfTemplateSolutionsSelectable {
+          topTitle1
+          topTitle2
+          bottomTitle1
+          bottomTitle2
+          bottomItems {
+            title
+            description
+          }
+        }
+        acfTemplateServices {
+          ctaDescription
+          alertTitle
+          alertDescription
+        }
+        
+        acfTemplateRemoteExpertAcceleratorProgram {
+          formIntro
+          accordionSections {
+            sectionTitle
+            sectionContent
+          }
+        }
+        acfTemplateProductsARSP {
+          highlightsTitle
+          highlightsIntro
+          highlights {
+            title
+            description
+          }
+          infographicTitle
+          infographic
+          platformTitle1
+          platformTitle2
+          platformIntro
+          platformContent
+          servicesTitle
+          servicesIntro
+        }
+        acfTemplateProducts {
+          productsTitle1
+          productsTitle2
+          productsDescription
+          platformTitle1
+          platformTitle2
+          platformIntro
+          differentiatorsTitle1
+          differentiatorsTitle2
+          differentiatorsIntro
+          differentiatorsDescription
+          differentiators {
+            title
+          }
+        }
+        acfTemplateProductRecycling {
+          shippingTitle
+          shippingDescription
+          shippingAddress
+        }
+        acfTemplatePlatformFeatureSpecialized {
+          feature1Description
+          ctaMessage
+          links {
+            link {
+              title
+            }
+          }
+          feature1Link {
+            title
+          }
+          documents {
+            documentLabel
+          }
+          accessories {
+            title
+            description
+          }
+        }
+
+      }
+    }
+  }
+  posts: allWpPost(filter: {seo: {metaRobotsNoindex: {ne: "noindex"}}}) {
+    edges{ 
+      node {
+        id
+        nodeType
+        title
+        link
+        excerpt
+        content
+        modified
+        categories {
+          nodes {
+            name
+          }
+        }
+        seo {
+          metaDesc
+          metaKeywords
+        }
+        tags {
+          nodes {
+            name
+          }
+        }
+      }
+    }
+  }
+  IndustrySolutions: allWpSolution(filter: {seo: {metaRobotsNoindex: {ne: "noindex"}}})  {
+    edges {
+      node {
+        id
+        nodeType
+        link
+        title
+        content
+        modified
+        acfHero {
+          heroHeading
+          heroDescription
+        }
+        seo {
+          metaDesc
+          metaKeywords
+        }
+        acfPostTypeSolution {
+          solutionTitle
+          solutionLink {
+            title
+          }
+        }
+      }
+    }
+  }
+  CaseStudies: allWpCaseStudy(filter: {seo: {metaRobotsNoindex: {ne: "noindex"}}})  {
+    edges {
+      node {
+        id
+        nodeType
+        link
+        title
+        content
+        modified
+        acfHero {
+          heroHeading
+          heroDescription
+        }
+        acfPostTypeUseCase {
+          summaryDescription
+          situation
+          solution
+          results
+          articleTitle
+          articleContent
+        }
+        
+        seo {
+          metaDesc
+          metaKeywords
+        }
+      }
+    }
+  }
+}
+
+
