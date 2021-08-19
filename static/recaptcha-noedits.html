@@ -1,76 +1,61 @@
-<html>
+<!DOCTYPE html>
+<!--  ----------------------------------------------------------------------  -->
+<!--  NOTE: Please add the following <META> element to your page <HEAD>.      -->
+<!--  If necessary, please modify the charset parameter to specify the        -->
+<!--  character set of your HTML page.                                        -->
+<!--  ----------------------------------------------------------------------  -->
 <head>
-    <title>SalesForce test for Librestream</title>
     <META HTTP-EQUIV="Content-type" CONTENT="text/html; charset=UTF-8">
-        <script src="https://www.google.com/recaptcha/api.js"></script>
+    <script src="https://www.google.com/recaptcha/api.js" async defer></script>
+    <script type="text/javascript">
+        function recaptcha_callback(){
+            document.getElementById("submitBtn").removeAttribute("disabled");
+        }
+    </script>
+    <script type="text/javascript">
+        function timestamp() { var response = document.getElementById("g-recaptcha-response"); if (response == null || response.value.trim() == "") {var elems = JSON.parse(document.getElementsByName("captcha_settings")[0].value);elems["ts"] = JSON.stringify(new Date().getTime());document.getElementsByName("captcha_settings")[0].value = JSON.stringify(elems); } } setInterval(timestamp, 500); 
+    </script>
+    <style>
+        .required-field::after {
+            content: "*";
+            color: red;
+        }
+    </style>
+</head>
 
-<script>
-
-function timestamp() { var response = document.getElementById("g-recaptcha-response"); if (response == null || response.value.trim() == "") {var elems = JSON.parse(document.getElementsByName("captcha_settings")[0].value);elems["ts"] = JSON.stringify(new Date().getTime());document.getElementsByName("captcha_settings")[0].value = JSON.stringify(elems); } } setInterval(timestamp, 500);
-
-</script>
- </head>
- <body>
-
-
-
+<body>
+    <!--  ----------------------------------------------------------------------  -->
+    <!--  NOTE: Please add the following <FORM> element to your page.             -->
+    <!--  ----------------------------------------------------------------------  -->
+    
     <form action="https://webto.salesforce.com/servlet/servlet.WebToCase?encoding=UTF-8" method="POST">
+    
+    <input type=hidden name='captcha_settings' value='{"keyname":"librestreamSupportForm","fallback":"true","orgId":"00DA0000000J3qY","ts":""}'>
+    <input type=hidden name="orgid" value="00DA0000000J3qY">
+    <input type=hidden name="retURL" value="https://librestream.com/support-request-confirmation/">
+    
+    <!--  ----------------------------------------------------------------------  -->
+    <!--  NOTE: These fields are optional debugging elements. Please uncomment    -->
+    <!--  these lines if you wish to test in debug mode.                          -->
+    <!--  <input type="hidden" name="debug" value=1>                              -->
+    <!--  <input type="hidden" name="debugEmail"                                  -->
+    <!--  value="paulstroot@gmail.com">                                           -->
+    <!--  ----------------------------------------------------------------------  -->
+    
+    <label for="name" class="required-field">Contact Name</label><input  id="name" maxlength="80" name="name" size="20" type="text" required/><br>
+    
+    <label for="email" class="required-field">Email</label><input  id="email" maxlength="80" name="email" size="20" type="text" required/><br>
+    
+    <label for="phone">Phone</label><input  id="phone" maxlength="40" name="phone" size="20" type="text" /><br>
+    
+    <label for="subject" class="required-field">Subject</label><input  id="subject" maxlength="80" name="subject" size="20" type="text" required/><br>
+    
+    <label for="description" class="required-field">Description</label><textarea name="description" required></textarea><br>
+    
+    <input type="hidden"  id="external" name="external" value="1" /><br>        
 
- 
-
-        <input type=hidden name='captcha_settings' value='{"keyname":"OCUPOPSupportForm","fallback":"true","orgId":"00DA0000000J3qY","ts":""}'>
-        
-        <input type=hidden name="orgid" value="00DA0000000J3qY">
-        
-        <input type=hidden name="retURL" value="">
-        
-         
-        
-        <!--  ----------------------------------------------------------------------  -->
-        
-        <!--  NOTE: These fields are optional debugging elements. Please uncomment    -->
-        
-        <!--  these lines if you wish to test in debug mode.                          -->
-        
-   <input type="hidden" name="debug" value=1> 
-        
-   <input type="hidden" name="debugEmail" value="paulstroot@gmail.com">   
-        
-        <!--  ----------------------------------------------------------------------  -->
-        
-         
-        
-        <label for="name">Contact Name</label><input  id="name" maxlength="80" name="name" size="20" type="text" /><br>
-        
-         
-        
-        <label for="email">Email</label><input  id="email" maxlength="80" name="email" size="20" type="text" /><br>
-        
-         
-        
-        <label for="phone">Phone</label><input  id="phone" maxlength="40" name="phone" size="20" type="text" /><br>
-        
-         
-        
-        <label for="subject">Subject</label><input  id="subject" maxlength="80" name="subject" size="20" type="text" /><br>
-        
-         
-        
-        <label for="description">Description</label><textarea name="description"></textarea><br>
-        
-         
-        
-        <input type="hidden"  id="external" name="external" value="1" /><br>
-        
-         
-        
-        <div class="g-recaptcha" data-sitekey="6Lcdu70aAAAAAPXJw-zXwUNk7ulMJtwGifOBRTsS"></div><br>
-        
-        <input type="submit" name="submit">
-        
-         
-        
-        </form>
-
+    <div class="g-recaptcha" data-sitekey="6Lc_xAwcAAAAAJnAfAiwBIfoSpuSbHAK33N6SNZb" data-callback="recaptcha_callback"></div><br>
+    <input type="submit" name="submit" id="submitBtn" disabled="true" class="button"/>
+    
+    </form>
 </body>
-</html>
