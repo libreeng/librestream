@@ -23,60 +23,17 @@ const ContactSupportTemplate = ({ data: { page } }) => {
         script={[        
           {
             type: `text/javascript`,
-            src: `https://www.recaptcha.net/recaptcha/api.js?onload=onloadCallback&render=explicit`,
+            src: `https://www.google.com/recaptcha/api.js`,
             async: true,
             defer: true
           },
           {
             type: `text/javascript`,
             innerHTML: `
-            var recaptchaInitialized = false;     
-            var onloadCallback = function() {          
-              grecaptcha.ready(function() {             
-                grecaptcha.render('g-recaptcha-response', {
-                  'sitekey' : '${process.env.GATSBY_RECAPTCHA_SITE_KEY}',
-                  'theme' : 'light',
-                  'callback' : verifyCallback,
-                });
-              });         
- 
-              var form = document.getElementById('recaptcha-form');
-              if(!form) return;
-              form.onsubmit = function(e) {
-                removeRecaptchaError();
-                var res = grecaptcha.getResponse();
-                if (res == "" || res == undefined || res.length == 0){
-                  var el = document.createElement("span");
-                  el.innerHTML = "Please check the box to prove you are not a robot";
-                  el.id = "recaptcha-error";
-                  el.style = "color:red;font-size: 0.8em;";
-                  var div = document.getElementById("g-recaptcha-response");
-                  div.parentNode.insertBefore(el, div);
-                  return false;
-                }
-                return true;
-              }                   
-              var verifyCallback = function(response) {
-                console.log("Verifing Recaptcha")
-                removeRecaptchaError();
-              };
-              var removeRecaptchaError = function() {
-                var errorDiv = document.getElementById("recaptcha-error");
-                if(errorDiv !== null) errorDiv.parentNode.removeChild(errorDiv);
+              function recaptcha_callback(){
+                document.getElementById("submitBtn").removeAttribute("disabled");
               }
-              var timestamp = function() {
-                var res = grecaptcha.getResponse();
-                if (res == null || typeof res === 'undefined' || (res.value && res.value.trim() == "")) {
-                  var elems = JSON.parse(document.getElementsByName("captcha_settings")[0].value);
-                  elems["ts"] = JSON.stringify(new Date().getTime());
-                  document.getElementsByName("captcha_settings")[0].value = JSON.stringify(elems); 
-                }                
-              } 
-              if(document.getElementsByName("captcha_settings").length > 0){
-                console.log("captcha settings exist")
-                setInterval(timestamp, 500);
-              }
-            }
+              function timestamp() { var response = document.getElementById("g-recaptcha-response"); if (response == null || response.value.trim() == "") {var elems = JSON.parse(document.getElementsByName("captcha_settings")[0].value);elems["ts"] = JSON.stringify(new Date().getTime());document.getElementsByName("captcha_settings")[0].value = JSON.stringify(elems); } } setInterval(timestamp, 500); 
             `
           }
         ]}
