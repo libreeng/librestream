@@ -93,11 +93,37 @@ const ContactSupportTemplate = ({ data: { page } }) => {
           <div className="container">
             <div className="row justify-content-center">
               <div className="col-12 col-lg-8">
-                {acf.showForm && !!page.content ? 
-                  <>{parse(page.content)}</>
-                :
-                  <>{parse(acf.emailLink)}</>
-                }
+                <form action="https://webto.salesforce.com/servlet/servlet.WebToCase?encoding=UTF-8" method="POST">
+    
+                  <input type="hidden" name='captcha_settings' value='{"keyname":"librestreamSupportForm","fallback":"true","orgId":"00DA0000000J3qY","ts":""}'/>
+                  <input type="hidden" name="orgid" value="00DA0000000J3qY"/>
+                  <input type="hidden" name="retURL" value="https://librestream.com/support-request-confirmation/"/>
+                  
+                  
+                  <label for="name" className="required-field">Contact Name</label>
+                  <input  id="name" maxlength="80" name="name" size="20" type="text" required /><br/>
+                  
+                  <label for="email" className="required-field">Email</label><input  id="email" maxlength="80" name="email" size="20" type="text" required /><br/>
+                  
+                  <label for="phone">Phone</label><input  id="phone" maxlength="40" name="phone" size="20" type="text" /><br/>
+                  
+                  <label for="subject" className="required-field">Subject</label><input  id="subject" maxlength="80" name="subject" size="20" type="text" required /><br/>
+                  
+                  <label for="description" className="required-field">Description</label><textarea name="description" required></textarea>
+                  <br/>
+                  
+                  <input type="hidden"  id="external" name="external" value="1" /><br/>        
+
+                  <div className="g-recaptcha" data-sitekey="6Lc_xAwcAAAAAJnAfAiwBIfoSpuSbHAK33N6SNZb" data-callback="recaptcha_callback"></div>
+                  <br/>
+                  <input type="submit" name="submit" id="submitBtn" disabled="true" className="button"/>
+                  
+                </form>
+                  {/* {acf.showForm && !!page.content ? 
+                    <>{parse(page.content)}</>
+                  :
+                    <>{parse(acf.emailLink)}</>
+                  } */}
               </div>
             </div>
           </div>
