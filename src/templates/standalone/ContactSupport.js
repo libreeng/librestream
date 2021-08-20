@@ -19,7 +19,7 @@ const ContactSupportTemplate = ({ data: { page } }) => {
 
   return (
     <>
-      {/* <Helmet
+      <Helmet
         script={[        
           {
             type: `text/javascript`,
@@ -37,8 +37,8 @@ const ContactSupportTemplate = ({ data: { page } }) => {
             `
           }
         ]}
-      /> */}
-      <Helmet
+      />
+      {/* <Helmet
         script={[        
           {
             type: `text/javascript`,
@@ -66,7 +66,7 @@ const ContactSupportTemplate = ({ data: { page } }) => {
             `
           }
         ]}
-      />
+      /> */}
       <Layout>
         <SEO pageSEO={page.seo} />
         <Hero hero={hero} />
