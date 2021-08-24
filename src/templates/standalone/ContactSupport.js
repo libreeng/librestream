@@ -7,69 +7,18 @@ import { useSiteFooter } from '../../common/hooks/useSiteFooter'
 import Hero from "../../common/ui/Hero"
 import FooterCTAs from '../../common/ui/FooterCTAs'
 import Layout from "../../containers/Layout"
-// import { Helmet } from "react-helmet"
 import {getFormParseOptions} from "../../common/utils/helpers"
-import useSSR from 'use-ssr'
 
 const ContactSupportTemplate = ({ data: { page } }) => {
-  const { isBrowser } = useSSR()
   const acf = page.acfTemplateContactSupport
   const { options } = useSiteFooter()
   const hero = {
     heroHeading: page.title
   }
   const { cta } = page.acfFooterCTAs
-  // const scripts = [        
-  //   {
-  //     type: `text/javascript`,
-  //     src: `https://www.recaptcha.net/recaptcha/api.js?onload=onloadCallback&render=explicit`,
-  //     async: true,
-  //     defer: true
-  //   },
-  //   {
-  //     type: `text/javascript`,
-  //     innerHTML: ` 
-  //     var onloadCallback = function() {          
-  //       grecaptcha.ready(function() {             
-  //         grecaptcha.render('g-recaptcha', {
-  //           'sitekey' : '${process.env.GATSBY_RECAPTCHA_SITE_KEY}',
-  //           'theme' : 'light',
-  //           'callback' : recaptcha_callback,
-  //         });
-  //         console.log("HI");
-  //       });
-  //     }
-  //     function recaptcha_callback(){
-  //       document.getElementById("submitBtn").removeAttribute("disabled");
-  //     }
-  //     function timestamp() { var response = document.getElementById("g-recaptcha-response"); if (response == null || response.value.trim() == "") {var elems = JSON.parse(document.getElementsByName("captcha_settings")[0].value);elems["ts"] = JSON.stringify(new Date().getTime());document.getElementsByName("captcha_settings")[0].value = JSON.stringify(elems); } } setInterval(timestamp, 500); 
-
-  //     `
-  //   }
-  // ]
 
   return (
     <>
-      {/* <Helmet
-        script={[        
-          {
-            type: `text/javascript`,
-            src: `https://www.google.com/recaptcha/api.js`,
-            async: true,
-            defer: true
-          },
-          {
-            type: `text/javascript`,
-            innerHTML: `
-              function recaptcha_callback(){
-                document.getElementById("submitBtn").removeAttribute("disabled");
-              }
-              function timestamp() { var response = document.getElementById("g-recaptcha-response"); if (response == null || response.value.trim() == "") {var elems = JSON.parse(document.getElementsByName("captcha_settings")[0].value);elems["ts"] = JSON.stringify(new Date().getTime());document.getElementsByName("captcha_settings")[0].value = JSON.stringify(elems); } } setInterval(timestamp, 500); 
-            `
-          }
-        ]}
-      /> */}
-      {/* <Helmet script={scripts} /> */}
       <Layout>
         <SEO pageSEO={page.seo} />
         <Hero hero={hero} />
@@ -96,7 +45,6 @@ const ContactSupportTemplate = ({ data: { page } }) => {
           <div className="container">
             <div className="row justify-content-center">
               <div className="col-12 col-lg-8">
-                {/* <h2>Browser: {isBrowser ? '👍' : '👎'}</h2> */}
                 {acf.showForm && !!page.content ? 
                   <>
                     {parse(page.content, getFormParseOptions(page.content))}
