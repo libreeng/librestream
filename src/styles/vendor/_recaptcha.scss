@@ -1,0 +1,7 @@
+.g-recaptcha {
+    margin: 1rem 0;
+}
+.required-field::after {
+    content: "*";
+    color: red;
+}

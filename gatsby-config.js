@@ -34,6 +34,14 @@ module.exports = {
     `gatsby-plugin-sharp`,
     `gatsby-transformer-sharp`,
     {
+      resolve: `gatsby-plugin-recaptcha`,
+      // options: {
+      //   async: false,
+      //   defer: false,
+      //   args: `?onload=onloadCallback&render=explicit`,
+      // },
+    },
+    {
       resolve: `gatsby-source-filesystem`,
       options: {
         name: `images`,
@@ -65,7 +73,7 @@ module.exports = {
           // perPage: 5,
           requestConcurrency: 5, // currently set to 15
           // previewRequestConcurrency: 2, // currently set to 5
-          timeout: 300000,
+          timeout: 3000000,
         },
       },
     },
@@ -262,7 +270,7 @@ module.exports = {
         // printSummary: true,
         purgeCSSOptions: {
           // https://purgecss.com/configuration.html#options
-          safelist: [/^modal/, /^accordion/, /^card/,/^tab/, /^navbar/, /^nav/, /^button/, /^carousel/, /^wf-/,/^slick-/,/^col_/,/^col-/,/^tns-/,'em','remixicon-icon'],
+          safelist: [/^modal/, /^accordion/, /^card/,/^tab/, /^navbar/, /^nav/, /^button/, /^carousel/, /^wf-/,/^slick-/,/^col_/,/^col-/,/^tns-/,'em','remixicon-icon', /^required/],
         },
       },
     }, // must be after other CSS plugins
