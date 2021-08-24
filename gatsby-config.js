@@ -33,14 +33,7 @@ module.exports = {
     `gatsby-plugin-image`,
     `gatsby-plugin-sharp`,
     `gatsby-transformer-sharp`,
-    {
-      resolve: `gatsby-plugin-recaptcha`,
-      // options: {
-      //   async: false,
-      //   defer: false,
-      //   args: `?onload=onloadCallback&render=explicit`,
-      // },
-    },
+    `gatsby-plugin-recaptcha`,
     {
       resolve: `gatsby-source-filesystem`,
       options: {
