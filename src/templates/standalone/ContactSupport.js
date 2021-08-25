@@ -7,7 +7,7 @@ import { useSiteFooter } from '../../common/hooks/useSiteFooter'
 import Hero from "../../common/ui/Hero"
 import FooterCTAs from '../../common/ui/FooterCTAs'
 import Layout from "../../containers/Layout"
-import {getFormParseOptions} from "../../common/utils/helpers"
+
 
 const ContactSupportTemplate = ({ data: { page } }) => {
   const acf = page.acfTemplateContactSupport
@@ -36,6 +36,7 @@ const ContactSupportTemplate = ({ data: { page } }) => {
                     <a href={acf.accessSupportLink.url} className="btn btn-primary btn-lg text-white my-5" target={acf.accessSupportLink.target}>{acf.accessSupportLink.title}</a>
                   </div>
                 )}
+                {parse(page.content)}
                 <hr className="hr-styled" />
               </div>
             </div>
@@ -45,9 +46,11 @@ const ContactSupportTemplate = ({ data: { page } }) => {
           <div className="container">
             <div className="row justify-content-center">
               <div className="col-12 col-lg-8">
-                {acf.showForm && !!page.content ? 
+                {acf.showForm ? 
                   <>
-                    {parse(page.content, getFormParseOptions(page.content))}
+                    <div className="responsive-iframe w-100 my-5" style={{paddingTop: '662px'}}>
+                      <iframe src='/support.html' title='Support Form' />
+                    </div>
                   </>
                 :
                   <>{parse(acf.emailLink)}</>

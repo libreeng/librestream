@@ -46,14 +46,14 @@ module.exports = {
       options: {
         // the only required plugin option for WordPress is the GraphQL url.
         url: process.env.WPGRAPHQL_URL || 'https://cms.librestream.com/graphql',
-        // develop: {
-        //   hardCacheMediaFiles: true,
-        //   // hardCacheData: true
-        // },
-        // production: {
-        //   hardCacheMediaFiles: true,
-        //   // hardCacheData: true
-        // },
+        develop: {
+          hardCacheMediaFiles: true,
+          // hardCacheData: true
+        },
+        production: {
+          hardCacheMediaFiles: true,
+          // hardCacheData: true
+        },
         type: {
           MediaItem: {
             localFile: {
@@ -222,13 +222,13 @@ module.exports = {
         classes: true,
       },
     },
-    // {
-    //   resolve: "gatsby-plugin-google-tagmanager",
-    //   options: {
-    //     id: "GTM-W3BZNJ2",
-    //     includeInDevelopment: false,
-    //   },
-    // },
+    {
+      resolve: "gatsby-plugin-google-tagmanager",
+      options: {
+        id: "GTM-W3BZNJ2",
+        includeInDevelopment: false,
+      },
+    },
     {
       resolve: `gatsby-plugin-manifest`,
       options: {
