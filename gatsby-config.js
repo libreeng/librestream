@@ -242,7 +242,17 @@ module.exports = {
       },
     },
     'gatsby-plugin-react-helmet',
-    'gatsby-plugin-gatsby-cloud',
+    {
+      resolve: 'gatsby-plugin-gatsby-cloud',
+      options: {
+        headers: {
+          "/*": [
+            "X-Frame-Options: SAMEORIGIN",
+          ],
+        },
+      },
+      
+    },
     {
       resolve: "gatsby-plugin-webpack-bundle-analyser-v2",
       options: {
