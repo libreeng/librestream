@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<!--  ----------------------------------------------------------------------  -->
+<!--  NOTE: Please add the following <META> element to your page <HEAD>.      -->
+<!--  If necessary, please modify the charset parameter to specify the        -->
+<!--  character set of your HTML page.                                        -->
+<!--  ----------------------------------------------------------------------  -->
+<head>
+    <META HTTP-EQUIV="Content-type" CONTENT="text/html; charset=UTF-8">
+    <script src="https://www.google.com/recaptcha/api.js" async defer></script>
+    <script type="text/javascript">
+        function recaptcha_callback(){
+            document.getElementById("submitBtn").removeAttribute("disabled");
+        }
+    </script>
+    <script type="text/javascript">
+        function timestamp() { var response = document.getElementById("g-recaptcha-response"); if (response == null || response.value.trim() == "") {var elems = JSON.parse(document.getElementsByName("captcha_settings")[0].value);elems["ts"] = JSON.stringify(new Date().getTime());document.getElementsByName("captcha_settings")[0].value = JSON.stringify(elems); } } setInterval(timestamp, 500); 
+    </script>
+    <link rel="stylesheet" href="/fonts/fonts.css">
+    <style>
+        .required-field::after {
+            content: "*";
+            color: red;
+        }
+        label {
+          display: block;
+          color: #000000;
+          font-family: "DIN Next LT Pro", Arial, Helvetica, sans-serif;
+          color: #014168;
+          font-size: 1.3rem;
+          line-height: 1.4;
+          font-weight: 400;
+          -webkit-font-smoothing: antialiased;
+        }
+        input[type="text"],
+        textarea {
+          border: 1px solid rgb(0, 163, 223);
+          height: 50px;
+          line-height: 50px;
+          width: 95%;
+          margin-bottom: 20px;
+        }
+        input[type="submit"] {
+          background: linear-gradient(90deg, rgba(9,70,121,1) 0%, rgba(0,212,255,1) 100%);
+          color: #ffffff;
+          text-transform: uppercase;
+          border-radius: 3rem;
+          max-width: 100%;
+          font-size: 1.5rem;
+          text-transform: uppercase;
+          background-repeat: no-repeat;
+          border: 0;
+          font-family: "DIN Next LT Pro", sans-serif;
+          cursor: pointer;
+          width: 100%;
+          display: block;
+          height: 47px;
+          padding: 0.5rem 4rem 0.3rem;
+          line-height: 1.4;
+          -webkit-font-smoothing: antialiased;
+        }
+        /* input[type="submit"]:hover{
+          cursor: pointer;
+        } */
+        input[type="submit"]:disabled {
+          background: #dedede;
+          border-color: #dedede;
+          color: #fff;
+          opacity: 0.65;
+        }
+        input[type="submit"]:disabled:hover {
+          cursor: auto
+        }
+    </style>
+</head>
+
+<body>
+    <!--  ----------------------------------------------------------------------  -->
+    <!--  NOTE: Please add the following <FORM> element to your page.             -->
+    <!--  ----------------------------------------------------------------------  -->
+    
+    <form action="https://webto.salesforce.com/servlet/servlet.WebToCase?encoding=UTF-8" method="POST">
+    
+    <input type=hidden name='captcha_settings' value='{"keyname":"librestreamSupportForm","fallback":"true","orgId":"00DA0000000J3qY","ts":""}'>
+    <input type=hidden name="orgid" value="00DA0000000J3qY">
+    <input type=hidden name="retURL" value="https://librestream.com/support-confirmation.html">
+    
+    <!--  ----------------------------------------------------------------------  -->
+    <!--  NOTE: These fields are optional debugging elements. Please uncomment    -->
+    <!--  these lines if you wish to test in debug mode.                          -->
+    <!--  <input type="hidden" name="debug" value=1>                              -->
+    <!--  <input type="hidden" name="debugEmail"                                  -->
+    <!--  value="paulstroot@gmail.com">                                           -->
+    <!--  ----------------------------------------------------------------------  -->
+    
+    <label for="name" class="required-field">Contact Name</label><input  id="name" maxlength="80" name="name" size="20" type="text" required/><br>
+    
+    <label for="email" class="required-field">Email</label><input  id="email" maxlength="80" name="email" size="20" type="text" required/><br>
+    
+    <label for="phone">Phone</label><input  id="phone" maxlength="40" name="phone" size="20" type="text" /><br>
+    
+    <label for="subject" class="required-field">Subject</label><input  id="subject" maxlength="80" name="subject" size="20" type="text" required/><br>
+    
+    <label for="description" class="required-field">Description</label><textarea name="description" required></textarea><br>
+    
+    <input type="hidden"  id="external" name="external" value="1" /><br>        
+
+    <div class="g-recaptcha" data-sitekey="6Lc_xAwcAAAAAJnAfAiwBIfoSpuSbHAK33N6SNZb" data-callback="recaptcha_callback"></div><br>
+    <input type="submit" name="submit" id="submitBtn" disabled="true" class="button"/>
+    
+    </form>
+</body>

@@ -3,6 +3,8 @@ import format from 'date-fns/format'
 import queryString from 'query-string'
 import { domToReact } from 'html-react-parser'
 import parse from "html-react-parser"
+import ReCAPTCHA from "react-google-recaptcha"
+
 export const formatDate = date => {
   let dateFormated = ''
   if (date) {
@@ -98,6 +100,30 @@ export function getHeroParseOptions(props) {
       if (name === 'p') {
         // eslint-disable-next-line consistent-return
         return <>{domToReact(children, getHeroParseOptions(props))}</>
+      }
+    }
+  })
+}
+
+export function getFormParseOptions(props) {
+  return ({
+    replace: ({ attribs, name, children }) => {
+      if (!attribs) return;
+
+      if (attribs.class === 'g-recaptcha') {
+        return (
+          <div className="g-recaptcha">
+            <ReCAPTCHA
+              sitekey={process.env.GATSBY_RECAPTCHA_SITE_KEY}
+              onChange={(value) => {
+                console.log("Captcha value:", value)
+                document.getElementById("submitBtn").removeAttribute("disabled")
+              }}
+            />
+          </div>
+        )
+        // eslint-disable-next-line consistent-return
+        // return <>{domToReact(children, getHeroParseOptions(props))}</>
       }
     }
   })
