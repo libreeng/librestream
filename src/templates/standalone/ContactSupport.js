@@ -2,6 +2,7 @@
 import React from "react"
 import { graphql } from "gatsby"
 import parse from "html-react-parser"
+import { Helmet } from "react-helmet"
 import SEO from "../../containers/SEO"
 import { useSiteFooter } from '../../common/hooks/useSiteFooter'
 import Hero from "../../common/ui/Hero"
@@ -16,9 +17,16 @@ const ContactSupportTemplate = ({ data: { page } }) => {
     heroHeading: page.title
   }
   const { cta } = page.acfFooterCTAs
+  const scripts = [        
+    {
+      type: `text/javascript`,
+      src: `/js/iframeResizer.min.js`
+    }
+  ]
 
   return (
     <>
+      <Helmet script={scripts} />
       <Layout>
         <SEO pageSEO={page.seo} />
         <Hero hero={hero} />
@@ -48,8 +56,8 @@ const ContactSupportTemplate = ({ data: { page } }) => {
               <div className="col-12 col-lg-8">
                 {acf.showForm ? 
                   <div className="py-2 h-auto">
-                      <iframe src='/support.html' title='Contact Support Form' />
-                    
+                      <iframe src='/support.html' title='Contact Support Form' scrolling="no" />
+                      
                   </div>
                 :
                   <>{parse(acf.emailLink)}</>
