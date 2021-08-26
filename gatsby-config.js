@@ -46,14 +46,14 @@ module.exports = {
       options: {
         // the only required plugin option for WordPress is the GraphQL url.
         url: process.env.WPGRAPHQL_URL || 'https://cms.librestream.com/graphql',
-        develop: {
-          hardCacheMediaFiles: true,
-          // hardCacheData: true
-        },
-        production: {
-          hardCacheMediaFiles: true,
-          // hardCacheData: true
-        },
+        // develop: {
+        //   hardCacheMediaFiles: true,
+        //   // hardCacheData: true
+        // },
+        // production: {
+        //   hardCacheMediaFiles: true,
+        //   // hardCacheData: true
+        // },
         type: {
           MediaItem: {
             localFile: {
@@ -66,7 +66,7 @@ module.exports = {
           // perPage: 5,
           requestConcurrency: 5, // currently set to 15
           // previewRequestConcurrency: 2, // currently set to 5
-          timeout: 3000000,
+          timeout: 300000,
         },
       },
     },

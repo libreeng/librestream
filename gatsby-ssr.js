@@ -30,12 +30,12 @@ import App from "./App"
 export const onRenderBody = ({ setPostBodyComponents }) => {
 
   setPostBodyComponents([
-    // <script
-    //   key="driftScript"
-    //   id="driftScript"
-    //   src="/js/drift.js"
-    //   defer
-    // />,
+    <script
+      key="driftScript"
+      id="driftScript"
+      src="/js/drift.js"
+      defer
+    />,
     <script
       key="iframeResize"
       id="iframeResize"
