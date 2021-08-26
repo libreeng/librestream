@@ -47,11 +47,10 @@ const ContactSupportTemplate = ({ data: { page } }) => {
             <div className="row justify-content-center">
               <div className="col-12 col-lg-8">
                 {acf.showForm ? 
-                  <>
-                    <div className="responsive-iframe w-100 my-5" style={{paddingTop: '750px'}}>
+                  <div className="py-2 h-auto">
                       <iframe src='/support.html' title='Contact Support Form' />
-                    </div>
-                  </>
+                    
+                  </div>
                 :
                   <>{parse(acf.emailLink)}</>
                 }

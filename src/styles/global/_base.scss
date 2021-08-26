@@ -78,3 +78,8 @@ a {
 table {
   @extend .table;
 }
+
+iframe {
+  width: 100%;
+  border: 0;
+}
