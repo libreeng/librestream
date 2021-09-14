@@ -17,7 +17,6 @@ const PrimaryMenu = () => {
   const newSearchQuery = queryString.parse(location.search)
   const newSerchTerm = (newSearchQuery.s && newSearchQuery.s != 'undefined') ? newSearchQuery.s : ''
 
-  const { menuItems, logo } = useSiteHeader()
   const { defaultSEO: {title} } = useSiteMetadata()
   const [searchOpen, setSearchOpen] = useState(false)
   const [query, setQuery] = useState(newSerchTerm)
