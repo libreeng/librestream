@@ -1,18 +1,27 @@
 import React, {useState, useEffect, useRef} from 'react'
 // import PropTypes from 'prop-types'
-import { Link } from 'gatsby'
-import Navbar from 'react-bootstrap/Navbar'
-import Nav from 'react-bootstrap/Nav'
-import NavDropdown from 'react-bootstrap/NavDropdown'
+import { Link, navigate } from 'gatsby'
+import { Navbar, Nav, NavDropdown } from 'react-bootstrap'
 import SearchLineIcon from 'remixicon-react/SearchLineIcon'
 import SelectInput from '../../fields/SelectInput'
 import { useSiteMetadata } from '../../hooks/useSiteMetadata'
 import { useSiteHeader } from '../../hooks/useSiteHeader'
+import { useLocation } from "@reach/router"
+import queryString from 'query-string'
+
 
 const PrimaryMenu = () => {
   const { menuItems, logo, languages } = useSiteHeader()
+  
+  const location = useLocation();
+  const newSearchQuery = queryString.parse(location.search)
+  const newSerchTerm = (newSearchQuery.s && newSearchQuery.s != 'undefined') ? newSearchQuery.s : ''
+
+  const { menuItems, logo } = useSiteHeader()
   const { defaultSEO: {title} } = useSiteMetadata()
-  const [arrowPos, setArrowPos] = useState(-10)
+  const [searchOpen, setSearchOpen] = useState(false)
+  const [query, setQuery] = useState(newSerchTerm)
+
   const menu = menuItems.filter(node => !node.parentId)
   
   const highlightedNavRef = useRef(null)
@@ -22,6 +31,13 @@ const PrimaryMenu = () => {
 
   function isHighlightedNav(path) {
     return activeKey === path ? highlightedNavRef : null
+  }
+  const searchClassname = searchOpen ? 'search-open' : 'search-closed';
+  const doSearch = (e) => {
+    e.preventDefault();
+    
+    navigate(`/search/?s=${query}`, { replace: true })
+  
   }
 
   const languageDropdownStyles = {
@@ -118,7 +134,7 @@ const PrimaryMenu = () => {
     <>
       <Navbar collapseOnSelect expand="lg" variant="light">
         <Link to="/" className='navbar-brand'>
-          <img src={logo.publicURL} className="img-fluid" alt={title} width="200" height="23" />
+          <img src={logo.publicURL} className="img-fluid" alt={title} />
         </Link>
         <Navbar.Toggle aria-controls="mainnav" className="ml-auto text-white">
           <div className="navbar-toggler-icon">
@@ -127,12 +143,29 @@ const PrimaryMenu = () => {
             <span className="icon-bar" />
           </div>
         </Navbar.Toggle>
+
         <Navbar.Collapse id="mainnav" >
+          <div class={`searchbar position-absolute d-flex overflow-hidden ${searchClassname}`}>
+            <div className="searchInputWrapper">
+              <form onSubmit={doSearch}>
+                <input
+                  value={query}
+                  className="border-0 text-gray"
+                  name="query"
+                  placeholder="Search"
+                  onChange={(event) => setQuery(event.target.value)}
+                />
+                <SearchLineIcon size="18" onClick={doSearch} />
+              </form>
+            </div>
+            <div class="navbar-toggler d-block " onClick={() => setSearchOpen(false)}><div class="navbar-toggler-icon"><span class="icon-bar"></span><span class="icon-bar"></span><span class="icon-bar"></span></div></div>
+          </div>
+
           <Nav as="ul" id="usernav" className="nav flex-row justify-content-center justify-content-lg-end">
             {/* TODO: Add logic for CMS */}
-            <li className="nav-item d-none">
-              <a href="#" className="nav-link">
-                <SearchLineIcon size="14" />
+            <li className="nav-item">
+              <a className="nav-link" onClick={() => setSearchOpen(true)}>
+                <SearchLineIcon size="14"  />
               </a>
             </li>
             <li className="nav-item">
@@ -160,6 +193,7 @@ const PrimaryMenu = () => {
             }
             
           </Nav>
+          
           <Nav id="primarynav" className="ml-auto" activeKey={activeKey}>
             {menu && menu.map(item => {
               const submenu = menuItems.filter(node => node.parentId === item.id)

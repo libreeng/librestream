@@ -2,7 +2,7 @@
 const embeddedForms = [
   '/reseller-orders/',
   '/register-opportunity/',
-  '/contact-us-support/'
+  // '/contact-us-support/'
 ]
 const iframeForms = [
   '/free-demo/',

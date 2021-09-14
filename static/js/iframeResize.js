@@ -58,5 +58,5 @@ function gotResizeMessage(event)
 document.addEventListener("DOMContentLoaded", function(){
 	
 	window.addEventListener("message", gotResizeMessage, false)
-	
+
 }); //on DOM ready

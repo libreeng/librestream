@@ -3,6 +3,8 @@ import format from 'date-fns/format'
 import queryString from 'query-string'
 import { domToReact } from 'html-react-parser'
 import parse from "html-react-parser"
+import ReCAPTCHA from "react-google-recaptcha"
+
 export const formatDate = date => {
   let dateFormated = ''
   if (date) {
@@ -43,10 +45,10 @@ export const getFilter = (query) => {
 }
 
 export function slugify(string) {
+  if(string === null) return;
   const a = 'àáäâãåăæąçćčđďèéěėëêęğǵḧìíïîįłḿǹńňñòóöôœøṕŕřßşśšșťțùúüûǘůűūųẃẍÿýźžż·/_,:;'
   const b = 'aaaaaaaaacccddeeeeeeegghiiiiilmnnnnooooooprrsssssttuuuuuuuuuwxyyzzz------'
   const p = new RegExp(a.split('').join('|'), 'g')
-
   return string.toString().toLowerCase()
     .replace(/\s+/g, '-') // Replace spaces with -
     .replace(p, c => b.charAt(a.indexOf(c))) // Replace special characters
@@ -103,6 +105,30 @@ export function getHeroParseOptions(props) {
   })
 }
 
+export function getFormParseOptions(props) {
+  return ({
+    replace: ({ attribs, name, children }) => {
+      if (!attribs) return;
+
+      if (attribs.class === 'g-recaptcha') {
+        return (
+          <div className="g-recaptcha">
+            <ReCAPTCHA
+              sitekey={process.env.GATSBY_RECAPTCHA_SITE_KEY}
+              onChange={(value) => {
+                console.log("Captcha value:", value)
+                document.getElementById("submitBtn").removeAttribute("disabled")
+              }}
+            />
+          </div>
+        )
+        // eslint-disable-next-line consistent-return
+        // return <>{domToReact(children, getHeroParseOptions(props))}</>
+      }
+    }
+  })
+}
+
 function checkExtension(str) {
   if (!str) return true
   const extensions = ['pdf', 'mp4']
@@ -145,3 +171,35 @@ export const embedUrl = (string) => {
   }
   return url;
 }
+
+
+
+
+
+
+export const algoliaParse = (string) => {
+  return replaceHtmlEntities(string, true)
+}
+
+function replaceHtmlEntities(string,doParse = true){
+  const mapObj = {
+    "&nbsp;": " ",
+    "&hellip;": "&#8230;", // ...
+    "&amp;": "&#38;",// Ampersand
+    "&ldquo;": "&#8220;",  //  Left Double Quotation Mark
+    "&rdquo;": "&#8221;", //  Right Double Quotation Mark
+    "&lsquo;": "&#8216;",// Left Single Quotation Mark
+    "&rsquo;": "&#8217;",// Right Single Quotation Mark
+    "&bull;": "&#8226;",// Bullet
+    "&ndash;": "&#8211;",// En Dash
+    "&mdash;": "&#8212;",// Em Dash
+    "&horbar;": "&#8213;",// Horizontal Bar
+  };
+  var re = new RegExp(Object.keys(mapObj).join("|"),"gi");
+
+  return string.replace(re, function(matched){
+    const replaced = mapObj[matched.toLowerCase()];    
+    return (doParse) ? parse(replaced) : replaced;      
+  });
+}
+
