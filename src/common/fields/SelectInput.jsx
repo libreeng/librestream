@@ -40,6 +40,7 @@ const SelectInput = ({
   type,
   onChange,
   options,
+  customStyles
 }) => {
 
   return (
@@ -59,6 +60,7 @@ const SelectInput = ({
           isClearable
           className="react-select-container"
           classNamePrefix="react-select"
+          styles={customStyles}
           theme={(theme) => ({
             ...theme,
             borderRadius: 0,

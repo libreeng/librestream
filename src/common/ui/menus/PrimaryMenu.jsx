@@ -3,6 +3,7 @@ import React, {useState, useEffect, useRef} from 'react'
 import { Link, navigate } from 'gatsby'
 import { Navbar, Nav, NavDropdown } from 'react-bootstrap'
 import SearchLineIcon from 'remixicon-react/SearchLineIcon'
+import SelectInput from '../../fields/SelectInput'
 import { useSiteMetadata } from '../../hooks/useSiteMetadata'
 import { useSiteHeader } from '../../hooks/useSiteHeader'
 import { useLocation } from "@reach/router"
@@ -10,18 +11,18 @@ import queryString from 'query-string'
 
 
 const PrimaryMenu = () => {
+  const { menuItems, logo, languages } = useSiteHeader()
   
   const location = useLocation();
   const newSearchQuery = queryString.parse(location.search)
   const newSerchTerm = (newSearchQuery.s && newSearchQuery.s != 'undefined') ? newSearchQuery.s : ''
 
-  const { menuItems, logo } = useSiteHeader()
   const { defaultSEO: {title} } = useSiteMetadata()
   const [searchOpen, setSearchOpen] = useState(false)
   const [query, setQuery] = useState(newSerchTerm)
 
   const menu = menuItems.filter(node => !node.parentId)
-
+  
   const highlightedNavRef = useRef(null)
   // TODO: the "ActiveKey" variable on Nav needs work to incorporate sub-pages
   const activeKey = null // window.location.pathname ! Window is not defined when doing a build.
@@ -37,6 +38,96 @@ const PrimaryMenu = () => {
     navigate(`/search/?s=${query}`, { replace: true })
   
   }
+
+  const languageDropdownStyles = {
+    container: (provided, state) => ({
+      ...provided,
+      padding:0,
+    }),
+    valueContainer: (provided, state) => ({
+      ...provided,
+      padding:0
+    }),
+    option: (provided, state) => ({
+      ...provided,
+      borderBottom: '1px solid #e5e7e7',
+      color: state.isSelected ? '#13aae2' : state.isFocused ? '#767676 ' : '#babcbe',
+      backgroundColor: state.isSelected ? '#FFF' : '#FFF',
+      padding: '5px 20px',
+      fontSize:'16px',
+      cursor: 'pointer', 
+    }),
+    control: () => ({
+      // none of react-select's styles are passed to <Control />
+      color:'#FFFFFF',
+      width:'auto',
+      minWidth: '65px',
+      fontSize:'16px',
+      display:'inline-block',
+      backgroundColor: 'transparent',
+      cursor: 'default', 
+      display: 'flex',
+      flexWrap: 'wrap',
+      justifyContent: 'space-between',
+      outline: '0 !important',
+      '&:hover': {
+        borderColor: 'red'
+      }
+    }),
+    singleValue: (provided, state) => ({
+      ...provided,
+      opacity: state.isDisabled ? 0.5 : 1, 
+      transition : 'opacity 300ms',
+      maxWidth: 'inherit',
+      position: 'relative'
+    }),
+    placeholder: () => ({
+      color:'#FFFFFF',  
+    }),
+    clearIndicator: () => ({
+      display:'none',  
+    }),
+    indicatorSeparator: () => ({
+      display:'none',  
+    }),
+    indicatorsContainer: () => ({
+      alignItems:'flex-start'
+    }),
+    dropdownIndicator: () => ({
+      padding:0,  
+    }),
+    menuList: () => ({
+      padding:0,
+    }),
+    menu: (provided, state) => ({
+      ...provided,
+      padding:0,  
+      width:'100px'
+    }),
+
+    /*
+    
+    container
+    dropdownIndicator
+    group
+    groupHeading
+    indicatorsContainer
+    indicatorSeparator
+    input
+    loadingIndicator
+    loadingMessage
+    menuList
+    menuPortal
+    multiValue
+    multiValueLabel
+    multiValueRemove
+    noOptionsMessage
+  
+    */
+  }
+
+
+
 
   return (
     <>
@@ -82,6 +173,24 @@ const PrimaryMenu = () => {
             <li className="nav-item">
               <a href="/contact-us" className="nav-link">Contact</a>
             </li>
+            { languages.length > 0 && 
+              <li className="nav-item">
+                <SelectInput 
+                  className='language-select nav-link'
+                  placeholder='Language'
+                  defaultValue='english'
+                  isMulti={false}
+                  isSearchable={false}
+                  onChange={(e) => window.location.href = e.value }
+                  customStyles={languageDropdownStyles}
+                  options={languages} 
+                  defaultValue = {
+                    languages.filter(lang => lang.languageIsDefault)
+                  }
+                />
+              </li>
+            }
+            
           </Nav>
           
           <Nav id="primarynav" className="ml-auto" activeKey={activeKey}>

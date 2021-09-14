@@ -18,11 +18,25 @@ export const useSiteHeader = () => {
       logo: file(relativePath: {eq: "logo.png"}) {
         publicURL
       }
+      wp{
+        globalOptions {
+          acfSiteOptions {
+            languages {
+              label:languageLabel
+              value:languageUrl
+              languageName
+              languageIsActive
+              languageIsDefault
+            }
+          }
+        }
+      }
     }
   `)
 
   const { nodes } = data.wpMenu.menuItems
 
-  return { menuItems: nodes, logo: data.logo }
+  return { menuItems: nodes, logo: data.logo, languages: data.wp.globalOptions.acfSiteOptions.languages.filter(lang => {return lang.languageIsActive}) }
 }
+
 
